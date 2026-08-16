@@ -1,0 +1,77 @@
+# 01 · Chronology (Phase 0 → Phase 6 → Phase 7 archive)
+
+Reverse-chronological event stream. Each Phase is a logical arc; each Task is a sub-agent dispatched with a clear contract and a return-QA expectation.
+
+base main HEAD at archive time = `23aab098fc5b2b5428b8b4043cd4f940303d2e43`
+PR #8 squash commit (Phase 6) = `be4022f3141940ad32f77f3a4f5936e6ce0c134a`
+
+## Phase 7 — handoff archive (2026-08-16 UTC, today)
+- **Task G11** — steward handoff memory archive (current)
+  - input: kuight request to commit "把所有对话历史、修改、经验教训等等都总结存放到github里 + 做好交接准备"
+  - rationale: model session reset risk; sandbox + files ephemeral
+  - output: PR on `steward/handoff-memory`, 7 files in `steward/` directory
+  - lessons: distillation only — see `04_LESSONS.md` for the 15-item catalog
+
+## Phase 6 — deep cleanup (merged via PR #8)
+- squash commit: `be4022f3141940ad32f77f3a4f5936e6ce0c134a`
+- pre-merge base: `dfee921a3a492b706098e6b27b704649318ca960`
+- six actions in single commit:
+  1. `docs/PHASE4_ENGLISH_BANK.md` — 30 题 补齐 options / answer / tags
+  2. `src/assets/img/MANIFEST.sha256` — 35 行 rebuild to `<sha>  size=N  <path>  category=cat`
+  3. `README.md` — `插入 ## 治理与阶段` H2 (12→13); 4 处 readme banner 引用 .png → .jpg
+  4. `docs/PHASE5_CLEANUP_LOG.md` — 追加 `## Phase 6 archival cleanup` 小节
+  5. `archive/redundant/*` (10) + `archive/备份/*` (31) — single commit delete (55 blob)
+  6. 13 张 PNG→JPG 改名 (emote×9 + readme×4, blob sha 复用) + 2 张 孤儿 banner 删除 (cover.png + core-subjects.png)
+- QA: Q_TITLES=30 OPTIONS=30 ANSWERS=30 TAGS=30 / MANIFEST_LINES_35=35 / README_GOVERNANCE=yes / LOG_PHASE6_APPENDED=yes / ARCHIVE_REMOVED=55 / PNG_TO_JPG_RENAMES=13 / README_ORPHAN_REMOVED=2 / TREE_HTTP=201 COMMIT_HTTP=201 REF_HTTP=201 PR_HTTP=201 / TOKEN_LEAK=0 / CLEANUP_DONE=YES
+- **Task G9b** — anonymous deep scan (REST-only), inventoried 6 categories of defects across image blobs + tree entries
+- **Tasks G9 / G10 / G10b / G10c** — failed earlier rounds (token missing / placeholder leaked / fabricated token 401); **L03 lesson**: never invent a token
+
+## Phase 5 — P1 archive leg cleanup (merged via PR #7)
+- branch `steward/phase5-p1-cleanup`; head `c1ec15b0a03e3813aefca916bd3ce588a6d21377`
+- 41 legacy files relocated under `archive/_legacy/...`; added `docs/PHASE5_CLEANUP_LOG.md`
+- main advanced to `d279dfa1723be718874ff4fa2d3d887b99719a50`
+- **Task G8** originally failed (bare curl missed `Authorization:`); **Task G8b** fixed it
+
+## Phase 4 — P0 metadata fix (merged via PR #6)
+- branch `steward/p0-metadata-fix`; head `fa690dde2c0f892524e649fa205f999078825809`
+- five files corrected (README banners, MANIFEST, index.json, English bank skeleton, .gitattributes)
+- preceded by **Task G6** read-only smoke test that surfaced the 4 P0 issues
+
+## Phase 3-B — README real images + Phase 4 docs (merged via PR #5)
+- branch `steward/phase3b-phase4-bundle`; head `97cc6e4253fbdf95fc7b43e5a8d4f3168a7ebe69`
+- 6 README banner PNGs (4 are JPEG bytes with `.png` ext — surfaced in G9b as A-P1-3)
+- **Task G5.13b** fixed a `git push https` 401 by switching to the Git Data API
+
+## Phase 3-A — 35-image relocation (recovered as PR #4 after PR #3 stuck closed)
+- branch `steward/phase3-image-complete-recovered`; head `1240f240bd98fe59465ce638e222c8b114a4022a`
+- 28 blobs (25 PNG + 3 docs); PR #3 recovered by **Task G4e** creating PR #4 via REST
+- **L06 lesson**: PR force-push UI recovery requires a fresh PR on same head branch
+
+## Phase 2 — v4.4.0 images + redundant archive cleanup (PR #2)
+- covered cover×3, character×3, scene-top×4 = 10 images
+- branch `steward/phase2-v440-cleanup`; head prefix `ce51173dc4`
+
+## Phase 1 — foundation baseline (PR #1)
+- README rewrite, `src/index.html` portal, version notes
+- branch `steward/phase1-foundation`; head prefix `1232bc58c5`
+
+## Phase 0 — discovery (pre-PR baseline)
+- 13 归档 fingerprint + similarity comparison
+- unique-image count correction: 30 → 35
+- main question count per subject: Physics 68, Chemistry 12, Geography 8, Math 10, Chinese 6, English 0
+- 4-phase refactor plan later expanded to 6 phases plus P2 backlog
+
+## Live PR inventory at archive time
+
+| # | state | head (prefix) | title |
+|---|-------|---------------|-------|
+| #1 | closed | `1232bc58` | Phase 1: foundation baseline — README truth, index portal, governance docs |
+| #2 | closed | `ce51173d` | Phase 2: relocate v4.4.0 images + clean redundant archives |
+| #3 | closed | `1240f240` | Phase 3-A: complete 35-image relocation (retry) |
+| #4 | closed | `d58f9fe7` | Phase 3-A: complete 35-image relocation (recovered) |
+| #5 | closed | `97cc6e42` | Phase 3-B + Phase 4: README banners and governance bundle |
+| #6 | closed | `fa690dde` | Phase 5: metadata coherence (README refs + MANIFEST sha256 + English bank + .gitattributes + index.json) |
+| #7 | closed | `c1ec15b0` | Phase 5: P1 cleanup (archive legacy + governance log) |
+| #8 | closed | `be4022f3` | Phase 6: deep cleanup (English bank + archive trim + dual-render rename + manifest rebuild + governance) |
+
+— end of chronology
