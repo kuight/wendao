@@ -1,204 +1,514 @@
-# Phase 4 · English Question Bank Scaffold
+# PHASE4 English Question Bank (30 Questions)
 
-生成日期：2026-08-16
-分支：steward/phase5-metadata-coherence
-HEAD_BEFORE：a64f0e055fb3a12856b17e848fb643f4f93ffc36
+> 问道修仙学院 · English 学科题库 · Phase 6 (P0-1) 重写版
+> 每题含 Options / Answer / Tags 三段完整正文。分布：grammar=8 / vocabulary=8 / reading=8 / translation=3 / cloze=3。
 
-## A. 检索结果
-检索范围：`src/assets/data/`、`questions/`、`docs/` 全部内容。
-- 实际存在的英语相关条目数：**0**。仅 `src/assets/core-js/v437a-quality-fix.js` 中两处 `english: global.ENGLISH_BANK` 变量绑定，并非题干。
-- 结论：按 wendao 学派惯例生成 30 条占位题，后续 Phase 5+ 由内容填充者替换。
-
-## B. 格式约定
-- 题干：英文短问或中文长句。
-- 选项：A/B/C/D 单选。
-- 答案：单字母；翻译/写作题给出英文参考答案片段。
-- 标签：`subject=English, difficulty=A|B|C, translate=no|yes, annotate=no|yes, source=phase4-scaffold`
-
-## C. 占位题（30 条）
+---
 
 ### Q01
-题干：Choose the synonym of "arduous".
-选项：A. difficult  B. swift  C. plain  D. silent
-答案：A
-标签：subject=English, difficulty=A, translate=no, annotate=no, source=phase4-scaffold
+**Question:** Choose the correct form: "She ___ to the library every Sunday morning."
+
+## Options
+- A) go
+- B) goes
+- C) going
+- D) gone
+
+## Answer
+**Correct:** B
+
+## Tags
+category=English difficulty=easy tags=[grammar]
+
+---
 
 ### Q02
-题干：Choose the antonym of "ephemeral".
-选项：A. transient  B. perpetual  C. sudden  D. fragile
-答案：B
-标签：subject=English, difficulty=A, translate=no, annotate=no, source=phase4-scaffold
+**Question:** Which sentence is grammatically correct?
+
+## Options
+- A) He don't like coffee.
+- B) He doesn't likes coffee.
+- C) He doesn't like coffee.
+- D) He not like coffee.
+
+## Answer
+**Correct:** C
+
+## Tags
+category=English difficulty=easy tags=[grammar]
+
+---
 
 ### Q03
-题干：Fill the blank: "The alchemist's __ patience was rewarded when the elixir finally glowed."
-选项：A. transitory  B. assiduous  C. cursory  D. dormant
-答案：B
-标签：subject=English, difficulty=B, translate=no, annotate=no, source=phase4-scaffold
+**Question:** "If it ___ tomorrow, we will cancel the picnic." Which word fits the first conditional?
+
+## Options
+- A) rains
+- B) rained
+- C) will rain
+- D) has rained
+
+## Answer
+**Correct:** A
+
+## Tags
+category=English difficulty=medium tags=[grammar]
+
+---
 
 ### Q04
-题干：Choose the correct adverb: "He spoke with such ___ that even the sect elders fell silent."
-选项：A. eloquently  B. eloquent  C. eloquence  D. eloquentful
-答案：A
-标签：subject=English, difficulty=A, translate=no, annotate=no, source=phase4-scaffold
+**Question:** Choose the correct passive voice: "The report ___ by the team yesterday."
+
+## Options
+- A) was written
+- B) is written
+- C) has written
+- D) wrote
+
+## Answer
+**Correct:** A
+
+## Tags
+category=English difficulty=medium tags=[grammar]
+
+---
 
 ### Q05
-题干：Identify the figure of speech in: "The moonlight stitched silver seams across the lake."
-选项：A. simile  B. metaphor  C. hyperbole  D. irony
-答案：B
-标签：subject=English, difficulty=B, translate=no, annotate=yes, source=phase4-scaffold
+**Question:** "Neither the teacher nor the students ___ satisfied with the result." Which verb agrees with the subject?
+
+## Options
+- A) was
+- B) were
+- C) is
+- D) has been
+
+## Answer
+**Correct:** B
+
+## Tags
+category=English difficulty=hard tags=[grammar]
+
+---
 
 ### Q06
-题干：Choose the correct past participle: "The talisman had been ___ by the cultivator before dusk."
-选项：A. carved  B. carve  C. carving  D. carves
-答案：A
-标签：subject=English, difficulty=A, translate=no, annotate=no, source=phase4-scaffold
+**Question:** Identify the correct relative clause: "The book ___ I borrowed from you is fascinating."
+
+## Options
+- A) who
+- B) which
+- C) whom
+- D) whose
+
+## Answer
+**Correct:** B
+
+## Tags
+category=English difficulty=medium tags=[grammar]
+
+---
 
 ### Q07
-题干：Rewrite in passive voice: "The senior sister brewed the immortality tea."
-选项：—
-答案：The immortality tea was brewed by the senior sister.
-标签：subject=English, difficulty=B, translate=no, annotate=yes, source=phase4-scaffold
+**Question:** "By the time we arrived, the movie ___." Choose the correct past perfect form.
+
+## Options
+- A) started
+- B) has started
+- C) had started
+- D) starts
+
+## Answer
+**Correct:** C
+
+## Tags
+category=English difficulty=medium tags=[grammar]
+
+---
 
 ### Q08
-题干：将「那位老修士在炼丹炉旁守了整整三天三夜。」译成英文。
-选项：—
-答案：That old cultivator kept watch beside the alchemy furnace for three whole days and nights.
-标签：subject=English, difficulty=B, translate=yes, annotate=no, source=phase4-scaffold
+**Question:** Which sentence uses the subjunctive mood correctly?
+
+## Options
+- A) I wish I am taller.
+- B) I wish I was taller.
+- C) I wish I were taller.
+- D) I wish I be taller.
+
+## Answer
+**Correct:** C
+
+## Tags
+category=English difficulty=hard tags=[grammar]
+
+---
 
 ### Q09
-题干：Fill the blank: "If I ___ a spirit sword, I would roam the nine heavens."
-选项：A. had  B. have  C. would have  D. am having
-答案：A
-标签：subject=English, difficulty=C, translate=no, annotate=yes, source=phase4-scaffold
+**Question:** Choose the closest synonym for "abundant".
+
+## Options
+- A) scarce
+- B) plentiful
+- C) empty
+- D) tiny
+
+## Answer
+**Correct:** B
+
+## Tags
+category=English difficulty=easy tags=[vocabulary]
+
+---
 
 ### Q10
-题干：Choose the article: "She inherited ___ innate talent for reading talismans."
-选项：A. a  B. an  C. the  D. (no article)
-答案：B
-标签：subject=English, difficulty=B, translate=no, annotate=yes, source=phase4-scaffold
+**Question:** The opposite of "generous" is ___.
+
+## Options
+- A) kind
+- B) selfish
+- C) wealthy
+- D) brave
+
+## Answer
+**Correct:** B
+
+## Tags
+category=English difficulty=easy tags=[vocabulary]
+
+---
 
 ### Q11
-题干：What is the comparative form of "far"?
-选项：A. farther  B. further  C. both A and B are acceptable in standard English  D. farrer
-答案：C
-标签：subject=English, difficulty=C, translate=no, annotate=yes, source=phase4-scaffold
+**Question:** "The scientist made a major ___ in cancer research." Which word fits best?
+
+## Options
+- A) breakthrough
+- B) breakdown
+- C) breakout
+- D) breakaway
+
+## Answer
+**Correct:** A
+
+## Tags
+category=English difficulty=medium tags=[vocabulary]
+
+---
 
 ### Q12
-题干：Reading. "When the bronze bell of the main hall tolled thrice, every disciple ceased their meditation and stood; even the wind, it seemed, paused to listen." Which literary device dominates?
-选项：A. onomatopoeia  B. personification  C. alliteration  D. assonance
-答案：B
-标签：subject=English, difficulty=C, translate=no, annotate=yes, source=phase4-scaffold
+**Question:** Choose the word that best completes: "He is very ___; he always thinks before he acts."
+
+## Options
+- A) impulsive
+- B) cautious
+- C) careless
+- D) reckless
+
+## Answer
+**Correct:** B
+
+## Tags
+category=English difficulty=medium tags=[vocabulary]
+
+---
 
 ### Q13
-题干：将「学问如炼丹，急不得。」译成英文。
-选项：—
-答案：Learning is like refining an elixir; it cannot be rushed.
-标签：subject=English, difficulty=A, translate=yes, annotate=no, source=phase4-scaffold
+**Question:** What does "ambiguous" mean?
+
+## Options
+- A) Clear and certain
+- B) Open to more than one interpretation
+- C) Extremely old
+- D) Extremely loud
+
+## Answer
+**Correct:** B
+
+## Tags
+category=English difficulty=medium tags=[vocabulary]
+
+---
 
 ### Q14
-题干：Choose the correct preposition: "The scroll is bound ___ scarlet silk."
-选项：A. with  B. by  C. in  D. of
-答案：C
-标签：subject=English, difficulty=B, translate=no, annotate=yes, source=phase4-scaffold
+**Question:** "The company will ___ a new product next month." Which word means "to introduce officially"?
+
+## Options
+- A) launch
+- B) launchpad
+- C) lunge
+- D) lurch
+
+## Answer
+**Correct:** A
+
+## Tags
+category=English difficulty=easy tags=[vocabulary]
+
+---
 
 ### Q15
-题干：Identify the error: "Neither the master nor his disciples were prepared for such an omen."
-选项：A. master  B. disciples  C. were  D. such
-答案：C
-标签：subject=English, difficulty=C, translate=no, annotate=yes, source=phase4-scaffold
+**Question:** Choose the correct collocation: "Please ___ attention to the instructions."
+
+## Options
+- A) make
+- B) do
+- C) pay
+- D) give
+
+## Answer
+**Correct:** C
+
+## Tags
+category=English difficulty=easy tags=[vocabulary]
+
+---
 
 ### Q16
-题干：Choose the word closest in meaning to "luminous".
-选项：A. dim  B. radiant  C. opaque  D. muted
-答案：B
-标签：subject=English, difficulty=A, translate=no, annotate=no, source=phase4-scaffold
+**Question:** "The two countries signed a ___ to end the conflict." Which word fits?
+
+## Options
+- A) treaty
+- B) treaty
+- C) treaty
+- D) treaty
+
+## Answer
+**Correct:** A
+
+## Tags
+category=English difficulty=medium tags=[vocabulary]
+
+---
 
 ### Q17
-题干：Convert to reported speech: "The elder said, 'A storm will rise tonight.'"
-选项：—
-答案：The elder said that a storm would rise that night.
-标签：subject=English, difficulty=B, translate=no, annotate=yes, source=phase4-scaffold
+**Question (Reading):** Read the passage: "Maria moved to the city last year. She found a small apartment near the station. Every morning she takes the subway to work, which takes about thirty minutes. On weekends she enjoys walking in the park." Where does Maria live?
+
+## Options
+- A) In a house in the countryside
+- B) In a small apartment near the station
+- C) In a hotel downtown
+- D) In a dormitory at her office
+
+## Answer
+**Correct:** B
+
+## Tags
+category=English difficulty=easy tags=[reading]
+
+---
 
 ### Q18
-题干：将「即使是最冷的长夜，炉火也不会熄灭。」译成英文。
-选项：—
-答案：Even on the coldest long night, the furnace fire will not go out.
-标签：subject=English, difficulty=B, translate=yes, annotate=no, source=phase4-scaffold
+**Question (Reading):** "Tom usually wakes up at six. He jogs for twenty minutes, then takes a shower. He eats breakfast at seven and leaves for school at half past seven." What does Tom do right after he wakes up?
+
+## Options
+- A) He eats breakfast.
+- B) He takes a shower.
+- C) He jogs for twenty minutes.
+- D) He leaves for school.
+
+## Answer
+**Correct:** C
+
+## Tags
+category=English difficulty=easy tags=[reading]
+
+---
 
 ### Q19
-题干：Select the correct conjunction: "Practise swordplay daily, ___ you shall outshine your peers."
-选项：A. lest  B. or  C. and  D. yet
-答案：C
-标签：subject=English, difficulty=A, translate=no, annotate=no, source=phase4-scaffold
+**Question (Reading):** "The library closes at nine in the evening, but on Fridays it stays open until ten. Students often stay late to finish their assignments." When does the library close on Fridays?
+
+## Options
+- A) At seven
+- B) At eight
+- C) At nine
+- D) At ten
+
+## Answer
+**Correct:** D
+
+## Tags
+category=English difficulty=medium tags=[reading]
+
+---
 
 ### Q20
-题干：Pick the word with correct spelling.
-选项：A. accomodate  B. accommodate  C. acommodate  D. acomodate
-答案：B
-标签：subject=English, difficulty=A, translate=no, annotate=no, source=phase4-scaffold
+**Question (Reading):** "Although the weather was stormy, the team decided to continue the match. The players were soaked, yet they played with great spirit. In the end, the match ended in a draw." What was the final result of the match?
+
+## Options
+- A) The home team won.
+- B) The away team won.
+- C) The match was cancelled.
+- D) The match ended in a draw.
+
+## Answer
+**Correct:** D
+
+## Tags
+category=English difficulty=medium tags=[reading]
+
+---
 
 ### Q21
-题干：Identify the clause type: "What the jade tablet foretold, none could deny."
-选项：A. noun clause (subject)  B. noun clause (object)  C. adverbial clause  D. adjective clause
-答案：A
-标签：subject=English, difficulty=C, translate=no, annotate=yes, source=phase4-scaffold
+**Question (Reading):** "Recycling reduces the amount of waste sent to landfills. By reusing materials such as paper, glass, and plastic, we conserve natural resources and save energy." According to the passage, which of the following is a benefit of recycling?
+
+## Options
+- A) It increases the amount of waste.
+- B) It conserves natural resources and saves energy.
+- C) It requires more raw materials.
+- D) It only applies to metal.
+
+## Answer
+**Correct:** B
+
+## Tags
+category=English difficulty=medium tags=[reading]
+
+---
 
 ### Q22
-题干：Write one sentence (<=20 words) describing the cave alchemy scene in wendao.
-选项：—
-答案：Moonlight slipped into the alchemy cave, where the furnace hummed like a patient elder.
-标签：subject=English, difficulty=C, translate=no, annotate=no, source=phase4-scaffold
+**Question (Reading):** "The word 'photosynthesis' comes from Greek roots meaning 'light' and 'putting together'. Plants use sunlight to turn carbon dioxide and water into food." What do the Greek roots of "photosynthesis" mean?
+
+## Options
+- A) "Light" and "putting together"
+- B) "Water" and "food"
+- C) "Green" and "growing"
+- D) "Sun" and "leaf"
+
+## Answer
+**Correct:** A
+
+## Tags
+category=English difficulty=hard tags=[reading]
+
+---
 
 ### Q23
-题干：Choose the best idiom: "He finally finished the manuscript: he ___ at long last."
-选项：A. bit the bullet  B. saw the light  C. crossed the Rubicon  D. saw it through
-答案：D
-标签：subject=English, difficulty=C, translate=no, annotate=yes, source=phase4-scaffold
+**Question (Reading):** "In many cultures, the dragon symbolizes power and good fortune, while in others it represents danger. The meaning of a symbol often depends on the culture that uses it." What is the main idea of the passage?
+
+## Options
+- A) Dragons are real animals.
+- B) Symbols have different meanings in different cultures.
+- C) All cultures view dragons the same way.
+- D) Power is always represented by animals.
+
+## Answer
+**Correct:** B
+
+## Tags
+category=English difficulty=medium tags=[reading]
+
+---
 
 ### Q24
-题干：将「我宁愿在山间小道独行，也不愿在繁华城中迷失。」译成英文。
-选项：—
-答案：I would rather walk alone on the mountain path than lose myself in a bustling city.
-标签：subject=English, difficulty=C, translate=yes, annotate=no, source=phase4-scaffold
+**Question (Reading):** "First, mix the flour and sugar in a large bowl. Then add the eggs and stir well. Finally, pour the mixture into a baking pan and bake for thirty minutes." What should you do after adding the eggs?
+
+## Options
+- A) Bake for thirty minutes.
+- B) Pour the mixture into a pan.
+- C) Stir well.
+- D) Mix the flour and sugar.
+
+## Answer
+**Correct:** C
+
+## Tags
+category=English difficulty=easy tags=[reading]
+
+---
 
 ### Q25
-题干：Fill the blank: "Hardly ___ the incense burned out when the bell rang."
-选项：A. had  B. did  C. have  D. was
-答案：A
-标签：subject=English, difficulty=C, translate=no, annotate=yes, source=phase4-scaffold
+**Question (Translation):** Translate into English: "他每天早晨喝一杯热牛奶。"
+
+## Options
+- A) He drinks a glass of hot milk every morning.
+- B) He drink hot milk every morning.
+- C) He drinks hot milk every evening.
+- D) He drank hot milk this morning.
+
+## Answer
+**Correct:** A
+
+## Tags
+category=English difficulty=easy tags=[translation]
+
+---
 
 ### Q26
-题干：Choose the most precise verb: "The cultivator ___ the spirit sword with grace."
-选项：A. wielded  B. holded  C. grapsed  D. carryed
-答案：A
-标签：subject=English, difficulty=B, translate=no, annotate=no, source=phase4-scaffold
+**Question (Translation):** Translate into Chinese: "Practice makes perfect."
+
+## Options
+- A) 熟能生巧。
+- B) 练习是完美的。
+- C) 完美需要练习。
+- D) 实践出真知。
+
+## Answer
+**Correct:** A
+
+## Tags
+category=English difficulty=medium tags=[translation]
+
+---
 
 ### Q27
-题干：Which sentence is grammatically correct?
-选项：A. Each of the disciples have their own spirit sword.  B. Each of the disciples has their own spirit sword.  C. Each disciples has their own spirit sword.  D. Each of the disciple have a spirit sword.
-答案：B
-标签：subject=English, difficulty=B, translate=no, annotate=yes, source=phase4-scaffold
+**Question (Translation):** Translate into English: "虽然天气很冷，学生们仍然在操场上跑步。"
+
+## Options
+- A) Although the weather was cold, the students still ran on the playground.
+- B) Although the weather is cold, the students still run on the playground.
+- C) Because the weather is cold, the students run on the playground.
+- D) Although the weather is cold, the students still run in the classroom.
+
+## Answer
+**Correct:** B
+
+## Tags
+category=English difficulty=medium tags=[translation]
+
+---
 
 ### Q28
-题干：Reading. "A cultivator's fame may rise like smoke, but the merit of daily practice settles like stone." Which rhetorical contrast is being used?
-选项：A. antithesis  B. oxymoron  C. anaphora  D. epistrophe
-答案：A
-标签：subject=English, difficulty=C, translate=no, annotate=yes, source=phase4-scaffold
+**Question (Cloze):** "Last summer, my family and I ___ (1) to the mountains. We ___ (2) a small cabin and stayed for a week. Every morning, we ___ (3) hiking along the trails." Choose the correct word for blank (1).
+
+## Options
+- A) go
+- B) went
+- C) gone
+- D) going
+
+## Answer
+**Correct:** B
+
+## Tags
+category=English difficulty=easy tags=[cloze]
+
+---
 
 ### Q29
-题干：Compose a one-sentence wendao setting description (<=15 words) including at least one metaphor.
-选项：—
-答案：Refining a pill is a silent conversation between patience and time.
-标签：subject=English, difficulty=C, translate=no, annotate=no, source=phase4-scaffold
+**Question (Cloze):** "She ___ (1) her homework before she ___ (2) to bed last night." Choose the correct word for blank (2).
+
+## Options
+- A) go
+- B) goes
+- C) went
+- D) gone
+
+## Answer
+**Correct:** C
+
+## Tags
+category=English difficulty=medium tags=[cloze]
+
+---
 
 ### Q30
-题干：Pick the antonym of "magnanimous".
-选项：A. generous  B. petty  C. brave  D. clever
-答案：B
-标签：subject=English, difficulty=A, translate=no, annotate=no, source=phase4-scaffold
+**Question (Cloze):** "The teacher asked the students ___ (1) quietly during the exam. Those who ___ (2) the rules would be warned." Choose the correct word for blank (1).
 
-## D. 后续替换约定
-- `### QNN` 标题保留。
-- 题干 / 选项 / 答案可扩展为 >=30 字题干。
-- 标签至少保留 `subject=English, difficulty=A|B|C, source=<phaseN-...>` 三项。
-- 凡汉译英条目 `translate=yes` 必填；长难句需注释的 `annotate=yes` 必填。
+## Options
+- A) to speak
+- B) to talk
+- C) to be quiet
+- D) to leave
+
+## Answer
+**Correct:** C
+
+## Tags
+category=English difficulty=medium tags=[cloze]

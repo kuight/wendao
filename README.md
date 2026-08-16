@@ -2,11 +2,11 @@
 
 > 一个面向福建高中生、以**修仙叙事 + 学科刷题 + 离线单机**为核心体验的学习游戏仓库。
 
-![cover](./src/assets/img/readme/01-latest-archive.png)
+![cover](./src/assets/img/readme/01-latest-archive.jpg)
 ![core-subjects](./src/assets/img/readme/02-core-subjects.png)
-![stack](./src/assets/img/readme/03-stack.png)
-![storage](./src/assets/img/readme/04-storage.png)
-![backend](./src/assets/img/readme/05-backend.png)
+![stack](./src/assets/img/readme/03-stack.jpg)
+![storage](./src/assets/img/readme/04-storage.jpg)
+![backend](./src/assets/img/readme/05-backend.jpg)
 ![overview](./src/assets/img/readme/06-architecture.png)
 ---
 
@@ -185,6 +185,19 @@ python3 -m http.server 8000
 > 重点：**不要仅凭版本号判断先后**。例如 `v4.3.5f` 的实际完成时间晚于 `v4.3.6-final`，`v2.2` 也实测早于 `v3.0`。
 
 ---
+
+## 治理与阶段
+
+本仓库治理遵循六阶段路线（自 v4.4.0 起）：
+- **Phase 1 — Truth & Portal**：README 真实化、index.html 主入口、治理草案
+- **Phase 2 — 归档归位**：v4.4.0 基线落定，redundant 清理
+- **Phase 3 — 图片回归**：35 张核心图覆盖 cover/character/scene/emote/ui
+- **Phase 4 — 文档与策略**：MANIFEST.sha256、LFS_POLICY、英语题库
+- **Phase 5 — 历史清算**：archive/_legacy 留底 + 元数据修齐
+- **Phase 6 — 深度清理（本 PR 6 合 1）**：English 题库正文 / archive 双轨瘦身 / PNG→JPEG 改名 / MANIFEST 重建 / 治理段补齐
+
+凭据治理：所有 sandbox token 用 `shred -u + unset + history -c` 三步销毁，token 不写进 commit message 或 PR body；REST 走 HEREDOC；禁用 `git push https`（必 401）。
+风险与回滚：单 squash commit；`git revert <new_sha>` 一键复原。
 
 ## 当前仓库结构
 
