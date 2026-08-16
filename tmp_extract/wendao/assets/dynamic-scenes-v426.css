@@ -1,0 +1,555 @@
+/* ===============================================================
+ * 《问道修仙学院》v4.2.6 · 动态场景背景系统
+ *   —— 每个场所独立风格背景 + 动态动画
+ *
+ * 使用方式：在 <body> 上添加 data-scene="xxx" 或在容器上加 .scene-xxx
+ * =============================================================== */
+
+/* ============================================================
+ * 通用场景容器
+ * ============================================================ */
+.wd-scene-bg {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: -10;
+  overflow: hidden;
+  transition: opacity 1.2s ease;
+  pointer-events: none;
+}
+
+.wd-scene-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: scale(1.05);
+  transition: transform 8s linear, opacity 1.2s;
+}
+
+.wd-scene-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center,
+              rgba(0,0,0,0) 30%,
+              rgba(0,0,0,0.55) 100%);
+}
+
+/* Ken-Burns 缓慢缩放效果 */
+.wd-scene-bg.active::before { transform: scale(1); }
+
+/* ============================================================
+ * 场景 1：青云宗（正道山门）——蓝白仙气
+ * ============================================================ */
+[data-scene="qingyun"] {
+  background: linear-gradient(180deg, #d8ecff 0%, #87b8e0 40%, #4a7ba8 100%);
+}
+[data-scene="qingyun"]::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -5;
+  background:
+    radial-gradient(ellipse at 30% 40%, rgba(255,255,255,0.4), transparent 40%),
+    radial-gradient(ellipse at 70% 60%, rgba(255,255,255,0.3), transparent 50%);
+  animation: cloud-drift 30s linear infinite;
+}
+@keyframes cloud-drift {
+  0% { background-position: 0% 0%, 100% 100%; }
+  100% { background-position: 100% 0%, 0% 100%; }
+}
+
+/* ============================================================
+ * 场景 2：太玄宗（剑修圣地）——冷银铁灰
+ * ============================================================ */
+[data-scene="taixuan"] {
+  background: linear-gradient(180deg, #4a4a4a 0%, #2a2a3a 60%, #0a0a1a 100%);
+}
+[data-scene="taixuan"]::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -5;
+  background-image:
+    linear-gradient(45deg, rgba(220,220,220,0.15) 0%, transparent 30%),
+    linear-gradient(-45deg, rgba(180,180,220,0.1) 0%, transparent 30%);
+  pointer-events: none;
+}
+/* 剑光闪烁 */
+[data-scene="taixuan"]::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -4;
+  background:
+    linear-gradient(120deg, transparent 45%, rgba(255,255,255,0.4) 50%, transparent 55%);
+  animation: sword-flash 6s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes sword-flash {
+  0%, 90%, 100% { transform: translateX(-100%); opacity: 0; }
+  45% { transform: translateX(100%); opacity: 1; }
+}
+
+/* ============================================================
+ * 场景 3：紫霄宫（雷法宗）——紫电雷云
+ * ============================================================ */
+[data-scene="zixiao"] {
+  background: linear-gradient(180deg, #4a2c6f 0%, #2a1a4f 50%, #0a0a2a 100%);
+}
+[data-scene="zixiao"]::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -5;
+  background:
+    radial-gradient(ellipse at 20% 30%, rgba(147,112,219,0.4), transparent 40%),
+    radial-gradient(ellipse at 80% 70%, rgba(75,0,130,0.5), transparent 40%);
+  animation: cloud-drift 20s linear infinite;
+}
+[data-scene="zixiao"]::after {
+  content: '⚡';
+  position: fixed;
+  top: 15%; left: 30%;
+  z-index: -4;
+  font-size: 120px;
+  color: rgba(255,255,180,0.85);
+  text-shadow: 0 0 30px #fff, 0 0 60px rgba(147,112,219,0.9);
+  animation: thunder-flash 4s ease-out infinite;
+  pointer-events: none;
+}
+@keyframes thunder-flash {
+  0%, 92%, 100% { opacity: 0; transform: scale(0.5); }
+  93% { opacity: 1; transform: scale(1); }
+  95% { opacity: 0.3; }
+  97% { opacity: 1; transform: scale(1.1); }
+  99% { opacity: 0; }
+}
+
+/* ============================================================
+ * 场景 4：血宫（魔道）——血红暗紫
+ * ============================================================ */
+[data-scene="bloodpalace"] {
+  background: linear-gradient(180deg, #4a0033 0%, #2a0022 50%, #1a0011 100%);
+}
+[data-scene="bloodpalace"]::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -5;
+  background:
+    radial-gradient(circle at 40% 60%, rgba(139,0,0,0.5), transparent 50%),
+    radial-gradient(circle at 60% 40%, rgba(75,0,50,0.5), transparent 50%);
+  animation: blood-pulse 5s ease-in-out infinite;
+}
+@keyframes blood-pulse {
+  0%,100% { filter: brightness(0.8); }
+  50% { filter: brightness(1.2); }
+}
+
+/* ============================================================
+ * 场景 5：万佛寺（佛门）——金黄温和
+ * ============================================================ */
+[data-scene="buddha"] {
+  background: linear-gradient(180deg, #f4d03f 0%, #daa520 40%, #8b6c00 100%);
+}
+[data-scene="buddha"]::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -5;
+  background:
+    radial-gradient(circle at 50% 30%, rgba(255,215,0,0.6), transparent 40%),
+    radial-gradient(circle at 50% 70%, rgba(255,140,0,0.3), transparent 40%);
+  animation: buddha-glow 8s ease-in-out infinite;
+}
+@keyframes buddha-glow {
+  0%,100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+/* ============================================================
+ * 场景 6：翠竹林（新手历练）——绿意盎然
+ * ============================================================ */
+[data-scene="bamboo"] {
+  background: linear-gradient(180deg, #a8e6a3 0%, #5eb85e 40%, #2e7d32 100%);
+}
+[data-scene="bamboo"]::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -5;
+  background-image:
+    repeating-linear-gradient(90deg,
+      transparent 0px,
+      transparent 60px,
+      rgba(46,125,50,0.3) 60px,
+      rgba(46,125,50,0.3) 65px,
+      transparent 65px,
+      transparent 130px);
+  animation: bamboo-sway 6s ease-in-out infinite;
+}
+@keyframes bamboo-sway {
+  0%,100% { transform: translateX(0) skewX(0deg); }
+  50% { transform: translateX(20px) skewX(2deg); }
+}
+
+/* ============================================================
+ * 场景 7：幽冥谷（鬼修）——阴森冷紫
+ * ============================================================ */
+[data-scene="ghost"] {
+  background: linear-gradient(180deg, #2a1a4f 0%, #1a0a3a 50%, #0a0020 100%);
+}
+[data-scene="ghost"]::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -5;
+  background:
+    radial-gradient(circle at 30% 70%, rgba(147,112,219,0.3), transparent 30%),
+    radial-gradient(circle at 70% 30%, rgba(75,0,130,0.4), transparent 30%);
+  animation: ghost-drift 12s ease-in-out infinite;
+}
+@keyframes ghost-drift {
+  0%,100% { background-position: 0% 0%; opacity: 0.7; }
+  50% { background-position: 20% 30%; opacity: 1; }
+}
+
+/* ============================================================
+ * 场景 8：炎荒宗（火系）——赤炎熊熊
+ * ============================================================ */
+[data-scene="yanhuang"] {
+  background: linear-gradient(180deg, #ff6b3d 0%, #cc3300 50%, #661100 100%);
+}
+[data-scene="yanhuang"]::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -5;
+  background:
+    radial-gradient(ellipse at 50% 100%, rgba(255,140,0,0.6), transparent 50%),
+    radial-gradient(ellipse at 20% 80%, rgba(255,69,0,0.5), transparent 40%),
+    radial-gradient(ellipse at 80% 90%, rgba(255,140,0,0.5), transparent 40%);
+  animation: fire-flicker 3s ease-in-out infinite;
+}
+@keyframes fire-flicker {
+  0%,100% { filter: brightness(1) hue-rotate(0deg); }
+  33% { filter: brightness(1.2) hue-rotate(-5deg); }
+  66% { filter: brightness(0.9) hue-rotate(5deg); }
+}
+
+/* ============================================================
+ * 场景 9：碧海仙宗（水系）——碧波荡漾
+ * ============================================================ */
+[data-scene="bihai"] {
+  background: linear-gradient(180deg, #7fffd4 0%, #00bfff 40%, #003366 100%);
+}
+[data-scene="bihai"]::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -5;
+  background:
+    linear-gradient(180deg, transparent 40%, rgba(0,191,255,0.3) 70%, rgba(0,51,102,0.5) 100%),
+    repeating-linear-gradient(90deg,
+      transparent 0,
+      rgba(255,255,255,0.05) 30px,
+      transparent 60px);
+  animation: wave-flow 8s linear infinite;
+}
+@keyframes wave-flow {
+  0% { background-position: 0 0, 0 0; }
+  100% { background-position: 0 0, 120px 0; }
+}
+
+/* ============================================================
+ * 场景 10：寒冰之地——银白冰晶
+ * ============================================================ */
+[data-scene="ice"] {
+  background: linear-gradient(180deg, #e0f4ff 0%, #b0d8f0 50%, #6b9bc8 100%);
+}
+[data-scene="ice"]::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -5;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.6), transparent 20%),
+    radial-gradient(circle at 80% 30%, rgba(200,230,255,0.5), transparent 20%),
+    radial-gradient(circle at 40% 70%, rgba(255,255,255,0.4), transparent 15%);
+  animation: snow-shimmer 4s ease-in-out infinite;
+}
+@keyframes snow-shimmer {
+  0%,100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+/* ============================================================
+ * 场景 11：万兽山脉（野外）——荒野暗棕
+ * ============================================================ */
+[data-scene="beasts"] {
+  background: linear-gradient(180deg, #d4a373 0%, #8b6c42 40%, #3f3f00 100%);
+}
+
+/* ============================================================
+ * 场景 12：昆仑仙宗——仙气缭绕
+ * ============================================================ */
+[data-scene="kunlun"] {
+  background: linear-gradient(180deg, #e6e6fa 0%, #b19cd9 40%, #4b0082 100%);
+}
+[data-scene="kunlun"]::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -5;
+  background:
+    radial-gradient(ellipse at 30% 50%, rgba(230,230,250,0.5), transparent 40%),
+    radial-gradient(ellipse at 70% 50%, rgba(147,112,219,0.4), transparent 40%);
+  animation: immortal-glow 10s ease-in-out infinite;
+}
+@keyframes immortal-glow {
+  0%,100% { transform: scale(1) rotate(0deg); opacity: 0.7; }
+  50% { transform: scale(1.1) rotate(2deg); opacity: 1; }
+}
+
+/* ============================================================
+ * 场景 13：混沌之海——深邃虚空
+ * ============================================================ */
+[data-scene="chaos"] {
+  background: linear-gradient(135deg, #000033 0%, #4b0082 50%, #000066 100%);
+}
+[data-scene="chaos"]::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -5;
+  background:
+    radial-gradient(circle at 30% 40%, rgba(75,0,130,0.5), transparent 30%),
+    radial-gradient(circle at 70% 60%, rgba(147,112,219,0.5), transparent 30%);
+  animation: chaos-swirl 15s linear infinite;
+}
+@keyframes chaos-swirl {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ============================================================
+ * 场景 14：莆田茶市——温润茶色
+ * ============================================================ */
+[data-scene="putian"] {
+  background: linear-gradient(180deg, #d4c290 0%, #8b7d3a 40%, #2f4f2f 100%);
+}
+[data-scene="putian"]::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -5;
+  background:
+    radial-gradient(ellipse at 50% 80%, rgba(139,125,58,0.4), transparent 50%);
+}
+
+/* ============================================================
+ * 场景 15：武夷丹霞——赭红山峦
+ * ============================================================ */
+[data-scene="wuyi"] {
+  background: linear-gradient(180deg, #ffe4b5 0%, #cd5c5c 45%, #8b4513 100%);
+}
+[data-scene="wuyi"]::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -5;
+  background:
+    linear-gradient(180deg, transparent 40%, rgba(139,69,19,0.35) 100%);
+}
+
+/* ============================================================
+ * 场景 16：厦门海市——蓝天大海
+ * ============================================================ */
+[data-scene="xiamen"] {
+  background: linear-gradient(180deg, #b3e5fc 0%, #4fc3f7 50%, #01579b 100%);
+}
+[data-scene="xiamen"]::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -5;
+  background:
+    linear-gradient(180deg,
+      transparent 50%,
+      rgba(1,87,155,0.3) 70%,
+      rgba(0,50,100,0.5) 100%);
+  animation: wave-flow 10s linear infinite;
+}
+
+/* ============================================================
+ * 场景 17：仙界通道——白金圣光
+ * ============================================================ */
+[data-scene="portal"] {
+  background: radial-gradient(ellipse at center,
+              #ffffff 0%, #ffffe0 20%, #ffd700 50%, #8b6c00 100%);
+  animation: portal-glow 4s ease-in-out infinite;
+}
+@keyframes portal-glow {
+  0%,100% { filter: brightness(1); }
+  50% { filter: brightness(1.3); }
+}
+
+/* ============================================================
+ * 场景 18：诸天万界——多彩星空
+ * ============================================================ */
+[data-scene="multiverse"] {
+  background: radial-gradient(ellipse at 30% 30%, #ffdf00 0%, transparent 30%),
+              radial-gradient(ellipse at 70% 70%, #9370db 0%, transparent 30%),
+              linear-gradient(135deg, #000033 0%, #1a1a2e 100%);
+}
+[data-scene="multiverse"]::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -5;
+  background-image:
+    radial-gradient(2px 2px at 20% 30%, white, transparent),
+    radial-gradient(2px 2px at 40% 70%, #fff, transparent),
+    radial-gradient(1px 1px at 50% 50%, #ffd700, transparent),
+    radial-gradient(1px 1px at 80% 10%, white, transparent),
+    radial-gradient(2px 2px at 90% 60%, #9370db, transparent);
+  background-size: 200px 200px;
+  animation: star-twinkle 3s linear infinite;
+}
+@keyframes star-twinkle {
+  0%,100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+/* ============================================================
+ * 通用装饰粒子层（应用到所有场景）
+ * ============================================================ */
+.wd-particles {
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  pointer-events: none;
+  overflow: hidden;
+}
+.wd-particle {
+  position: absolute;
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.6);
+  box-shadow: 0 0 6px rgba(255,255,255,0.4);
+  animation: particle-float 20s linear infinite;
+}
+.wd-particle.gold { background: rgba(255,215,0,0.7); box-shadow: 0 0 6px rgba(255,215,0,0.5); }
+.wd-particle.pink { background: rgba(255,182,193,0.7); box-shadow: 0 0 6px rgba(255,182,193,0.5); }
+.wd-particle.cyan { background: rgba(127,255,212,0.7); box-shadow: 0 0 6px rgba(127,255,212,0.5); }
+
+@keyframes particle-float {
+  0% { transform: translateY(110vh) translateX(0) scale(0.8); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(-10vh) translateX(60px) scale(1.2); opacity: 0; }
+}
+
+/* ============================================================
+ * 场景切换过渡动画（打门/开幕）
+ * ============================================================ */
+.wd-scene-transition {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  display: flex;
+}
+.wd-scene-transition::before,
+.wd-scene-transition::after {
+  content: '';
+  flex: 1;
+  background: linear-gradient(90deg, #000 0%, rgba(0,0,0,0.9) 100%);
+  transition: transform 0.8s cubic-bezier(0.7, 0, 0.3, 1);
+}
+.wd-scene-transition::before { transform: translateX(-100%); }
+.wd-scene-transition::after { transform: translateX(100%); }
+.wd-scene-transition.active::before,
+.wd-scene-transition.active::after { transform: translateX(0); }
+
+.wd-scene-transition-text {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Ma Shan Zheng', 'KaiTi', serif;
+  font-size: 48px;
+  color: #ffd700;
+  text-shadow:
+    0 0 20px rgba(255,215,0,0.8),
+    0 0 40px rgba(255,215,0,0.5),
+    0 0 60px rgba(255,215,0,0.3);
+  opacity: 0;
+  transition: opacity 0.5s ease 0.4s;
+  letter-spacing: 8px;
+  white-space: nowrap;
+}
+.wd-scene-transition.active .wd-scene-transition-text { opacity: 1; }
+
+/* ============================================================
+ * 场所卡片（大地图选择）——增强样式
+ * ============================================================ */
+.wd-location-card {
+  position: relative;
+  height: 180px;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+.wd-location-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--card-gradient, linear-gradient(180deg,#666,#333));
+  transition: transform 0.5s ease;
+}
+.wd-location-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(0,0,0,0.85) 0%, transparent 60%);
+}
+.wd-location-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 20px rgba(255,215,0,0.3);
+}
+.wd-location-card:hover::before { transform: scale(1.1); }
+.wd-location-card > .content {
+  position: absolute;
+  bottom: 12px; left: 12px; right: 12px;
+  color: #fff;
+  z-index: 2;
+}
+.wd-location-card > .content .name {
+  font-size: 22px;
+  font-weight: bold;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.9);
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+}
+.wd-location-card > .content .desc {
+  font-size: 12px;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.4;
+}
+.wd-location-card > .badge {
+  position: absolute;
+  top: 12px; right: 12px;
+  padding: 4px 10px;
+  background: rgba(0,0,0,0.6);
+  color: #ffd700;
+  font-size: 11px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,215,0,0.5);
+  z-index: 3;
+}

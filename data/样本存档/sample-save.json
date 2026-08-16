@@ -1,0 +1,772 @@
+{
+  "version": 4,
+  "createdAt": 1783053299327,
+  "lastSavedAt": 1783214573273,
+  "char": {
+    "name": "kuight",
+    "title": "管理员",
+    "avatar": "☣️",
+    "realmId": 112,
+    "exp": 58209145,
+    "lingshi": 3123499,
+    "daoxin": 290,
+    "streak": 1,
+    "bestStreak": 30,
+    "totalAnswered": 134,
+    "totalCorrect": 119,
+    "spiritRoot": null,
+    "artifacts": [
+      "jingang",
+      "mingxin",
+      "juling",
+      "huxin",
+      "qiankun",
+      "feijian",
+      "tianyan",
+      "luntai"
+    ],
+    "equippedArtifacts": [
+      "jingang"
+    ],
+    "skillsUsedToday": {},
+    "lastDailyAt": 0,
+    "hp": 3684,
+    "maxHp": 3684,
+    "mp": 1958,
+    "maxMp": 1958,
+    "atk": 736,
+    "def": 367,
+    "crit": 0.21000000000000008,
+    "equippedGear": {
+      "weapon": null,
+      "robe": null,
+      "focus": null,
+      "crown": null
+    },
+    "pet": {
+      "id": "pet_qilin",
+      "name": "麒麟灵嗣",
+      "emoji": "🦄",
+      "level": 1,
+      "exp": 0,
+      "atk": 25,
+      "hp": 100
+    },
+    "pills": {
+      "pill_peiyuan": 3,
+      "pill_lingqi": 1,
+      "pill_qixue": 1,
+      "pill_zhuji": 1
+    },
+    "gear": {},
+    "dailyStreak": 1,
+    "maxTowerFloor": 0,
+    "nightAnswered": 1,
+    "todayExpGain": 57884243,
+    "_v4StatsCatchup": true,
+    "_jgUsed": true
+  },
+  "flags": {
+    "chose_physics_first": true,
+    "tower_math_1_cleared": true,
+    "tower_english_1_cleared": true
+  },
+  "sects": {
+    "physics": {
+      "masteredManuals": [
+        "phy_m1",
+        "phy_m2"
+      ],
+      "defeatedQuests": [
+        "phyq01",
+        "phyq04",
+        "phyq03",
+        "phyq2466",
+        "phyq0097",
+        "phyq0129",
+        "phyq0028",
+        "phyq0022",
+        "phyq0027",
+        "phyq0065",
+        "phyq2473",
+        "phyq0119",
+        "phyq2400",
+        "phyq0155",
+        "phyq0158",
+        "phyq0152",
+        "phyq2416",
+        "phyq2513",
+        "phyq2560"
+      ],
+      "stars": {
+        "phyq01": 3,
+        "phyq04": 3,
+        "phyq03": 3,
+        "phyq2466": 3,
+        "phyq0097": 3,
+        "phyq0129": 3,
+        "phyq0155": 3,
+        "phyq0158": 3,
+        "phyq0028": 3,
+        "phyq0022": 3,
+        "phyq0027": 3,
+        "phyq0065": 3,
+        "phyq2473": 3,
+        "phyq0119": 3,
+        "phyq0152": 3,
+        "phyq2416": 3,
+        "phyq2400": 3,
+        "phyq2513": 3,
+        "phyq2528": 1,
+        "phyq2560": 3
+      },
+      "unlocked": true,
+      "proficiency": {
+        "phy_m1": 5,
+        "phy_m2": 2
+      },
+      "refineTimes": {
+        "phy_m1": 5,
+        "phy_m2": 2
+      },
+      "lastRefineAt": {
+        "phy_m1": 1783173907983,
+        "phy_m2": 1783165658041
+      },
+      "learnStage": {
+        "phy_m1": 4,
+        "phy_m2": 4
+      }
+    },
+    "chemistry": {
+      "masteredManuals": [
+        "chem_m7",
+        "chem_m16"
+      ],
+      "defeatedQuests": [
+        "chemq60",
+        "chemq62",
+        "chemq64",
+        "chemq66",
+        "chemq61",
+        "chemq65",
+        "chemq59",
+        "chemq63",
+        "chemq67",
+        "chemq1373",
+        "chemq3272",
+        "chemq1375"
+      ],
+      "stars": {
+        "chemq60": 3,
+        "chemq62": 3,
+        "chemq64": 3,
+        "chemq66": 3,
+        "chemq61": 3,
+        "chemq65": 3,
+        "chemq59": 3,
+        "chemq63": 3,
+        "chemq67": 3,
+        "chemq1373": 3,
+        "chemq3272": 3,
+        "chemq1375": 3
+      },
+      "unlocked": true,
+      "proficiency": {
+        "chem_m7": 5,
+        "chem_m16": 1
+      },
+      "refineTimes": {
+        "chem_m7": 5,
+        "chem_m16": 1
+      },
+      "lastRefineAt": {
+        "chem_m7": 1783155189070,
+        "chem_m16": 1783155365038
+      },
+      "learnStage": {
+        "chem_m7": 4,
+        "chem_m16": 4
+      }
+    },
+    "geography": {
+      "masteredManuals": [
+        "geo_m11",
+        "geo_m10",
+        "geo_m9",
+        "geo_m1"
+      ],
+      "defeatedQuests": [
+        "geoq94",
+        "geoq95",
+        "geoq88",
+        "geoq96",
+        "geoq98",
+        "geoq100",
+        "geoq103",
+        "geoq97",
+        "geoq99",
+        "geoq102",
+        "geoq101",
+        "geoq93",
+        "geoq77",
+        "geoq80",
+        "geoq78",
+        "geoq1126",
+        "geoq1165",
+        "geo_rq_00036",
+        "geo_rq_00035",
+        "geo_rq_00046"
+      ],
+      "stars": {
+        "geoq94": 3,
+        "geoq95": 3,
+        "geoq88": 3,
+        "geoq96": 3,
+        "geoq98": 3,
+        "geoq100": 3,
+        "geoq103": 3,
+        "geoq97": 3,
+        "geoq99": 3,
+        "geoq101": 3,
+        "geoq102": 3,
+        "geoq93": 3,
+        "geoq77": 3,
+        "geoq80": 3,
+        "geoq78": 3,
+        "geoq1157": 1,
+        "geoq1126": 3,
+        "geoq1165": 3,
+        "geo_rq_00035": 3,
+        "geo_rq_00036": 3,
+        "geo_rq_00046": 3
+      },
+      "unlocked": true,
+      "proficiency": {
+        "geo_m11": 6,
+        "geo_m10": 4,
+        "geo_m9": 5,
+        "geo_m1": 2
+      },
+      "refineTimes": {
+        "geo_m11": 6,
+        "geo_m10": 4,
+        "geo_m9": 5,
+        "geo_m1": 2
+      },
+      "lastRefineAt": {
+        "geo_m11": 1783165565207,
+        "geo_m10": 1783165552183,
+        "geo_m9": 1783165520927,
+        "geo_m1": 1783165504895
+      },
+      "learnStage": {
+        "geo_m11": 4,
+        "geo_m10": 4,
+        "geo_m9": 4,
+        "geo_m1": 4
+      }
+    },
+    "chinese": {
+      "masteredManuals": [
+        "chn_m1",
+        "chn_m2",
+        "chn_m9"
+      ],
+      "defeatedQuests": [],
+      "stars": {},
+      "unlocked": true,
+      "proficiency": {
+        "chn_m1": 4,
+        "chn_m2": 3
+      },
+      "refineTimes": {
+        "chn_m1": 4,
+        "chn_m2": 3
+      },
+      "lastRefineAt": {
+        "chn_m1": 1783165741159,
+        "chn_m2": 1783165751935
+      },
+      "learnStage": {
+        "chn_m1": 4,
+        "chn_m2": 4,
+        "chn_m9": 4
+      }
+    },
+    "math": {
+      "masteredManuals": [
+        "math_m4",
+        "math_m1"
+      ],
+      "defeatedQuests": [
+        "mq19",
+        "mq20",
+        "mq18",
+        "mq42",
+        "mq01",
+        "mq24",
+        "mathq_ext_m1_068",
+        "mathq_ext_m1_097",
+        "mathq_ext_m1_069"
+      ],
+      "stars": {
+        "mq19": 3,
+        "mq20": 3,
+        "mq18": 3,
+        "mq42": 3,
+        "mq01": 3,
+        "mq24": 3,
+        "mathq_ext_m1_097": 3,
+        "mathq_ext_m1_069": 3,
+        "mathq_ext_m1_068": 3
+      },
+      "unlocked": true,
+      "proficiency": {
+        "math_m4": 5,
+        "math_m1": 1
+      },
+      "refineTimes": {
+        "math_m4": 5,
+        "math_m1": 1
+      },
+      "lastRefineAt": {
+        "math_m4": 1783171237782,
+        "math_m1": 1783171219781
+      },
+      "learnStage": {
+        "math_m4": 4,
+        "math_m1": 4
+      }
+    },
+    "english": {
+      "masteredManuals": [
+        "en_m1",
+        "en_m7",
+        "en_m18",
+        "en_m2"
+      ],
+      "defeatedQuests": [
+        "en_q1_3",
+        "en_q1_6",
+        "en_q1_7",
+        "en_q1_5",
+        "en_qBoss1",
+        "en_q1_2",
+        "en_q1_1",
+        "en_q1_4",
+        "en_q2_1",
+        "en_q14_4",
+        "en_q11_2",
+        "en_q14_2",
+        "en_q13_2",
+        "en_q3_2",
+        "en_q9_4"
+      ],
+      "stars": {
+        "en_q1_3": 3,
+        "en_q1_6": 3,
+        "en_q1_7": 3,
+        "en_q1_5": 3,
+        "en_qBoss1": 3,
+        "en_q1_2": 3,
+        "en_q1_4": 3,
+        "en_q1_1": 3,
+        "en_q14_4": 3,
+        "en_q2_1": 3,
+        "en_q14_2": 3,
+        "en_q11_2": 3,
+        "en_q13_2": 3,
+        "en_q9_4": 3,
+        "en_q3_2": 3
+      },
+      "unlocked": true,
+      "proficiency": {
+        "en_m1": 4,
+        "en_m7": 3,
+        "en_m18": 3,
+        "en_m2": 4
+      },
+      "refineTimes": {
+        "en_m1": 4,
+        "en_m7": 3,
+        "en_m18": 3,
+        "en_m2": 4
+      },
+      "lastRefineAt": {
+        "en_m1": 1783181870919,
+        "en_m7": 1783165848295,
+        "en_m18": 1783165839799,
+        "en_m2": 1783181912097
+      },
+      "learnStage": {
+        "en_m1": 4,
+        "en_m7": 4,
+        "en_m18": 4,
+        "en_m2": 4
+      }
+    }
+  },
+  "heartDemons": [
+    {
+      "sect": "physics",
+      "qid": "phyq2528",
+      "wrongCount": 1,
+      "lastWrongAt": 1783182466011
+    }
+  ],
+  "achievements": {
+    "achv_first_step": {
+      "progress": 1,
+      "done": true,
+      "doneAt": 1783090181999
+    },
+    "achv_100_correct": {
+      "progress": 100,
+      "done": true,
+      "doneAt": 1783165961354
+    },
+    "achv_500_correct": {
+      "progress": 119,
+      "done": false
+    },
+    "achv_1000_correct": {
+      "progress": 119,
+      "done": false
+    },
+    "achv_streak10": {
+      "progress": 10,
+      "done": true,
+      "doneAt": 1783090181999
+    },
+    "achv_streak30": {
+      "progress": 30,
+      "done": true,
+      "doneAt": 1783147500352
+    },
+    "achv_streak50": {
+      "progress": 30,
+      "done": false
+    },
+    "achv_realm_lianqi_full": {
+      "progress": 30,
+      "done": true,
+      "doneAt": 1783092118609
+    },
+    "achv_realm_zhuji": {
+      "progress": 61,
+      "done": true,
+      "doneAt": 1783096028255
+    },
+    "achv_realm_jindan": {
+      "progress": 91,
+      "done": true,
+      "doneAt": 1783168866987
+    },
+    "achv_realm_yuanying": {
+      "progress": 112,
+      "done": false
+    },
+    "achv_realm_dujie": {
+      "progress": 112,
+      "done": false
+    },
+    "achv_realm_xian": {
+      "progress": 112,
+      "done": false
+    },
+    "achv_manual_10": {
+      "progress": 10,
+      "done": true,
+      "doneAt": 1783149485842
+    },
+    "achv_manual_30": {
+      "progress": 17,
+      "done": false
+    },
+    "achv_manual_60": {
+      "progress": 17,
+      "done": false
+    },
+    "achv_battle_100": {
+      "progress": 100,
+      "done": true,
+      "doneAt": 1783161539517
+    },
+    "achv_daoxin_full": {
+      "progress": 300,
+      "done": true,
+      "doneAt": 1783092366675
+    },
+    "achv_cave_max": {
+      "progress": 5,
+      "done": true,
+      "doneAt": 1783094400900
+    },
+    "achv_secret_20": {
+      "progress": 3,
+      "done": false
+    },
+    "achv_artifact_5": {
+      "progress": 5,
+      "done": true,
+      "doneAt": 1783155189070
+    },
+    "achv_gear_full": {
+      "progress": 0,
+      "done": false
+    },
+    "achv_pet_owner": {
+      "progress": 1,
+      "done": true,
+      "doneAt": 1783076725453
+    },
+    "achv_all_six": {
+      "progress": 3,
+      "done": false
+    },
+    "achv_no_mistake": {
+      "progress": 1,
+      "done": true,
+      "doneAt": 1783165504895
+    },
+    "achv_daily_7": {
+      "progress": 1,
+      "done": false
+    },
+    "achv_demon_slain": {
+      "progress": 1,
+      "done": true,
+      "doneAt": 1783096037459
+    },
+    "achv_spiritroot": {
+      "progress": 0,
+      "done": false
+    },
+    "achv_night_owl": {
+      "progress": 1,
+      "done": true,
+      "doneAt": 1783098562998
+    },
+    "achv_speed_learner": {
+      "progress": 500,
+      "done": true,
+      "doneAt": 1783086969872
+    },
+    "achv_refine_100": {
+      "progress": 57,
+      "done": false
+    }
+  },
+  "story": {
+    "currentChapter": "prologue",
+    "seenScenes": [
+      "prologue_01",
+      "physics_intro",
+      "math_intro",
+      "breakthrough_5",
+      "breakthrough_10",
+      "chemistry_intro",
+      "breakthrough_15",
+      "breakthrough_20",
+      "geography_intro",
+      "english_intro",
+      "chinese_intro"
+    ]
+  },
+  "cave": {
+    "level": 100,
+    "lastMeditateAt": 1783212900945
+  },
+  "daily": {
+    "date": "2026-07-05",
+    "tasks": [
+      {
+        "id": "manual_2",
+        "desc": "参悟 2 篇功法",
+        "target": 2,
+        "type": "manual_master",
+        "reward": {
+          "exp": 80,
+          "shi": 50
+        },
+        "progress": 0,
+        "claimed": false
+      },
+      {
+        "id": "che_5",
+        "desc": "丹鼎峰答对 5 题",
+        "target": 5,
+        "type": "sect_chemistry",
+        "reward": {
+          "exp": 60,
+          "shi": 40
+        },
+        "progress": 0,
+        "claimed": false
+      },
+      {
+        "id": "correct_10",
+        "desc": "答对 10 道题",
+        "target": 10,
+        "type": "correct",
+        "reward": {
+          "exp": 50,
+          "shi": 30
+        },
+        "progress": 2,
+        "claimed": false
+      }
+    ]
+  },
+  "secretRealm": {
+    "lastEnterAt": 1783212906979,
+    "events": [
+      {
+        "id": "demon",
+        "msg": "秘境深处遇到妖兽袭击！",
+        "detail": "惊险逃脱，道心-10",
+        "at": 1783212906979
+      },
+      {
+        "id": "pill",
+        "msg": "你在洞中拾得一枚培元丹！",
+        "detail": "道心+25, 修为+1711058, 培元丹×1",
+        "at": 1783181820771
+      },
+      {
+        "id": "gem",
+        "msg": "墙壁中嵌有一颗灵晶矿！",
+        "detail": "灵石+29850",
+        "at": 1783173777034
+      },
+      {
+        "id": "demon",
+        "msg": "秘境深处遇到妖兽袭击！",
+        "detail": "惊险逃脱，道心-10",
+        "at": 1783168847276
+      },
+      {
+        "id": "demon",
+        "msg": "秘境深处遇到妖兽袭击！",
+        "detail": "惊险逃脱，道心-10",
+        "at": 1783164445864
+      },
+      {
+        "id": "demon",
+        "msg": "秘境深处遇到妖兽袭击！",
+        "detail": "惊险逃脱，道心-10",
+        "at": 1783160435005
+      },
+      {
+        "id": "pill",
+        "msg": "你在洞中拾得一枚培元丹！",
+        "detail": "道心+20, 修为+504, 培元丹×1",
+        "at": 1783154754469
+      },
+      {
+        "id": "senior",
+        "msg": "你遇到一位前辈，他授你一诀……",
+        "detail": "获前辈赞赏，修为+880",
+        "at": 1783151139702
+      },
+      {
+        "id": "senior",
+        "msg": "你遇到一位前辈，他授你一诀……",
+        "detail": "获前辈赞赏，修为+745",
+        "at": 1783146972529
+      },
+      {
+        "id": "senior",
+        "msg": "你遇到一位前辈，他授你一诀……",
+        "detail": "获前辈赞赏，修为+698",
+        "at": 1783139310919
+      },
+      {
+        "id": "senior",
+        "msg": "你遇到一位前辈，他授你一诀……",
+        "detail": "获前辈赞赏，修为+676",
+        "at": 1783098563021
+      },
+      {
+        "id": "gem",
+        "msg": "墙壁中嵌有一颗灵晶矿！",
+        "detail": "灵石+341",
+        "at": 1783094404116
+      },
+      {
+        "id": "gem",
+        "msg": "墙壁中嵌有一颗灵晶矿！",
+        "detail": "灵石+248",
+        "at": 1783090479768
+      },
+      {
+        "id": "senior",
+        "msg": "你遇到一位前辈，他授你一诀……",
+        "detail": "获前辈赞赏，修为+108",
+        "at": 1783086382840
+      },
+      {
+        "id": "pill",
+        "msg": "你在洞中拾得一枚培元丹！",
+        "detail": "道心+20, 修为+40, 培元丹×1",
+        "at": 1783073958435
+      }
+    ],
+    "count": 3
+  },
+  "battle": {
+    "totalBattles": 152,
+    "victories": 17,
+    "defeats": 0,
+    "maxCombo": 30
+  },
+  "worldMap": {
+    "unlocked": {
+      "start": true,
+      "physics": true,
+      "chemistry": true,
+      "geography": true,
+      "chinese": true,
+      "math": true,
+      "english": true,
+      "tower": true
+    },
+    "visitedNodes": [
+      "math",
+      "tower"
+    ],
+    "currentNode": "tower"
+  },
+  "pets": {
+    "pet_baihu": {
+      "level": 1,
+      "exp": 0
+    },
+    "pet_qilin": {
+      "level": 1,
+      "exp": 0
+    }
+  },
+  "inventory": {
+    "pills": {},
+    "equipments": [],
+    "pets": []
+  },
+  "equipped": {
+    "weapon": null,
+    "robe": null,
+    "artifact": null,
+    "crown": null
+  },
+  "settings": {
+    "soundOn": false,
+    "autosave": true,
+    "compact": false,
+    "reducedMotion": false
+  },
+  "stats": {
+    "totalCorrect": 92,
+    "totalWrong": 13
+  }
+}

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+<title>问道修仙学院 · v4.3.5i</title>
+<meta name="description" content="边玩边学的二次元修仙 RPG 学习系统 · 语数英物化地六科 · 大地图 · 战斗 · 炼丹 · 灵植 · 灵宠 · 成就">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/style-v421-patch.css">
+<link rel="stylesheet" href="assets/style-v422-galgame.css">
+<link rel="stylesheet" href="assets/style-v423-cgfix.css">
+<link rel="stylesheet" href="assets/dynamic-scenes-v426.css">
+<link rel="stylesheet" href="assets/v435d-scene-bg.css">
+  <link rel="stylesheet" href="assets/v435j-fix.css">
+</head>
+<body>
+
+<div id="topbar-mount"></div>
+
+<div class="xx-container">
+
+  <!-- 楔子 -->
+  <div class="xx-section">
+    <div class="xx-immortal-box">
+      <div class="corner-tr"></div><div class="corner-bl"></div>
+      <div style="font-family:var(--xx-font-art);font-size:22px;color:var(--xx-gold);letter-spacing:4px;text-shadow:0 0 12px rgba(245,201,122,0.5);">
+        ⚔ 问道修仙学院 <span style="color:var(--xx-purple);font-size:13px;letter-spacing:2px;">v4.3.5i</span>
+      </div>
+      <div style="margin-top:8px;color:var(--xx-text-soft);font-size:14px;line-height:1.9;">
+        天地玄黄，宇宙洪荒。<br>
+        汝乃失忆转世修士，身负六卷天道残页之谜。<br>
+        参悟功法、斩妖证道，从 <b style="color:var(--xx-cyan);">炼气</b> → 炼体 → 筑基 → 金丹 → 元婴 → 化神 → 渡劫 → 炼虚 → 大乘 →
+        <b style="color:var(--xx-gold);">登仙</b>，而 <b style="color:var(--xx-pink);">「飞升大典」正是高考</b>。
+      </div>
+      <div style="margin-top:10px;font-size:13px;color:var(--xx-cyan);line-height:1.8;">
+        <b style="color:var(--xx-gold);">v4.3.5i · 硬伤全修补丁</b>（四宫格能开 · 洞府支持全题型 · 成就不再乱闪 · 怪物指数曲线 · 每个功法专属可视化）<br>
+        🔥 <b>真·回合制战斗强化</b>：连击→暴击→弱点符文→狂暴反击，不再是“选项填空文字游戏”<br>
+        🧠 <b>知识点关联图谱</b>：58 个 manual 已构建 60+ 条关联边（前置/应用/平行）<br>
+        ✨ <b>智能出题</b>：战斗自动抽题 = 60% 本经 + 25% 关联知识点 + 15% 回顾所学<br>
+        📚 <b>新增“融汇贯通练习”入口</b>：10 道题模拟高考综合大题思路<br>
+        ✅ v4.3.5e 所有竞态修复保留：崩溃已封死，宗门页已同步<br>
+        🌿 <b>真·炼丹房 & 灵植园</b>：主地图 / 八宫格入口全部接通，炼丹是三段小游戏，灵植园可种药<br>
+        🧘 <b>洞府彻底不产修为</b>：只回 HP / MP / 道心，每日 2 次上限，1 小时冷却<br>
+        🗺 <b>秘境奖励砍到 5%</b>：只作为收集材料/丹方的点缀，不再速通<br>
+        ⚔ <b>斩妖场每大境界 12 只妖</b>：3 凡阶 + 4 同阶 + 3 精英 + 2 妖王，头衔多样化<br>
+        📈 <b>怪物属性与玩家同曲线</b>：同阶 2-4 回合可解，妖王 10-15 回合，越阶 +3 起彻底禁入<br>
+        🏆 <b>成就实时校验</b>：修复一直显示 0 / 乱跳<br>
+        🔮 <b>战斗新增法术施展 UI</b>：学过功法即解锁法术，答题间隙可主动放技能<br>
+        🎨 <b>每个场所不同背景色调</b>：洞府蓝、斩妖赤、炼丹橙、灵植翠……
+      </div>
+      <div style="margin-top:16px;display:flex;flex-wrap:wrap;gap:8px;">
+        <button class="xx-btn xx-btn-primary" id="btnReplayProlog">📜 重看楔子</button>
+        <button class="xx-btn" id="btnExport">📥 导出存档</button>
+        <button class="xx-btn" id="btnImport">📤 导入存档</button>
+        <button class="xx-btn xx-btn-danger" id="btnReset">⚠ 重置游戏</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 角色 -->
+  <div class="xx-section">
+    <h2 class="xx-section-title">🧙 道心 · 我之修行</h2>
+    <div id="char-panel"></div>
+  </div>
+
+  <!-- 大地图 -->
+  <div class="xx-section">
+    <h2 class="xx-section-title">🗺 天下大势图 · 六大宗门 + 飞升宝塔</h2>
+    <div class="xx-section-sub">点击任一宗门进入修炼；<b style="color:var(--xx-gold);">飞升宝塔</b>需先突破金丹期。</div>
+    <div id="world-map-mount"></div>
+  </div>
+
+  <!-- 八宫格 -->
+  <div class="xx-section">
+    <h2 class="xx-section-title">🏯 修仙院落</h2>
+    <div class="xx-section-sub">洞府闭关恢复道心；秘境探索奇遇；<b style="color:var(--xx-gold);">丹药房</b>=真炼丹房；<b style="color:var(--xx-gold);">灵宠殿</b>入口内含灵植园。</div>
+    <div id="four-grid-mount"></div>
+  </div>
+
+  <!-- 宗门地图 -->
+  <div class="xx-section">
+    <h2 class="xx-section-title">⛩ 六大宗门 · 进入学习</h2>
+    <div class="xx-section-sub">每宗守护一卷天道真经。<b>先参悟功法（4阶段流程）→ 再挑战妖兽（每大境界 12 只）</b>。</div>
+    <div id="sect-map-mount"></div>
+  </div>
+
+  <!-- 心魔录 -->
+  <div class="xx-section">
+    <h2 class="xx-section-title">😈 心魔录 · 我之错题</h2>
+    <div class="xx-section-sub">每次答错都会化作心魔扎根识海，须重战克之，方可证道。</div>
+    <div id="demon-mount"></div>
+  </div>
+
+  <!-- 帮助 -->
+  <div class="xx-section">
+    <h2 class="xx-section-title">📜 修行指引</h2>
+    <div class="xx-immortal-box">
+      <div class="corner-tr"></div><div class="corner-bl"></div>
+      <div style="line-height:2;font-size:14px;color:var(--xx-text-soft);">
+        <b style="color:var(--xx-gold);">① 4阶段参悟功法</b> —
+        进入宗门 → 点击功法卡 → 依次完成【通览篇目 → 导引示例 → 首次试炼(3题) → 参悟成功】<br>
+        <b style="color:var(--xx-gold);">② 挑战妖兽</b> —
+        斩妖场每大境界 12 只：3 凡阶（低奖）+ 4 同阶（主刷）+ 3 精英 + 2 妖王；越阶 +3 起禁入。<br>
+        <b style="color:var(--xx-gold);">③ 真·炼丹房</b> —
+        主地图 <b>丹药房</b> 节点点开：选丹方 → 三段小游戏（投料/控火/出丹）→ 按总分给下品~极品。<br>
+        <b style="color:var(--xx-gold);">④ 灵植园</b> —
+        主地图 <b>灵宠殿</b> 节点点开：花灵石种苗，等待成熟采收，产出药材供炼丹。<br>
+        <b style="color:var(--xx-gold);">⑤ 洞府</b> —
+        <b style="color:var(--xx-cyan);">仅用于恢复</b>：HP/MP 全满 + 道心 +30~50，<b style="color:var(--xx-red);">不再产出修为</b>。<br>
+        <b style="color:var(--xx-gold);">⑥ 秘境</b> —
+        奖励砍到 5%，主要作为奇遇/装备/材料掉落场，不再速通。<br>
+        <b style="color:var(--xx-gold);">⑦ 战斗法术</b> —
+        战斗界面下方多出法术条，学过的功法自动解锁对应技能，消耗 MP + 冷却回合。<br>
+        <b style="color:var(--xx-gold);">⑧ 境界体系</b> —
+        炼气 → 炼体 → 筑基 → 金丹 → 元婴 → 化神 → 渡劫 → 炼虚 → 大乘 → <b style="color:var(--xx-gold);">登仙</b><br>
+        <b style="color:var(--xx-gold);">⑨ 存档救援</b> —
+        存档乱了？点楔子里的 <b>⚠ 重置游戏</b>；换设备用导出/导入 JSON 备份。
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center;color:var(--xx-text-dim);font-size:12px;margin-top:30px;letter-spacing:2px;">
+    《问道修仙学院》 v4.3.5e · 莆田四中限定 · 福建 2025-2026 学年
+    <br>道阻且长，行则将至。
+  </div>
+
+</div>
+
+<!-- ============ 核心脚本（顺序至关重要）============ -->
+<script src="assets/game-core.js"></script>
+<script src="assets/pixel-art.js"></script>
+<script src="assets/ui-components.js"></script>
+<script src="assets/story-engine.js"></script>
+<script src="assets/auto-visualizer.js"></script>
+<script src="assets/immersive-learning.js"></script>
+<script src="assets/side-dock.js"></script>
+<script src="assets/interactive-engine.js" onerror="window.IE={render:function(c){if(c)c.innerHTML=&quot;&quot;}}"></script>
+<script src="data/story-data.js"></script>
+
+<!-- 六科数据预加载 -->
+<script src="data/physics-manual.js"   onerror="window.PHYSICS_MANUALS=[]"></script>
+<script src="data/physics-bank.js"     onerror="window.PHYSICS_BANK=[]"></script>
+<script src="data/chemistry-manual.js" onerror="window.CHEMISTRY_MANUALS=[]"></script>
+<script src="data/chemistry-bank.js"   onerror="window.CHEMISTRY_BANK=[]"></script>
+<script src="data/geography-manual.js" onerror="window.GEOGRAPHY_MANUALS=[]"></script>
+<script src="data/geography-bank.js"   onerror="window.GEOGRAPHY_BANK=[]"></script>
+<script src="data/chinese-manual.js"   onerror="window.CHINESE_MANUALS=[]"></script>
+<script src="data/chinese-bank.js"     onerror="window.CHINESE_BANK=[]"></script>
+<script src="data/chinese-bank-supplement-v1.js" onerror="console.warn('chn-supp-v1 not found')"></script>
+<script src="data/math-manual.js"      onerror="window.MATH_MANUALS=[]"></script>
+<script src="data/math-bank.js"        onerror="window.MATH_BANK=[]"></script>
+<script src="data/english-manual.js"   onerror="window.ENGLISH_MANUALS=[]"></script>
+<script src="data/english-bank.js"     onerror="window.ENGLISH_BANK=[]"></script>
+<script src="data/fujian-bank-supplement.js"    onerror="window.FUJIAN_SUPPLEMENT=null"></script>
+<script src="data/fujian-bank-supplement-v2.js" onerror="window.FUJIAN_SUPPLEMENT_V2=null"></script>
+<script src="data/fujian-bank-supplement-v3.js" onerror="window.FUJIAN_SUPPLEMENT_V3=null"></script>
+<script src="data/fujian-bank-supplement-v4.js" onerror="window.FUJIAN_SUPPLEMENT_V4=null"></script>
+<script src="data/fujian-bank-supplement-v5.js" onerror="window.FUJIAN_SUPPLEMENT_V5=null"></script>
+<script src="data/fujian-bank-supplement-v6.js" onerror="window.FUJIAN_SUPPLEMENT_V6=null"></script>
+<script src="data/geography-bank-supplement-v7.js"      onerror="console.warn('geo-v7 not found')"></script>
+<script src="data/geography-bank-supplement-v7-part2.js" onerror="console.warn('geo-v7-p2 not found')"></script>
+<script src="data/content-pack-v426.js"         onerror="window.WENDAO_CONTENT=null"></script>
+<script src="assets/scene-engine-v426.js"       onerror="window.SceneEngine=null"></script>
+<script src="assets/battle-anim-v426.js"        onerror="window.BattleAnim=null"></script>
+<!-- ============================================================
+     v4.3.5i 重构后的加载顺序（已删除 13 个 hotfix/patch 引用）
+     以下一切都是真正的功能模块，不再包含 monkey-patch
+     已合并到 game-core.js / ui-components.js 的补丁：
+       balance-patch-v428 / curve-patch-v430 / v435e-safety /
+       v432/v433/v434/v435-remake/v435b/v435c/v435d-hotfix /
+       v435d-arena-fat / v436-integration / v435f-hotfix
+     ============================================================ -->
+<script src="assets/alchemy-lab-v435d.js"    onerror="console.warn('alchemy-lab not found')"></script>
+<script src="assets/spirit-garden-v435d.js"  onerror="console.warn('spirit-garden not found')"></script>
+<script src="assets/battle-skills-v435d.js"  onerror="console.warn('battle-skills not found')"></script>
+<script src="assets/knowledge-graph-v436.js" onerror="console.warn('kg not found')"></script>
+<script src="assets/smart-question-v436.js"  onerror="console.warn('sq not found')"></script>
+<script src="assets/battle-arena-v436.js"    onerror="console.warn('arena not found')"></script>
+
+
+<script>
+(function () {
+  Game.init();
+
+  function renderAll() {
+    document.getElementById('topbar-mount').innerHTML     = UI.renderTopbar();
+    document.getElementById('char-panel').innerHTML       = UI.renderCharPanel();
+    document.getElementById('four-grid-mount').innerHTML  = UI.renderFourGrid();
+    if (document.getElementById('world-map-mount') && UI.renderWorldMap) {
+      const wm = document.getElementById('world-map-mount');
+      wm.innerHTML = UI.renderWorldMap();
+      if (UI.bindWorldMap) UI.bindWorldMap(wm);
+    }
+    document.getElementById('sect-map-mount').innerHTML   = UI.renderSectMap();
+    document.getElementById('demon-mount').innerHTML      = UI.renderHeartDemons();
+    UI.bindFourGrid();
+  }
+  renderAll();
+
+  ['expChange','lingshiChange','daoxinChange','answer','manualMastered','refined','reset','imported','breakthrough','worldMapMove','gearChange','petChange','achievementUnlock']
+    .forEach(ev => Game.on(ev, renderAll));
+
+  Game.on('achievementUnlock', function(evt){
+    if (evt && evt.achv) UI.toast('🏆 成就解锁：'+evt.achv.name, 'success');
+  });
+
+  if (!Story.seen('prologue_01') && window.STORY_DATA) {
+    setTimeout(() => Story.play('prologue_01', STORY_DATA, renderAll), 400);
+  }
+
+  document.getElementById('btnReplayProlog').onclick = () => {
+    if (window.STORY_DATA) Story.play('prologue_01', STORY_DATA, renderAll);
+  };
+  document.getElementById('btnReset').onclick = () => {
+    UI.confirm('确定要重置游戏吗？所有修为、灵石、剧情进度都将清空！', () => {
+      Game.reset();
+      renderAll();
+      UI.toast('已重置，重新开始修仙之旅', 'info');
+      setTimeout(() => {
+        if (window.STORY_DATA) Story.play('prologue_01', STORY_DATA, renderAll);
+      }, 500);
+    });
+  };
+  document.getElementById('btnExport').onclick = async () => {
+    const json = Game.exportSave();
+    let copied = false;
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(json);
+        copied = true;
+      }
+    } catch (e) { copied = false; }
+    if (!copied) {
+      try {
+        const ta = document.createElement('textarea');
+        ta.value = json;
+        ta.style.position = 'fixed'; ta.style.top = '-9999px'; ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.focus(); ta.select();
+        copied = document.execCommand('copy');
+        document.body.removeChild(ta);
+      } catch (e) { copied = false; }
+    }
+    if (copied) {
+      UI.toast('✅ 存档已复制到剪贴板！可粘贴到备忘录/记事本/云盘保存', 'success', 4500);
+    } else {
+      UI.modal({
+        title:'📥 存档导出',
+        body: `<p style="font-size:12px;color:var(--xx-red);">⚠ 自动复制失败，请手动选中下方文本复制：</p>
+               <textarea readonly onclick="this.select()" style="width:100%;height:280px;background:var(--xx-bg-deep);color:var(--xx-text);border:1px solid var(--xx-border);border-radius:8px;padding:10px;font-family:monospace;font-size:12px;">${json.replace(/</g,'&lt;')}</textarea>`,
+        actions:[
+          { label:'再试一次复制', primary:true, onClick: async () => {
+            try {
+              const ta2 = document.querySelector('.xx-modal textarea');
+              if (ta2) { ta2.focus(); ta2.select(); const ok = document.execCommand('copy'); if (ok) UI.toast('✅ 已复制','success'); else UI.toast('请手动长按选中后复制','info'); }
+            } catch (e) { UI.toast('请手动长按选中后复制','info'); }
+            return false;
+          }},
+          { label:'关闭' }
+        ]
+      });
+    }
+  };
+  document.getElementById('btnImport').onclick = () => {
+    UI.modal({
+      title:'📤 存档导入',
+      body:`<p style="font-size:13px;color:var(--xx-text-soft);">粘贴备份的存档 JSON：</p>
+            <textarea id="importTA" style="width:100%;height:200px;background:var(--xx-bg-deep);color:var(--xx-text);border:1px solid var(--xx-border);border-radius:8px;padding:10px;font-family:monospace;font-size:12px;"></textarea>`,
+      actions:[
+        { label:'取消' },
+        { label:'导入', primary:true, onClick: () => {
+          const v = document.getElementById('importTA').value.trim();
+          if (!v) { UI.toast('请输入存档内容','error'); return false; }
+          if (Game.importSave(v)) { UI.toast('存档已导入','success'); renderAll(); }
+          else { UI.toast('存档格式错误','error'); return false; }
+        }}
+      ]
+    });
+  };
+})();
+</script>
+
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+<!-- v4.3.5j (based on v4.3.5i)-r2 视觉包恢复：这些补丁负责场景背景、CG、卡片装饰。逻辑部分已关闭。 -->
+<script src="assets/v435b-interactive.js" onerror="console.warn('v435b-interactive not found')"></script>
+<script src="assets/v435-remake.js"       onerror="console.warn('v435-remake not found (visual only)')"></script>
+<script src="assets/v435c-hotfix.js"      onerror="console.warn('v435c-scene-shell not found')"></script>
+<script src="assets/v435d-arena-fat.js"   onerror="console.warn('v435d-arena-fat not found')"></script>
+<script src="assets/v435j-fix.js"          onerror="console.warn('v435j-fix not found')"></script>
+
+<script src="assets/sound-effects-v437.js" onerror="console.warn('sfx v437 not found')"></script>
+<script src="assets/battle-arena-v437-balance.js" onerror="console.warn('arena balance v437 not found')"></script>
+
+<!-- v4.3.8 多玩法学习模式 -->
+<script src="data/deep-dive-fallback-v438.js" onerror="console.warn('dd-fallback v438 not found')"></script>
+<script src="data/deep-dive-math-v438.js" onerror="console.warn('dd-math v438 not found')"></script>
+<script src="data/deep-dive-physics-v438.js" onerror="console.warn('dd-physics v438 not found')"></script>
+<script src="assets/learning-modes-v438.js" onerror="console.warn('lm v438 not found')"></script>
+<script src="assets/learning-modes-loader-v438.js" onerror="console.warn('lm-loader v438 not found')"></script>
+
+
+<!-- v4.3.9 语文·选必下第一单元古诗词深度包 -->
+<script src="data/deep-dive-chinese-v439.js" onerror="console.warn('dd-chinese v439 not found')"></script>
+<script src="data/chinese-xbx-manual-v439.js" onerror="console.warn('chn-xbx-manual v439 not found')"></script>
+<script src="assets/learning-modes-chinese-patch-v439.js" onerror="console.warn('lm-cn-patch v439 not found')"></script>
+
+
+<!-- v4.4.0 化学包 + 雷劫 -->
+<script src="data/deep-dive-chemistry-v440.js" onerror="console.warn('dd-chem v440 not found')"></script>
+<script src="data/chemistry-xbx-manual-v440.js" onerror="console.warn('chem-xbx-manual v440 not found')"></script>
+<script src="assets/learning-modes-chemistry-patch-v440.js" onerror="console.warn('lm-chem-patch v440 not found')"></script>
+<script src="assets/thunder-tribulation-v440.js" onerror="console.warn('thunder v440 not found')"></script>
+
+</body>
+</html>

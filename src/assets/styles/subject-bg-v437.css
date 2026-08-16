@@ -1,0 +1,351 @@
+/* ===================================================================
+ * 《问道修仙学院》v4.3.7 · 学科页面背景补丁
+ *
+ * 修复内容：
+ *   ✓ 修正 v435d-scene-bg.css 里 physics/chemistry/geography 用错的
+ *     'assets/img/...' 路径（在 subjects/*.html 里 CSS 相对路径应是
+ *     '../assets/img/...'）
+ *   ✓ 为语文/数学/英语学科页面加上专属仙侠风背景
+ *   ✓ 为整个 body / .xx-container 加背景层
+ *   ✓ 六科各自使用不同色调 overlay + 装饰粒子
+ *
+ * 加载点：<link rel="stylesheet" href="../assets/subject-bg-v437.css">
+ *   在 dynamic-scenes-v426.css 之后引用即可
+ * =================================================================== */
+
+/* ============================================================
+ * 【1】学科页面 body 背景层（fixed，不随滚动）
+ * ============================================================ */
+body[data-sect="physics"],
+body[data-sect="chemistry"],
+body[data-sect="geography"],
+body[data-sect="chinese"],
+body[data-sect="math"],
+body[data-sect="english"] {
+  position: relative;
+  min-height: 100vh;
+  background-color: #0a0817;
+}
+body[data-sect]::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: var(--sect-bg-img);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  z-index: -2;
+  opacity: 0.85;
+  filter: brightness(0.65) saturate(1.15);
+}
+body[data-sect]::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: var(--sect-overlay, linear-gradient(135deg, rgba(20,15,45,0.4), rgba(15,10,35,0.75)));
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* ============================================================
+ * 【2】六科专属背景 + 主色（相对 subjects/ 目录）
+ * ============================================================ */
+
+/* ⚡ 物理·雷霆殿 —— 紫电 */
+body[data-sect="physics"] {
+  --sect-bg-img: url('../assets/img/scenes/sect_physics.jpg');
+  --sect-overlay: linear-gradient(135deg, rgba(48,26,88,0.45), rgba(20,10,52,0.82));
+  --sect-accent: #b288ff;
+  --sect-glow: rgba(178, 136, 255, 0.35);
+}
+
+/* ⚗ 化学·丹鼎峰 —— 赭红 */
+body[data-sect="chemistry"] {
+  --sect-bg-img: url('../assets/img/scenes/sect_chemistry.jpg');
+  --sect-overlay: linear-gradient(135deg, rgba(88,32,20,0.45), rgba(52,16,10,0.82));
+  --sect-accent: #ff9070;
+  --sect-glow: rgba(255, 144, 112, 0.35);
+}
+
+/* 🌏 地理·山河阁 —— 靛青 */
+body[data-sect="geography"] {
+  --sect-bg-img: url('../assets/img/scenes/sect_geography.jpg');
+  --sect-overlay: linear-gradient(135deg, rgba(18,62,88,0.45), rgba(10,32,52,0.82));
+  --sect-accent: #4dd0e1;
+  --sect-glow: rgba(77, 208, 225, 0.35);
+}
+
+/* 📜 语文·文渊阁 —— 卷轴纸黄 */
+body[data-sect="chinese"] {
+  --sect-bg-img: url('../assets/img/scenes/sect_chinese.jpg');
+  --sect-overlay: linear-gradient(135deg, rgba(72,52,26,0.45), rgba(40,26,10,0.82));
+  --sect-accent: #f5c97a;
+  --sect-glow: rgba(245, 201, 122, 0.35);
+}
+
+/* 🔢 数学·推衍宫 —— 星穹青蓝 */
+body[data-sect="math"] {
+  --sect-bg-img: url('../assets/img/scenes/sect_math.jpg');
+  --sect-overlay: linear-gradient(135deg, rgba(30,52,82,0.45), rgba(14,26,52,0.82));
+  --sect-accent: #6ed5e0;
+  --sect-glow: rgba(110, 213, 224, 0.35);
+}
+
+/* 🌐 英语·译灵堂 —— 幽紫 */
+body[data-sect="english"] {
+  --sect-bg-img: url('../assets/img/scenes/sect_english.jpg');
+  --sect-overlay: linear-gradient(135deg, rgba(52,30,82,0.45), rgba(28,14,52,0.82));
+  --sect-accent: #c084fc;
+  --sect-glow: rgba(192, 132, 252, 0.35);
+}
+
+/* ============================================================
+ * 【3】兼容 body 无 data-sect 时的 fallback（用页面 title 判断）
+ * ============================================================ */
+/* 语文·文渊阁 —— 通过 title/pathname 匹配 */
+body:not([data-sect]) {
+  --sect-bg-img: url('../assets/img/scene-immortal.jpg');
+  --sect-overlay: linear-gradient(135deg, rgba(20,15,45,0.4), rgba(15,10,35,0.75));
+}
+
+/* ============================================================
+ * 【4】container 添加半透明卡片背景，让文字更清晰
+ * ============================================================ */
+body[data-sect] .xx-container {
+  position: relative;
+  z-index: 1;
+}
+body[data-sect] .xx-section {
+  background: linear-gradient(180deg, rgba(14,10,32,0.60), rgba(14,10,32,0.75));
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  padding: 14px;
+  margin: 12px 0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35),
+              inset 0 1px 0 var(--sect-glow, rgba(245, 201, 122, 0.12));
+}
+
+/* 学科段 title 用主色描边 */
+body[data-sect] .xx-section-title {
+  color: var(--sect-accent, #f5c97a) !important;
+  text-shadow: 0 0 12px var(--sect-glow), 0 2px 8px rgba(0,0,0,0.5);
+}
+
+/* Tab 高亮用主色 */
+body[data-sect] .xx-tab.active,
+body[data-sect] .xx-tabs .xx-tab.active {
+  background: linear-gradient(135deg, var(--sect-accent), rgba(255,255,255,0.15)) !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 16px var(--sect-glow) !important;
+}
+
+/* Manual 卡片按主色描边 */
+body[data-sect] .manual-card {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.25s ease;
+  background: rgba(14, 10, 32, 0.55);
+  backdrop-filter: blur(4px);
+}
+body[data-sect] .manual-card:hover {
+  border-color: var(--sect-accent) !important;
+  box-shadow: 0 6px 18px var(--sect-glow), 0 2px 6px rgba(0,0,0,0.4);
+  transform: translateY(-2px);
+}
+body[data-sect] .manual-card.mastered {
+  border-color: var(--sect-accent) !important;
+  background: linear-gradient(135deg, rgba(14,10,32,0.6), var(--sect-glow)) !important;
+}
+
+/* ============================================================
+ * 【5】页面顶部装饰：光晕 & 粒子
+ * ============================================================ */
+body[data-sect]::before {
+  /* 已定义为背景 */
+}
+body[data-sect] .xx-topbar {
+  background: linear-gradient(90deg, rgba(14,10,32,0.85), rgba(20,15,45,0.75)) !important;
+  border-bottom: 1px solid var(--sect-glow) !important;
+  backdrop-filter: blur(8px);
+}
+
+/* 顶部飘动光带（六科主色） */
+body[data-sect] .xx-container::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -20%;
+  width: 140%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--sect-accent), transparent);
+  filter: blur(1px);
+  animation: v437-bg-sweep 8s linear infinite;
+  z-index: 5;
+  pointer-events: none;
+}
+@keyframes v437-bg-sweep {
+  0%   { transform: translateX(-30%); opacity: 0; }
+  50%  { opacity: 0.8; }
+  100% { transform: translateX(30%); opacity: 0; }
+}
+
+/* ============================================================
+ * 【6】学科专属粒子/装饰（伪元素）
+ * ============================================================ */
+
+/* 物理：漂浮公式 */
+body[data-sect="physics"] .xx-container::after {
+  content: 'F=ma  E=mc²  ∇×B  λ=h/p';
+  position: fixed;
+  right: 20px; top: 40vh;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  color: var(--sect-accent);
+  opacity: 0.10;
+  writing-mode: vertical-rl;
+  letter-spacing: 8px;
+  z-index: -1;
+  pointer-events: none;
+  animation: v437-drift 20s ease-in-out infinite;
+}
+
+/* 化学：漂浮分子式 */
+body[data-sect="chemistry"] .xx-container::after {
+  content: 'H₂O  NaCl  C₆H₁₂O₆  CO₂';
+  position: fixed;
+  right: 20px; top: 40vh;
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  color: var(--sect-accent);
+  opacity: 0.10;
+  writing-mode: vertical-rl;
+  letter-spacing: 8px;
+  z-index: -1;
+  pointer-events: none;
+  animation: v437-drift 20s ease-in-out infinite;
+}
+
+/* 地理：漂浮坐标 */
+body[data-sect="geography"] .xx-container::after {
+  content: '经度  纬度  气候  洋流  地形';
+  position: fixed;
+  right: 20px; top: 40vh;
+  font-size: 12px;
+  color: var(--sect-accent);
+  opacity: 0.10;
+  writing-mode: vertical-rl;
+  letter-spacing: 8px;
+  z-index: -1;
+  pointer-events: none;
+  animation: v437-drift 20s ease-in-out infinite;
+}
+
+/* 语文：漂浮诗句 */
+body[data-sect="chinese"] .xx-container::after {
+  content: '诗酒趁年华  文以载道  笔走龙蛇';
+  position: fixed;
+  right: 20px; top: 40vh;
+  font-family: 'STKaiti', 'KaiTi', serif;
+  font-size: 14px;
+  color: var(--sect-accent);
+  opacity: 0.12;
+  writing-mode: vertical-rl;
+  letter-spacing: 8px;
+  z-index: -1;
+  pointer-events: none;
+  animation: v437-drift 22s ease-in-out infinite;
+}
+
+/* 数学：漂浮公式 */
+body[data-sect="math"] .xx-container::after {
+  content: '∫f(x)dx  Σaₙ  lim  ∂/∂x  π  e';
+  position: fixed;
+  right: 20px; top: 40vh;
+  font-family: 'Cambria Math', 'Times New Roman', serif;
+  font-size: 13px;
+  color: var(--sect-accent);
+  opacity: 0.12;
+  writing-mode: vertical-rl;
+  letter-spacing: 8px;
+  z-index: -1;
+  pointer-events: none;
+  animation: v437-drift 22s ease-in-out infinite;
+}
+
+/* 英语：漂浮词汇 */
+body[data-sect="english"] .xx-container::after {
+  content: 'A B C ...  the  a  of  and';
+  position: fixed;
+  right: 20px; top: 40vh;
+  font-family: Georgia, serif;
+  font-size: 13px;
+  color: var(--sect-accent);
+  opacity: 0.10;
+  writing-mode: vertical-rl;
+  letter-spacing: 8px;
+  z-index: -1;
+  pointer-events: none;
+  animation: v437-drift 20s ease-in-out infinite;
+}
+
+@keyframes v437-drift {
+  0%, 100% { transform: translateY(0);    opacity: 0.06; }
+  50%      { transform: translateY(-30px); opacity: 0.16; }
+}
+
+/* ============================================================
+ * 【7】玻璃拟态卡片美化
+ * ============================================================ */
+body[data-sect] .quest-card,
+body[data-sect] .heart-demon-item,
+body[data-sect] .arena-card,
+body[data-sect] .v435d-arena-card {
+  background: rgba(18, 14, 38, 0.65) !important;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.25s ease;
+}
+body[data-sect] .quest-card:hover,
+body[data-sect] .arena-card:hover,
+body[data-sect] .v435d-arena-card:hover {
+  border-color: var(--sect-accent) !important;
+  box-shadow: 0 4px 14px var(--sect-glow);
+}
+
+/* ============================================================
+ * 【8】按钮与主色统一
+ * ============================================================ */
+body[data-sect] .xx-btn-primary {
+  background: linear-gradient(135deg, var(--sect-accent), rgba(255,255,255,0.10)) !important;
+  border-color: var(--sect-accent) !important;
+  box-shadow: 0 3px 10px var(--sect-glow) !important;
+}
+
+/* ============================================================
+ * 【9】响应式：手机端弱化装饰
+ * ============================================================ */
+@media (max-width: 640px) {
+  body[data-sect] .xx-container::after {
+    display: none;
+  }
+  body[data-sect]::before {
+    background-attachment: scroll;
+    opacity: 0.55;
+  }
+  body[data-sect] .xx-section {
+    padding: 10px;
+  }
+}
+
+/* ============================================================
+ * 【10】首页也用一张仙侠底图（额外，可选）
+ * ============================================================ */
+body[data-page="index"] {
+  background: url('../assets/img/scenes/splash_v435.jpg') center/cover no-repeat fixed, #0a0817;
+}
+body[data-page="index"]::before {
+  content: '';
+  position: fixed; inset: 0;
+  background: linear-gradient(180deg, rgba(10,8,23,0.55), rgba(10,8,23,0.90));
+  z-index: -1;
+}

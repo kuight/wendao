@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>wendao · main (治理工作树)</title>
+<style>
+  body { font-family: system-ui, -apple-system, sans-serif; max-width: 860px; margin: 48px auto; padding: 0 24px; line-height: 1.75; color: #222; background: #faf9f6; }
+  h1 { border-bottom: 3px solid #e5a00d; padding-bottom: 10px; }
+  h2 { margin-top: 32px; }
+  code { background: #f0efe9; padding: 2px 6px; border-radius: 4px; }
+  .card { border: 1px solid #e2ddd2; background: #fff; border-radius: 10px; padding: 16px 22px; margin: 14px 0; }
+  .warn { border-left: 4px solid #e5a00d; padding-left: 14px; color: #555; }
+  a { color: #b07d00; }
+</style>
+</head>
+<body>
+  <h1>问道（wendao）· main 治理工作树</h1>
+  <p>这是 <code>kuight/wendao</code> 仓库的根入口页。当前 <code>main</code> 分支是一个<strong>「源码 + 文档 + 历史归档」的治理工作树</strong>，并非单一可运行版本包。</p>
+
+  <div class="card">
+    <h2>这是什么</h2>
+    <ul>
+      <li>面向福建高中生的「修仙叙事 + 学科刷题 + 离线单机」学习游戏仓库</li>
+      <li>纯前端：HTML + CSS + Vanilla JS，无后端、无数据库，localStorage 本地存档</li>
+      <li>六科：物理 / 化学 / 地理 / 数学 / 语文 / 英语</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>如何运行</h2>
+    <p>选择 <code>archive/备份/</code> 中的完整版本包解压后直接打开 <code>index.html</code>，或在目录下执行：</p>
+    <pre><code>python3 -m http.server 8000</code></pre>
+  </div>
+
+  <div class="card warn">
+    <h2>版本真相（重要）</h2>
+    <p><strong>不要仅凭版本号判断先后。</strong> 详见 <a href="./docs/VERSION_TRUTH.md">docs/VERSION_TRUTH.md</a>。例如 <code>v4.3.5f</code> 的实际完成时间晚于 <code>v4.3.6-final</code>；<code>v2.2</code> 实测早于 <code>v3.0</code>；<code>原档合并</code> 与 <code>学习游戏记忆_root</code> 内容完全同源（Jaccard=1.0000）。</p>
+  </div>
+
+  <p><a href="./README.md">返回 README</a> · <a href="./docs/PHASE1_RELEASE_NOTES.md">Phase 1 发布说明</a></p>
+</body>
+</html>
