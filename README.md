@@ -2,12 +2,12 @@
 
 > 一个面向福建高中生、以**修仙叙事 + 学科刷题 + 离线单机**为核心体验的学习游戏仓库。
 
-![latest-archive](https://img.shields.io/badge/latest%20archive-v4.4.0-orange)
-![core-subjects](https://img.shields.io/badge/core-%E7%89%A9%E5%8C%96%E5%9C%B0%20%2B%20%E8%AF%AD%E6%95%B0%E8%8B%B1-blue)
-![stack](https://img.shields.io/badge/stack-HTML%20%2B%20CSS%20%2B%20Vanilla%20JS-black)
-![storage](https://img.shields.io/badge/storage-localStorage-green)
-![backend](https://img.shields.io/badge/backend-none-lightgrey)
-
+![cover](./src/assets/img/readme/cover.png)
+![core-subjects](./src/assets/img/readme/core-subjects.png)
+![stack](./src/assets/img/readme/stack.png)
+![storage](./src/assets/img/readme/storage.png)
+![backend](./src/assets/img/readme/backend.png)
+![overview](./src/assets/img/readme/overview.png)
 ---
 
 ## 一句话说明
