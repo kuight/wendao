@@ -4,7 +4,7 @@
 
 ![版本](https://img.shields.io/badge/版本-v4.3.7-blue)
 ![学科](https://img.shields.io/badge/学科-物化地-ff69b4)
-![阶段](https://img.shields.io/badge/阶段-一轮复习-冲刺高考-orange)
+![阶段](https://img.shields.io/badge/阶段-一轮复习&冲刺高考-orange)
 ![许可](https://img.shields.io/badge/许可-MIT-green)
 
 > ⚠️ 本仓库的部分历史文件（v4.3.5j、v4.3.6a、v4.3.7 完整 zip、部分历史文件.zip）尚未上传，将在后续 PR 中补齐。
