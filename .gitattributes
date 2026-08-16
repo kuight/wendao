@@ -1,0 +1,9 @@
+# wendao · .gitattributes
+# 与 docs/LFS_POLICY.md 第 2 节保持一致：当前不启用 Git LFS，所有资产均 < 25 MiB
+# 主要约束：文本编码与换行策略
+
+* text=auto eol=lf
+
+# 可随时启用 LFS 的 glob（注释保留，未激活）
+# *.psd filter=lfs diff=lfs merge=lfs -text
+# archive/*/8k-cg/*.png filter=lfs diff=lfs merge=lfs -text

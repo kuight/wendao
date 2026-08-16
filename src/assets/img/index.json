@@ -173,5 +173,40 @@
     "bytes": 144471,
     "path": "src/assets/img/cover/hero.jpg",
     "purpose": "cover"
+  },
+  "readme": {
+    "banner_count": 6,
+    "banners": [
+      {
+        "id": "01",
+        "title": "Latest archive banner",
+        "path": "src/assets/img/readme/01-latest-archive.png"
+      },
+      {
+        "id": "02",
+        "title": "Core subjects banner",
+        "path": "src/assets/img/readme/02-core-subjects.png"
+      },
+      {
+        "id": "03",
+        "title": "Code-Body-Mind stack banner",
+        "path": "src/assets/img/readme/03-stack.png"
+      },
+      {
+        "id": "04",
+        "title": "Storage banner",
+        "path": "src/assets/img/readme/04-storage.png"
+      },
+      {
+        "id": "05",
+        "title": "Pure-frontend banner",
+        "path": "src/assets/img/readme/05-backend.png"
+      },
+      {
+        "id": "06",
+        "title": "Architecture overview banner",
+        "path": "src/assets/img/readme/06-architecture.png"
+      }
+    ]
   }
 }
