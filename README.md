@@ -2,12 +2,12 @@
 
 > 一个面向福建高中生、以**修仙叙事 + 学科刷题 + 离线单机**为核心体验的学习游戏仓库。
 
-![cover](./src/assets/img/readme/cover.png)
-![core-subjects](./src/assets/img/readme/core-subjects.png)
-![stack](./src/assets/img/readme/stack.png)
-![storage](./src/assets/img/readme/storage.png)
-![backend](./src/assets/img/readme/backend.png)
-![overview](./src/assets/img/readme/overview.png)
+![cover](./src/assets/img/readme/01-latest-archive.png)
+![core-subjects](./src/assets/img/readme/02-core-subjects.png)
+![stack](./src/assets/img/readme/03-stack.png)
+![storage](./src/assets/img/readme/04-storage.png)
+![backend](./src/assets/img/readme/05-backend.png)
+![overview](./src/assets/img/readme/06-architecture.png)
 ---
 
 ## 一句话说明

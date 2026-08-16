@@ -1,5 +1,5 @@
-# SHA-256 manifest generated from GitHub REST git tree
-# Source commit: f32c1c7a641cdc4fc6527269b7bf9a5f35d835f7
+# SHA-256 fingerprints for wendao image assets (35 unique PNG/JPG)
+# Generated 2026-08-16 by steward/phase5-metadata-coherence
 # Format: <sha256>  <bytes>  <relative_path>  <category>
 6dbfe3146fcb1fbeb2d4b06d163af21e7a76d5c3f380ecd0ceafa64cdb9f7db5  103815  src/assets/img/character/shifu.jpg  category=character
 e9b56d186a786f68cf473617a02fe3dd6795db592cd9b8b6459a7b7afa7c73de  231792  src/assets/img/character/shijie.jpg  category=character
