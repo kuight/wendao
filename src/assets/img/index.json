@@ -1,0 +1,91 @@
+{
+  "images": [
+    {
+      "basename": "all_assets_sheet.png",
+      "category": "cover",
+      "md5": "a84c3af35efaf9e411f395d0de6da3c9",
+      "bytes": 805938,
+      "dest": "src/assets/img/cover/all_assets_sheet.png",
+      "source": "tmp_extract/wendao/assets/img/all_assets_sheet.png"
+    },
+    {
+      "basename": "contact.png",
+      "category": "cover",
+      "md5": "6629c14f2a5a862c0bbc371cb5825805",
+      "bytes": 2144191,
+      "dest": "src/assets/img/cover/contact.png",
+      "source": "tmp_extract/wendao/assets/img/contact.png"
+    },
+    {
+      "basename": "hero.jpg",
+      "category": "cover",
+      "md5": "de1eea58c5a374fe5792acc8fb9ddd0f",
+      "bytes": 144471,
+      "dest": "src/assets/img/cover/hero.jpg",
+      "source": "tmp_extract/wendao/assets/img/hero.jpg"
+    },
+    {
+      "basename": "scene-chemistry.jpg",
+      "category": "scene",
+      "md5": "25c2d5172a4b7e4ffefefde8fe5939e2",
+      "bytes": 195254,
+      "dest": "src/assets/img/scene/scene-chemistry.jpg",
+      "source": "tmp_extract/wendao/assets/img/scene-chemistry.jpg"
+    },
+    {
+      "basename": "scene-illum.jpg",
+      "category": "scene",
+      "md5": "43a8543cdb058180027e7e19e6bc0a7f",
+      "bytes": 141243,
+      "dest": "src/assets/img/scene/scene-illum.jpg",
+      "source": "tmp_extract/wendao/assets/img/scene-illum.jpg"
+    },
+    {
+      "basename": "scene-immortal.jpg",
+      "category": "scene",
+      "md5": "bb90869e856f1b6f38abd867fd220fe3",
+      "bytes": 217931,
+      "dest": "src/assets/img/scene/scene-immortal.jpg",
+      "source": "tmp_extract/wendao/assets/img/scene-immortal.jpg"
+    },
+    {
+      "basename": "scene-physics.jpg",
+      "category": "scene",
+      "md5": "4c95a96c53da5944111d0fa6e05c4827",
+      "bytes": 206076,
+      "dest": "src/assets/img/scene/scene-physics.jpg",
+      "source": "tmp_extract/wendao/assets/img/scene-physics.jpg"
+    },
+    {
+      "basename": "shifu.jpg",
+      "category": "character",
+      "md5": "286b8681795cf298bceb5b33575f6c41",
+      "bytes": 103815,
+      "dest": "src/assets/img/character/shifu.jpg",
+      "source": "tmp_extract/wendao/assets/img/shifu.jpg"
+    },
+    {
+      "basename": "shijie.jpg",
+      "category": "character",
+      "md5": "197959f41f4c228436101fd9437c86b0",
+      "bytes": 231792,
+      "dest": "src/assets/img/character/shijie.jpg",
+      "source": "tmp_extract/wendao/assets/img/shijie.jpg"
+    },
+    {
+      "basename": "shimei.jpg",
+      "category": "character",
+      "md5": "4edeebb4ae936e2a9c8a31d95409bf26",
+      "bytes": 127305,
+      "dest": "src/assets/img/character/shimei.jpg",
+      "source": "tmp_extract/wendao/assets/img/shimei.jpg"
+    }
+  ],
+  "counts": {
+    "cover": 3,
+    "scene": 4,
+    "character": 3,
+    "ui": 0,
+    "emote": 0
+  }
+}
