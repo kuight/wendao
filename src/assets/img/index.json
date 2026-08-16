@@ -1,91 +1,177 @@
 {
-  "images": [
-    {
-      "basename": "all_assets_sheet.png",
-      "category": "cover",
-      "md5": "a84c3af35efaf9e411f395d0de6da3c9",
-      "bytes": 805938,
-      "dest": "src/assets/img/cover/all_assets_sheet.png",
-      "source": "tmp_extract/wendao/assets/img/all_assets_sheet.png"
-    },
-    {
-      "basename": "contact.png",
-      "category": "cover",
-      "md5": "6629c14f2a5a862c0bbc371cb5825805",
-      "bytes": 2144191,
-      "dest": "src/assets/img/cover/contact.png",
-      "source": "tmp_extract/wendao/assets/img/contact.png"
-    },
-    {
-      "basename": "hero.jpg",
-      "category": "cover",
-      "md5": "de1eea58c5a374fe5792acc8fb9ddd0f",
-      "bytes": 144471,
-      "dest": "src/assets/img/cover/hero.jpg",
-      "source": "tmp_extract/wendao/assets/img/hero.jpg"
-    },
-    {
-      "basename": "scene-chemistry.jpg",
-      "category": "scene",
-      "md5": "25c2d5172a4b7e4ffefefde8fe5939e2",
-      "bytes": 195254,
-      "dest": "src/assets/img/scene/scene-chemistry.jpg",
-      "source": "tmp_extract/wendao/assets/img/scene-chemistry.jpg"
-    },
-    {
-      "basename": "scene-illum.jpg",
-      "category": "scene",
-      "md5": "43a8543cdb058180027e7e19e6bc0a7f",
-      "bytes": 141243,
-      "dest": "src/assets/img/scene/scene-illum.jpg",
-      "source": "tmp_extract/wendao/assets/img/scene-illum.jpg"
-    },
-    {
-      "basename": "scene-immortal.jpg",
-      "category": "scene",
-      "md5": "bb90869e856f1b6f38abd867fd220fe3",
-      "bytes": 217931,
-      "dest": "src/assets/img/scene/scene-immortal.jpg",
-      "source": "tmp_extract/wendao/assets/img/scene-immortal.jpg"
-    },
-    {
-      "basename": "scene-physics.jpg",
-      "category": "scene",
-      "md5": "4c95a96c53da5944111d0fa6e05c4827",
-      "bytes": 206076,
-      "dest": "src/assets/img/scene/scene-physics.jpg",
-      "source": "tmp_extract/wendao/assets/img/scene-physics.jpg"
-    },
-    {
-      "basename": "shifu.jpg",
-      "category": "character",
-      "md5": "286b8681795cf298bceb5b33575f6c41",
-      "bytes": 103815,
-      "dest": "src/assets/img/character/shifu.jpg",
-      "source": "tmp_extract/wendao/assets/img/shifu.jpg"
-    },
-    {
-      "basename": "shijie.jpg",
-      "category": "character",
-      "md5": "197959f41f4c228436101fd9437c86b0",
-      "bytes": 231792,
-      "dest": "src/assets/img/character/shijie.jpg",
-      "source": "tmp_extract/wendao/assets/img/shijie.jpg"
-    },
-    {
-      "basename": "shimei.jpg",
-      "category": "character",
-      "md5": "4edeebb4ae936e2a9c8a31d95409bf26",
-      "bytes": 127305,
-      "dest": "src/assets/img/character/shimei.jpg",
-      "source": "tmp_extract/wendao/assets/img/shimei.jpg"
-    }
-  ],
-  "counts": {
-    "cover": 3,
-    "scene": 4,
-    "character": 3,
-    "ui": 0,
-    "emote": 0
+  "09863d9fc6319e04f98f5593226b24bb": {
+    "bytes": 47889,
+    "path": "src/assets/img/emote/love.png",
+    "purpose": "emote"
+  },
+  "197959f41f4c228436101fd9437c86b0": {
+    "bytes": 231792,
+    "path": "src/assets/img/character/shijie.jpg",
+    "purpose": "character"
+  },
+  "25c2d5172a4b7e4ffefefde8fe5939e2": {
+    "bytes": 195254,
+    "path": "src/assets/img/scene/scene-chemistry.jpg",
+    "purpose": "scene_toplevel"
+  },
+  "286b8681795cf298bceb5b33575f6c41": {
+    "bytes": 103815,
+    "path": "src/assets/img/character/shifu.jpg",
+    "purpose": "character"
+  },
+  "2db9928a5d4aeaebe7ff9b28d8548861": {
+    "bytes": 203269,
+    "path": "src/assets/img/scene/sub-english.jpg",
+    "purpose": "scene_subdir"
+  },
+  "305d27e558254c93c0ff80f5772b9e75": {
+    "bytes": 148146,
+    "path": "src/assets/img/scene/arena.jpg",
+    "purpose": "scene_subdir"
+  },
+  "3688166d64185270d4e7bed3e9f0be41": {
+    "bytes": 31263,
+    "path": "src/assets/img/emote/peek.png",
+    "purpose": "emote"
+  },
+  "3842c2a02785a791ff368216d05e06e7": {
+    "bytes": 1209342,
+    "path": "src/assets/img/scene/cave_moonlit.png",
+    "purpose": "scene_subdir"
+  },
+  "3a94cfc877ef1e9e7032f5d4bd426623": {
+    "bytes": 44967,
+    "path": "src/assets/img/emote/plead.png",
+    "purpose": "emote"
+  },
+  "3bba8e21eee20b8e05b460781dd70af6": {
+    "bytes": 203731,
+    "path": "src/assets/img/scene/cave.jpg",
+    "purpose": "scene_subdir"
+  },
+  "3f87fdb32fba6d3345813344ec56c4bc": {
+    "bytes": 43728,
+    "path": "src/assets/img/emote/angry.png",
+    "purpose": "emote"
+  },
+  "43a8543cdb058180027e7e19e6bc0a7f": {
+    "bytes": 141243,
+    "path": "src/assets/img/scene/scene-illum.jpg",
+    "purpose": "scene_toplevel"
+  },
+  "4afa9bfa9f2b6fc7f7abc75d7a1a2b18": {
+    "bytes": 174857,
+    "path": "src/assets/img/scene/alchemy.jpg",
+    "purpose": "scene_subdir"
+  },
+  "4c95a96c53da5944111d0fa6e05c4827": {
+    "bytes": 206076,
+    "path": "src/assets/img/scene/scene-physics.jpg",
+    "purpose": "scene_toplevel"
+  },
+  "4edeebb4ae936e2a9c8a31d95409bf26": {
+    "bytes": 127305,
+    "path": "src/assets/img/character/shimei.jpg",
+    "purpose": "character"
+  },
+  "5507592a01bedfe6c06be22418781537": {
+    "bytes": 42333,
+    "path": "src/assets/img/emote/tea.png",
+    "purpose": "emote"
+  },
+  "58c00d4299e2a5f0327e8c539dae1e46": {
+    "bytes": 46251,
+    "path": "src/assets/img/emote/thumbsup.png",
+    "purpose": "emote"
+  },
+  "598ebd29b2ec9bc0529a07706b76a50e": {
+    "bytes": 41095,
+    "path": "src/assets/img/emote/smug.png",
+    "purpose": "emote"
+  },
+  "6629c14f2a5a862c0bbc371cb5825805": {
+    "bytes": 2144191,
+    "path": "src/assets/img/cover/contact.png",
+    "purpose": "cover"
+  },
+  "674edf08cd789b04cca3bf589b8bf9ba": {
+    "bytes": 222005,
+    "path": "src/assets/img/scene/sub-chemistry.jpg",
+    "purpose": "scene_subdir"
+  },
+  "734099a3202ecfff748d6133c1aebdfb": {
+    "bytes": 35207,
+    "path": "src/assets/img/emote/work.png",
+    "purpose": "emote"
+  },
+  "76499d6b6e8d8b1a8a97e9b6e7f40913": {
+    "bytes": 182287,
+    "path": "src/assets/img/scene/sub-chinese.jpg",
+    "purpose": "scene_subdir"
+  },
+  "7a2c81a707768623ebce4d8c56a7b594": {
+    "bytes": 209814,
+    "path": "src/assets/img/scene/sub-geography.jpg",
+    "purpose": "scene_subdir"
+  },
+  "7b7e6dfd3600f15b56739433cfb15dfc": {
+    "bytes": 221870,
+    "path": "src/assets/img/scene/sub-math.jpg",
+    "purpose": "scene_subdir"
+  },
+  "7ca5c149ea328000d7a5b1b25783fd07": {
+    "bytes": 1270720,
+    "path": "src/assets/img/scene/chem_furnace.png",
+    "purpose": "scene_subdir"
+  },
+  "8804d4bfdb280b0e781408ce55a4650f": {
+    "bytes": 1232781,
+    "path": "src/assets/img/scene/geo_terrace.png",
+    "purpose": "scene_subdir"
+  },
+  "8feba13b65555e07848a709e91d8fe36": {
+    "bytes": 217547,
+    "path": "src/assets/img/scene/main_hall.jpg",
+    "purpose": "scene_subdir"
+  },
+  "943256c9703df9ba55252d68ee7d25de": {
+    "bytes": 41924,
+    "path": "src/assets/img/emote/deadpan.png",
+    "purpose": "emote"
+  },
+  "a84c3af35efaf9e411f395d0de6da3c9": {
+    "bytes": 805938,
+    "path": "src/assets/img/cover/all_assets_sheet.png",
+    "purpose": "cover"
+  },
+  "ab1ae235c514c061425020eb3ba16c29": {
+    "bytes": 202366,
+    "path": "src/assets/img/scene/garden.jpg",
+    "purpose": "scene_subdir"
+  },
+  "b7a42f3bc0422535408faffec2628c3b": {
+    "bytes": 1178055,
+    "path": "src/assets/img/scene/scroll_hall.png",
+    "purpose": "scene_subdir"
+  },
+  "bb90869e856f1b6f38abd867fd220fe3": {
+    "bytes": 217931,
+    "path": "src/assets/img/scene/scene-immortal.jpg",
+    "purpose": "scene_toplevel"
+  },
+  "c35935ebfb6c706b7e74143ba1629313": {
+    "bytes": 158767,
+    "path": "src/assets/img/scene/sub-physics.jpg",
+    "purpose": "scene_subdir"
+  },
+  "ce513ab0f564fe5013b6439a49f05503": {
+    "bytes": 1058306,
+    "path": "src/assets/img/scene/splash_v435.jpg",
+    "purpose": "scene_subdir"
+  },
+  "de1eea58c5a374fe5792acc8fb9ddd0f": {
+    "bytes": 144471,
+    "path": "src/assets/img/cover/hero.jpg",
+    "purpose": "cover"
   }
 }
