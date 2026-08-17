@@ -99,3 +99,6 @@ When kuight replies with "干" / "修" / "合了" + follow-on, do NOT ask "shall
 Every SHA, byte size, PR number, file path in this archive was fetched live before being written. The repo at this moment is the truth. The text in this archive is a snapshot. Do not backfill from memory under any circumstance.
 
 — end of lessons. (15 rules; L16+ will only be added after a NEW kind of failure.)
+
+## L16 — rebase-then-replace over force-push
+When a stacked PR sits in `mergeable_state=dirty` due to upstream changes already merged into base, do NOT force-push the stale branch. Open a fresh branch off the new base, recreate the diff using current blob SHAs, and close the original PR as superseded. This avoids history rewrite and preserves audit trail.

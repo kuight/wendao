@@ -567,3 +567,10 @@ Two sub-stages, chronological on main HEAD at archive time.
 - removed: archive/v4.4.0/ (0-blob dir)
 - added: src/index.html (~6.6 KB offline portal)
 - net: -10 blob
+
+
+## Phase 9 — manifest rebase (PRNEW_A, supersedes stale #13)
+- Rebased onto current main HEAD `cfcc62d5…` after the cascade merge of #10/#11/#12.
+- Dropped 9 entries from MANIFEST.sha256 (sha present only in manifest, not in tree).
+- Surviving manifest entries: 26.
+- Stale #13 closed as superseded; lessons preserved in steward/04_LESSONS.md.
