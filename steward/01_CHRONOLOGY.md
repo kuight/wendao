@@ -81,3 +81,6 @@ Stale PR #13 was rebased onto main cfcc62d5… after cascade merge of #10/#11/#1
 
 ## Phase 9 FINAL — cascade + retry
 PR #10/#11/#12 merged first (squash). Stacked PRs #13 and #14 hit conflict; recovered via PRNEW_A (manifest rebase) and PRNEW_B (portal live). Net result: repo is feature-complete per the original 7-phase governance spec except for optional Phase 10 backlog (archive/_legacy/备份 dir empty, README banner CDN pinning, MANIFEST SHA-verification CI workflow).
+
+## Phase 10 (b) — README banner scan respin
+Stale #19 branch ref (steward/phase10-readme-banner-pin) returned 422 on PATCH after #18 merged. Opened PRNEW on a fresh branch steward/phase10-readme-banner-respin with the same documentation-only content on top of main 5fa68b55de1b280cafbb6219f456886c324e7b1f.

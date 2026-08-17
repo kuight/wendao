@@ -587,3 +587,8 @@ src/index.html returned HTTP 200 as of main HEAD 065678d41bf46fe3c820de8e0196368
 
 ## Phase 10 (a) - empty archive/_legacy/_backup dir verified (PR18)
 - HEAD `fd10458b95`, backup_dir_present=False; no blobs under path. Documentation-only.
+
+## Phase 10 (b) — README banner scan zero candidates (PRNEW, supersedes stale #19)
+- Base: main 5fa68b55de1b280cafbb6219f456886c324e7b1f.
+- Broader regex scan (![], `<img src>`, `<picture>`, `data-src`, srcset) yields REPLACED=0 / SKIPPED=0.
+- Documentation-only patch.

@@ -48,3 +48,4 @@ None. The 6 categories (`A`..`L`) of deep-scan defects are all closed during Pha
 | 8 | (PR pending) | c9e42502 | vacuum + portal | 10 archive delete + 1 portal add | (pending this PR) | G12 + G13 + G14 |
 | Phase 9 — portal live | PRNEW_B | e6490e45c5f514393d602ebfb5b16e4cbbbe3545 | merged |
 | Phase 10 — backlog | TBD | n/a | open | (a) DONE - PR18 (empty dir confirmed)|
+| Phase 10 (b) | DONE | PRNEW — README banner scan zero candidates (rebase via fresh branch) |

@@ -14,3 +14,4 @@
 {"ts": "2026-08-17T03:26:29.450795Z", "phase": "P9c", "kind": "portal_live", "new_pr": "PRNEW_B", "portal_http": 200, "base": "065678d41bf46fe3c820de8e0196368b3536dd7a"}
 {"ts": "2026-08-17T03:26:38.535602Z", "phase": "P9d", "kind": "governance_finalize", "cascade": [10, 11, 12], "retry": ["PRNEW_A", "PRNEW_B"], "finalize": "PRNEW_C", "final_main_head": "e6490e45c5f514393d602ebfb5b16e4cbbbe3545"}
 {"ts": "2026-08-17T03:33:49Z", "phase": "P10a", "action": "drop_empty_dir", "path": "archive/_legacy/_backup", "new_pr": "PR18", "base": "fd10458b95ef4e887d591b1c4c2913813afd987b", "backup_dir_present": false}
+{"ts":"2026-08-17T17:06:24Z","phase":"P10b-respin","kind":"readme_banner_pin_respin","replaced":0,"skipped":0,"pr":"PRNEW","supersedes":19,"reason":"old branch ref 422","base":"5fa68b55de1b280cafbb6219f456886c324e7b1f"}
