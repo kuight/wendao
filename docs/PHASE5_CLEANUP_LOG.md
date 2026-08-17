@@ -552,3 +552,18 @@ Removed paths (41):
 - path: archive/备份/问道修仙学院-v4.1-hotfix.zip
   size: 324375
   sha: 11bd19886c46dc6a37ca93cb7d3184cd044f7c1a
+
+## Phase 8 (vacuum + portal) — 2026-08-17T03:10:55Z
+
+Two sub-stages, chronological on main HEAD at archive time.
+
+### 8.1 zero-regression (PR #10, commit )
+- README.md: 6 banner refs .png → .jpg
+- steward/03_PHASE_STATUS.md: Phase 7 PR placeholder → 9
+- 0 add/delete, 2 modified
+
+### 8.2 vacuum + portal (PR #11, commit )
+- removed: archive/_legacy/redundant/wendao-v4.3.{5f,5g,5h,5i,5j,6,6-final,6a,6b-p7}/* (10 blob)
+- removed: archive/v4.4.0/ (0-blob dir)
+- added: src/index.html (~6.6 KB offline portal)
+- net: -10 blob

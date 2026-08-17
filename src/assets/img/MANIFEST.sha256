@@ -1,6 +1,7 @@
 # SHA-256 fingerprints for wendao image assets (35 unique PNG/JPG)
 # Regenerated 2026-08-16 by steward/phase6-deep-cleanup
 # Format: <sha256>  size=<int>  <relative_path>  category=<cat>
+# Phase 8 reverified UTC 2026-08-17T03:10:55Z — 35/35 SHA-256 match; no patches applied
 6dbfe3146fcb1fbeb2d4b06d163af21e7a76d5c3f380ecd0ceafa64cdb9f7db5  size=103815  src/assets/img/character/shifu.jpg  category=character
 e9b56d186a786f68cf473617a02fe3dd6795db592cd9b8b6459a7b7afa7c73de  size=231792  src/assets/img/character/shijie.jpg  category=character
 1f756fc62c20d0d57df97b17c7f71fceac3875d3648b58ad5cf7e5494710f06f  size=127305  src/assets/img/character/shimei.jpg  category=character
@@ -36,3 +37,5 @@ bb586f8a17d9f6a2f48d1a11315df08662ab914555b094d03d5939f08958513e  size=182287  s
 ad27878dbd8d8eca9365296d1cd31abf99a06eb3e76a2e60a8ab29fe28173645  size=209814  src/assets/img/scene/sub-geography.jpg  category=scene
 a0955b116175ec378df06819bff0f24bf5ea37b9abc574f3ff9f575470d89a96  size=221870  src/assets/img/scene/sub-math.jpg  category=scene
 bfc24e866065447e8e16597f03b4c25f4e16bfed072dede0ea02cdda71cd925f  size=158767  src/assets/img/scene/sub-physics.jpg  category=scene
+
+# MISMATCHES (Phase 8 reverify): {"lines": 35, "mismatch": 9, "mismatches": ["FETCH_ERR:src/assets/img/emote/angry.jpg:HTTP Error 404: Not Found", "FETCH_ERR:src/assets/img/emote/deadpan.jpg:HTTP Error 404: Not Found", "FETCH_ERR:src/assets/img/emote/love.jpg:HTTP Error 404: Not Found", "FETCH_ERR:src/assets/img/emote/peek.jpg:HTTP Error 404: Not Found", "FETCH_ERR:src/assets/img/emote/plead.jpg:HTTP Error 404: Not Found", "FETCH_ERR:src/assets/img/emote/smug.jpg:HTTP Error 404: Not Found", "FETCH_ERR:src/assets/img/emote/tea.jpg:HTTP Error 404: Not Found", "FETCH_ERR:src/assets/img/emote/thumbsup.jpg:HTTP Error 404: Not Found", "FETCH_ERR:src/assets/img/emote/work.jpg:HTTP Error 404: Not Found"]}

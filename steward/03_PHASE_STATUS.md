@@ -45,3 +45,4 @@ None. The 6 categories (`A`..`L`) of deep-scan defects are all closed during Pha
 | #8 | closed | `be4022f3` | Phase 6: deep cleanup (English bank + archive trim + dual-render rename + manifest rebuild + governance) |
 
 — end of phase status
+| 8 | (PR pending) | c9e42502 | vacuum + portal | 10 archive delete + 1 portal add | (pending this PR) | G12 + G13 + G14 |
