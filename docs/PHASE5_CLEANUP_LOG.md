@@ -574,3 +574,7 @@ Two sub-stages, chronological on main HEAD at archive time.
 - Dropped 9 entries from MANIFEST.sha256 (sha present only in manifest, not in tree).
 - Surviving manifest entries: 26.
 - Stale #13 closed as superseded; lessons preserved in steward/04_LESSONS.md.
+
+
+## Phase 9 — portal live (PRNEW_B)
+src/index.html returned HTTP 200 as of main HEAD 065678d41bf46fe3c820de8e0196368b3536dd7a. Portal placeholder block confirmed live.
