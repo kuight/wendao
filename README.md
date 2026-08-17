@@ -195,6 +195,8 @@ python3 -m http.server 8000
 - **Phase 4 — 文档与策略**：MANIFEST.sha256、LFS_POLICY、英语题库
 - **Phase 5 — 历史清算**：archive/_legacy 留底 + 元数据修齐
 - **Phase 6 — 深度清理（本 PR 6 合 1）**：English 题库正文 / archive 双轨瘦身 / PNG→JPEG 改名 / MANIFEST 重建 / 治理段补齐
+- **Phase 7 — 交接与恢复**：steward/ 7 份归档落主分支，确保模型重置后可恢复
+- **Phase 8 — 真空与门户**：archive/_legacy/redundant/wendao-v4.3.* 真空（10 blob），archive/v4.4.0/ 空骨架删除，src/index.html portal 落地
 
 凭据治理：所有 sandbox token 用 `shred -u + unset + history -c` 三步销毁，token 不写进 commit message 或 PR body；REST 走 HEREDOC；禁用 `git push https`（必 401）。
 风险与回滚：单 squash commit；`git revert <new_sha>` 一键复原。
