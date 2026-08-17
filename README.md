@@ -247,6 +247,10 @@ wendao/
 
 ---
 
+## 仓库主入口（portal）
+
+可在浏览器直接打开 [`src/index.html`](./src/index.html) 进入仓库门户页（离线可跑、无 CDN 依赖；自动抓取仓库 main HEAD 并嵌入 Phases 1‑7+ 进度表 + 6 科体系 + 归档索引）。
+
 ## License 与鸣谢
 
 本仓库当前使用 [MIT License](./LICENSE)。

@@ -552,3 +552,8 @@ Removed paths (41):
 - path: archive/备份/问道修仙学院-v4.1-hotfix.zip
   size: 324375
   sha: 11bd19886c46dc6a37ca93cb7d3184cd044f7c1a
+
+
+## Phase 9 portal-link (UTC 2026-08-17T03:16:39Z)
+
+src/index.html was delivered in PR #11 (commit c9e42502...) but is not yet on main HEAD. To avoid a dead README link, G16 writes the README link now and flags "src/index.html delivered via PR #11" in governance. Once user merges PR #11 the link goes live.
