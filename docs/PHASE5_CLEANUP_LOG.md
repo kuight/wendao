@@ -552,3 +552,15 @@ Removed paths (41):
 - path: archive/备份/问道修仙学院-v4.1-hotfix.zip
   size: 324375
   sha: 11bd19886c46dc6a37ca93cb7d3184cd044f7c1a
+
+
+## Phase 9 manifest remediation (UTC 2026-08-17T03:13:34Z)
+
+Found 9 SHA-256 mismatches between MANIFEST.sha256 lines and actual blob bytes on main HEAD `2bf02a86...`.
+Breakdown:
+- renamed (PNG→JPG / sibling rename): 0
+- resigned (blob content changed): 0
+- dropped (path gone): 9 (src/assets/img/emote/{angry,deadpan,love,peek,plead,smug,tea,thumbsup,work}.jpg — blobs absent from repo tree)
+Action: 0 final mismatches after this PR.
+Commit: PR #13 (steward/phase9-manifest-remediate)
+

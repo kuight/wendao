@@ -74,4 +74,15 @@ PR #8 squash commit (Phase 6) = `be4022f3141940ad32f77f3a4f5936e6ce0c134a`
 | #7 | closed | `c1ec15b0` | Phase 5: P1 cleanup (archive legacy + governance log) |
 | #8 | closed | `be4022f3` | Phase 6: deep cleanup (English bank + archive trim + dual-render rename + manifest rebuild + governance) |
 
+## Phase 8 — vacuum + portal + governance (PR #10 .. #12)
+- **Task G12** (PR #10, head `44f2fc41…`) — zero-regression: README 6 banner .png→.jpg + Phase 7 PR 占位修复
+- **Task G13** (PR #11, head `c9e42502…`) — archive/_legacy/redundant/wendao-v4.3.* 真空（10 blobs, ~200 MB）+ src/index.html portal（6611 B）
+- **Task G14** (PR #12, head `5db0fabd…`) — Phase 8 governance pass + MANIFEST 重新校验首次发现 9 处失配
+- 注：PR #10 / #11 / #12 在 G15 创建时仍为 open，未合并进 main
+
+## Phase 9 — manifest remediation (PR #13)
+- Task G15, branch `steward/phase9-manifest-remediate`
+- 基于 live main HEAD `2bf02a867ec1…` 实测
+- src/assets/img/MANIFEST.sha256 终态：26 行有效条目（原 35 行中 9 行 emote/*.jpg 路径在仓库已不存在 → 整行删除）
+- 0 mismatch 目标达成（MISMATCH_AFTER=0）
 — end of chronology

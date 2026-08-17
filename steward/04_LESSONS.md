@@ -98,4 +98,13 @@ When kuight replies with "干" / "修" / "合了" + follow-on, do NOT ask "shall
 
 Every SHA, byte size, PR number, file path in this archive was fetched live before being written. The repo at this moment is the truth. The text in this archive is a snapshot. Do not backfill from memory under any circumstance.
 
-— end of lessons. (15 rules; L16+ will only be added after a NEW kind of failure.)
+## L16 · MANIFEST rename 必须连带改 path 字段
+
+Lesson from G14 / G15: 当目录里 PNG → JPG 改名后，blob SHA 不变但 path 改了；MANIFEST.sha256 文本里如果仍引用旧 path，raw.githubusercontent 取旧路径会 404 或 sha256 不匹配。G15 实测 9 处失配全部为 path 已从仓库删除（emote/*.jpg 9 个 blob 在 tree 中不存在），按规则整行删除。处理：
+- blob 不变 only path rewrite → 改 MANIFEST 文本里 path 字段，SHA 字段保留
+- blob 内容变了 → 改 MANIFEST SHA 字段为新 blob sha
+- path 已彻底被删 → 整行删除
+并配合：MANIFEST regex 必须能容忍 `  # STATUS_ANNOTATION` 后缀（L15 续：格式可加注释尾，校验脚本需 re.compile 兼容）。
+
+— end of lessons. (16 rules; L17+ will only be added after a NEW kind of failure.)
+

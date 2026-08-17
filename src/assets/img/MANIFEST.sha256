@@ -1,5 +1,5 @@
-# SHA-256 fingerprints for wendao image assets (35 unique PNG/JPG)
-# Regenerated 2026-08-16 by steward/phase6-deep-cleanup
+# SHA-256 fingerprints for wendao image assets (26 unique PNG/JPG)
+# Regenerated 2026-08-16 by steward/phase6-deep-cleanup; Phase 9 remediation 2026-08-17 (dropped 9 dead emote paths)
 # Format: <sha256>  size=<int>  <relative_path>  category=<cat>
 6dbfe3146fcb1fbeb2d4b06d163af21e7a76d5c3f380ecd0ceafa64cdb9f7db5  size=103815  src/assets/img/character/shifu.jpg  category=character
 e9b56d186a786f68cf473617a02fe3dd6795db592cd9b8b6459a7b7afa7c73de  size=231792  src/assets/img/character/shijie.jpg  category=character
@@ -7,15 +7,6 @@ e9b56d186a786f68cf473617a02fe3dd6795db592cd9b8b6459a7b7afa7c73de  size=231792  s
 8687d950999d739b5cfbe80a00af59106bf828ec2ee96f2fc11e0baa1c9c0836  size=805938  src/assets/img/cover/all_assets_sheet.png  category=cover
 c47cb028489399edc4dcace5c133d2e9d74dbb2b97011a49e6e9c623437f2526  size=2144191  src/assets/img/cover/contact.png  category=cover
 5360a6e9f321dd494e765b9b0f874761288b350b817348b15b444d3245efe4c3  size=144471  src/assets/img/cover/hero.jpg  category=cover
-a215ea525ec8bf4c385aa18c745eb0bb50d27d8874a6383a0b03bdfb41bb9be1  size=43728  src/assets/img/emote/angry.jpg  category=emote
-44d87310bbe4b224515136be5dcb25321dad79bc91488ce7ab02dcd82d85ae1d  size=41924  src/assets/img/emote/deadpan.jpg  category=emote
-4a04d6a991f7368768cb6662c773c150569f7a996e1d2c97c74befc2a9fa623b  size=47889  src/assets/img/emote/love.jpg  category=emote
-7cf57c7adee3b79bb91392c6b47dbf54a7e15839da7951811f04c7198505fb36  size=31263  src/assets/img/emote/peek.jpg  category=emote
-dabd99a6c649d4ddd74df276bb8a839cf5d1c426f84bafd40ecfb25ff67fb633  size=44967  src/assets/img/emote/plead.jpg  category=emote
-25f5a8109a28c22c432820091447cc15954f4c333309fadb4fa56fdd6cb930c7  size=41095  src/assets/img/emote/smug.jpg  category=emote
-16a6d8034e82df07729eb64e8c28acb8b8a25c87990de817e24f9c8cde0b9749  size=42333  src/assets/img/emote/tea.jpg  category=emote
-9a57ea55fe4c65428730e64fa64cd95f92f28459adc804bb8f8d4a857bd01ad3  size=46251  src/assets/img/emote/thumbsup.jpg  category=emote
-05d743e0241e47dc83ad6d17d6b5e5aea4cce380ca4e1ca95ddbd42e707f5d87  size=35207  src/assets/img/emote/work.jpg  category=emote
 88456acfdb85206b3628262db8f1c40625600b0974c402215cd159c5ad1a2a22  size=174857  src/assets/img/scene/alchemy.jpg  category=scene
 da9f71ea0b3967e126be23bd0d04eb492759f98ef0e2f2e16a1314a702fb8edc  size=148146  src/assets/img/scene/arena.jpg  category=scene
 ee25c094a42936f61bcfefe4bcc95c24cb10b0941b4fa4d722fe7ede6d36dddf  size=203731  src/assets/img/scene/cave.jpg  category=scene
