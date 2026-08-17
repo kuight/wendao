@@ -584,3 +584,5 @@ src/index.html returned HTTP 200 as of main HEAD 065678d41bf46fe3c820de8e0196368
 - Surviving MANIFEST lines: 26 (post rebase).
 - Stale PRs: #13, #14 should be closed by Kuight after rebase (they are superseded).
 - Final main HEAD: see `git log -1 --format=%H`.
+
+- Phase 10(b) G19: broader README regex scan confirmed REPLACED=0, no external image URLs found.

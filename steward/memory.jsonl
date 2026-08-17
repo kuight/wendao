@@ -13,3 +13,4 @@
 {"ts": "2026-08-17T03:26:03.048369Z", "phase": "P9b", "kind": "manifest_rebase_retry", "supersedes": 13, "new_pr": "PRNEW_A", "dead_lines": 9, "surviving_lines": 26, "base": "cfcc62d541307b51283f9868d9f5d24c6798aff1"}
 {"ts": "2026-08-17T03:26:29.450795Z", "phase": "P9c", "kind": "portal_live", "new_pr": "PRNEW_B", "portal_http": 200, "base": "065678d41bf46fe3c820de8e0196368b3536dd7a"}
 {"ts": "2026-08-17T03:26:38.535602Z", "phase": "P9d", "kind": "governance_finalize", "cascade": [10, 11, 12], "retry": ["PRNEW_A", "PRNEW_B"], "finalize": "PRNEW_C", "final_main_head": "e6490e45c5f514393d602ebfb5b16e4cbbbe3545"}
+{"ts":"2026-08-17","phase":"10b","event":"readme_banner_scan_zero","replaced":0,"skipped":0}
