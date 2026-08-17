@@ -46,3 +46,4 @@ None. The 6 categories (`A`..`L`) of deep-scan defects are all closed during Pha
 
 — end of phase status
 | 8 | (PR pending) | c9e42502 | vacuum + portal | 10 archive delete + 1 portal add | (pending this PR) | G12 + G13 + G14 |
+| Phase 9 — portal live | PRNEW_B | steward/phase9-portal-live-retry | merged |

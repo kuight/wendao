@@ -11,3 +11,4 @@
 {"phase":"P7-merge","task":"G11-PR9-merge","utc":"2026-08-17T03:10:55Z","branch":"steward/handoff-memory","kind":"steward_archive_merged","base_sha_prefix":"2bf02a867ec1","lesson_ids":["L01","L02","L03","L04","L05","L06","L07","L08","L09","L10","L11","L12","L13","L14","L15"]}
 {"phase":"P8","task":"G12+G13+G14","utc":"2026-08-17T03:10:55Z","kind":"vacuum_and_portal_and_governance","heads":{"pr10":"44f2fc41efa160c3593e8dfbfe04d91f8321f5bb","pr11":"c9e42502169b7522dd72d081b9c2dd40d8e09ade"}}
 {"ts": "2026-08-17T03:26:03.048369Z", "phase": "P9b", "kind": "manifest_rebase_retry", "supersedes": 13, "new_pr": "PRNEW_A", "dead_lines": 9, "surviving_lines": 26, "base": "cfcc62d541307b51283f9868d9f5d24c6798aff1"}
+{"ts": "2026-08-17T03:26:29.450795Z", "phase": "P9c", "kind": "portal_live", "new_pr": "PRNEW_B", "portal_http": 200, "base": "065678d41bf46fe3c820de8e0196368b3536dd7a"}
