@@ -75,3 +75,6 @@ PR #8 squash commit (Phase 6) = `be4022f3141940ad32f77f3a4f5936e6ce0c134a`
 | #8 | closed | `be4022f3` | Phase 6: deep cleanup (English bank + archive trim + dual-render rename + manifest rebuild + governance) |
 
 — end of chronology
+
+## Phase 9 — manifest rebase (PRNEW_A)
+Stale PR #13 was rebased onto main cfcc62d5… after cascade merge of #10/#11/#12; MANIFEST.sha256 trimmed to surviving entries, L16 rule documented.
