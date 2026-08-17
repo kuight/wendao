@@ -13,7 +13,7 @@ base main HEAD at archive time = `23aab098fc5b...` (full `23aab098fc5b2b5428b8b4
 | 4 (P0 fix) | #6 | `fa690dde` | fix metadata bugs surfaced by G6 smoke test | 5 files | merged | MANIFEST format + English bank skeleton + 6 banner refs |
 | 5 (P1 cleanup) | #7 | `c1ec15b0` | archive legacy leg trim | 41 moves to `_legacy/` | merged | `docs/PHASE5_CLEANUP_LOG.md` |
 | 6 | #8 | `be4022f3` | deep cleanup (English bank + archive trim + dual-render rename + MANIFEST rebuild + governance) | 7 governance + 55 archive delete + 13 PNG→JPG + 2 orphans | merged | 6 actions in one squash |
-| 7 (this) | __PRNUM_REPLACED_LATER__ | (see live output) | steward handoff archive | 7 files in `steward/` | open | knowledge carrier for future sessions |
+| 7 (this) | 9 | (see live output) | steward handoff archive | 7 files in `steward/` | open | knowledge carrier for future sessions |
 
 ## Outstanding / known issues at archive time
 
