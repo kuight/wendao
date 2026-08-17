@@ -584,3 +584,6 @@ src/index.html returned HTTP 200 as of main HEAD 065678d41bf46fe3c820de8e0196368
 - Surviving MANIFEST lines: 26 (post rebase).
 - Stale PRs: #13, #14 should be closed by Kuight after rebase (they are superseded).
 - Final main HEAD: see `git log -1 --format=%H`.
+
+## Phase 10 (a) - empty archive/_legacy/_backup dir verified (PR18)
+- HEAD `fd10458b95`, backup_dir_present=False; no blobs under path. Documentation-only.
