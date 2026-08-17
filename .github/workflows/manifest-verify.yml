@@ -1,0 +1,37 @@
+name: manifest-verify
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with: { fetch-depth: 0 }
+      - name: Verify MANIFEST
+        run: |
+          set -e
+          cd "$GITHUB_WORKSPACE"
+          MANIFEST=src/assets/img/MANIFEST.sha256
+          test -f "$MANIFEST" || { echo "::error::manifest missing"; exit 1; }
+          ok=0; dead=0; mismatch=0
+          while IFS=' ' read -r sha size path category; do
+            case "$sha" in '#'*|'') continue ;; esac
+            test "$(printf '%s' "$sha" | wc -c)" = 64 || { mismatch=$((mismatch+1)); continue; }
+            if git ls-tree -r HEAD | grep -q " $sha\b"; then
+              if test -f "$path"; then
+                actual=$(sha256sum "$path" | awk '{print $1}')
+                if test "$actual" = "$sha"; then ok=$((ok+1)); else mismatch=$((mismatch+1)); fi
+              else
+                mismatch=$((mismatch+1))
+              fi
+            else
+              dead=$((dead+1))
+            fi
+          done < "$MANIFEST"
+          echo "ok=$ok dead=$dead mismatch=$mismatch"
+          test "$mismatch" = 0 || { echo "::error::$mismatch manifest mismatches"; exit 1; }
+          test "$dead" = 0 || { echo "::warning::$dead dead manifest lines"; exit 1; }
