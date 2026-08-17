@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>问道 · 修仙学院 / wendao portal</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+:root{--cyan:#1F6E8C;--ink:#222;--gold:#B89460;--paper:#F5EFE0;--line:#D4C9A8}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"PingFang SC","Microsoft YaHei",-apple-system,BlinkMacSystemFont,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;padding:24px 16px}
+header{max-width:980px;margin:0 auto;background:linear-gradient(135deg,var(--cyan) 0%,#0d3d52 100%);color:var(--paper);padding:32px 28px;border-radius:6px;border-bottom:3px solid var(--gold)}
+h1{font-size:28px;font-weight:600;margin-bottom:8px;letter-spacing:1px}
+.subtitle{opacity:.85;font-size:14px}
+.sha{margin-top:14px;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px;background:rgba(255,255,255,.1);padding:6px 10px;border-radius:3px;display:inline-block}
+main{max-width:980px;margin:24px auto;display:grid;gap:18px}
+.card{background:#FFFEF8;border:1px solid var(--line);border-left:3px solid var(--cyan);padding:18px 22px;border-radius:4px}
+.card h2{font-size:18px;margin-bottom:12px;color:var(--cyan);border-bottom:1px solid var(--line);padding-bottom:8px}
+.card h2 .accent{color:var(--gold)}
+.card a{color:var(--cyan);text-decoration:none;border-bottom:1px dashed var(--cyan)}
+.card a:hover{color:var(--gold);border-bottom-color:var(--gold)}
+table{width:100%;border-collapse:collapse;margin-top:8px;font-size:14px}
+th,td{padding:6px 10px;text-align:left;border-bottom:1px solid var(--line)}
+th{background:#FAF3E0;color:var(--ink);font-weight:600}
+tr:hover{background:#FBF7EA}
+.tag{display:inline-block;background:var(--gold);color:#fff;padding:1px 8px;border-radius:3px;font-size:12px;margin-right:4px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+footer{max-width:980px;margin:24px auto;text-align:center;color:#888;font-size:12px;padding-top:18px;border-top:1px solid var(--line)}
+small.hint{color:#888;font-size:12px}
+</style>
+</head>
+<body>
+<header>
+  <h1>问道 · 修仙学院 <span style="color:var(--gold)">/</span> wendao portal</h1>
+  <div class="subtitle">仓库主干说明 · main HEAD</div>
+  <div class="sha" id="sha">fetching…</div>
+</header>
+
+<main>
+  <section class="card">
+    <h2>一、入口 <span class="accent">/ Entries</span></h2>
+    <ul style="padding-left:18px;line-height:1.9">
+      <li><a href="../README.md">README.md</a> — 仓库主干说明</li>
+      <li><a href="../docs/VERSION_TRUTH.md">docs/VERSION_TRUTH.md</a> — 版本真相（若不存在则取 README 顶部）</li>
+      <li><a href="../steward/README.md">steward/README.md</a> — 治理档案入口</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>二、治理与阶段 <span class="accent">/ Phases 1..8</span></h2>
+    <table>
+      <tr><th>Phase</th><th>PR</th><th>head (prefix)</th><th>主题</th></tr>
+      <tr><td>1</td><td><a href="https://github.com/kuight/wendao/pull/1">#1</a></td><td><code>1232bc58</code></td><td>foundation baseline（README truth / index portal / docs）</td></tr>
+      <tr><td>2</td><td><a href="https://github.com/kuight/wendao/pull/2">#2</a></td><td><code>ce51173d</code></td><td>v4.4.0 图像归位 + 冗余归档清理（10 张图）</td></tr>
+      <tr><td>3-A</td><td><a href="https://github.com/kuight/wendao/pull/4">#4</a></td><td><code>1240f240</code></td><td>35 张图递归归位（PR #3 强推后通过 #4 恢复）</td></tr>
+      <tr><td>3-B</td><td><a href="https://github.com/kuight/wendao/pull/5">#5</a></td><td><code>97cc6e42</code></td><td>README 实图 + Phase 4 docs</td></tr>
+      <tr><td>4</td><td><a href="https://github.com/kuight/wendao/pull/6">#6</a></td><td><code>fa690dde</code></td><td>P0 元数据修正（5 文件）</td></tr>
+      <tr><td>5</td><td><a href="https://github.com/kuight/wendao/pull/7">#7</a></td><td><code>c1ec15b0</code></td><td>P1 archive legacy 迁留底（41 文件 → _legacy）</td></tr>
+      <tr><td>6</td><td><a href="https://github.com/kuight/wendao/pull/8">#8</a></td><td><code>be4022f3</code></td><td>deep cleanup（English 题库正文 30 题 + 双轨 archive -55 + 13 PNG→JPG）</td></tr>
+      <tr><td>7</td><td><a href="https://github.com/kuight/wendao/pull/9">#9</a></td><td><code>—</code></td><td>steward handoff memory archive（七份记忆文件落地）</td></tr>
+      <tr style="background:#FFFBEA"><td><b>8</b></td><td><b>#11</b></td><td><b>vacuum+portal</b></td><td><b>本次：archive/_legacy 真空（≈200 MB）+ 空骨架 v4.4.0 删 + 真正 portal</b></td></tr>
+    </table>
+  </section>
+
+  <section class="card">
+    <h2>三、归档 <span class="accent">/ Archive</span></h2>
+    <ul style="padding-left:18px;line-height:1.9">
+      <li><a href="../archive/_legacy/INDEX.md">archive/_legacy/INDEX.md</a> — 留底的备份索引（PR #7 沉淀关键文档）</li>
+      <li><a href="../docs/PHASE5_CLEANUP_LOG.md">docs/PHASE5_CLEANUP_LOG.md</a> — 治理日志（含 Phase 5/6 全部清理条目）</li>
+      <li><code>archive/备份/</code> · 31 份历史归档（已通过 PR #7 迁入 _legacy）</li>
+      <li><code>archive/redundant/wendao-v4.3.5*</code> + <code>v4.3.6*</code> · zip/z01（PR #11 清掉，约 200 MB）</li>
+      <li><code>archive/v4.4.0/</code> · 空骨架目录（PR #11 移除）</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>四、学科体系 <span class="accent">/ 6 科 · 题数</span></h2>
+    <div class="grid2">
+      <div><span class="tag">物理</span> Physics · 68 题（核心）</div>
+      <div><span class="tag">化学</span> Chemistry · 12 题</div>
+      <div><span class="tag">地理</span> Geography · 8 题</div>
+      <div><span class="tag">数学</span> Math · 10 题</div>
+      <div><span class="tag">语文</span> Chinese · 6 题</div>
+      <div><span class="tag">英语</span> English · <b>30 题</b>（PHASE4_ENGLISH_BANK）</div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>五、交接 <span class="accent">/ Recovery</span></h2>
+    <p>新的会话 / model 实例请<strong>先读</strong>：</p>
+    <ol style="padding-left:22px;line-height:1.9">
+      <li><a href="../steward/05_RECOVERY.md">steward/05_RECOVERY.md</a> — 明天第一件事的清单</li>
+      <li><a href="../steward/04_LESSONS.md">steward/04_LESSONS.md</a> — 15 条踩过的坑</li>
+      <li><a href="../steward/01_CHRONOLOGY.md">steward/01_CHRONOLOGY.md</a> — Phase 0..7 时序</li>
+    </ol>
+    <p style="margin-top:10px"><small class="hint">本仓库是状态自描述的真相源（manifest / cleanup log / phase status 表），不必依赖任何对话历史。</small></p>
+  </section>
+</main>
+
+<footer>
+  © 2026 kuight · 问道修仙学院 · MIT License<br>
+  仓库 <a href="https://github.com/kuight/wendao">github.com/kuight/wendao</a>
+</footer>
+
+<script>
+fetch('https://api.github.com/repos/kuight/wendao/git/ref/heads/main')
+  .then(function(r){return r.json();})
+  .then(function(d){
+    if(d && d.object){document.getElementById('sha').textContent=d.object.sha.substring(0,12);}
+  })
+  .catch(function(){document.getElementById('sha').textContent='offline';});
+</script>
+</body>
+</html>
