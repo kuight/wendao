@@ -578,3 +578,9 @@ Two sub-stages, chronological on main HEAD at archive time.
 
 ## Phase 9 — portal live (PRNEW_B)
 src/index.html returned HTTP 200 as of main HEAD 065678d41bf46fe3c820de8e0196368b3536dd7a. Portal placeholder block confirmed live.
+
+
+## Phase 9 FINAL — cascade merged (#10/#11/#12), then PRNEW_A + PRNEW_B landed.
+- Surviving MANIFEST lines: 26 (post rebase).
+- Stale PRs: #13, #14 should be closed by Kuight after rebase (they are superseded).
+- Final main HEAD: see `git log -1 --format=%H`.

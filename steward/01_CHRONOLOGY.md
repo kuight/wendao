@@ -78,3 +78,6 @@ PR #8 squash commit (Phase 6) = `be4022f3141940ad32f77f3a4f5936e6ce0c134a`
 
 ## Phase 9 — manifest rebase (PRNEW_A)
 Stale PR #13 was rebased onto main cfcc62d5… after cascade merge of #10/#11/#12; MANIFEST.sha256 trimmed to surviving entries, L16 rule documented.
+
+## Phase 9 FINAL — cascade + retry
+PR #10/#11/#12 merged first (squash). Stacked PRs #13 and #14 hit conflict; recovered via PRNEW_A (manifest rebase) and PRNEW_B (portal live). Net result: repo is feature-complete per the original 7-phase governance spec except for optional Phase 10 backlog (archive/_legacy/备份 dir empty, README banner CDN pinning, MANIFEST SHA-verification CI workflow).

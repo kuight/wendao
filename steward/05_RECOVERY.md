@@ -67,3 +67,6 @@ Read in this order ONLY after Steps A-D pass:
 Anonymous public REST is enough. Do NOT request a token. (See L07.)
 
 — end of recovery
+
+## Note (Phase 9)
+Step B of the recovery scan should now also verify that manifest entries match live blobs (the L09+L10 invariant), and the expected surviving count is 26.
