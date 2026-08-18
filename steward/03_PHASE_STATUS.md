@@ -57,3 +57,23 @@ None. The 6 categories (`A`..`L`) of deep-scan defects are all closed during Pha
 | Phase 12 (alpha) | #22 merged | 12b698186fc2beba28224526773a0ae0192b6a46 | merged |
 | Phase 12 (gamma) | #23 merged | 71d6d00448d2f34c4ea55bb4d89277eaa28ebc70 | merged |
 | Phase 12 (delta) | #24 (rebase) | pending | open PR (this) |
+
+## Phase 8-12 rows (verified live 2026-08-18)
+
+| Phase | PR(s) | Commit / head | Status |
+|-------|-------|---------------|--------|
+| 8 (zero-regression) | #10 | 594118de988343c2b8109f621ecb50d4cf0c0763 | merged |
+| 8 (vacuum+portal) | #11 | 39eec36b3bddc0a8bac62cca2fce60a7db250def | merged |
+| 8 (governance) | #12 | cfcc62d541307b51283f9868d9f5d24c6798aff1 | merged |
+| 9 (manifest rebase) | #15 (PRNEW_A) | 065678d41bf46fe3c820de8e0196368b3536dd7a | merged |
+| 9 (portal live) | #16 (PRNEW_B) | e6490e45c5f514393d602ebfb5b16e4cbbbe3545 | merged |
+| 9 (finalize) | #17 (PRNEW_C) | fd10458b95ef4e887d591b1c4c2913813afd987b | merged |
+| 10 (a) empty dir | #18 | 5fa68b55de1b280cafbb6219f456886c324e7b1f | merged |
+| 10 (b) banner scan | #20 | f428f32f7b3249236373028b56c78639dc200841 | merged (zero candidates) |
+| 11 release | tag v4.5.0-cleanup | f428f32f7b3249236373028b56c78639dc200841 | published |
+| 12 alpha | #22 | 12b698186fc2beba28224526773a0ae0192b6a46 | merged |
+| 12 gamma | #23 | 71d6d00448d2f34c4ea55bb4d89277eaa28ebc70 | merged |
+| 12 delta | #25 | eec8bd40de4a073a40101b461c07b0c150cada9e | merged |
+| 12 epsilon | release v4.5.0-runnable | ffbe6827b345e5251ff8e3744266706e2db5d4a5 | published (prerelease) |
+
+Superseded/closed: #13, #14, #19, #24 (all closed, superseded by #15/#16/#20/#25).

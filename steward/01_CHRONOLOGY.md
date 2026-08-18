@@ -93,3 +93,37 @@ PR #22 (alpha: v4.4.0 unpack + entry wiring) merged.
 PR #23 (gamma: MANIFEST refresh) merged.
 PR #24 (delta: README + version truth + this chronology) rebased and re-opened after #22/#23 conflicts.
 Tag `v4.5.0-runnable` (annotated, sha `e737d2af…`) cut with draft Release pending publish. PR-B (bank dedupe) deferred at G24 (zero candidate files).
+
+## Phase 8 — zero regression + cascade
+- Date 2026-08-17
+- PRs #10, #11, #12 (cascade squash in that order)
+- Then PRNEW_A=G16 built #15 (manifest trim, L16 rule) and PRNEW_B=G16 built #16 (portal live). PRNEW_C built #17 (governance finalize).
+- Then #13, #14 closed as superseded.
+
+## Phase 9 — manifest rebase post-#18/#19
+- Phase 9 retry was needed because Phase 8 cascade merged #10/#11/#12 creating conflicts for stacked PRs.
+
+## Phase 10 — final cleanup
+- PR #18 (empty dir claim) merged.
+- PR #19 (broader regex scan) merged but content was zero-replace.
+- PR #20 opened fresh on steward/phase10-readme-banner-respin (token-protected ref re-PATCH failed with 422; closed issue resolved by G21 creating a NEW branch + PR).
+
+## Phase 11 — v4.5.0-cleanup release
+- G23 cut tag v4.5.0-cleanup, GitHub Release v4.5.0 Cleanup (governance milestone) with wendao4.4.0-playable.zip attached. Annotation tag object sha 3d6788701f86c92306396ecb994e145a6af2650e.
+
+## Phase 12 alpha — v4.4.0 unpack (PR #22)
+- 164 files: src/index.html (game entry), src/_portal/index.html (preserved), src/assets/* (engines + CSS), src/data/* (banks/manuals), src/subjects/*.html, src/assets/img/*.
+- head sha febcd15c, merged via squash.
+
+## Phase 12 gamma — MANIFEST refresh (PR #23)
+- Rebuilt src/assets/img/MANIFEST.sha256 to cover unified image set.
+- head sha a0605a68, merged.
+
+## Phase 12 delta — README/version-truth refresh (PR #25)
+- #24 hit conflicts after #22/#23; G27 rebuilt #24 rebase on steward/phase12-delta-docs-v2 (commit 1ec17d90). Kuight manually created #25 from the new branch (POST /pulls hit API 500 in agentic runs); merged.
+- #24 closed as superseded.
+
+## Phase 12 epsilon — v4.5.0-runnable release (G26+G28+G29)
+- Tag object sha e737d2af697aceb408824d2126119e0f2904a301.
+- First two POST /releases attempts landed on untagged-* URL even though tag_name=v4.5.0-runnable was sent in payload. Kuight manually fixed the tag binding via Web UI. Final release HTML URL: https://github.com/kuight/wendao/releases/tag/v4.5.0-runnable.
+- Asset 519672489 (wendao4.4.0-playable.zip) attached via G29 after first publish had zero assets.

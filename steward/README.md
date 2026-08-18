@@ -30,3 +30,15 @@ The repo at the moment is the truth. This archive is a snapshot. Re-validate by 
 Re-issued at the end of each Phase (8, 9, ...) as a single squash commit on `steward/handoff-memory` branch via PR to main.
 
 — steward
+
+## Reading order (REVISED 2026-08-18)
+1. **05_RECOVERY.md** — first read post-reset (cold start) checklist.
+2. **04_LESSONS.md** — all 22 rules (L01–L22).
+3. **01_CHRONOLOGY.md** — full Phase 0-12 timeline.
+4. **03_PHASE_STATUS.md** — phase/commit/QA table.
+5. **02_FILES_INDEX.md** — repository file inventory (frozen at Phase 7; run G24-style anonymous REST to refresh).
+6. **06_RELEASE_INVENTORY.md** — every release + tag + asset.
+7. **07_PHASE12_RUNNABLE_SPEC.md** — what's in src/ after Phase 12 unpack + how to play.
+8. **08_NEXT_PHASE_BACKLOG.md** — what's left to do.
+9. **09_TOKEN_LIFECYCLE.md** — current PAT + sandbox rules.
+10. **memory.jsonl** — machine-readable event stream.
