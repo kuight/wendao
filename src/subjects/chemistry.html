@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+<title>⚗ 丹鼎峰 · 问道修仙学院</title>
+<meta name="description" content="化学宗 · 丹鼎峰 · 化学反应 电化学 有机 无机 参悟之地">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="stylesheet" href="../assets/style-v421-patch.css">
+<link rel="stylesheet" href="../assets/style-v422-galgame.css">
+<link rel="stylesheet" href="../assets/style-v423-cgfix.css">
+<link rel="stylesheet" href="../assets/dynamic-scenes-v426.css">
+<link rel="stylesheet" href="../assets/subject-bg-v437.css">
+</head>
+<body data-sect="chemistry">
+
+<script src="../assets/game-core.js"></script>
+<script src="../assets/pixel-art.js"></script>
+<script src="../assets/ui-components.js"></script>
+<script src="../assets/story-engine.js"></script>
+<script src="../assets/auto-visualizer.js"></script>
+<script src="../assets/immersive-learning.js"></script>
+<script src="../assets/side-dock.js"></script>
+<script src="../assets/interactive-engine.js" onerror="window.IE={render:function(c){if(c)c.innerHTML=&quot;&quot;}}"></script>
+
+<script src="../data/story-data.js"        onerror="window.STORY_DATA=window.STORY_DATA||{}"></script>
+<script src="../data/chemistry-manual.js"  onerror="window.CHEMISTRY_MANUALS=[]"></script>
+<script src="../data/chemistry-bank.js"    onerror="window.CHEMISTRY_BANK=[]"></script>
+
+<script src="../data/fujian-bank-supplement.js"    onerror="window.FUJIAN_SUPPLEMENT=null"></script>
+<script src="../data/fujian-bank-supplement-v2.js" onerror="window.FUJIAN_SUPPLEMENT_V2=null"></script>
+<script src="../data/fujian-bank-supplement-v3.js" onerror="window.FUJIAN_SUPPLEMENT_V3=null"></script>
+<script src="../data/fujian-bank-supplement-v4.js" onerror="window.FUJIAN_SUPPLEMENT_V4=null"></script>
+<script src="../data/fujian-bank-supplement-v5.js" onerror="window.FUJIAN_SUPPLEMENT_V5=null"></script>
+<script src="../data/fujian-bank-supplement-v6.js" onerror="window.FUJIAN_SUPPLEMENT_V6=null"></script>
+<script src="../data/content-pack-v426.js"         onerror="window.WENDAO_CONTENT=null"></script>
+<script src="../assets/scene-engine-v426.js"       onerror="window.SceneEngine=null"></script>
+<script src="../assets/battle-anim-v426.js"        onerror="window.BattleAnim=null"></script>
+
+<script src="../assets/v437a-loader.js" onerror="console.warn('v437a-loader not found')"></script>
+<script src="../assets/subject-page.js"></script>
+
+<!-- v4.3.5d 全套补丁（原本缺失，v4.3.5e 补齐）-->
+<script src="../assets/alchemy-lab-v435d.js"   onerror="console.warn('alchemy-lab-v435d not found')"></script>
+<script src="../assets/spirit-garden-v435d.js" onerror="console.warn('spirit-garden-v435d not found')"></script>
+<script src="../assets/battle-skills-v435d.js" onerror="console.warn('battle-skills-v435d not found')"></script>
+
+<!-- ============ v4.3.6 新脚本 ============ -->
+<script src="../assets/knowledge-graph-v436.js" onerror="console.warn('kg not found')"></script>
+<script src="../assets/smart-question-v436.js"  onerror="console.warn('sq not found')"></script>
+<script src="../assets/battle-arena-v436.js"    onerror="console.warn('arena not found')"></script>
+
+<script>
+SubjectPage.init({
+  sect: 'chemistry',
+  manuals: window.CHEMISTRY_MANUALS || [],
+  bank:    window.CHEMISTRY_BANK    || [],
+  introScene: 'chemistry_intro'
+});
+</script>
+<!-- v4.3.5g-r2 视觉包恢复：这些补丁负责场景背景、CG、卡片装饰。逻辑部分已关闭。 -->
+<script src="../assets/v435b-interactive.js" onerror="console.warn('v435b-interactive not found')"></script>
+<script src="../assets/v435-remake.js"       onerror="console.warn('v435-remake not found (visual only)')"></script>
+<script src="../assets/v435c-hotfix.js"      onerror="console.warn('v435c-scene-shell not found')"></script>
+<script src="../assets/v435d-arena-fat.js"   onerror="console.warn('v435d-arena-fat not found')"></script>
+
+
+<!-- v4.3.7 补丁：音效系统 + 斩妖场数值平衡 -->
+<script src="../assets/sound-effects-v437.js"     onerror="console.warn('sfx v437 not found')"></script>
+<script src="../assets/battle-arena-v437-balance.js" onerror="console.warn('arena balance v437 not found')"></script>
+
+
+<!-- v4.3.8 多玩法学习模式（闪卡/拼盘/例题精析/深度参悟） -->
+<script src="../data/deep-dive-fallback-v438.js" onerror="console.warn('dd-fallback v438 not found')"></script>
+<script src="../data/deep-dive-math-v438.js" onerror="console.warn('dd-math v438 not found')"></script>
+<script src="../data/deep-dive-physics-v438.js" onerror="console.warn('dd-physics v438 not found')"></script>
+<script src="../assets/learning-modes-v438.js" onerror="console.warn('lm v438 not found')"></script>
+<script src="../assets/learning-modes-loader-v438.js" onerror="console.warn('lm-loader v438 not found')"></script>
+
+
+<!-- v4.4.0 化学·一轮复习深度包（4 大模块 12 篇：离子/氧化还原/陌生方程/物质的量/热重/钠/铁/铝/氯/硫/氮/硅） -->
+<script src="../data/deep-dive-chemistry-v440.js" onerror="console.warn('dd-chem v440 not found')"></script>
+<script src="../data/chemistry-xbx-manual-v440.js" onerror="console.warn('chem-xbx-manual v440 not found')"></script>
+<script src="../assets/learning-modes-chemistry-patch-v440.js" onerror="console.warn('lm-chem-patch v440 not found')"></script>
+<!-- v4.4.0 雷劫限时闯关 -->
+<script src="../assets/thunder-tribulation-v440.js" onerror="console.warn('thunder v440 not found')"></script>
+
+</body>
+</html>
