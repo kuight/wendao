@@ -84,3 +84,6 @@ PR #10/#11/#12 merged first (squash). Stacked PRs #13 and #14 hit conflict; reco
 
 ## Phase 10 (b) — README banner scan respin
 Stale #19 branch ref (steward/phase10-readme-banner-pin) returned 422 on PATCH after #18 merged. Opened PRNEW on a fresh branch steward/phase10-readme-banner-respin with the same documentation-only content on top of main 5fa68b55de1b280cafbb6219f456886c324e7b1f.
+
+## Phase 11 — v4.5.0-cleanup release
+Tag `v4.5.0-cleanup` cut on main `f428f32f7b3249236373028b56c78639dc200841`; GitHub Release "v4.5.0 Cleanup (governance milestone)" published. wendao4.4.0 playable archive attached as `wendao4.4.0-playable.zip` (~14.9 MB). Release HTML URL: https://github.com/kuight/wendao/releases/tag/v4.5.0-cleanup. Cold-start handover via `steward/05_RECOVERY.md` remains authoritative.
