@@ -16,3 +16,4 @@
 {"ts": "2026-08-17T03:33:49Z", "phase": "P10a", "action": "drop_empty_dir", "path": "archive/_legacy/_backup", "new_pr": "PR18", "base": "fd10458b95ef4e887d591b1c4c2913813afd987b", "backup_dir_present": false}
 {"ts":"2026-08-17T17:06:24Z","phase":"P10b-respin","kind":"readme_banner_pin_respin","replaced":0,"skipped":0,"pr":"PRNEW","supersedes":19,"reason":"old branch ref 422","base":"5fa68b55de1b280cafbb6219f456886c324e7b1f"}
 {"ts":"2026-08-18T15:06:45Z","phase":"P11","kind":"release","tag":"v4.5.0-cleanup","release_id":372441034,"asset_attached":true,"base":"f428f32f7b3249236373028b56c78639dc200841","notes":"governance milestone; v4.4.0 playable attached (wendao4.4.0-playable.zip ~14.9 MB)"}
+{"ts": "2026-08-18T15:26:43Z", "phase": "P12-gamma", "kind": "manifest_refresh", "added_zip_only_images": 9, "pr": "PR-C"}

@@ -50,3 +50,4 @@ None. The 6 categories (`A`..`L`) of deep-scan defects are all closed during Pha
 | Phase 10 — backlog | TBD | n/a | open | (a) DONE - PR18 (empty dir confirmed)|
 | Phase 10 (b) | DONE | PRNEW — README banner scan zero candidates (rebase via fresh branch) |
 | Phase 11 — v4.5.0-cleanup release | tag v4.5.0-cleanup | `f428f32f7b3249236373028b56c78639dc200841` | published; wendao4.4.0-playable.zip attached |
+| Phase 12 gamma | OPEN | PR-C manifest refresh + image annex |
