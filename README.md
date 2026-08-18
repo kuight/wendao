@@ -259,3 +259,6 @@ wendao/
 - 物理 / 化学 / 地理为核心的选科结构
 - 后续扩展到数学 / 语文 / 英语的六科学习框架
 - “边玩边学”“修仙化学习”“单机 HTML 学习游戏”的设计方向
+
+## Phase 12 (runnable)
+Main now has a Phase-12 proposal to carry the canonical v4.4.0 playable content under `src/`, while the previous portal is preserved at `src/_portal/index.html`. This PR updates documentation only; code lands via PR-A / PR-C.

@@ -56,3 +56,6 @@
 2. **工作树现状 = 第一优先级真相**：以默认分支 `main` 当前 working tree 为「现役锚」。
 3. **变更提案 = 必须有 PR 草案**：先 review，再实施。
 4. **图片生成 = 工具，不是身份**：组长统筹，子 agent 执行。
+
+## Phase 12 — v4.4.0 unpack verification
+Canonical archive checked at 14926926 bytes with SHA-256 `19715861f4d5eabf930210e1b6fc0a2670769cdb4330172caf2cec3b35d44cc2`. ZIP inventory exported from G25; expected top-level game directory `wendao/`; ZIP-derived file count = 199.

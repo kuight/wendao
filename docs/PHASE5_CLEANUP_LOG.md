@@ -598,3 +598,8 @@ src/index.html returned HTTP 200 as of main HEAD 065678d41bf46fe3c820de8e0196368
 - GitHub Release published: https://github.com/kuight/wendao/releases/tag/v4.5.0-cleanup (release_id=372441034).
 - Asset status: attached as `wendao4.4.0-playable.zip` (binary upload, ~14.9 MB).
 - Steward doc updates appended in PRNEW branch `steward/phase11-release-v450` (left open for Kuight review; no code or policy changes).
+
+## Phase 12 (delta) — README + version truth refresh
+- Cross-links PR-A and PR-C.
+- Documents runnable-content proposal using canonical v4.4.0 archive.
+- PR-B deferred: no candidate files identified.
