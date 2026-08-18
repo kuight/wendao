@@ -592,3 +592,9 @@ src/index.html returned HTTP 200 as of main HEAD 065678d41bf46fe3c820de8e0196368
 - Base: main 5fa68b55de1b280cafbb6219f456886c324e7b1f.
 - Broader regex scan (![], `<img src>`, `<picture>`, `data-src`, srcset) yields REPLACED=0 / SKIPPED=0.
 - Documentation-only patch.
+
+## Phase 11 — v4.5.0-cleanup release (PRNEW `steward/phase11-release-v450`, left open for Kuight)
+- Tag `v4.5.0-cleanup` published to main `f428f32f7b3249236373028b56c78639dc200841` (annotated tag object sha `3d6788701f86c92306396ecb994e145a6af2650e`).
+- GitHub Release published: https://github.com/kuight/wendao/releases/tag/v4.5.0-cleanup (release_id=372441034).
+- Asset status: attached as `wendao4.4.0-playable.zip` (binary upload, ~14.9 MB).
+- Steward doc updates appended in PRNEW branch `steward/phase11-release-v450` (left open for Kuight review; no code or policy changes).
