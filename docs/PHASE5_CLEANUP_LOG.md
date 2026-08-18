@@ -607,3 +607,9 @@ src/index.html returned HTTP 200 as of main HEAD 065678d41bf46fe3c820de8e0196368
 - Base: `71d6d00448d2f34c4ea55bb4d89277eaa28ebc70` (post #22 + #23 merge).
 - This PR rebases #24 onto current main; conflict files were `docs/PHASE5_CLEANUP_LOG.md`, `steward/03_PHASE_STATUS.md`, `steward/memory.jsonl`. Resolved by republishing the same appends against current main content.
 - No code changes; only README, VERSION_TRUTH, and steward file appends.
+
+## Phase 13 — comprehensive handoff archive
+- All steward/ files updated, 4 new files added (06, 07, 08, 09).
+- 05_RECOVERY.md rewritten to be cold-start authoritative for Phase 7-12 state.
+- memory.jsonl extended with final events.
+- PR <PRNUM_FINAL> opened; pending Kuight merge before model reset.

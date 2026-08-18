@@ -102,3 +102,25 @@ Every SHA, byte size, PR number, file path in this archive was fetched live befo
 
 ## L16 — rebase-then-replace over force-push
 When a stacked PR sits in `mergeable_state=dirty` due to upstream changes already merged into base, do NOT force-push the stale branch. Open a fresh branch off the new base, recreate the diff using current blob SHAs, and close the original PR as superseded. This avoids history rewrite and preserves audit trail.
+
+## L17 — POST /pulls 500 is a recurring API flake
+- Symptom: POST /repos/.../pulls returns HTTP 500 with empty body. Reproducible across G15, G17b, G19, G20, G21, G25, G26 during peak hours.
+- Workarounds (in order of preference): (a) sleep 8s and retry; (b) trim title to ≤60 ASCII chars; (c) abandon agentic POST and have Kuight create the PR from Web UI "Compare & pull request" on the orphan branch; (d) wait several hours.
+- Do NOT retry more than twice with the same endpoint in one run; document and surrender.
+
+## L18 — POST /releases can land on untagged-* URL
+- Symptom: POST /repos/.../releases with tag_name=v4.5.0-runnable returned a release whose html_url was an untagged-* URL (tag binding not applied). Kuight manually fixed the tag binding via Web UI.
+- Workaround: after POST /releases, GET the release and verify html_url contains /tag/<tag_name>; if not, PATCH the release with the tag_name or ask Kuight to fix in Web UI.
+
+## L19 — Fine-grained PAT needs Contents + Pull requests + Workflows permissions
+- Symptom: POST /git/trees returned 403 "Resource not accessible by personal access token" when the PAT lacked Contents write (or Workflows write for .github/workflows files).
+- Fix: in the fine-grained token settings, grant Repository permissions → Contents: Read and write, Pull requests: Read and write, Workflows: Read and write, Metadata: Read-only.
+
+## L20 — Reuse the same PAT across a phase only if Kuight says so
+- Kuight explicitly chose NOT to rotate the PAT during Phases 8-12. Reuse is allowed only while the user keeps it active; still revoke at phase boundaries per L13 when rotation is requested.
+
+## L21 — Verify tag objects are annotated before quoting tag SHAs
+- Tag object sha (from GET /git/tags/<sha>) differs from the target commit sha for annotated tags. Always fetch the tag object to confirm the target commit; never assume the tag sha IS the commit sha.
+
+## L22 — Tree item count grows with unpack
+- Phase 7 archive said ~248 tree items; after Phase 12 v4.4.0 unpack the live tree at main HEAD eec8bd40... has 418 items (296 blobs under src/). Recovery checklist expectations must be re-derived live, not copied from an old snapshot.
