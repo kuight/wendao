@@ -56,3 +56,7 @@
 2. **工作树现状 = 第一优先级真相**：以默认分支 `main` 当前 working tree 为「现役锚」。
 3. **变更提案 = 必须有 PR 草案**：先 review，再实施。
 4. **图片生成 = 工具，不是身份**：组长统筹，子 agent 执行。
+
+## Phase 12 — v4.4.0 unpack verification (2026-08-18)
+G24 plan reported: zip sha256 `19715861f4d5eabf930210e1b6fc0a2670769cdb4330172caf2cec3b35d44cc2`, 14,926, bytes, top dir `wendao/`, entry `index.html`. New file count: 198 (vs src/), shared with src/: 0, same-path-different-content: 1 (old `src/index.html` portal vs zip `index.html` game entry). Resolution: portal moved to `src/_portal/index.html`, zip entry adopted as `src/index.html`.
+PRs #22 and #23 shipped the unpack and the MANIFEST refresh; PR #24 shipped this documentation. PR-B (bank dedupe) was deferred per G24's 0-file finding.

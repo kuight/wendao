@@ -51,3 +51,9 @@ None. The 6 categories (`A`..`L`) of deep-scan defects are all closed during Pha
 | Phase 10 (b) | DONE | PRNEW — README banner scan zero candidates (rebase via fresh branch) |
 | Phase 11 — v4.5.0-cleanup release | tag v4.5.0-cleanup | `f428f32f7b3249236373028b56c78639dc200841` | published; wendao4.4.0-playable.zip attached |
 | Phase 12 gamma | OPEN | PR-C manifest refresh + image annex |
+
+| Phase | PR | Commit | Status |
+|---|---|---|---|
+| Phase 12 (alpha) | #22 merged | 12b698186fc2beba28224526773a0ae0192b6a46 | merged |
+| Phase 12 (gamma) | #23 merged | 71d6d00448d2f34c4ea55bb4d89277eaa28ebc70 | merged |
+| Phase 12 (delta) | #24 (rebase) | pending | open PR (this) |

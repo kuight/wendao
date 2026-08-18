@@ -87,3 +87,9 @@ Stale #19 branch ref (steward/phase10-readme-banner-pin) returned 422 on PATCH a
 
 ## Phase 11 — v4.5.0-cleanup release
 Tag `v4.5.0-cleanup` cut on main `f428f32f7b3249236373028b56c78639dc200841`; GitHub Release "v4.5.0 Cleanup (governance milestone)" published. wendao4.4.0 playable archive attached as `wendao4.4.0-playable.zip` (~14.9 MB). Release HTML URL: https://github.com/kuight/wendao/releases/tag/v4.5.0-cleanup. Cold-start handover via `steward/05_RECOVERY.md` remains authoritative.
+
+## Phase 12 — release C implementation
+PR #22 (alpha: v4.4.0 unpack + entry wiring) merged.
+PR #23 (gamma: MANIFEST refresh) merged.
+PR #24 (delta: README + version truth + this chronology) rebased and re-opened after #22/#23 conflicts.
+Tag `v4.5.0-runnable` (annotated, sha `e737d2af…`) cut with draft Release pending publish. PR-B (bank dedupe) deferred at G24 (zero candidate files).
