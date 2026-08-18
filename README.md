@@ -259,3 +259,13 @@ wendao/
 - 物理 / 化学 / 地理为核心的选科结构
 - 后续扩展到数学 / 语文 / 英语的六科学习框架
 - “边玩边学”“修仙化学习”“单机 HTML 学习游戏”的设计方向
+
+## Phase 12 — runnable baseline
+Starting with v4.5.0-runnable, the main branch is anchored on the v4.4.0 playable zip (199 files: 7 HTML / 8 CSS / 136 JS / 35 images / 13 Markdown sidecars).
+- The actual game entry is at `src/index.html` (formerly the portal stub).
+- The original portal stub is preserved at `src/_portal/index.html` for landing-page use.
+- Subject pages live at `src/subjects/<subject>.html`.
+- Data layer (banks + manuals + story) at `src/data/*.js`.
+- Images unified under `src/assets/img/` and tracked by `src/assets/img/MANIFEST.sha256`.
+- Archive zip retained at `archive/_legacy/备份/wendao4.4.0.zip` for the historical chain.
+- The full runnable archive is also attached to the `v4.5.0-runnable` GitHub Release.
