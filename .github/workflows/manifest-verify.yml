@@ -1,0 +1,42 @@
+name: manifest-verify
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+      - name: Verify MANIFEST.sha256
+        run: |
+          set -e
+          cd "$GITHUB_WORKSPACE"
+          if [ ! -f src/assets/img/MANIFEST.sha256 ]; then
+            echo "::error::MANIFEST.sha256 missing"; exit 1
+          fi
+          python3 - <<'PY'
+          import re, hashlib, pathlib, sys
+          bad = []; miss = []; ok = 0
+          for line in pathlib.Path('src/assets/img/MANIFEST.sha256').read_text().splitlines():
+              line = line.strip()
+              if not line or line.startswith('#'):
+                  continue
+              m = re.match(r'^([0-9a-f]{64})\s+size=(\d+)\s+(\S+)\s+category=(\S+)$', line)
+              if not m:
+                  bad.append(line); continue
+              sha, size, path, cat = m.groups()
+              if not pathlib.Path(path).exists():
+                  miss.append(path); continue
+              actual = hashlib.sha256(pathlib.Path(path).read_bytes()).hexdigest()
+              if actual != sha or pathlib.Path(path).stat().st_size != int(size):
+                  bad.append(line)
+              else:
+                  ok += 1
+          print(f"OK={ok} BAD={len(bad)} MISSING={len(miss)}")
+          if bad or miss:
+              sys.exit(2)
+          PY
