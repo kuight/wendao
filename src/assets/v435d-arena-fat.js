@@ -166,7 +166,6 @@ function _fatSanitize(m){
       g.cards.forEach((c, ci) => {
         let preview;
         try { preview = _fatScaleMonster({ name:c.name, diff:c.diff, enemyRid:c.realmId }, 1); } catch(_){ preview = _fatScaleMonster({},1); }
-        catch(e){ preview = { hp:100, atk:20, def:5 }; }
         html += `<div class="v435d-arena-card ${c.allowed?'':'locked'}" data-v435d-arena="${gi}_${ci}" style="border-color:${c.color}">
           <div class="tag" style="background:${c.color}22;color:${c.color};border:1px solid ${c.color}">${c.diffLabel}</div>
           <div style="font-size:26px;text-align:center;margin:2px 0">${sectIcon[this.sect]||'👹'}</div>
