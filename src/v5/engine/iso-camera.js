@@ -1,0 +1,20 @@
+/** @file Canvas isometric camera with pan/zoom and tile drawing. */
+(function(g){
+  var root=(g.GameV5=g.GameV5||{}), IsoTile=root.IsoTile;
+  function on(o,t,f){(o._ev[t]||(o._ev[t]=[])).push(f);return o;} function emit(o,t,d){(o._ev[t]||[]).forEach(function(fn){try{fn(d);}catch(_){}});} 
+  function diamond(ctx,x,y,w,h,fill,stroke){ctx.beginPath();ctx.moveTo(x,y-h/2);ctx.lineTo(x+w/2,y);ctx.lineTo(x,y+h/2);ctx.lineTo(x-w/2,y);ctx.closePath();ctx.fillStyle=fill;ctx.fill();if(stroke){ctx.strokeStyle=stroke;ctx.stroke();}}
+  function px(ev,canvas){var r=canvas.getBoundingClientRect();return{x:ev.clientX-r.left,y:ev.clientY-r.top};}
+  function IsoCamera(canvas){if(canvas.__isoCamera)return canvas.__isoCamera;if(!(this instanceof IsoCamera))return new IsoCamera(canvas);this.canvas=canvas;this.ctx=canvas.getContext('2d');this.tileW=64;this.tileH=32;this.zoom=1;this.offsetX=canvas.width/2;this.offsetY=96;this.grid=[];this.tileset={};this._ev={};this._dirty=true;this._drag=null;canvas.__isoCamera=this;this._bind();this._tick();}
+  IsoCamera.prototype.on=function(t,f){return on(this,t,f);};
+  IsoCamera.prototype.emit=function(t,d){emit(this,t,d);return this;};
+  IsoCamera.prototype.pan=function(dx,dy){this.offsetX+=dx;this.offsetY+=dy;this._dirty=true;return this;};
+  IsoCamera.prototype.zoomTo=function(z,ax,ay){z=Math.max(0.5,Math.min(2.5,z||1));ax=ax==null?this.canvas.width/2:ax;ay=ay==null?this.canvas.height/2:ay;var pre=this._toWorld(ax,ay);this.zoom=z;var post=this._toScreen(pre.gx,pre.gy);this.offsetX+=ax-post.x;this.offsetY+=ay-post.y;this._dirty=true;return this;};
+  IsoCamera.prototype.drawTiles=function(grid,tileset){this.grid=grid||[];this.tileset=tileset||{};this._dirty=true;return this;};
+  IsoCamera.prototype._toScreen=function(gx,gy){var p=IsoTile.gridToScreen(gx,gy,this.tileW,this.tileH);return{x:p.x*this.zoom+this.offsetX,y:p.y*this.zoom+this.offsetY};};
+  IsoCamera.prototype._toWorld=function(sx,sy){return IsoTile.screenToGrid((sx-this.offsetX)/this.zoom,(sy-this.offsetY)/this.zoom,this.tileW,this.tileH);};
+  IsoCamera.prototype._resize=function(){var dpr=g.devicePixelRatio||1,w=this.canvas.clientWidth||g.innerWidth||960,h=this.canvas.clientHeight||g.innerHeight||540;this.canvas.width=Math.round(w*dpr);this.canvas.height=Math.round(h*dpr);this.canvas.style.width=w+'px';this.canvas.style.height=h+'px';this.ctx.setTransform(dpr,0,0,dpr,0,0);this._dirty=true;};
+  IsoCamera.prototype._bind=function(){var self=this,c=this.canvas;this._resize();g.addEventListener('resize',function(){self._resize();});c.addEventListener('pointerdown',function(ev){self._drag=px(ev,c);self.emit('pan-start',{});});g.addEventListener('pointerup',function(){if(self._drag){self._drag=null;self.emit('pan-end',{});}});g.addEventListener('pointermove',function(ev){var p=px(ev,c),grid=self._toWorld(p.x,p.y);self.emit('hover',grid);if(!self._drag)return;self.pan(p.x-self._drag.x,p.y-self._drag.y);self._drag=p;});c.addEventListener('click',function(ev){self.emit('click',self._toWorld(px(ev,c).x,px(ev,c).y));});c.addEventListener('wheel',function(ev){ev.preventDefault();self.zoomTo(self.zoom*(ev.deltaY<0?1.1:0.92),ev.offsetX,ev.offsetY);},{passive:false});};
+  IsoCamera.prototype._render=function(){var ctx=this.ctx,w=(this.canvas.clientWidth||this.canvas.width),h=(this.canvas.clientHeight||this.canvas.height);ctx.clearRect(0,0,w,h);ctx.fillStyle='#08111f';ctx.fillRect(0,0,w,h);var arr=(this.grid||[]).slice().sort(function(a,b){return IsoTile.depth(a.gx,a.gy)-IsoTile.depth(b.gx,b.gy);});for(var i=0;i<arr.length;i++){var cell=arr[i],sp=this._toScreen(cell.gx,cell.gy),fill=this.tileset.getFill?this.tileset.getFill(cell):'#446',stroke=this.tileset.getStroke?this.tileset.getStroke(cell):'rgba(255,255,255,.08)';diamond(ctx,sp.x,sp.y,this.tileW*this.zoom,this.tileH*this.zoom,fill,stroke);if(this.tileset.afterTile)this.tileset.afterTile(ctx,cell,sp,this);} };
+  IsoCamera.prototype._tick=function(){var self=this;function loop(){if(self._dirty){self._render();self._dirty=false;}g.requestAnimationFrame(loop);}g.requestAnimationFrame(loop);};
+  root.IsoCamera=IsoCamera;
+})(typeof window!=='undefined'?window:globalThis);
