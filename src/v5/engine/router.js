@@ -1,0 +1,2 @@
+// v5 router module — selects v4 or v5 by explicit schema version
+(function(){if(typeof window==='undefined')return;window.GameV5=window.GameV5||{};GameV5.router=GameV5.router||{};GameV5.router.pickRoute=function(schemaVersion){if(schemaVersion===2)return'v4';if(schemaVersion===3)return'v5';return'unknown';};GameV5.router.isV5Ready=function(){return typeof window.GameV5==='object'&&window.GameV5.boot===undefined;};})();

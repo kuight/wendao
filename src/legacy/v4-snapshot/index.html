@@ -312,14 +312,5 @@
 <script src="assets/learning-modes-chemistry-patch-v440.js" onerror="console.warn('lm-chem-patch v440 not found')"></script>
 <script src="assets/thunder-tribulation-v440.js" onerror="console.warn('thunder v440 not found')"></script>
 
-
-  <!-- v5 scaffold (opt-in; v4 remains default) -->
-  <script src="v5/core/state.js"></script>
-  <script src="v5/core/save.js"></script>
-  <script src="v5/core/knowledge.js"></script>
-  <script src="v5/engine/router.js"></script>
-  <script src="v5/bootstrap/boot.js"></script>
-  <script src="v5/bootstrap/patch.js"></script>
-  <script>if (window.GameV5 && GameV5.patch) GameV5.patch.optIn = async function(){ return await GameV5.patch(); };</script>
 </body>
 </html>

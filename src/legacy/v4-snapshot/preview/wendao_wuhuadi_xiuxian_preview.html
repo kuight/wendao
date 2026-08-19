@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+
+:root {
+  --color-brand-primary: #232425;
+  --color-brand-secondary: #0F7FFF;
+  --color-bg-page: #FFFFFF;
+  --color-bg-surface: #FAFAFA;
+  --color-bg-subtle: #F5F5F5;
+  --color-text-primary: #232425;
+  --color-text-secondary: #606366;
+  --color-text-tertiary: #909499;
+  --color-text-disabled: #C4C7CC;
+  --color-text-link: #0F7FFF;
+  --color-text-on-brand: #FFFFFF;
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+  --color-info: #3B82F6;
+  --color-border-default: #EAEAEA;
+  --color-border-strong: #D0D3D8;
+  --color-border-subtle: #F2F2F2;
+  --color-border-brand: #0F7FFF;
+  --color-border-error: #EF4444;
+  --color-border-success: #10B981;
+  --space-4: 4px; --space-8: 8px; --space-12: 12px; --space-16: 16px;
+  --space-20: 20px; --space-24: 24px; --space-32: 32px; --space-48: 48px;
+  --text-h1: 36px; --text-h2: 28px; --text-h3: 22px; --text-h4: 18px;
+  --text-body: 16px; --text-small: 14px; --text-caption: 12px;
+  --radius-4: 4px; --radius-8: 8px; --radius-12: 12px;
+  --border-width-1: 1px; --border-width-2: 2px;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.07);
+  --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+
+  /* Categorical color ramps (mirror of design-tokens.css) */
+  --color-cat-blue-50:#EBF3FE;--color-cat-blue-100:#C5DDFC;--color-cat-blue-200:#92BEF8;--color-cat-blue-400:#0F7FFF;--color-cat-blue-600:#0561C5;--color-cat-blue-800:#053F7C;--color-cat-blue-900:#06294F;
+  --color-cat-green-50:#E5F8F1;--color-cat-green-100:#B7EFD8;--color-cat-green-200:#7DE0BA;--color-cat-green-400:#10B981;--color-cat-green-600:#088762;--color-cat-green-800:#045A41;--color-cat-green-900:#023A29;
+  --color-cat-amber-50:#FEF3D9;--color-cat-amber-100:#FCE0A0;--color-cat-amber-200:#FAC865;--color-cat-amber-400:#F59E0B;--color-cat-amber-600:#B16E03;--color-cat-amber-800:#6E4500;--color-cat-amber-900:#422900;
+  --color-cat-red-50:#FDE9E9;--color-cat-red-100:#F9C2C2;--color-cat-red-200:#F49595;--color-cat-red-400:#EF4444;--color-cat-red-600:#C41B1B;--color-cat-red-800:#821212;--color-cat-red-900:#520B0B;
+  --color-cat-purple-50:#F0EAFE;--color-cat-purple-100:#D5C2FB;--color-cat-purple-200:#B59AF8;--color-cat-purple-400:#8B5CF6;--color-cat-purple-600:#6431D2;--color-cat-purple-800:#441E8E;--color-cat-purple-900:#2A1259;
+  --color-cat-teal-50:#DEF7F4;--color-cat-teal-100:#A6EBE2;--color-cat-teal-200:#6BDCCD;--color-cat-teal-400:#14B8A6;--color-cat-teal-600:#0D8779;--color-cat-teal-800:#075A50;--color-cat-teal-900:#043934;
+  --color-cat-coral-50:#FEE7EB;--color-cat-coral-100:#FCC0CA;--color-cat-coral-200:#FA98A8;--color-cat-coral-400:#FB7185;--color-cat-coral-600:#D14258;--color-cat-coral-800:#8C2336;--color-cat-coral-900:#5A111F;
+  --color-cat-pink-50:#FCE4F1;--color-cat-pink-100:#F7BAD9;--color-cat-pink-200:#F18BBE;--color-cat-pink-400:#EC4899;--color-cat-pink-600:#B81F75;--color-cat-pink-800:#7B0F4D;--color-cat-pink-900:#4D0530;
+  --color-cat-gray-50:#F3F4F6;--color-cat-gray-100:#E5E7EB;--color-cat-gray-200:#CBD0D7;--color-cat-gray-400:#6B7280;--color-cat-gray-600:#4A4F58;--color-cat-gray-800:#2A2D33;--color-cat-gray-900:#16181B;
+}
+.c-blue   { fill: var(--color-cat-blue-50);   stroke: var(--color-cat-blue-600);   color: var(--color-cat-blue-800);   background-color: var(--color-cat-blue-50);   border-color: var(--color-cat-blue-600); }
+.c-green  { fill: var(--color-cat-green-50);  stroke: var(--color-cat-green-600);  color: var(--color-cat-green-800);  background-color: var(--color-cat-green-50);  border-color: var(--color-cat-green-600); }
+.c-amber  { fill: var(--color-cat-amber-50);  stroke: var(--color-cat-amber-600);  color: var(--color-cat-amber-800);  background-color: var(--color-cat-amber-50);  border-color: var(--color-cat-amber-600); }
+.c-red    { fill: var(--color-cat-red-50);    stroke: var(--color-cat-red-600);    color: var(--color-cat-red-800);    background-color: var(--color-cat-red-50);    border-color: var(--color-cat-red-600); }
+.c-purple { fill: var(--color-cat-purple-50); stroke: var(--color-cat-purple-600); color: var(--color-cat-purple-800); background-color: var(--color-cat-purple-50); border-color: var(--color-cat-purple-600); }
+.c-teal   { fill: var(--color-cat-teal-50);   stroke: var(--color-cat-teal-600);   color: var(--color-cat-teal-800);   background-color: var(--color-cat-teal-50);   border-color: var(--color-cat-teal-600); }
+.c-coral  { fill: var(--color-cat-coral-50);  stroke: var(--color-cat-coral-600);  color: var(--color-cat-coral-800);  background-color: var(--color-cat-coral-50);  border-color: var(--color-cat-coral-600); }
+.c-pink   { fill: var(--color-cat-pink-50);   stroke: var(--color-cat-pink-600);   color: var(--color-cat-pink-800);   background-color: var(--color-cat-pink-50);   border-color: var(--color-cat-pink-600); }
+.c-gray   { fill: var(--color-cat-gray-50);   stroke: var(--color-cat-gray-600);   color: var(--color-cat-gray-800);   background-color: var(--color-cat-gray-50);   border-color: var(--color-cat-gray-600); }
+.c-blue text, .c-green text, .c-amber text, .c-red text,
+.c-purple text, .c-teal text, .c-coral text, .c-pink text, .c-gray text { fill: currentColor; stroke: none; }
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-brand-primary: #E8E9EA;
+    --color-brand-secondary: #4a9eff;
+    --color-bg-page: #1A1B1C;
+    --color-bg-surface: #232425;
+    --color-bg-subtle: #2A2B2C;
+    --color-text-primary: #FFFFFF;
+    --color-text-secondary: #B8BBBF;
+    --color-text-tertiary: #868B92;
+    --color-text-disabled: #4A4C4F;
+    --color-text-link: #8bb8ff;
+    --color-text-on-brand: #1A1B1C;
+    --color-border-default: #3A3B3C;
+    --color-border-strong: #4A4C4F;
+    --color-border-subtle: #2E2F30;
+    --color-border-brand: #4a9eff;
+    --color-border-error: #f87171;
+    --color-border-success: #34d399;
+  }
+  .c-blue   { fill: var(--color-cat-blue-800);   stroke: var(--color-cat-blue-200);   color: var(--color-cat-blue-100);   background-color: var(--color-cat-blue-800);   border-color: var(--color-cat-blue-200); }
+  .c-green  { fill: var(--color-cat-green-800);  stroke: var(--color-cat-green-200);  color: var(--color-cat-green-100);  background-color: var(--color-cat-green-800);  border-color: var(--color-cat-green-200); }
+  .c-amber  { fill: var(--color-cat-amber-800);  stroke: var(--color-cat-amber-200);  color: var(--color-cat-amber-100);  background-color: var(--color-cat-amber-800);  border-color: var(--color-cat-amber-200); }
+  .c-red    { fill: var(--color-cat-red-800);    stroke: var(--color-cat-red-200);    color: var(--color-cat-red-100);    background-color: var(--color-cat-red-800);    border-color: var(--color-cat-red-200); }
+  .c-purple { fill: var(--color-cat-purple-800); stroke: var(--color-cat-purple-200); color: var(--color-cat-purple-100); background-color: var(--color-cat-purple-800); border-color: var(--color-cat-purple-200); }
+  .c-teal   { fill: var(--color-cat-teal-800);   stroke: var(--color-cat-teal-200);   color: var(--color-cat-teal-100);   background-color: var(--color-cat-teal-800);   border-color: var(--color-cat-teal-200); }
+  .c-coral  { fill: var(--color-cat-coral-800);  stroke: var(--color-cat-coral-200);  color: var(--color-cat-coral-100);  background-color: var(--color-cat-coral-800);  border-color: var(--color-cat-coral-200); }
+  .c-pink   { fill: var(--color-cat-pink-800);   stroke: var(--color-cat-pink-200);   color: var(--color-cat-pink-100);   background-color: var(--color-cat-pink-800);   border-color: var(--color-cat-pink-200); }
+  .c-gray   { fill: var(--color-cat-gray-800);   stroke: var(--color-cat-gray-200);   color: var(--color-cat-gray-100);   background-color: var(--color-cat-gray-800);   border-color: var(--color-cat-gray-200); }
+}
+html, body { margin: 0; padding: 0; background: transparent !important; box-sizing: border-box;
+             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Inter', 'Helvetica Neue', Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', 'Noto Sans JP', 'Noto Sans KR', system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'; }
+*, *::before, *::after { box-sizing: inherit; }
+svg, svg text, svg tspan { font-family: inherit; }
+</style>
+<script>
+function sendPrompt(text) {
+  window.parent.postMessage(
+    { type: 'genspark_visualize_send_prompt', text: String(text) }, '*'
+  );
+}
+function _reportHeight() {
+  var h = Math.max(
+    document.body ? document.body.scrollHeight : 0,
+    document.documentElement ? document.documentElement.scrollHeight : 0,
+    100
+  );
+  window.parent.postMessage({ type: 'genspark_visualize_height', height: h }, '*');
+}
+window.addEventListener('load', function() {
+  _reportHeight();
+  if (window.ResizeObserver) {
+    new ResizeObserver(_reportHeight).observe(document.body);
+  }
+});
+window.addEventListener('resize', _reportHeight);
+
+// ── PNG export (rasterize the rendered widget inside the iframe) ─────────────
+// Runs here because sandbox="allow-scripts" (no allow-same-origin) makes the
+// iframe DOM unreachable from the parent. Clone <body>, swap each <canvas>
+// (Chart.js) for a snapshot <img>, inline the document styles with dark-scheme
+// rules stripped for a deterministic light export, wrap in <svg><foreignObject>,
+// and rasterize via a data: URL (a Blob URL would taint the canvas in Chromium).
+function _gsExportFont() { return "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Inter', 'Helvetica Neue', Arial, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', 'Noto Sans JP', 'Noto Sans KR', system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji'"; }
+function _gsCollectStyles() {
+  var out = '';
+  var s = document.querySelectorAll('style');
+  for (var i = 0; i < s.length; i++) { out += (s[i].textContent || '') + '\n'; }
+  return out;
+}
+function _gsStripDarkMedia(css) {
+  var marker = '@media (prefers-color-scheme: dark)';
+  var idx = css.indexOf(marker);
+  while (idx !== -1) {
+    var brace = css.indexOf('{', idx);
+    if (brace === -1) { css = css.slice(0, idx); break; }
+    var depth = 1, j = brace + 1;
+    while (j < css.length && depth > 0) {
+      var ch = css.charAt(j);
+      if (ch === '{') depth++; else if (ch === '}') depth--;
+      j++;
+    }
+    css = css.slice(0, idx) + css.slice(j);
+    idx = css.indexOf(marker);
+  }
+  return css;
+}
+function _gsCleanup(node) {
+  var scripts = node.querySelectorAll('script');
+  for (var i = 0; i < scripts.length; i++) {
+    if (scripts[i].parentNode) scripts[i].parentNode.removeChild(scripts[i]);
+  }
+  var nameRe = /^[A-Za-z_:][A-Za-z0-9_:.-]*$/;
+  var els = node.querySelectorAll('*');
+  for (var k = 0; k < els.length; k++) {
+    var attrs = els[k].attributes;
+    for (var a = attrs.length - 1; a >= 0; a--) {
+      if (!nameRe.test(attrs[a].name)) els[k].removeAttribute(attrs[a].name);
+    }
+  }
+}
+function _gsSubstituteCanvases(live, clone) {
+  var lc = live.querySelectorAll('canvas');
+  var cc = clone.querySelectorAll('canvas');
+  for (var i = 0; i < lc.length && i < cc.length; i++) {
+    var data = lc[i].toDataURL('image/png');
+    var img = document.createElement('img');
+    img.setAttribute('src', data);
+    img.setAttribute('style', (cc[i].getAttribute('style') || '') +
+      ';width:' + lc[i].offsetWidth + 'px;height:' + lc[i].offsetHeight + 'px');
+    if (cc[i].parentNode) cc[i].parentNode.replaceChild(img, cc[i]);
+  }
+}
+function _gsPostPng(id, dataUrl, error) {
+  window.parent.postMessage(
+    { type: 'genspark_visualize_png', id: id, dataUrl: dataUrl || null, error: error || null },
+    '*'
+  );
+}
+function _gsRasterize(id, scale) {
+  try {
+    scale = scale || 2;
+    var PAD = 16;  // breathing room so content never sits flush against the edge
+    var W = Math.max(document.documentElement.scrollWidth, document.body.scrollWidth, 1);
+    var H = Math.max(document.documentElement.scrollHeight, document.body.scrollHeight, 1);
+    var bodyClone = document.body.cloneNode(true);
+    _gsSubstituteCanvases(document.body, bodyClone);
+    _gsCleanup(bodyClone);
+    var wrapper = document.createElement('div');
+    wrapper.setAttribute('style',
+      'font-family:' + _gsExportFont() + ';box-sizing:border-box;width:' + W + 'px');
+    while (bodyClone.firstChild) { wrapper.appendChild(bodyClone.firstChild); }
+    var inner = new XMLSerializer().serializeToString(wrapper);
+    var styleTag = '<style>' + _gsStripDarkMedia(_gsCollectStyles()) +
+      ' svg, svg text, svg tspan { font-family:' + _gsExportFont() + '; }</style>';
+    var CW = W + PAD * 2, CH = H + PAD * 2;
+    var SW = Math.round(CW * scale), SH = Math.round(CH * scale);
+    var svg = '<svg xmlns="http://www.w3.org/2000/svg" width="' + SW +
+      '" height="' + SH + '" viewBox="0 0 ' + CW + ' ' + CH + '">' +
+      '<foreignObject x="' + PAD + '" y="' + PAD + '" width="' + W + '" height="' + H + '">' +
+      '<div xmlns="http://www.w3.org/1999/xhtml">' + styleTag + inner + '</div>' +
+      '</foreignObject></svg>';
+    var img = new Image();
+    img.onload = function() {
+      try {
+        var cv = document.createElement('canvas');
+        cv.width = SW; cv.height = SH;
+        var ctx = cv.getContext('2d');
+        ctx.fillStyle = '#FFFFFF';
+        ctx.fillRect(0, 0, SW, SH);
+        ctx.drawImage(img, 0, 0);
+        _gsPostPng(id, cv.toDataURL('image/png'), null);
+      } catch (e) { _gsPostPng(id, null, 'tainted'); }
+    };
+    img.onerror = function() { _gsPostPng(id, null, 'image_error'); };
+    img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+  } catch (e) {
+    _gsPostPng(id, null,
+      (e && e.name === 'SecurityError') ? 'tainted' : String((e && e.message) || e));
+  }
+}
+window.addEventListener('message', function(ev) {
+  var d = ev.data || {};
+  if (!d || d.type !== 'genspark_visualize_request_png') return;
+  var run = function() { _gsRasterize(d.id, d.scale); };
+  if (document.fonts && document.fonts.ready && document.fonts.ready.then) {
+    document.fonts.ready.then(function() {
+      if (window.requestAnimationFrame) window.requestAnimationFrame(run);
+      else window.setTimeout(run, 0);
+    });
+  } else if (window.requestAnimationFrame) {
+    window.requestAnimationFrame(run);
+  } else {
+    window.setTimeout(run, 0);
+  }
+});
+</script>
+</head>
+<body><style>
+  .xx-wrap {
+    font-family: inherit;
+    color: var(--color-text-primary);
+    background: linear-gradient(135deg, rgba(120,80,200,0.08), rgba(20,180,180,0.06));
+    border: 1px solid var(--color-border-default);
+    border-radius: var(--radius-12);
+    padding: var(--space-20);
+    max-width: 758px;
+  }
+  .xx-header {
+    display:flex; justify-content:space-between; align-items:center;
+    border-bottom: 1px solid var(--color-border-subtle);
+    padding-bottom: var(--space-12); margin-bottom: var(--space-16);
+  }
+  .xx-title { font-size: var(--text-h3); font-weight: 600; }
+  .xx-subtitle { font-size: var(--text-caption); color: var(--color-text-secondary); margin-top: 4px;}
+  .xx-stat-row {
+    display:flex; gap: var(--space-12); flex-wrap: wrap;
+    background: var(--color-bg-subtle);
+    padding: var(--space-12); border-radius: var(--radius-8);
+    margin-bottom: var(--space-16);
+    font-size: var(--text-small);
+  }
+  .xx-stat { display:flex; align-items:center; gap:6px; }
+  .xx-stat b { color: var(--color-brand-primary); }
+  .xx-realm {
+    background: linear-gradient(90deg, var(--color-cat-purple-400), var(--color-cat-pink-400));
+    color: white !important; padding: 2px 10px; border-radius: 999px;
+    font-size: var(--text-caption); font-weight: 600;
+  }
+  .xx-tabs { display:flex; gap:var(--space-8); margin-bottom: var(--space-16); flex-wrap:wrap;}
+  .xx-tab {
+    padding: 8px 16px; border-radius: var(--radius-8);
+    border: 1px solid var(--color-border-default);
+    background: var(--color-bg-surface);
+    cursor: pointer; font-size: var(--text-small);
+    min-height: 44px; display:flex; align-items:center;
+    transition: all .15s;
+  }
+  .xx-tab.active {
+    background: var(--color-brand-primary);
+    color: var(--color-text-on-brand);
+    border-color: var(--color-brand-primary);
+  }
+  .xx-panel {
+    background: var(--color-bg-surface);
+    border: 1px solid var(--color-border-default);
+    border-radius: var(--radius-12);
+    padding: var(--space-20);
+    min-height: 320px;
+  }
+  .xx-card-grid {
+    display:grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: var(--space-12);
+  }
+  .xx-card {
+    background: var(--color-bg-page);
+    border: 1px solid var(--color-border-default);
+    border-radius: var(--radius-8);
+    padding: var(--space-12);
+    cursor: pointer; transition: all .15s;
+    min-height: 100px;
+  }
+  .xx-card:hover { border-color: var(--color-brand-primary); transform: translateY(-2px); box-shadow: var(--shadow-md);}
+  .xx-card-title { font-weight: 600; margin-bottom: 4px; font-size: var(--text-body);}
+  .xx-card-desc { font-size: var(--text-caption); color: var(--color-text-secondary); margin-bottom: 8px;}
+  .xx-card-meta { font-size: var(--text-caption); color: var(--color-text-tertiary);}
+  .xx-q-stem { font-size: var(--text-body); margin-bottom: var(--space-16); line-height: 1.6;}
+  .xx-opts { display:flex; flex-direction: column; gap: 10px; }
+  .xx-opt {
+    border: 1px solid var(--color-border-default);
+    border-radius: var(--radius-8);
+    padding: 12px 14px; cursor: pointer;
+    background: var(--color-bg-surface);
+    transition: all .15s; font-size: var(--text-small);
+    min-height: 44px; display:flex; align-items:flex-start; gap:10px;
+  }
+  .xx-opt:hover { border-color: var(--color-brand-primary); background: var(--color-bg-subtle);}
+  .xx-opt.correct { border-color: var(--color-success); background: rgba(16,185,129,0.1);}
+  .xx-opt.wrong { border-color: var(--color-error); background: rgba(239,68,68,0.08);}
+  .xx-opt-label { font-weight:600; color: var(--color-brand-primary); flex-shrink:0;}
+  .xx-feedback {
+    margin-top: var(--space-16); padding: var(--space-12);
+    border-radius: var(--radius-8); font-size: var(--text-small);
+    line-height: 1.6;
+  }
+  .xx-feedback.win { background: rgba(16,185,129,0.1); border-left: 3px solid var(--color-success);}
+  .xx-feedback.lose { background: rgba(239,68,68,0.08); border-left: 3px solid var(--color-error);}
+  .xx-btn {
+    background: var(--color-brand-primary); color: var(--color-text-on-brand);
+    border:none; padding: 10px 20px; border-radius: var(--radius-8);
+    cursor:pointer; font-size: var(--text-small); min-height: 44px;
+  }
+  .xx-btn.ghost { background: transparent; color: var(--color-brand-primary); border:1px solid var(--color-brand-primary);}
+  .xx-flavor {
+    font-style: italic; color: var(--color-text-secondary);
+    font-size: var(--text-small); margin: var(--space-12) 0;
+    padding-left: 12px; border-left: 2px solid var(--color-cat-purple-400);
+  }
+  .xx-progress {
+    height: 6px; background: var(--color-bg-subtle); border-radius: 999px;
+    overflow:hidden; margin: 8px 0;
+  }
+  .xx-progress-bar {
+    height: 100%; background: linear-gradient(90deg, var(--color-cat-teal-400), var(--color-cat-blue-400));
+    transition: width .4s;
+  }
+  .xx-actions { margin-top: var(--space-16); display:flex; gap:var(--space-8); flex-wrap:wrap;}
+  .xx-monster {
+    text-align:center; font-size: 48px; margin: 12px 0;
+  }
+  .xx-hp {
+    display:flex; align-items:center; gap:8px; font-size: var(--text-caption);
+    color: var(--color-text-secondary); margin-bottom: 8px;
+  }
+</style>
+
+<div class="xx-wrap">
+  <div class="xx-header">
+    <div>
+      <div class="xx-title">⚔️ 问道·物化地 <span class="xx-realm" id="xx-realm">炼气一层</span></div>
+      <div class="xx-subtitle">期末急救版预览 · 莆田四中 · 物化地组合</div>
+    </div>
+  </div>
+
+  <div class="xx-stat-row">
+    <div class="xx-stat">🌟 灵石 <b id="xx-stone">0</b></div>
+    <div class="xx-stat">📚 修为 <b id="xx-exp">0</b>/100</div>
+    <div class="xx-stat">⚡ 道心 <b id="xx-hp">100</b>/100</div>
+    <div class="xx-stat">🗡️ 已斩妖 <b id="xx-kill">0</b></div>
+  </div>
+
+  <div class="xx-tabs">
+    <div class="xx-tab active" data-tab="story">📜 道途</div>
+    <div class="xx-tab" data-tab="physics">⚡ 物理·选必</div>
+    <div class="xx-tab" data-tab="chemistry">⚗️ 化学·选必</div>
+    <div class="xx-tab" data-tab="geography">🌏 地理·选必</div>
+  </div>
+
+  <div class="xx-panel" id="xx-panel"></div>
+</div>
+
+<script>
+(function(){
+  const state = {
+    stone: 0, exp: 0, hp: 100, kill: 0,
+    realm: '炼气一层',
+    currentTab: 'story',
+    currentQ: null,
+    answered: false
+  };
+
+  // ============ 题库（精简预览版 · 每科3题）==============
+  const QUESTIONS = {
+    physics: [
+      {
+        id: 'p1', topic: '选必一·机械振动',
+        gongfa: '《简谐归元诀》',
+        monster: '🌀 振荡魔影',
+        flavor: '一道阴风过处，振荡魔影现身。它的本体便是一只无形的弹簧振子，正按简谐规律来回吞吐。',
+        stem: '一弹簧振子做简谐运动，振幅为A，周期为T。从平衡位置出发，经过 T/4 时间，振子的位移大小为：',
+        options: ['0', 'A/2', '√2A/2', 'A'],
+        answer: 3,
+        explain: '简谐运动 x = A·sin(2πt/T)。t = T/4 时，x = A·sin(π/2) = A。从平衡位置出发到最大位移处，正好用 1/4 周期。'
+      },
+      {
+        id: 'p2', topic: '选必二·安培力',
+        gongfa: '《左手指引真经》',
+        monster: '🧲 磁煞傀儡',
+        flavor: '磁煞傀儡浑身缠绕磁感线，唯有以"左手定则"破其方向之妖法。',
+        stem: '通电直导线在匀强磁场中受到的安培力 F = BIL，若导线方向与磁场方向夹角为 30°，电流 2A，磁感应强度 0.5T，导线长 1m，则安培力大小为：',
+        options: ['0.25 N', '0.5 N', '0.87 N', '1.0 N'],
+        answer: 1,
+        explain: 'F = BIL·sinθ = 0.5 × 2 × 1 × sin30° = 0.5 × 2 × 1 × 0.5 = 0.5 N。注意"夹角"指导线与磁场方向的夹角，要乘 sinθ。'
+      },
+      {
+        id: 'p3', topic: '选必三·光电效应',
+        gongfa: '《光子破妄诀》',
+        monster: '💡 光蚀阴灵',
+        flavor: '光蚀阴灵出没于幽暗之地，需以"光子能量大于逸出功"方能将其驱散。',
+        stem: '某金属逸出功为 2.0 eV，用波长为 400 nm 的光照射（对应光子能量约 3.1 eV），则光电子的最大初动能约为：',
+        options: ['1.1 eV', '2.0 eV', '3.1 eV', '5.1 eV'],
+        answer: 0,
+        explain: '爱因斯坦光电效应方程：Ek_max = hν - W₀ = 3.1 - 2.0 = 1.1 eV。光子能量减去逸出功即为最大初动能。'
+      }
+    ],
+    chemistry: [
+      {
+        id: 'c1', topic: '选必一·化学反应原理',
+        gongfa: '《盖斯通玄经》',
+        monster: '🔥 焓变赤蛟',
+        flavor: '焓变赤蛟盘踞于火山之巅，吐息间皆是能量变化。唯盖斯定律可计其真相。',
+        stem: '已知：① C(s) + O₂(g) → CO₂(g)  ΔH₁ = -393.5 kJ/mol；② 2CO(g) + O₂(g) → 2CO₂(g)  ΔH₂ = -566.0 kJ/mol。则反应 2C(s) + O₂(g) → 2CO(g) 的 ΔH 为：',
+        options: ['-221.0 kJ/mol', '+221.0 kJ/mol', '-787.0 kJ/mol', '-110.5 kJ/mol'],
+        answer: 0,
+        explain: '盖斯定律：目标反应 = ①×2 - ②。ΔH = 2×(-393.5) - (-566.0) = -787 + 566 = -221.0 kJ/mol。注意系数变换和符号。'
+      },
+      {
+        id: 'c2', topic: '选必二·物质结构',
+        gongfa: '《杂化星图》',
+        monster: '🔮 杂化幻雾',
+        flavor: '杂化幻雾迷人心智，让人分不清 sp、sp²、sp³。须以分子构型反推其本质。',
+        stem: '下列分子中，中心原子采用 sp² 杂化的是：',
+        options: ['CH₄', 'NH₃', 'BF₃', 'H₂O'],
+        answer: 2,
+        explain: 'BF₃ 中 B 周围 3 个共用电子对、无孤对电子，平面三角形，sp² 杂化。CH₄ 是 sp³，NH₃ 和 H₂O 也是 sp³（含孤对）。判断口诀：看价层电子对总数。'
+      },
+      {
+        id: 'c3', topic: '选必三·有机化学',
+        gongfa: '《官能团辨形录》',
+        monster: '🧪 有机迷雾',
+        flavor: '迷雾深处藏有无数官能团，辨其形、识其性，方可降伏。',
+        stem: '下列物质中，既能发生加成反应、又能发生取代反应、还能使酸性高锰酸钾溶液褪色的是：',
+        options: ['乙烷', '乙烯', '苯', '甲苯'],
+        answer: 3,
+        explain: '甲苯：苯环可加成（与H₂）、可取代（硝化等），甲基使其能被酸性KMnO₄氧化（褪色）。苯本身不能使酸性KMnO₄褪色，乙烯能加成但取代较难，乙烷只能取代。'
+      }
+    ],
+    geography: [
+      {
+        id: 'g1', topic: '选必一·地球运动',
+        gongfa: '《黄赤交角真诠》',
+        monster: '🌗 昼夜倒错妖',
+        flavor: '昼夜倒错妖颠倒日月，须以地球自转与公转之理拨乱反正。',
+        stem: '北京（约40°N）某日正午太阳高度角为 50°，则该日太阳直射点的纬度为：',
+        options: ['0°', '20°N', '20°S', '23.5°N'],
+        answer: 0,
+        explain: '正午太阳高度角公式：H = 90° - |φ - δ|。50° = 90° - |40°N - δ|，所以 |40°N - δ| = 40°，δ = 0°（春/秋分）或 80°N（不可能，超过23.5°）。答案为赤道（0°）。'
+      },
+      {
+        id: 'g2', topic: '选必二·区域发展',
+        gongfa: '《产业转移图鉴》',
+        monster: '🏭 产业魅影',
+        flavor: '产业魅影游走于东西之间，须明晰产业转移之因方能锁定其形。',
+        stem: '近年来我国东部沿海地区的劳动密集型产业大量向中西部和东南亚转移，其主导因素是：',
+        options: ['原料价格', '市场需求', '劳动力成本', '交通条件'],
+        answer: 2,
+        explain: '劳动密集型产业（如服装、玩具）转移的主导因素是寻找更廉价的劳动力。东部沿海工资上涨，企业为降低成本向劳动力便宜的中西部和东南亚转移。这是高考高频考点。'
+      },
+      {
+        id: 'g3', topic: '选必三·资源环境',
+        gongfa: '《资源国安卷》',
+        monster: '⛏️ 矿竭怨灵',
+        flavor: '矿竭怨灵生于过度开采之地，警示后人——不可竭泽而渔。',
+        stem: '关于我国矿产资源现状，下列说法正确的是：',
+        options: ['总量丰富，人均占有量也丰富', '总量丰富，但人均占有量低', '总量贫乏，但人均占有量高', '总量贫乏，人均占有量也低'],
+        answer: 1,
+        explain: '我国矿产资源"总量丰富，但人均占有量低"，是基本国情。这是资源安全章节的核心结论，常考。'
+      }
+    ]
+  };
+
+  // 修为境界
+  const REALMS = ['炼气一层','炼气三层','炼气九层','筑基初期','筑基中期','筑基后期','金丹境','元婴境','化神境','渡劫境','飞升·高考无忧'];
+
+  function refreshStats(){
+    document.getElementById('xx-stone').textContent = state.stone;
+    document.getElementById('xx-exp').textContent = state.exp;
+    document.getElementById('xx-hp').textContent = state.hp;
+    document.getElementById('xx-kill').textContent = state.kill;
+    document.getElementById('xx-realm').textContent = state.realm;
+    // 升级
+    const level = Math.floor(state.exp / 100);
+    if (level < REALMS.length) state.realm = REALMS[level];
+  }
+
+  function renderStory(){
+    return `
+      <div style="font-size:var(--text-h4); font-weight:600; margin-bottom: var(--space-12);">📜 序章 · 入门</div>
+      <div class="xx-flavor">
+        莆田四中山门外，第87代弟子林同学手持《物化地三经》立于山门石阶上。师尊曾言：<br><br>
+        "天劫将至，七月初七至九，乃是<b>期末试炼</b>之日。三日内连斩三道天劫：<br>
+        — 7月8日辰时，<b>物理天劫</b>（选必一二三·1-3章）；<br>
+        — 7月9日寅时，<b>化学天劫</b>（选必一二三）；<br>
+        — 7月9日辰时，<b>地理天劫</b>（选必一二三）。<br><br>
+        汝若能渡过此劫，方可踏入金丹之境，剑指<b>高考飞升</b>。"
+      </div>
+      <div style="margin-top: var(--space-16); font-size: var(--text-small); color: var(--color-text-secondary); line-height: 1.7;">
+        🗡️ <b>玩法</b>：点击上方学科标签 → 选择功法（章节）→ 答题斩妖 → 获得灵石与修为<br>
+        ⚡ <b>道心</b>：答错扣道心；道心为0则需打坐回血（休息一会再答）<br>
+        💎 <b>境界</b>：修为每满100升一阶，最终飞升即<b>高考无忧</b>
+      </div>
+      <div class="xx-actions">
+        <button class="xx-btn" onclick="window.__xxGo('physics')">⚡ 先战物理</button>
+        <button class="xx-btn ghost" onclick="window.__xxGo('chemistry')">⚗️ 先战化学</button>
+        <button class="xx-btn ghost" onclick="window.__xxGo('geography')">🌏 先战地理</button>
+      </div>
+      <div style="margin-top: var(--space-20); padding: var(--space-12); background: var(--color-bg-subtle); border-radius: var(--radius-8); font-size: var(--text-caption); color: var(--color-text-secondary);">
+        💡 这是<b>聊天内预览版</b>，每科只有3道题。完整版（覆盖物化地全期末范围 · 含存档系统 · 可下载到手机/电脑离线玩）正在为你生成中，请稍候 ↓
+      </div>
+    `;
+  }
+
+  function renderSubject(subject){
+    const qs = QUESTIONS[subject];
+    const names = { physics:'⚡ 物理·选修篇', chemistry:'⚗️ 化学·选修篇', geography:'🌏 地理·选修篇' };
+    let html = `<div style="font-size:var(--text-h4); font-weight:600; margin-bottom: var(--space-12);">${names[subject]} · 功法列表</div>`;
+    html += `<div class="xx-card-grid">`;
+    qs.forEach((q, i)=>{
+      const done = state['done_'+q.id];
+      html += `
+        <div class="xx-card" onclick="window.__xxOpenQ('${subject}', ${i})">
+          <div class="xx-card-title">${done?'✅ ':''}${q.gongfa}</div>
+          <div class="xx-card-desc">${q.topic}</div>
+          <div class="xx-card-meta">${q.monster}　${done?'已斩':'未斩'}</div>
+        </div>
+      `;
+    });
+    html += `</div>`;
+    return html;
+  }
+
+  function renderQuestion(subject, idx){
+    const q = QUESTIONS[subject][idx];
+    state.currentQ = {subject, idx, q};
+    state.answered = false;
+    let html = `
+      <div style="font-size:var(--text-caption); color: var(--color-text-secondary); margin-bottom: 4px;">${q.topic} · ${q.gongfa}</div>
+      <div class="xx-monster">${q.monster.split(' ')[0]}</div>
+      <div class="xx-hp"><span>妖魔气血</span>
+        <div class="xx-progress" style="flex:1;"><div class="xx-progress-bar" style="width:100%;"></div></div>
+      </div>
+      <div class="xx-flavor">${q.flavor}</div>
+      <div class="xx-q-stem"><b>📜 题：</b>${q.stem}</div>
+      <div class="xx-opts">
+    `;
+    q.options.forEach((opt,i)=>{
+      const label = String.fromCharCode(65+i);
+      html += `<div class="xx-opt" data-i="${i}" onclick="window.__xxAns(${i})"><span class="xx-opt-label">${label}.</span><span>${opt}</span></div>`;
+    });
+    html += `</div><div id="xx-fb"></div>
+      <div class="xx-actions">
+        <button class="xx-btn ghost" onclick="window.__xxGo('${subject}')">← 返回功法列表</button>
+      </div>
+    `;
+    return html;
+  }
+
+  function setPanel(html){
+    document.getElementById('xx-panel').innerHTML = html;
+    if (window._reportHeight) setTimeout(window._reportHeight, 50);
+  }
+
+  window.__xxGo = function(tab){
+    state.currentTab = tab;
+    document.querySelectorAll('.xx-tab').forEach(t=>{
+      t.classList.toggle('active', t.dataset.tab===tab);
+    });
+    if (tab==='story') setPanel(renderStory());
+    else setPanel(renderSubject(tab));
+  };
+
+  window.__xxOpenQ = function(subject, idx){
+    setPanel(renderQuestion(subject, idx));
+  };
+
+  window.__xxAns = function(i){
+    if (state.answered) return;
+    state.answered = true;
+    const {subject, idx, q} = state.currentQ;
+    const opts = document.querySelectorAll('.xx-opt');
+    const correct = i===q.answer;
+    opts.forEach((el,j)=>{
+      if (j===q.answer) el.classList.add('correct');
+      if (j===i && !correct) el.classList.add('wrong');
+      el.style.pointerEvents = 'none';
+    });
+    const fb = document.getElementById('xx-fb');
+    if (correct){
+      const gainStone = 20, gainExp = 25;
+      state.stone += gainStone;
+      state.exp += gainExp;
+      state.kill += 1;
+      state['done_'+q.id] = true;
+      fb.innerHTML = `<div class="xx-feedback win">
+        ⚔️ <b>一击破妖！</b> +${gainStone} 灵石 +${gainExp} 修为<br><br>
+        <b>🔮 道解：</b>${q.explain}
+      </div>`;
+    } else {
+      state.hp = Math.max(0, state.hp - 15);
+      fb.innerHTML = `<div class="xx-feedback lose">
+        💢 <b>妖法反噬，道心受损 -15</b><br><br>
+        <b>🔮 道解：</b>${q.explain}<br><br>
+        <i>此题已记入《心魔录》，日后重炼。</i>
+      </div>`;
+    }
+    refreshStats();
+    if (window._reportHeight) setTimeout(window._reportHeight, 50);
+  };
+
+  document.querySelectorAll('.xx-tab').forEach(t=>{
+    t.addEventListener('click', ()=> window.__xxGo(t.dataset.tab));
+  });
+
+  // 初始化
+  refreshStats();
+  setPanel(renderStory());
+})();
+</script></body>
+</html>
