@@ -843,9 +843,9 @@
       modal.remove();
       localStorage.setItem(KEY, '1');
     };
-  
+  }
+
   if (typeof window!=='undefined') { try { window.__v435re__showUpdateModal = _showUpdateModal; } catch(_){} }
-}
 
   function _addVersionBadge() {
     if (document.querySelector('.v435-badge-fixed')) return;
