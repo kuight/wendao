@@ -739,6 +739,9 @@
       padding: 20px;
       animation: v435FadeIn .3s;
     }
+    .v435-update-modal.v435-update-modal-collapsed { display: none !important; }
+    .v435-update-modal:not(.v435-update-modal-shown) { display: none !important; }
+
     @keyframes v435FadeIn { from { opacity: 0; } to { opacity: 1; } }
     .v435-update-card {
       max-width: 500px;
@@ -795,7 +798,7 @@
     if (localStorage.getItem(KEY)) return;
 
     const modal = document.createElement('div');
-    modal.className = 'v435-update-modal';
+    modal.className = 'v435-update-modal v435-update-modal-collapsed';
     modal.innerHTML = `
       <div class="v435-update-card">
         <div class="v435-update-title">🎉 v4.3.5 涅槃重制版 · 更新说明</div>
@@ -832,11 +835,17 @@
       </div>
     `;
     document.body.appendChild(modal);
+    if (typeof window!=='undefined' && typeof window.__v435re__beforeShow==='function'){try{window.__v435re__beforeShow();}catch(_){}}
+    modal.classList.add('v435-update-modal-shown');
+    modal.classList.remove('v435-update-modal-collapsed');
+
     modal.querySelector('.v435-update-close').onclick = () => {
       modal.remove();
       localStorage.setItem(KEY, '1');
     };
-  }
+  
+  if (typeof window!=='undefined') { try { window.__v435re__showUpdateModal = _showUpdateModal; } catch(_){} }
+}
 
   function _addVersionBadge() {
     if (document.querySelector('.v435-badge-fixed')) return;
@@ -869,7 +878,7 @@
   const _onReady = () => {
     _addVersionBadge();
     _applySceneClasses();
-    setTimeout(_showUpdateModal, 400);
+
     // 每次页面切换重新扫一遍
     setInterval(_applySceneClasses, 2000);
   };

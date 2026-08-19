@@ -201,12 +201,31 @@
     },
   };
 
-  const STORAGE_KEY = 'wendao_save_v1';
+  const STORAGE_KEY = 'wendao_save_v2';
 
   // ================================================================
   // 六、存档工具
   // ================================================================
   function loadSave() {
+      // --- Phase 17 b02 auto migration v1 -> v2 ---
+      try {
+        const V1='wendao_save_v1';
+        if (localStorage.getItem(V1) && !localStorage.getItem(STORAGE_KEY)) {
+          const raw1=localStorage.getItem(V1);
+          try {
+            const old=JSON.parse(raw1);
+            if (old && typeof old==='object') {
+              old.__saveFormat=2;
+              old.__migratedAt=Date.now();
+              localStorage.setItem(STORAGE_KEY, JSON.stringify(old));
+              localStorage.setItem('wendao_save_v1_legacy_'+Date.now(), raw1);
+              localStorage.removeItem(V1);
+            }
+          } catch(_) {}
+        }
+      } catch (_) {}
+      // --- end migration ---
+
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
       if (!raw) return null;
