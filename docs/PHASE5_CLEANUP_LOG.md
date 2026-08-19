@@ -613,3 +613,17 @@ src/index.html returned HTTP 200 as of main HEAD 065678d41bf46fe3c820de8e0196368
 - 05_RECOVERY.md rewritten to be cold-start authoritative for Phase 7-12 state.
 - memory.jsonl extended with final events.
 - PR <PRNUM_FINAL> opened; pending Kuight merge before model reset.
+## Phase 14 — α unpack + γ manifest + δ docs (2026-08-19)
+
+Three PRs closed:
+- #27 — Phase 14: CI manifest-verify workflow (added `.github/workflows/manifest-verify.yml`)
+- #28 — Phase 14 (b): orphan branch cleanup audit (added `steward/10_ORPHAN_CLEANUP.md`)
+- #29 — Phase 14 alpha: unpack wendao4.4.0 src/ (added 48 files: 13 docs + 35 game images)
+
+Pending PRs (this phase):
+- γ PR: rebuild MANIFEST.sha256 + index.json (G36)
+- δ PR: this commit + memory.jsonl update (G37)
+
+Side effect: `src/_portal/index.html` was already present in main after #22/Phase 12, so no portal rename was needed in #29.
+
+Orphan branches (4) slated for DELETE after #28 merges — see `steward/10_ORPHAN_CLEANUP.md`. Head audit table built under Phase 14 (b).

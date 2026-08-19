@@ -269,3 +269,14 @@ Starting with v4.5.0-runnable, the main branch is anchored on the v4.4.0 playabl
 - Images unified under `src/assets/img/` and tracked by `src/assets/img/MANIFEST.sha256`.
 - Archive zip retained at `archive/_legacy/备份/wendao4.4.0.zip` for the historical chain.
 - The full runnable archive is also attached to the `v4.5.0-runnable` GitHub Release.
+## Phase 14 — α + γ + δ (2026-08-19)
+
+> Repository now contains the v4.4.0 playable game baked into `src/`. Open `src/index.html` (or `src/_portal/index.html` for the project landing) to play or to view the project page; pre-built assets also bundle as `v4.5.0-runnable` GitHub Release attachment.
+
+### What happens when you tag main HEAD
+| branch/role        | path                        | status                                              |
+|--------------------|-----------------------------|------------------------------------------------------|
+| Game entry         | `src/index.html`             | points to v4.4.0 game runtime                       |
+| Project landing    | `src/_portal/index.html`    | governance version of the portal page               |
+| Image manifest     | `src/assets/img/MANIFEST.sha256` | 4-token format, regenerated this phase            |
+| Steward archive    | `steward/` + `steward/memory.jsonl` | cold-start recovery for a fresh agent session     |

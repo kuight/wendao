@@ -60,3 +60,9 @@
 ## Phase 12 — v4.4.0 unpack verification (2026-08-18)
 G24 plan reported: zip sha256 `19715861f4d5eabf930210e1b6fc0a2670769cdb4330172caf2cec3b35d44cc2`, 14,926, bytes, top dir `wendao/`, entry `index.html`. New file count: 198 (vs src/), shared with src/: 0, same-path-different-content: 1 (old `src/index.html` portal vs zip `index.html` game entry). Resolution: portal moved to `src/_portal/index.html`, zip entry adopted as `src/index.html`.
 PRs #22 and #23 shipped the unpack and the MANIFEST refresh; PR #24 shipped this documentation. PR-B (bank dedupe) was deferred per G24's 0-file finding.
+## Phase 14 (2026-08-19)
+
+- Headline: `src/` now hosts the v4.4.0 playable game. Two entry points: `src/index.html` (game) and `src/_portal/index.html` (project portal).
+- Releases: `v4.5.0-cleanup` (governance milestone, asset `wendao4.4.0-playable.zip`) and `v4.5.0-runnable` (prerelease, same asset; pending CI green to be promoted to stable).
+- Asset SHA-256: `19715861f4d5eabf930210e1b6fc0a2670769cdb4330172caf2cec3b35d44cc2` (identical across both releases and the in-repo archive `archive/_legacy/备份/wendao4.4.0.zip`).
+- Open PRs: zero at start of Phase 14 γ + δ sync; γ (MANIFEST rebuild) and δ (this commit) target the v4.5.0-runnable-ready state.
