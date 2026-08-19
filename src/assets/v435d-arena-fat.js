@@ -8,6 +8,39 @@
  *
  * 加载顺序：必须在 v435c-hotfix.js、v435d-hotfix.js 之后。
  * =================================================================== */
+
+// Phase 17 b06 defensive wrapper — guarantees all 7 monster fields so UI never shows ?
+function _fatScaleMonster(realmIdOrObj,layer){return _fatSanitize(_fatBuildMonster(realmIdOrObj,layer));}
+function _fatBuildMonster(input,layer){
+  layer=(typeof layer==='number' && layer>=1)?layer:1;
+  let raw=null;
+  try{if(typeof Game!=='undefined' && Game.scaleMonsterForRealm) raw=Game.scaleMonsterForRealm(input);}catch(_){}
+  const base=(raw && typeof raw==='object')?raw:(input && typeof input==='object'?input:{});
+  const mul=Math.pow(1.4,Math.max(0,layer-1));
+  return{
+    layer:layer,
+    name:(typeof base.name==='string' && base.name)?base.name:'未知名妖',
+    hp:Math.floor((Number(base.hp)||200)*mul),
+    atk:Math.floor((Number(base.atk)||10)*mul),
+    def:Math.floor((Number(base.def)||5)*mul),
+    skill:typeof base.skill==='string'?base.skill:(typeof base.attackSkill==='string'?base.attackSkill:'撕咬'),
+    crit:(typeof base.crit==='number')?base.crit:5,
+    resist:(typeof base.resist==='number')?base.resist:0,
+    cooldown:(typeof base.cooldown==='number')?base.cooldown:3
+  };
+}
+function _fatSanitize(m){
+  if(!m || typeof m!=='object') m={};
+  m.name=(m.name && typeof m.name==='string')?m.name:'未知名妖';
+  m.hp=Math.floor(Number(m.hp)||200);
+  m.atk=Math.floor(Number(m.atk)||10);
+  m.def=Math.floor(Number(m.def)||5);
+  m.skill=(m.skill && typeof m.skill==='string')?m.skill:'撕咬';
+  m.crit=(typeof m.crit==='number')?m.crit:5;
+  m.resist=(typeof m.resist==='number')?m.resist:0;
+  return m;
+}
+
 (function (global) {
   'use strict';
   const Game = global.Game;
@@ -132,7 +165,7 @@
         <div class="v435d-arena-cards">`;
       g.cards.forEach((c, ci) => {
         let preview;
-        try { preview = Game.scaleMonsterForRealm({ name:c.name, diff:c.diff, enemyRid:c.realmId }); }
+        try { preview = _fatScaleMonster({ name:c.name, diff:c.diff, enemyRid:c.realmId }, 1); } catch(_){ preview = _fatScaleMonster({},1); }
         catch(e){ preview = { hp:100, atk:20, def:5 }; }
         html += `<div class="v435d-arena-card ${c.allowed?'':'locked'}" data-v435d-arena="${gi}_${ci}" style="border-color:${c.color}">
           <div class="tag" style="background:${c.color}22;color:${c.color};border:1px solid ${c.color}">${c.diffLabel}</div>
@@ -171,7 +204,7 @@
     const chosen = (pool.length ? pool : fallback).slice().sort(() => Math.random() - 0.5);
     if (!chosen.length) { UI.toast('当前已参悟功法下暂无可用题目，请先学功法', 'error'); return; }
     let qIdx = 0;
-    const enemy = Game.scaleMonsterForRealm({ name:enemyDef.name, diff:enemyDef.diff, enemyRid:enemyDef.realmId });
+    const enemy = _fatScaleMonster({ name:enemyDef.name, diff:enemyDef.diff, enemyRid:enemyDef.realmId }, 1);
     UI.openBattle({
       enemy,
       getQuestion: () => chosen[(qIdx++) % chosen.length],
