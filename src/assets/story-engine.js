@@ -76,8 +76,14 @@
       const box = document.createElement('div');
       box.className = 'story-dialog';
       mask.appendChild(box);
+      mask.dataset.storyReady = '0';
+      mask.style.pointerEvents = 'none';
       mask.classList.add('show', 'is-open');
-      mask.classList.add('show', 'is-open');
+      setTimeout(() => {
+        if (!mask || !mask.isConnected) return;
+        mask.style.pointerEvents = '';
+        mask.dataset.storyReady = '1';
+      }, 1500);
 
       // 背景CG（若剧情指定 bg 且 PixelArt 存在，则渲染像素场景）
       if (scene.bg && typeof PixelArt !== 'undefined' && PixelArt.scene) {
@@ -91,7 +97,6 @@
       const lines = scene.lines || [];
 
       const finish = () => {
-        mask.classList.remove('is-open', 'show');
         mask.classList.remove('is-open', 'show');
         mask.remove();
         if (scene.reward) {

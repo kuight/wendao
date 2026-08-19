@@ -50,7 +50,9 @@
     },
 
     _maybePlayIntro() {
-      if (this.introScene && global.STORY_DATA && !Story.seen(this.introScene)) {
+      let shouldAutoIntro = false;
+      try { shouldAutoIntro = localStorage.getItem('v435remake_force') === '1'; } catch (_) { shouldAutoIntro = false; }
+      if (shouldAutoIntro && this.introScene && global.STORY_DATA && !Story.seen(this.introScene)) {
         Story.play(this.introScene, STORY_DATA, () =>
           UI.refreshTopbar({ backHref: '../index.html' }));
       }

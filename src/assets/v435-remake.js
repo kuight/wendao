@@ -16,7 +16,7 @@
  *
  *   3. 【无感知更新】上一版新功能虽然写了，但很多地方没有真的挂
  *      到 UI 上，玩家看不到变化。
- *      → 本次修复：加载即弹窗告知「v4.4.0 可玩版更新内容」；
+ *      → 本次修复：通过“更新日志”入口查看 v4.4.0 可玩版更新内容；
  *        每个页面顶部加版本条；控制台大 banner。
  *
  * 加载顺序：必须在 v434-hotfix.js 之后，且它是唯一的 v4.3.5 补丁
@@ -28,7 +28,7 @@
   'use strict';
 
   if (!global.Game) {
-    console.warn('[v4.3.5-remake] Game 未加载，跳过');
+    console.warn('[v4.4.0-playable] Game 未加载，跳过');
     return;
   }
   const Game = global.Game;
@@ -37,7 +37,7 @@
 
   // === 版本标识 ===
   Game.__hotfixVersion = '4.3.5-remake';
-  Game.__patchChain = (Game.__patchChain || []).concat(['v4.3.5-remake']);
+  Game.__patchChain = (Game.__patchChain || []).concat(['v4.4.0-playable']);
 
   // 控制台醒目 banner —— 用户第一时间能看到确实加载了新版
   console.log('%c\n╔══════════════════════════════════════════════════════╗\n║   问道修仙学院 · v4.4.0 可玩版                    ║\n║   ✅ 修复 [object Object] 选项 bug                    ║\n║   ✅ 修复 洞府打坐给修为过多 bug                      ║\n║   ✅ 移除 破坏性 归一化过度处理                       ║\n║   ✅ 新增 版本条 / 更新弹窗 / 平衡日志                ║\n╚══════════════════════════════════════════════════════╝\n',
@@ -803,7 +803,7 @@
       <div class="v435-update-card">
         <div class="v435-update-title">🎉 v4.4.0 可玩版 · 更新说明</div>
         <div style="font-size:12px;color:#b288ff;margin-bottom:12px;">
-          针对上两版反馈的严重问题，本次是<b style="color:#f5c97a;">完整重制</b>而非小补丁
+          针对上两版反馈的严重问题，本次是<b style="color:#f5c97a;">完整可玩版修复</b>而非小补丁
         </div>
         <div class="v435-update-list">
           <b style="color:#f5c97a;">🚨 恶性 Bug 修复</b>
@@ -996,7 +996,7 @@
   // ================================================================
   // 完成 - 收官日志
   // ================================================================
-  console.log('%c[v4.3.5-remake] ✔ 全部模块加载完成',
+  console.log('%c[v4.4.0-playable] ✔ 全部模块加载完成',
     'color:#8ce28c;font-weight:bold;font-size:13px;');
   console.log('  · 🚨 [object] Bug 已根治（options[0] 是对象一律不动）');
   console.log('  · 🧘 洞府打坐修为削弱到原 ~1/10，每日 6 次上限');
