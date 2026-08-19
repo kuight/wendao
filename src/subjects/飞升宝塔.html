@@ -44,12 +44,12 @@
     @media (max-width: 560px) { .floor-grid { grid-template-columns: 1fr; } .current-floor { font-size:36px; } }
   </style>
 </head>
-<body>
+<body data-subject="feisheng">
   <div class="wrap">
     <section class="hero">
       <div class="topbar">
         <div>
-          <a class="back" href="../index.html">← 返回主界面</a>
+          <a class="back" href="../index.html" onclick="event.stopPropagation()">← 返回主界面</a>
           <h1>飞升宝塔</h1>
         </div>
         <div id="ready-badge" class="badge">检测中</div>
@@ -99,6 +99,7 @@
   <script>
     (function () {
       var Game = window.Game || {};
+      if (Game && (!Game.state || !Game.state.char) && typeof Game.init === 'function') { try { Game.init(); } catch (e) { console.warn('[feisheng] Game.init error', e); } }
       var state = Game.state || {};
       var rewardTable = Game.FEISHENG_REWARD_TABLE || [];
       var grid = document.getElementById('floor-grid');

@@ -1,5 +1,5 @@
 /* ================================================================
- * 《问道修仙学院》v4.3.5 · 涅槃重制版 (REMAKE)
+ * 《问道修仙学院》v4.4.0 · 可玩版 (REMAKE)
  * ---------------------------------------------------------------
  * 上一版 v4.3.5/v4.3.6 存在的三大严重问题：
  *
@@ -16,7 +16,7 @@
  *
  *   3. 【无感知更新】上一版新功能虽然写了，但很多地方没有真的挂
  *      到 UI 上，玩家看不到变化。
- *      → 本次修复：加载即弹窗告知「v4.3.5 重制版更新内容」；
+ *      → 本次修复：加载即弹窗告知「v4.4.0 可玩版更新内容」；
  *        每个页面顶部加版本条；控制台大 banner。
  *
  * 加载顺序：必须在 v434-hotfix.js 之后，且它是唯一的 v4.3.5 补丁
@@ -40,7 +40,7 @@
   Game.__patchChain = (Game.__patchChain || []).concat(['v4.3.5-remake']);
 
   // 控制台醒目 banner —— 用户第一时间能看到确实加载了新版
-  console.log('%c\n╔══════════════════════════════════════════════════════╗\n║   问道修仙学院 · v4.3.5 涅槃重制版                    ║\n║   ✅ 修复 [object Object] 选项 bug                    ║\n║   ✅ 修复 洞府打坐给修为过多 bug                      ║\n║   ✅ 移除 破坏性 归一化过度处理                       ║\n║   ✅ 新增 版本条 / 更新弹窗 / 平衡日志                ║\n╚══════════════════════════════════════════════════════╝\n',
+  console.log('%c\n╔══════════════════════════════════════════════════════╗\n║   问道修仙学院 · v4.4.0 可玩版                    ║\n║   ✅ 修复 [object Object] 选项 bug                    ║\n║   ✅ 修复 洞府打坐给修为过多 bug                      ║\n║   ✅ 移除 破坏性 归一化过度处理                       ║\n║   ✅ 新增 版本条 / 更新弹窗 / 平衡日志                ║\n╚══════════════════════════════════════════════════════╝\n',
     'color:#f5c97a;font-weight:bold;font-size:12px;font-family:monospace;');
 
   // ================================================================
@@ -375,7 +375,7 @@
       let html = `
         <div style="padding:14px;background:linear-gradient(180deg,rgba(226,91,91,0.12),rgba(20,18,42,0.5));border-radius:12px;margin-bottom:12px;border:1px solid rgba(226,91,91,0.35);">
           <div style="display:flex;align-items:center;gap:8px;font-size:16px;font-weight:700;color:var(--xx-red);margin-bottom:6px;">
-            🔥 斩妖场 · ${emoji} 全境界妖兽榜 <span style="font-size:11px;padding:2px 8px;background:#f5c97a;color:#20182a;border-radius:6px;">v4.3.5 重制</span>
+            🔥 斩妖场 · ${emoji} 全境界妖兽榜 <span style="font-size:11px;padding:2px 8px;background:#f5c97a;color:#20182a;border-radius:6px;">v4.4.0 可玩</span>
           </div>
           <div style="font-size:12px;color:var(--xx-text-soft);line-height:1.8;">
             你的境界：<b style="color:var(--xx-cyan);">${(REALMS[c.realmId] && (REALMS[c.realmId].name + (REALMS[c.realmId].sub||''))) || '凡人'}</b>
@@ -801,7 +801,7 @@
     modal.className = 'v435-update-modal v435-update-modal-collapsed';
     modal.innerHTML = `
       <div class="v435-update-card">
-        <div class="v435-update-title">🎉 v4.3.5 涅槃重制版 · 更新说明</div>
+        <div class="v435-update-title">🎉 v4.4.0 可玩版 · 更新说明</div>
         <div style="font-size:12px;color:#b288ff;margin-bottom:12px;">
           针对上两版反馈的严重问题，本次是<b style="color:#f5c97a;">完整重制</b>而非小补丁
         </div>
@@ -851,7 +851,7 @@
     if (document.querySelector('.v435-badge-fixed')) return;
     const b = document.createElement('div');
     b.className = 'v435-badge-fixed';
-    b.textContent = 'v4.3.5 · 重制版';
+    b.textContent = 'v4.4.0 · 可玩版';
     document.body.appendChild(b);
   }
 

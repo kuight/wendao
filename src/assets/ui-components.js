@@ -65,6 +65,7 @@
             <span class="xx-stat" title="灵石 ${c.lingshi}"><span>💎</span> <b>${_fmt(c.lingshi)}</b></span>
             <span class="xx-stat" title="连击 ${c.streak}"><span>🔥</span> <b>${c.streak}</b></span>
             ${ inSubPage ? `<a href="${backHref}" class="xx-btn">⬅ 山门</a>` : ''}
+            <button class="xx-btn" id="open-version-log" type="button">📜 更新日志</button><button class="xx-btn" id="open-settings" type="button">⚙ 设置</button>
           </div>
         </div>
       `;
@@ -94,10 +95,16 @@
         ${actions.length ? `<div class="quest-actions" style="margin-top:16px;justify-content:flex-end;"></div>` : ''}
       `;
 
+      let closed = false;
+      const onKey = (ev) => { if (ev.key === 'Escape' && !ev.repeat) close(); };
       const close = () => {
+        if (closed) return;
+        closed = true;
+        document.removeEventListener('keydown', onKey, true);
         mask.remove();
         if (onClose) onClose();
       };
+      document.addEventListener('keydown', onKey, true);
 
       m.querySelector('.xx-modal-close').onclick = close;
       mask.onclick = (e) => { if (e.target === mask) close(); };
@@ -119,6 +126,13 @@
       mask.appendChild(m);
       document.body.appendChild(mask);
       return { close, mask, m };
+    },
+
+    openSettings() {
+      const s=(Game.state&&Game.state.settings)||{};
+      const body=`<div class="settings-panel"><label><input id="set-sound" type="checkbox" ${s.soundOn?'checked':''}> 声音</label><label><input id="set-autosave" type="checkbox" ${s.autosave!==false?'checked':''}> 自动保存</label><label><input id="set-compact" type="checkbox" ${s.compact?'checked':''}> 紧凑模式</label><label><input id="set-motion" type="checkbox" ${s.reducedMotion?'checked':''}> 减少动画</label><div>字体：<button class="xx-btn" data-font="small">小</button><button class="xx-btn" data-font="medium">中</button><button class="xx-btn" data-font="large">大</button></div><div>主题：<button class="xx-btn" data-theme="dark">暗色</button><button class="xx-btn" data-theme="light">亮色</button></div></div>`;
+      const ref=this.modal({title:'⚙ 设置',body}); const save=()=>{if(!Game.state)return;Game.state.settings=Game.state.settings||{};Game.state.settings.soundOn=!!ref.m.querySelector('#set-sound').checked;Game.state.settings.autosave=!!ref.m.querySelector('#set-autosave').checked;Game.state.settings.compact=!!ref.m.querySelector('#set-compact').checked;Game.state.settings.reducedMotion=!!ref.m.querySelector('#set-motion').checked;if(Game.save)Game.save();};
+      ref.m.querySelectorAll('input').forEach(x=>x.addEventListener('change',save)); ref.m.querySelectorAll('[data-font]').forEach(x=>x.addEventListener('click',()=>{document.documentElement.dataset.font=x.dataset.font;localStorage.setItem('wendao_font',x.dataset.font)})); ref.m.querySelectorAll('[data-theme]').forEach(x=>x.addEventListener('click',()=>{document.body.dataset.theme=x.dataset.theme;localStorage.setItem('wendao_theme',x.dataset.theme)})); return ref;
     },
 
     confirm(text, onYes) {
@@ -2141,6 +2155,7 @@
 
     // v4.3.5g 重构：合并 v435f-hotfix Bug 1 —— 四宫格 document 委托（幂等，只装一次）
     //   与 UI.bindFourGrid 的空实现搭配，避免元素级 onclick + 委托双触发
+    if (!global.__wendao_settingsDelegateInstalled) { global.__wendao_settingsDelegateInstalled=true; document.addEventListener('click',function(e){const t=e.target&&e.target.closest?e.target.closest('#open-settings,#open-version-log'):null;if(!t)return;e.preventDefault();e.stopPropagation();if(t.id==='open-settings'&&UI.openSettings)UI.openSettings();if(t.id==='open-version-log'&&global.__v435re__showUpdateModal)global.__v435re__showUpdateModal()},true); }
     if (!global.__wendao_gridDelegateInstalled) {
       global.__wendao_gridDelegateInstalled = true;
       document.addEventListener('click', function (e) {

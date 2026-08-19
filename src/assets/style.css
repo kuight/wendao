@@ -4106,3 +4106,19 @@ body.v43-shake { animation: v43Shake 0.4s; }
   border-color: var(--xx-gold) !important;
   box-shadow: 0 0 12px rgba(245,201,122,0.35);
 }
+
+/* Phase 19 UX hardening */
+.xx-modal-mask.story-mask:not(.is-open){pointer-events:none!important}.xx-modal-mask.story-mask.is-open{pointer-events:auto!important}
+.v435-badge-fixed{color:#fff2cc!important;background:rgba(0,0,0,.78)!important;border:1px solid rgba(255,200,80,.4)!important}
+button.xx-btn-primary,.xx-btn-primary{color:#f5f7fa!important;background:linear-gradient(180deg,#1f3a5e,#0d2647)!important;border-color:#1f3a5e!important}
+.stat-card-label,.stat-card-value{color:#f8f9fb!important}
+@media(max-width:720px){.xx-tab,.btn,.xx-btn,button.xx-modal-close{min-height:36px;min-width:36px;padding:8px 14px}[class*=brand]{min-height:36px;line-height:36px;display:inline-flex;align-items:center;padding:0 12px}[class*=side-dock] button,[class*=dock] button{min-width:44px;min-height:44px}[id*=prologue] button,[class*=prologue] button{min-height:36px}}
+:root[data-font=small]{font-size:87%}:root[data-font=medium]{font-size:100%}:root[data-font=large]{font-size:112%}
+
+/* Phase 19 UX hardening */
+.xx-modal-mask.story-mask:not(.is-open){pointer-events:none!important}.xx-modal-mask.story-mask.is-open{pointer-events:auto!important}
+.v435-badge-fixed{color:#fff2cc!important;background:rgba(0,0,0,.78)!important;border:1px solid rgba(255,200,80,.4)!important}
+button.xx-btn-primary,.xx-btn-primary{color:#f5f7fa!important;background:linear-gradient(180deg,#1f3a5e,#0d2647)!important;border-color:#1f3a5e!important}
+.stat-card-label,.stat-card-value{color:#f8f9fb!important}
+@media(max-width:720px){.xx-tab,.btn,.xx-btn,button.xx-modal-close{min-height:36px;min-width:36px;padding:8px 14px}[class*=brand]{min-height:36px;line-height:36px;display:inline-flex;align-items:center;padding:0 12px}[class*=side-dock] button,[class*=dock] button{min-width:44px;min-height:44px}[id*=prologue] button,[class*=prologue] button{min-height:36px}}
+:root[data-font=small]{font-size:87%}:root[data-font=medium]{font-size:100%}:root[data-font=large]{font-size:112%}
