@@ -65,109 +65,109 @@
       "count": 18,
       "items": [
         {
-          "path": "src/assets/img/emote/angry.png",
+          "path": "src/assets/img/emote/angry.jpg",
           "sha256": "a215ea525ec8bf4c385aa18c745eb0bb50d27d8874a6383a0b03bdfb41bb9be1",
           "git_blob_sha1": "5afb138412483abb05982957abfa45a5d1940d85",
           "size": 43728
         },
         {
-          "path": "src/assets/img/emote/deadpan.png",
+          "path": "src/assets/img/emote/deadpan.jpg",
           "sha256": "44d87310bbe4b224515136be5dcb25321dad79bc91488ce7ab02dcd82d85ae1d",
           "git_blob_sha1": "bccf13c042521363ba6642ba1681eb69fdfa2570",
           "size": 41924
         },
         {
-          "path": "src/assets/img/emote/love.png",
+          "path": "src/assets/img/emote/love.jpg",
           "sha256": "4a04d6a991f7368768cb6662c773c150569f7a996e1d2c97c74befc2a9fa623b",
           "git_blob_sha1": "cdbff5aed84eacdbc5f1c8eb69d5421fac724569",
           "size": 47889
         },
         {
-          "path": "src/assets/img/emote/peek.png",
+          "path": "src/assets/img/emote/peek.jpg",
           "sha256": "7cf57c7adee3b79bb91392c6b47dbf54a7e15839da7951811f04c7198505fb36",
           "git_blob_sha1": "2667db8e9f8fa574fa98fcbd8302125cb9129ac4",
           "size": 31263
         },
         {
-          "path": "src/assets/img/emote/plead.png",
+          "path": "src/assets/img/emote/plead.jpg",
           "sha256": "dabd99a6c649d4ddd74df276bb8a839cf5d1c426f84bafd40ecfb25ff67fb633",
           "git_blob_sha1": "4e146746527f5b4865d9c6832f97311026e9f9ca",
           "size": 44967
         },
         {
-          "path": "src/assets/img/emote/smug.png",
+          "path": "src/assets/img/emote/smug.jpg",
           "sha256": "25f5a8109a28c22c432820091447cc15954f4c333309fadb4fa56fdd6cb930c7",
           "git_blob_sha1": "46d5c25a59dcd79a9b823d38080f948246fcc215",
           "size": 41095
         },
         {
-          "path": "src/assets/img/emote/tea.png",
+          "path": "src/assets/img/emote/tea.jpg",
           "sha256": "16a6d8034e82df07729eb64e8c28acb8b8a25c87990de817e24f9c8cde0b9749",
           "git_blob_sha1": "b11bfce0dc4f4e7881c81e11e21349fb4b3afa79",
           "size": 42333
         },
         {
-          "path": "src/assets/img/emote/thumbsup.png",
+          "path": "src/assets/img/emote/thumbsup.jpg",
           "sha256": "9a57ea55fe4c65428730e64fa64cd95f92f28459adc804bb8f8d4a857bd01ad3",
           "git_blob_sha1": "b07b4ac3e274db0dec35fe67b0486fb60eae0cf2",
           "size": 46251
         },
         {
-          "path": "src/assets/img/emote/work.png",
+          "path": "src/assets/img/emote/work.jpg",
           "sha256": "05d743e0241e47dc83ad6d17d6b5e5aea4cce380ca4e1ca95ddbd42e707f5d87",
           "git_blob_sha1": "f5b7e6bad44f22e0636198e74ef38c16bfb745a8",
           "size": 35207
         },
         {
-          "path": "src/assets/img/emotes/angry.png",
+          "path": "src/assets/img/emotes/angry.jpg",
           "sha256": "a215ea525ec8bf4c385aa18c745eb0bb50d27d8874a6383a0b03bdfb41bb9be1",
           "git_blob_sha1": "5afb138412483abb05982957abfa45a5d1940d85",
           "size": 43728
         },
         {
-          "path": "src/assets/img/emotes/deadpan.png",
+          "path": "src/assets/img/emotes/deadpan.jpg",
           "sha256": "44d87310bbe4b224515136be5dcb25321dad79bc91488ce7ab02dcd82d85ae1d",
           "git_blob_sha1": "bccf13c042521363ba6642ba1681eb69fdfa2570",
           "size": 41924
         },
         {
-          "path": "src/assets/img/emotes/love.png",
+          "path": "src/assets/img/emotes/love.jpg",
           "sha256": "4a04d6a991f7368768cb6662c773c150569f7a996e1d2c97c74befc2a9fa623b",
           "git_blob_sha1": "cdbff5aed84eacdbc5f1c8eb69d5421fac724569",
           "size": 47889
         },
         {
-          "path": "src/assets/img/emotes/peek.png",
+          "path": "src/assets/img/emotes/peek.jpg",
           "sha256": "7cf57c7adee3b79bb91392c6b47dbf54a7e15839da7951811f04c7198505fb36",
           "git_blob_sha1": "2667db8e9f8fa574fa98fcbd8302125cb9129ac4",
           "size": 31263
         },
         {
-          "path": "src/assets/img/emotes/plead.png",
+          "path": "src/assets/img/emotes/plead.jpg",
           "sha256": "dabd99a6c649d4ddd74df276bb8a839cf5d1c426f84bafd40ecfb25ff67fb633",
           "git_blob_sha1": "4e146746527f5b4865d9c6832f97311026e9f9ca",
           "size": 44967
         },
         {
-          "path": "src/assets/img/emotes/smug.png",
+          "path": "src/assets/img/emotes/smug.jpg",
           "sha256": "25f5a8109a28c22c432820091447cc15954f4c333309fadb4fa56fdd6cb930c7",
           "git_blob_sha1": "46d5c25a59dcd79a9b823d38080f948246fcc215",
           "size": 41095
         },
         {
-          "path": "src/assets/img/emotes/tea.png",
+          "path": "src/assets/img/emotes/tea.jpg",
           "sha256": "16a6d8034e82df07729eb64e8c28acb8b8a25c87990de817e24f9c8cde0b9749",
           "git_blob_sha1": "b11bfce0dc4f4e7881c81e11e21349fb4b3afa79",
           "size": 42333
         },
         {
-          "path": "src/assets/img/emotes/thumbsup.png",
+          "path": "src/assets/img/emotes/thumbsup.jpg",
           "sha256": "9a57ea55fe4c65428730e64fa64cd95f92f28459adc804bb8f8d4a857bd01ad3",
           "git_blob_sha1": "b07b4ac3e274db0dec35fe67b0486fb60eae0cf2",
           "size": 46251
         },
         {
-          "path": "src/assets/img/emotes/work.png",
+          "path": "src/assets/img/emotes/work.jpg",
           "sha256": "05d743e0241e47dc83ad6d17d6b5e5aea4cce380ca4e1ca95ddbd42e707f5d87",
           "git_blob_sha1": "f5b7e6bad44f22e0636198e74ef38c16bfb745a8",
           "size": 35207
@@ -593,126 +593,126 @@
       "category": "cover"
     },
     {
-      "path": "src/assets/img/emote/angry.png",
+      "path": "src/assets/img/emote/angry.jpg",
       "sha256": "a215ea525ec8bf4c385aa18c745eb0bb50d27d8874a6383a0b03bdfb41bb9be1",
       "git_blob_sha1": "5afb138412483abb05982957abfa45a5d1940d85",
       "size": 43728,
       "category": "emote"
     },
     {
-      "path": "src/assets/img/emote/deadpan.png",
+      "path": "src/assets/img/emote/deadpan.jpg",
       "sha256": "44d87310bbe4b224515136be5dcb25321dad79bc91488ce7ab02dcd82d85ae1d",
       "git_blob_sha1": "bccf13c042521363ba6642ba1681eb69fdfa2570",
       "size": 41924,
       "category": "emote"
     },
     {
-      "path": "src/assets/img/emote/love.png",
+      "path": "src/assets/img/emote/love.jpg",
       "sha256": "4a04d6a991f7368768cb6662c773c150569f7a996e1d2c97c74befc2a9fa623b",
       "git_blob_sha1": "cdbff5aed84eacdbc5f1c8eb69d5421fac724569",
       "size": 47889,
       "category": "emote"
     },
     {
-      "path": "src/assets/img/emote/peek.png",
+      "path": "src/assets/img/emote/peek.jpg",
       "sha256": "7cf57c7adee3b79bb91392c6b47dbf54a7e15839da7951811f04c7198505fb36",
       "git_blob_sha1": "2667db8e9f8fa574fa98fcbd8302125cb9129ac4",
       "size": 31263,
       "category": "emote"
     },
     {
-      "path": "src/assets/img/emote/plead.png",
+      "path": "src/assets/img/emote/plead.jpg",
       "sha256": "dabd99a6c649d4ddd74df276bb8a839cf5d1c426f84bafd40ecfb25ff67fb633",
       "git_blob_sha1": "4e146746527f5b4865d9c6832f97311026e9f9ca",
       "size": 44967,
       "category": "emote"
     },
     {
-      "path": "src/assets/img/emote/smug.png",
+      "path": "src/assets/img/emote/smug.jpg",
       "sha256": "25f5a8109a28c22c432820091447cc15954f4c333309fadb4fa56fdd6cb930c7",
       "git_blob_sha1": "46d5c25a59dcd79a9b823d38080f948246fcc215",
       "size": 41095,
       "category": "emote"
     },
     {
-      "path": "src/assets/img/emote/tea.png",
+      "path": "src/assets/img/emote/tea.jpg",
       "sha256": "16a6d8034e82df07729eb64e8c28acb8b8a25c87990de817e24f9c8cde0b9749",
       "git_blob_sha1": "b11bfce0dc4f4e7881c81e11e21349fb4b3afa79",
       "size": 42333,
       "category": "emote"
     },
     {
-      "path": "src/assets/img/emote/thumbsup.png",
+      "path": "src/assets/img/emote/thumbsup.jpg",
       "sha256": "9a57ea55fe4c65428730e64fa64cd95f92f28459adc804bb8f8d4a857bd01ad3",
       "git_blob_sha1": "b07b4ac3e274db0dec35fe67b0486fb60eae0cf2",
       "size": 46251,
       "category": "emote"
     },
     {
-      "path": "src/assets/img/emote/work.png",
+      "path": "src/assets/img/emote/work.jpg",
       "sha256": "05d743e0241e47dc83ad6d17d6b5e5aea4cce380ca4e1ca95ddbd42e707f5d87",
       "git_blob_sha1": "f5b7e6bad44f22e0636198e74ef38c16bfb745a8",
       "size": 35207,
       "category": "emote"
     },
     {
-      "path": "src/assets/img/emotes/angry.png",
+      "path": "src/assets/img/emotes/angry.jpg",
       "sha256": "a215ea525ec8bf4c385aa18c745eb0bb50d27d8874a6383a0b03bdfb41bb9be1",
       "git_blob_sha1": "5afb138412483abb05982957abfa45a5d1940d85",
       "size": 43728,
       "category": "emote"
     },
     {
-      "path": "src/assets/img/emotes/deadpan.png",
+      "path": "src/assets/img/emotes/deadpan.jpg",
       "sha256": "44d87310bbe4b224515136be5dcb25321dad79bc91488ce7ab02dcd82d85ae1d",
       "git_blob_sha1": "bccf13c042521363ba6642ba1681eb69fdfa2570",
       "size": 41924,
       "category": "emote"
     },
     {
-      "path": "src/assets/img/emotes/love.png",
+      "path": "src/assets/img/emotes/love.jpg",
       "sha256": "4a04d6a991f7368768cb6662c773c150569f7a996e1d2c97c74befc2a9fa623b",
       "git_blob_sha1": "cdbff5aed84eacdbc5f1c8eb69d5421fac724569",
       "size": 47889,
       "category": "emote"
     },
     {
-      "path": "src/assets/img/emotes/peek.png",
+      "path": "src/assets/img/emotes/peek.jpg",
       "sha256": "7cf57c7adee3b79bb91392c6b47dbf54a7e15839da7951811f04c7198505fb36",
       "git_blob_sha1": "2667db8e9f8fa574fa98fcbd8302125cb9129ac4",
       "size": 31263,
       "category": "emote"
     },
     {
-      "path": "src/assets/img/emotes/plead.png",
+      "path": "src/assets/img/emotes/plead.jpg",
       "sha256": "dabd99a6c649d4ddd74df276bb8a839cf5d1c426f84bafd40ecfb25ff67fb633",
       "git_blob_sha1": "4e146746527f5b4865d9c6832f97311026e9f9ca",
       "size": 44967,
       "category": "emote"
     },
     {
-      "path": "src/assets/img/emotes/smug.png",
+      "path": "src/assets/img/emotes/smug.jpg",
       "sha256": "25f5a8109a28c22c432820091447cc15954f4c333309fadb4fa56fdd6cb930c7",
       "git_blob_sha1": "46d5c25a59dcd79a9b823d38080f948246fcc215",
       "size": 41095,
       "category": "emote"
     },
     {
-      "path": "src/assets/img/emotes/tea.png",
+      "path": "src/assets/img/emotes/tea.jpg",
       "sha256": "16a6d8034e82df07729eb64e8c28acb8b8a25c87990de817e24f9c8cde0b9749",
       "git_blob_sha1": "b11bfce0dc4f4e7881c81e11e21349fb4b3afa79",
       "size": 42333,
       "category": "emote"
     },
     {
-      "path": "src/assets/img/emotes/thumbsup.png",
+      "path": "src/assets/img/emotes/thumbsup.jpg",
       "sha256": "9a57ea55fe4c65428730e64fa64cd95f92f28459adc804bb8f8d4a857bd01ad3",
       "git_blob_sha1": "b07b4ac3e274db0dec35fe67b0486fb60eae0cf2",
       "size": 46251,
       "category": "emote"
     },
     {
-      "path": "src/assets/img/emotes/work.png",
+      "path": "src/assets/img/emotes/work.jpg",
       "sha256": "05d743e0241e47dc83ad6d17d6b5e5aea4cce380ca4e1ca95ddbd42e707f5d87",
       "git_blob_sha1": "f5b7e6bad44f22e0636198e74ef38c16bfb745a8",
       "size": 35207,
