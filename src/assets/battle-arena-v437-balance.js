@@ -236,7 +236,7 @@
         妖兽HP: m.maxHp, 妖兽ATK: m.atk, 妖兽命中: (m.attackChance * 100).toFixed(0)+'%',
         HP比例: (m.maxHp / player.maxHp).toFixed(2) + '×',
         ATK比例: (m.atk / player.atk).toFixed(2) + '×',
-        每回合掉血%: ((m.atk * m.attackChance / player.maxHp) * 100).toFixed(1) + '%'
+        '每回合掉血%': ((m.atk * m.attackChance / player.maxHp) * 100).toFixed(1) + '%',
       };
     }
   };
