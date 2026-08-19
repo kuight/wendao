@@ -10,15 +10,15 @@
 
   const __ASSET_PREFIX = (typeof location !== 'undefined' && /\/subjects\//.test(location.pathname)) ? '../assets/img/' : 'assets/img/';
   const __EMOTES = {
-    idle: __ASSET_PREFIX + 'emotes/smug.png',
-    think: __ASSET_PREFIX + 'emotes/work.png',
-    correct: __ASSET_PREFIX + 'emotes/thumbsup.png',
-    wrong: __ASSET_PREFIX + 'emotes/angry.png',
-    heal: __ASSET_PREFIX + 'emotes/tea.png',
-    love: __ASSET_PREFIX + 'emotes/love.png',
-    plead: __ASSET_PREFIX + 'emotes/plead.png',
-    deadpan: __ASSET_PREFIX + 'emotes/deadpan.png',
-    peek: __ASSET_PREFIX + 'emotes/peek.png'
+    idle: __ASSET_PREFIX + 'emotes/smug.jpg',
+    think: __ASSET_PREFIX + 'emotes/work.jpg',
+    correct: __ASSET_PREFIX + 'emotes/thumbsup.jpg',
+    wrong: __ASSET_PREFIX + 'emotes/angry.jpg',
+    heal: __ASSET_PREFIX + 'emotes/tea.jpg',
+    love: __ASSET_PREFIX + 'emotes/love.jpg',
+    plead: __ASSET_PREFIX + 'emotes/plead.jpg',
+    deadpan: __ASSET_PREFIX + 'emotes/deadpan.jpg',
+    peek: __ASSET_PREFIX + 'emotes/peek.jpg'
   };
 
   const UI = {
