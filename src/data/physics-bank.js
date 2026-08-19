@@ -546,18 +546,6 @@
   "explain": "T=2π√(L/g)=2π√(0.25/10)≈0.99 s。"
  },
  {
-  "id": "phyq0041",
-  "manualId": "phy_m1",
-  "type": "fill",
-  "difficulty": "normal",
-  "q": "一小角度单摆摆长 L=1.44 m，当地 g=9.8 m/s²，其周期 T≈_____ s（保留两位小数）。",
-  "answer": [
-   "2.41",
-   "2.4"
-  ],
-  "explain": "T=2π√(L/g)=2π√(1.44/9.8)≈2.41 s。"
- },
- {
   "id": "phyq0042",
   "manualId": "phy_m1",
   "type": "fill",
@@ -580,18 +568,6 @@
    "2.0"
   ],
   "explain": "T=2π√(L/g)=2π√(1.0/10)≈1.99 s。"
- },
- {
-  "id": "phyq0044",
-  "manualId": "phy_m1",
-  "type": "fill",
-  "difficulty": "normal",
-  "q": "一小角度单摆摆长 L=0.5 m，当地 g=9.8 m/s²，其周期 T≈_____ s（保留两位小数）。",
-  "answer": [
-   "1.42",
-   "1.4"
-  ],
-  "explain": "T=2π√(L/g)=2π√(0.5/9.8)≈1.42 s。"
  },
  {
   "id": "phyq0045",
@@ -630,42 +606,6 @@
   "explain": "T=2π√(L/g)=2π√(0.25/9.8)≈1.00 s。"
  },
  {
-  "id": "phyq0048",
-  "manualId": "phy_m1",
-  "type": "fill",
-  "difficulty": "hard",
-  "q": "一小角度单摆摆长 L=1.0 m，当地 g=9.8 m/s²，其周期 T≈_____ s（保留两位小数）。",
-  "answer": [
-   "2.01",
-   "2.0"
-  ],
-  "explain": "T=2π√(L/g)=2π√(1.0/9.8)≈2.01 s。"
- },
- {
-  "id": "phyq0049",
-  "manualId": "phy_m1",
-  "type": "fill",
-  "difficulty": "hard",
-  "q": "一小角度单摆摆长 L=2.25 m，当地 g=10 m/s²，其周期 T≈_____ s（保留两位小数）。",
-  "answer": [
-   "2.98",
-   "3.0"
-  ],
-  "explain": "T=2π√(L/g)=2π√(2.25/10)≈2.98 s。"
- },
- {
-  "id": "phyq0050",
-  "manualId": "phy_m1",
-  "type": "fill",
-  "difficulty": "hard",
-  "q": "一小角度单摆摆长 L=0.5 m，当地 g=9.8 m/s²，其周期 T≈_____ s（保留两位小数）。",
-  "answer": [
-   "1.42",
-   "1.4"
-  ],
-  "explain": "T=2π√(L/g)=2π√(0.5/9.8)≈1.42 s。"
- },
- {
   "id": "phyq0051",
   "manualId": "phy_m1",
   "type": "fill",
@@ -676,42 +616,6 @@
    "1.6"
   ],
   "explain": "T=2π√(L/g)=2π√(0.64/9.8)≈1.61 s。"
- },
- {
-  "id": "phyq0052",
-  "manualId": "phy_m1",
-  "type": "fill",
-  "difficulty": "hard",
-  "q": "一小角度单摆摆长 L=0.25 m，当地 g=10 m/s²，其周期 T≈_____ s（保留两位小数）。",
-  "answer": [
-   "0.99",
-   "1.0"
-  ],
-  "explain": "T=2π√(L/g)=2π√(0.25/10)≈0.99 s。"
- },
- {
-  "id": "phyq0053",
-  "manualId": "phy_m1",
-  "type": "fill",
-  "difficulty": "hard",
-  "q": "一小角度单摆摆长 L=4.0 m，当地 g=9.8 m/s²，其周期 T≈_____ s（保留两位小数）。",
-  "answer": [
-   "4.01",
-   "4.0"
-  ],
-  "explain": "T=2π√(L/g)=2π√(4.0/9.8)≈4.01 s。"
- },
- {
-  "id": "phyq0054",
-  "manualId": "phy_m1",
-  "type": "fill",
-  "difficulty": "hard",
-  "q": "一小角度单摆摆长 L=2.25 m，当地 g=9.8 m/s²，其周期 T≈_____ s（保留两位小数）。",
-  "answer": [
-   "3.01",
-   "3.0"
-  ],
-  "explain": "T=2π√(L/g)=2π√(2.25/9.8)≈3.01 s。"
  },
  {
   "id": "phyq0055",
@@ -1113,18 +1017,6 @@
  },
  {
   "id": "phyq0088",
-  "manualId": "phy_m1",
-  "type": "calc",
-  "difficulty": "boss",
-  "q": "一弹簧振子质量 m=2.0 kg，劲度系数 k=20 N/m，振幅 A=0.1 m。求：(1) 周期 T；(2) 最大速度 v_max；(3) 总能量 E。",
-  "answer": [
-   "T=1.987 s, v_max=0.316 m/s, E=0.1000 J",
-   "T≈1.99 s, v_max≈0.32 m/s, E≈0.100 J"
-  ],
-  "explain": "T=2π√(m/k)=2π√(2.0/20)=1.987 s；v_max=Aω=A√(k/m)=0.1×√(20/2.0)=0.316 m/s；E=½kA²=0.1000 J。"
- },
- {
-  "id": "phyq0089",
   "manualId": "phy_m1",
   "type": "calc",
   "difficulty": "boss",
@@ -1658,18 +1550,6 @@
   "explain": "v=fλ=1500×5=7500 m/s。"
  },
  {
-  "id": "phyq0131",
-  "manualId": "phy_m4",
-  "type": "fill",
-  "difficulty": "normal",
-  "q": "一列机械波频率 f=1500 Hz，波长 λ=1.5 m，则波速 v=_____ m/s。",
-  "answer": [
-   "2250.0",
-   "2250.0.0"
-  ],
-  "explain": "v=fλ=1500×1.5=2250.0 m/s。"
- },
- {
   "id": "phyq0132",
   "manualId": "phy_m4",
   "type": "fill",
@@ -1716,18 +1596,6 @@
    "1200.0.0"
   ],
   "explain": "v=fλ=800×1.5=1200.0 m/s。"
- },
- {
-  "id": "phyq0136",
-  "manualId": "phy_m4",
-  "type": "fill",
-  "difficulty": "normal",
-  "q": "一列机械波频率 f=100 Hz，波长 λ=1 m，则波速 v=_____ m/s。",
-  "answer": [
-   "100",
-   "100.0"
-  ],
-  "explain": "v=fλ=100×1=100 m/s。"
  },
  {
   "id": "phyq0137",
@@ -1824,18 +1692,6 @@
    "100.0.0"
   ],
   "explain": "v=fλ=200×0.5=100.0 m/s。"
- },
- {
-  "id": "phyq0145",
-  "manualId": "phy_m4",
-  "type": "fill",
-  "difficulty": "normal",
-  "q": "一列机械波频率 f=500 Hz，波长 λ=1.5 m，则波速 v=_____ m/s。",
-  "answer": [
-   "750.0",
-   "750.0.0"
-  ],
-  "explain": "v=fλ=500×1.5=750.0 m/s。"
  },
  {
   "id": "phyq0146",
@@ -2613,18 +2469,6 @@
   "explain": "n=sinθ₁/sinθ₂ → sinθ₂=sinθ₁/n=0.799/1.5=0.532，θ₂=arcsin(0.532)≈32.2°。"
  },
  {
-  "id": "phyq0215",
-  "manualId": "phy_m6",
-  "type": "fill",
-  "difficulty": "normal",
-  "q": "光从空气射入折射率 n=1.5 的介质，入射角 θ₁=53°，求折射角 θ₂≈_____°（保留一位小数）。",
-  "answer": [
-   "32.2",
-   "32"
-  ],
-  "explain": "n=sinθ₁/sinθ₂ → sinθ₂=sinθ₁/n=0.799/1.5=0.532，θ₂=arcsin(0.532)≈32.2°。"
- },
- {
   "id": "phyq0216",
   "manualId": "phy_m6",
   "type": "fill",
@@ -2697,18 +2541,6 @@
   "explain": "n=sinθ₁/sinθ₂ → sinθ₂=sinθ₁/n=0.866/2.4=0.361，θ₂=arcsin(0.361)≈21.2°。"
  },
  {
-  "id": "phyq0222",
-  "manualId": "phy_m6",
-  "type": "fill",
-  "difficulty": "normal",
-  "q": "光从空气射入折射率 n=1.4 的介质，入射角 θ₁=30°，求折射角 θ₂≈_____°（保留一位小数）。",
-  "answer": [
-   "20.9",
-   "21"
-  ],
-  "explain": "n=sinθ₁/sinθ₂ → sinθ₂=sinθ₁/n=0.500/1.4=0.357，θ₂=arcsin(0.357)≈20.9°。"
- },
- {
   "id": "phyq0223",
   "manualId": "phy_m6",
   "type": "fill",
@@ -2769,18 +2601,6 @@
   "explain": "n=sinθ₁/sinθ₂ → sinθ₂=sinθ₁/n=0.500/2.0=0.250，θ₂=arcsin(0.250)≈14.5°。"
  },
  {
-  "id": "phyq0228",
-  "manualId": "phy_m6",
-  "type": "fill",
-  "difficulty": "normal",
-  "q": "光从空气射入折射率 n=1.4 的介质，入射角 θ₁=37°，求折射角 θ₂≈_____°（保留一位小数）。",
-  "answer": [
-   "25.5",
-   "25"
-  ],
-  "explain": "n=sinθ₁/sinθ₂ → sinθ₂=sinθ₁/n=0.602/1.4=0.430，θ₂=arcsin(0.430)≈25.5°。"
- },
- {
   "id": "phyq0229",
   "manualId": "phy_m6",
   "type": "fill",
@@ -2791,30 +2611,6 @@
    "18"
   ],
   "explain": "n=sinθ₁/sinθ₂ → sinθ₂=sinθ₁/n=0.602/2.0=0.301，θ₂=arcsin(0.301)≈17.5°。"
- },
- {
-  "id": "phyq0230",
-  "manualId": "phy_m6",
-  "type": "fill",
-  "difficulty": "normal",
-  "q": "光从空气射入折射率 n=1.732 的介质，入射角 θ₁=30°，求折射角 θ₂≈_____°（保留一位小数）。",
-  "answer": [
-   "16.8",
-   "17"
-  ],
-  "explain": "n=sinθ₁/sinθ₂ → sinθ₂=sinθ₁/n=0.500/1.732=0.289，θ₂=arcsin(0.289)≈16.8°。"
- },
- {
-  "id": "phyq0231",
-  "manualId": "phy_m6",
-  "type": "fill",
-  "difficulty": "normal",
-  "q": "光从空气射入折射率 n=1.33 的介质，入射角 θ₁=30°，求折射角 θ₂≈_____°（保留一位小数）。",
-  "answer": [
-   "22.1",
-   "22"
-  ],
-  "explain": "n=sinθ₁/sinθ₂ → sinθ₂=sinθ₁/n=0.500/1.33=0.376，θ₂=arcsin(0.376)≈22.1°。"
  },
  {
   "id": "phyq0232",
@@ -2865,18 +2661,6 @@
   "explain": "sinθc=1/n=1/1.6=0.625，θc=38.7°。"
  },
  {
-  "id": "phyq0236",
-  "manualId": "phy_m6",
-  "type": "fill",
-  "difficulty": "normal",
-  "q": "介质折射率 n=1.6，光从该介质射入空气的临界角 θc≈_____°（保留一位小数）。",
-  "answer": [
-   "38.7",
-   "39"
-  ],
-  "explain": "sinθc=1/n=1/1.6=0.625，θc=38.7°。"
- },
- {
   "id": "phyq0237",
   "manualId": "phy_m6",
   "type": "fill",
@@ -2887,18 +2671,6 @@
    "45"
   ],
   "explain": "sinθc=1/n=1/1.414=0.707，θc=45.0°。"
- },
- {
-  "id": "phyq0238",
-  "manualId": "phy_m6",
-  "type": "fill",
-  "difficulty": "normal",
-  "q": "介质折射率 n=1.6，光从该介质射入空气的临界角 θc≈_____°（保留一位小数）。",
-  "answer": [
-   "38.7",
-   "39"
-  ],
-  "explain": "sinθc=1/n=1/1.6=0.625，θc=38.7°。"
  },
  {
   "id": "phyq0239",
@@ -2913,18 +2685,6 @@
   "explain": "sinθc=1/n=1/1.33=0.752，θc=48.8°。"
  },
  {
-  "id": "phyq0240",
-  "manualId": "phy_m6",
-  "type": "fill",
-  "difficulty": "normal",
-  "q": "介质折射率 n=1.414，光从该介质射入空气的临界角 θc≈_____°（保留一位小数）。",
-  "answer": [
-   "45.0",
-   "45"
-  ],
-  "explain": "sinθc=1/n=1/1.414=0.707，θc=45.0°。"
- },
- {
   "id": "phyq0241",
   "manualId": "phy_m6",
   "type": "fill",
@@ -2935,42 +2695,6 @@
    "30"
   ],
   "explain": "sinθc=1/n=1/2.0=0.500，θc=30.0°。"
- },
- {
-  "id": "phyq0242",
-  "manualId": "phy_m6",
-  "type": "fill",
-  "difficulty": "normal",
-  "q": "介质折射率 n=1.33，光从该介质射入空气的临界角 θc≈_____°（保留一位小数）。",
-  "answer": [
-   "48.8",
-   "49"
-  ],
-  "explain": "sinθc=1/n=1/1.33=0.752，θc=48.8°。"
- },
- {
-  "id": "phyq0243",
-  "manualId": "phy_m6",
-  "type": "fill",
-  "difficulty": "normal",
-  "q": "介质折射率 n=1.6，光从该介质射入空气的临界角 θc≈_____°（保留一位小数）。",
-  "answer": [
-   "38.7",
-   "39"
-  ],
-  "explain": "sinθc=1/n=1/1.6=0.625，θc=38.7°。"
- },
- {
-  "id": "phyq0244",
-  "manualId": "phy_m6",
-  "type": "fill",
-  "difficulty": "normal",
-  "q": "介质折射率 n=1.6，光从该介质射入空气的临界角 θc≈_____°（保留一位小数）。",
-  "answer": [
-   "38.7",
-   "39"
-  ],
-  "explain": "sinθc=1/n=1/1.6=0.625，θc=38.7°。"
  },
  {
   "id": "phyq0246",
@@ -47098,15 +46822,6 @@
   "explain": "摩擦力方向与相对运动或运动趋势相反"
  },
  {
-  "id": "phyq4607",
-  "manualId": "phy_m21",
-  "type": "judge",
-  "difficulty": "easy",
-  "q": "静摩擦=μₛN",
-  "answer": "错",
-  "explain": "错。正确说法：静摩擦 0≤f≤μₛN"
- },
- {
   "id": "phyq4608",
   "manualId": "phy_m21",
   "type": "judge",
@@ -49519,15 +49234,6 @@
   "explain": "错。正确说法：地球表面 g=GM/R²"
  },
  {
-  "id": "phyq4947",
-  "manualId": "phy_m24",
-  "type": "judge",
-  "difficulty": "easy",
-  "q": "卫星轨道半径越大周期越长",
-  "answer": "对",
-  "explain": "卫星轨道半径越大周期越长"
- },
- {
   "id": "phyq4948",
   "manualId": "phy_m24",
   "type": "judge",
@@ -49555,15 +49261,6 @@
   "explain": "卫星做圆周运动 GMm/r²=mv²/r → v=√(GM/r)"
  },
  {
-  "id": "phyq4952",
-  "manualId": "phy_m24",
-  "type": "judge",
-  "difficulty": "hard",
-  "q": "T=2π√(r/GM)",
-  "answer": "错",
-  "explain": "错。正确说法：卫星做圆周运动周期 T=2π√(r³/GM)"
- },
- {
   "id": "phyq4953",
   "manualId": "phy_m24",
   "type": "judge",
@@ -49589,15 +49286,6 @@
   "q": "v₁=11.2 km/s",
   "answer": "错",
   "explain": "错。正确说法：第一宇宙速度 v₁≈7.9 km/s"
- },
- {
-  "id": "phyq4957",
-  "manualId": "phy_m24",
-  "type": "judge",
-  "difficulty": "normal",
-  "q": "第二宇宙速度 v₂≈11.2 km/s",
-  "answer": "对",
-  "explain": "第二宇宙速度 v₂≈11.2 km/s"
  },
  {
   "id": "phyq4958",
@@ -51580,21 +51268,6 @@
   ]
  },
  {
-  "id": "phyq5267",
-  "manualId": "phy_m27",
-  "type": "single",
-  "difficulty": "easy",
-  "q": "下列说法正确的是",
-  "answer": "D",
-  "explain": "正确表述：电势能 W_e=qφ",
-  "options": [
-   "A. W_e=φ/q",
-   "B. W_e=q/φ",
-   "C. W_e=q+φ",
-   "D. 电势能 W_e=qφ"
-  ]
- },
- {
   "id": "phyq5268",
   "manualId": "phy_m27",
   "type": "single",
@@ -51895,24 +51568,6 @@
   ]
  },
  {
-  "id": "phyq5288",
-  "manualId": "phy_m27",
-  "type": "judge",
-  "difficulty": "normal",
-  "q": "电场强度定义 E=F/q",
-  "answer": "对",
-  "explain": "电场强度定义 E=F/q"
- },
- {
-  "id": "phyq5289",
-  "manualId": "phy_m27",
-  "type": "judge",
-  "difficulty": "hard",
-  "q": "E=kQr",
-  "answer": "错",
-  "explain": "错。正确说法：点电荷电场强度 E=kQ/r²"
- },
- {
   "id": "phyq5294",
   "manualId": "phy_m27",
   "type": "judge",
@@ -51929,24 +51584,6 @@
   "q": "W=q/U",
   "answer": "错",
   "explain": "错。正确说法：电场力做功 W=qU"
- },
- {
-  "id": "phyq5296",
-  "manualId": "phy_m27",
-  "type": "judge",
-  "difficulty": "easy",
-  "q": "匀强电场中 U=Ed",
-  "answer": "对",
-  "explain": "匀强电场中 U=Ed"
- },
- {
-  "id": "phyq5297",
-  "manualId": "phy_m27",
-  "type": "judge",
-  "difficulty": "normal",
-  "q": "W_e=q/φ",
-  "answer": "错",
-  "explain": "错。正确说法：电势能 W_e=qφ"
  },
  {
   "id": "phyq5298",
@@ -52003,15 +51640,6 @@
   "explain": "错。正确说法：电介质增大电容"
  },
  {
-  "id": "phyq5308",
-  "manualId": "phy_m27",
-  "type": "judge",
-  "difficulty": "normal",
-  "q": "库仑定律 F=kq₁q₂/r²",
-  "answer": "对",
-  "explain": "库仑定律 F=kq₁q₂/r²"
- },
- {
   "id": "phyq5309",
   "manualId": "phy_m27",
   "type": "judge",
@@ -52028,24 +51656,6 @@
   "q": "电荷量单位库仑(C)",
   "answer": "对",
   "explain": "电荷量单位库仑(C)"
- },
- {
-  "id": "phyq5311",
-  "manualId": "phy_m27",
-  "type": "judge",
-  "difficulty": "easy",
-  "q": "e=6.02×10²³",
-  "answer": "错",
-  "explain": "错。正确说法：电子电量 e≈1.6×10⁻¹⁹ C"
- },
- {
-  "id": "phyq5313",
-  "manualId": "phy_m27",
-  "type": "judge",
-  "difficulty": "hard",
-  "q": "起电只有一种",
-  "answer": "错",
-  "explain": "错。正确说法：感应起电、摩擦起电、接触起电三种起电"
  },
  {
   "id": "phyq5314",
