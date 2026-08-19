@@ -1,212 +1,1115 @@
 {
-  "09863d9fc6319e04f98f5593226b24bb": {
-    "bytes": 47889,
-    "path": "src/assets/img/emote/love.png",
-    "purpose": "emote"
-  },
-  "197959f41f4c228436101fd9437c86b0": {
-    "bytes": 231792,
-    "path": "src/assets/img/character/shijie.jpg",
-    "purpose": "character"
-  },
-  "25c2d5172a4b7e4ffefefde8fe5939e2": {
-    "bytes": 195254,
-    "path": "src/assets/img/scene/scene-chemistry.jpg",
-    "purpose": "scene_toplevel"
-  },
-  "286b8681795cf298bceb5b33575f6c41": {
-    "bytes": 103815,
-    "path": "src/assets/img/character/shifu.jpg",
-    "purpose": "character"
-  },
-  "2db9928a5d4aeaebe7ff9b28d8548861": {
-    "bytes": 203269,
-    "path": "src/assets/img/scene/sub-english.jpg",
-    "purpose": "scene_subdir"
-  },
-  "305d27e558254c93c0ff80f5772b9e75": {
-    "bytes": 148146,
-    "path": "src/assets/img/scene/arena.jpg",
-    "purpose": "scene_subdir"
-  },
-  "3688166d64185270d4e7bed3e9f0be41": {
-    "bytes": 31263,
-    "path": "src/assets/img/emote/peek.png",
-    "purpose": "emote"
-  },
-  "3842c2a02785a791ff368216d05e06e7": {
-    "bytes": 1209342,
-    "path": "src/assets/img/scene/cave_moonlit.png",
-    "purpose": "scene_subdir"
-  },
-  "3a94cfc877ef1e9e7032f5d4bd426623": {
-    "bytes": 44967,
-    "path": "src/assets/img/emote/plead.png",
-    "purpose": "emote"
-  },
-  "3bba8e21eee20b8e05b460781dd70af6": {
-    "bytes": 203731,
-    "path": "src/assets/img/scene/cave.jpg",
-    "purpose": "scene_subdir"
-  },
-  "3f87fdb32fba6d3345813344ec56c4bc": {
-    "bytes": 43728,
-    "path": "src/assets/img/emote/angry.png",
-    "purpose": "emote"
-  },
-  "43a8543cdb058180027e7e19e6bc0a7f": {
-    "bytes": 141243,
-    "path": "src/assets/img/scene/scene-illum.jpg",
-    "purpose": "scene_toplevel"
-  },
-  "4afa9bfa9f2b6fc7f7abc75d7a1a2b18": {
-    "bytes": 174857,
-    "path": "src/assets/img/scene/alchemy.jpg",
-    "purpose": "scene_subdir"
-  },
-  "4c95a96c53da5944111d0fa6e05c4827": {
-    "bytes": 206076,
-    "path": "src/assets/img/scene/scene-physics.jpg",
-    "purpose": "scene_toplevel"
-  },
-  "4edeebb4ae936e2a9c8a31d95409bf26": {
-    "bytes": 127305,
-    "path": "src/assets/img/character/shimei.jpg",
-    "purpose": "character"
-  },
-  "5507592a01bedfe6c06be22418781537": {
-    "bytes": 42333,
-    "path": "src/assets/img/emote/tea.png",
-    "purpose": "emote"
-  },
-  "58c00d4299e2a5f0327e8c539dae1e46": {
-    "bytes": 46251,
-    "path": "src/assets/img/emote/thumbsup.png",
-    "purpose": "emote"
-  },
-  "598ebd29b2ec9bc0529a07706b76a50e": {
-    "bytes": 41095,
-    "path": "src/assets/img/emote/smug.png",
-    "purpose": "emote"
-  },
-  "6629c14f2a5a862c0bbc371cb5825805": {
-    "bytes": 2144191,
-    "path": "src/assets/img/cover/contact.png",
-    "purpose": "cover"
-  },
-  "674edf08cd789b04cca3bf589b8bf9ba": {
-    "bytes": 222005,
-    "path": "src/assets/img/scene/sub-chemistry.jpg",
-    "purpose": "scene_subdir"
-  },
-  "734099a3202ecfff748d6133c1aebdfb": {
-    "bytes": 35207,
-    "path": "src/assets/img/emote/work.png",
-    "purpose": "emote"
-  },
-  "76499d6b6e8d8b1a8a97e9b6e7f40913": {
-    "bytes": 182287,
-    "path": "src/assets/img/scene/sub-chinese.jpg",
-    "purpose": "scene_subdir"
-  },
-  "7a2c81a707768623ebce4d8c56a7b594": {
-    "bytes": 209814,
-    "path": "src/assets/img/scene/sub-geography.jpg",
-    "purpose": "scene_subdir"
-  },
-  "7b7e6dfd3600f15b56739433cfb15dfc": {
-    "bytes": 221870,
-    "path": "src/assets/img/scene/sub-math.jpg",
-    "purpose": "scene_subdir"
-  },
-  "7ca5c149ea328000d7a5b1b25783fd07": {
-    "bytes": 1270720,
-    "path": "src/assets/img/scene/chem_furnace.png",
-    "purpose": "scene_subdir"
-  },
-  "8804d4bfdb280b0e781408ce55a4650f": {
-    "bytes": 1232781,
-    "path": "src/assets/img/scene/geo_terrace.png",
-    "purpose": "scene_subdir"
-  },
-  "8feba13b65555e07848a709e91d8fe36": {
-    "bytes": 217547,
-    "path": "src/assets/img/scene/main_hall.jpg",
-    "purpose": "scene_subdir"
-  },
-  "943256c9703df9ba55252d68ee7d25de": {
-    "bytes": 41924,
-    "path": "src/assets/img/emote/deadpan.png",
-    "purpose": "emote"
-  },
-  "a84c3af35efaf9e411f395d0de6da3c9": {
-    "bytes": 805938,
-    "path": "src/assets/img/cover/all_assets_sheet.png",
-    "purpose": "cover"
-  },
-  "ab1ae235c514c061425020eb3ba16c29": {
-    "bytes": 202366,
-    "path": "src/assets/img/scene/garden.jpg",
-    "purpose": "scene_subdir"
-  },
-  "b7a42f3bc0422535408faffec2628c3b": {
-    "bytes": 1178055,
-    "path": "src/assets/img/scene/scroll_hall.png",
-    "purpose": "scene_subdir"
-  },
-  "bb90869e856f1b6f38abd867fd220fe3": {
-    "bytes": 217931,
-    "path": "src/assets/img/scene/scene-immortal.jpg",
-    "purpose": "scene_toplevel"
-  },
-  "c35935ebfb6c706b7e74143ba1629313": {
-    "bytes": 158767,
-    "path": "src/assets/img/scene/sub-physics.jpg",
-    "purpose": "scene_subdir"
-  },
-  "ce513ab0f564fe5013b6439a49f05503": {
-    "bytes": 1058306,
-    "path": "src/assets/img/scene/splash_v435.jpg",
-    "purpose": "scene_subdir"
-  },
-  "de1eea58c5a374fe5792acc8fb9ddd0f": {
-    "bytes": 144471,
-    "path": "src/assets/img/cover/hero.jpg",
-    "purpose": "cover"
-  },
-  "readme": {
-    "banner_count": 6,
-    "banners": [
-      {
-        "id": "01",
-        "title": "Latest archive banner",
-        "path": "src/assets/img/readme/01-latest-archive.png"
-      },
-      {
-        "id": "02",
-        "title": "Core subjects banner",
-        "path": "src/assets/img/readme/02-core-subjects.png"
-      },
-      {
-        "id": "03",
-        "title": "Code-Body-Mind stack banner",
-        "path": "src/assets/img/readme/03-stack.png"
-      },
-      {
-        "id": "04",
-        "title": "Storage banner",
-        "path": "src/assets/img/readme/04-storage.png"
-      },
-      {
-        "id": "05",
-        "title": "Pure-frontend banner",
-        "path": "src/assets/img/readme/05-backend.png"
-      },
-      {
-        "id": "06",
-        "title": "Architecture overview banner",
-        "path": "src/assets/img/readme/06-architecture.png"
-      }
-    ]
-  }
+  "version": "phase14-gamma-manifest-rebuild-v2",
+  "generated_utc": "2026-08-19T05:39:14Z",
+  "repo": "kuight/wendao",
+  "head_commit": "9a8f6de8d009ebeba7664e4b6a050883e0ca8650",
+  "total_files": 82,
+  "bad_files": 0,
+  "categories": [
+    {
+      "name": "character",
+      "count": 3,
+      "items": [
+        {
+          "path": "src/assets/img/character/shifu.jpg",
+          "sha256": "6dbfe3146fcb1fbeb2d4b06d163af21e7a76d5c3f380ecd0ceafa64cdb9f7db5",
+          "git_blob_sha1": "ab0d91f83bae04192e4bf9bfd994c5e64c4c974d",
+          "size": 103815
+        },
+        {
+          "path": "src/assets/img/character/shijie.jpg",
+          "sha256": "e9b56d186a786f68cf473617a02fe3dd6795db592cd9b8b6459a7b7afa7c73de",
+          "git_blob_sha1": "765460ab92658f1c36c87cc2622b0c5089814b8e",
+          "size": 231792
+        },
+        {
+          "path": "src/assets/img/character/shimei.jpg",
+          "sha256": "1f756fc62c20d0d57df97b17c7f71fceac3875d3648b58ad5cf7e5494710f06f",
+          "git_blob_sha1": "36a629021eef208d0b172bdeb6b00617c19a3f06",
+          "size": 127305
+        }
+      ]
+    },
+    {
+      "name": "cover",
+      "count": 4,
+      "items": [
+        {
+          "path": "src/assets/img/contact.png",
+          "sha256": "c47cb028489399edc4dcace5c133d2e9d74dbb2b97011a49e6e9c623437f2526",
+          "git_blob_sha1": "d0059b331d5083249dfa69d6e6b7395da172a6bb",
+          "size": 2144191
+        },
+        {
+          "path": "src/assets/img/cover/all_assets_sheet.png",
+          "sha256": "8687d950999d739b5cfbe80a00af59106bf828ec2ee96f2fc11e0baa1c9c0836",
+          "git_blob_sha1": "2c520e5336a827a9c4574e4bbe088e0b8c964579",
+          "size": 805938
+        },
+        {
+          "path": "src/assets/img/cover/contact.png",
+          "sha256": "c47cb028489399edc4dcace5c133d2e9d74dbb2b97011a49e6e9c623437f2526",
+          "git_blob_sha1": "d0059b331d5083249dfa69d6e6b7395da172a6bb",
+          "size": 2144191
+        },
+        {
+          "path": "src/assets/img/cover/hero.jpg",
+          "sha256": "5360a6e9f321dd494e765b9b0f874761288b350b817348b15b444d3245efe4c3",
+          "git_blob_sha1": "b88d94a71c540195dffa7f2057930c09340222ae",
+          "size": 144471
+        }
+      ]
+    },
+    {
+      "name": "emote",
+      "count": 18,
+      "items": [
+        {
+          "path": "src/assets/img/emote/angry.png",
+          "sha256": "a215ea525ec8bf4c385aa18c745eb0bb50d27d8874a6383a0b03bdfb41bb9be1",
+          "git_blob_sha1": "5afb138412483abb05982957abfa45a5d1940d85",
+          "size": 43728
+        },
+        {
+          "path": "src/assets/img/emote/deadpan.png",
+          "sha256": "44d87310bbe4b224515136be5dcb25321dad79bc91488ce7ab02dcd82d85ae1d",
+          "git_blob_sha1": "bccf13c042521363ba6642ba1681eb69fdfa2570",
+          "size": 41924
+        },
+        {
+          "path": "src/assets/img/emote/love.png",
+          "sha256": "4a04d6a991f7368768cb6662c773c150569f7a996e1d2c97c74befc2a9fa623b",
+          "git_blob_sha1": "cdbff5aed84eacdbc5f1c8eb69d5421fac724569",
+          "size": 47889
+        },
+        {
+          "path": "src/assets/img/emote/peek.png",
+          "sha256": "7cf57c7adee3b79bb91392c6b47dbf54a7e15839da7951811f04c7198505fb36",
+          "git_blob_sha1": "2667db8e9f8fa574fa98fcbd8302125cb9129ac4",
+          "size": 31263
+        },
+        {
+          "path": "src/assets/img/emote/plead.png",
+          "sha256": "dabd99a6c649d4ddd74df276bb8a839cf5d1c426f84bafd40ecfb25ff67fb633",
+          "git_blob_sha1": "4e146746527f5b4865d9c6832f97311026e9f9ca",
+          "size": 44967
+        },
+        {
+          "path": "src/assets/img/emote/smug.png",
+          "sha256": "25f5a8109a28c22c432820091447cc15954f4c333309fadb4fa56fdd6cb930c7",
+          "git_blob_sha1": "46d5c25a59dcd79a9b823d38080f948246fcc215",
+          "size": 41095
+        },
+        {
+          "path": "src/assets/img/emote/tea.png",
+          "sha256": "16a6d8034e82df07729eb64e8c28acb8b8a25c87990de817e24f9c8cde0b9749",
+          "git_blob_sha1": "b11bfce0dc4f4e7881c81e11e21349fb4b3afa79",
+          "size": 42333
+        },
+        {
+          "path": "src/assets/img/emote/thumbsup.png",
+          "sha256": "9a57ea55fe4c65428730e64fa64cd95f92f28459adc804bb8f8d4a857bd01ad3",
+          "git_blob_sha1": "b07b4ac3e274db0dec35fe67b0486fb60eae0cf2",
+          "size": 46251
+        },
+        {
+          "path": "src/assets/img/emote/work.png",
+          "sha256": "05d743e0241e47dc83ad6d17d6b5e5aea4cce380ca4e1ca95ddbd42e707f5d87",
+          "git_blob_sha1": "f5b7e6bad44f22e0636198e74ef38c16bfb745a8",
+          "size": 35207
+        },
+        {
+          "path": "src/assets/img/emotes/angry.png",
+          "sha256": "a215ea525ec8bf4c385aa18c745eb0bb50d27d8874a6383a0b03bdfb41bb9be1",
+          "git_blob_sha1": "5afb138412483abb05982957abfa45a5d1940d85",
+          "size": 43728
+        },
+        {
+          "path": "src/assets/img/emotes/deadpan.png",
+          "sha256": "44d87310bbe4b224515136be5dcb25321dad79bc91488ce7ab02dcd82d85ae1d",
+          "git_blob_sha1": "bccf13c042521363ba6642ba1681eb69fdfa2570",
+          "size": 41924
+        },
+        {
+          "path": "src/assets/img/emotes/love.png",
+          "sha256": "4a04d6a991f7368768cb6662c773c150569f7a996e1d2c97c74befc2a9fa623b",
+          "git_blob_sha1": "cdbff5aed84eacdbc5f1c8eb69d5421fac724569",
+          "size": 47889
+        },
+        {
+          "path": "src/assets/img/emotes/peek.png",
+          "sha256": "7cf57c7adee3b79bb91392c6b47dbf54a7e15839da7951811f04c7198505fb36",
+          "git_blob_sha1": "2667db8e9f8fa574fa98fcbd8302125cb9129ac4",
+          "size": 31263
+        },
+        {
+          "path": "src/assets/img/emotes/plead.png",
+          "sha256": "dabd99a6c649d4ddd74df276bb8a839cf5d1c426f84bafd40ecfb25ff67fb633",
+          "git_blob_sha1": "4e146746527f5b4865d9c6832f97311026e9f9ca",
+          "size": 44967
+        },
+        {
+          "path": "src/assets/img/emotes/smug.png",
+          "sha256": "25f5a8109a28c22c432820091447cc15954f4c333309fadb4fa56fdd6cb930c7",
+          "git_blob_sha1": "46d5c25a59dcd79a9b823d38080f948246fcc215",
+          "size": 41095
+        },
+        {
+          "path": "src/assets/img/emotes/tea.png",
+          "sha256": "16a6d8034e82df07729eb64e8c28acb8b8a25c87990de817e24f9c8cde0b9749",
+          "git_blob_sha1": "b11bfce0dc4f4e7881c81e11e21349fb4b3afa79",
+          "size": 42333
+        },
+        {
+          "path": "src/assets/img/emotes/thumbsup.png",
+          "sha256": "9a57ea55fe4c65428730e64fa64cd95f92f28459adc804bb8f8d4a857bd01ad3",
+          "git_blob_sha1": "b07b4ac3e274db0dec35fe67b0486fb60eae0cf2",
+          "size": 46251
+        },
+        {
+          "path": "src/assets/img/emotes/work.png",
+          "sha256": "05d743e0241e47dc83ad6d17d6b5e5aea4cce380ca4e1ca95ddbd42e707f5d87",
+          "git_blob_sha1": "f5b7e6bad44f22e0636198e74ef38c16bfb745a8",
+          "size": 35207
+        }
+      ]
+    },
+    {
+      "name": "readme",
+      "count": 12,
+      "items": [
+        {
+          "path": "src/assets/img/readme/02-core-subjects.png",
+          "sha256": "af71357205d143e286b693b21dd6d3c549ec8a180a90d1d41c3396ff59de6688",
+          "git_blob_sha1": "4da6dc90f8e09bb32625ac5a9cd9bf66f3f23886",
+          "size": 2620536
+        },
+        {
+          "path": "src/assets/img/readme/06-architecture.png",
+          "sha256": "bd217c21b950cd175071696940ff67a73e60a84e62593c4ff99c037a6894e1c9",
+          "git_blob_sha1": "2c7f2abe7feae7f29043046ada251d571a5d4f42",
+          "size": 2793725
+        },
+        {
+          "path": "src/assets/img/readme/backend.png",
+          "sha256": "345ab3ba4a397f8e41ba519918d45c0e17699dbb2fd852650b5260794d60a994",
+          "git_blob_sha1": "adaf9b07a07cf579192a773eb53428647e04b74b",
+          "size": 103830
+        },
+        {
+          "path": "src/assets/img/readme/backend.svg",
+          "sha256": "c642cad90e69bf618b2fc8b7827355a91d0aecb1a4ce8a147ee07b8e58b021d5",
+          "git_blob_sha1": "b00b8d56dcb474e22a38a0942003425997c97c27",
+          "size": 952
+        },
+        {
+          "path": "src/assets/img/readme/core-subjects.svg",
+          "sha256": "f80b951310e08c4fa15ead16bf98fa7923638dbcb066a88b24aa11b965fdf86f",
+          "git_blob_sha1": "01258e83d6c4eed79ef325bea3f6c198756bb0b3",
+          "size": 968
+        },
+        {
+          "path": "src/assets/img/readme/cover.svg",
+          "sha256": "e29f02e49f8bda79ed6e4fcf539ec9516518377a192876b7831f2c8f938e307e",
+          "git_blob_sha1": "8fba221c1e4a6ff39ebbde45a8c1ff77566adfb8",
+          "size": 975
+        },
+        {
+          "path": "src/assets/img/readme/overview.png",
+          "sha256": "b8b504f9d55aa2d9a2cc4bac8bcb8b3b8d79eb9932f894fc71d7b046f4699324",
+          "git_blob_sha1": "766a73a3e2369769aa5bfc9daadd0bba63f2dcc4",
+          "size": 176660
+        },
+        {
+          "path": "src/assets/img/readme/overview.svg",
+          "sha256": "11389f0ec4686d9108828586813adaad5b24ba6ae054998cf360873b50a018a1",
+          "git_blob_sha1": "ef2f357c03ce418c186a1a376815b265c7391594",
+          "size": 980
+        },
+        {
+          "path": "src/assets/img/readme/stack.png",
+          "sha256": "e662d971e73e2a99f0cb4eed9528776e88c62b5ff4b2a3476501b66c3bf914ea",
+          "git_blob_sha1": "37a8b874e3cf8038a448a535fbd622ff7a7c4c79",
+          "size": 117254
+        },
+        {
+          "path": "src/assets/img/readme/stack.svg",
+          "sha256": "980be979b048866204651a815eecabb7597a63cbcf9cf35f63236469e098a8b4",
+          "git_blob_sha1": "1fd9cb3fd6a425293e446f2bddb5db436b73e33f",
+          "size": 950
+        },
+        {
+          "path": "src/assets/img/readme/storage.png",
+          "sha256": "33d138d2c5bbeccdfedcb4cb2d343827aaa48c8ce3d550efaeae02121862afa0",
+          "git_blob_sha1": "0ec64d2d2252aab129712f1b83dd81036b4129fd",
+          "size": 135257
+        },
+        {
+          "path": "src/assets/img/readme/storage.svg",
+          "sha256": "eea0ff03111ddd3d29c5a76ee3e429cd3fbb0b211dddc5b7633f7410e3401815",
+          "git_blob_sha1": "11cadb2494895f11b0b9fddbd72795e96f9e50a3",
+          "size": 956
+        }
+      ]
+    },
+    {
+      "name": "scene",
+      "count": 44,
+      "items": [
+        {
+          "path": "src/assets/img/hero.jpg",
+          "sha256": "5360a6e9f321dd494e765b9b0f874761288b350b817348b15b444d3245efe4c3",
+          "git_blob_sha1": "b88d94a71c540195dffa7f2057930c09340222ae",
+          "size": 144471
+        },
+        {
+          "path": "src/assets/img/scene-chemistry.jpg",
+          "sha256": "cbbf6bf071746938b99cfcdaf784f76338fcd1e1c8bf95f4448458cd901d026f",
+          "git_blob_sha1": "4ef239b4d7d666ef75413d0b5faa6b762cb84882",
+          "size": 195254
+        },
+        {
+          "path": "src/assets/img/scene-illum.jpg",
+          "sha256": "299865c6e144d7f754dfd3ebb01370c7feae241ee7cffa6449c2292ee104a120",
+          "git_blob_sha1": "f438a38c95f28e1e1d60ff39bf7a11a6989fba43",
+          "size": 141243
+        },
+        {
+          "path": "src/assets/img/scene-immortal.jpg",
+          "sha256": "50a9d17ef632cd28d53bfd7b6093980b01177596356920c7ae05f0e774b004bd",
+          "git_blob_sha1": "8fcb116f504b87314b3ffea88adc8e7b3041c584",
+          "size": 217931
+        },
+        {
+          "path": "src/assets/img/scene-physics.jpg",
+          "sha256": "3c48e50af4ee3328cb364de86e8195d453ef1a12e295ac8d35dcf38401df4b5f",
+          "git_blob_sha1": "02dc2671cad8f95e0abe178bfc0785f75913d1be",
+          "size": 206076
+        },
+        {
+          "path": "src/assets/img/scene/alchemy.jpg",
+          "sha256": "88456acfdb85206b3628262db8f1c40625600b0974c402215cd159c5ad1a2a22",
+          "git_blob_sha1": "7d122424b4090070a44d29371ae9148f20e0001e",
+          "size": 174857
+        },
+        {
+          "path": "src/assets/img/scene/arena.jpg",
+          "sha256": "da9f71ea0b3967e126be23bd0d04eb492759f98ef0e2f2e16a1314a702fb8edc",
+          "git_blob_sha1": "1dc2c67b7615e29fd47eed12d195f23b10207ae7",
+          "size": 148146
+        },
+        {
+          "path": "src/assets/img/scene/cave.jpg",
+          "sha256": "ee25c094a42936f61bcfefe4bcc95c24cb10b0941b4fa4d722fe7ede6d36dddf",
+          "git_blob_sha1": "844ee010c1be69b1fa3cb93fd27147efdfea9e74",
+          "size": 203731
+        },
+        {
+          "path": "src/assets/img/scene/cave_moonlit.png",
+          "sha256": "00cc1b0b0e7d6fce0e298022dfa276fa349c20df38c34792c7594daa4090524f",
+          "git_blob_sha1": "e07402a47d0e908bd2087031c93f84a84ea95bf1",
+          "size": 1209342
+        },
+        {
+          "path": "src/assets/img/scene/chem_furnace.png",
+          "sha256": "c63bfde93499d85ba023fd8fe7d545e557c9f91bcf06375d8314df99c66cd575",
+          "git_blob_sha1": "1c69acfd773e6abcc6330f954b25f99dcec231de",
+          "size": 1270720
+        },
+        {
+          "path": "src/assets/img/scene/garden.jpg",
+          "sha256": "409d72b96d44b448d851a8409b060f41d60a0c735b9009e03bb5cbdfe0bcd4a8",
+          "git_blob_sha1": "7c80cf8131d702b45ade998742ca7511bfd2ca60",
+          "size": 202366
+        },
+        {
+          "path": "src/assets/img/scene/geo_terrace.png",
+          "sha256": "048f9a6b2c52a2c309c915bb6c1c56faf0c4b636a3c99502139444eca03995a5",
+          "git_blob_sha1": "a0b0fcef09e1a5397ab80691305ef2cb317dd83d",
+          "size": 1232781
+        },
+        {
+          "path": "src/assets/img/scene/main_hall.jpg",
+          "sha256": "691a9732cf220e37e8be3a6a8862cf2bee8ec24382ff6f97bba49e8de7485b13",
+          "git_blob_sha1": "8ed678598a58ff504ae78a1a2054be10b0b8f988",
+          "size": 217547
+        },
+        {
+          "path": "src/assets/img/scene/scene-chemistry.jpg",
+          "sha256": "cbbf6bf071746938b99cfcdaf784f76338fcd1e1c8bf95f4448458cd901d026f",
+          "git_blob_sha1": "4ef239b4d7d666ef75413d0b5faa6b762cb84882",
+          "size": 195254
+        },
+        {
+          "path": "src/assets/img/scene/scene-illum.jpg",
+          "sha256": "299865c6e144d7f754dfd3ebb01370c7feae241ee7cffa6449c2292ee104a120",
+          "git_blob_sha1": "f438a38c95f28e1e1d60ff39bf7a11a6989fba43",
+          "size": 141243
+        },
+        {
+          "path": "src/assets/img/scene/scene-immortal.jpg",
+          "sha256": "50a9d17ef632cd28d53bfd7b6093980b01177596356920c7ae05f0e774b004bd",
+          "git_blob_sha1": "8fcb116f504b87314b3ffea88adc8e7b3041c584",
+          "size": 217931
+        },
+        {
+          "path": "src/assets/img/scene/scene-physics.jpg",
+          "sha256": "3c48e50af4ee3328cb364de86e8195d453ef1a12e295ac8d35dcf38401df4b5f",
+          "git_blob_sha1": "02dc2671cad8f95e0abe178bfc0785f75913d1be",
+          "size": 206076
+        },
+        {
+          "path": "src/assets/img/scene/scroll_hall.png",
+          "sha256": "b7e39a9ed0853cf9bf05a6341b8e183c9f1d828c5483bba68703e47b3c33dffa",
+          "git_blob_sha1": "f687dc1f601fefb1c367a2349313473054bfe8e0",
+          "size": 1178055
+        },
+        {
+          "path": "src/assets/img/scene/splash_v435.jpg",
+          "sha256": "e305780980862bc94009d0d016e6cc80193eb2dc378f63e23f8c96cdbdaa6cf0",
+          "git_blob_sha1": "ebb2abac6e68ab11cc816718305939d40d47cf6e",
+          "size": 1058306
+        },
+        {
+          "path": "src/assets/img/scene/sub-chemistry.jpg",
+          "sha256": "85235aa777461ef5fc896af7c86fde3b1ae7e30db0440ba01ec9a2600a5da6bf",
+          "git_blob_sha1": "cd9c7331400efa0b5e769c2d86b05a26f85c0176",
+          "size": 222005
+        },
+        {
+          "path": "src/assets/img/scene/sub-chinese.jpg",
+          "sha256": "bb586f8a17d9f6a2f48d1a11315df08662ab914555b094d03d5939f08958513e",
+          "git_blob_sha1": "b2626cbd2e076962e7a549fa16e3c5df380e39a6",
+          "size": 182287
+        },
+        {
+          "path": "src/assets/img/scene/sub-english.jpg",
+          "sha256": "9de772ab14dd3b775edb8c35d87cb0857b30b24fd0dca8624c24960f242db0f9",
+          "git_blob_sha1": "8bc85b788495622cf704ecda54f9555a3110b833",
+          "size": 203269
+        },
+        {
+          "path": "src/assets/img/scene/sub-geography.jpg",
+          "sha256": "ad27878dbd8d8eca9365296d1cd31abf99a06eb3e76a2e60a8ab29fe28173645",
+          "git_blob_sha1": "02444d8b6ddbcbb8a17906ac2565dae87ea54147",
+          "size": 209814
+        },
+        {
+          "path": "src/assets/img/scene/sub-math.jpg",
+          "sha256": "a0955b116175ec378df06819bff0f24bf5ea37b9abc574f3ff9f575470d89a96",
+          "git_blob_sha1": "97daadcee9eac82d23097bd922ab40a05b02a1f6",
+          "size": 221870
+        },
+        {
+          "path": "src/assets/img/scene/sub-physics.jpg",
+          "sha256": "bfc24e866065447e8e16597f03b4c25f4e16bfed072dede0ea02cdda71cd925f",
+          "git_blob_sha1": "4b7b39e4bcb42d73d987848b9389ca91521a7693",
+          "size": 158767
+        },
+        {
+          "path": "src/assets/img/scenes/alchemy.jpg",
+          "sha256": "88456acfdb85206b3628262db8f1c40625600b0974c402215cd159c5ad1a2a22",
+          "git_blob_sha1": "7d122424b4090070a44d29371ae9148f20e0001e",
+          "size": 174857
+        },
+        {
+          "path": "src/assets/img/scenes/arena.jpg",
+          "sha256": "da9f71ea0b3967e126be23bd0d04eb492759f98ef0e2f2e16a1314a702fb8edc",
+          "git_blob_sha1": "1dc2c67b7615e29fd47eed12d195f23b10207ae7",
+          "size": 148146
+        },
+        {
+          "path": "src/assets/img/scenes/cave.jpg",
+          "sha256": "ee25c094a42936f61bcfefe4bcc95c24cb10b0941b4fa4d722fe7ede6d36dddf",
+          "git_blob_sha1": "844ee010c1be69b1fa3cb93fd27147efdfea9e74",
+          "size": 203731
+        },
+        {
+          "path": "src/assets/img/scenes/cave_moonlit.png",
+          "sha256": "00cc1b0b0e7d6fce0e298022dfa276fa349c20df38c34792c7594daa4090524f",
+          "git_blob_sha1": "e07402a47d0e908bd2087031c93f84a84ea95bf1",
+          "size": 1209342
+        },
+        {
+          "path": "src/assets/img/scenes/chem_furnace.png",
+          "sha256": "c63bfde93499d85ba023fd8fe7d545e557c9f91bcf06375d8314df99c66cd575",
+          "git_blob_sha1": "1c69acfd773e6abcc6330f954b25f99dcec231de",
+          "size": 1270720
+        },
+        {
+          "path": "src/assets/img/scenes/garden.jpg",
+          "sha256": "409d72b96d44b448d851a8409b060f41d60a0c735b9009e03bb5cbdfe0bcd4a8",
+          "git_blob_sha1": "7c80cf8131d702b45ade998742ca7511bfd2ca60",
+          "size": 202366
+        },
+        {
+          "path": "src/assets/img/scenes/geo_terrace.png",
+          "sha256": "048f9a6b2c52a2c309c915bb6c1c56faf0c4b636a3c99502139444eca03995a5",
+          "git_blob_sha1": "a0b0fcef09e1a5397ab80691305ef2cb317dd83d",
+          "size": 1232781
+        },
+        {
+          "path": "src/assets/img/scenes/main_hall.jpg",
+          "sha256": "691a9732cf220e37e8be3a6a8862cf2bee8ec24382ff6f97bba49e8de7485b13",
+          "git_blob_sha1": "8ed678598a58ff504ae78a1a2054be10b0b8f988",
+          "size": 217547
+        },
+        {
+          "path": "src/assets/img/scenes/scroll_hall.png",
+          "sha256": "b7e39a9ed0853cf9bf05a6341b8e183c9f1d828c5483bba68703e47b3c33dffa",
+          "git_blob_sha1": "f687dc1f601fefb1c367a2349313473054bfe8e0",
+          "size": 1178055
+        },
+        {
+          "path": "src/assets/img/scenes/sect_chemistry.jpg",
+          "sha256": "85235aa777461ef5fc896af7c86fde3b1ae7e30db0440ba01ec9a2600a5da6bf",
+          "git_blob_sha1": "cd9c7331400efa0b5e769c2d86b05a26f85c0176",
+          "size": 222005
+        },
+        {
+          "path": "src/assets/img/scenes/sect_chinese.jpg",
+          "sha256": "bb586f8a17d9f6a2f48d1a11315df08662ab914555b094d03d5939f08958513e",
+          "git_blob_sha1": "b2626cbd2e076962e7a549fa16e3c5df380e39a6",
+          "size": 182287
+        },
+        {
+          "path": "src/assets/img/scenes/sect_english.jpg",
+          "sha256": "9de772ab14dd3b775edb8c35d87cb0857b30b24fd0dca8624c24960f242db0f9",
+          "git_blob_sha1": "8bc85b788495622cf704ecda54f9555a3110b833",
+          "size": 203269
+        },
+        {
+          "path": "src/assets/img/scenes/sect_geography.jpg",
+          "sha256": "ad27878dbd8d8eca9365296d1cd31abf99a06eb3e76a2e60a8ab29fe28173645",
+          "git_blob_sha1": "02444d8b6ddbcbb8a17906ac2565dae87ea54147",
+          "size": 209814
+        },
+        {
+          "path": "src/assets/img/scenes/sect_math.jpg",
+          "sha256": "a0955b116175ec378df06819bff0f24bf5ea37b9abc574f3ff9f575470d89a96",
+          "git_blob_sha1": "97daadcee9eac82d23097bd922ab40a05b02a1f6",
+          "size": 221870
+        },
+        {
+          "path": "src/assets/img/scenes/sect_physics.jpg",
+          "sha256": "bfc24e866065447e8e16597f03b4c25f4e16bfed072dede0ea02cdda71cd925f",
+          "git_blob_sha1": "4b7b39e4bcb42d73d987848b9389ca91521a7693",
+          "size": 158767
+        },
+        {
+          "path": "src/assets/img/scenes/splash_v435.jpg",
+          "sha256": "e305780980862bc94009d0d016e6cc80193eb2dc378f63e23f8c96cdbdaa6cf0",
+          "git_blob_sha1": "ebb2abac6e68ab11cc816718305939d40d47cf6e",
+          "size": 1058306
+        },
+        {
+          "path": "src/assets/img/shifu.jpg",
+          "sha256": "6dbfe3146fcb1fbeb2d4b06d163af21e7a76d5c3f380ecd0ceafa64cdb9f7db5",
+          "git_blob_sha1": "ab0d91f83bae04192e4bf9bfd994c5e64c4c974d",
+          "size": 103815
+        },
+        {
+          "path": "src/assets/img/shijie.jpg",
+          "sha256": "e9b56d186a786f68cf473617a02fe3dd6795db592cd9b8b6459a7b7afa7c73de",
+          "git_blob_sha1": "765460ab92658f1c36c87cc2622b0c5089814b8e",
+          "size": 231792
+        },
+        {
+          "path": "src/assets/img/shimei.jpg",
+          "sha256": "1f756fc62c20d0d57df97b17c7f71fceac3875d3648b58ad5cf7e5494710f06f",
+          "git_blob_sha1": "36a629021eef208d0b172bdeb6b00617c19a3f06",
+          "size": 127305
+        }
+      ]
+    },
+    {
+      "name": "sheet",
+      "count": 1,
+      "items": [
+        {
+          "path": "src/assets/img/all_assets_sheet.png",
+          "sha256": "8687d950999d739b5cfbe80a00af59106bf828ec2ee96f2fc11e0baa1c9c0836",
+          "git_blob_sha1": "2c520e5336a827a9c4574e4bbe088e0b8c964579",
+          "size": 805938
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "src/assets/img/all_assets_sheet.png",
+      "sha256": "8687d950999d739b5cfbe80a00af59106bf828ec2ee96f2fc11e0baa1c9c0836",
+      "git_blob_sha1": "2c520e5336a827a9c4574e4bbe088e0b8c964579",
+      "size": 805938,
+      "category": "sheet"
+    },
+    {
+      "path": "src/assets/img/character/shifu.jpg",
+      "sha256": "6dbfe3146fcb1fbeb2d4b06d163af21e7a76d5c3f380ecd0ceafa64cdb9f7db5",
+      "git_blob_sha1": "ab0d91f83bae04192e4bf9bfd994c5e64c4c974d",
+      "size": 103815,
+      "category": "character"
+    },
+    {
+      "path": "src/assets/img/character/shijie.jpg",
+      "sha256": "e9b56d186a786f68cf473617a02fe3dd6795db592cd9b8b6459a7b7afa7c73de",
+      "git_blob_sha1": "765460ab92658f1c36c87cc2622b0c5089814b8e",
+      "size": 231792,
+      "category": "character"
+    },
+    {
+      "path": "src/assets/img/character/shimei.jpg",
+      "sha256": "1f756fc62c20d0d57df97b17c7f71fceac3875d3648b58ad5cf7e5494710f06f",
+      "git_blob_sha1": "36a629021eef208d0b172bdeb6b00617c19a3f06",
+      "size": 127305,
+      "category": "character"
+    },
+    {
+      "path": "src/assets/img/contact.png",
+      "sha256": "c47cb028489399edc4dcace5c133d2e9d74dbb2b97011a49e6e9c623437f2526",
+      "git_blob_sha1": "d0059b331d5083249dfa69d6e6b7395da172a6bb",
+      "size": 2144191,
+      "category": "cover"
+    },
+    {
+      "path": "src/assets/img/cover/all_assets_sheet.png",
+      "sha256": "8687d950999d739b5cfbe80a00af59106bf828ec2ee96f2fc11e0baa1c9c0836",
+      "git_blob_sha1": "2c520e5336a827a9c4574e4bbe088e0b8c964579",
+      "size": 805938,
+      "category": "cover"
+    },
+    {
+      "path": "src/assets/img/cover/contact.png",
+      "sha256": "c47cb028489399edc4dcace5c133d2e9d74dbb2b97011a49e6e9c623437f2526",
+      "git_blob_sha1": "d0059b331d5083249dfa69d6e6b7395da172a6bb",
+      "size": 2144191,
+      "category": "cover"
+    },
+    {
+      "path": "src/assets/img/cover/hero.jpg",
+      "sha256": "5360a6e9f321dd494e765b9b0f874761288b350b817348b15b444d3245efe4c3",
+      "git_blob_sha1": "b88d94a71c540195dffa7f2057930c09340222ae",
+      "size": 144471,
+      "category": "cover"
+    },
+    {
+      "path": "src/assets/img/emote/angry.png",
+      "sha256": "a215ea525ec8bf4c385aa18c745eb0bb50d27d8874a6383a0b03bdfb41bb9be1",
+      "git_blob_sha1": "5afb138412483abb05982957abfa45a5d1940d85",
+      "size": 43728,
+      "category": "emote"
+    },
+    {
+      "path": "src/assets/img/emote/deadpan.png",
+      "sha256": "44d87310bbe4b224515136be5dcb25321dad79bc91488ce7ab02dcd82d85ae1d",
+      "git_blob_sha1": "bccf13c042521363ba6642ba1681eb69fdfa2570",
+      "size": 41924,
+      "category": "emote"
+    },
+    {
+      "path": "src/assets/img/emote/love.png",
+      "sha256": "4a04d6a991f7368768cb6662c773c150569f7a996e1d2c97c74befc2a9fa623b",
+      "git_blob_sha1": "cdbff5aed84eacdbc5f1c8eb69d5421fac724569",
+      "size": 47889,
+      "category": "emote"
+    },
+    {
+      "path": "src/assets/img/emote/peek.png",
+      "sha256": "7cf57c7adee3b79bb91392c6b47dbf54a7e15839da7951811f04c7198505fb36",
+      "git_blob_sha1": "2667db8e9f8fa574fa98fcbd8302125cb9129ac4",
+      "size": 31263,
+      "category": "emote"
+    },
+    {
+      "path": "src/assets/img/emote/plead.png",
+      "sha256": "dabd99a6c649d4ddd74df276bb8a839cf5d1c426f84bafd40ecfb25ff67fb633",
+      "git_blob_sha1": "4e146746527f5b4865d9c6832f97311026e9f9ca",
+      "size": 44967,
+      "category": "emote"
+    },
+    {
+      "path": "src/assets/img/emote/smug.png",
+      "sha256": "25f5a8109a28c22c432820091447cc15954f4c333309fadb4fa56fdd6cb930c7",
+      "git_blob_sha1": "46d5c25a59dcd79a9b823d38080f948246fcc215",
+      "size": 41095,
+      "category": "emote"
+    },
+    {
+      "path": "src/assets/img/emote/tea.png",
+      "sha256": "16a6d8034e82df07729eb64e8c28acb8b8a25c87990de817e24f9c8cde0b9749",
+      "git_blob_sha1": "b11bfce0dc4f4e7881c81e11e21349fb4b3afa79",
+      "size": 42333,
+      "category": "emote"
+    },
+    {
+      "path": "src/assets/img/emote/thumbsup.png",
+      "sha256": "9a57ea55fe4c65428730e64fa64cd95f92f28459adc804bb8f8d4a857bd01ad3",
+      "git_blob_sha1": "b07b4ac3e274db0dec35fe67b0486fb60eae0cf2",
+      "size": 46251,
+      "category": "emote"
+    },
+    {
+      "path": "src/assets/img/emote/work.png",
+      "sha256": "05d743e0241e47dc83ad6d17d6b5e5aea4cce380ca4e1ca95ddbd42e707f5d87",
+      "git_blob_sha1": "f5b7e6bad44f22e0636198e74ef38c16bfb745a8",
+      "size": 35207,
+      "category": "emote"
+    },
+    {
+      "path": "src/assets/img/emotes/angry.png",
+      "sha256": "a215ea525ec8bf4c385aa18c745eb0bb50d27d8874a6383a0b03bdfb41bb9be1",
+      "git_blob_sha1": "5afb138412483abb05982957abfa45a5d1940d85",
+      "size": 43728,
+      "category": "emote"
+    },
+    {
+      "path": "src/assets/img/emotes/deadpan.png",
+      "sha256": "44d87310bbe4b224515136be5dcb25321dad79bc91488ce7ab02dcd82d85ae1d",
+      "git_blob_sha1": "bccf13c042521363ba6642ba1681eb69fdfa2570",
+      "size": 41924,
+      "category": "emote"
+    },
+    {
+      "path": "src/assets/img/emotes/love.png",
+      "sha256": "4a04d6a991f7368768cb6662c773c150569f7a996e1d2c97c74befc2a9fa623b",
+      "git_blob_sha1": "cdbff5aed84eacdbc5f1c8eb69d5421fac724569",
+      "size": 47889,
+      "category": "emote"
+    },
+    {
+      "path": "src/assets/img/emotes/peek.png",
+      "sha256": "7cf57c7adee3b79bb91392c6b47dbf54a7e15839da7951811f04c7198505fb36",
+      "git_blob_sha1": "2667db8e9f8fa574fa98fcbd8302125cb9129ac4",
+      "size": 31263,
+      "category": "emote"
+    },
+    {
+      "path": "src/assets/img/emotes/plead.png",
+      "sha256": "dabd99a6c649d4ddd74df276bb8a839cf5d1c426f84bafd40ecfb25ff67fb633",
+      "git_blob_sha1": "4e146746527f5b4865d9c6832f97311026e9f9ca",
+      "size": 44967,
+      "category": "emote"
+    },
+    {
+      "path": "src/assets/img/emotes/smug.png",
+      "sha256": "25f5a8109a28c22c432820091447cc15954f4c333309fadb4fa56fdd6cb930c7",
+      "git_blob_sha1": "46d5c25a59dcd79a9b823d38080f948246fcc215",
+      "size": 41095,
+      "category": "emote"
+    },
+    {
+      "path": "src/assets/img/emotes/tea.png",
+      "sha256": "16a6d8034e82df07729eb64e8c28acb8b8a25c87990de817e24f9c8cde0b9749",
+      "git_blob_sha1": "b11bfce0dc4f4e7881c81e11e21349fb4b3afa79",
+      "size": 42333,
+      "category": "emote"
+    },
+    {
+      "path": "src/assets/img/emotes/thumbsup.png",
+      "sha256": "9a57ea55fe4c65428730e64fa64cd95f92f28459adc804bb8f8d4a857bd01ad3",
+      "git_blob_sha1": "b07b4ac3e274db0dec35fe67b0486fb60eae0cf2",
+      "size": 46251,
+      "category": "emote"
+    },
+    {
+      "path": "src/assets/img/emotes/work.png",
+      "sha256": "05d743e0241e47dc83ad6d17d6b5e5aea4cce380ca4e1ca95ddbd42e707f5d87",
+      "git_blob_sha1": "f5b7e6bad44f22e0636198e74ef38c16bfb745a8",
+      "size": 35207,
+      "category": "emote"
+    },
+    {
+      "path": "src/assets/img/hero.jpg",
+      "sha256": "5360a6e9f321dd494e765b9b0f874761288b350b817348b15b444d3245efe4c3",
+      "git_blob_sha1": "b88d94a71c540195dffa7f2057930c09340222ae",
+      "size": 144471,
+      "category": "scene"
+    },
+    {
+      "path": "src/assets/img/readme/02-core-subjects.png",
+      "sha256": "af71357205d143e286b693b21dd6d3c549ec8a180a90d1d41c3396ff59de6688",
+      "git_blob_sha1": "4da6dc90f8e09bb32625ac5a9cd9bf66f3f23886",
+      "size": 2620536,
+      "category": "readme"
+    },
+    {
+      "path": "src/assets/img/readme/06-architecture.png",
+      "sha256": "bd217c21b950cd175071696940ff67a73e60a84e62593c4ff99c037a6894e1c9",
+      "git_blob_sha1": "2c7f2abe7feae7f29043046ada251d571a5d4f42",
+      "size": 2793725,
+      "category": "readme"
+    },
+    {
+      "path": "src/assets/img/readme/backend.png",
+      "sha256": "345ab3ba4a397f8e41ba519918d45c0e17699dbb2fd852650b5260794d60a994",
+      "git_blob_sha1": "adaf9b07a07cf579192a773eb53428647e04b74b",
+      "size": 103830,
+      "category": "readme"
+    },
+    {
+      "path": "src/assets/img/readme/backend.svg",
+      "sha256": "c642cad90e69bf618b2fc8b7827355a91d0aecb1a4ce8a147ee07b8e58b021d5",
+      "git_blob_sha1": "b00b8d56dcb474e22a38a0942003425997c97c27",
+      "size": 952,
+      "category": "readme"
+    },
+    {
+      "path": "src/assets/img/readme/core-subjects.svg",
+      "sha256": "f80b951310e08c4fa15ead16bf98fa7923638dbcb066a88b24aa11b965fdf86f",
+      "git_blob_sha1": "01258e83d6c4eed79ef325bea3f6c198756bb0b3",
+      "size": 968,
+      "category": "readme"
+    },
+    {
+      "path": "src/assets/img/readme/cover.svg",
+      "sha256": "e29f02e49f8bda79ed6e4fcf539ec9516518377a192876b7831f2c8f938e307e",
+      "git_blob_sha1": "8fba221c1e4a6ff39ebbde45a8c1ff77566adfb8",
+      "size": 975,
+      "category": "readme"
+    },
+    {
+      "path": "src/assets/img/readme/overview.png",
+      "sha256": "b8b504f9d55aa2d9a2cc4bac8bcb8b3b8d79eb9932f894fc71d7b046f4699324",
+      "git_blob_sha1": "766a73a3e2369769aa5bfc9daadd0bba63f2dcc4",
+      "size": 176660,
+      "category": "readme"
+    },
+    {
+      "path": "src/assets/img/readme/overview.svg",
+      "sha256": "11389f0ec4686d9108828586813adaad5b24ba6ae054998cf360873b50a018a1",
+      "git_blob_sha1": "ef2f357c03ce418c186a1a376815b265c7391594",
+      "size": 980,
+      "category": "readme"
+    },
+    {
+      "path": "src/assets/img/readme/stack.png",
+      "sha256": "e662d971e73e2a99f0cb4eed9528776e88c62b5ff4b2a3476501b66c3bf914ea",
+      "git_blob_sha1": "37a8b874e3cf8038a448a535fbd622ff7a7c4c79",
+      "size": 117254,
+      "category": "readme"
+    },
+    {
+      "path": "src/assets/img/readme/stack.svg",
+      "sha256": "980be979b048866204651a815eecabb7597a63cbcf9cf35f63236469e098a8b4",
+      "git_blob_sha1": "1fd9cb3fd6a425293e446f2bddb5db436b73e33f",
+      "size": 950,
+      "category": "readme"
+    },
+    {
+      "path": "src/assets/img/readme/storage.png",
+      "sha256": "33d138d2c5bbeccdfedcb4cb2d343827aaa48c8ce3d550efaeae02121862afa0",
+      "git_blob_sha1": "0ec64d2d2252aab129712f1b83dd81036b4129fd",
+      "size": 135257,
+      "category": "readme"
+    },
+    {
+      "path": "src/assets/img/readme/storage.svg",
+      "sha256": "eea0ff03111ddd3d29c5a76ee3e429cd3fbb0b211dddc5b7633f7410e3401815",
+      "git_blob_sha1": "11cadb2494895f11b0b9fddbd72795e96f9e50a3",
+      "size": 956,
+      "category": "readme"
+    },
+    {
+      "path": "src/assets/img/scene-chemistry.jpg",
+      "sha256": "cbbf6bf071746938b99cfcdaf784f76338fcd1e1c8bf95f4448458cd901d026f",
+      "git_blob_sha1": "4ef239b4d7d666ef75413d0b5faa6b762cb84882",
+      "size": 195254,
+      "category": "scene"
+    },
+    {
+      "path": "src/assets/img/scene-illum.jpg",
+      "sha256": "299865c6e144d7f754dfd3ebb01370c7feae241ee7cffa6449c2292ee104a120",
+      "git_blob_sha1": "f438a38c95f28e1e1d60ff39bf7a11a6989fba43",
+      "size": 141243,
+      "category": "scene"
+    },
+    {
+      "path": "src/assets/img/scene-immortal.jpg",
+      "sha256": "50a9d17ef632cd28d53bfd7b6093980b01177596356920c7ae05f0e774b004bd",
+      "git_blob_sha1": "8fcb116f504b87314b3ffea88adc8e7b3041c584",
+      "size": 217931,
+      "category": "scene"
+    },
+    {
+      "path": "src/assets/img/scene-physics.jpg",
+      "sha256": "3c48e50af4ee3328cb364de86e8195d453ef1a12e295ac8d35dcf38401df4b5f",
+      "git_blob_sha1": "02dc2671cad8f95e0abe178bfc0785f75913d1be",
+      "size": 206076,
+      "category": "scene"
+    },
+    {
+      "path": "src/assets/img/scene/alchemy.jpg",
+      "sha256": "88456acfdb85206b3628262db8f1c40625600b0974c402215cd159c5ad1a2a22",
+      "git_blob_sha1": "7d122424b4090070a44d29371ae9148f20e0001e",
+      "size": 174857,
+      "category": "scene"
+    },
+    {
+      "path": "src/assets/img/scene/arena.jpg",
+      "sha256": "da9f71ea0b3967e126be23bd0d04eb492759f98ef0e2f2e16a1314a702fb8edc",
+      "git_blob_sha1": "1dc2c67b7615e29fd47eed12d195f23b10207ae7",
+      "size": 148146,
+      "category": "scene"
+    },
+    {
+      "path": "src/assets/img/scene/cave.jpg",
+      "sha256": "ee25c094a42936f61bcfefe4bcc95c24cb10b0941b4fa4d722fe7ede6d36dddf",
+      "git_blob_sha1": "844ee010c1be69b1fa3cb93fd27147efdfea9e74",
+      "size": 203731,
+      "category": "scene"
+    },
+    {
+      "path": "src/assets/img/scene/cave_moonlit.png",
+      "sha256": "00cc1b0b0e7d6fce0e298022dfa276fa349c20df38c34792c7594daa4090524f",
+      "git_blob_sha1": "e07402a47d0e908bd2087031c93f84a84ea95bf1",
+      "size": 1209342,
+      "category": "scene"
+    },
+    {
+      "path": "src/assets/img/scene/chem_furnace.png",
+      "sha256": "c63bfde93499d85ba023fd8fe7d545e557c9f91bcf06375d8314df99c66cd575",
+      "git_blob_sha1": "1c69acfd773e6abcc6330f954b25f99dcec231de",
+      "size": 1270720,
+      "category": "scene"
+    },
+    {
+      "path": "src/assets/img/scene/garden.jpg",
+      "sha256": "409d72b96d44b448d851a8409b060f41d60a0c735b9009e03bb5cbdfe0bcd4a8",
+      "git_blob_sha1": "7c80cf8131d702b45ade998742ca7511bfd2ca60",
+      "size": 202366,
+      "category": "scene"
+    },
+    {
+      "path": "src/assets/img/scene/geo_terrace.png",
+      "sha256": "048f9a6b2c52a2c309c915bb6c1c56faf0c4b636a3c99502139444eca03995a5",
+      "git_blob_sha1": "a0b0fcef09e1a5397ab80691305ef2cb317dd83d",
+      "size": 1232781,
+      "category": "scene"
+    },
+    {
+      "path": "src/assets/img/scene/main_hall.jpg",
+      "sha256": "691a9732cf220e37e8be3a6a8862cf2bee8ec24382ff6f97bba49e8de7485b13",
+      "git_blob_sha1": "8ed678598a58ff504ae78a1a2054be10b0b8f988",
+      "size": 217547,
+      "category": "scene"
+    },
+    {
+      "path": "src/assets/img/scene/scene-chemistry.jpg",
+      "sha256": "cbbf6bf071746938b99cfcdaf784f76338fcd1e1c8bf95f4448458cd901d026f",
+      "git_blob_sha1": "4ef239b4d7d666ef75413d0b5faa6b762cb84882",
+      "size": 195254,
+      "category": "scene"
+    },
+    {
+      "path": "src/assets/img/scene/scene-illum.jpg",
+      "sha256": "299865c6e144d7f754dfd3ebb01370c7feae241ee7cffa6449c2292ee104a120",
+      "git_blob_sha1": "f438a38c95f28e1e1d60ff39bf7a11a6989fba43",
+      "size": 141243,
+      "category": "scene"
+    },
+    {
+      "path": "src/assets/img/scene/scene-immortal.jpg",
+      "sha256": "50a9d17ef632cd28d53bfd7b6093980b01177596356920c7ae05f0e774b004bd",
+      "git_blob_sha1": "8fcb116f504b87314b3ffea88adc8e7b3041c584",
+      "size": 217931,
+      "category": "scene"
+    },
+    {
+      "path": "src/assets/img/scene/scene-physics.jpg",
+      "sha256": "3c48e50af4ee3328cb364de86e8195d453ef1a12e295ac8d35dcf38401df4b5f",
+      "git_blob_sha1": "02dc2671cad8f95e0abe178bfc0785f75913d1be",
+      "size": 206076,
+      "category": "scene"
+    },
+    {
+      "path": "src/assets/img/scene/scroll_hall.png",
+      "sha256": "b7e39a9ed0853cf9bf05a6341b8e183c9f1d828c5483bba68703e47b3c33dffa",
+      "git_blob_sha1": "f687dc1f601fefb1c367a2349313473054bfe8e0",
+      "size": 1178055,
+      "category": "scene"
+    },
+    {
+      "path": "src/assets/img/scene/splash_v435.jpg",
+      "sha256": "e305780980862bc94009d0d016e6cc80193eb2dc378f63e23f8c96cdbdaa6cf0",
+      "git_blob_sha1": "ebb2abac6e68ab11cc816718305939d40d47cf6e",
+      "size": 1058306,
+      "category": "scene"
+    },
+    {
+      "path": "src/assets/img/scene/sub-chemistry.jpg",
+      "sha256": "85235aa777461ef5fc896af7c86fde3b1ae7e30db0440ba01ec9a2600a5da6bf",
+      "git_blob_sha1": "cd9c7331400efa0b5e769c2d86b05a26f85c0176",
+      "size": 222005,
+      "category": "scene"
+    },
+    {
+      "path": "src/assets/img/scene/sub-chinese.jpg",
+      "sha256": "bb586f8a17d9f6a2f48d1a11315df08662ab914555b094d03d5939f08958513e",
+      "git_blob_sha1": "b2626cbd2e076962e7a549fa16e3c5df380e39a6",
+      "size": 182287,
+      "category": "scene"
+    },
+    {
+      "path": "src/assets/img/scene/sub-english.jpg",
+      "sha256": "9de772ab14dd3b775edb8c35d87cb0857b30b24fd0dca8624c24960f242db0f9",
+      "git_blob_sha1": "8bc85b788495622cf704ecda54f9555a3110b833",
+      "size": 203269,
+      "category": "scene"
+    },
+    {
+      "path": "src/assets/img/scene/sub-geography.jpg",
+      "sha256": "ad27878dbd8d8eca9365296d1cd31abf99a06eb3e76a2e60a8ab29fe28173645",
+      "git_blob_sha1": "02444d8b6ddbcbb8a17906ac2565dae87ea54147",
+      "size": 209814,
+      "category": "scene"
+    },
+    {
+      "path": "src/assets/img/scene/sub-math.jpg",
+      "sha256": "a0955b116175ec378df06819bff0f24bf5ea37b9abc574f3ff9f575470d89a96",
+      "git_blob_sha1": "97daadcee9eac82d23097bd922ab40a05b02a1f6",
+      "size": 221870,
+      "category": "scene"
+    },
+    {
+      "path": "src/assets/img/scene/sub-physics.jpg",
+      "sha256": "bfc24e866065447e8e16597f03b4c25f4e16bfed072dede0ea02cdda71cd925f",
+      "git_blob_sha1": "4b7b39e4bcb42d73d987848b9389ca91521a7693",
+      "size": 158767,
+      "category": "scene"
+    },
+    {
+      "path": "src/assets/img/scenes/alchemy.jpg",
+      "sha256": "88456acfdb85206b3628262db8f1c40625600b0974c402215cd159c5ad1a2a22",
+      "git_blob_sha1": "7d122424b4090070a44d29371ae9148f20e0001e",
+      "size": 174857,
+      "category": "scene"
+    },
+    {
+      "path": "src/assets/img/scenes/arena.jpg",
+      "sha256": "da9f71ea0b3967e126be23bd0d04eb492759f98ef0e2f2e16a1314a702fb8edc",
+      "git_blob_sha1": "1dc2c67b7615e29fd47eed12d195f23b10207ae7",
+      "size": 148146,
+      "category": "scene"
+    },
+    {
+      "path": "src/assets/img/scenes/cave.jpg",
+      "sha256": "ee25c094a42936f61bcfefe4bcc95c24cb10b0941b4fa4d722fe7ede6d36dddf",
+      "git_blob_sha1": "844ee010c1be69b1fa3cb93fd27147efdfea9e74",
+      "size": 203731,
+      "category": "scene"
+    },
+    {
+      "path": "src/assets/img/scenes/cave_moonlit.png",
+      "sha256": "00cc1b0b0e7d6fce0e298022dfa276fa349c20df38c34792c7594daa4090524f",
+      "git_blob_sha1": "e07402a47d0e908bd2087031c93f84a84ea95bf1",
+      "size": 1209342,
+      "category": "scene"
+    },
+    {
+      "path": "src/assets/img/scenes/chem_furnace.png",
+      "sha256": "c63bfde93499d85ba023fd8fe7d545e557c9f91bcf06375d8314df99c66cd575",
+      "git_blob_sha1": "1c69acfd773e6abcc6330f954b25f99dcec231de",
+      "size": 1270720,
+      "category": "scene"
+    },
+    {
+      "path": "src/assets/img/scenes/garden.jpg",
+      "sha256": "409d72b96d44b448d851a8409b060f41d60a0c735b9009e03bb5cbdfe0bcd4a8",
+      "git_blob_sha1": "7c80cf8131d702b45ade998742ca7511bfd2ca60",
+      "size": 202366,
+      "category": "scene"
+    },
+    {
+      "path": "src/assets/img/scenes/geo_terrace.png",
+      "sha256": "048f9a6b2c52a2c309c915bb6c1c56faf0c4b636a3c99502139444eca03995a5",
+      "git_blob_sha1": "a0b0fcef09e1a5397ab80691305ef2cb317dd83d",
+      "size": 1232781,
+      "category": "scene"
+    },
+    {
+      "path": "src/assets/img/scenes/main_hall.jpg",
+      "sha256": "691a9732cf220e37e8be3a6a8862cf2bee8ec24382ff6f97bba49e8de7485b13",
+      "git_blob_sha1": "8ed678598a58ff504ae78a1a2054be10b0b8f988",
+      "size": 217547,
+      "category": "scene"
+    },
+    {
+      "path": "src/assets/img/scenes/scroll_hall.png",
+      "sha256": "b7e39a9ed0853cf9bf05a6341b8e183c9f1d828c5483bba68703e47b3c33dffa",
+      "git_blob_sha1": "f687dc1f601fefb1c367a2349313473054bfe8e0",
+      "size": 1178055,
+      "category": "scene"
+    },
+    {
+      "path": "src/assets/img/scenes/sect_chemistry.jpg",
+      "sha256": "85235aa777461ef5fc896af7c86fde3b1ae7e30db0440ba01ec9a2600a5da6bf",
+      "git_blob_sha1": "cd9c7331400efa0b5e769c2d86b05a26f85c0176",
+      "size": 222005,
+      "category": "scene"
+    },
+    {
+      "path": "src/assets/img/scenes/sect_chinese.jpg",
+      "sha256": "bb586f8a17d9f6a2f48d1a11315df08662ab914555b094d03d5939f08958513e",
+      "git_blob_sha1": "b2626cbd2e076962e7a549fa16e3c5df380e39a6",
+      "size": 182287,
+      "category": "scene"
+    },
+    {
+      "path": "src/assets/img/scenes/sect_english.jpg",
+      "sha256": "9de772ab14dd3b775edb8c35d87cb0857b30b24fd0dca8624c24960f242db0f9",
+      "git_blob_sha1": "8bc85b788495622cf704ecda54f9555a3110b833",
+      "size": 203269,
+      "category": "scene"
+    },
+    {
+      "path": "src/assets/img/scenes/sect_geography.jpg",
+      "sha256": "ad27878dbd8d8eca9365296d1cd31abf99a06eb3e76a2e60a8ab29fe28173645",
+      "git_blob_sha1": "02444d8b6ddbcbb8a17906ac2565dae87ea54147",
+      "size": 209814,
+      "category": "scene"
+    },
+    {
+      "path": "src/assets/img/scenes/sect_math.jpg",
+      "sha256": "a0955b116175ec378df06819bff0f24bf5ea37b9abc574f3ff9f575470d89a96",
+      "git_blob_sha1": "97daadcee9eac82d23097bd922ab40a05b02a1f6",
+      "size": 221870,
+      "category": "scene"
+    },
+    {
+      "path": "src/assets/img/scenes/sect_physics.jpg",
+      "sha256": "bfc24e866065447e8e16597f03b4c25f4e16bfed072dede0ea02cdda71cd925f",
+      "git_blob_sha1": "4b7b39e4bcb42d73d987848b9389ca91521a7693",
+      "size": 158767,
+      "category": "scene"
+    },
+    {
+      "path": "src/assets/img/scenes/splash_v435.jpg",
+      "sha256": "e305780980862bc94009d0d016e6cc80193eb2dc378f63e23f8c96cdbdaa6cf0",
+      "git_blob_sha1": "ebb2abac6e68ab11cc816718305939d40d47cf6e",
+      "size": 1058306,
+      "category": "scene"
+    },
+    {
+      "path": "src/assets/img/shifu.jpg",
+      "sha256": "6dbfe3146fcb1fbeb2d4b06d163af21e7a76d5c3f380ecd0ceafa64cdb9f7db5",
+      "git_blob_sha1": "ab0d91f83bae04192e4bf9bfd994c5e64c4c974d",
+      "size": 103815,
+      "category": "scene"
+    },
+    {
+      "path": "src/assets/img/shijie.jpg",
+      "sha256": "e9b56d186a786f68cf473617a02fe3dd6795db592cd9b8b6459a7b7afa7c73de",
+      "git_blob_sha1": "765460ab92658f1c36c87cc2622b0c5089814b8e",
+      "size": 231792,
+      "category": "scene"
+    },
+    {
+      "path": "src/assets/img/shimei.jpg",
+      "sha256": "1f756fc62c20d0d57df97b17c7f71fceac3875d3648b58ad5cf7e5494710f06f",
+      "git_blob_sha1": "36a629021eef208d0b172bdeb6b00617c19a3f06",
+      "size": 127305,
+      "category": "scene"
+    }
+  ],
+  "bad_entries": []
 }
