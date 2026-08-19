@@ -149,10 +149,11 @@
   // 主入口
   // ============================================================
   function boot() {
-    reclassifyBank('PHYSICS_BANK', PHY_KW, 'physics');
-    reclassifyBank('CHEMISTRY_BANK', CHEM_KW, 'chemistry');
+    const activeSubj = (typeof document !== 'undefined' && document.body && (document.body.dataset.subject || document.body.dataset.sect)) || null;
+    if (!activeSubj || activeSubj === 'physics') reclassifyBank('PHYSICS_BANK', PHY_KW, 'physics');
+    if (!activeSubj || activeSubj === 'chemistry') reclassifyBank('CHEMISTRY_BANK', CHEM_KW, 'chemistry');
     // 地理/数学的关键词映射后续补丁再加，先修最严重的物化
-    console.info(TAG, '════════ v4.3.7a 重分类补丁 已装载 ════════');
+    console.debug(TAG, 'v4.4.0 重分类补丁已装载');
 
     // 触发 SQ 索引重建（如果 v437a-quality-fix 已装载）
     if (global.v437aFix && typeof global.v437aFix.patchSQ === 'function') {

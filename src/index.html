@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="assets/v435j-fix.css">
 </head>
 <body>
+<script>document.documentElement.dataset.font=localStorage.getItem("wendao_font")||"medium";document.body.dataset.theme=localStorage.getItem("wendao_theme")||"dark";</script>
 
 <div id="topbar-mount"></div>
 
@@ -279,8 +280,6 @@
   };
 })();
 </script>
-
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"4edd5f8ec12a48cfa682ab8261b80a79","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 <!-- v4.4.0 视觉包恢复：场景背景 / CG / 卡片装饰（视觉层）。逻辑层已关闭。 -->
 <script src="assets/v435b-interactive.js" onerror="console.warn('v435b-interactive not found')"></script>
 <script src="assets/v435-remake.js"       onerror="console.warn('v435-remake not found (visual only)')"></script>

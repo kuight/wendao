@@ -76,6 +76,8 @@
       const box = document.createElement('div');
       box.className = 'story-dialog';
       mask.appendChild(box);
+      mask.classList.add('show', 'is-open');
+      mask.classList.add('show', 'is-open');
 
       // 背景CG（若剧情指定 bg 且 PixelArt 存在，则渲染像素场景）
       if (scene.bg && typeof PixelArt !== 'undefined' && PixelArt.scene) {
@@ -89,6 +91,8 @@
       const lines = scene.lines || [];
 
       const finish = () => {
+        mask.classList.remove('is-open', 'show');
+        mask.classList.remove('is-open', 'show');
         mask.remove();
         if (scene.reward) {
           if (scene.reward.exp)     Game.addExp(scene.reward.exp);
