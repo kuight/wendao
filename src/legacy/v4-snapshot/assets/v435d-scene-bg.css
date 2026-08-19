@@ -1,0 +1,64 @@
+/* ===================================================================
+ * v4.3.5d · 场景背景分派
+ * -------------------------------------------------------------------
+ * 目标：每个场所/宗门用不同背景 + 不同色调，不再千篇一律。
+ *   - 洞府：深蓝月夜
+ *   - 斩妖场：赤红古战场
+ *   - 炼丹房：橙金炉焰
+ *   - 灵植园：翠绿药圃
+ *   - 文渊阁/推衍宫/译灵堂：卷轴纸黄
+ *   - 雷霆殿：紫电
+ *   - 丹鼎峰：赭红
+ *   - 山河阁：靛青
+ * =================================================================== */
+
+/* 通用容器 */
+.v435d-scene{position:relative;overflow:hidden;border-radius:16px;border:1px solid rgba(245,201,122,.22);box-shadow:0 10px 30px rgba(0,0,0,.24);padding:16px}
+.v435d-scene::before{content:'';position:absolute;inset:0;background:var(--v435d-bg,linear-gradient(135deg,#1a1330,#252045)) center/cover no-repeat;filter:saturate(1.05) brightness(.85);z-index:0}
+.v435d-scene::after{content:'';position:absolute;inset:0;background:var(--v435d-overlay,linear-gradient(180deg,rgba(16,12,30,.28),rgba(16,12,30,.82)));z-index:0}
+.v435d-scene > *{position:relative;z-index:1}
+
+/* -------- 主要场所 -------- */
+.v435d-scene-hall{--v435d-bg:url('img/scenes/main_hall.jpg');--v435d-overlay:linear-gradient(180deg,rgba(20,18,42,.35),rgba(20,18,42,.78))}
+.v435d-scene-cave{--v435d-bg:url('img/scenes/cave_moonlit.png');--v435d-overlay:linear-gradient(180deg,rgba(14,26,58,.42),rgba(9,16,38,.85))}
+.v435d-scene-arena{--v435d-bg:url('img/scenes/arena.jpg');--v435d-overlay:linear-gradient(180deg,rgba(90,20,20,.32),rgba(46,12,12,.82))}
+.v435d-scene-alchemy{--v435d-bg:url('img/scenes/chem_furnace.png');--v435d-overlay:linear-gradient(180deg,rgba(70,32,10,.36),rgba(40,16,4,.86))}
+.v435d-scene-garden{--v435d-bg:url('img/scenes/geo_terrace.png');--v435d-overlay:linear-gradient(180deg,rgba(20,52,32,.32),rgba(10,32,20,.84))}
+.v435d-scene-scroll{--v435d-bg:url('img/scenes/scroll_hall.png');--v435d-overlay:linear-gradient(180deg,rgba(48,38,20,.32),rgba(30,22,10,.82))}
+
+/* -------- 六大宗门（学科页）-------- */
+.v435d-sect-physics{--v435d-bg:url('assets/img/scenes/sect_physics.jpg');--v435d-overlay:linear-gradient(180deg,rgba(48,26,68,.32),rgba(20,10,42,.82))}
+.v435d-sect-chemistry{--v435d-bg:url('assets/img/scenes/sect_chemistry.jpg');--v435d-overlay:linear-gradient(180deg,rgba(78,26,10,.32),rgba(38,14,6,.82))}
+.v435d-sect-geography{--v435d-bg:url('assets/img/scenes/sect_geography.jpg');--v435d-overlay:linear-gradient(180deg,rgba(18,52,74,.32),rgba(10,30,52,.82))}
+.v435d-sect-chinese{--v435d-bg:url('img/scenes/sect_chinese.jpg');--v435d-overlay:linear-gradient(180deg,rgba(56,42,20,.32),rgba(30,22,10,.82))}
+.v435d-sect-math{--v435d-bg:url('img/scenes/sect_math.jpg');--v435d-overlay:linear-gradient(180deg,rgba(30,42,62,.32),rgba(14,22,42,.82))}
+.v435d-sect-english{--v435d-bg:url('img/scenes/sect_english.jpg');--v435d-overlay:linear-gradient(180deg,rgba(42,30,62,.32),rgba(22,14,42,.82))}
+
+/* -------- 徽章 -------- */
+.v435d-badge{display:inline-flex;gap:8px;align-items:center;padding:4px 12px;border-radius:999px;background:rgba(245,201,122,.16);border:1px solid rgba(245,201,122,.32);color:#f5c97a;font-size:12px;letter-spacing:2px;margin-bottom:10px}
+.v435d-badge.cave{background:rgba(110,213,224,.16);border-color:rgba(110,213,224,.36);color:#6ed5e0}
+.v435d-badge.arena{background:rgba(255,123,123,.16);border-color:rgba(255,123,123,.36);color:#ff7b7b}
+.v435d-badge.alchemy{background:rgba(243,156,86,.18);border-color:rgba(243,156,86,.4);color:#f39c56}
+.v435d-badge.garden{background:rgba(140,226,140,.18);border-color:rgba(140,226,140,.4);color:#8ce28c}
+
+/* -------- 学科页整体皮肤（作用于 sub-root）-------- */
+.v435d-sub-skin{position:relative;border-radius:18px;padding:8px;overflow:hidden}
+.v435d-sub-skin::before{content:'';position:absolute;inset:0;background:var(--v435d-tabbg,linear-gradient(135deg,#1a1330,#252045)) center/cover no-repeat;opacity:.98;z-index:-1}
+
+/* -------- 世界地图内的分类色标 -------- */
+.v435d-world-tag{display:inline-flex;padding:3px 10px;border-radius:999px;font-size:11px;letter-spacing:1px;margin:2px}
+.v435d-world-tag.util{background:rgba(110,213,224,.14);color:#6ed5e0;border:1px solid rgba(110,213,224,.32)}
+.v435d-world-tag.sect{background:rgba(245,201,122,.14);color:#f5c97a;border:1px solid rgba(245,201,122,.32)}
+
+/* -------- 淡入动画（切场景时）-------- */
+@keyframes v435dSceneFade{ from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:translateY(0)} }
+.v435d-scene, .v435d-sub-skin{animation:v435dSceneFade .32s ease}
+
+/* -------- 洞府专用星光 -------- */
+.v435d-scene-cave::before{background-image:url('img/scenes/cave_moonlit.png'),radial-gradient(circle at 20% 20%,rgba(110,213,224,.18),transparent 45%),radial-gradient(circle at 80% 60%,rgba(178,136,255,.18),transparent 45%);background-size:cover,cover,cover;background-blend-mode:normal,screen,screen}
+
+/* -------- 斩妖场专用煞气 -------- */
+.v435d-scene-arena::before{background-image:url('img/scenes/arena.jpg'),radial-gradient(circle at 30% 80%,rgba(255,123,123,.22),transparent 50%);background-size:cover,cover;background-blend-mode:normal,screen}
+
+/* -------- 炼丹房专用炉焰 -------- */
+.v435d-scene-alchemy::before{background-image:url('img/scenes/chem_furnace.png'),radial-gradient(circle at 50% 90%,rgba(243,156,86,.32),transparent 50%);background-size:cover,cover;background-blend-mode:normal,screen}

@@ -1,0 +1,2 @@
+// v5 opt-in patch — leaves v4 as the default path
+(function(){if(typeof window==='undefined')return;window.GameV5=window.GameV5||{};GameV5.patch=async function(){try{var raw=localStorage.getItem('wendao_save_v2'),state=raw?JSON.parse(raw):{schemaVersion:2,char:{realmId:0}};var route=GameV5.router.pickRoute(state.schemaVersion);if(route==='v4')return false;if(route==='v5'){await GameV5.boot();return true;}console.warn('[GameV5.patch] unknown schemaVersion',state.schemaVersion);return false;}catch(e){console.error('[GameV5.patch] failed',e);return false;};};})();
