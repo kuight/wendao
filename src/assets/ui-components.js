@@ -638,13 +638,15 @@
         { key:'chinese',   icon:'📜', name:'文渊阁', subject:'语文', desc:'笔走龙蛇，文以载道。古诗文阅读、现代文鉴赏、议论文写作。',    cls:'sect-chinese'  },
         { key:'math',      icon:'🔢', name:'推衍宫', subject:'数学', desc:'演算天机，函数为剑，几何作盾。万物皆数，数即道也。',          cls:'sect-math'     },
         { key:'english',   icon:'🌐', name:'译灵堂', subject:'英语', desc:'通晓异界灵语，沟通天下。词汇、语法、阅读、写作。',           cls:'sect-english'  },
+        { key:'feisheng',  icon:'🪜', name:'飞升宝塔', subject:'飞升试炼', desc:'化神之后登塔问劫，十二重试炼层层叩问道心。',            cls:'sect-feisheng', requires:'huashen' },
       ];
       let html = '<div class="sect-map">';
       sects.forEach(s => {
-        const st = Game.state.sects[s.key] || { masteredManuals:[], defeatedQuests:[] };
+        const st = Game.state.sects[s.key] || { masteredManuals:[], defeatedQuests:[], unlocked:true };
         const mCnt = st.masteredManuals.length;
         const qCnt = st.defeatedQuests.length;
-        const locked = !st.unlocked;
+        const requiresReady = s.requires === 'huashen' && !(Game.isCultivationReadyForFeisheng && Game.isCultivationReadyForFeisheng(Game.state));
+        const locked = requiresReady || st.unlocked === false;
         const cls = `sect-card ${s.cls} ${locked ? 'locked' : ''}`;
         const href = locked ? 'javascript:void(0)' : `subjects/${s.key}.html`;
         // 用 manual 数估算总进度（如果数据已加载）
@@ -653,6 +655,9 @@
         const totalAll = totalManuals + totalBank;
         const done = mCnt + qCnt;
         const pct = totalAll > 0 ? Math.min(100, Math.round(done / totalAll * 100)) : 0;
+        const progressText = s.key === 'feisheng'
+          ? (locked ? '需化神期开启' : `当前层数 ${Math.max(1, ((Game.feishengCurrentFloor ? Game.feishengCurrentFloor(Game.state) : 1) || 1))} / 12`)
+          : `功法 ${mCnt} / 妖兽 ${qCnt}`;
         html += `
           <a class="${cls}" href="${href}">
             <span class="sect-icon">${s.icon}</span>
@@ -660,8 +665,8 @@
             <div class="sect-name">${s.name}</div>
             <div class="sect-desc">${s.desc}</div>
             <div class="sect-progress">
-              功法 ${mCnt} / 妖兽 ${qCnt}
-              <div class="sect-progress-bar"><div class="sect-progress-fill" style="width:${pct}%"></div></div>
+              ${progressText}
+              <div class="sect-progress-bar"><div class="sect-progress-fill" style="width:${s.key === 'feisheng' ? Math.round((((Game.feishengBestFloor ? Game.feishengBestFloor(Game.state) : 0) || 0) / 12) * 100) : pct}%"></div></div>
             </div>
           </a>
         `;
@@ -984,14 +989,14 @@
         { id:'chinese',   name:'文渊阁',   sub:'语文 / 9 篇功法',  x:280, y:340, emoji:'📜', href:'subjects/chinese.html' },
         { id:'math',      name:'推衍宫',   sub:'数学 / 9 篇功法',  x:520, y:340, emoji:'🔢', href:'subjects/math.html' },
         { id:'english',   name:'译灵堂',   sub:'英语 / 7 篇功法',  x:730, y:320, emoji:'🌐', href:'subjects/english.html' },
-        { id:'tower',     name:'飞升宝塔', sub:'高考 / 终极塔',      x:400, y:430, emoji:'🗼', href:'#tower' },
+        { id:'feisheng',  name:'飞升宝塔', sub:'飞升试炼 · 12 层', x:400, y:430, emoji:'🪜', href:'subjects/飞升宝塔.html', requires:'huashen' },
       ];
       const paths = [
         ['start','physics'], ['start','chemistry'],
         ['physics','geography'], ['physics','chinese'],
         ['chemistry','math'], ['chemistry','english'],
         ['geography','chinese'], ['chinese','math'], ['math','english'],
-        ['geography','tower'], ['english','tower'], ['chinese','tower'], ['math','tower']
+        ['geography','feisheng'], ['english','feisheng'], ['chinese','feisheng'], ['math','feisheng']
       ];
       const nMap = {};
       NODES.forEach(n => nMap[n.id] = n);
@@ -1028,9 +1033,11 @@
       });
       // 节点
       NODES.forEach(n => {
-        const unlocked = wm.unlocked[n.id] !== false;
+        const requiresReady = n.requires === 'huashen' && !(Game.isCultivationReadyForFeisheng && Game.isCultivationReadyForFeisheng(Game.state));
+        const unlocked = !requiresReady && wm.unlocked[n.id] !== false;
         const cls = 'location' + (unlocked ? '' : ' locked');
         const href = unlocked ? (n.href||'') : '';
+        const subText = requiresReady ? '需化神期开启' : n.sub;
         svg += `<g class="${cls}" data-node="${n.id}" data-href="${href}">`;
         // 光晕
         if (unlocked) svg += `<circle cx="${n.x}" cy="${n.y}" r="38" fill="url(#wm-glow)"/>`;
@@ -1039,7 +1046,7 @@
         svg += `<text class="loc-emoji" x="${n.x}" y="${n.y+11}" text-anchor="middle">${n.emoji}</text>`;
         // 标题
         svg += `<text class="loc-label" x="${n.x}" y="${n.y+50}">${n.name}</text>`;
-        svg += `<text class="loc-sub" x="${n.x}" y="${n.y+66}">${n.sub}</text>`;
+        svg += `<text class="loc-sub" x="${n.x}" y="${n.y+66}">${subText}</text>`;
         svg += `</g>`;
       });
       svg += `</svg>`;
@@ -1047,7 +1054,7 @@
         <div class="world-map-legend">
           <span class="legend-item"><span class="lgd-dot"></span>已解锁</span>
           <span class="legend-item"><span class="lgd-dot locked"></span>未解锁</span>
-          <span style="margin-left:auto;color:var(--xx-text-dim);">💡 点击任一宗门进入</span>
+          <span style="margin-left:auto;color:var(--xx-text-dim);">💡 达到条件后可直入飞升宝塔</span>
         </div>
       </div>`;
     },
@@ -1055,15 +1062,18 @@
     bindWorldMap(container) {
       container.querySelectorAll('.location').forEach(g => {
         if (g.classList.contains('locked')) {
-          g.onclick = () => UI.toast('此地尚未解锁', 'error');
+          g.onclick = () => {
+            const node = g.dataset.node;
+            UI.toast(node === 'feisheng' ? '需化神期开启飞升宝塔' : '此地尚未解锁', 'error');
+          };
           return;
         }
         g.onclick = () => {
           const href = g.dataset.href;
           const node = g.dataset.node;
           Game.visitNode(node);
-          if (href && href !== '#tower') { window.location.href = href; return; }
-          if (href === '#tower') { UI.toast('飞升宝塔 — 请先突破金丹期后解锁', 'info'); return; }
+          if (node === 'feisheng' && Game.openFeishengTower) { Game.openFeishengTower(Game.state); return; }
+          if (href) { window.location.href = href; return; }
           if (node === 'start') { UI.toast('你回到了问道山门', 'info'); }
         };
       });

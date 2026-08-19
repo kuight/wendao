@@ -1876,3 +1876,22 @@
   G._petsBooted = true;
 })();
 
+// ===== Phase 18b：飞升宝塔入口与试炼状态辅助 =====
+(function () {
+  var G = (typeof window !== 'undefined' && window.Game) ? window.Game : null;
+  if (!G) return;
+
+  G.isCultivationReadyForFeisheng = function (state) {
+    var s = state || G.state || {};
+    return (((s.char || {}).realmId) | 0) >= 6;
+  };
+
+  G.getFeishengState = function (state) {
+    var s = state || G.state || {};
+    if (!s.char) s.char = {};
+    if (!Number.isFinite(s.char.feishengBest)) s.char.feishengBest = 0;
+    if (typeof s.char.feishengCompleted !== 'boolean') s.char.feishengCompleted = false;
+    return s.char;
+  };
+})();
+
