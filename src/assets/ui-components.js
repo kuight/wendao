@@ -2169,3 +2169,115 @@
   global.UI = UI;
 
 })(typeof window !== 'undefined' ? window : this);
+
+// ===== Phase 18：灵宠系统 v2 面板（11 只 · 升星 · 出战 · 加成） =====
+(function () {
+  function p18G() {
+    return (typeof window !== 'undefined' && window.Game) ? window.Game : null;
+  }
+  function p18State() {
+    var G = p18G();
+    if (!G) return null;
+    var s = G.state || {};
+    if (typeof G._ensurePets === 'function') G._ensurePets(s);
+    return s.pet18 || null;
+  }
+  function p18Bonus() {
+    var G = p18G();
+    return (G && typeof G.getPetBonus === 'function') ? G.getPetBonus() : { atk:0, def:0, hp:0 };
+  }
+  function p18Card(p, o, equippedNow) {
+    var canUp = o.exp >= (o.expToNext || 100);
+    return ''
+      + '<div class="pet-card" data-p18-id="' + p.id + '" style="border:1px solid #2a2a3e;border-radius:8px;padding:8px;margin:4px 0;background:#0e0e1a;">'
+      + '  <div style="display:flex;justify-content:space-between;align-items:center;">'
+      + '    <strong>' + p.name + '</strong>'
+      + '    <span style="color:#ffd56b;">&#11088;' + (o.star || 1) + '</span>'
+      + '  </div>'
+      + '  <div style="font-size:12px;color:#aaa;margin:2px 0;">被动：' + p.passive + '  解锁境界：' + p.unlockRealm + '</div>'
+      + '  <div style="font-size:12px;color:#bbb;">atk ' + p.atk + ' / def ' + p.def + ' / hp ' + p.hp + '</div>'
+      + '  <div style="font-size:11px;color:#777;margin-top:4px;">exp: ' + o.exp + ' / ' + o.expToNext + '</div>'
+      + '  <div style="margin-top:6px;">'
+      + (equippedNow
+          ? '<button data-p18-unequip="' + p.id + '" style="background:#a44;color:#fff;border:none;border-radius:4px;padding:3px 10px;margin-right:4px;cursor:pointer;">卸下</button>'
+          : '<button data-p18-equip="' + p.id + '" style="background:#4a4;color:#fff;border:none;border-radius:4px;padding:3px 10px;margin-right:4px;cursor:pointer;">出战</button>')
+      + '    <button data-p18-up="' + p.id + '"' + (canUp ? '' : ' disabled') + ' style="background:#444;color:#fff;border:none;border-radius:4px;padding:3px 10px;cursor:' + (canUp ? 'pointer' : 'not-allowed') + ';">升星</button>'
+      + '  </div>'
+      + '</div>';
+  }
+  function p18Section() {
+    var G = p18G();
+    if (!G || !G.PET_TABLE_PHASE18) return '<div style="color:#888;padding:8px;">灵宠系统加载中...</div>';
+    var st = p18State();
+    if (!st) return '<div style="color:#888;padding:8px;">灵宠系统加载中...</div>';
+    var PT = G.PET_TABLE_PHASE18 || [];
+    var equippedId = (st.equipped && st.equipped[0]) || null;
+    var bonus = p18Bonus();
+    var ownedCount = 0;
+    for (var i = 0; i < PT.length; i++) if (st.owned[PT[i].id]) ownedCount++;
+    var html = ''
+      + '<div class="pet-card" style="margin-top:14px;border:1px solid #3a3a4e;border-radius:8px;padding:8px 10px;background:#101020;">'
+      + '  <div style="color:#ffd56b;font-size:14px;">灵宠系统 v2 · Phase 18</div>'
+      + '  <div style="font-size:12px;color:#aaa;margin:2px 0;">共 ' + PT.length + ' 只，已获得 ' + ownedCount + ' 只，最多 1 只同时出战。</div>'
+      + '  <div style="font-size:12px;color:#7cf;margin:4px 0;">当前出战加成：atk +' + bonus.atk + ' / def +' + bonus.def + ' / hp +' + bonus.hp + '</div>'
+      + '  <div style="max-height:420px;overflow-y:auto;">';
+    for (var j = 0; j < PT.length; j++) {
+      var p = PT[j];
+      if (!p) continue;
+      var o = st.owned[p.id] || { star:1, exp:0, expToNext:100 };
+      html += p18Card(p, o, equippedId === p.id);
+    }
+    html += '  </div></div>';
+    return html;
+  }
+  function p18Refresh(body) {
+    if (!body) return;
+    if (typeof UI !== 'undefined' && UI && typeof UI.renderPets === 'function') {
+      body.innerHTML = UI.renderPets();
+      if (typeof UI.bindPets === 'function') UI.bindPets(body);
+    }
+    if (!body.querySelector('[data-p18-id]')) {
+      body.insertAdjacentHTML('beforeend', p18Section());
+    }
+  }
+  function p18Bind(body) {
+    if (!body || body.__p18Bound) return;
+    body.__p18Bound = true;
+    body.addEventListener('click', function (ev) {
+      var t = ev.target;
+      if (!(t && t.tagName === 'BUTTON')) return;
+      var G = p18G();
+      if (!G) return;
+      var eId = t.getAttribute('data-p18-equip');
+      var uId = t.getAttribute('data-p18-unequip');
+      var upId = t.getAttribute('data-p18-up');
+      if (eId && G.equipPet) G.equipPet(eId);
+      else if (uId && G.unequipPet) G.unequipPet();
+      else if (upId && G.feedPet) G.feedPet(upId, 9999);
+      p18Refresh(body);
+    });
+  }
+  function p18TryInject() {
+    var body = document.getElementById('artifact-tab-body');
+    if (!body) return false;
+    if (body.querySelector('.pet-card') && !body.querySelector('[data-p18-id]')) {
+      body.insertAdjacentHTML('beforeend', p18Section());
+      p18Bind(body);
+      return true;
+    }
+    return false;
+  }
+  window.__p18Render = p18Section;
+  window.__p18Bind = p18Bind;
+  if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    p18TryInject();
+    var mo = new MutationObserver(function () {
+      p18TryInject();
+    });
+    mo.observe(document.body || document.documentElement, { childList:true, subtree:true });
+    setTimeout(function () { mo.disconnect(); }, 60000);
+  } else {
+    document.addEventListener('DOMContentLoaded', p18TryInject);
+  }
+})();
+
