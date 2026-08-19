@@ -39,7 +39,7 @@
         🧠 <b>知识点关联图谱</b>：58 个 manual 已构建 60+ 条关联边（前置/应用/平行）<br>
         ✨ <b>智能出题</b>：战斗自动抽题 = 60% 本经 + 25% 关联知识点 + 15% 回顾所学<br>
         📚 <b>新增“融汇贯通练习”入口</b>：10 道题模拟高考综合大题思路<br>
-        ✅ v4.4.0（保留 v4.3.5e 全部竞态修复）：崩溃已封死，宗门页已同步<br>
+        ✅ v4.4.0：崩溃已封死，宗门页已同步<br>
         🌿 <b>真·炼丹房 & 灵植园</b>：主地图 / 八宫格入口全部接通，炼丹是三段小游戏，灵植园可种药<br>
         🧘 <b>洞府彻底不产修为</b>：只回 HP / MP / 道心，每日 2 次上限，1 小时冷却<br>
         🗺 <b>秘境奖励砍到 5%</b>：只作为收集材料/丹方的点缀，不再速通<br>
@@ -164,7 +164,7 @@
 <script src="assets/scene-engine-v426.js"       onerror="window.SceneEngine=null"></script>
 <script src="assets/battle-anim-v426.js"        onerror="window.BattleAnim=null"></script>
 <!-- ============================================================
-     v4.4.0 重构后的加载顺序（已删除 13 个 hotfix/patch 引用，承自 v4.3.5i）
+     v4.4.0 重构后的加载顺序（已删除 13 个 hotfix/patch 引用，承自早期热修复链）
      以下一切都是真正的功能模块，不再包含 monkey-patch
      已合并到 game-core.js / ui-components.js 的补丁：
        balance-patch-v428 / curve-patch-v430 / v435e-safety /
@@ -205,7 +205,9 @@
     if (evt && evt.achv) UI.toast('🏆 成就解锁：'+evt.achv.name, 'success');
   });
 
-  if (!Story.seen('prologue_01') && window.STORY_DATA) {
+  let __forcePrologue = false;
+  try { __forcePrologue = localStorage.getItem('v435remake_force') === '1'; } catch (_) { __forcePrologue = false; }
+  if (__forcePrologue && !Story.seen('prologue_01') && window.STORY_DATA) {
     setTimeout(() => Story.play('prologue_01', STORY_DATA, renderAll), 400);
   }
 
