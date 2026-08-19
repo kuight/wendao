@@ -1236,6 +1236,17 @@
     battleWin(opts) {
       opts = opts || {};
       this.state.battle.victories = (this.state.battle.victories || 0) + 1;
+
+    // Phase 18: 派发 pet exp 到出战宠物（接入战斗循环）
+    try {
+      var _p18state = this.state || {};
+      var _p18eq = (_p18state.pet18 && _p18state.pet18.equipped) || [];
+      var _p18gain = Math.floor(((opts && opts.exp) || 0) * 0.4);
+      for (var _i = 0; _i < _p18eq.length; _i++) {
+        var _pid = _p18eq[_i];
+        if (typeof this.feedPet === 'function') this.feedPet(_pid, _p18gain);
+      }
+    } catch (_e) { /* pet system not present yet, ignore */ }
       this._checkAchievements();
       this.save();
       return { exp: opts.exp || 0, shi: opts.shi || 0 };
@@ -1765,3 +1776,103 @@
   global.fmtHTML = Game.fmtHTML;
 
 })(typeof window !== 'undefined' ? window : this);
+
+// ===== Phase 18 注入：11 只灵宠数据表（追加，不覆盖既有 PET_DATA / state.pets） =====
+(function () {
+  var PET_TABLE_PHASE18 = [
+    { id:'huli',     name:'九尾狐',   star:1, atk:30, def:15, hp:120, passive:'灵狐化身', unlockRealm:2 },
+    { id:'baihu',    name:'白虎幼崽', star:1, atk:45, def:10, hp:100, passive:'虎啸震敌', unlockRealm:1 },
+    { id:'qilin',    name:'玉麒麟',   star:1, atk:25, def:30, hp:160, passive:'祥瑞护体', unlockRealm:3 },
+    { id:'zhuye',    name:'赤焰凤',   star:1, atk:55, def:8,  hp:90,  passive:'火焰灼烧', unlockRealm:2 },
+    { id:'xuanwu',   name:'玄冥龟',   star:1, atk:20, def:35, hp:180, passive:'玄甲护盾', unlockRealm:1 },
+    { id:'qinglong', name:'青龙崽',   star:1, atk:38, def:18, hp:130, passive:'龙气护体', unlockRealm:2 },
+    { id:'baihe',    name:'白泽幼鹿', star:1, atk:28, def:22, hp:140, passive:'祥光照护', unlockRealm:2 },
+    { id:'qingniao', name:'青鸾幼鸟', star:1, atk:35, def:12, hp:110, passive:'羽音破阵', unlockRealm:1 },
+    { id:'jiuhou',   name:'幼年九尾', star:1, atk:42, def:18, hp:125, passive:'尾焰冲击', unlockRealm:3 },
+    { id:'taotie',   name:'饕餮幼兽', star:1, atk:50, def:5,  hp:150, passive:'吞噬回愈', unlockRealm:3 },
+    { id:'bifang',   name:'毕方雏鸟', star:1, atk:40, def:10, hp:95,  passive:'火羽焚身', unlockRealm:2 }
+  ];
+  if (typeof window !== 'undefined') window.PET_TABLE_PHASE18 = PET_TABLE_PHASE18;
+  var G = (typeof window !== 'undefined' && window.Game) ? window.Game : null;
+  if (G && !G.PET_TABLE_PHASE18) G.PET_TABLE_PHASE18 = PET_TABLE_PHASE18;
+})();
+
+// ===== Phase 18：灵宠系统方法（独立挂在 Game 命名空间，使用 state.pet18 不与既有 state.pets 冲突） =====
+(function () {
+  var G = (typeof window !== 'undefined' && window.Game) ? window.Game : null;
+  if (!G) return;
+  var PT = G.PET_TABLE_PHASE18 || (typeof window !== 'undefined' && window.PET_TABLE_PHASE18) || [];
+
+  G._ensurePets = function (state) {
+    if (!state) return;
+    if (!state.pet18) state.pet18 = { owned: {}, equipped: [] };
+    if (!state.pet18.owned) state.pet18.owned = {};
+    if (!Array.isArray(state.pet18.equipped)) state.pet18.equipped = [];
+    for (var i = 0; i < PT.length; i++) {
+      var p = PT[i];
+      if (!p || !p.id) continue;
+      if (!state.pet18.owned[p.id]) {
+        state.pet18.owned[p.id] = { id: p.id, star: 1, exp: 0, expToNext: 100 };
+      }
+    }
+  };
+
+  G.getPetBonus = function () {
+    var state = G.state || {};
+    G._ensurePets(state);
+    var equipped = (state.pet18 && state.pet18.equipped) || [];
+    var bonus = { atk: 0, def: 0, hp: 0 };
+    for (var i = 0; i < equipped.length; i++) {
+      var id = equipped[i];
+      var meta = null;
+      for (var k = 0; k < PT.length; k++) if (PT[k] && PT[k].id === id) { meta = PT[k]; break; }
+      if (!meta) continue;
+      var owned = (state.pet18.owned || {})[id];
+      if (!owned) continue;
+      var starBonusPct = (owned.star || 1) - 1;
+      bonus.atk += Math.floor((meta.atk || 0) * 0.10 * starBonusPct);
+      bonus.def += Math.floor((meta.def || 0) * 0.10 * starBonusPct);
+      bonus.hp  += Math.floor((meta.hp  || 0) * 0.10 * starBonusPct);
+    }
+    return bonus;
+  };
+
+  G.equipPet = function (id) {
+    var state = G.state || {};
+    G._ensurePets(state);
+    var meta = null;
+    for (var k = 0; k < PT.length; k++) if (PT[k] && PT[k].id === id) { meta = PT[k]; break; }
+    if (!meta) return { ok:false, msg:'无此灵宠' };
+    state.pet18.equipped = [id];
+    if (typeof G.save === 'function') G.save();
+    return { ok:true, msg:'已出战 ' + meta.name };
+  };
+
+  G.unequipPet = function () {
+    var state = G.state || {};
+    if (!state.pet18) return { ok:true };
+    state.pet18.equipped = [];
+    if (typeof G.save === 'function') G.save();
+    return { ok:true };
+  };
+
+  G.feedPet = function (id, gainedExp) {
+    var state = G.state || {};
+    G._ensurePets(state);
+    var owned = state.pet18.owned[id];
+    if (!owned) return { ok:false, msg:'未持有此灵宠' };
+    owned.exp += Math.max(0, gainedExp | 0);
+    var ups = 0;
+    while (owned.exp >= (owned.expToNext || 100)) {
+      owned.exp -= (owned.expToNext || 100);
+      owned.star = Math.min(5, (owned.star || 1) + 1);
+      owned.expToNext = Math.floor((owned.expToNext || 100) * 1.5);
+      ups++;
+    }
+    if (typeof G.save === 'function') G.save();
+    return { ok:true, ups: ups };
+  };
+
+  G._petsBooted = true;
+})();
+
