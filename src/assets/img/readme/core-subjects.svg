@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1c1c22"/>
+      <stop offset="1" stop-color="#3a4a6a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1050" cy="120" r="180" fill="#ffffff" opacity="0.06"/>
+  <circle cx="150" cy="520" r="240" fill="#ffffff" opacity="0.05"/>
+  <text x="600" y="300" font-family="system-ui, sans-serif" font-size="72" font-weight="700" fill="#f5e6c4" text-anchor="middle">六科体系</text>
+  <text x="600" y="380" font-family="system-ui, sans-serif" font-size="30" fill="#d8cfc0" text-anchor="middle">物理 / 化学 / 地理 / 数学 / 语文 / 英语</text>
+  <text x="600" y="560" font-family="system-ui, sans-serif" font-size="22" fill="#9a927f" text-anchor="middle">wendao · 修仙学习游戏 · 占位图（Phase 1）</text>
+</svg>

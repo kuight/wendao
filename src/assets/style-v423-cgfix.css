@@ -1,0 +1,411 @@
+/* =====================================================================
+ * 问道修仙学院 v4.2.3-CGFIX · 立绘真显示 · 强制解析 · 彻底反卡死
+ * ---------------------------------------------------------------------
+ * 🚨 用户反馈：v4.2.2 的"真立绘"打开根本不显示！
+ *
+ * 🔍 根因排查（严重bug）：
+ *   v4.2.2 用了 `https://www.genspark.ai/api/files/s/*` 私有 file wrapper URL
+ *   这些 URL 需要 genspark 登录 cookie 才能访问
+ *   → 用户双击 HTML（file:// 协议）打开时，浏览器无 cookie → 全部 403 失败
+ *   → 结果：所有立绘头像变成空白框，"真立绘"承诺彻底破产 💔
+ *
+ * ✅ 本次修复：
+ *   ① 把 8 张立绘/场景 CG **全部下载到本地 assets/img/*.jpg**（合计 ~900KB）
+ *   ② CSS 一律改用相对路径 `assets/img/xxx.jpg`
+ *   ③ 双击 HTML 立即可见，无需登录、无需网络（离线可用）
+ *   ④ manual data 里 dlg-* 的 inline 样式无法覆盖 ::before，
+ *      本 CSS 用 `!important` 强制注入立绘 background-image
+ *
+ * ✅ 立绘目录（打包 zip 内一并携带）：
+ *     assets/img/shifu.jpg     (师傅·白袍长老)
+ *     assets/img/shijie.jpg    (师姐·紫袍持卷)
+ *     assets/img/shimei.jpg    (师妹·粉衣少女)
+ *     assets/img/hero.jpg      (主角/大师兄·蓝袍剑客)
+ *     assets/img/scene-chemistry.jpg (丹霞谷)
+ *     assets/img/scene-physics.jpg   (雷罚峰)
+ *     assets/img/scene-immortal.jpg  (云端仙山)
+ *     assets/img/scene-illum.jpg     (参悟场景)
+ * =====================================================================*/
+
+:root {
+  --cg-shifu:        url("img/shifu.jpg");
+  --cg-shijie:       url("img/shijie.jpg");
+  --cg-shimei:       url("img/shimei.jpg");
+  --cg-shixiong:     url("img/hero.jpg");
+  --cg-hero:         url("img/hero.jpg");
+  --cg-bg-chemistry: url("img/scene-chemistry.jpg");
+  --cg-bg-physics:   url("img/scene-physics.jpg");
+  --cg-bg-immortal:  url("img/scene-immortal.jpg");
+  --cg-scene-illum:  url("img/scene-illum.jpg");
+}
+
+/* ========================================================
+ * ① 对话卡头像：直接用相对路径，file:// 协议下也能显示
+ *    inline style 里的 border-left 保留不影响 ::before
+ *    这里用 !important 硬覆盖 v4.2.2 style-v422-galgame.css 的失败图
+ * ========================================================*/
+.dlg-shifu,
+.dlg-shijie,
+.dlg-shimei,
+.dlg-shixiong {
+  position: relative !important;
+  padding: 14px 16px 14px 84px !important;
+  min-height: 84px !important;
+  border-radius: 12px !important;
+  overflow: visible !important;
+}
+
+.dlg-shifu::before,
+.dlg-shijie::before,
+.dlg-shimei::before,
+.dlg-shixiong::before {
+  content: '' !important;
+  position: absolute !important;
+  left: 10px !important;
+  top: 12px !important;
+  width: 60px !important;
+  height: 60px !important;
+  border-radius: 50% !important;
+  border: 2px solid rgba(255,255,255,.45) !important;
+  background-size: cover !important;
+  background-position: center 22% !important;
+  background-repeat: no-repeat !important;
+  cursor: zoom-in !important;
+  transition: transform .25s ease, box-shadow .25s ease !important;
+  box-shadow: 0 3px 12px rgba(0,0,0,.4), inset 0 0 10px rgba(255,255,255,.08) !important;
+  z-index: 2 !important;
+}
+
+.dlg-shifu::before    { background-image: var(--cg-shifu)    !important; }
+.dlg-shijie::before   { background-image: var(--cg-shijie)   !important; }
+.dlg-shimei::before   { background-image: var(--cg-shimei)   !important; }
+.dlg-shixiong::before { background-image: var(--cg-shixiong) !important; }
+
+/* 悬停放大 + 光晕，模拟 galgame 特写预告 */
+.dlg-shifu:hover::before    { transform: scale(1.18); box-shadow: 0 0 24px #d4a545; }
+.dlg-shijie:hover::before   { transform: scale(1.18); box-shadow: 0 0 24px #c67ecb; }
+.dlg-shimei:hover::before   { transform: scale(1.18); box-shadow: 0 0 24px #f4a3c8; }
+.dlg-shixiong:hover::before { transform: scale(1.18); box-shadow: 0 0 24px #6ea0f0; }
+
+/* manual 里 <b>🧙‍♂️ 师傅：</b> 的 emoji 太土了，用 CSS 隐藏原 emoji 保留文字
+ * 由于 emoji 是硬编码在 b 内部文本中，无法删除，
+ * 我们改用统一浅色描边 + 名牌背景，让 emoji 反而变成 galgame 姓名条一部分 */
+.dlg-shifu > b,
+.dlg-shijie > b,
+.dlg-shimei > b,
+.dlg-shixiong > b {
+  display: inline-block !important;
+  padding: 3px 12px !important;
+  border-radius: 6px !important;
+  font-weight: 800 !important;
+  letter-spacing: 2px !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,.35) !important;
+  color: #fff !important;
+  text-shadow: 0 1px 2px rgba(0,0,0,.45) !important;
+}
+.dlg-shifu > b    { background: linear-gradient(90deg,#d4a545,#8b6f47) !important; }
+.dlg-shijie > b   { background: linear-gradient(90deg,#c67ecb,#7a4a8e) !important; }
+.dlg-shimei > b   { background: linear-gradient(90deg,#f4a3c8,#c05a8a) !important; }
+.dlg-shixiong > b { background: linear-gradient(90deg,#6ea0f0,#3a5fa8) !important; }
+
+/* 内层 span 深色主题下不再是黑字 */
+.dlg-shifu > span[style*="color:#333"],
+.dlg-shijie > span[style*="color:#333"],
+.dlg-shimei > span[style*="color:#333"],
+.dlg-shixiong > span[style*="color:#333"] {
+  color: #f0e6d2 !important;
+}
+
+/* ========================================================
+ * ② 场景 CG（每卷开篇顶部横幅）
+ * ========================================================*/
+.im-scene-cg {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  border-radius: 14px;
+  overflow: hidden;
+  margin: 12px 0 18px;
+  box-shadow: 0 8px 30px rgba(0,0,0,.45);
+  border: 1px solid rgba(245,201,122,.4);
+}
+.im-scene-cg::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-size: cover;
+  background-position: center 40%;
+  filter: brightness(.88) saturate(1.08);
+  transition: transform 6s ease;
+}
+.im-scene-cg:hover::before { transform: scale(1.06); }
+.im-scene-cg::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(6,8,20,.05) 0%, rgba(6,8,20,.55) 75%, rgba(6,8,20,.85) 100%);
+}
+.im-scene-cg .im-scene-title {
+  position: absolute;
+  left: 22px; bottom: 18px;
+  z-index: 2;
+  color: #fdefc9;
+  font-family: 'KaiTi','STKaiti',serif;
+  font-size: 24px;
+  letter-spacing: 6px;
+  text-shadow: 0 0 12px rgba(0,0,0,.95), 0 2px 4px rgba(0,0,0,.7);
+}
+.im-scene-cg .im-scene-sub {
+  position: absolute;
+  right: 20px; bottom: 22px;
+  z-index: 2;
+  color: #b8d4f5;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-shadow: 0 1px 3px rgba(0,0,0,.8);
+}
+
+.im-scene-cg[data-sect="physics"]::before   { background-image: var(--cg-bg-physics); }
+.im-scene-cg[data-sect="chemistry"]::before { background-image: var(--cg-bg-chemistry); }
+.im-scene-cg[data-sect="geography"]::before { background-image: var(--cg-bg-immortal); }
+.im-scene-cg[data-sect="math"]::before      { background-image: var(--cg-scene-illum); }
+.im-scene-cg[data-sect="chinese"]::before,
+.im-scene-cg[data-sect="english"]::before   { background-image: var(--cg-bg-immortal); }
+
+/* ========================================================
+ * ③ 主角"参悟"顶部横幅
+ * ========================================================*/
+.im-hero-banner {
+  position: relative;
+  height: 180px;
+  border-radius: 14px;
+  overflow: hidden;
+  margin: 0 0 16px;
+  border: 1px solid rgba(110,160,240,.5);
+  box-shadow: 0 6px 24px rgba(74,127,200,.3);
+}
+.im-hero-banner::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: var(--cg-scene-illum) center/cover no-repeat;
+  filter: brightness(.9);
+}
+.im-hero-banner::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, rgba(6,8,20,.85) 0%, rgba(6,8,20,.2) 45%, rgba(6,8,20,.05) 100%);
+}
+.im-hero-banner .hero-quote {
+  position: absolute;
+  left: 22px; top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  max-width: 55%;
+  color: #f0e6d2;
+  font-family: 'KaiTi','STKaiti',serif;
+  font-size: 15px;
+  line-height: 2;
+  text-shadow: 0 0 8px rgba(0,0,0,.95), 0 2px 3px rgba(0,0,0,.7);
+}
+.im-hero-banner .hero-quote .hero-title {
+  display: block;
+  font-size: 22px;
+  color: #f5c97a;
+  letter-spacing: 5px;
+  margin-bottom: 8px;
+}
+
+/* ========================================================
+ * ④ 全屏立绘特写弹层（点击头像触发）
+ * ========================================================*/
+.im-cg-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(2,4,12,.92);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: cgFadeIn .35s ease-out;
+  cursor: pointer;
+}
+.im-cg-overlay .im-cg-portrait {
+  max-height: 88vh;
+  max-width: 60vw;
+  border-radius: 16px;
+  box-shadow: 0 30px 100px rgba(0,0,0,.95);
+  animation: cgPortraitIn .55s cubic-bezier(.2,1,.3,1);
+  border: 3px solid rgba(245,201,122,.5);
+}
+.im-cg-overlay .im-cg-name {
+  position: fixed;
+  bottom: 8vh;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 44px;
+  background: linear-gradient(90deg, rgba(0,0,0,.8), rgba(0,0,0,.6));
+  color: #f5c97a;
+  font-family: 'KaiTi','STKaiti',serif;
+  font-size: 22px;
+  letter-spacing: 8px;
+  border-radius: 10px;
+  border: 1px solid rgba(245,201,122,.5);
+  text-shadow: 0 0 12px rgba(245,201,122,.6);
+}
+.im-cg-overlay .im-cg-close-hint {
+  position: fixed;
+  top: 20px; right: 24px;
+  color: #ccc;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+@keyframes cgFadeIn { from { opacity: 0 } to { opacity: 1 } }
+@keyframes cgPortraitIn { from { opacity: 0; transform: translateY(30px) scale(.94); } to { opacity: 1; transform: translateY(0) scale(1); } }
+
+/* ========================================================
+ * ⑤ 深色主题下 fill/calc 输入框
+ * ========================================================*/
+.quest-fill-input {
+  background: rgba(20,24,40,.75) !important;
+  color: #f0e6d2 !important;
+  border: 1px solid rgba(110,160,240,.55) !important;
+  border-radius: 10px !important;
+  padding: 12px 14px !important;
+  font-size: 15px !important;
+  width: 100% !important;
+  box-shadow: inset 0 2px 8px rgba(0,0,0,.4) !important;
+  transition: box-shadow .25s;
+}
+.quest-fill-input:focus {
+  outline: none !important;
+  border-color: #f5c97a !important;
+  box-shadow: inset 0 2px 8px rgba(0,0,0,.4), 0 0 0 3px rgba(245,201,122,.28) !important;
+}
+.quest-fill-input::placeholder { color: rgba(240,230,210,.42) !important; }
+
+.quest-calc-input {
+  background: rgba(20,24,40,.75) !important;
+  color: #f0e6d2 !important;
+  border: 1px solid rgba(245,201,122,.5) !important;
+  border-radius: 10px !important;
+  padding: 12px 14px !important;
+  font-size: 15px !important;
+  width: 100% !important;
+  min-height: 100px !important;
+  resize: vertical !important;
+  font-family: 'KaiTi','Consolas',monospace !important;
+  line-height: 1.85 !important;
+  box-shadow: inset 0 2px 8px rgba(0,0,0,.4) !important;
+}
+.quest-calc-input:focus {
+  outline: none !important;
+  border-color: #f5c97a !important;
+  box-shadow: inset 0 2px 8px rgba(0,0,0,.4), 0 0 0 3px rgba(245,201,122,.28) !important;
+}
+.quest-calc-input::placeholder { color: rgba(240,230,210,.42) !important; }
+
+.quest-calc-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+/* ========================================================
+ * ⑥ 强制解析显示（v4.2.3 修复：不给解析就跳过的 bug）
+ * ========================================================*/
+.quest-explain {
+  margin-top: 14px;
+  padding: 14px 18px;
+  background: linear-gradient(180deg, rgba(245,201,122,.10), rgba(245,201,122,.03));
+  border: 1px solid rgba(245,201,122,.4);
+  border-left: 4px solid #f5c97a;
+  border-radius: 10px;
+  color: #f0e6d2;
+  line-height: 1.9;
+  animation: explainSlideIn .4s ease-out;
+}
+.quest-explain b {
+  color: #f5c97a;
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+.quest-explain .ans {
+  display: inline-block;
+  padding: 3px 10px;
+  margin-top: 6px;
+  background: rgba(140,226,140,.15);
+  color: #8ce28c;
+  border-radius: 6px;
+  border: 1px solid rgba(140,226,140,.3);
+  font-weight: 700;
+}
+@keyframes explainSlideIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* 强制解析弹层（无 explain 字段时自动生成参考解） */
+.quest-explain-auto {
+  background: linear-gradient(180deg, rgba(110,160,240,.10), rgba(110,160,240,.03)) !important;
+  border-left-color: #6ea0f0 !important;
+}
+.quest-explain-auto b { color: #6ea0f0 !important; }
+
+/* "下一战 / 完成" 按钮更明显 */
+#nextQ {
+  min-width: 120px !important;
+  font-size: 15px !important;
+  padding: 10px 20px !important;
+  animation: nextBtnPulse 1.6s ease-in-out infinite;
+}
+@keyframes nextBtnPulse {
+  0%,100% { box-shadow: 0 0 0 0 rgba(245,201,122,.6); }
+  50%     { box-shadow: 0 0 0 8px rgba(245,201,122,0); }
+}
+
+/* ========================================================
+ * ⑦ 判断题优化
+ * ========================================================*/
+.quest-opt[data-k="对"], .quest-opt[data-k="错"] {
+  font-size: 18px !important;
+  padding: 14px 20px !important;
+  text-align: center !important;
+}
+.quest-opt[data-k="对"] { border-left: 4px solid #6ecb8e !important; }
+.quest-opt[data-k="错"] { border-left: 4px solid #e88a8a !important; }
+
+/* ========================================================
+ * ⑧ 多选题提示美化
+ * ========================================================*/
+.quest-options + .xx-tip {
+  background: linear-gradient(90deg, rgba(110,160,240,.15), transparent) !important;
+  border-left: 3px solid #6ea0f0 !important;
+  padding: 8px 14px !important;
+  border-radius: 8px !important;
+  color: #b8d4f5 !important;
+  margin: 8px 0 !important;
+  font-size: 13px !important;
+}
+
+/* ========================================================
+ * ⑨ 移动端适配
+ * ========================================================*/
+@media (max-width: 720px) {
+  .im-scene-cg { height: 160px; }
+  .im-scene-cg .im-scene-title { font-size: 18px; letter-spacing: 4px; }
+  .im-hero-banner { height: 140px; }
+  .im-hero-banner .hero-quote { max-width: 78%; font-size: 13px; }
+  .im-hero-banner .hero-quote .hero-title { font-size: 17px; }
+  .im-cg-overlay .im-cg-portrait { max-width: 88vw; max-height: 76vh; }
+
+  .dlg-shifu, .dlg-shijie, .dlg-shimei, .dlg-shixiong {
+    padding-left: 74px !important;
+    min-height: 74px !important;
+  }
+  .dlg-shifu::before, .dlg-shijie::before, .dlg-shimei::before, .dlg-shixiong::before {
+    width: 52px !important;
+    height: 52px !important;
+    left: 8px !important;
+    top: 10px !important;
+  }
+}

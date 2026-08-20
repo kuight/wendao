@@ -1,0 +1,247 @@
+/* =====================================================================
+ * v4.3.5j · 修复补丁 CSS
+ *   本文件解决用户反馈的 5 个问题中的视觉层（问题 ①②③）：
+ *     ① 互动通道（交互演道）canvas 溢出、无法向右滑动
+ *     ② 主页纯色背景太丑 + 字看不清；八宫格/六学科换用图片
+ *     ③ 语文/数学/英语场景背景（原来共用 scroll_hall.png，现在各配专图）
+ *   加载点：<head> 里 link 引入，必须放在 style.css 与
+ *     v435d-scene-bg.css 之后，确保优先级压过它们。
+ * =====================================================================*/
+
+/* =====================================================================
+ * 问题①  交互演道 canvas 溢出修复
+ *   现象：右列宽度 ~300px，canvas 固定 560px 宽 → 视觉裁掉一半且无法横向滑动
+ *   方案：
+ *     A. 让 canvas 用 max-width:100% 自适应外壳宽度（保持 aspect-ratio）
+ *     B. 外壳 .im-ie-wrap / .im-demo 允许 X 轴滚动 & 内含带 padding-x
+ *     C. 二栏在窄屏（< 900px）时优先给右列一个下限宽度
+ * =====================================================================*/
+.im-ie-wrap,
+.im-demo {
+  /* 允许内部超宽时水平滚（IE 引擎 canvas + controls 常见） */
+  overflow-x: auto;
+  overflow-y: visible;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+.im-ie-wrap::-webkit-scrollbar,
+.im-demo::-webkit-scrollbar { height: 6px; }
+.im-ie-wrap::-webkit-scrollbar-thumb,
+.im-demo::-webkit-scrollbar-thumb {
+  background: rgba(178,136,255,0.4);
+  border-radius: 3px;
+}
+
+/* canvas 自适应外壳宽度 —— 内部坐标仍按原 attr width/height，
+   只是显示层被压到 100% 宽，比例由内部 width/height 保证 */
+.im-ie-wrap canvas,
+.im-demo canvas,
+.iv-stage canvas {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* IE 引擎 label / controls / readout：允许换行、不撑破 */
+.iv-label,
+.iv-readout {
+  word-break: break-word;
+  white-space: normal;
+  line-height: 1.6;
+}
+.iv-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+  align-items: center;
+}
+.iv-controls input[type="range"] {
+  min-width: 100px;
+  max-width: 100%;
+  flex: 1 1 120px;
+}
+.iv-controls label,
+.iv-controls span {
+  font-size: 12px;
+  color: var(--xx-text-soft, #ddd);
+}
+
+/* 二栏窄屏优化：让右列不要挤太窄 */
+@media (max-width: 1100px) and (min-width: 721px) {
+  .im-chapter-body {
+    grid-template-columns: 1fr !important; /* 直接叠成单列，交互演道就能占满宽度 */
+  }
+}
+
+/* =====================================================================
+ * 问题②  主页背景 & 字体可读性
+ *   方案：
+ *     A. body 加一张全局深色背景图 + 蒙层，压过 var(--xx-bg-deep)
+ *     B. 顶部区、宗门卡文字都加 text-shadow 保证可读
+ *     C. 八宫格（xx-four-grid）与六大宗门（sect-card）加深色蒙层
+ * =====================================================================*/
+html, body {
+  background:
+    linear-gradient(180deg, rgba(11,10,27,0.72) 0%, rgba(11,10,27,0.86) 100%),
+    url('img/scenes/splash_v435.jpg') center top / cover no-repeat,
+    var(--xx-bg-deep, #0b0a1b) !important;
+  background-attachment: fixed, fixed, scroll;
+}
+
+/* 主要区块半透明玻璃感（避免图背景+字冲突） */
+.xx-container,
+.xx-section,
+.xx-panel {
+  position: relative;
+  z-index: 1;
+}
+
+/* 各种标题带阴影，确保放到图背景上依然清晰 */
+.xx-section-title,
+.xx-panel-title,
+.xx-header-title,
+h1, h2, h3 {
+  text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+}
+.xx-section-sub,
+.xx-text-dim,
+.xx-body-text {
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+}
+
+/* ---- 八宫格（xx-four-grid：功能入口）—— 加深蒙层 + 悬浮微动 ---- */
+.xx-four-grid {
+  /* 保留原有 grid 结构，只加背景/阴影 */
+}
+.xx-four-grid .xx-quad,
+.xx-four-grid > div {
+  position: relative;
+  background:
+    linear-gradient(140deg, rgba(28,23,64,0.78) 0%, rgba(20,18,42,0.88) 100%) !important;
+  border: 1px solid rgba(178,136,255,0.28) !important;
+  box-shadow:
+    0 4px 14px rgba(0,0,0,0.35),
+    inset 0 1px 0 rgba(255,255,255,0.06);
+  backdrop-filter: blur(2px);
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.xx-four-grid .xx-quad:hover,
+.xx-four-grid > div:hover {
+  transform: translateY(-2px);
+  border-color: rgba(178,136,255,0.55) !important;
+  box-shadow:
+    0 10px 24px rgba(0,0,0,0.5),
+    0 0 0 1px rgba(178,136,255,0.35),
+    inset 0 1px 0 rgba(255,255,255,0.1);
+}
+.xx-four-grid .xx-quad *,
+.xx-four-grid > div * {
+  text-shadow: 0 1px 3px rgba(0,0,0,0.55);
+}
+
+/* =====================================================================
+ * 问题③  六大宗门卡片 - 每学科专属背景图
+ *   利用 .sect-physics / .sect-chemistry / .sect-geography /
+ *        .sect-chinese  / .sect-math      / .sect-english
+ *   （由 ui-components.js:renderSectMap 输出的 cls 类）
+ *   在卡片 ::before 层叠图片背景 + 渐变蒙层
+ * =====================================================================*/
+.sect-card {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: rgba(20,18,42,0.55) !important;
+  border: 1px solid rgba(178,136,255,0.25) !important;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.sect-card > * {
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.75);
+}
+.sect-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: saturate(0.95) brightness(0.85);
+  z-index: 0;
+  transition: transform .5s ease, filter .3s ease;
+}
+.sect-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg,
+      rgba(11,10,27,0.35) 0%,
+      rgba(11,10,27,0.55) 55%,
+      rgba(11,10,27,0.85) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+.sect-card:hover::before {
+  transform: scale(1.06);
+  filter: saturate(1.1) brightness(0.95);
+}
+.sect-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(178,136,255,0.65) !important;
+  box-shadow:
+    0 12px 28px rgba(0,0,0,0.55),
+    0 0 0 1px rgba(178,136,255,0.4);
+}
+
+/* 六个学科各配自己的图 */
+.sect-card.sect-physics::before   { background-image: url('img/scenes/sect_physics.jpg'); }
+.sect-card.sect-chemistry::before { background-image: url('img/scenes/sect_chemistry.jpg'); }
+.sect-card.sect-geography::before { background-image: url('img/scenes/sect_geography.jpg'); }
+.sect-card.sect-chinese::before   { background-image: url('img/scenes/sect_chinese.jpg'); }
+.sect-card.sect-math::before      { background-image: url('img/scenes/sect_math.jpg'); }
+.sect-card.sect-english::before   { background-image: url('img/scenes/sect_english.jpg'); }
+
+/* =====================================================================
+ * 学科页 · 场景背景（对齐 v435d-scene-bg.css 里的 body[data-sect=xxx]）
+ *   原文件里 chinese/math/english 都指向 scroll_hall.png
+ *   这里覆盖成各自的 sect_*.jpg（在学科页也会用到）
+ * =====================================================================*/
+body[data-sect="chinese"] .v435d-scene-bg,
+body.v435d-scene-chinese .v435d-scene-bg,
+.v435d-scene-chinese {
+  background-image:
+    linear-gradient(180deg, rgba(11,10,27,0.55) 0%, rgba(11,10,27,0.82) 100%),
+    url('img/scenes/sect_chinese.jpg') !important;
+  background-size: cover;
+  background-position: center;
+}
+body[data-sect="math"] .v435d-scene-bg,
+body.v435d-scene-math .v435d-scene-bg,
+.v435d-scene-math {
+  background-image:
+    linear-gradient(180deg, rgba(11,10,27,0.55) 0%, rgba(11,10,27,0.82) 100%),
+    url('img/scenes/sect_math.jpg') !important;
+  background-size: cover;
+  background-position: center;
+}
+body[data-sect="english"] .v435d-scene-bg,
+body.v435d-scene-english .v435d-scene-bg,
+.v435d-scene-english {
+  background-image:
+    linear-gradient(180deg, rgba(11,10,27,0.55) 0%, rgba(11,10,27,0.82) 100%),
+    url('img/scenes/sect_english.jpg') !important;
+  background-size: cover;
+  background-position: center;
+}
+
+/* =====================================================================
+ * 通用可读性收尾
+ * =====================================================================*/
+.xx-card, .xx-panel {
+  background: rgba(20,18,42,0.72);
+  backdrop-filter: blur(3px);
+}
+.xx-card *, .xx-panel * {
+  /* 不覆盖已有颜色，只补一个默认阴影 */
+}

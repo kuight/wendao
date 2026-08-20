@@ -1,0 +1,46 @@
+# 操作系统
+.DS_Store
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# 日志 / 临时
+*.log
+*.tmp
+*.bak
+
+# 压缩 / 构建产物
+*.7z
+*.rar
+*.tar.gz
+*.tgz
+
+# 本地存档 / 隐私
+存档-*.json
+save-*.json
+*.local
+
+# 推倒的云端v5+旧归档备份（本地保留，不进git，稳定后清）
+_archived_patches/

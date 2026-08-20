@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>飞升宝塔 · 问道修仙学院</title>
+  <style>
+    :root { color-scheme: dark; }
+    body { margin:0; font-family: 'PingFang SC','Microsoft YaHei',system-ui,sans-serif; background:linear-gradient(180deg,#0b1020,#131a31); color:#eef2ff; }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 24px 18px 42px; }
+    .hero, .panel, .floors, .result { background:rgba(10,16,34,0.78); border:1px solid rgba(147,197,253,0.18); border-radius:18px; box-shadow:0 20px 60px rgba(0,0,0,0.24); }
+    .hero { padding:22px; margin-bottom:18px; }
+    .hero h1 { margin:0 0 8px; font-size:30px; color:#f8d879; }
+    .hero p { margin:8px 0 0; line-height:1.8; color:#cbd5e1; }
+    .hero .topbar { display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; align-items:center; }
+    .back { color:#93c5fd; text-decoration:none; }
+    .grid { display:grid; grid-template-columns: minmax(0,1.3fr) minmax(320px,0.9fr); gap:18px; }
+    .panel { padding:18px; }
+    .panel h2, .floors h2, .result h2 { margin:0 0 12px; color:#f8d879; font-size:20px; }
+    .current-floor { font-size:44px; font-weight:800; color:#7dd3fc; line-height:1; }
+    .sub { color:#94a3b8; font-size:14px; margin-top:6px; }
+    .meta { display:grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap:10px; margin-top:16px; }
+    .meta .item { background:rgba(15,23,42,0.75); border:1px solid rgba(148,163,184,0.18); border-radius:12px; padding:12px; }
+    .meta .k { color:#94a3b8; font-size:12px; }
+    .meta .v { margin-top:6px; font-size:18px; font-weight:700; }
+    .cta { margin-top:18px; display:flex; gap:12px; flex-wrap:wrap; }
+    button { border:0; border-radius:12px; padding:12px 18px; cursor:pointer; font-size:15px; font-weight:700; }
+    .primary { background:linear-gradient(90deg,#f59e0b,#fbbf24); color:#111827; }
+    .ghost { background:rgba(30,41,59,0.92); color:#e2e8f0; border:1px solid rgba(148,163,184,0.25); }
+    .floors { padding:18px; margin-top:18px; }
+    .floor-grid { display:grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap:12px; }
+    .floor-card { background:rgba(15,23,42,0.82); border:1px solid rgba(125,211,252,0.16); border-radius:14px; padding:14px; min-height:114px; }
+    .floor-card.active { border-color:#f8d879; box-shadow:0 0 0 1px rgba(248,216,121,0.18) inset; }
+    .floor-card.done { border-color:#34d399; }
+    .floor-card .no { color:#7dd3fc; font-size:12px; letter-spacing:.12em; text-transform:uppercase; }
+    .floor-card .nm { margin-top:8px; font-size:20px; font-weight:700; color:#f8fafc; }
+    .floor-card .rq, .floor-card .rw { margin-top:6px; color:#cbd5e1; font-size:13px; line-height:1.6; }
+    .result { margin-top:18px; padding:18px; }
+    .result p { margin:0; line-height:1.8; }
+    .result.ok { border-color:rgba(52,211,153,0.36); }
+    .result.fail { border-color:rgba(248,113,113,0.36); }
+    .badge { display:inline-block; padding:4px 10px; border-radius:999px; background:rgba(125,211,252,0.14); color:#7dd3fc; font-size:12px; margin-left:8px; }
+    @media (max-width: 860px) { .grid { grid-template-columns: 1fr; } .floor-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 560px) { .floor-grid { grid-template-columns: 1fr; } .current-floor { font-size:36px; } }
+  </style>
+</head>
+<body data-subject="feisheng">
+  <div class="wrap">
+    <section class="hero">
+      <div class="topbar">
+        <div>
+          <a class="back" href="../index.html" onclick="event.stopPropagation()">← 返回主界面</a>
+          <h1>飞升宝塔</h1>
+        </div>
+        <div id="ready-badge" class="badge">检测中</div>
+      </div>
+      <p>序章：化神之后，凡心已轻，天门却未开。飞升宝塔共十二层，每上一层，都要以境界、心性与灵宠默契叩问自身。若能尽破层层劫影，便可望见真正的飞升之路。</p>
+    </section>
+
+    <div class="grid">
+      <section class="panel">
+        <h2>当前层</h2>
+        <div class="current-floor" id="current-floor">1</div>
+        <div class="sub" id="current-realm">需要境界：—</div>
+        <div class="meta">
+          <div class="item"><div class="k">最佳通关</div><div class="v" id="best-floor">0</div></div>
+          <div class="item"><div class="k">飞升状态</div><div class="v" id="completion">未完成</div></div>
+          <div class="item"><div class="k">预计奖励</div><div class="v" id="reward-exp">修为 0 / 灵石 0</div></div>
+          <div class="item"><div class="k">灵宠加成</div><div class="v" id="pet-bonus">ATK 0 · DEF 0 · HP 0</div></div>
+        </div>
+        <div class="cta">
+          <button id="challenge-btn" class="primary">挑战本层</button>
+          <button id="refresh-btn" class="ghost">刷新状态</button>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>试炼说明</h2>
+        <p id="tower-hint">每层都会检定境界与综合战力，失败不会扣除进度，但建议先提升修为、装备与灵宠后再来。</p>
+        <p id="boss-hint">第 12 层镇守：天劫·飞升（技能：九天神雷、元神出窍）</p>
+        <p id="player-realm">当前境界：—</p>
+        <p id="player-stats">角色属性：—</p>
+      </section>
+    </div>
+
+    <section class="floors">
+      <h2>12 层预览</h2>
+      <div id="floor-grid" class="floor-grid"></div>
+    </section>
+
+    <section id="result" class="result">
+      <h2>试炼结果</h2>
+      <p>尚未开始挑战。</p>
+    </section>
+  </div>
+
+  <script src="../assets/game-core.js"></script>
+  <script src="../assets/feisheng-tower.js"></script>
+  <script>
+    (function () {
+      var Game = window.Game || {};
+      if (Game && (!Game.state || !Game.state.char) && typeof Game.init === 'function') { try { Game.init(); } catch (e) { console.warn('[feisheng] Game.init error', e); } }
+      var state = Game.state || {};
+      var rewardTable = Game.FEISHENG_REWARD_TABLE || [];
+      var grid = document.getElementById('floor-grid');
+      var resultBox = document.getElementById('result');
+      var readyBadge = document.getElementById('ready-badge');
+      var challengeBtn = document.getElementById('challenge-btn');
+      var refreshBtn = document.getElementById('refresh-btn');
+
+      function bonusText() {
+        var bonus = Game.getPetBonus ? Game.getPetBonus() : { atk:0, def:0, hp:0 };
+        return 'ATK ' + (bonus.atk || 0) + ' · DEF ' + (bonus.def || 0) + ' · HP ' + (bonus.hp || 0);
+      }
+
+      function reqName(floor) {
+        var r = Game.getRealm ? Game.getRealm(Math.max(2, floor * 2)) : null;
+        return (r && r.name) || ('境界 ' + Math.max(2, floor * 2));
+      }
+
+      function renderFloors() {
+        var best = Game.feishengBestFloor ? Game.feishengBestFloor(state) : 0;
+        var current = Game.feishengCurrentFloor ? Game.feishengCurrentFloor(state) : 1;
+        grid.innerHTML = rewardTable.map(function (item) {
+          var cls = 'floor-card' + (item.floor === current ? ' active' : '') + (item.floor <= best ? ' done' : '');
+          return '<div class="' + cls + '">' +
+            '<div class="no">第 ' + item.floor + ' 层 · ' + item.hint + '</div>' +
+            '<div class="nm">' + (item.floor === 12 ? '天劫·飞升' : ('试炼层 ' + item.floor)) + '</div>' +
+            '<div class="rq">需要境界：' + reqName(item.floor) + '</div>' +
+            '<div class="rw">奖励：修为 ' + item.exp + ' / 灵石 ' + item.shi + '</div>' +
+            '</div>';
+        }).join('');
+      }
+
+      function renderState() {
+        state = Game.state || state || {};
+        var best = Game.feishengBestFloor ? Game.feishengBestFloor(state) : 0;
+        var current = Game.feishengCurrentFloor ? Game.feishengCurrentFloor(state) : 1;
+        var reward = rewardTable[current - 1] || { exp:0, shi:0 };
+        var char = (state.char || {});
+        var realm = Game.getRealm ? Game.getRealm(char.realmId || 0) : null;
+        document.getElementById('current-floor').textContent = current;
+        document.getElementById('best-floor').textContent = best;
+        document.getElementById('completion').textContent = char.feishengCompleted ? '已飞升' : '未完成';
+        document.getElementById('reward-exp').textContent = '修为 ' + reward.exp + ' / 灵石 ' + reward.shi;
+        document.getElementById('current-realm').textContent = '需要境界：' + reqName(current);
+        document.getElementById('pet-bonus').textContent = bonusText();
+        document.getElementById('player-realm').textContent = '当前境界：' + ((realm && realm.name) || '未知') + '（realmId ' + (char.realmId || 0) + '）';
+        document.getElementById('player-stats').textContent = '角色属性：HP ' + (char.maxHp || char.hp || 0) + ' · ATK ' + (char.atk || 0) + ' · DEF ' + (char.def || 0) + ' · 灵石 ' + (char.lingshi || 0);
+        var ready = Game.isCultivationReadyForFeisheng && Game.isCultivationReadyForFeisheng(state);
+        readyBadge.textContent = ready ? '已满足飞升门槛' : '需化神期开启';
+        challengeBtn.disabled = !ready;
+        renderFloors();
+      }
+
+      async function challenge() {
+        var current = Game.feishengCurrentFloor ? Game.feishengCurrentFloor(Game.state || state) : 1;
+        var res = await Game.feishengAttempt(current, Game.state || state);
+        resultBox.className = 'result ' + (res.ok ? 'ok' : 'fail');
+        var reward = res.reward || { exp:0, shi:0 };
+        resultBox.innerHTML = '<h2>试炼结果</h2><p>' + res.message + '</p>' +
+          '<p style="margin-top:10px;color:#cbd5e1;">本次奖励：修为 ' + (reward.exp || 0) + ' / 灵石 ' + (reward.shi || 0) + '</p>';
+        renderState();
+      }
+
+      challengeBtn.addEventListener('click', challenge);
+      refreshBtn.addEventListener('click', renderState);
+      document.addEventListener('feisheng-success', function () {
+        resultBox.className = 'result ok';
+        resultBox.innerHTML = '<h2>试炼结果</h2><p>十二层天劫尽破，道途豁然开朗，你已完成飞升试炼！</p>';
+        renderState();
+      });
+      renderState();
+    })();
+  </script>
+</body>
+</html>

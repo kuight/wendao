@@ -1,0 +1,68 @@
+# 版本真相（VERSION TRUTH）
+
+> 本文件是 `kuight/wendao` 的**版本治理权威声明**。结论来自对 13 个归档的内容指纹分析（入口 mtime / 脚本 md5 / 图片 pHash / 关键函数集 / 题库学科集合），**版本号不可信**是唯一正确的起点。
+
+## 一、核心结论
+
+1. **版本号 ≠ 顺序**。例如：
+   - `wendao-v4.3.5f` 的 `CHANGELOG` 自述内容为「v4.3.6 融汇贯通重构版」——即 4.3.5f 这个 zip 装着 4.3.6 内容、挂着 4.3.5f 名字。
+   - `v4.3.5j / v4.3.6b-p7 / v4.4.0` 的首页 `<title>` 都仍写「v4.3.5i」——目录名 > CHANGELOG > title 三层错位。
+   - `v4.3.5f` 实际完成时间晚于 `v4.3.6-final`；`v2.2` 实测早于 `v3.0`。
+
+2. **没有两个归档是「同名同物」**。13 个归档两两综合 Jaccard ≤ 0.85（阈值），差异全部真实存在。
+
+3. **唯一同源对**：`原档合并` = `学习游戏记忆_root`（Jaccard=1.0000），是同一对话产物被打了两次包。建议治理上标记为 `redundant`。
+
+4. **内容最完整版本**：`v4.4.0` 在函数（277）、脚本（136）、图片（35 张去重）、独有文档（`HANDOFF-v4.4.0.md`）四项上均为 13 样本最高，是当前内容最完整的版本。
+
+5. **main 的定位**：`main` 不是任何归档的严格子集或超集，而是：
+   `v4.3.6b-p7 / v4.4.0 的历史源码与素材 + v4.38/v4.39/v4.40 增量 + 重新拆分后的 src/assets、src/项目、src/v4-increments + 新的 docs/README/交接资料`。
+
+## 二、相似度矩阵（综合 Jaccard = 0.4·phash + 0.35·script_md5 + 0.25·funcs）
+
+| 归档 | v4.3.5f | v4.3.6 | v4.3.6a | v4.3.6b-p7 | v4.4.0 | 原档合并 | 学习游戏记忆_root |
+|---|---|---|---|---|---|---|---|
+| v4.3.5f | 1.0000 | 0.2366 | 0.1743 | 0.1850 | 0.1850 | 0.0022 | 0.0022 |
+| v4.3.6 | 0.2366 | 1.0000 | 0.1774 | 0.1729 | 0.1751 | 0.0011 | 0.0011 |
+| v4.3.6a | 0.1743 | 0.1774 | 1.0000 | 0.1245 | 0.1323 | 0.0040 | 0.0040 |
+| v4.3.6b-p7 | 0.1850 | 0.1729 | 0.1245 | 1.0000 | 0.1715 | 0.0284 | 0.0284 |
+| v4.4.0 | 0.1850 | 0.1751 | 0.1323 | 0.1715 | 1.0000 | 0.0235 | 0.0235 |
+| 原档合并 | 0.0022 | 0.0011 | 0.0040 | 0.0284 | 0.0235 | 1.0000 | **1.0000** |
+| 学习游戏记忆_root | 0.0022 | 0.0011 | 0.0040 | 0.0284 | 0.0235 | **1.0000** | 1.0000 |
+
+## 三、13 个归档内容指纹速览
+
+| 归档 | 关键函数数 | 脚本数 | 图片去重 | 学科集合 | 自述文档最新 |
+|---|---:|---:|---:|---|---|
+| v4.3.5f | 205 | 54 | 32 | 六科 | CHANGELOG-v4.3.5f.md |
+| v4.3.5g | 206 | 54 | 32 | 六科 | CHANGELOG-v4.3.5g.md |
+| v4.3.5h | 206 | 58 | 32 | 六科 | CHANGELOG-v4.3.5h.md |
+| v4.3.5i | 206 | 58 | 32 | 六科 | CHANGELOG-v4.3.5i.md |
+| v4.3.5j | 208 | 59 | 35 | 六科 | HANDOFF-v4.3.5j.md |
+| v4.3.6 | 194 | 53 | 32 | 六科 | CHANGELOG-v4.3.6.md |
+| v4.3.6-final | 196 | 54 | 32 | 六科 | CHANGELOG-v4.3.6-final.md |
+| v4.3.6a | 165（最低） | 41（最少） | 32 | 六科 | CHANGELOG-v4.3.6a.md |
+| v4.3.6b-p7 | 190 | 91 | 4* | 六科 | HANDOFF-v4.3.5j.md |
+| v4.4.0 | **277（最高）** | **136（最多）** | **35** | 六科 | HANDOFF-v4.4.0.md |
+| 原档合并 | 26 | 39 | 0 | 五科（缺英语） | 记忆.txt |
+| 学习游戏记忆_inner | 0 | 4 | 0 | 语文+数学 | 记忆.txt |
+| 学习游戏记忆_root | 26 | 39 | 0 | 五科（缺英语） | 记忆.txt |
+
+> *v4.3.6b-p7 的图片被重排到顶层 `wendao/assets/img`，指纹集计算时被排除，故显示 4；底层二进制集合仍与 v4.3.5j 极相似。
+
+## 四、治理规则（steward 章程）
+
+1. **版本号 = 不可信假设**：任何「哪个版本最新」的判断必须用内容指纹佐证，而不是目录名或 zip 文件名。
+2. **工作树现状 = 第一优先级真相**：以默认分支 `main` 当前 working tree 为「现役锚」。
+3. **变更提案 = 必须有 PR 草案**：先 review，再实施。
+4. **图片生成 = 工具，不是身份**：组长统筹，子 agent 执行。
+
+## Phase 12 — v4.4.0 unpack verification (2026-08-18)
+G24 plan reported: zip sha256 `19715861f4d5eabf930210e1b6fc0a2670769cdb4330172caf2cec3b35d44cc2`, 14,926, bytes, top dir `wendao/`, entry `index.html`. New file count: 198 (vs src/), shared with src/: 0, same-path-different-content: 1 (old `src/index.html` portal vs zip `index.html` game entry). Resolution: portal moved to `src/_portal/index.html`, zip entry adopted as `src/index.html`.
+PRs #22 and #23 shipped the unpack and the MANIFEST refresh; PR #24 shipped this documentation. PR-B (bank dedupe) was deferred per G24's 0-file finding.
+## Phase 14 (2026-08-19)
+
+- Headline: `src/` now hosts the v4.4.0 playable game. Two entry points: `src/index.html` (game) and `src/_portal/index.html` (project portal).
+- Releases: `v4.5.0-cleanup` (governance milestone, asset `wendao4.4.0-playable.zip`) and `v4.5.0-runnable` (prerelease, same asset; pending CI green to be promoted to stable).
+- Asset SHA-256: `19715861f4d5eabf930210e1b6fc0a2670769cdb4330172caf2cec3b35d44cc2` (identical across both releases and the in-repo archive `archive/_legacy/备份/wendao4.4.0.zip`).
+- Open PRs: zero at start of Phase 14 γ + δ sync; γ (MANIFEST rebuild) and δ (this commit) target the v4.5.0-runnable-ready state.

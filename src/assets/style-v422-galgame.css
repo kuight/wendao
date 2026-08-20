@@ -1,0 +1,374 @@
+/* =====================================================================
+ * 问道修仙学院 v4.2.2-GALGAME · 真·立绘 & 场景 CG 补丁
+ *
+ * ⚠ 用户强烈反馈：v4.2.1 的四方对话只用了 emoji + 彩色底 CSS 糊弄
+ *                这次全面接入用户提供的 8 张精绘立绘/场景图
+ *
+ * ✅ 本次升级：
+ *   ① 每个 dlg-* 对话卡：左侧 96×96 立绘头像 → 悬停可放大成 240×360 半身立绘
+ *   ② manual 每卷顶部：全宽 galgame 场景 CG（丹霞谷 / 雷罚峰 / 云端仙山）
+ *   ③ 卷首人物出场特效：淡入 + 半透明遮罩 + 名牌横幅（真 galgame 风）
+ *   ④ 全屏立绘弹层（点击头像触发，模拟视觉小说角色特写）
+ *
+ * ✅ 立绘资源 CDN URL（用户上传，长期可用）：
+ *   主角(蓝袍剑客):   OQfcRVSD
+ *   师傅(黄袍长老):   QMjeyT96
+ *   师妹(粉衣少女):   vvIQjjL8
+ *   师姐(紫袍持卷):   wHOCHdJL
+ *   丹霞谷(化学):     9LBB8JFM
+ *   雷罚峰(物理):     PF7Pn2Au
+ *   云端仙山(通用):   ZaNeNfU7
+ *   参悟场景(主角):   squpPcxn
+ * =====================================================================*/
+
+:root {
+  --cg-shifu:    url("https://www.genspark.ai/api/files/s/QMjeyT96");
+  --cg-shijie:   url("https://www.genspark.ai/api/files/s/wHOCHdJL");
+  --cg-shimei:   url("https://www.genspark.ai/api/files/s/vvIQjjL8");
+  --cg-shixiong: url("https://www.genspark.ai/api/files/s/OQfcRVSD");
+  --cg-hero:     url("https://www.genspark.ai/api/files/s/OQfcRVSD");
+  --cg-bg-chemistry: url("https://www.genspark.ai/api/files/s/9LBB8JFM");
+  --cg-bg-physics:   url("https://www.genspark.ai/api/files/s/PF7Pn2Au");
+  --cg-bg-immortal:  url("https://www.genspark.ai/api/files/s/ZaNeNfU7");
+  --cg-scene-illum:  url("https://www.genspark.ai/api/files/s/squpPcxn");
+}
+
+/* ========================================================
+ * ① 覆盖 v4.2.1 的 emoji 头像 → 换成真人物立绘（圆形头像）
+ *    保留原对话卡容器/边框/深色主题，仅替换 ::before 的 background
+ * ========================================================*/
+.dlg-shifu::before,
+.dlg-shijie::before,
+.dlg-shimei::before,
+.dlg-shixiong::before {
+  /* 关键：清掉 v4.2.1 的 emoji content */
+  content: '' !important;
+  width: 60px !important;
+  height: 60px !important;
+  left: 8px !important;
+  top: 10px !important;
+  border: 2px solid rgba(255,255,255,.35) !important;
+  cursor: zoom-in;
+  transition: transform .25s ease, box-shadow .25s ease;
+  background-size: 220% auto !important;   /* 放大取头部 */
+  background-position: center 15% !important;
+  background-repeat: no-repeat !important;
+}
+
+.dlg-shifu::before    { background-image: var(--cg-shifu)    !important; }
+.dlg-shijie::before   { background-image: var(--cg-shijie)   !important; }
+.dlg-shimei::before   { background-image: var(--cg-shimei)   !important; }
+.dlg-shixiong::before { background-image: var(--cg-shixiong) !important; }
+
+.dlg-shifu, .dlg-shijie, .dlg-shimei, .dlg-shixiong {
+  padding: 16px 16px 16px 84px !important;   /* 给 60px 立绘更多空间 */
+  min-height: 84px;
+  backdrop-filter: blur(2px);
+}
+
+/* 头像悬停放大 & 光晕 */
+.dlg-shifu:hover::before    { transform: scale(1.18); box-shadow: 0 0 28px #d4a545, inset 0 0 12px rgba(0,0,0,.4); }
+.dlg-shijie:hover::before   { transform: scale(1.18); box-shadow: 0 0 28px #c67ecb, inset 0 0 12px rgba(0,0,0,.4); }
+.dlg-shimei:hover::before   { transform: scale(1.18); box-shadow: 0 0 28px #f4a3c8, inset 0 0 12px rgba(0,0,0,.4); }
+.dlg-shixiong:hover::before { transform: scale(1.18); box-shadow: 0 0 28px #6ea0f0, inset 0 0 12px rgba(0,0,0,.4); }
+
+/* ========================================================
+ * ② 立绘"名牌"横幅：把 <b>xxx</b> 变成 galgame 顶部对话名条
+ * ========================================================*/
+.dlg-shifu > b::before    { content: '🧙‍♂️ '; }
+.dlg-shijie > b::before   { content: '🌸 '; }
+.dlg-shimei > b::before   { content: '🎀 '; }
+.dlg-shixiong > b::before { content: '⚔ '; }
+
+.dlg-shifu > b, .dlg-shijie > b, .dlg-shimei > b, .dlg-shixiong > b {
+  padding: 4px 14px !important;
+  font-size: 14px !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,.35);
+  position: relative;
+}
+
+/* ========================================================
+ * ③ 卷首场景 CG（可选装饰，宗门主页/参悟页顶部）
+ *    使用类名 im-scene-cg 触发
+ * ========================================================*/
+.im-scene-cg {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  border-radius: 14px;
+  overflow: hidden;
+  margin: 12px 0 18px;
+  box-shadow: 0 8px 30px rgba(0,0,0,.45);
+  border: 1px solid rgba(245,201,122,.35);
+}
+.im-scene-cg::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-size: cover;
+  background-position: center 40%;
+  filter: brightness(.85) saturate(1.05);
+  transition: transform 6s ease;
+}
+.im-scene-cg:hover::before { transform: scale(1.06); }
+.im-scene-cg::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(6,8,20,.05) 0%, rgba(6,8,20,.55) 75%, rgba(6,8,20,.85) 100%);
+}
+.im-scene-cg .im-scene-title {
+  position: absolute;
+  left: 22px; bottom: 16px;
+  z-index: 2;
+  color: #fdefc9;
+  font-family: 'KaiTi','STKaiti',serif;
+  font-size: 22px;
+  letter-spacing: 6px;
+  text-shadow: 0 0 12px rgba(0,0,0,.9), 0 2px 4px rgba(0,0,0,.7);
+}
+.im-scene-cg .im-scene-sub {
+  position: absolute;
+  right: 20px; bottom: 20px;
+  z-index: 2;
+  color: #b8d4f5;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-shadow: 0 1px 3px rgba(0,0,0,.8);
+}
+
+.im-scene-cg[data-sect="physics"]::before   { background-image: var(--cg-bg-physics); }
+.im-scene-cg[data-sect="chemistry"]::before { background-image: var(--cg-bg-chemistry); }
+.im-scene-cg[data-sect="geography"]::before { background-image: var(--cg-bg-immortal); }
+.im-scene-cg[data-sect="math"]::before      { background-image: var(--cg-scene-illum); }
+.im-scene-cg[data-sect="chinese"]::before,
+.im-scene-cg[data-sect="english"]::before   { background-image: var(--cg-bg-immortal); }
+
+/* ========================================================
+ * ④ 主角立绘"参悟"顶部横幅（在功法开卷页顶部显示）
+ * ========================================================*/
+.im-hero-banner {
+  position: relative;
+  height: 180px;
+  border-radius: 14px;
+  overflow: hidden;
+  margin: 0 0 16px;
+  border: 1px solid rgba(110,160,240,.45);
+  box-shadow: 0 6px 24px rgba(74,127,200,.25);
+}
+.im-hero-banner::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: var(--cg-scene-illum) center/cover no-repeat;
+  filter: brightness(.9);
+}
+.im-hero-banner::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, rgba(6,8,20,.85) 0%, rgba(6,8,20,.2) 45%, rgba(6,8,20,.1) 100%);
+}
+.im-hero-banner .hero-quote {
+  position: absolute;
+  left: 20px; top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  max-width: 55%;
+  color: #f0e6d2;
+  font-family: 'KaiTi','STKaiti',serif;
+  font-size: 15px;
+  line-height: 2;
+  text-shadow: 0 0 8px rgba(0,0,0,.9), 0 2px 3px rgba(0,0,0,.7);
+}
+.im-hero-banner .hero-quote .hero-title {
+  display: block;
+  font-size: 20px;
+  color: #f5c97a;
+  letter-spacing: 4px;
+  margin-bottom: 8px;
+}
+
+/* ========================================================
+ * ⑤ 全屏立绘特写弹层（点击头像触发）
+ * ========================================================*/
+.im-cg-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(2,4,12,.88);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: cgFadeIn .35s ease-out;
+  cursor: pointer;
+}
+.im-cg-overlay .im-cg-portrait {
+  max-height: 88vh;
+  max-width: 60vw;
+  border-radius: 14px;
+  box-shadow: 0 30px 100px rgba(0,0,0,.9);
+  animation: cgPortraitIn .55s cubic-bezier(.2,1,.3,1);
+  border: 3px solid rgba(245,201,122,.45);
+}
+.im-cg-overlay .im-cg-name {
+  position: fixed;
+  bottom: 8vh;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 40px;
+  background: linear-gradient(90deg, rgba(0,0,0,.75), rgba(0,0,0,.55));
+  color: #f5c97a;
+  font-family: 'KaiTi','STKaiti',serif;
+  font-size: 22px;
+  letter-spacing: 8px;
+  border-radius: 10px;
+  border: 1px solid rgba(245,201,122,.4);
+  text-shadow: 0 0 12px rgba(245,201,122,.5);
+}
+.im-cg-overlay .im-cg-close-hint {
+  position: fixed;
+  top: 20px; right: 24px;
+  color: #ccc;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+@keyframes cgFadeIn { from { opacity: 0 } to { opacity: 1 } }
+@keyframes cgPortraitIn { from { opacity: 0; transform: translateY(30px) scale(.94); } to { opacity: 1; transform: translateY(0) scale(1); } }
+
+/* ========================================================
+ * ⑥ Galgame 底部对话框（当 im-galgame-box 出现时）
+ *    支持类 galgame 的"底部横条"式对话
+ * ========================================================*/
+.im-galgame-box {
+  position: relative;
+  margin: 18px 0;
+  min-height: 160px;
+  border-radius: 14px;
+  border: 1px solid rgba(245,201,122,.35);
+  background:
+    linear-gradient(180deg, rgba(6,8,20,.85), rgba(20,14,30,.92)),
+    var(--cg-bg-immortal) center/cover;
+  box-shadow: 0 8px 30px rgba(0,0,0,.5);
+  padding: 20px 22px 20px 220px;
+  overflow: hidden;
+}
+.im-galgame-box[data-role="shifu"]    { --_speaker-cg: var(--cg-shifu); --_speaker-color: #d4a545; }
+.im-galgame-box[data-role="shijie"]   { --_speaker-cg: var(--cg-shijie); --_speaker-color: #c67ecb; }
+.im-galgame-box[data-role="shimei"]   { --_speaker-cg: var(--cg-shimei); --_speaker-color: #f4a3c8; }
+.im-galgame-box[data-role="shixiong"] { --_speaker-cg: var(--cg-shixiong); --_speaker-color: #6ea0f0; }
+.im-galgame-box::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 200px;
+  background: var(--_speaker-cg, var(--cg-shifu)) center 20%/cover no-repeat;
+  border-right: 2px solid var(--_speaker-color, #d4a545);
+  box-shadow: inset -30px 0 40px -20px rgba(6,8,20,.9);
+  animation: cgSlideIn .5s cubic-bezier(.2,1,.3,1);
+}
+.im-galgame-box .im-galgame-name {
+  display: inline-block;
+  padding: 4px 16px;
+  background: var(--_speaker-color, #d4a545);
+  color: #fff;
+  font-weight: 800;
+  letter-spacing: 4px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  text-shadow: 0 1px 3px rgba(0,0,0,.4);
+  box-shadow: 0 3px 10px rgba(0,0,0,.35);
+}
+.im-galgame-box .im-galgame-text {
+  color: #f0e6d2;
+  line-height: 2;
+  font-size: 15px;
+  text-shadow: 0 1px 2px rgba(0,0,0,.5);
+}
+@keyframes cgSlideIn { from { transform: translateX(-40px); opacity: 0 } to { transform: translateX(0); opacity: 1 } }
+
+@media (max-width: 720px) {
+  .im-galgame-box {
+    padding: 200px 16px 20px 16px;
+    min-height: 340px;
+  }
+  .im-galgame-box::before {
+    left: 0; right: 0; top: 0; bottom: auto;
+    width: auto; height: 190px;
+    background-position: center 15%;
+    border-right: none;
+    border-bottom: 2px solid var(--_speaker-color, #d4a545);
+    box-shadow: inset 0 -40px 40px -20px rgba(6,8,20,.9);
+  }
+  .im-scene-cg { height: 160px; }
+  .im-hero-banner { height: 140px; }
+  .im-hero-banner .hero-quote { max-width: 75%; font-size: 13px; }
+}
+
+/* ========================================================
+ * ⑦ 修复：答题卡片的 fill 输入框在深色主题下太亮的问题
+ * ========================================================*/
+.quest-fill-input {
+  background: rgba(20,24,40,.7) !important;
+  color: #f0e6d2 !important;
+  border: 1px solid rgba(110,160,240,.55) !important;
+  border-radius: 10px !important;
+  padding: 12px 14px !important;
+  font-size: 15px !important;
+  width: 100% !important;
+  box-shadow: inset 0 2px 8px rgba(0,0,0,.35), 0 0 0 3px rgba(110,160,240,.08) !important;
+  transition: box-shadow .25s;
+}
+.quest-fill-input:focus {
+  outline: none !important;
+  border-color: #f5c97a !important;
+  box-shadow: inset 0 2px 8px rgba(0,0,0,.35), 0 0 0 3px rgba(245,201,122,.25) !important;
+}
+.quest-fill-input::placeholder { color: rgba(240,230,210,.4) !important; }
+
+/* 计算题答题区（v4.2.2 新增，配合 subject-page.js 的 calc 分支） */
+.quest-calc-input {
+  background: rgba(20,24,40,.7) !important;
+  color: #f0e6d2 !important;
+  border: 1px solid rgba(245,201,122,.45) !important;
+  border-radius: 10px !important;
+  padding: 12px 14px !important;
+  font-size: 15px !important;
+  width: 100% !important;
+  min-height: 90px !important;
+  resize: vertical !important;
+  font-family: 'KaiTi','Consolas',monospace !important;
+  line-height: 1.85 !important;
+  box-shadow: inset 0 2px 8px rgba(0,0,0,.35) !important;
+}
+.quest-calc-input:focus {
+  outline: none !important;
+  border-color: #f5c97a !important;
+  box-shadow: inset 0 2px 8px rgba(0,0,0,.35), 0 0 0 3px rgba(245,201,122,.25) !important;
+}
+.quest-calc-input::placeholder { color: rgba(240,230,210,.4) !important; }
+
+/* 计算题"查看参考解"按钮 */
+.quest-calc-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+/* 判断题 (对/错) 大按钮加强 */
+.quest-opt[data-k="对"], .quest-opt[data-k="错"] {
+  font-size: 18px !important;
+  padding: 14px 20px !important;
+  text-align: center !important;
+}
+.quest-opt[data-k="对"] { border-left: 4px solid #6ecb8e !important; }
+.quest-opt[data-k="错"] { border-left: 4px solid #e88a8a !important; }
+
+/* 多选题提示条美化 */
+.quest-options + .xx-tip {
+  background: linear-gradient(90deg, rgba(110,160,240,.15), transparent) !important;
+  border-left: 3px solid #6ea0f0 !important;
+  padding: 8px 14px !important;
+  border-radius: 8px !important;
+  color: #b8d4f5 !important;
+  margin: 8px 0 !important;
+  font-size: 13px !important;
+}
