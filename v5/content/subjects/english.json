@@ -1,0 +1,97 @@
+{
+  "code": "eng",
+  "name": "英语",
+  "order": 5,
+  "color": "#90caf9",
+  "grades": ["10", "11", "12"],
+  "description": "习百家言语，通天地之道。",
+  "chapters": [
+    {
+      "id": "eng_ch1",
+      "name": "时态与语态",
+      "grade": "10",
+      "order": 1,
+      "manualIds": ["en_m1"],
+      "summary": "时态体系与被动语态的转换规律。",
+      "knowledge": [
+        { "id": "eng_k1", "name": "动词时态", "order": 1, "manualIds": ["en_m1"], "weight": 5, "points": ["一般现在时", "一般过去时", "现在完成时", "过去完成时", "进行时态"], "examples": ["She has finished her homework.", "By the time we arrived, the film had started."], "commonMistakes": ["时态混用", "完成时与过去时混淆"], "tips": "注意时间状语与时态的对应" },
+        { "id": "eng_k2", "name": "被动语态", "order": 2, "manualIds": ["en_m1"], "weight": 4, "points": ["be+过去分词", "各种时态的被动语态", "get被动"], "examples": ["The book was written by him.", "The bridge is being repaired."], "commonMistakes": ["遗漏be动词", "过去分词形式错误"], "tips": "强调动作承受者时用被动" }
+      ]
+    },
+    {
+      "id": "eng_ch2",
+      "name": "三大从句",
+      "grade": "10",
+      "order": 2,
+      "manualIds": ["en_m2"],
+      "summary": "定语从句、名词性从句、状语从句的引导词选择。",
+      "knowledge": [
+        { "id": "eng_k3", "name": "定语从句", "order": 1, "manualIds": ["en_m2"], "weight": 6, "points": ["关系代词who/which/that", "关系副词where/when/why", "限制性非限制性"], "examples": ["The man who is standing there is my teacher.", "This is the city where I was born."], "commonMistakes": ["关系词选择错误", "非限制性从句逗号缺失"], "tips": "分析先行词在从句中的成分" },
+        { "id": "eng_k4", "name": "名词性从句", "order": 2, "manualIds": ["en_m2"], "weight": 5, "points": ["主语从句", "宾语从句", "表语从句", "同位语从句"], "examples": ["That he will win is certain.", "I don't know whether she will come."], "commonMistakes": ["引导词漏用", "语序错误"], "tips": "判断从句在句子中的成分" },
+        { "id": "eng_k5", "name": "状语从句", "order": 3, "manualIds": ["en_m2"], "weight": 5, "points": ["时间条件原因让步等类型", "常用连接词", "主将从现原则"], "examples": ["If it rains tomorrow, we will stay home.", "Although he was tired, he kept working."], "commonMistakes": ["连接词混淆", "时态错误"], "tips": "熟悉各类连接词含义" }
+      ]
+    },
+    {
+      "id": "eng_ch3",
+      "name": "非谓语与虚拟语气",
+      "grade": "11",
+      "order": 3,
+      "manualIds": ["en_m3", "en_m8"],
+      "summary": "非谓语动词与虚拟语气的用法。",
+      "knowledge": [
+        { "id": "eng_k6", "name": "非谓语动词", "order": 1, "manualIds": ["en_m3"], "weight": 6, "points": ["动词不定式", "动名词", "现在分词", "过去分词"], "examples": ["To learn English well takes time.", "Swimming is good exercise."], "commonMistakes": ["不定式动名词混淆", "主动被动混淆"], "tips": "判断逻辑主语与动词关系" },
+        { "id": "eng_k7", "name": "虚拟语气", "order": 2, "manualIds": ["en_m8"], "weight": 5, "points": ["与现在事实相反", "与过去事实相反", "与将来事实相反", "wish句型"], "examples": ["If I were you, I would study harder.", "I wish I had come earlier."], "commonMistakes": ["时态回退规则", "be用were"], "tips": "虚拟语气主句谓语用would/should" }
+      ]
+    },
+    {
+      "id": "eng_ch4",
+      "name": "词法与句法",
+      "grade": "11",
+      "order": 4,
+      "manualIds": ["en_m9", "en_m10", "en_m11", "en_m12", "en_m13", "en_m14"],
+      "summary": "倒装强调、情态动词、连词介词、主谓一致与冠词代词。",
+      "knowledge": [
+        { "id": "eng_k8", "name": "倒装与强调", "order": 1, "manualIds": ["en_m9"], "weight": 5, "points": ["完全倒装", "部分倒装", "it强调句型"], "examples": ["Never have I seen such a view.", "It was Tom who broke the window."], "commonMistakes": ["倒装条件", "强调句型与主语从句混淆"], "tips": "否定词置于句首常需部分倒装" },
+        { "id": "eng_k9", "name": "情态动词", "order": 2, "manualIds": ["en_m10"], "weight": 5, "points": ["can/could/may/must", "情态动词表推测", "must与have to"], "examples": ["He must be at home now.", "You must have seen him."], "commonMistakes": ["情态动词时态", "mustn't与needn't"], "tips": "情态动词后面接动词原形" },
+        { "id": "eng_k10", "name": "连词与介词", "order": 3, "manualIds": ["en_m11"], "weight": 4, "points": ["并列连词", "从属连词", "常见介词短语"], "examples": ["Both Tom and Mary are students.", "He works hard so that he can succeed."], "commonMistakes": ["连词选择", "介词搭配错误"], "tips": "注意固定介词搭配" },
+        { "id": "eng_k11", "name": "主谓一致与冠词代词", "order": 4, "manualIds": ["en_m12", "en_m13"], "weight": 5, "points": ["主谓一致原则", "冠词a/an/the用法", "代词指代一致"], "examples": ["The news is interesting.", "He is an honest boy."], "commonMistakes": ["主谓不一致", "冠词误用", "代词指代不清"], "tips": "就近原则与意义一致原则" }
+      ]
+    },
+    {
+      "id": "eng_ch5",
+      "name": "词汇与短语",
+      "grade": "11",
+      "order": 5,
+      "manualIds": ["en_m4", "en_m15", "en_m16"],
+      "summary": "高频词汇、短语动词与词形变化。",
+      "knowledge": [
+        { "id": "eng_k12", "name": "高频核心词汇", "order": 1, "manualIds": ["en_m4"], "weight": 5, "points": ["词根词缀", "核心动词", "高频形容词副词"], "examples": ["词根词缀记忆法", "高频词汇辨析"], "commonMistakes": ["形近词混淆", "词义误用"], "tips": "结合语境记忆词汇" },
+        { "id": "eng_k13", "name": "短语动词与词形变化", "order": 2, "manualIds": ["en_m15", "en_m16"], "weight": 5, "points": ["常见动词短语", "短语动词的含义", "词形变化规则"], "examples": ["look after/take off等短语", "名词动词形容词的转化"], "commonMistakes": ["短语含义混淆", "词形变化错误"], "tips": "短语动词含义需积累记忆" }
+      ]
+    },
+    {
+      "id": "eng_ch6",
+      "name": "阅读与完形填空",
+      "grade": "12",
+      "order": 6,
+      "manualIds": ["en_m5", "en_m17"],
+      "summary": "阅读理解技巧与完形填空语境推断。",
+      "knowledge": [
+        { "id": "eng_k14", "name": "阅读理解", "order": 1, "manualIds": ["en_m5"], "weight": 6, "points": ["主旨大意题", "细节理解题", "推理判断题", "词义猜测题"], "examples": ["根据上下文猜测词义", "推断作者态度"], "commonMistakes": ["过度推断", "张冠李戴"], "tips": "主旨题关注首尾段落" },
+        { "id": "eng_k15", "name": "完形填空", "order": 2, "manualIds": ["en_m17"], "weight": 5, "points": ["上下文逻辑", "词汇辨析", "语境推断", "七选五"], "examples": ["根据语境选择恰当词汇", "七选五的衔接词"], "commonMistakes": ["脱离语境选择", "逻辑关系判断错误"], "tips": "完形填空注重上下文呼应" }
+      ]
+    },
+    {
+      "id": "eng_ch7",
+      "name": "写作与听力",
+      "grade": "12",
+      "order": 7,
+      "manualIds": ["en_m6", "en_m7"],
+      "summary": "应用文写作、书面表达与听力理解。",
+      "knowledge": [
+        { "id": "eng_k16", "name": "写作与书面表达", "order": 1, "manualIds": ["en_m6"], "weight": 6, "points": ["应用文写作", "书面表达要点", "高级句式运用"], "examples": ["书信、通知、申请信写作", "续写与概要写作"], "commonMistakes": ["要点遗漏", "句式单调"], "tips": "注意格式与要点完整" },
+        { "id": "eng_k17", "name": "听力理解", "order": 2, "manualIds": ["en_m7"], "weight": 4, "points": ["主旨理解", "细节捕捉", "数字时间地点", "推理判断"], "examples": ["对话中捕捉关键信息", "独白的主旨概括"], "commonMistakes": ["细节遗漏", "数字混淆"], "tips": "抓关键词和信号词" }
+      ]
+    }
+  ]
+}

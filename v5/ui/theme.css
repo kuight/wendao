@@ -1,0 +1,249 @@
+/* ==================================================================
+ * 《问道修仙学院》v5 · ui/theme.css
+ * 设计令牌（Design Tokens）：颜色、字体、圆角、缓动曲线、材质
+ *
+ * 定位：单一设计源，供 v5 所有 UI 组件引用。
+ *   - 变量前缀 --v5-*，与 v4 的 --xx-* 并存、互不冲突。
+ *   - 本文件被 v5/ui/index.js 以 <link> 注入（动态 import 场景）。
+ *
+ * 视觉基调沿用 v4「深紫星夜 + 金色符文」，
+ * 并按蓝图 §3.5 P2/P3/P4 强化：
+ *   P2 玻璃拟态  backdrop-filter blur + 半透明浮层
+ *   P3 物理缓动  --v5-ease-* 全组件统一去线性
+ *   P4 卡片材质  --v5-card-* 大圆角 + 双层阴影 + 渐变受光
+ * ================================================================== */
+
+:root {
+  /* ---------- 颜色 ---------- */
+  --v5-bg-deep:    #0b0a1b;
+  --v5-bg-1:       #14122a;
+  --v5-bg-2:       #1c1740;
+  --v5-bg-3:       #2b1f5a;
+
+  --v5-gold:   #f5c97a;
+  --v5-gold2:  #ffe6a3;
+  --v5-cyan:   #6ed5e0;
+  --v5-purple: #b288ff;
+  --v5-pink:   #ff9ec6;
+  --v5-red:    #e25b5b;
+  --v5-green:  #8ce28c;
+  --v5-blue:   #7fb3ff;
+
+  --v5-text:      #f2eddf;
+  --v5-text-soft: #c6bfd8;
+  --v5-text-dim:  #877ea0;
+
+  --v5-border:      rgba(245,201,122,0.28);
+  --v5-border-soft: rgba(178,136,255,0.24);
+
+  /* ---------- 字体 ---------- */
+  --v5-font-art: "STZhongsong", "华文中宋", "KaiTi", "STKaiti", "Songti SC",
+                 "Noto Serif SC", "Ma Shan Zheng", serif;
+  --v5-font-ui: "PingFang SC", "Microsoft YaHei", "Helvetica Neue",
+                -apple-system, sans-serif;
+
+  /* ---------- 圆角 ---------- */
+  --v5-radius-sm: 10px;
+  --v5-radius-md: 16px;
+  --v5-radius-lg: 22px;
+  --v5-radius-xl: 30px;          /* 卡片大圆角（P4） */
+  --v5-radius-pill: 999px;
+
+  /* ---------- 玻璃拟态（P2） ---------- */
+  --v5-glass-bg:          rgba(255,255,255,0.045);
+  --v5-glass-bg-strong:   rgba(255,255,255,0.085);
+  --v5-glass-border:      rgba(255,255,255,0.14);
+  --v5-glass-border-gold: rgba(245,201,122,0.28);
+  --v5-glass-blur:        blur(16px) saturate(1.4);
+  --v5-glass-blur-strong: blur(22px) saturate(1.6);
+  --v5-glass-inner:       inset 0 1px 0 rgba(255,255,255,0.10),
+                          inset 0 0 28px rgba(178,136,255,0.06);
+
+  /* ---------- 缓动曲线（P3，全组件统一） ---------- */
+  --v5-ease-out:     cubic-bezier(0.2, 0.9, 0.3, 1.1);    /* 出场 */
+  --v5-ease-snap:    cubic-bezier(0.2, 0.9, 0.3, 1.05);   /* 进场回弹 */
+  --v5-ease-spring:  cubic-bezier(0.34, 1.3, 0.5, 1);     /* 弹性悬浮 */
+  --v5-ease-in-out:  cubic-bezier(0.65, 0, 0.35, 1);      /* 通用 */
+  --v5-ease-smooth:  cubic-bezier(0.45, 0, 0.25, 1);      /* 缓动光带 */
+
+  /* ---------- 卡片/令牌材质（P4：双层阴影 + 渐变受光） ---------- */
+  --v5-card-bg: linear-gradient(160deg,
+                  #2b2354 0%, #1c1740 55%, #171233 100%);
+  --v5-card-edge: rgba(255,255,255,0.09);
+  --v5-card-shadow:
+    0 1px 0 rgba(255,255,255,0.10) inset,          /* 受光高光边 */
+    0 8px 22px rgba(0,0,0,0.42),                    /* 近层投影 */
+    0 24px 48px rgba(0,0,0,0.34);                   /* 远层柔影（双层阴影） */
+  --v5-card-shadow-hover:
+    0 1px 0 rgba(255,255,255,0.14) inset,
+    0 14px 34px rgba(178,136,255,0.30),
+    0 34px 64px rgba(0,0,0,0.5);
+  --v5-card-shine: radial-gradient(120% 60% at 50% -10%,
+                    rgba(255,255,255,0.22), rgba(255,255,255,0.04) 40%,
+                    transparent 65%);               /* 顶部受光扫掠 */
+
+  --v5-hud-bg: linear-gradient(160deg,
+                  rgba(20,18,42,0.78), rgba(11,10,27,0.86));
+  --v5-shadow-text: 0 0 10px rgba(245,201,122,0.5);
+}
+
+/* ==================================================================
+ * 共享基础类（组件 JS 复用的结构类）
+ * ================================================================== */
+
+/* ---------- 玻璃拟态面板（P2） ---------- */
+.v5-glass {
+  position: relative;
+  background: var(--v5-glass-bg);
+  -webkit-backdrop-filter: var(--v5-glass-blur);
+  backdrop-filter: var(--v5-glass-blur);
+  border: 1px solid var(--v5-glass-border);
+  border-radius: var(--v5-radius-md);
+  box-shadow: var(--v5-glass-inner);
+}
+.v5-glass--strong {
+  background: var(--v5-glass-bg-strong);
+  -webkit-backdrop-filter: var(--v5-glass-blur-strong);
+  backdrop-filter: var(--v5-glass-blur-strong);
+  border-color: var(--v5-glass-border-gold);
+}
+
+/* ---------- 桌游质感卡片（P4） ---------- */
+.v5-card {
+  position: relative;
+  border-radius: var(--v5-radius-xl);
+  background: var(--v5-card-bg);
+  border: 1px solid var(--v5-card-edge);
+  box-shadow: var(--v5-card-shadow);
+  overflow: hidden;
+  transition: transform var(--v5-ease-spring), box-shadow 0.4s var(--v5-ease-out);
+}
+.v5-card::before {                 /* 顶部受光 */
+  content: "";
+  position: absolute; inset: 0;
+  background: var(--v5-card-shine);
+  pointer-events: none;
+}
+.v5-card::after {                  /* 底缘反光细线 */
+  content: "";
+  position: absolute; left: 8%; right: 8%; bottom: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--v5-gold), transparent);
+  opacity: 0; transition: opacity 0.4s var(--v5-ease-out);
+}
+.v5-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--v5-card-shadow-hover);
+}
+.v5-card:hover::after { opacity: 1; }
+.v5-card__content { position: relative; z-index: 1; }
+
+/* ---------- HUD（深色渐变浮层） ---------- */
+.v5-hud {
+  position: relative;
+  display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+  padding: 10px 16px;
+  background: var(--v5-hud-bg);
+  -webkit-backdrop-filter: blur(18px) saturate(1.3);
+  backdrop-filter: blur(18px) saturate(1.3);
+  border: 1px solid var(--v5-glass-border-gold);
+  border-radius: var(--v5-radius-lg);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.08);
+}
+.v5-hud__cell {
+  display: flex; flex-direction: column; gap: 4px; min-width: 84px;
+}
+.v5-hud__label {
+  font-size: 11px; letter-spacing: 2px;
+  color: var(--v5-text-dim); font-family: var(--v5-font-art);
+}
+.v5-hud__value {
+  font-family: var(--v5-font-art);
+  font-size: 18px; color: var(--v5-text);
+  text-shadow: var(--v5-shadow-text);
+  letter-spacing: 1px;
+}
+.v5-hud__value.gold  { color: var(--v5-gold);   }
+.v5-hud__value.cyan  { color: var(--v5-cyan);   }
+.v5-hud__value.purple{ color: var(--v5-purple); }
+
+/* 血条/蓝条 */
+.v5-bar {
+  position: relative; height: 12px; border-radius: var(--v5-radius-pill);
+  background: rgba(0,0,0,0.4); overflow: hidden;
+  border: 1px solid var(--v5-border-soft);
+}
+.v5-bar__fill {
+  height: 100%; border-radius: var(--v5-radius-pill);
+  transition: width 0.55s var(--v5-ease-out);
+  box-shadow: 0 0 12px currentColor;
+  position: relative; overflow: hidden;
+}
+.v5-bar__fill::after {           /* 流动高光 */
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  transform: translateX(-100%);
+  animation: v5-shine 2.2s var(--v5-ease-smooth) infinite;
+}
+.v5-bar--hp  .v5-bar__fill { background: linear-gradient(90deg, #ff4d6d, #ffb14a); color: var(--v5-red); }
+.v5-bar--mp  .v5-bar__fill { background: linear-gradient(90deg, #4fc3f7, #b288ff); color: var(--v5-cyan); }
+.v5-bar--xp  .v5-bar__fill { background: linear-gradient(90deg, #b288ff, #f5c97a); color: var(--v5-purple); }
+
+@keyframes v5-shine { to { transform: translateX(100%); } }
+
+/* ---------- 屏幕容器（show/hide 切换） ---------- */
+.v5-screen {
+  position: fixed; inset: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(11,10,27,0.72);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  opacity: 0; visibility: hidden;
+  transition: opacity 0.3s var(--v5-ease-out), visibility 0.3s;
+  padding: 20px;
+}
+.v5-screen--show { opacity: 1; visibility: visible; }
+.v5-screen__box {
+  background: var(--v5-card-bg);
+  border: 1px solid var(--v5-glass-border-gold);
+  border-radius: var(--v5-radius-lg);
+  box-shadow: var(--v5-card-shadow);
+  padding: 24px; max-width: 640px; width: 100%;
+  max-height: 84vh; overflow-y: auto;
+  transform: translateY(24px) scale(0.96);
+  transition: transform 0.4s var(--v5-ease-snap);
+}
+.v5-screen--show .v5-screen__box { transform: translateY(0) scale(1); }
+
+/* ---------- Toast ---------- */
+.v5-toast-wrap {
+  position: fixed; top: 18px; right: 18px; z-index: 99999;
+  display: flex; flex-direction: column; gap: 8px; pointer-events: none;
+}
+.v5-toast {
+  max-width: 320px;
+  padding: 10px 16px;
+  border-radius: var(--v5-radius-md);
+  border-left: 4px solid var(--v5-cyan);
+  color: var(--v5-text);
+  font-family: var(--v5-font-art); letter-spacing: 1px; font-size: 14px;
+  background: var(--v5-glass-bg-strong);
+  -webkit-backdrop-filter: var(--v5-glass-blur);
+  backdrop-filter: var(--v5-glass-blur);
+  box-shadow: 0 8px 26px rgba(0,0,0,0.55), 0 0 14px rgba(110,213,224,0.35);
+  animation: v5-toast-in 0.4s var(--v5-ease-snap);
+  pointer-events: auto;
+}
+.v5-toast--leaving { animation: v5-toast-out 0.3s var(--v5-ease-in) forwards; }
+.v5-toast--success { border-left-color: var(--v5-green); box-shadow: 0 8px 26px rgba(0,0,0,0.55), 0 0 14px rgba(140,226,140,0.4); }
+.v5-toast--error   { border-left-color: var(--v5-red);   box-shadow: 0 8px 26px rgba(0,0,0,0.55), 0 0 14px rgba(226,91,91,0.4); }
+.v5-toast--gold    { border-left-color: var(--v5-gold);  box-shadow: 0 8px 26px rgba(0,0,0,0.55), 0 0 14px rgba(245,201,122,0.4); }
+.v5-toast--pink    { border-left-color: var(--v5-pink);  box-shadow: 0 8px 26px rgba(0,0,0,0.55), 0 0 14px rgba(255,158,198,0.4); }
+@keyframes v5-toast-in  { from { transform: translateX(60px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+@keyframes v5-toast-out { from { transform: translateX(0);    opacity: 1; } to { transform: translateX(60px); opacity: 0; } }
+
+/* ---------- 动画 keyframes（P3 统一缓动） ---------- */
+@keyframes v5-pop-in {
+  from { transform: scale(0.86); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
+}
+@keyframes v5-fade-in { from { opacity: 0; } to { opacity: 1; } }

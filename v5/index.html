@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+<title>问道修仙学院 · v5 Demo（bootstrap 启动引导 + 主循环）</title>
+<meta name="description" content="《问道修仙学院》v5 开放世界 · 启动引导与主循环独立演示入口">
+<style>
+  :root {
+    --bg: #0b0f1a; --panel: rgba(20, 28, 46, .72); --gold: #f5c97a;
+    --cyan: #5fd3e0; --ink: #dfe7f5; --soft: #9fb0c9; --line: rgba(122,150,200,.25);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; background: radial-gradient(1200px 700px at 70% -10%, #1a2440 0%, var(--bg) 55%) fixed; color: var(--ink); font-family: "PingFang SC","Microsoft YaHei",system-ui,sans-serif; }
+  body { padding: 18px; overflow: auto; }
+  header { display: flex; align-items: baseline; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+  h1 { font-size: 20px; letter-spacing: 2px; color: var(--gold); text-shadow: 0 0 14px rgba(245,201,122,.35); }
+  .sub { font-size: 12px; color: var(--soft); letter-spacing: 1px; }
+  .layout { display: grid; grid-template-columns: 1fr 280px; gap: 14px; align-items: start; }
+  @media (max-width: 860px) { .layout { grid-template-columns: 1fr; } }
+
+  .stage { position: relative; height: 480px; border: 1px solid var(--line); border-radius: 14px; overflow: hidden;
+    background: linear-gradient(180deg, #101a2e 0%, #0c1222 100%); box-shadow: 0 18px 40px rgba(0,0,0,.45); }
+  canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+  .hud { position: absolute; left: 14px; top: 14px; display: flex; gap: 14px; flex-wrap: wrap;
+    font-size: 12px; color: var(--cyan); background: var(--panel); backdrop-filter: blur(6px);
+    border: 1px solid var(--line); border-radius: 10px; padding: 8px 12px; letter-spacing: .5px; }
+  .hud b { color: var(--gold); font-weight: 600; }
+  .hint { position: absolute; left: 14px; bottom: 14px; font-size: 11px; color: var(--soft); background: var(--panel);
+    border: 1px solid var(--line); border-radius: 8px; padding: 6px 10px; }
+
+  .panel { border: 1px solid var(--line); border-radius: 14px; background: var(--panel); backdrop-filter: blur(8px);
+    padding: 14px; font-size: 13px; box-shadow: 0 12px 28px rgba(0,0,0,.3); }
+  .panel h2 { font-size: 14px; color: var(--gold); margin-bottom: 10px; letter-spacing: 1px; }
+  .panel h2 .dot { display:inline-block; width:8px; height:8px; border-radius:50%; background:#3ddc84; margin-right:8px;
+    box-shadow:0 0 8px #3ddc84; vertical-align:1px; }
+  .row { display:flex; justify-content:space-between; padding:4px 0; border-bottom:1px dashed var(--line); }
+  .row:last-child { border-bottom:none; }
+  .row .m { color: var(--soft); }
+  .tag { font-size: 11px; padding: 1px 7px; border-radius: 20px; letter-spacing: .5px; }
+  .tag.loaded { background: rgba(61,220,132,.16); color:#3ddc84; border:1px solid rgba(61,220,132,.4); }
+  .tag.stubbed { background: rgba(245,201,122,.14); color:#f5c97a; border:1px solid rgba(245,201,122,.4); }
+  .tag.error { background: rgba(255,99,99,.16); color:#ff6b6b; border:1px solid rgba(255,99,99,.4); }
+  .note { margin-top:10px; font-size:11px; color:var(--soft); line-height:1.7; }
+  .errbox { margin-top:10px; padding:8px; border:1px solid rgba(255,99,99,.4); border-radius:8px;
+    color:#ffb0b0; background:rgba(255,99,99,.08); font-size:11px; white-space:pre-wrap; max-height:120px; overflow:auto; }
+  #fps { color: var(--cyan); font-variant-numeric: tabular-nums; }
+</style>
+</head>
+<body>
+<header>
+  <h1>⚔ 问道修仙学院 · v5 Demo</h1>
+  <span class="sub">启动引导 / 模块加载 / 主循环 / 渲染 / 输入 / 特效</span>
+</header>
+
+<div class="layout">
+  <div class="stage" id="stage">
+    <canvas id="cv"></canvas>
+    <div class="hud">
+      <span>帧率 <b id="fps">--</b> fps</span>
+      <span>帧 <b id="frame">0</b></span>
+      <span>位置 <b id="pos">0,0</b></span>
+      <span>状态 <b id="loopState">-</b></span>
+    </div>
+    <div class="hint">方向键 / WASD 移动 · P 暂停 · R 恢复 · 粒子自动飘散</div>
+  </div>
+
+  <div class="panel">
+    <h2><span class="dot"></span>模块加载报告</h2>
+    <div id="modlist"></div>
+    <div class="note">说明：本页加载 v5 各 core/ui 模块。未实现的模块由 loader 自动降级为
+      stub，不会中断启动；主循环始终运行以驱动渲染/输入/特效管线。</div>
+    <div id="errbox" class="errbox" style="display:none"></div>
+  </div>
+</div>
+
+<!-- 加载 boot 入口（IIFE，同步设置 globalThis.Boot） -->
+<script src="bootstrap/entry.js"></script>
+
+<!-- 启动引导 + 演示装配 -->
+<script type="module">
+  const cv = document.getElementById('cv');
+  const ctx = cv.getContext('2d');
+  const $ = id => document.getElementById(id);
+
+  function fitCanvas() {
+    const stage = document.getElementById('stage');
+    const dpr = (window.devicePixelRatio || 1);
+    cv.width = stage.clientWidth * dpr; cv.height = stage.clientHeight * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.width = stage.clientWidth; ctx.height = stage.clientHeight;
+  }
+  fitCanvas(); window.addEventListener('resize', fitCanvas);
+
+  // 玩家（演示用）与粒子
+  const player = { x: 160, y: 240 };
+  const keys = { ArrowUp:0,ArrowDown:0,ArrowLeft:0,ArrowRight:0,w:0,s:0,a:0,d:0 };
+  const particles = [];
+
+  function spawnParticles(cx, cy, n) {
+    for (let i = 0; i < n; i++) {
+      particles.push({ x: cx, y: cy, vx: (Math.random()-.5)*2.2, vy: (Math.random()-.5)*2.2,
+        life: 1, r: Math.random()*3+1, hue: Math.random()*40+180 });
+    }
+  }
+  for (let i = 0; i < 60; i++) spawnParticles(Math.random()*cv.width, Math.random()*cv.height, 1);
+
+  window.addEventListener('keydown', e => {
+    const k = e.key;
+    if (k === 'p' || k === 'P') { Boot.loop && Boot.loop.pause(); refreshLoopState(); return; }
+    if (k === 'r' || k === 'R') { Boot.loop && Boot.loop.resume(); refreshLoopState(); return; }
+    if (k in keys) { keys[k] = 1; e.preventDefault(); }
+  });
+  window.addEventListener('keyup', e => { if (e.key in keys) keys[e.key] = 0; });
+
+  function refreshLoopState() {
+    const s = Boot.loop ? (Boot.loop.isPaused() ? '暂停' : '运行') : '-';
+    $('loopState').textContent = s;
+  }
+
+  // 演示渲染：作为 boot.render.draw 的驱动（若真实 render 是 stub 则接管画面）
+  function demoDraw(c) {
+    const W = cv.width, H = cv.height;
+
+    // 移动
+    const sp = 3;
+    if (keys.ArrowRight||keys.d) player.x += sp;
+    if (keys.ArrowLeft||keys.a)  player.x -= sp;
+    if (keys.ArrowUp||keys.w)    player.y -= sp;
+    if (keys.ArrowDown||keys.s)  player.y += sp;
+    player.x = Math.max(8, Math.min(W-8, player.x));
+    player.y = Math.max(8, Math.min(H-8, player.y));
+
+    // 背景网格（营造世界感）
+    ctx.clearRect(0, 0, W, H);
+    ctx.strokeStyle = 'rgba(95,211,224,0.06)';
+    ctx.lineWidth = 1;
+    for (let gx = 0; gx < W; gx += 40) { ctx.beginPath(); ctx.moveTo(gx, 0); ctx.lineTo(gx, H); ctx.stroke(); }
+    for (let gy = 0; gy < H; gy += 40) { ctx.beginPath(); ctx.moveTo(0, gy); ctx.lineTo(W, gy); ctx.stroke(); }
+
+    // 粒子更新
+    const dt = c.dt || 0.016;
+    for (let i = particles.length - 1; i >= 0; i--) {
+      const p = particles[i];
+      p.x += p.vx * (dt * 60); p.y += p.vy * (dt * 60); p.life -= dt * 0.5;
+      if (p.life <= 0) { particles.splice(i, 1); continue; }
+      ctx.beginPath(); ctx.arc(p.x, p.y, p.r * p.life, 0, Math.PI*2);
+      ctx.fillStyle = 'hsla(' + p.hue + ',80%,70%,' + (p.life * .5) + ')';
+      ctx.fill();
+    }
+    if (particles.length < 200) spawnParticles(Math.random()*W, Math.random()*H, 1);
+
+    // 玩家光点 + 灵光
+    ctx.save();
+    const grd = ctx.createRadialGradient(player.x, player.y, 2, player.x, player.y, 22);
+    grd.addColorStop(0, 'rgba(245,201,122,.9)'); grd.addColorStop(1, 'rgba(245,201,122,0)');
+    ctx.fillStyle = grd; ctx.beginPath(); ctx.arc(player.x, player.y, 22, 0, Math.PI*2); ctx.fill();
+    ctx.fillStyle = '#fff'; ctx.beginPath(); ctx.arc(player.x, player.y, 6, 0, Math.PI*2); ctx.fill();
+    ctx.restore();
+
+    // HUD
+    $('pos').textContent = Math.round(player.x) + ',' + Math.round(player.y);
+    $('frame').textContent = (c.frame || 0);
+  }
+
+  // 启动序列
+  try {
+    const report = await Boot.start({ container: document.getElementById('stage') });
+
+    // 接管渲染：主循环每帧调用 boot.render.draw 驱动画面。
+    // 真实 render 已实现时保留其 draw；否则（stub 的 noop）用演示渲染确保可见输出。
+    const isStubDraw = !(Boot.render && Boot.render.draw && Boot.render.draw.name);
+    if (isStubDraw) Boot.render.draw = demoDraw;
+    // 主循环已在 start() 中启动（autoLoop 默认 true）
+
+    // 渲染模块状态列表
+    const listEl = $('modlist');
+    listEl.innerHTML = '';
+    (report.modules || []).forEach(m => {
+      const row = document.createElement('div'); row.className = 'row';
+      const name = document.createElement('span'); name.className = 'm'; name.textContent = m.name;
+      const tag = document.createElement('span'); tag.className = 'tag ' + m.status; tag.textContent = m.status;
+      row.appendChild(name); row.appendChild(tag);
+      listEl.appendChild(row);
+    });
+    if (report.errors && report.errors.length) {
+      const eb = $('errbox'); eb.style.display = 'block';
+      eb.textContent = '以下模块以降级 stub 装载：\n' + report.errors.join('\n');
+    }
+
+    // 每秒刷新 FPS
+    let prevFrames = 0;
+    setInterval(() => { $('fps').textContent = Boot.loop.getStats().frames - prevFrames; prevFrames = Boot.loop.getStats().frames; }, 1000);
+
+    refreshLoopState();
+    if (Boot.bus) Boot.bus.on('player:move', d => { if (d && d.x) player.x = d.x; });
+  } catch (e) {
+    // 模块 import 被 file:// CORS 拦截等场景
+    const eb = $('errbox'); eb.style.display = 'block';
+    eb.textContent = '启动失败：' + (e && e.message) + '\n\n若为 CORS/file:// 限制，请用本地服务器运行：\n  cd v5 && python -m http.server 8000\n然后访问 http://localhost:8000/';
+  }
+</script>
+</body>
+</html>
