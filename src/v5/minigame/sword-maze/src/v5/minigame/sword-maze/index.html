@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>剑阵迷踪 · 问道 v5</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="app shell">
+    <!-- Screen 1: tier + clan select -->
+    <section id="screenHome" class="screen">
+      <header class="topbar panel">
+        <div>
+          <p class="eyebrow">问道修仙学院 · v5 原型</p>
+          <h1>剑阵迷踪</h1>
+          <p class="sub">御剑穿行符文剑阵，答对开门、答错受创。破阵通关，冲击飞升试炼。</p>
+        </div>
+        <div class="badgebox">
+          <span class="chip chip-score">最高分 <b id="homeBest">0</b></span>
+          <span class="chip chip-tier">已解锁 <b id="homeUnlock">练气</b></span>
+        </div>
+      </header>
+
+      <div class="hud-grid">
+        <aside class="panel selector">
+          <div class="selector-head"><h2>选择剑宗</h2><span id="clanTag" class="subject-tag">青云</span></div>
+          <div id="clanList" class="clan-list"></div>
+          <div class="selector-head"><h2>境界试炼</h2><span id="tierTag" class="subject-tag">练气</span></div>
+          <div id="tierList" class="tier-list"></div>
+          <div class="progress-box">
+            <div><span>已破剑阵</span><b id="homeDone">0 / 15</b></div>
+            <div><span>累计灵玉</span><b id="homeXp">0</b></div>
+            <div><span>生命历史</span><b id="homeHp">—</b></div>
+          </div>
+          <button id="enterBtn" class="action-btn">进入剑阵</button>
+        </aside>
+
+        <main class="panel board-panel">
+          <div class="board-top">
+            <div>
+              <h2 id="tierTitle">练气期 · 入门剑阵</h2>
+              <p id="tierDesc" class="muted">8×8 剑阵，8-10 道符文门，适合初入仙途者。</p>
+            </div>
+            <div class="legend">
+              <span><i class="sp gate"></i>符文门：答题开门</span>
+              <span><i class="sp blue"></i>蓝灵石：护盾+1</span>
+              <span><i class="sp red"></i>红灵石：经验+5</span>
+              <span><i class="sp gold"></i>金灵石：剑气斩+1</span>
+            </div>
+          </div>
+          <div id="mazeList" class="maze-list"></div>
+          <div class="bottom-row">
+            <div class="tip-card"><h3>计分</h3><p>剩余HP×100 + 答对×50 + 60秒内通关+200</p></div>
+            <div class="tip-card"><h3>行动力</h3><p>每阵4点，每答对一门恢复1点</p></div>
+            <div class="tip-card"><h3>存档</h3><p id="saveText">仅写入 state.v5.minigame.swordMaze.*</p></div>
+          </div>
+        </main>
+      </div>
+    </section>
+
+    <!-- Screen 2: game -->
+    <section id="screenGame" class="screen hidden">
+      <header class="topbar panel game-top">
+        <button id="backBtn" class="icon-btn" title="返回">←</button>
+        <div>
+          <p class="eyebrow" id="gameMazeId">sm-lianqi-01</p>
+          <h2 id="gameTitle">练气 · 剑阵一</h2>
+        </div>
+        <div class="badgebox">
+          <span class="chip chip-hp">HP <b id="hpVal">100</b></span>
+          <span class="chip chip-ap">行动 <b id="apVal">4</b></span>
+          <span class="chip chip-score">分 <b id="scoreVal">0</b></span>
+          <span class="chip chip-time">时 <b id="timeVal">0s</b></span>
+        </div>
+      </header>
+
+      <div class="hud-strip">
+        <div class="bar hp"><i></i><b id="hpBar">100</b></div>
+        <div class="bar ap"><i></i><b id="apBar">4</b></div>
+        <div class="bar xp"><i></i><b id="xpVal">0</b></div>
+        <div class="bar skill"><i></i><b id="skillVal">0</b></div>
+        <div class="bar shield"><i></i><b id="shieldVal">0</b></div>
+      </div>
+
+      <main class="panel board-panel maze-panel">
+        <div class="maze-top">
+          <span id="gateCount" class="muted">剩余符文门 0</span>
+          <span id="correctCount" class="muted">答对 0</span>
+          <span id="slashHint" class="muted">剑气斩：点击相邻墙壁</span>
+        </div>
+        <div id="mazeWrap" class="maze-wrap">
+          <div id="maze" class="maze" aria-label="sword maze"></div>
+        </div>
+      </main>
+
+      <div class="controls">
+        <div class="dpad">
+          <button class="dbtn" data-dir="n">↑</button>
+          <button class="dbtn" data-dir="w">←</button>
+          <button class="dbtn" data-dir="e">→</button>
+          <button class="dbtn" data-dir="s">↓</button>
+        </div>
+        <div class="slash-zone">
+          <p class="muted">剑气斩：先点“斩”再点相邻墙壁</p>
+          <button id="slashBtn" class="action-btn secondary">斩 <b id="slashCount">0</b></button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Gate quiz modal -->
+  <dialog id="gateDialog" class="quiz-dialog">
+    <div class="quiz-card">
+      <div class="quiz-head">
+        <span id="gateSubject" class="subject-tag">物理</span>
+        <span id="gateDiff" class="chip">难度 3</span>
+        <span id="gateTimer" class="chip chip-time">30s</span>
+      </div>
+      <h2>符文门 · 答题破阵</h2>
+      <p id="gateQuestion"></p>
+      <div id="gateOptions" class="quiz-options"></div>
+      <p id="gateResult" class="quiz-result"></p>
+    </div>
+  </dialog>
+
+  <!-- Result modal -->
+  <dialog id="resultDialog" class="quiz-dialog">
+    <div class="quiz-card result-card">
+      <h2 id="resultTitle">破阵成功</h2>
+      <div class="score-break">
+        <div><span>剩余HP</span><b id="rHp">0</b></div>
+        <div><span>答对</span><b id="rCorrect">0</b></div>
+        <div><span>时间奖励</span><b id="rTime">0</b></div>
+        <div><span>总分</span><b id="rScore">0</b></div>
+      </div>
+      <p id="resultMsg" class="muted"></p>
+      <div class="result-actions">
+        <button id="resultAgain" class="action-btn secondary">再闯此阵</button>
+        <button id="resultNext" class="action-btn">继续</button>
+      </div>
+    </div>
+  </dialog>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="./maze-core.js"></script>
+</body>
+</html>

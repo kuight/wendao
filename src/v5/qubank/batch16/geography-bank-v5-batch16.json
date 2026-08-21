@@ -1,0 +1,1890 @@
+[
+ {
+  "id": "q-batch16-000520",
+  "subject": "geography",
+  "chapter": "自然地理应用",
+  "difficulty": 3,
+  "stem": "结合自然地理天气系统知识，下列对冷锋过境天气变化的描述，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "冷锋过境时气温升高",
+   "冷锋过境时天气晴朗无风",
+   "冷锋只影响夏季",
+   "冷锋过境时，常带来大风、降温与降水天气"
+  ],
+  "answerIndex": 3,
+  "explanation": "冷锋过境常伴随大风、降温与降水。",
+  "kpTags": [
+   "冷锋",
+   "天气系统",
+   "锋面"
+  ],
+  "relatedMiniGame": "SP4-rhythm",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000521",
+  "subject": "geography",
+  "chapter": "自然地理应用",
+  "difficulty": 4,
+  "stem": "某山麓气温为20 ℃，海拔每升高1000 m气温约下降6.5 ℃。结合自然地理垂直地带性，海拔1100 m处的气温最接近下列哪一项？",
+  "options": [
+   "27.1 ℃",
+   "20 ℃",
+   "7.2 ℃",
+   "12.8 ℃"
+  ],
+  "answerIndex": 3,
+  "explanation": "气温=20-6.5×h/1000=12.8 ℃。",
+  "kpTags": [
+   "垂直地带性",
+   "气温",
+   "自然地理"
+  ],
+  "relatedMiniGame": "SP4-board",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000522",
+  "subject": "geography",
+  "chapter": "自然地理应用",
+  "difficulty": 5,
+  "stem": "结合自然地理洋流知识，下列对暖流气候效应的描述，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "暖流对沿岸气候有降温减湿作用",
+   "寒流对沿岸气候有增温增湿作用",
+   "洋流对气候无影响",
+   "暖流对沿岸气候有增温增湿作用"
+  ],
+  "answerIndex": 3,
+  "explanation": "暖流增温增湿，寒流降温减湿。",
+  "kpTags": [
+   "洋流",
+   "大洋环流",
+   "气候"
+  ],
+  "relatedMiniGame": "SP6",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000523",
+  "subject": "geography",
+  "chapter": "自然地理应用",
+  "difficulty": 4,
+  "stem": "结合自然地理水循环知识，下列描述正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "水循环中不存在蒸发",
+   "降水与地表径流无关",
+   "水循环只发生在海洋",
+   "水循环中，蒸发与降水是联系大气与地表的关键环节"
+  ],
+  "answerIndex": 3,
+  "explanation": "蒸发与降水是水循环联系大气与地表的关键环节。",
+  "kpTags": [
+   "水循环",
+   "水资源",
+   "自然地理"
+  ],
+  "relatedMiniGame": "SP7",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000524",
+  "subject": "geography",
+  "chapter": "自然地理应用",
+  "difficulty": 5,
+  "stem": "结合自然地理天气系统知识，下列对冷锋过境天气变化的描述，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "冷锋过境时天气晴朗无风",
+   "冷锋只影响夏季",
+   "冷锋过境时，常带来大风、降温与降水天气",
+   "冷锋过境时气温升高"
+  ],
+  "answerIndex": 2,
+  "explanation": "冷锋过境常伴随大风、降温与降水。",
+  "kpTags": [
+   "冷锋",
+   "天气系统",
+   "锋面"
+  ],
+  "relatedMiniGame": "G97",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000525",
+  "subject": "geography",
+  "chapter": "自然地理应用",
+  "difficulty": 4,
+  "stem": "某山麓气温为20 ℃，海拔每升高1000 m气温约下降6.5 ℃。结合自然地理垂直地带性，海拔1200 m处的气温最接近下列哪一项？",
+  "options": [
+   "20 ℃",
+   "7.8 ℃",
+   "12.2 ℃",
+   "27.8 ℃"
+  ],
+  "answerIndex": 2,
+  "explanation": "气温=20-6.5×h/1000=12.2 ℃。",
+  "kpTags": [
+   "垂直地带性",
+   "气温",
+   "自然地理"
+  ],
+  "relatedMiniGame": "G92",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000526",
+  "subject": "geography",
+  "chapter": "自然地理应用",
+  "difficulty": 3,
+  "stem": "结合自然地理洋流知识，下列对暖流气候效应的描述，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "寒流对沿岸气候有增温增湿作用",
+   "洋流对气候无影响",
+   "暖流对沿岸气候有增温增湿作用",
+   "暖流对沿岸气候有降温减湿作用"
+  ],
+  "answerIndex": 2,
+  "explanation": "暖流增温增湿，寒流降温减湿。",
+  "kpTags": [
+   "洋流",
+   "大洋环流",
+   "气候"
+  ],
+  "relatedMiniGame": "G88",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000527",
+  "subject": "geography",
+  "chapter": "自然地理应用",
+  "difficulty": 4,
+  "stem": "结合自然地理水循环知识，下列描述正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "降水与地表径流无关",
+   "水循环只发生在海洋",
+   "水循环中，蒸发与降水是联系大气与地表的关键环节",
+   "水循环中不存在蒸发"
+  ],
+  "answerIndex": 2,
+  "explanation": "蒸发与降水是水循环联系大气与地表的关键环节。",
+  "kpTags": [
+   "水循环",
+   "水资源",
+   "自然地理"
+  ],
+  "relatedMiniGame": "G91",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000528",
+  "subject": "geography",
+  "chapter": "人文地理应用",
+  "difficulty": 3,
+  "stem": "结合人文地理农业区位知识，下列对农业区位选择的描述，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "农业区位与市场无关",
+   "气候对农业区位无影响",
+   "交通对农业区位无影响",
+   "农业区位选择中，市场是决定种植类型与规模的关键因素"
+  ],
+  "answerIndex": 3,
+  "explanation": "市场决定种植类型与规模，是重要区位因素。",
+  "kpTags": [
+   "农业区位",
+   "区位",
+   "人文地理"
+  ],
+  "relatedMiniGame": "SP13",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000529",
+  "subject": "geography",
+  "chapter": "人文地理应用",
+  "difficulty": 3,
+  "stem": "结合人文地理城市化知识，下列解决城市交通问题的措施，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "城市化必然导致交通瘫痪",
+   "城市规划与交通无关",
+   "城市交通问题无法解决",
+   "城市化进程中，合理规划交通可缓解城市拥堵"
+  ],
+  "answerIndex": 3,
+  "explanation": "合理规划交通、发展公共交通可缓解拥堵。",
+  "kpTags": [
+   "城市化",
+   "交通区位",
+   "人文地理"
+  ],
+  "relatedMiniGame": "SP14",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000530",
+  "subject": "geography",
+  "chapter": "人文地理应用",
+  "difficulty": 4,
+  "stem": "结合人文地理工业区位知识，下列对原料导向型工业布局的描述，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "原料导向型工业应接近市场",
+   "所有工业都应接近市场",
+   "原料对工业区位无影响",
+   "工业区位选择中，原料导向型工业应接近原料产地"
+  ],
+  "answerIndex": 3,
+  "explanation": "原料导向型工业（如制糖）应接近原料产地。",
+  "kpTags": [
+   "工业区位",
+   "区位",
+   "人文地理"
+  ],
+  "relatedMiniGame": "SP15",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000531",
+  "subject": "geography",
+  "chapter": "人文地理应用",
+  "difficulty": 4,
+  "stem": "结合人文地理人口迁移知识，下列描述正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "人口迁移只受经济影响",
+   "政策对人口迁移无影响",
+   "人口迁移与地理环境无关",
+   "人口迁移受经济、政策、环境等多因素影响"
+  ],
+  "answerIndex": 3,
+  "explanation": "人口迁移受经济、政策、环境等多因素综合影响。",
+  "kpTags": [
+   "人口迁移",
+   "人文地理",
+   "区位"
+  ],
+  "relatedMiniGame": "SP4-rhythm",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000532",
+  "subject": "geography",
+  "chapter": "人文地理应用",
+  "difficulty": 4,
+  "stem": "结合人文地理农业区位知识，下列对农业区位选择的描述，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "气候对农业区位无影响",
+   "交通对农业区位无影响",
+   "农业区位选择中，市场是决定种植类型与规模的关键因素",
+   "农业区位与市场无关"
+  ],
+  "answerIndex": 2,
+  "explanation": "市场决定种植类型与规模，是重要区位因素。",
+  "kpTags": [
+   "农业区位",
+   "区位",
+   "人文地理"
+  ],
+  "relatedMiniGame": "SP4-board",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000533",
+  "subject": "geography",
+  "chapter": "人文地理应用",
+  "difficulty": 5,
+  "stem": "结合人文地理城市化知识，下列解决城市交通问题的措施，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "城市规划与交通无关",
+   "城市交通问题无法解决",
+   "城市化进程中，合理规划交通可缓解城市拥堵",
+   "城市化必然导致交通瘫痪"
+  ],
+  "answerIndex": 2,
+  "explanation": "合理规划交通、发展公共交通可缓解拥堵。",
+  "kpTags": [
+   "城市化",
+   "交通区位",
+   "人文地理"
+  ],
+  "relatedMiniGame": "SP6",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000534",
+  "subject": "geography",
+  "chapter": "人文地理应用",
+  "difficulty": 4,
+  "stem": "结合人文地理工业区位知识，下列对原料导向型工业布局的描述，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "所有工业都应接近市场",
+   "原料对工业区位无影响",
+   "工业区位选择中，原料导向型工业应接近原料产地",
+   "原料导向型工业应接近市场"
+  ],
+  "answerIndex": 2,
+  "explanation": "原料导向型工业（如制糖）应接近原料产地。",
+  "kpTags": [
+   "工业区位",
+   "区位",
+   "人文地理"
+  ],
+  "relatedMiniGame": "SP7",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000535",
+  "subject": "geography",
+  "chapter": "人文地理应用",
+  "difficulty": 5,
+  "stem": "结合人文地理人口迁移知识，下列描述正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "政策对人口迁移无影响",
+   "人口迁移与地理环境无关",
+   "人口迁移受经济、政策、环境等多因素影响",
+   "人口迁移只受经济影响"
+  ],
+  "answerIndex": 2,
+  "explanation": "人口迁移受经济、政策、环境等多因素综合影响。",
+  "kpTags": [
+   "人口迁移",
+   "人文地理",
+   "区位"
+  ],
+  "relatedMiniGame": "G97",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000536",
+  "subject": "geography",
+  "chapter": "区域可持续发展分析",
+  "difficulty": 3,
+  "stem": "结合区域可持续发展知识，下列治理黄土高原水土流失的措施，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "黄土高原应放弃植被恢复",
+   "水土流失与植被无关",
+   "梯田会加剧水土流失",
+   "黄土高原水土流失治理中，植树种草与修建梯田相结合"
+  ],
+  "answerIndex": 3,
+  "explanation": "植树种草、修建梯田等生物与工程措施结合。",
+  "kpTags": [
+   "水土流失",
+   "区域可持续发展",
+   "生态农业"
+  ],
+  "relatedMiniGame": "G92",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000537",
+  "subject": "geography",
+  "chapter": "区域可持续发展分析",
+  "difficulty": 4,
+  "stem": "结合区域可持续发展知识，下列对湿地生态功能的描述，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "湿地会加剧洪涝灾害",
+   "湿地无净化水质功能",
+   "湿地应全部开垦为农田",
+   "湿地具有蓄洪防旱、净化水质等生态功能"
+  ],
+  "answerIndex": 3,
+  "explanation": "湿地蓄洪防旱、净化水质，应加以保护。",
+  "kpTags": [
+   "湿地",
+   "生态功能",
+   "区域可持续发展"
+  ],
+  "relatedMiniGame": "G88",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000538",
+  "subject": "geography",
+  "chapter": "区域可持续发展分析",
+  "difficulty": 5,
+  "stem": "结合区域可持续发展知识，下列对生态农业的描述，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "生态农业只追求经济效益",
+   "生态农业污染严重",
+   "生态农业与循环经济无关",
+   "生态农业通过物质循环利用，实现经济与生态效益统一"
+  ],
+  "answerIndex": 3,
+  "explanation": "生态农业实现物质循环利用与效益统一。",
+  "kpTags": [
+   "生态农业",
+   "循环经济",
+   "区域可持续发展"
+  ],
+  "relatedMiniGame": "G91",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000539",
+  "subject": "geography",
+  "chapter": "区域可持续发展分析",
+  "difficulty": 3,
+  "stem": "结合区域可持续发展知识，下列区域开发原则，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "区域开发应一味追求经济增长",
+   "生态保护会阻碍一切开发",
+   "区域开发无需规划",
+   "区域开发应因地制宜，兼顾经济效益与生态保护"
+  ],
+  "answerIndex": 3,
+  "explanation": "因地制宜、经济与生态协调是可持续发展核心。",
+  "kpTags": [
+   "区域可持续发展",
+   "土地利用",
+   "生态农业"
+  ],
+  "relatedMiniGame": "SP13",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000540",
+  "subject": "geography",
+  "chapter": "区域可持续发展分析",
+  "difficulty": 5,
+  "stem": "结合区域可持续发展知识，下列治理黄土高原水土流失的措施，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "水土流失与植被无关",
+   "梯田会加剧水土流失",
+   "黄土高原水土流失治理中，植树种草与修建梯田相结合",
+   "黄土高原应放弃植被恢复"
+  ],
+  "answerIndex": 2,
+  "explanation": "植树种草、修建梯田等生物与工程措施结合。",
+  "kpTags": [
+   "水土流失",
+   "区域可持续发展",
+   "生态农业"
+  ],
+  "relatedMiniGame": "SP14",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000541",
+  "subject": "geography",
+  "chapter": "区域可持续发展分析",
+  "difficulty": 4,
+  "stem": "结合区域可持续发展知识，下列对湿地生态功能的描述，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "湿地无净化水质功能",
+   "湿地应全部开垦为农田",
+   "湿地具有蓄洪防旱、净化水质等生态功能",
+   "湿地会加剧洪涝灾害"
+  ],
+  "answerIndex": 2,
+  "explanation": "湿地蓄洪防旱、净化水质，应加以保护。",
+  "kpTags": [
+   "湿地",
+   "生态功能",
+   "区域可持续发展"
+  ],
+  "relatedMiniGame": "SP15",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000542",
+  "subject": "geography",
+  "chapter": "区域可持续发展分析",
+  "difficulty": 4,
+  "stem": "结合区域可持续发展知识，下列对生态农业的描述，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "生态农业污染严重",
+   "生态农业与循环经济无关",
+   "生态农业通过物质循环利用，实现经济与生态效益统一",
+   "生态农业只追求经济效益"
+  ],
+  "answerIndex": 2,
+  "explanation": "生态农业实现物质循环利用与效益统一。",
+  "kpTags": [
+   "生态农业",
+   "循环经济",
+   "区域可持续发展"
+  ],
+  "relatedMiniGame": "SP4-rhythm",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000543",
+  "subject": "geography",
+  "chapter": "区域可持续发展分析",
+  "difficulty": 4,
+  "stem": "结合区域可持续发展知识，下列区域开发原则，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "生态保护会阻碍一切开发",
+   "区域开发无需规划",
+   "区域开发应因地制宜，兼顾经济效益与生态保护",
+   "区域开发应一味追求经济增长"
+  ],
+  "answerIndex": 2,
+  "explanation": "因地制宜、经济与生态协调是可持续发展核心。",
+  "kpTags": [
+   "区域可持续发展",
+   "土地利用",
+   "生态农业"
+  ],
+  "relatedMiniGame": "SP4-board",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000544",
+  "subject": "geography",
+  "chapter": "选修地理应用",
+  "difficulty": 4,
+  "stem": "结合选修地理信息技术知识，下列对GIS应用的描述，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "GIS只能用于绘制地图",
+   "GIS无法监测灾害",
+   "GIS与风险评估无关",
+   "地理信息技术（GIS）可用于灾害监测与风险评估"
+  ],
+  "answerIndex": 3,
+  "explanation": "GIS可进行空间分析，用于灾害监测与风险评估。",
+  "kpTags": [
+   "地理信息技术",
+   "选修地理",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP6",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000545",
+  "subject": "geography",
+  "chapter": "选修地理应用",
+  "difficulty": 5,
+  "stem": "结合选修地理旅游地理知识，下列旅游开发原则，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "旅游开发应无限制扩大游客量",
+   "旅游资源无需保护",
+   "旅游规划与环境保护无关",
+   "旅游规划中，应保护旅游资源并控制游客容量"
+  ],
+  "answerIndex": 3,
+  "explanation": "旅游开发应保护资源、控制容量，实现可持续。",
+  "kpTags": [
+   "旅游地理",
+   "选修地理",
+   "区域可持续发展"
+  ],
+  "relatedMiniGame": "SP7",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000546",
+  "subject": "geography",
+  "chapter": "选修地理应用",
+  "difficulty": 4,
+  "stem": "结合选修地理资源跨区域调配知识，下列对南水北调工程的描述，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "南水北调会加剧北方缺水",
+   "南水北调与水资源无关",
+   "北方水资源充足无需调水",
+   "南水北调工程可缓解北方水资源短缺"
+  ],
+  "answerIndex": 3,
+  "explanation": "南水北调缓解北方水资源短缺，优化配置。",
+  "kpTags": [
+   "南水北调",
+   "水资源",
+   "选修地理"
+  ],
+  "relatedMiniGame": "G97",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000547",
+  "subject": "geography",
+  "chapter": "选修地理应用",
+  "difficulty": 4,
+  "stem": "结合选修地理遥感技术知识，下列对RS应用的描述，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "遥感无法获取地表信息",
+   "遥感只能用于军事",
+   "遥感获取信息速度慢",
+   "遥感（RS）技术可快速获取大范围地表信息"
+  ],
+  "answerIndex": 3,
+  "explanation": "RS可快速获取大范围地表信息，用于监测。",
+  "kpTags": [
+   "地理信息技术",
+   "选修地理",
+   "综合应用"
+  ],
+  "relatedMiniGame": "G92",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000548",
+  "subject": "geography",
+  "chapter": "选修地理应用",
+  "difficulty": 4,
+  "stem": "结合选修地理信息技术知识，下列对GIS应用的描述，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "GIS无法监测灾害",
+   "GIS与风险评估无关",
+   "地理信息技术（GIS）可用于灾害监测与风险评估",
+   "GIS只能用于绘制地图"
+  ],
+  "answerIndex": 2,
+  "explanation": "GIS可进行空间分析，用于灾害监测与风险评估。",
+  "kpTags": [
+   "地理信息技术",
+   "选修地理",
+   "综合应用"
+  ],
+  "relatedMiniGame": "G88",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000549",
+  "subject": "geography",
+  "chapter": "选修地理应用",
+  "difficulty": 3,
+  "stem": "结合选修地理旅游地理知识，下列旅游开发原则，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "旅游资源无需保护",
+   "旅游规划与环境保护无关",
+   "旅游规划中，应保护旅游资源并控制游客容量",
+   "旅游开发应无限制扩大游客量"
+  ],
+  "answerIndex": 2,
+  "explanation": "旅游开发应保护资源、控制容量，实现可持续。",
+  "kpTags": [
+   "旅游地理",
+   "选修地理",
+   "区域可持续发展"
+  ],
+  "relatedMiniGame": "G91",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000550",
+  "subject": "geography",
+  "chapter": "选修地理应用",
+  "difficulty": 3,
+  "stem": "结合选修地理资源跨区域调配知识，下列对南水北调工程的描述，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "南水北调与水资源无关",
+   "北方水资源充足无需调水",
+   "南水北调工程可缓解北方水资源短缺",
+   "南水北调会加剧北方缺水"
+  ],
+  "answerIndex": 2,
+  "explanation": "南水北调缓解北方水资源短缺，优化配置。",
+  "kpTags": [
+   "南水北调",
+   "水资源",
+   "选修地理"
+  ],
+  "relatedMiniGame": "SP13",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000551",
+  "subject": "geography",
+  "chapter": "选修地理应用",
+  "difficulty": 5,
+  "stem": "结合选修地理遥感技术知识，下列对RS应用的描述，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "遥感只能用于军事",
+   "遥感获取信息速度慢",
+   "遥感（RS）技术可快速获取大范围地表信息",
+   "遥感无法获取地表信息"
+  ],
+  "answerIndex": 2,
+  "explanation": "RS可快速获取大范围地表信息，用于监测。",
+  "kpTags": [
+   "地理信息技术",
+   "选修地理",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP14",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000552",
+  "subject": "geography",
+  "chapter": "环境保护与时事",
+  "difficulty": 3,
+  "stem": "结合环境保护与时事知识，下列对全球变暖影响的描述，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "全球变暖会使海平面下降",
+   "全球变暖与极端天气无关",
+   "全球变暖只影响北极",
+   "全球变暖会导致海平面上升与极端天气增多"
+  ],
+  "answerIndex": 3,
+  "explanation": "全球变暖导致海平面上升、极端天气增多。",
+  "kpTags": [
+   "全球变暖",
+   "环境保护",
+   "时事"
+  ],
+  "relatedMiniGame": "SP15",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000553",
+  "subject": "geography",
+  "chapter": "环境保护与时事",
+  "difficulty": 4,
+  "stem": "结合环境保护与时事知识，下列对垃圾分类回收的描述，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "垃圾分类无实际意义",
+   "垃圾只能填埋处理",
+   "回收利用会增加污染",
+   "垃圾分类回收有利于资源循环利用"
+  ],
+  "answerIndex": 3,
+  "explanation": "垃圾分类回收促进资源循环利用。",
+  "kpTags": [
+   "环境保护",
+   "循环经济",
+   "时事"
+  ],
+  "relatedMiniGame": "SP4-rhythm",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000554",
+  "subject": "geography",
+  "chapter": "环境保护与时事",
+  "difficulty": 5,
+  "stem": "结合环境保护与时事知识，下列对碳中和的理解，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "碳中和要求增加碳排放",
+   "碳中和与碳排放无关",
+   "碳中和只靠植树即可",
+   "碳中和目标要求减少碳排放并增加碳汇"
+  ],
+  "answerIndex": 3,
+  "explanation": "碳中和需减排与增汇并举。",
+  "kpTags": [
+   "碳中和",
+   "环境保护",
+   "时事"
+  ],
+  "relatedMiniGame": "SP4-board",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000555",
+  "subject": "geography",
+  "chapter": "环境保护与时事",
+  "difficulty": 5,
+  "stem": "结合环境保护与时事知识，下列对水体富营养化成因的描述，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "富营养化由重金属引起",
+   "富营养化与氮磷无关",
+   "富营养化只发生在海洋",
+   "富营养化主要由氮磷等营养物质过量排入水体引起"
+  ],
+  "answerIndex": 3,
+  "explanation": "氮磷过量排放导致水体富营养化。",
+  "kpTags": [
+   "富营养化",
+   "环境保护",
+   "水资源"
+  ],
+  "relatedMiniGame": "SP6",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000556",
+  "subject": "geography",
+  "chapter": "环境保护与时事",
+  "difficulty": 4,
+  "stem": "结合环境保护与时事知识，下列对全球变暖影响的描述，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "全球变暖与极端天气无关",
+   "全球变暖只影响北极",
+   "全球变暖会导致海平面上升与极端天气增多",
+   "全球变暖会使海平面下降"
+  ],
+  "answerIndex": 2,
+  "explanation": "全球变暖导致海平面上升、极端天气增多。",
+  "kpTags": [
+   "全球变暖",
+   "环境保护",
+   "时事"
+  ],
+  "relatedMiniGame": "SP7",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000557",
+  "subject": "geography",
+  "chapter": "环境保护与时事",
+  "difficulty": 3,
+  "stem": "结合环境保护与时事知识，下列对垃圾分类回收的描述，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "垃圾只能填埋处理",
+   "回收利用会增加污染",
+   "垃圾分类回收有利于资源循环利用",
+   "垃圾分类无实际意义"
+  ],
+  "answerIndex": 2,
+  "explanation": "垃圾分类回收促进资源循环利用。",
+  "kpTags": [
+   "环境保护",
+   "循环经济",
+   "时事"
+  ],
+  "relatedMiniGame": "G97",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000558",
+  "subject": "geography",
+  "chapter": "环境保护与时事",
+  "difficulty": 4,
+  "stem": "结合环境保护与时事知识，下列对碳中和的理解，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "碳中和与碳排放无关",
+   "碳中和只靠植树即可",
+   "碳中和目标要求减少碳排放并增加碳汇",
+   "碳中和要求增加碳排放"
+  ],
+  "answerIndex": 2,
+  "explanation": "碳中和需减排与增汇并举。",
+  "kpTags": [
+   "碳中和",
+   "环境保护",
+   "时事"
+  ],
+  "relatedMiniGame": "G92",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000559",
+  "subject": "geography",
+  "chapter": "环境保护与时事",
+  "difficulty": 4,
+  "stem": "结合环境保护与时事知识，下列对水体富营养化成因的描述，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "富营养化与氮磷无关",
+   "富营养化只发生在海洋",
+   "富营养化主要由氮磷等营养物质过量排入水体引起",
+   "富营养化由重金属引起"
+  ],
+  "answerIndex": 2,
+  "explanation": "氮磷过量排放导致水体富营养化。",
+  "kpTags": [
+   "富营养化",
+   "环境保护",
+   "水资源"
+  ],
+  "relatedMiniGame": "G88",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000560",
+  "subject": "geography",
+  "chapter": "综合应用",
+  "difficulty": 3,
+  "stem": "结合自然地理三圈环流知识，下列对副热带高气压带的描述，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "副热带高气压带盛行上升气流",
+   "副热带高气压带多阴雨",
+   "副热带高气压带位于赤道",
+   "三圈环流中，副热带高气压带盛行下沉气流，天气晴朗"
+  ],
+  "answerIndex": 3,
+  "explanation": "副热带高压下沉气流，天气晴朗干燥。",
+  "kpTags": [
+   "三圈环流",
+   "气压带",
+   "气流运动"
+  ],
+  "relatedMiniGame": "G91",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000561",
+  "subject": "geography",
+  "chapter": "综合应用",
+  "difficulty": 3,
+  "stem": "结合中国气候综合知识，下列对我国东部季风气候的描述，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "我国东部夏季受西北季风影响",
+   "我国东部冬季高温多雨",
+   "季风对我国气候无影响",
+   "我国东部季风区夏季受东南季风影响，高温多雨"
+  ],
+  "answerIndex": 3,
+  "explanation": "夏季东南季风带来暖湿气流，高温多雨。",
+  "kpTags": [
+   "季风气候",
+   "气候",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP13",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000562",
+  "subject": "geography",
+  "chapter": "综合应用",
+  "difficulty": 5,
+  "stem": "结合地图与等高线综合知识，下列对等高线地形图的判读，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "等高线密集处坡度缓",
+   "等高线稀疏处坡度陡",
+   "等高线与坡度无关",
+   "等高线密集处坡度陡，稀疏处坡度缓"
+  ],
+  "answerIndex": 3,
+  "explanation": "等高线密集表坡度陡，稀疏表坡度缓。",
+  "kpTags": [
+   "地图",
+   "等高线",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP14",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000563",
+  "subject": "geography",
+  "chapter": "综合应用",
+  "difficulty": 4,
+  "stem": "结合自然地理与能源综合知识，下列对太阳能资源分布的描述，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "太阳能资源丰富区多位于阴雨区",
+   "太阳能与天气无关",
+   "太阳能资源只分布在极地",
+   "太阳能资源丰富区多位于干旱、晴天多的地区"
+  ],
+  "answerIndex": 3,
+  "explanation": "干旱晴天多、日照强地区太阳能资源丰富。",
+  "kpTags": [
+   "太阳能",
+   "能源",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP15",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000564",
+  "subject": "geography",
+  "chapter": "综合应用",
+  "difficulty": 4,
+  "stem": "结合自然地理三圈环流知识，下列对副热带高气压带的描述，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "副热带高气压带多阴雨",
+   "副热带高气压带位于赤道",
+   "三圈环流中，副热带高气压带盛行下沉气流，天气晴朗",
+   "副热带高气压带盛行上升气流"
+  ],
+  "answerIndex": 2,
+  "explanation": "副热带高压下沉气流，天气晴朗干燥。",
+  "kpTags": [
+   "三圈环流",
+   "气压带",
+   "气流运动"
+  ],
+  "relatedMiniGame": "SP4-rhythm",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000565",
+  "subject": "geography",
+  "chapter": "综合应用",
+  "difficulty": 4,
+  "stem": "结合中国气候综合知识，下列对我国东部季风气候的描述，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "我国东部冬季高温多雨",
+   "季风对我国气候无影响",
+   "我国东部季风区夏季受东南季风影响，高温多雨",
+   "我国东部夏季受西北季风影响"
+  ],
+  "answerIndex": 2,
+  "explanation": "夏季东南季风带来暖湿气流，高温多雨。",
+  "kpTags": [
+   "季风气候",
+   "气候",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP4-board",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000566",
+  "subject": "geography",
+  "chapter": "综合应用",
+  "difficulty": 5,
+  "stem": "结合地图与等高线综合知识，下列对等高线地形图的判读，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "等高线稀疏处坡度陡",
+   "等高线与坡度无关",
+   "等高线密集处坡度陡，稀疏处坡度缓",
+   "等高线密集处坡度缓"
+  ],
+  "answerIndex": 2,
+  "explanation": "等高线密集表坡度陡，稀疏表坡度缓。",
+  "kpTags": [
+   "地图",
+   "等高线",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP6",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000567",
+  "subject": "geography",
+  "chapter": "综合应用",
+  "difficulty": 4,
+  "stem": "结合自然地理与能源综合知识，下列对太阳能资源分布的描述，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "太阳能与天气无关",
+   "太阳能资源只分布在极地",
+   "太阳能资源丰富区多位于干旱、晴天多的地区",
+   "太阳能资源丰富区多位于阴雨区"
+  ],
+  "answerIndex": 2,
+  "explanation": "干旱晴天多、日照强地区太阳能资源丰富。",
+  "kpTags": [
+   "太阳能",
+   "能源",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP7",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000568",
+  "subject": "geography",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "海面波浪波长3 m、频率5 Hz。结合地理海洋水文与物理机械波、数学乘法，波速最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "0.6 m/s",
+   "1.7 m/s",
+   "8 m/s",
+   "15 m/s"
+  ],
+  "answerIndex": 3,
+  "explanation": "v=λf=15 m/s，地理、物理、数学综合。",
+  "kpTags": [
+   "洋流",
+   "机械波",
+   "综合应用"
+  ],
+  "relatedMiniGame": "G97",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "geography+physics",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000569",
+  "subject": "geography",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "地球赤道半径约6500 km，自转周期24 h。结合地理地球运动与物理圆周运动、数学圆周长计算，赤道自转线速度最接近下列哪一项？",
+  "options": [
+   "945.4 m/s",
+   "75.2 m/s",
+   "236.3 m/s",
+   "472.7 m/s"
+  ],
+  "answerIndex": 3,
+  "explanation": "v=2πR/T≈472.7 m/s，地理、物理、数学综合。",
+  "kpTags": [
+   "地球自转",
+   "圆周运动",
+   "综合应用"
+  ],
+  "relatedMiniGame": "G92",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "geography+physics",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000570",
+  "subject": "geography",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "湖泊磷酸盐浓度0.5 mol/L、体积100 L。结合地理水体富营养化与化学浓度计算、数学比例，物质的量最接近下列哪一项？",
+  "options": [
+   "50.0 mol",
+   "0.5 mol",
+   "0.1 mol",
+   "0.05 mol"
+  ],
+  "answerIndex": 3,
+  "explanation": "n=cV=0.050 mol，地理、化学、数学综合。",
+  "kpTags": [
+   "富营养化",
+   "物质的量浓度",
+   "综合应用"
+  ],
+  "relatedMiniGame": "G88",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "geography+chemistry",
+   "chemistry+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000571",
+  "subject": "geography",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "结合地理区域环境与化学酸雨成因，下列对酸雨影响的综合判断，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "酸雨只影响大气，与土壤无关",
+   "酸雨有利于农作物生长",
+   "酸雨与化学排放无关",
+   "酸雨会腐蚀建筑、酸化土壤，与地理环境及化学排放密切相关"
+  ],
+  "answerIndex": 3,
+  "explanation": "酸雨是地理环境与化学污染的综合问题。",
+  "kpTags": [
+   "酸雨",
+   "环境保护",
+   "区域可持续发展"
+  ],
+  "relatedMiniGame": "G91",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "geography+chemistry",
+   "chemistry+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000572",
+  "subject": "geography",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "结合地理大气受热过程与化学温室气体性质，下列对温室效应的综合判断，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "温室效应与CO₂无关",
+   "温室效应只属于物理问题",
+   "减少CO₂排放对气候无影响",
+   "温室气体增多使大气保温作用增强，是地理与化学的综合问题"
+  ],
+  "answerIndex": 3,
+  "explanation": "CO₂增强大气保温作用，地理与化学综合。",
+  "kpTags": [
+   "大气受热过程",
+   "温室效应",
+   "环境保护"
+  ],
+  "relatedMiniGame": "SP13",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "geography+chemistry",
+   "chemistry+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000573",
+  "subject": "geography",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "结合地理气候变化与物理热膨胀、化学碳排放，下列对全球变暖影响沿海地区的综合判断，正确的是。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "全球变暖使海平面下降",
+   "海平面上升与气候无关",
+   "沿海低地不受海平面影响",
+   "全球变暖导致海平面上升，威胁沿海低地，是地理与物理的综合问题"
+  ],
+  "answerIndex": 3,
+  "explanation": "全球变暖致海平面上升，威胁沿海低地。",
+  "kpTags": [
+   "全球变暖",
+   "热膨胀",
+   "环境保护"
+  ],
+  "relatedMiniGame": "SP14",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "geography+physics",
+   "chemistry+geography"
+  ]
+ },
+ {
+  "id": "q-batch16-000574",
+  "subject": "geography",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "地图上两点东西向距离4 km、南北向距离4 km。结合地理地图比例尺与数学勾股定理，两点直线距离最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "8 km",
+   "0 km",
+   "16 km",
+   "5.7 km"
+  ],
+  "answerIndex": 3,
+  "explanation": "d=√(a²+b²)=5.7 km，地理与数学综合。",
+  "kpTags": [
+   "地图",
+   "勾股定理",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP15",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "geography+math",
+   "math+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000575",
+  "subject": "geography",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "结合英语文献阅读与地理区域分析，下列阅读英文地理报告的方法，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "英文文献无需关注数据",
+   "地理文献与英语无关",
+   "逐词翻译即可忽略地理背景",
+   "英文地理文献阅读应先抓取区域特征与数据，再结合地理知识分析"
+  ],
+  "answerIndex": 3,
+  "explanation": "跨学科阅读应先抓区域特征与数据再分析。",
+  "kpTags": [
+   "阅读推断",
+   "区域地理",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP4-rhythm",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "geography+english",
+   "english+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000576",
+  "subject": "geography",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "结合古诗词意境与地理垂直地带性，下列对“人间四月芳菲尽，山寺桃花始盛开”的综合解读，正确的是。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "此诗反映水平地带性",
+   "山地气温随海拔升高而升高",
+   "此诗与地理无关",
+   "古诗词“人间四月芳菲尽，山寺桃花始盛开”反映山地垂直地带性"
+  ],
+  "answerIndex": 3,
+  "explanation": "海拔升高气温降低，花期推迟，语文与地理综合。",
+  "kpTags": [
+   "垂直地带性",
+   "古诗词",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP4-board",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "geography+chinese",
+   "chinese+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000577",
+  "subject": "geography",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "某山麓气温20 ℃，海拔每升1000 m降温6.5 ℃。结合地理垂直地带性与数学线性计算，海拔1100 m处气温最接近下列哪一项？",
+  "options": [
+   "27.1 ℃",
+   "20 ℃",
+   "7.2 ℃",
+   "12.8 ℃"
+  ],
+  "answerIndex": 3,
+  "explanation": "T=20-6.5×h/1000=12.8 ℃，地理与数学综合。",
+  "kpTags": [
+   "垂直地带性",
+   "一次函数",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP6",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "geography+math",
+   "math+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000578",
+  "subject": "geography",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "结合地理季风气候与物理水循环、化学水分子性质，下列对季风降水的综合理解，正确的是。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "季风降水与水循环无关",
+   "水循环只发生在海洋",
+   "季风只影响气温",
+   "季风带来的降水参与水循环，是地理与物理的综合过程"
+  ],
+  "answerIndex": 3,
+  "explanation": "季风降水是水循环重要环节，多学科综合。",
+  "kpTags": [
+   "季风气候",
+   "水循环",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP7",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "geography+physics",
+   "chemistry+geography"
+  ]
+ },
+ {
+  "id": "q-batch16-000579",
+  "subject": "geography",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "结合地理区域可持续发展与语文立意、化学环保，下列对“绿水青山就是金山银山”的综合理解，正确的是。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "保护生态必然牺牲经济",
+   "经济发展优先于生态",
+   "生态保护与地理无关",
+   "“绿水青山就是金山银山”体现生态与经济协调的可持续发展思想"
+  ],
+  "answerIndex": 3,
+  "explanation": "生态与经济协调是地理、语文、化学的综合共识。",
+  "kpTags": [
+   "区域可持续发展",
+   "材料作文",
+   "环境保护"
+  ],
+  "relatedMiniGame": "G97",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "geography+chinese",
+   "chemistry+geography"
+  ]
+ },
+ {
+  "id": "q-batch16-000580",
+  "subject": "geography",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "海面波浪波长4 m、频率5 Hz。结合地理海洋水文与物理机械波、数学乘法，波速最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "1.2 m/s",
+   "9 m/s",
+   "20 m/s",
+   "0.8 m/s"
+  ],
+  "answerIndex": 2,
+  "explanation": "v=λf=20 m/s，地理、物理、数学综合。",
+  "kpTags": [
+   "洋流",
+   "机械波",
+   "综合应用"
+  ],
+  "relatedMiniGame": "G92",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "geography+physics",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000581",
+  "subject": "geography",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "地球赤道半径约6600 km，自转周期24 h。结合地理地球运动与物理圆周运动、数学圆周长计算，赤道自转线速度最接近下列哪一项？",
+  "options": [
+   "76.4 m/s",
+   "240.0 m/s",
+   "480.0 m/s",
+   "959.9 m/s"
+  ],
+  "answerIndex": 2,
+  "explanation": "v=2πR/T≈480.0 m/s，地理、物理、数学综合。",
+  "kpTags": [
+   "地球自转",
+   "圆周运动",
+   "综合应用"
+  ],
+  "relatedMiniGame": "G88",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "geography+physics",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000582",
+  "subject": "geography",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "湖泊磷酸盐浓度0.5 mol/L、体积100 L。结合地理水体富营养化与化学浓度计算、数学比例，物质的量最接近下列哪一项？",
+  "options": [
+   "0.5 mol",
+   "0.1 mol",
+   "0.05 mol",
+   "50.0 mol"
+  ],
+  "answerIndex": 2,
+  "explanation": "n=cV=0.050 mol，地理、化学、数学综合。",
+  "kpTags": [
+   "富营养化",
+   "物质的量浓度",
+   "综合应用"
+  ],
+  "relatedMiniGame": "G91",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "geography+chemistry",
+   "chemistry+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000583",
+  "subject": "geography",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "结合地理区域环境与化学酸雨成因，下列对酸雨影响的综合判断，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "酸雨有利于农作物生长",
+   "酸雨与化学排放无关",
+   "酸雨会腐蚀建筑、酸化土壤，与地理环境及化学排放密切相关",
+   "酸雨只影响大气，与土壤无关"
+  ],
+  "answerIndex": 2,
+  "explanation": "酸雨是地理环境与化学污染的综合问题。",
+  "kpTags": [
+   "酸雨",
+   "环境保护",
+   "区域可持续发展"
+  ],
+  "relatedMiniGame": "SP13",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "geography+chemistry",
+   "chemistry+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000584",
+  "subject": "geography",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "结合地理大气受热过程与化学温室气体性质，下列对温室效应的综合判断，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "温室效应只属于物理问题",
+   "减少CO₂排放对气候无影响",
+   "温室气体增多使大气保温作用增强，是地理与化学的综合问题",
+   "温室效应与CO₂无关"
+  ],
+  "answerIndex": 2,
+  "explanation": "CO₂增强大气保温作用，地理与化学综合。",
+  "kpTags": [
+   "大气受热过程",
+   "温室效应",
+   "环境保护"
+  ],
+  "relatedMiniGame": "SP14",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "geography+chemistry",
+   "chemistry+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000585",
+  "subject": "geography",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "结合地理气候变化与物理热膨胀、化学碳排放，下列对全球变暖影响沿海地区的综合判断，正确的是。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "海平面上升与气候无关",
+   "沿海低地不受海平面影响",
+   "全球变暖导致海平面上升，威胁沿海低地，是地理与物理的综合问题",
+   "全球变暖使海平面下降"
+  ],
+  "answerIndex": 2,
+  "explanation": "全球变暖致海平面上升，威胁沿海低地。",
+  "kpTags": [
+   "全球变暖",
+   "热膨胀",
+   "环境保护"
+  ],
+  "relatedMiniGame": "SP15",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "geography+physics",
+   "chemistry+geography"
+  ]
+ },
+ {
+  "id": "q-batch16-000586",
+  "subject": "geography",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "地图上两点东西向距离5 km、南北向距离4 km。结合地理地图比例尺与数学勾股定理，两点直线距离最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "-1 km",
+   "20 km",
+   "6.4 km",
+   "9 km"
+  ],
+  "answerIndex": 2,
+  "explanation": "d=√(a²+b²)=6.4 km，地理与数学综合。",
+  "kpTags": [
+   "地图",
+   "勾股定理",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP4-rhythm",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "geography+math",
+   "math+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000587",
+  "subject": "geography",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "结合英语文献阅读与地理区域分析，下列阅读英文地理报告的方法，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "地理文献与英语无关",
+   "逐词翻译即可忽略地理背景",
+   "英文地理文献阅读应先抓取区域特征与数据，再结合地理知识分析",
+   "英文文献无需关注数据"
+  ],
+  "answerIndex": 2,
+  "explanation": "跨学科阅读应先抓区域特征与数据再分析。",
+  "kpTags": [
+   "阅读推断",
+   "区域地理",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP4-board",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "geography+english",
+   "english+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000588",
+  "subject": "geography",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "结合古诗词意境与地理垂直地带性，下列对“人间四月芳菲尽，山寺桃花始盛开”的综合解读，正确的是。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "山地气温随海拔升高而升高",
+   "此诗与地理无关",
+   "古诗词“人间四月芳菲尽，山寺桃花始盛开”反映山地垂直地带性",
+   "此诗反映水平地带性"
+  ],
+  "answerIndex": 2,
+  "explanation": "海拔升高气温降低，花期推迟，语文与地理综合。",
+  "kpTags": [
+   "垂直地带性",
+   "古诗词",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP6",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "geography+chinese",
+   "chinese+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000589",
+  "subject": "geography",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "某山麓气温20 ℃，海拔每升1000 m降温6.5 ℃。结合地理垂直地带性与数学线性计算，海拔1200 m处气温最接近下列哪一项？",
+  "options": [
+   "20 ℃",
+   "7.8 ℃",
+   "12.2 ℃",
+   "27.8 ℃"
+  ],
+  "answerIndex": 2,
+  "explanation": "T=20-6.5×h/1000=12.2 ℃，地理与数学综合。",
+  "kpTags": [
+   "垂直地带性",
+   "一次函数",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP7",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "geography+math",
+   "math+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000590",
+  "subject": "geography",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "结合地理季风气候与物理水循环、化学水分子性质，下列对季风降水的综合理解，正确的是。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "水循环只发生在海洋",
+   "季风只影响气温",
+   "季风带来的降水参与水循环，是地理与物理的综合过程",
+   "季风降水与水循环无关"
+  ],
+  "answerIndex": 2,
+  "explanation": "季风降水是水循环重要环节，多学科综合。",
+  "kpTags": [
+   "季风气候",
+   "水循环",
+   "综合应用"
+  ],
+  "relatedMiniGame": "G97",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "geography+physics",
+   "chemistry+geography"
+  ]
+ },
+ {
+  "id": "q-batch16-000591",
+  "subject": "geography",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "结合地理区域可持续发展与语文立意、化学环保，下列对“绿水青山就是金山银山”的综合理解，正确的是。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "经济发展优先于生态",
+   "生态保护与地理无关",
+   "“绿水青山就是金山银山”体现生态与经济协调的可持续发展思想",
+   "保护生态必然牺牲经济"
+  ],
+  "answerIndex": 2,
+  "explanation": "生态与经济协调是地理、语文、化学的综合共识。",
+  "kpTags": [
+   "区域可持续发展",
+   "材料作文",
+   "环境保护"
+  ],
+  "relatedMiniGame": "G92",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "geography+chinese",
+   "chemistry+geography"
+  ]
+ },
+ {
+  "id": "q-batch16-000592",
+  "subject": "geography",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "海面波浪波长5 m、频率5 Hz。结合地理海洋水文与物理机械波、数学乘法，波速最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "10 m/s",
+   "25 m/s",
+   "1.0 m/s",
+   "1.0 m/s"
+  ],
+  "answerIndex": 1,
+  "explanation": "v=λf=25 m/s，地理、物理、数学综合。",
+  "kpTags": [
+   "洋流",
+   "机械波",
+   "综合应用"
+  ],
+  "relatedMiniGame": "G88",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "geography+physics",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000593",
+  "subject": "geography",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "地球赤道半径约6700 km，自转周期24 h。结合地理地球运动与物理圆周运动、数学圆周长计算，赤道自转线速度最接近下列哪一项？",
+  "options": [
+   "243.6 m/s",
+   "487.2 m/s",
+   "974.5 m/s",
+   "77.5 m/s"
+  ],
+  "answerIndex": 1,
+  "explanation": "v=2πR/T≈487.2 m/s，地理、物理、数学综合。",
+  "kpTags": [
+   "地球自转",
+   "圆周运动",
+   "综合应用"
+  ],
+  "relatedMiniGame": "G91",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "geography+physics",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000594",
+  "subject": "geography",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "湖泊磷酸盐浓度0.5 mol/L、体积100 L。结合地理水体富营养化与化学浓度计算、数学比例，物质的量最接近下列哪一项？",
+  "options": [
+   "0.1 mol",
+   "0.05 mol",
+   "50.0 mol",
+   "0.5 mol"
+  ],
+  "answerIndex": 1,
+  "explanation": "n=cV=0.050 mol，地理、化学、数学综合。",
+  "kpTags": [
+   "富营养化",
+   "物质的量浓度",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP13",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "geography+chemistry",
+   "chemistry+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000595",
+  "subject": "geography",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "结合地理区域环境与化学酸雨成因，下列对酸雨影响的综合判断，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "酸雨与化学排放无关",
+   "酸雨会腐蚀建筑、酸化土壤，与地理环境及化学排放密切相关",
+   "酸雨只影响大气，与土壤无关",
+   "酸雨有利于农作物生长"
+  ],
+  "answerIndex": 1,
+  "explanation": "酸雨是地理环境与化学污染的综合问题。",
+  "kpTags": [
+   "酸雨",
+   "环境保护",
+   "区域可持续发展"
+  ],
+  "relatedMiniGame": "SP14",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "geography+chemistry",
+   "chemistry+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000596",
+  "subject": "geography",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "结合地理大气受热过程与化学温室气体性质，下列对温室效应的综合判断，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "减少CO₂排放对气候无影响",
+   "温室气体增多使大气保温作用增强，是地理与化学的综合问题",
+   "温室效应与CO₂无关",
+   "温室效应只属于物理问题"
+  ],
+  "answerIndex": 1,
+  "explanation": "CO₂增强大气保温作用，地理与化学综合。",
+  "kpTags": [
+   "大气受热过程",
+   "温室效应",
+   "环境保护"
+  ],
+  "relatedMiniGame": "SP15",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "geography+chemistry",
+   "chemistry+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000597",
+  "subject": "geography",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "结合地理气候变化与物理热膨胀、化学碳排放，下列对全球变暖影响沿海地区的综合判断，正确的是。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "沿海低地不受海平面影响",
+   "全球变暖导致海平面上升，威胁沿海低地，是地理与物理的综合问题",
+   "全球变暖使海平面下降",
+   "海平面上升与气候无关"
+  ],
+  "answerIndex": 1,
+  "explanation": "全球变暖致海平面上升，威胁沿海低地。",
+  "kpTags": [
+   "全球变暖",
+   "热膨胀",
+   "环境保护"
+  ],
+  "relatedMiniGame": "SP4-rhythm",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "geography+physics",
+   "chemistry+geography"
+  ]
+ },
+ {
+  "id": "q-batch16-000598",
+  "subject": "geography",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "地图上两点东西向距离6 km、南北向距离4 km。结合地理地图比例尺与数学勾股定理，两点直线距离最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "24 km",
+   "7.2 km",
+   "10 km",
+   "-2 km"
+  ],
+  "answerIndex": 1,
+  "explanation": "d=√(a²+b²)=7.2 km，地理与数学综合。",
+  "kpTags": [
+   "地图",
+   "勾股定理",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP4-board",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "geography+math",
+   "math+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000599",
+  "subject": "geography",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "结合英语文献阅读与地理区域分析，下列阅读英文地理报告的方法，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "逐词翻译即可忽略地理背景",
+   "英文地理文献阅读应先抓取区域特征与数据，再结合地理知识分析",
+   "英文文献无需关注数据",
+   "地理文献与英语无关"
+  ],
+  "answerIndex": 1,
+  "explanation": "跨学科阅读应先抓区域特征与数据再分析。",
+  "kpTags": [
+   "阅读推断",
+   "区域地理",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP6",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "geography+english",
+   "english+math"
+  ]
+ }
+]

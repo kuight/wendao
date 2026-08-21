@@ -1,0 +1,67 @@
+{
+  "version": "5.0-batch4",
+  "main_sha": "4e86b2d57cb1356e706b8ce20dc9899505314122",
+  "total_items": 600,
+  "items_per_subject": {
+    "physics": 120,
+    "chemistry": 120,
+    "math": 120,
+    "chinese": 80,
+    "english": 80,
+    "geography": 80
+  },
+  "schema_compliance": "v5.0-bank-spec",
+  "created_at": "2026-08-19",
+  "difficulty_distribution": {
+    "physics": {
+      "1": 8,
+      "2": 12,
+      "3": 28,
+      "4": 40,
+      "5": 32
+    },
+    "chemistry": {
+      "1": 8,
+      "2": 12,
+      "3": 28,
+      "4": 40,
+      "5": 32
+    },
+    "math": {
+      "1": 8,
+      "2": 12,
+      "3": 28,
+      "4": 40,
+      "5": 32
+    },
+    "chinese": {
+      "1": 5,
+      "2": 7,
+      "3": 20,
+      "4": 28,
+      "5": 20
+    },
+    "english": {
+      "1": 5,
+      "2": 7,
+      "3": 20,
+      "4": 28,
+      "5": 20
+    },
+    "geography": {
+      "1": 5,
+      "2": 7,
+      "3": 20,
+      "4": 28,
+      "5": 20
+    }
+  },
+  "ids_unique": {
+    "physics": true,
+    "chemistry": true,
+    "math": true,
+    "chinese": true,
+    "english": true,
+    "geography": true
+  }
+}

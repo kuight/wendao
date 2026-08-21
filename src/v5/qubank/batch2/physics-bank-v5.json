@@ -1,0 +1,367 @@
+{
+ "subject": "physics",
+ "version": "v5-stub",
+ "count": 8,
+ "items": [
+  {
+   "id": "v5-physics-001",
+   "v": 3,
+   "subject": "physics",
+   "branch": "力学",
+   "points": [
+    "物理·力学"
+   ],
+   "difficulty": 1,
+   "type": "single",
+   "stem": "（占位题 1）物理 学科 力学 分支示例题面",
+   "options": [
+    {
+     "key": "A",
+     "text": "选项一"
+    },
+    {
+     "key": "B",
+     "text": "选项二"
+    },
+    {
+     "key": "C",
+     "text": "选项三"
+    },
+    {
+     "key": "D",
+     "text": "选项四"
+    }
+   ],
+   "answer": {
+    "key": "A",
+    "explanation": "占位解析"
+   },
+   "sourceTags": [
+    "v5-stub"
+   ],
+   "relatedPoints": [],
+   "estimatedSec": 60,
+   "mediaRef": {
+    "img": null,
+    "audio": null,
+    "formula": null
+   },
+   "version": "v5"
+  },
+  {
+   "id": "v5-physics-002",
+   "v": 3,
+   "subject": "physics",
+   "branch": "电磁",
+   "points": [
+    "物理·电磁"
+   ],
+   "difficulty": 2,
+   "type": "single",
+   "stem": "（占位题 2）物理 学科 电磁 分支示例题面",
+   "options": [
+    {
+     "key": "A",
+     "text": "选项一"
+    },
+    {
+     "key": "B",
+     "text": "选项二"
+    },
+    {
+     "key": "C",
+     "text": "选项三"
+    },
+    {
+     "key": "D",
+     "text": "选项四"
+    }
+   ],
+   "answer": {
+    "key": "A",
+    "explanation": "占位解析"
+   },
+   "sourceTags": [
+    "v5-stub"
+   ],
+   "relatedPoints": [],
+   "estimatedSec": 60,
+   "mediaRef": {
+    "img": null,
+    "audio": null,
+    "formula": null
+   },
+   "version": "v5"
+  },
+  {
+   "id": "v5-physics-003",
+   "v": 3,
+   "subject": "physics",
+   "branch": "热学",
+   "points": [
+    "物理·热学"
+   ],
+   "difficulty": 3,
+   "type": "single",
+   "stem": "（占位题 3）物理 学科 热学 分支示例题面",
+   "options": [
+    {
+     "key": "A",
+     "text": "选项一"
+    },
+    {
+     "key": "B",
+     "text": "选项二"
+    },
+    {
+     "key": "C",
+     "text": "选项三"
+    },
+    {
+     "key": "D",
+     "text": "选项四"
+    }
+   ],
+   "answer": {
+    "key": "A",
+    "explanation": "占位解析"
+   },
+   "sourceTags": [
+    "v5-stub"
+   ],
+   "relatedPoints": [],
+   "estimatedSec": 60,
+   "mediaRef": {
+    "img": null,
+    "audio": null,
+    "formula": null
+   },
+   "version": "v5"
+  },
+  {
+   "id": "v5-physics-004",
+   "v": 3,
+   "subject": "physics",
+   "branch": "光学",
+   "points": [
+    "物理·光学"
+   ],
+   "difficulty": 4,
+   "type": "single",
+   "stem": "（占位题 4）物理 学科 光学 分支示例题面",
+   "options": [
+    {
+     "key": "A",
+     "text": "选项一"
+    },
+    {
+     "key": "B",
+     "text": "选项二"
+    },
+    {
+     "key": "C",
+     "text": "选项三"
+    },
+    {
+     "key": "D",
+     "text": "选项四"
+    }
+   ],
+   "answer": {
+    "key": "A",
+    "explanation": "占位解析"
+   },
+   "sourceTags": [
+    "v5-stub"
+   ],
+   "relatedPoints": [],
+   "estimatedSec": 60,
+   "mediaRef": {
+    "img": null,
+    "audio": null,
+    "formula": null
+   },
+   "version": "v5"
+  },
+  {
+   "id": "v5-physics-005",
+   "v": 3,
+   "subject": "physics",
+   "branch": "原子",
+   "points": [
+    "物理·原子"
+   ],
+   "difficulty": 5,
+   "type": "single",
+   "stem": "（占位题 5）物理 学科 原子 分支示例题面",
+   "options": [
+    {
+     "key": "A",
+     "text": "选项一"
+    },
+    {
+     "key": "B",
+     "text": "选项二"
+    },
+    {
+     "key": "C",
+     "text": "选项三"
+    },
+    {
+     "key": "D",
+     "text": "选项四"
+    }
+   ],
+   "answer": {
+    "key": "A",
+    "explanation": "占位解析"
+   },
+   "sourceTags": [
+    "v5-stub"
+   ],
+   "relatedPoints": [],
+   "estimatedSec": 60,
+   "mediaRef": {
+    "img": null,
+    "audio": null,
+    "formula": null
+   },
+   "version": "v5"
+  },
+  {
+   "id": "v5-physics-006",
+   "v": 3,
+   "subject": "physics",
+   "branch": "力学",
+   "points": [
+    "物理·力学"
+   ],
+   "difficulty": 1,
+   "type": "single",
+   "stem": "（占位题 6）物理 学科 力学 分支示例题面",
+   "options": [
+    {
+     "key": "A",
+     "text": "选项一"
+    },
+    {
+     "key": "B",
+     "text": "选项二"
+    },
+    {
+     "key": "C",
+     "text": "选项三"
+    },
+    {
+     "key": "D",
+     "text": "选项四"
+    }
+   ],
+   "answer": {
+    "key": "A",
+    "explanation": "占位解析"
+   },
+   "sourceTags": [
+    "v5-stub"
+   ],
+   "relatedPoints": [],
+   "estimatedSec": 60,
+   "mediaRef": {
+    "img": null,
+    "audio": null,
+    "formula": null
+   },
+   "version": "v5"
+  },
+  {
+   "id": "v5-physics-007",
+   "v": 3,
+   "subject": "physics",
+   "branch": "电磁",
+   "points": [
+    "物理·电磁"
+   ],
+   "difficulty": 2,
+   "type": "single",
+   "stem": "（占位题 7）物理 学科 电磁 分支示例题面",
+   "options": [
+    {
+     "key": "A",
+     "text": "选项一"
+    },
+    {
+     "key": "B",
+     "text": "选项二"
+    },
+    {
+     "key": "C",
+     "text": "选项三"
+    },
+    {
+     "key": "D",
+     "text": "选项四"
+    }
+   ],
+   "answer": {
+    "key": "A",
+    "explanation": "占位解析"
+   },
+   "sourceTags": [
+    "v5-stub"
+   ],
+   "relatedPoints": [],
+   "estimatedSec": 60,
+   "mediaRef": {
+    "img": null,
+    "audio": null,
+    "formula": null
+   },
+   "version": "v5"
+  },
+  {
+   "id": "v5-physics-008",
+   "v": 3,
+   "subject": "physics",
+   "branch": "热学",
+   "points": [
+    "物理·热学"
+   ],
+   "difficulty": 3,
+   "type": "single",
+   "stem": "（占位题 8）物理 学科 热学 分支示例题面",
+   "options": [
+    {
+     "key": "A",
+     "text": "选项一"
+    },
+    {
+     "key": "B",
+     "text": "选项二"
+    },
+    {
+     "key": "C",
+     "text": "选项三"
+    },
+    {
+     "key": "D",
+     "text": "选项四"
+    }
+   ],
+   "answer": {
+    "key": "A",
+    "explanation": "占位解析"
+   },
+   "sourceTags": [
+    "v5-stub"
+   ],
+   "relatedPoints": [],
+   "estimatedSec": 60,
+   "mediaRef": {
+    "img": null,
+    "audio": null,
+    "formula": null
+   },
+   "version": "v5"
+  }
+ ]
+}

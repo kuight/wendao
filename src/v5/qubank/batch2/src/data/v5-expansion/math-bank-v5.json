@@ -1,0 +1,367 @@
+{
+ "subject": "math",
+ "version": "v5-stub",
+ "count": 8,
+ "items": [
+  {
+   "id": "v5-math-001",
+   "v": 3,
+   "subject": "math",
+   "branch": "函数",
+   "points": [
+    "数学·函数"
+   ],
+   "difficulty": 1,
+   "type": "single",
+   "stem": "（占位题 1）数学 学科 函数 分支示例题面",
+   "options": [
+    {
+     "key": "A",
+     "text": "选项一"
+    },
+    {
+     "key": "B",
+     "text": "选项二"
+    },
+    {
+     "key": "C",
+     "text": "选项三"
+    },
+    {
+     "key": "D",
+     "text": "选项四"
+    }
+   ],
+   "answer": {
+    "key": "A",
+    "explanation": "占位解析"
+   },
+   "sourceTags": [
+    "v5-stub"
+   ],
+   "relatedPoints": [],
+   "estimatedSec": 60,
+   "mediaRef": {
+    "img": null,
+    "audio": null,
+    "formula": null
+   },
+   "version": "v5"
+  },
+  {
+   "id": "v5-math-002",
+   "v": 3,
+   "subject": "math",
+   "branch": "几何",
+   "points": [
+    "数学·几何"
+   ],
+   "difficulty": 2,
+   "type": "single",
+   "stem": "（占位题 2）数学 学科 几何 分支示例题面",
+   "options": [
+    {
+     "key": "A",
+     "text": "选项一"
+    },
+    {
+     "key": "B",
+     "text": "选项二"
+    },
+    {
+     "key": "C",
+     "text": "选项三"
+    },
+    {
+     "key": "D",
+     "text": "选项四"
+    }
+   ],
+   "answer": {
+    "key": "A",
+    "explanation": "占位解析"
+   },
+   "sourceTags": [
+    "v5-stub"
+   ],
+   "relatedPoints": [],
+   "estimatedSec": 60,
+   "mediaRef": {
+    "img": null,
+    "audio": null,
+    "formula": null
+   },
+   "version": "v5"
+  },
+  {
+   "id": "v5-math-003",
+   "v": 3,
+   "subject": "math",
+   "branch": "代数",
+   "points": [
+    "数学·代数"
+   ],
+   "difficulty": 3,
+   "type": "single",
+   "stem": "（占位题 3）数学 学科 代数 分支示例题面",
+   "options": [
+    {
+     "key": "A",
+     "text": "选项一"
+    },
+    {
+     "key": "B",
+     "text": "选项二"
+    },
+    {
+     "key": "C",
+     "text": "选项三"
+    },
+    {
+     "key": "D",
+     "text": "选项四"
+    }
+   ],
+   "answer": {
+    "key": "A",
+    "explanation": "占位解析"
+   },
+   "sourceTags": [
+    "v5-stub"
+   ],
+   "relatedPoints": [],
+   "estimatedSec": 60,
+   "mediaRef": {
+    "img": null,
+    "audio": null,
+    "formula": null
+   },
+   "version": "v5"
+  },
+  {
+   "id": "v5-math-004",
+   "v": 3,
+   "subject": "math",
+   "branch": "概率",
+   "points": [
+    "数学·概率"
+   ],
+   "difficulty": 4,
+   "type": "single",
+   "stem": "（占位题 4）数学 学科 概率 分支示例题面",
+   "options": [
+    {
+     "key": "A",
+     "text": "选项一"
+    },
+    {
+     "key": "B",
+     "text": "选项二"
+    },
+    {
+     "key": "C",
+     "text": "选项三"
+    },
+    {
+     "key": "D",
+     "text": "选项四"
+    }
+   ],
+   "answer": {
+    "key": "A",
+    "explanation": "占位解析"
+   },
+   "sourceTags": [
+    "v5-stub"
+   ],
+   "relatedPoints": [],
+   "estimatedSec": 60,
+   "mediaRef": {
+    "img": null,
+    "audio": null,
+    "formula": null
+   },
+   "version": "v5"
+  },
+  {
+   "id": "v5-math-005",
+   "v": 3,
+   "subject": "math",
+   "branch": "数列",
+   "points": [
+    "数学·数列"
+   ],
+   "difficulty": 5,
+   "type": "single",
+   "stem": "（占位题 5）数学 学科 数列 分支示例题面",
+   "options": [
+    {
+     "key": "A",
+     "text": "选项一"
+    },
+    {
+     "key": "B",
+     "text": "选项二"
+    },
+    {
+     "key": "C",
+     "text": "选项三"
+    },
+    {
+     "key": "D",
+     "text": "选项四"
+    }
+   ],
+   "answer": {
+    "key": "A",
+    "explanation": "占位解析"
+   },
+   "sourceTags": [
+    "v5-stub"
+   ],
+   "relatedPoints": [],
+   "estimatedSec": 60,
+   "mediaRef": {
+    "img": null,
+    "audio": null,
+    "formula": null
+   },
+   "version": "v5"
+  },
+  {
+   "id": "v5-math-006",
+   "v": 3,
+   "subject": "math",
+   "branch": "函数",
+   "points": [
+    "数学·函数"
+   ],
+   "difficulty": 1,
+   "type": "single",
+   "stem": "（占位题 6）数学 学科 函数 分支示例题面",
+   "options": [
+    {
+     "key": "A",
+     "text": "选项一"
+    },
+    {
+     "key": "B",
+     "text": "选项二"
+    },
+    {
+     "key": "C",
+     "text": "选项三"
+    },
+    {
+     "key": "D",
+     "text": "选项四"
+    }
+   ],
+   "answer": {
+    "key": "A",
+    "explanation": "占位解析"
+   },
+   "sourceTags": [
+    "v5-stub"
+   ],
+   "relatedPoints": [],
+   "estimatedSec": 60,
+   "mediaRef": {
+    "img": null,
+    "audio": null,
+    "formula": null
+   },
+   "version": "v5"
+  },
+  {
+   "id": "v5-math-007",
+   "v": 3,
+   "subject": "math",
+   "branch": "几何",
+   "points": [
+    "数学·几何"
+   ],
+   "difficulty": 2,
+   "type": "single",
+   "stem": "（占位题 7）数学 学科 几何 分支示例题面",
+   "options": [
+    {
+     "key": "A",
+     "text": "选项一"
+    },
+    {
+     "key": "B",
+     "text": "选项二"
+    },
+    {
+     "key": "C",
+     "text": "选项三"
+    },
+    {
+     "key": "D",
+     "text": "选项四"
+    }
+   ],
+   "answer": {
+    "key": "A",
+    "explanation": "占位解析"
+   },
+   "sourceTags": [
+    "v5-stub"
+   ],
+   "relatedPoints": [],
+   "estimatedSec": 60,
+   "mediaRef": {
+    "img": null,
+    "audio": null,
+    "formula": null
+   },
+   "version": "v5"
+  },
+  {
+   "id": "v5-math-008",
+   "v": 3,
+   "subject": "math",
+   "branch": "代数",
+   "points": [
+    "数学·代数"
+   ],
+   "difficulty": 3,
+   "type": "single",
+   "stem": "（占位题 8）数学 学科 代数 分支示例题面",
+   "options": [
+    {
+     "key": "A",
+     "text": "选项一"
+    },
+    {
+     "key": "B",
+     "text": "选项二"
+    },
+    {
+     "key": "C",
+     "text": "选项三"
+    },
+    {
+     "key": "D",
+     "text": "选项四"
+    }
+   ],
+   "answer": {
+    "key": "A",
+    "explanation": "占位解析"
+   },
+   "sourceTags": [
+    "v5-stub"
+   ],
+   "relatedPoints": [],
+   "estimatedSec": 60,
+   "mediaRef": {
+    "img": null,
+    "audio": null,
+    "formula": null
+   },
+   "version": "v5"
+  }
+ ]
+}

@@ -1,0 +1,98 @@
+[
+  {
+    "id": "pet_linghu",
+    "name": "灵狐",
+    "type": "fire",
+    "subject": "physics",
+    "knowledge": "力学",
+    "hp": 116,
+    "energy": 100,
+    "speed": 18,
+    "passive": "烈焰余势：攻击后附带2点灼伤",
+    "skills": ["狐焰爪", "加速度突袭", "赤炎连环", "烈焰余势"]
+  },
+  {
+    "id": "pet_qingluan",
+    "name": "青鸾",
+    "type": "wind",
+    "subject": "math",
+    "knowledge": "函数",
+    "hp": 104,
+    "energy": 100,
+    "speed": 22,
+    "passive": "羽迹极值：若本回合先手，技能伤害+3",
+    "skills": ["风羽切", "函数映射", "青天回旋", "羽迹极值"]
+  },
+  {
+    "id": "pet_baize",
+    "name": "白泽",
+    "type": "earth",
+    "subject": "geography",
+    "knowledge": "地貌",
+    "hp": 132,
+    "energy": 100,
+    "speed": 12,
+    "passive": "地势稳固：防御时额外回复6点灵力",
+    "skills": ["岩纹踏", "地貌屏障", "山海重压", "地势稳固"]
+  },
+  {
+    "id": "pet_zhuque",
+    "name": "朱雀",
+    "type": "fire",
+    "subject": "chem",
+    "knowledge": "元素",
+    "hp": 108,
+    "energy": 100,
+    "speed": 20,
+    "passive": "元素共鸣：技能命中后下次普攻+4",
+    "skills": ["炎羽啄", "元素共振", "朱火燎原", "元素共鸣"]
+  },
+  {
+    "id": "pet_xuanwu",
+    "name": "玄武",
+    "type": "water",
+    "subject": "chem",
+    "knowledge": "反应原理",
+    "hp": 138,
+    "energy": 100,
+    "speed": 10,
+    "passive": "守恒甲壳：受到技能伤害-3",
+    "skills": ["玄水击", "平衡逆转", "太阴镇海", "守恒甲壳"]
+  },
+  {
+    "id": "pet_jiuwei",
+    "name": "九尾",
+    "type": "wood",
+    "subject": "geography",
+    "knowledge": "生态",
+    "hp": 112,
+    "energy": 100,
+    "speed": 19,
+    "passive": "灵木再生：每回合结束回复4点气血",
+    "skills": ["森罗尾击", "生态回春", "万叶封印", "灵木再生"]
+  },
+  {
+    "id": "pet_kunpeng",
+    "name": "鲲鹏",
+    "type": "wind",
+    "subject": "math",
+    "knowledge": "概率",
+    "hp": 118,
+    "energy": 100,
+    "speed": 17,
+    "passive": "大数之势：终结技暴击率提升",
+    "skills": ["天羽坠", "概率倾斜", "扶摇九天", "大数之势"]
+  },
+  {
+    "id": "pet_huanglong",
+    "name": "黄龙",
+    "type": "earth",
+    "subject": "composite",
+    "knowledge": "综合思维",
+    "hp": 146,
+    "energy": 100,
+    "speed": 11,
+    "passive": "龙脉统御：场上每存在1层护盾，伤害+2",
+    "skills": ["龙脉爪", "融会贯通", "黄庭天威", "龙脉统御"]
+  }
+]

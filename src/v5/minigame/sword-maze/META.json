@@ -1,0 +1,167 @@
+{
+  "created_at": "2026-08-20",
+  "main_sha": "4e86b2d57cb1356e706b8ce20dc9899505314122",
+  "minigame": "sword-maze",
+  "name": "剑阵迷踪",
+  "tier": "SP14",
+  "files": [
+    {
+      "path": "src/v5/minigame/sword-maze/README.md",
+      "bytes": 2523,
+      "sha256": "9fba137ab81a60fa748a19e2efc64af0a19b4d9fd3c17273fc368eb6e86ef84f"
+    },
+    {
+      "path": "src/v5/minigame/sword-maze/banks/swordmaze-gates-d3.json",
+      "bytes": 8173,
+      "sha256": "d151763587d621d92193647b6942642fd575153a77b4605995d9959250f003e3"
+    },
+    {
+      "path": "src/v5/minigame/sword-maze/banks/swordmaze-gates-d4.json",
+      "bytes": 11189,
+      "sha256": "a71dcd3dabdc5e171939020f738d63789a9eb6b71ebef73871ce572d1f7af0ca"
+    },
+    {
+      "path": "src/v5/minigame/sword-maze/banks/swordmaze-gates-d5.json",
+      "bytes": 4312,
+      "sha256": "06d09a462a91eb82d6e4e70862b78959d60f47a09d7c0dca587527e2b14b3e3f"
+    },
+    {
+      "path": "src/v5/minigame/sword-maze/clans.json",
+      "bytes": 706,
+      "sha256": "9eac031da5b0f94ee94abdb075c24dc5dc0fee2c1d84196dfcc353d69b1d89f4"
+    },
+    {
+      "path": "src/v5/minigame/sword-maze/index.html",
+      "bytes": 6214,
+      "sha256": "0bfd012a88a5e68f5fe589283679b6f1d3c515e094da3d4d674d4f52a4e24706"
+    },
+    {
+      "path": "src/v5/minigame/sword-maze/maze-core.js",
+      "bytes": 21973,
+      "sha256": "737051f65b228ffb68b978646d89300e212a2f0b734d10d121565d99509d437e"
+    },
+    {
+      "path": "src/v5/minigame/sword-maze/mazes.json",
+      "bytes": 4347,
+      "sha256": "0ac38dca8bfc9f5447d9ad1293fa75d7f4a7db392ea884c1d89568c83854b879"
+    },
+    {
+      "path": "src/v5/minigame/sword-maze/style.css",
+      "bytes": 9761,
+      "sha256": "c6c05dd885df5ba20cecc7cbd0b96814a1062afd73999d99f02dd1f0c75e3584"
+    }
+  ],
+  "total_source_bytes": 69198,
+  "code_source_bytes_excluding_bank": 45524,
+  "size_budget": 90720,
+  "size_ok": "PASS",
+  "save_keys": [
+    "state.v5.minigame.swordMaze",
+    "state.v5.minigame.swordMaze.leaderboard"
+  ],
+  "shards": [
+    {
+      "difficulty": 3,
+      "path": "src/v5/minigame/sword-maze/banks/swordmaze-gates-d3.json",
+      "bytes": 8173,
+      "sha256": "d151763587d621d92193647b6942642fd575153a77b4605995d9959250f003e3",
+      "count": 135,
+      "id_range": [
+        "q-sm-0001",
+        "q-sm-0354"
+      ],
+      "codec": "gzip+base64",
+      "raw_json_bytes": 34360,
+      "gzip_bytes": 6076
+    },
+    {
+      "difficulty": 4,
+      "path": "src/v5/minigame/sword-maze/banks/swordmaze-gates-d4.json",
+      "bytes": 11189,
+      "sha256": "a71dcd3dabdc5e171939020f738d63789a9eb6b71ebef73871ce572d1f7af0ca",
+      "count": 168,
+      "id_range": [
+        "q-sm-0022",
+        "q-sm-0357"
+      ],
+      "codec": "gzip+base64",
+      "raw_json_bytes": 46376,
+      "gzip_bytes": 8340
+    },
+    {
+      "difficulty": 5,
+      "path": "src/v5/minigame/sword-maze/banks/swordmaze-gates-d5.json",
+      "bytes": 4312,
+      "sha256": "06d09a462a91eb82d6e4e70862b78959d60f47a09d7c0dca587527e2b14b3e3f",
+      "count": 57,
+      "id_range": [
+        "q-sm-0037",
+        "q-sm-0360"
+      ],
+      "codec": "gzip+base64",
+      "raw_json_bytes": 16242,
+      "gzip_bytes": 3182
+    }
+  ],
+  "patch": {
+    "name": "SP14 shard split budget patch",
+    "strategy": [
+      "replace monolithic gate bank with difficulty lazy-load shards",
+      "wrap each shard as gzip+base64 JSON for size budget",
+      "keep deterministic ids q-sm-0001..q-sm-0360 unchanged"
+    ],
+    "before_total_source_bytes": 140683,
+    "after_total_source_bytes": 69198,
+    "delta_total_bytes": -71485,
+    "before_non_bank_bytes": 43707,
+    "after_non_bank_bytes": 45524,
+    "delta_non_bank_bytes": 1817,
+    "replaced_files": [
+      {
+        "path": "src/v5/minigame/sword-maze/banks/swordmaze-gates.json",
+        "before_bytes": 96976,
+        "after": "split into shards"
+      }
+    ],
+    "updated_at": "2026-08-20"
+  },
+  "validation": {
+    "node_check": "PENDING",
+    "shard_union_360_ids": "PASS",
+    "shard_counts": {
+      "3": 135,
+      "4": 168,
+      "5": 57
+    },
+    "each_shard_lte_12kb": "PASS",
+    "total_source_bytes_lte_90720": "PASS",
+    "non_bank_bytes_lte_51200": "PASS",
+    "legacy_namespace_scan": "PENDING",
+    "lazy_load_shards_referenced": "PENDING",
+    "rows": {
+      "swordmaze-gates-d3.json": {
+        "json_load": "PASS",
+        "item_count": 135,
+        "difficulty": 3,
+        "sorted_ids": "PASS",
+        "bytes_lte_12kb": "PASS"
+      },
+      "swordmaze-gates-d4.json": {
+        "json_load": "PASS",
+        "item_count": 168,
+        "difficulty": 4,
+        "sorted_ids": "PASS",
+        "bytes_lte_12kb": "PASS"
+      },
+      "swordmaze-gates-d5.json": {
+        "json_load": "PASS",
+        "item_count": 57,
+        "difficulty": 5,
+        "sorted_ids": "PASS",
+        "bytes_lte_12kb": "PASS"
+      }
+    }
+  },
+  "blocked_by": "none",
+  "needs_merge_into": "src/v5/minigame/sword-maze/"
+}

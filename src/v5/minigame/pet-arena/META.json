@@ -1,0 +1,19 @@
+{
+  "main_sha": "4e86b2d57cb1356e706b8ce20dc9899505314122",
+  "verified_via_anonymous_curl": false,
+  "verification_note": "anonymous curl to api.github.com returned 403 in sandbox; local-only staging continued with provided head sha",
+  "files_created": [
+    "index.html",
+    "arena-core.js",
+    "pets.json",
+    "style.css",
+    "README.md",
+    "META.json",
+    "wendao-v5-pet-arena.tar.gz"
+  ],
+  "node_check_count": 1,
+  "json_ok": true,
+  "pets": 8,
+  "save_key_only": "state.v5.minigame.petArena.*",
+  "total_bytes_main5": 27830
+}

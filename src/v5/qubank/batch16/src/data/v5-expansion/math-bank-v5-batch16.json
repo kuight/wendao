@@ -1,0 +1,2765 @@
+[
+ {
+  "id": "q-batch16-000240",
+  "subject": "math",
+  "chapter": "函数与导数应用",
+  "difficulty": 4,
+  "stem": "函数f(x)=3x²+4x+1的对称轴方程x=最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "0.67",
+   "-1.33",
+   "1.33",
+   "-0.67"
+  ],
+  "answerIndex": 3,
+  "explanation": "对称轴x=-b/(2a)=-0.67。",
+  "kpTags": [
+   "二次函数",
+   "函数极值"
+  ],
+  "relatedMiniGame": "G88",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000241",
+  "subject": "math",
+  "chapter": "函数与导数应用",
+  "difficulty": 3,
+  "stem": "函数f(x)在区间[0,1]上为线性函数，f(0)=4，f(1)=6，其斜率最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "10",
+   "4",
+   "6",
+   "2"
+  ],
+  "answerIndex": 3,
+  "explanation": "斜率k=(f(1)-f(0))/1=2.0。",
+  "kpTags": [
+   "导数几何意义",
+   "一次函数"
+  ],
+  "relatedMiniGame": "G91",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000242",
+  "subject": "math",
+  "chapter": "函数与导数应用",
+  "difficulty": 5,
+  "stem": "函数f(x)=2x²+2x+3在对称轴处的函数值（最小值）最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "7",
+   "5",
+   "5",
+   "2.5"
+  ],
+  "answerIndex": 3,
+  "explanation": "顶点纵坐标=2.50。",
+  "kpTags": [
+   "二次函数",
+   "函数极值",
+   "导数与极值"
+  ],
+  "relatedMiniGame": "SP13",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000243",
+  "subject": "math",
+  "chapter": "函数与导数应用",
+  "difficulty": 3,
+  "stem": "复合函数f(x)=(3x+1)²在x=0处的值最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "6",
+   "3",
+   "4",
+   "9"
+  ],
+  "answerIndex": 3,
+  "explanation": "f(0)=(0+1)²=1，代入复合函数计算得9。",
+  "kpTags": [
+   "复合函数",
+   "函数单调性"
+  ],
+  "relatedMiniGame": "SP14",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000244",
+  "subject": "math",
+  "chapter": "函数与导数应用",
+  "difficulty": 4,
+  "stem": "函数f(x)=4x²+4x+1的对称轴方程x=最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "-1.0",
+   "1.0",
+   "-0.5",
+   "0.5"
+  ],
+  "answerIndex": 2,
+  "explanation": "对称轴x=-b/(2a)=-0.50。",
+  "kpTags": [
+   "二次函数",
+   "函数极值"
+  ],
+  "relatedMiniGame": "SP15",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000245",
+  "subject": "math",
+  "chapter": "函数与导数应用",
+  "difficulty": 4,
+  "stem": "函数f(x)在区间[0,1]上为线性函数，f(0)=5，f(1)=7，其斜率最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "5",
+   "7",
+   "2",
+   "12"
+  ],
+  "answerIndex": 2,
+  "explanation": "斜率k=(f(1)-f(0))/1=2.0。",
+  "kpTags": [
+   "导数几何意义",
+   "一次函数"
+  ],
+  "relatedMiniGame": "SP4-rhythm",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000246",
+  "subject": "math",
+  "chapter": "函数与导数应用",
+  "difficulty": 5,
+  "stem": "函数f(x)=3x²+2x+3在对称轴处的函数值（最小值）最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "5",
+   "6",
+   "2.67",
+   "8"
+  ],
+  "answerIndex": 2,
+  "explanation": "顶点纵坐标=2.67。",
+  "kpTags": [
+   "二次函数",
+   "函数极值",
+   "导数与极值"
+  ],
+  "relatedMiniGame": "SP4-board",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000247",
+  "subject": "math",
+  "chapter": "函数与导数应用",
+  "difficulty": 4,
+  "stem": "复合函数f(x)=(4x+1)²在x=0处的值最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "4",
+   "5",
+   "16",
+   "8"
+  ],
+  "answerIndex": 2,
+  "explanation": "f(0)=(0+1)²=1，代入复合函数计算得16。",
+  "kpTags": [
+   "复合函数",
+   "函数单调性"
+  ],
+  "relatedMiniGame": "SP6",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000248",
+  "subject": "math",
+  "chapter": "函数与导数应用",
+  "difficulty": 5,
+  "stem": "函数f(x)=5x²+4x+1的对称轴方程x=最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "0.8",
+   "-0.4",
+   "0.4",
+   "-0.8"
+  ],
+  "answerIndex": 1,
+  "explanation": "对称轴x=-b/(2a)=-0.40。",
+  "kpTags": [
+   "二次函数",
+   "函数极值"
+  ],
+  "relatedMiniGame": "SP7",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000249",
+  "subject": "math",
+  "chapter": "函数与导数应用",
+  "difficulty": 4,
+  "stem": "函数f(x)在区间[0,1]上为线性函数，f(0)=6，f(1)=8，其斜率最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "8",
+   "2",
+   "14",
+   "6"
+  ],
+  "answerIndex": 1,
+  "explanation": "斜率k=(f(1)-f(0))/1=2.0。",
+  "kpTags": [
+   "导数几何意义",
+   "一次函数"
+  ],
+  "relatedMiniGame": "G97",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000250",
+  "subject": "math",
+  "chapter": "函数与导数应用",
+  "difficulty": 4,
+  "stem": "函数f(x)=4x²+2x+3在对称轴处的函数值（最小值）最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "7",
+   "2.75",
+   "9",
+   "5"
+  ],
+  "answerIndex": 1,
+  "explanation": "顶点纵坐标=2.75。",
+  "kpTags": [
+   "二次函数",
+   "函数极值",
+   "导数与极值"
+  ],
+  "relatedMiniGame": "G92",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000251",
+  "subject": "math",
+  "chapter": "函数与导数应用",
+  "difficulty": 4,
+  "stem": "复合函数f(x)=(5x+1)²在x=0处的值最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "6",
+   "25",
+   "10",
+   "5"
+  ],
+  "answerIndex": 1,
+  "explanation": "f(0)=(0+1)²=1，代入复合函数计算得25。",
+  "kpTags": [
+   "复合函数",
+   "函数单调性"
+  ],
+  "relatedMiniGame": "G88",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000252",
+  "subject": "math",
+  "chapter": "三角与向量应用",
+  "difficulty": 4,
+  "stem": "三角形中∠A=30°，∠C=90°，则∠B最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "60°",
+   "120°",
+   "150°",
+   "60°"
+  ],
+  "answerIndex": 3,
+  "explanation": "三角形内角和180°，∠B=60°。",
+  "kpTags": [
+   "解三角形",
+   "三角函数"
+  ],
+  "relatedMiniGame": "G91",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000253",
+  "subject": "math",
+  "chapter": "三角与向量应用",
+  "difficulty": 4,
+  "stem": "直角三角形两直角边分别为4、4，斜边长最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "8",
+   "16",
+   "0",
+   "5.7"
+  ],
+  "answerIndex": 3,
+  "explanation": "由勾股定理c=√(a²+b²)=5.7。",
+  "kpTags": [
+   "勾股定理",
+   "解三角形"
+  ],
+  "relatedMiniGame": "SP13",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000254",
+  "subject": "math",
+  "chapter": "三角与向量应用",
+  "difficulty": 4,
+  "stem": "向量a=(2,2)，b=(3,4)，它们的数量积最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "16",
+   "11",
+   "2",
+   "14"
+  ],
+  "answerIndex": 3,
+  "explanation": "a·b=x1x2+y1y2=14。",
+  "kpTags": [
+   "向量",
+   "数量积"
+  ],
+  "relatedMiniGame": "SP14",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000255",
+  "subject": "math",
+  "chapter": "三角与向量应用",
+  "difficulty": 5,
+  "stem": "三角形两边长分别为3、3，夹角为90°，其面积最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "9",
+   "6",
+   "18",
+   "4.5"
+  ],
+  "answerIndex": 3,
+  "explanation": "面积=½ab=4.5。",
+  "kpTags": [
+   "解三角形",
+   "三角函数"
+  ],
+  "relatedMiniGame": "SP15",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000256",
+  "subject": "math",
+  "chapter": "三角与向量应用",
+  "difficulty": 3,
+  "stem": "三角形中∠A=30°，∠C=90°，则∠B最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "120°",
+   "150°",
+   "60°",
+   "60°"
+  ],
+  "answerIndex": 2,
+  "explanation": "三角形内角和180°，∠B=60°。",
+  "kpTags": [
+   "解三角形",
+   "三角函数"
+  ],
+  "relatedMiniGame": "SP4-rhythm",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000257",
+  "subject": "math",
+  "chapter": "三角与向量应用",
+  "difficulty": 4,
+  "stem": "直角三角形两直角边分别为5、4，斜边长最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "20",
+   "1",
+   "6.4",
+   "9"
+  ],
+  "answerIndex": 2,
+  "explanation": "由勾股定理c=√(a²+b²)=6.4。",
+  "kpTags": [
+   "勾股定理",
+   "解三角形"
+  ],
+  "relatedMiniGame": "SP4-board",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000258",
+  "subject": "math",
+  "chapter": "三角与向量应用",
+  "difficulty": 4,
+  "stem": "向量a=(3,2)，b=(3,4)，它们的数量积最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "12",
+   "6",
+   "17",
+   "18"
+  ],
+  "answerIndex": 2,
+  "explanation": "a·b=x1x2+y1y2=17。",
+  "kpTags": [
+   "向量",
+   "数量积"
+  ],
+  "relatedMiniGame": "SP6",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000259",
+  "subject": "math",
+  "chapter": "三角与向量应用",
+  "difficulty": 4,
+  "stem": "三角形两边长分别为4、3，夹角为90°，其面积最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "7",
+   "24",
+   "6.0",
+   "12"
+  ],
+  "answerIndex": 2,
+  "explanation": "面积=½ab=6.0。",
+  "kpTags": [
+   "解三角形",
+   "三角函数"
+  ],
+  "relatedMiniGame": "SP7",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000260",
+  "subject": "math",
+  "chapter": "三角与向量应用",
+  "difficulty": 4,
+  "stem": "三角形中∠A=30°，∠C=90°，则∠B最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "150°",
+   "60°",
+   "60°",
+   "120°"
+  ],
+  "answerIndex": 1,
+  "explanation": "三角形内角和180°，∠B=60°。",
+  "kpTags": [
+   "解三角形",
+   "三角函数"
+  ],
+  "relatedMiniGame": "G97",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000261",
+  "subject": "math",
+  "chapter": "三角与向量应用",
+  "difficulty": 5,
+  "stem": "直角三角形两直角边分别为6、4，斜边长最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "2",
+   "7.2",
+   "10",
+   "24"
+  ],
+  "answerIndex": 1,
+  "explanation": "由勾股定理c=√(a²+b²)=7.2。",
+  "kpTags": [
+   "勾股定理",
+   "解三角形"
+  ],
+  "relatedMiniGame": "G92",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000262",
+  "subject": "math",
+  "chapter": "三角与向量应用",
+  "difficulty": 3,
+  "stem": "向量a=(4,2)，b=(3,4)，它们的数量积最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "10",
+   "20",
+   "20",
+   "13"
+  ],
+  "answerIndex": 1,
+  "explanation": "a·b=x1x2+y1y2=20。",
+  "kpTags": [
+   "向量",
+   "数量积"
+  ],
+  "relatedMiniGame": "G88",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000263",
+  "subject": "math",
+  "chapter": "三角与向量应用",
+  "difficulty": 5,
+  "stem": "三角形两边长分别为5、3，夹角为90°，其面积最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "30",
+   "7.5",
+   "15",
+   "8"
+  ],
+  "answerIndex": 1,
+  "explanation": "面积=½ab=7.5。",
+  "kpTags": [
+   "解三角形",
+   "三角函数"
+  ],
+  "relatedMiniGame": "G91",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000264",
+  "subject": "math",
+  "chapter": "数列与不等式应用",
+  "difficulty": 4,
+  "stem": "等差数列首项2，公差2，第5项最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "4",
+   "12",
+   "10",
+   "10"
+  ],
+  "answerIndex": 3,
+  "explanation": "a₅=a₁+4d=10。",
+  "kpTags": [
+   "等差数列",
+   "通项公式"
+  ],
+  "relatedMiniGame": "SP13",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000265",
+  "subject": "math",
+  "chapter": "数列与不等式应用",
+  "difficulty": 5,
+  "stem": "等比数列首项2，公比2，前3项和S₃最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "16",
+   "8",
+   "6",
+   "14.0"
+  ],
+  "answerIndex": 3,
+  "explanation": "S₃=a₁(q³-1)/(q-1)=14。",
+  "kpTags": [
+   "等比数列",
+   "求和公式"
+  ],
+  "relatedMiniGame": "SP14",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000266",
+  "subject": "math",
+  "chapter": "数列与不等式应用",
+  "difficulty": 4,
+  "stem": "正数a=3，b=8，它们的算术平均数最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "24",
+   "11",
+   "4.4",
+   "5.5"
+  ],
+  "answerIndex": 3,
+  "explanation": "算术平均数=(a+b)/2=5.5。",
+  "kpTags": [
+   "基本不等式",
+   "不等式"
+  ],
+  "relatedMiniGame": "SP15",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000267",
+  "subject": "math",
+  "chapter": "数列与不等式应用",
+  "difficulty": 4,
+  "stem": "数列{aₙ}满足a₁=3，a₂=5，若为等差数列则公差最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "3",
+   "5",
+   "8",
+   "2"
+  ],
+  "answerIndex": 3,
+  "explanation": "公差d=a₂-a₁=2。",
+  "kpTags": [
+   "等差数列",
+   "递推数列"
+  ],
+  "relatedMiniGame": "SP4-rhythm",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000268",
+  "subject": "math",
+  "chapter": "数列与不等式应用",
+  "difficulty": 3,
+  "stem": "等差数列首项3，公差2，第5项最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "13",
+   "15",
+   "11",
+   "5"
+  ],
+  "answerIndex": 2,
+  "explanation": "a₅=a₁+4d=11。",
+  "kpTags": [
+   "等差数列",
+   "通项公式"
+  ],
+  "relatedMiniGame": "SP4-board",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000269",
+  "subject": "math",
+  "chapter": "数列与不等式应用",
+  "difficulty": 5,
+  "stem": "等比数列首项3，公比2，前3项和S₃最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "12",
+   "9",
+   "21.0",
+   "24"
+  ],
+  "answerIndex": 2,
+  "explanation": "S₃=a₁(q³-1)/(q-1)=21。",
+  "kpTags": [
+   "等比数列",
+   "求和公式"
+  ],
+  "relatedMiniGame": "SP6",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000270",
+  "subject": "math",
+  "chapter": "数列与不等式应用",
+  "difficulty": 4,
+  "stem": "正数a=4，b=8，它们的算术平均数最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "12",
+   "5.3",
+   "6.0",
+   "32"
+  ],
+  "answerIndex": 2,
+  "explanation": "算术平均数=(a+b)/2=6.0。",
+  "kpTags": [
+   "基本不等式",
+   "不等式"
+  ],
+  "relatedMiniGame": "SP7",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000271",
+  "subject": "math",
+  "chapter": "数列与不等式应用",
+  "difficulty": 3,
+  "stem": "数列{aₙ}满足a₁=4，a₂=5，若为等差数列则公差最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "5",
+   "9",
+   "1",
+   "4"
+  ],
+  "answerIndex": 2,
+  "explanation": "公差d=a₂-a₁=1。",
+  "kpTags": [
+   "等差数列",
+   "递推数列"
+  ],
+  "relatedMiniGame": "G97",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000272",
+  "subject": "math",
+  "chapter": "数列与不等式应用",
+  "difficulty": 4,
+  "stem": "等差数列首项4，公差2，第5项最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "20",
+   "12",
+   "6",
+   "14"
+  ],
+  "answerIndex": 1,
+  "explanation": "a₅=a₁+4d=12。",
+  "kpTags": [
+   "等差数列",
+   "通项公式"
+  ],
+  "relatedMiniGame": "G92",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000273",
+  "subject": "math",
+  "chapter": "数列与不等式应用",
+  "difficulty": 4,
+  "stem": "等比数列首项4，公比2，前3项和S₃最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "12",
+   "28.0",
+   "32",
+   "16"
+  ],
+  "answerIndex": 1,
+  "explanation": "S₃=a₁(q³-1)/(q-1)=28。",
+  "kpTags": [
+   "等比数列",
+   "求和公式"
+  ],
+  "relatedMiniGame": "G88",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000274",
+  "subject": "math",
+  "chapter": "数列与不等式应用",
+  "difficulty": 5,
+  "stem": "正数a=5，b=8，它们的算术平均数最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "6.2",
+   "6.5",
+   "40",
+   "13"
+  ],
+  "answerIndex": 1,
+  "explanation": "算术平均数=(a+b)/2=6.5。",
+  "kpTags": [
+   "基本不等式",
+   "不等式"
+  ],
+  "relatedMiniGame": "G91",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000275",
+  "subject": "math",
+  "chapter": "数列与不等式应用",
+  "difficulty": 4,
+  "stem": "数列{aₙ}满足a₁=5，a₂=5，若为等差数列则公差最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "10",
+   "0",
+   "5",
+   "5"
+  ],
+  "answerIndex": 1,
+  "explanation": "公差d=a₂-a₁=0。",
+  "kpTags": [
+   "等差数列",
+   "递推数列"
+  ],
+  "relatedMiniGame": "SP13",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000276",
+  "subject": "math",
+  "chapter": "解析几何应用",
+  "difficulty": 4,
+  "stem": "椭圆长半轴a=5，半焦距c=4，其离心率最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "1.25",
+   "1",
+   "4",
+   "0.8"
+  ],
+  "answerIndex": 3,
+  "explanation": "离心率e=c/a=0.80。",
+  "kpTags": [
+   "离心率",
+   "椭圆"
+  ],
+  "relatedMiniGame": "SP14",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000277",
+  "subject": "math",
+  "chapter": "解析几何应用",
+  "difficulty": 4,
+  "stem": "抛物线y²=6x的焦点横坐标最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "3",
+   "6",
+   "6",
+   "1.5"
+  ],
+  "answerIndex": 3,
+  "explanation": "y²=2px，焦点(p/2,0)，故焦点横坐标=1.5。",
+  "kpTags": [
+   "抛物线",
+   "焦点"
+  ],
+  "relatedMiniGame": "SP15",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000278",
+  "subject": "math",
+  "chapter": "解析几何应用",
+  "difficulty": 4,
+  "stem": "圆心到直线距离为0，圆半径为3，则直线与圆相交弦长为直径，其值最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "3",
+   "9",
+   "12",
+   "6"
+  ],
+  "answerIndex": 3,
+  "explanation": "过圆心弦为直径，d=2r=6。",
+  "kpTags": [
+   "直线与圆",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP4-rhythm",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000279",
+  "subject": "math",
+  "chapter": "解析几何应用",
+  "difficulty": 3,
+  "stem": "双曲线实半轴a=3，虚半轴b=5，其半焦距最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "8",
+   "2",
+   "15",
+   "5.8"
+  ],
+  "answerIndex": 3,
+  "explanation": "c=√(a²+b²)=5.8。",
+  "kpTags": [
+   "双曲线",
+   "焦点"
+  ],
+  "relatedMiniGame": "SP4-board",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000280",
+  "subject": "math",
+  "chapter": "解析几何应用",
+  "difficulty": 4,
+  "stem": "椭圆长半轴a=5，半焦距c=5，其离心率最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "0",
+   "5",
+   "1.0",
+   "1.0"
+  ],
+  "answerIndex": 2,
+  "explanation": "离心率e=c/a=1.00。",
+  "kpTags": [
+   "离心率",
+   "椭圆"
+  ],
+  "relatedMiniGame": "SP6",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000281",
+  "subject": "math",
+  "chapter": "解析几何应用",
+  "difficulty": 4,
+  "stem": "抛物线y²=8x的焦点横坐标最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "8",
+   "8",
+   "2.0",
+   "4"
+  ],
+  "answerIndex": 2,
+  "explanation": "y²=2px，焦点(p/2,0)，故焦点横坐标=2.0。",
+  "kpTags": [
+   "抛物线",
+   "焦点"
+  ],
+  "relatedMiniGame": "SP7",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000282",
+  "subject": "math",
+  "chapter": "解析几何应用",
+  "difficulty": 4,
+  "stem": "圆心到直线距离为0，圆半径为4，则直线与圆相交弦长为直径，其值最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "16",
+   "16",
+   "8",
+   "4"
+  ],
+  "answerIndex": 2,
+  "explanation": "过圆心弦为直径，d=2r=8。",
+  "kpTags": [
+   "直线与圆",
+   "综合应用"
+  ],
+  "relatedMiniGame": "G97",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000283",
+  "subject": "math",
+  "chapter": "解析几何应用",
+  "difficulty": 4,
+  "stem": "双曲线实半轴a=3，虚半轴b=6，其半焦距最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "3",
+   "18",
+   "6.7",
+   "9"
+  ],
+  "answerIndex": 2,
+  "explanation": "c=√(a²+b²)=6.7。",
+  "kpTags": [
+   "双曲线",
+   "焦点"
+  ],
+  "relatedMiniGame": "G92",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000284",
+  "subject": "math",
+  "chapter": "解析几何应用",
+  "difficulty": 5,
+  "stem": "椭圆长半轴a=5，半焦距c=6，其离心率最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "6",
+   "1.2",
+   "0.83",
+   "-1"
+  ],
+  "answerIndex": 1,
+  "explanation": "离心率e=c/a=1.20。",
+  "kpTags": [
+   "离心率",
+   "椭圆"
+  ],
+  "relatedMiniGame": "G88",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000285",
+  "subject": "math",
+  "chapter": "解析几何应用",
+  "difficulty": 5,
+  "stem": "抛物线y²=10x的焦点横坐标最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "10",
+   "2.5",
+   "5",
+   "10"
+  ],
+  "answerIndex": 1,
+  "explanation": "y²=2px，焦点(p/2,0)，故焦点横坐标=2.5。",
+  "kpTags": [
+   "抛物线",
+   "焦点"
+  ],
+  "relatedMiniGame": "G91",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000286",
+  "subject": "math",
+  "chapter": "解析几何应用",
+  "difficulty": 3,
+  "stem": "圆心到直线距离为0，圆半径为5，则直线与圆相交弦长为直径，其值最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "20",
+   "10",
+   "5",
+   "25"
+  ],
+  "answerIndex": 1,
+  "explanation": "过圆心弦为直径，d=2r=10。",
+  "kpTags": [
+   "直线与圆",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP13",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000287",
+  "subject": "math",
+  "chapter": "解析几何应用",
+  "difficulty": 5,
+  "stem": "双曲线实半轴a=3，虚半轴b=7，其半焦距最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "21",
+   "7.6",
+   "10",
+   "4"
+  ],
+  "answerIndex": 1,
+  "explanation": "c=√(a²+b²)=7.6。",
+  "kpTags": [
+   "双曲线",
+   "焦点"
+  ],
+  "relatedMiniGame": "SP14",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000288",
+  "subject": "math",
+  "chapter": "立体几何应用",
+  "difficulty": 5,
+  "stem": "正方体棱长为3，其体积最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "54",
+   "9",
+   "12",
+   "27"
+  ],
+  "answerIndex": 3,
+  "explanation": "体积V=a³=27。",
+  "kpTags": [
+   "正方体",
+   "体积"
+  ],
+  "relatedMiniGame": "SP15",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000289",
+  "subject": "math",
+  "chapter": "立体几何应用",
+  "difficulty": 4,
+  "stem": "球半径为3，其表面积最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "28.3",
+   "18.8",
+   "84.8",
+   "113.1"
+  ],
+  "answerIndex": 3,
+  "explanation": "球表面积S=4πr²=113.1。",
+  "kpTags": [
+   "球",
+   "表面积"
+  ],
+  "relatedMiniGame": "SP4-rhythm",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000290",
+  "subject": "math",
+  "chapter": "立体几何应用",
+  "difficulty": 5,
+  "stem": "圆柱底面半径2，高3，其体积最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "18.8",
+   "12.6",
+   "12.6",
+   "37.7"
+  ],
+  "answerIndex": 3,
+  "explanation": "圆柱体积V=πr²h=37.7。",
+  "kpTags": [
+   "体积",
+   "底面积"
+  ],
+  "relatedMiniGame": "SP4-board",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000291",
+  "subject": "math",
+  "chapter": "立体几何应用",
+  "difficulty": 4,
+  "stem": "圆锥底面半径3，高3，其体积最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "84.8",
+   "28.3",
+   "28.3",
+   "28.3"
+  ],
+  "answerIndex": 3,
+  "explanation": "圆锥体积V=⅓πr²h=28.3。",
+  "kpTags": [
+   "圆锥",
+   "体积"
+  ],
+  "relatedMiniGame": "SP6",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000292",
+  "subject": "math",
+  "chapter": "立体几何应用",
+  "difficulty": 4,
+  "stem": "正方体棱长为4，其体积最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "16",
+   "16",
+   "64",
+   "96"
+  ],
+  "answerIndex": 2,
+  "explanation": "体积V=a³=64。",
+  "kpTags": [
+   "正方体",
+   "体积"
+  ],
+  "relatedMiniGame": "SP7",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000293",
+  "subject": "math",
+  "chapter": "立体几何应用",
+  "difficulty": 5,
+  "stem": "球半径为4，其表面积最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "25.1",
+   "201.1",
+   "201.1",
+   "50.3"
+  ],
+  "answerIndex": 2,
+  "explanation": "球表面积S=4πr²=201.1。",
+  "kpTags": [
+   "球",
+   "表面积"
+  ],
+  "relatedMiniGame": "G97",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000294",
+  "subject": "math",
+  "chapter": "立体几何应用",
+  "difficulty": 3,
+  "stem": "圆柱底面半径3，高3，其体积最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "18.8",
+   "28.3",
+   "84.8",
+   "28.3"
+  ],
+  "answerIndex": 2,
+  "explanation": "圆柱体积V=πr²h=84.8。",
+  "kpTags": [
+   "体积",
+   "底面积"
+  ],
+  "relatedMiniGame": "G92",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000295",
+  "subject": "math",
+  "chapter": "立体几何应用",
+  "difficulty": 4,
+  "stem": "圆锥底面半径4，高3，其体积最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "37.7",
+   "50.3",
+   "50.3",
+   "150.8"
+  ],
+  "answerIndex": 2,
+  "explanation": "圆锥体积V=⅓πr²h=50.3。",
+  "kpTags": [
+   "圆锥",
+   "体积"
+  ],
+  "relatedMiniGame": "G88",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000296",
+  "subject": "math",
+  "chapter": "立体几何应用",
+  "difficulty": 3,
+  "stem": "正方体棱长为5，其体积最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "20",
+   "125",
+   "150",
+   "25"
+  ],
+  "answerIndex": 1,
+  "explanation": "体积V=a³=125。",
+  "kpTags": [
+   "正方体",
+   "体积"
+  ],
+  "relatedMiniGame": "G91",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000297",
+  "subject": "math",
+  "chapter": "立体几何应用",
+  "difficulty": 4,
+  "stem": "球半径为5，其表面积最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "392.7",
+   "314.2",
+   "78.5",
+   "31.4"
+  ],
+  "answerIndex": 1,
+  "explanation": "球表面积S=4πr²=314.2。",
+  "kpTags": [
+   "球",
+   "表面积"
+  ],
+  "relatedMiniGame": "SP13",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000298",
+  "subject": "math",
+  "chapter": "立体几何应用",
+  "difficulty": 4,
+  "stem": "圆柱底面半径4，高3，其体积最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "50.3",
+   "150.8",
+   "37.7",
+   "25.1"
+  ],
+  "answerIndex": 1,
+  "explanation": "圆柱体积V=πr²h=150.8。",
+  "kpTags": [
+   "体积",
+   "底面积"
+  ],
+  "relatedMiniGame": "SP14",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000299",
+  "subject": "math",
+  "chapter": "立体几何应用",
+  "difficulty": 4,
+  "stem": "圆锥底面半径5，高3，其体积最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "78.5",
+   "78.5",
+   "235.6",
+   "47.1"
+  ],
+  "answerIndex": 1,
+  "explanation": "圆锥体积V=⅓πr²h=78.5。",
+  "kpTags": [
+   "圆锥",
+   "体积"
+  ],
+  "relatedMiniGame": "SP15",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000300",
+  "subject": "math",
+  "chapter": "概率统计应用",
+  "difficulty": 3,
+  "stem": "从5个完全相同的结果中任取一个，每个结果等可能，取到特定结果的概率最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "0.167",
+   "0.4",
+   "1",
+   "0.2"
+  ],
+  "answerIndex": 3,
+  "explanation": "古典概型P=1/n=0.200。",
+  "kpTags": [
+   "概率",
+   "计数原理"
+  ],
+  "relatedMiniGame": "SP4-rhythm",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000301",
+  "subject": "math",
+  "chapter": "概率统计应用",
+  "difficulty": 4,
+  "stem": "从6个不同元素中任取2个，组合数C(n,2)最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "6",
+   "30",
+   "36",
+   "15"
+  ],
+  "answerIndex": 3,
+  "explanation": "C(n,2)=n(n-1)/2=15。",
+  "kpTags": [
+   "排列组合",
+   "计数原理"
+  ],
+  "relatedMiniGame": "SP4-board",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000302",
+  "subject": "math",
+  "chapter": "概率统计应用",
+  "difficulty": 3,
+  "stem": "数据组{2, 3, 5}的平均数最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "5",
+   "2",
+   "10",
+   "3.33"
+  ],
+  "answerIndex": 3,
+  "explanation": "平均数=(2+3+5)/3=3.33。",
+  "kpTags": [
+   "概率统计",
+   "平均数"
+  ],
+  "relatedMiniGame": "SP6",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000303",
+  "subject": "math",
+  "chapter": "概率统计应用",
+  "difficulty": 4,
+  "stem": "某事件每次发生概率0.5，独立试验3次，发生次数的期望最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "3",
+   "0.5",
+   "6.0",
+   "1.5"
+  ],
+  "answerIndex": 3,
+  "explanation": "二项分布期望E=np=1.5。",
+  "kpTags": [
+   "概率统计",
+   "期望"
+  ],
+  "relatedMiniGame": "SP7",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000304",
+  "subject": "math",
+  "chapter": "概率统计应用",
+  "difficulty": 4,
+  "stem": "从6个完全相同的结果中任取一个，每个结果等可能，取到特定结果的概率最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "0.333",
+   "1",
+   "0.167",
+   "0.143"
+  ],
+  "answerIndex": 2,
+  "explanation": "古典概型P=1/n=0.167。",
+  "kpTags": [
+   "概率",
+   "计数原理"
+  ],
+  "relatedMiniGame": "G97",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000305",
+  "subject": "math",
+  "chapter": "概率统计应用",
+  "difficulty": 5,
+  "stem": "从7个不同元素中任取2个，组合数C(n,2)最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "42",
+   "49",
+   "21",
+   "7"
+  ],
+  "answerIndex": 2,
+  "explanation": "C(n,2)=n(n-1)/2=21。",
+  "kpTags": [
+   "排列组合",
+   "计数原理"
+  ],
+  "relatedMiniGame": "G92",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000306",
+  "subject": "math",
+  "chapter": "概率统计应用",
+  "difficulty": 4,
+  "stem": "数据组{3, 3, 5}的平均数最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "3",
+   "11",
+   "3.67",
+   "5"
+  ],
+  "answerIndex": 2,
+  "explanation": "平均数=(3+3+5)/3=3.67。",
+  "kpTags": [
+   "概率统计",
+   "平均数"
+  ],
+  "relatedMiniGame": "G88",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000307",
+  "subject": "math",
+  "chapter": "概率统计应用",
+  "difficulty": 4,
+  "stem": "某事件每次发生概率0.5，独立试验4次，发生次数的期望最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "0.5",
+   "8.0",
+   "2.0",
+   "4"
+  ],
+  "answerIndex": 2,
+  "explanation": "二项分布期望E=np=2.0。",
+  "kpTags": [
+   "概率统计",
+   "期望"
+  ],
+  "relatedMiniGame": "G91",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000308",
+  "subject": "math",
+  "chapter": "概率统计应用",
+  "difficulty": 5,
+  "stem": "从7个完全相同的结果中任取一个，每个结果等可能，取到特定结果的概率最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "1",
+   "0.143",
+   "0.125",
+   "0.286"
+  ],
+  "answerIndex": 1,
+  "explanation": "古典概型P=1/n=0.143。",
+  "kpTags": [
+   "概率",
+   "计数原理"
+  ],
+  "relatedMiniGame": "SP13",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000309",
+  "subject": "math",
+  "chapter": "概率统计应用",
+  "difficulty": 4,
+  "stem": "从8个不同元素中任取2个，组合数C(n,2)最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "64",
+   "28",
+   "8",
+   "56"
+  ],
+  "answerIndex": 1,
+  "explanation": "C(n,2)=n(n-1)/2=28。",
+  "kpTags": [
+   "排列组合",
+   "计数原理"
+  ],
+  "relatedMiniGame": "SP14",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000310",
+  "subject": "math",
+  "chapter": "概率统计应用",
+  "difficulty": 4,
+  "stem": "数据组{4, 3, 5}的平均数最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "12",
+   "4.0",
+   "5",
+   "3"
+  ],
+  "answerIndex": 1,
+  "explanation": "平均数=(4+3+5)/3=4.00。",
+  "kpTags": [
+   "概率统计",
+   "平均数"
+  ],
+  "relatedMiniGame": "SP15",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000311",
+  "subject": "math",
+  "chapter": "概率统计应用",
+  "difficulty": 5,
+  "stem": "某事件每次发生概率0.5，独立试验5次，发生次数的期望最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "10.0",
+   "2.5",
+   "5",
+   "0.5"
+  ],
+  "answerIndex": 1,
+  "explanation": "二项分布期望E=np=2.5。",
+  "kpTags": [
+   "概率统计",
+   "期望"
+  ],
+  "relatedMiniGame": "SP4-rhythm",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000312",
+  "subject": "math",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "测速灵阵记录位移-时间关系s=v₀t+½at²（v₀=3 m/s，a=3 m/s²）。结合数学导数与物理运动学，t=4 s时瞬时速度最接近下列哪一项？",
+  "options": [
+   "6 m/s",
+   "12 m/s",
+   "12 m/s",
+   "15 m/s"
+  ],
+  "answerIndex": 3,
+  "explanation": "v=ds/dt=v₀+at=15.0 m/s，数学导数与物理运动学综合。",
+  "kpTags": [
+   "导数与单调性",
+   "匀变速直线运动",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP4-board",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "math+physics",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000313",
+  "subject": "math",
+  "chapter": "跨学科综合",
+  "difficulty": 3,
+  "stem": "3 mol物质所含微粒数约为（NA=6.02×10²³）。结合数学指数运算与化学物质的量，最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "6.02e+23 个",
+   "3 个",
+   "2.0066666666666668e+23 个",
+   "1.806e+24 个"
+  ],
+  "answerIndex": 3,
+  "explanation": "N=n·NA=2e+24，数学与化学综合。",
+  "kpTags": [
+   "物质的量",
+   "指数运算",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP6",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "math+chemistry",
+   "chemistry+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000314",
+  "subject": "math",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "地球赤道半径约6500 km，自转周期24 h。结合数学圆周长公式与地理地球运动、物理圆周运动，赤道自转线速度最接近下列哪一项？",
+  "options": [
+   "945.4 m/s",
+   "75.2 m/s",
+   "236.3 m/s",
+   "472.7 m/s"
+  ],
+  "answerIndex": 3,
+  "explanation": "v=2πR/T≈472.7 m/s，数学、地理、物理综合。",
+  "kpTags": [
+   "圆周运动",
+   "地球自转",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP7",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "math+geography",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000315",
+  "subject": "math",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "英文报告：mass=3 kg, speed=4 m/s。结合英语数据阅读与数学平方运算、物理动能公式，动能最接近下列哪一项？",
+  "options": [
+   "48 J",
+   "12 J",
+   "6.0 J",
+   "24.0 J"
+  ],
+  "answerIndex": 3,
+  "explanation": "Ek=½mv²=24.0 J，英语、数学、物理综合。",
+  "kpTags": [
+   "动能定理",
+   "阅读推断",
+   "综合应用"
+  ],
+  "relatedMiniGame": "G97",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "math+english",
+   "english+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000316",
+  "subject": "math",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "《九章算术》载“今有物，日增二”。结合文言文计数与数学等差数列求和，首项2、公差2、前5项和S₅最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "10",
+   "10",
+   "10",
+   "30.0"
+  ],
+  "answerIndex": 3,
+  "explanation": "S₅=5a₁+10d=30，文言文与数学综合。",
+  "kpTags": [
+   "等差数列",
+   "求和公式",
+   "文言文"
+  ],
+  "relatedMiniGame": "G92",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "math+chinese",
+   "chinese+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000317",
+  "subject": "math",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "反应吸热120 J对外做功40 J。结合数学守恒方程与化学反应热、物理热力学第一定律，内能变化最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "160 J",
+   "40 J",
+   "-80 J",
+   "80 J"
+  ],
+  "answerIndex": 3,
+  "explanation": "ΔU=Q-W=80 J，数学、化学、物理综合。",
+  "kpTags": [
+   "热力学第一定律",
+   "反应热",
+   "能量守恒"
+  ],
+  "relatedMiniGame": "G88",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "math+physics",
+   "chemistry+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000318",
+  "subject": "math",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "海面波浪波长3 m、频率5 Hz。结合数学乘法与地理海洋水文、物理机械波，波速最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "0.6 m/s",
+   "1.7 m/s",
+   "8 m/s",
+   "15 m/s"
+  ],
+  "answerIndex": 3,
+  "explanation": "v=λf=15 m/s，数学、地理、物理综合。",
+  "kpTags": [
+   "机械波",
+   "洋流",
+   "综合应用"
+  ],
+  "relatedMiniGame": "G91",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "math+geography",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000319",
+  "subject": "math",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "结合英语翻译与数学图表分析，下列处理中英双语数据图表的方法，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "翻译图表只需直译文字",
+   "图表数据无需核对单位",
+   "中英翻译与数据无关",
+   "翻译数据图表时，应先明确横纵轴含义再换算单位"
+  ],
+  "answerIndex": 3,
+  "explanation": "跨学科图表分析需先明确坐标含义与单位。",
+  "kpTags": [
+   "阅读推断",
+   "综合应用",
+   "翻译"
+  ],
+  "relatedMiniGame": "SP13",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "math+english",
+   "english+chinese"
+  ]
+ },
+ {
+  "id": "q-batch16-000320",
+  "subject": "math",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "湖水磷酸盐浓度0.5 mol/L、体积100 L。结合数学比例计算与化学浓度、地理水体富营养化，物质的量最接近下列哪一项？",
+  "options": [
+   "50.0 mol",
+   "0.5 mol",
+   "0.1 mol",
+   "0.05 mol"
+  ],
+  "answerIndex": 3,
+  "explanation": "n=cV=0.050 mol，数学、化学、地理综合。",
+  "kpTags": [
+   "物质的量浓度",
+   "富营养化",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP14",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "math+chemistry",
+   "chemistry+geography"
+  ]
+ },
+ {
+  "id": "q-batch16-000321",
+  "subject": "math",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "英文实验报告：kinetic energy of mass 2 kg at 4 m/s。结合英语阅读与数学运算、物理动能，动能最接近下列哪一项？",
+  "options": [
+   "32 J",
+   "8 J",
+   "4.0 J",
+   "16.0 J"
+  ],
+  "answerIndex": 3,
+  "explanation": "Ek=½mv²=16.0 J，英语、数学、物理综合。",
+  "kpTags": [
+   "动能定理",
+   "阅读推断",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP15",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "math+english",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000322",
+  "subject": "math",
+  "chapter": "跨学科综合",
+  "difficulty": 3,
+  "stem": "地图上两点东西向距离4 km、南北向距离4 km。结合数学勾股定理与地理地图比例尺，两点直线距离最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "8",
+   "0",
+   "16",
+   "5.7"
+  ],
+  "answerIndex": 3,
+  "explanation": "d=√(a²+b²)=5.7 km，数学与地理综合。",
+  "kpTags": [
+   "勾股定理",
+   "地图",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP4-rhythm",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "math+geography",
+   "geography+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000323",
+  "subject": "math",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "弟子初速3 m/s、加速度3 m/s²运动4 s。结合数学二次函数与物理运动学、化学实验计时，位移最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "12 m",
+   "24.0 m",
+   "15 m",
+   "36.0 m"
+  ],
+  "answerIndex": 3,
+  "explanation": "s=v₀t+½at²=36.0 m，数学、物理、化学实验综合。",
+  "kpTags": [
+   "匀变速直线运动",
+   "二次函数",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP4-board",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "math+physics",
+   "physics+chemistry"
+  ]
+ },
+ {
+  "id": "q-batch16-000324",
+  "subject": "math",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "测速灵阵记录位移-时间关系s=v₀t+½at²（v₀=4 m/s，a=3 m/s²）。结合数学导数与物理运动学，t=4 s时瞬时速度最接近下列哪一项？",
+  "options": [
+   "12 m/s",
+   "16 m/s",
+   "16 m/s",
+   "7 m/s"
+  ],
+  "answerIndex": 2,
+  "explanation": "v=ds/dt=v₀+at=16.0 m/s，数学导数与物理运动学综合。",
+  "kpTags": [
+   "导数与单调性",
+   "匀变速直线运动",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP6",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "math+physics",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000325",
+  "subject": "math",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "4 mol物质所含微粒数约为（NA=6.02×10²³）。结合数学指数运算与化学物质的量，最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "4 个",
+   "1.505e+23 个",
+   "2.408e+24 个",
+   "6.02e+23 个"
+  ],
+  "answerIndex": 2,
+  "explanation": "N=n·NA=2e+24，数学与化学综合。",
+  "kpTags": [
+   "物质的量",
+   "指数运算",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP7",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "math+chemistry",
+   "chemistry+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000326",
+  "subject": "math",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "地球赤道半径约6600 km，自转周期24 h。结合数学圆周长公式与地理地球运动、物理圆周运动，赤道自转线速度最接近下列哪一项？",
+  "options": [
+   "76.4 m/s",
+   "240.0 m/s",
+   "480.0 m/s",
+   "959.9 m/s"
+  ],
+  "answerIndex": 2,
+  "explanation": "v=2πR/T≈480.0 m/s，数学、地理、物理综合。",
+  "kpTags": [
+   "圆周运动",
+   "地球自转",
+   "综合应用"
+  ],
+  "relatedMiniGame": "G97",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "math+geography",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000327",
+  "subject": "math",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "英文报告：mass=4 kg, speed=5 m/s。结合英语数据阅读与数学平方运算、物理动能公式，动能最接近下列哪一项？",
+  "options": [
+   "20 J",
+   "10.0 J",
+   "50.0 J",
+   "100 J"
+  ],
+  "answerIndex": 2,
+  "explanation": "Ek=½mv²=50.0 J，英语、数学、物理综合。",
+  "kpTags": [
+   "动能定理",
+   "阅读推断",
+   "综合应用"
+  ],
+  "relatedMiniGame": "G92",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "math+english",
+   "english+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000328",
+  "subject": "math",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "《九章算术》载“今有物，日增二”。结合文言文计数与数学等差数列求和，首项3、公差2、前5项和S₅最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "11",
+   "10",
+   "35.0",
+   "15"
+  ],
+  "answerIndex": 2,
+  "explanation": "S₅=5a₁+10d=35，文言文与数学综合。",
+  "kpTags": [
+   "等差数列",
+   "求和公式",
+   "文言文"
+  ],
+  "relatedMiniGame": "G88",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "math+chinese",
+   "chinese+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000329",
+  "subject": "math",
+  "chapter": "跨学科综合",
+  "difficulty": 3,
+  "stem": "反应吸热140 J对外做功40 J。结合数学守恒方程与化学反应热、物理热力学第一定律，内能变化最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "40 J",
+   "-100 J",
+   "100 J",
+   "180 J"
+  ],
+  "answerIndex": 2,
+  "explanation": "ΔU=Q-W=100 J，数学、化学、物理综合。",
+  "kpTags": [
+   "热力学第一定律",
+   "反应热",
+   "能量守恒"
+  ],
+  "relatedMiniGame": "G91",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "math+physics",
+   "chemistry+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000330",
+  "subject": "math",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "海面波浪波长4 m、频率5 Hz。结合数学乘法与地理海洋水文、物理机械波，波速最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "1.2 m/s",
+   "9 m/s",
+   "20 m/s",
+   "0.8 m/s"
+  ],
+  "answerIndex": 2,
+  "explanation": "v=λf=20 m/s，数学、地理、物理综合。",
+  "kpTags": [
+   "机械波",
+   "洋流",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP13",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "math+geography",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000331",
+  "subject": "math",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "结合英语翻译与数学图表分析，下列处理中英双语数据图表的方法，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "图表数据无需核对单位",
+   "中英翻译与数据无关",
+   "翻译数据图表时，应先明确横纵轴含义再换算单位",
+   "翻译图表只需直译文字"
+  ],
+  "answerIndex": 2,
+  "explanation": "跨学科图表分析需先明确坐标含义与单位。",
+  "kpTags": [
+   "阅读推断",
+   "综合应用",
+   "翻译"
+  ],
+  "relatedMiniGame": "SP14",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "math+english",
+   "english+chinese"
+  ]
+ },
+ {
+  "id": "q-batch16-000332",
+  "subject": "math",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "湖水磷酸盐浓度0.5 mol/L、体积100 L。结合数学比例计算与化学浓度、地理水体富营养化，物质的量最接近下列哪一项？",
+  "options": [
+   "0.5 mol",
+   "0.1 mol",
+   "0.05 mol",
+   "50.0 mol"
+  ],
+  "answerIndex": 2,
+  "explanation": "n=cV=0.050 mol，数学、化学、地理综合。",
+  "kpTags": [
+   "物质的量浓度",
+   "富营养化",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP15",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "math+chemistry",
+   "chemistry+geography"
+  ]
+ },
+ {
+  "id": "q-batch16-000333",
+  "subject": "math",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "英文实验报告：kinetic energy of mass 3 kg at 5 m/s。结合英语阅读与数学运算、物理动能，动能最接近下列哪一项？",
+  "options": [
+   "15 J",
+   "7.5 J",
+   "37.5 J",
+   "75 J"
+  ],
+  "answerIndex": 2,
+  "explanation": "Ek=½mv²=37.5 J，英语、数学、物理综合。",
+  "kpTags": [
+   "动能定理",
+   "阅读推断",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP4-rhythm",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "math+english",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000334",
+  "subject": "math",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "地图上两点东西向距离5 km、南北向距离4 km。结合数学勾股定理与地理地图比例尺，两点直线距离最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "-1",
+   "20",
+   "6.4",
+   "9"
+  ],
+  "answerIndex": 2,
+  "explanation": "d=√(a²+b²)=6.4 km，数学与地理综合。",
+  "kpTags": [
+   "勾股定理",
+   "地图",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP4-board",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "math+geography",
+   "geography+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000335",
+  "subject": "math",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "弟子初速4 m/s、加速度3 m/s²运动4 s。结合数学二次函数与物理运动学、化学实验计时，位移最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "24.0 m",
+   "16 m",
+   "40.0 m",
+   "16 m"
+  ],
+  "answerIndex": 2,
+  "explanation": "s=v₀t+½at²=40.0 m，数学、物理、化学实验综合。",
+  "kpTags": [
+   "匀变速直线运动",
+   "二次函数",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP6",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "math+physics",
+   "physics+chemistry"
+  ]
+ },
+ {
+  "id": "q-batch16-000336",
+  "subject": "math",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "测速灵阵记录位移-时间关系s=v₀t+½at²（v₀=5 m/s，a=3 m/s²）。结合数学导数与物理运动学，t=4 s时瞬时速度最接近下列哪一项？",
+  "options": [
+   "20 m/s",
+   "17 m/s",
+   "8 m/s",
+   "12 m/s"
+  ],
+  "answerIndex": 1,
+  "explanation": "v=ds/dt=v₀+at=17.0 m/s，数学导数与物理运动学综合。",
+  "kpTags": [
+   "导数与单调性",
+   "匀变速直线运动",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP7",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "math+physics",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000337",
+  "subject": "math",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "5 mol物质所含微粒数约为（NA=6.02×10²³）。结合数学指数运算与化学物质的量，最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "1.204e+23 个",
+   "3.01e+24 个",
+   "6.02e+23 个",
+   "5 个"
+  ],
+  "answerIndex": 1,
+  "explanation": "N=n·NA=3e+24，数学与化学综合。",
+  "kpTags": [
+   "物质的量",
+   "指数运算",
+   "综合应用"
+  ],
+  "relatedMiniGame": "G97",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "math+chemistry",
+   "chemistry+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000338",
+  "subject": "math",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "地球赤道半径约6700 km，自转周期24 h。结合数学圆周长公式与地理地球运动、物理圆周运动，赤道自转线速度最接近下列哪一项？",
+  "options": [
+   "243.6 m/s",
+   "487.2 m/s",
+   "974.5 m/s",
+   "77.5 m/s"
+  ],
+  "answerIndex": 1,
+  "explanation": "v=2πR/T≈487.2 m/s，数学、地理、物理综合。",
+  "kpTags": [
+   "圆周运动",
+   "地球自转",
+   "综合应用"
+  ],
+  "relatedMiniGame": "G92",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "math+geography",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000339",
+  "subject": "math",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "英文报告：mass=5 kg, speed=6 m/s。结合英语数据阅读与数学平方运算、物理动能公式，动能最接近下列哪一项？",
+  "options": [
+   "15.0 J",
+   "90.0 J",
+   "180 J",
+   "30 J"
+  ],
+  "answerIndex": 1,
+  "explanation": "Ek=½mv²=90.0 J，英语、数学、物理综合。",
+  "kpTags": [
+   "动能定理",
+   "阅读推断",
+   "综合应用"
+  ],
+  "relatedMiniGame": "G88",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "math+english",
+   "english+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000340",
+  "subject": "math",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "《九章算术》载“今有物，日增二”。结合文言文计数与数学等差数列求和，首项4、公差2、前5项和S₅最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "10",
+   "40.0",
+   "20",
+   "12"
+  ],
+  "answerIndex": 1,
+  "explanation": "S₅=5a₁+10d=40，文言文与数学综合。",
+  "kpTags": [
+   "等差数列",
+   "求和公式",
+   "文言文"
+  ],
+  "relatedMiniGame": "G91",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "math+chinese",
+   "chinese+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000341",
+  "subject": "math",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "反应吸热160 J对外做功40 J。结合数学守恒方程与化学反应热、物理热力学第一定律，内能变化最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "-120 J",
+   "120 J",
+   "200 J",
+   "40 J"
+  ],
+  "answerIndex": 1,
+  "explanation": "ΔU=Q-W=120 J，数学、化学、物理综合。",
+  "kpTags": [
+   "热力学第一定律",
+   "反应热",
+   "能量守恒"
+  ],
+  "relatedMiniGame": "SP13",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "math+physics",
+   "chemistry+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000342",
+  "subject": "math",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "海面波浪波长5 m、频率5 Hz。结合数学乘法与地理海洋水文、物理机械波，波速最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "10 m/s",
+   "25 m/s",
+   "1.0 m/s",
+   "1.0 m/s"
+  ],
+  "answerIndex": 1,
+  "explanation": "v=λf=25 m/s，数学、地理、物理综合。",
+  "kpTags": [
+   "机械波",
+   "洋流",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP14",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "math+geography",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000343",
+  "subject": "math",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "结合英语翻译与数学图表分析，下列处理中英双语数据图表的方法，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "中英翻译与数据无关",
+   "翻译数据图表时，应先明确横纵轴含义再换算单位",
+   "翻译图表只需直译文字",
+   "图表数据无需核对单位"
+  ],
+  "answerIndex": 1,
+  "explanation": "跨学科图表分析需先明确坐标含义与单位。",
+  "kpTags": [
+   "阅读推断",
+   "综合应用",
+   "翻译"
+  ],
+  "relatedMiniGame": "SP15",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "math+english",
+   "english+chinese"
+  ]
+ },
+ {
+  "id": "q-batch16-000344",
+  "subject": "math",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "湖水磷酸盐浓度0.5 mol/L、体积100 L。结合数学比例计算与化学浓度、地理水体富营养化，物质的量最接近下列哪一项？",
+  "options": [
+   "0.1 mol",
+   "0.05 mol",
+   "50.0 mol",
+   "0.5 mol"
+  ],
+  "answerIndex": 1,
+  "explanation": "n=cV=0.050 mol，数学、化学、地理综合。",
+  "kpTags": [
+   "物质的量浓度",
+   "富营养化",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP4-rhythm",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "math+chemistry",
+   "chemistry+geography"
+  ]
+ },
+ {
+  "id": "q-batch16-000345",
+  "subject": "math",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "英文实验报告：kinetic energy of mass 4 kg at 6 m/s。结合英语阅读与数学运算、物理动能，动能最接近下列哪一项？",
+  "options": [
+   "12.0 J",
+   "72.0 J",
+   "144 J",
+   "24 J"
+  ],
+  "answerIndex": 1,
+  "explanation": "Ek=½mv²=72.0 J，英语、数学、物理综合。",
+  "kpTags": [
+   "动能定理",
+   "阅读推断",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP4-board",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "math+english",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000346",
+  "subject": "math",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "地图上两点东西向距离6 km、南北向距离4 km。结合数学勾股定理与地理地图比例尺，两点直线距离最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "24",
+   "7.2",
+   "10",
+   "-2"
+  ],
+  "answerIndex": 1,
+  "explanation": "d=√(a²+b²)=7.2 km，数学与地理综合。",
+  "kpTags": [
+   "勾股定理",
+   "地图",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP6",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "math+geography",
+   "geography+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000347",
+  "subject": "math",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "弟子初速5 m/s、加速度3 m/s²运动4 s。结合数学二次函数与物理运动学、化学实验计时，位移最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "17 m",
+   "44.0 m",
+   "20 m",
+   "24.0 m"
+  ],
+  "answerIndex": 1,
+  "explanation": "s=v₀t+½at²=44.0 m，数学、物理、化学实验综合。",
+  "kpTags": [
+   "匀变速直线运动",
+   "二次函数",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP7",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "math+physics",
+   "physics+chemistry"
+  ]
+ },
+ {
+  "id": "q-batch16-000348",
+  "subject": "math",
+  "chapter": "跨学科综合",
+  "difficulty": 3,
+  "stem": "测速灵阵记录位移-时间关系s=v₀t+½at²（v₀=6 m/s，a=3 m/s²）。结合数学导数与物理运动学，t=4 s时瞬时速度最接近下列哪一项？",
+  "options": [
+   "18 m/s",
+   "9 m/s",
+   "12 m/s",
+   "24 m/s"
+  ],
+  "answerIndex": 0,
+  "explanation": "v=ds/dt=v₀+at=18.0 m/s，数学导数与物理运动学综合。",
+  "kpTags": [
+   "导数与单调性",
+   "匀变速直线运动",
+   "综合应用"
+  ],
+  "relatedMiniGame": "G97",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "math+physics",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000349",
+  "subject": "math",
+  "chapter": "跨学科综合",
+  "difficulty": 3,
+  "stem": "6 mol物质所含微粒数约为（NA=6.02×10²³）。结合数学指数运算与化学物质的量，最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "3.612e+24 个",
+   "6.02e+23 个",
+   "6 个",
+   "1.0033333333333334e+23 个"
+  ],
+  "answerIndex": 0,
+  "explanation": "N=n·NA=4e+24，数学与化学综合。",
+  "kpTags": [
+   "物质的量",
+   "指数运算",
+   "综合应用"
+  ],
+  "relatedMiniGame": "G92",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "math+chemistry",
+   "chemistry+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000350",
+  "subject": "math",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "地球赤道半径约6800 km，自转周期24 h。结合数学圆周长公式与地理地球运动、物理圆周运动，赤道自转线速度最接近下列哪一项？",
+  "options": [
+   "494.5 m/s",
+   "989.0 m/s",
+   "78.7 m/s",
+   "247.3 m/s"
+  ],
+  "answerIndex": 0,
+  "explanation": "v=2πR/T≈494.5 m/s，数学、地理、物理综合。",
+  "kpTags": [
+   "圆周运动",
+   "地球自转",
+   "综合应用"
+  ],
+  "relatedMiniGame": "G88",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "math+geography",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000351",
+  "subject": "math",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "英文报告：mass=6 kg, speed=7 m/s。结合英语数据阅读与数学平方运算、物理动能公式，动能最接近下列哪一项？",
+  "options": [
+   "147.0 J",
+   "294 J",
+   "42 J",
+   "21.0 J"
+  ],
+  "answerIndex": 0,
+  "explanation": "Ek=½mv²=147.0 J，英语、数学、物理综合。",
+  "kpTags": [
+   "动能定理",
+   "阅读推断",
+   "综合应用"
+  ],
+  "relatedMiniGame": "G91",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "math+english",
+   "english+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000352",
+  "subject": "math",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "《九章算术》载“今有物，日增二”。结合文言文计数与数学等差数列求和，首项5、公差2、前5项和S₅最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "45.0",
+   "25",
+   "13",
+   "10"
+  ],
+  "answerIndex": 0,
+  "explanation": "S₅=5a₁+10d=45，文言文与数学综合。",
+  "kpTags": [
+   "等差数列",
+   "求和公式",
+   "文言文"
+  ],
+  "relatedMiniGame": "SP13",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "math+chinese",
+   "chinese+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000353",
+  "subject": "math",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "反应吸热180 J对外做功40 J。结合数学守恒方程与化学反应热、物理热力学第一定律，内能变化最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "140 J",
+   "220 J",
+   "40 J",
+   "-140 J"
+  ],
+  "answerIndex": 0,
+  "explanation": "ΔU=Q-W=140 J，数学、化学、物理综合。",
+  "kpTags": [
+   "热力学第一定律",
+   "反应热",
+   "能量守恒"
+  ],
+  "relatedMiniGame": "SP14",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "math+physics",
+   "chemistry+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000354",
+  "subject": "math",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "海面波浪波长6 m、频率5 Hz。结合数学乘法与地理海洋水文、物理机械波，波速最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "30 m/s",
+   "1.2 m/s",
+   "0.8 m/s",
+   "11 m/s"
+  ],
+  "answerIndex": 0,
+  "explanation": "v=λf=30 m/s，数学、地理、物理综合。",
+  "kpTags": [
+   "机械波",
+   "洋流",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP15",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "math+geography",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000355",
+  "subject": "math",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "结合英语翻译与数学图表分析，下列处理中英双语数据图表的方法，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "翻译数据图表时，应先明确横纵轴含义再换算单位",
+   "翻译图表只需直译文字",
+   "图表数据无需核对单位",
+   "中英翻译与数据无关"
+  ],
+  "answerIndex": 0,
+  "explanation": "跨学科图表分析需先明确坐标含义与单位。",
+  "kpTags": [
+   "阅读推断",
+   "综合应用",
+   "翻译"
+  ],
+  "relatedMiniGame": "SP4-rhythm",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "math+english",
+   "english+chinese"
+  ]
+ },
+ {
+  "id": "q-batch16-000356",
+  "subject": "math",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "湖水磷酸盐浓度0.5 mol/L、体积100 L。结合数学比例计算与化学浓度、地理水体富营养化，物质的量最接近下列哪一项？",
+  "options": [
+   "0.05 mol",
+   "50.0 mol",
+   "0.5 mol",
+   "0.1 mol"
+  ],
+  "answerIndex": 0,
+  "explanation": "n=cV=0.050 mol，数学、化学、地理综合。",
+  "kpTags": [
+   "物质的量浓度",
+   "富营养化",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP4-board",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "math+chemistry",
+   "chemistry+geography"
+  ]
+ },
+ {
+  "id": "q-batch16-000357",
+  "subject": "math",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "英文实验报告：kinetic energy of mass 5 kg at 7 m/s。结合英语阅读与数学运算、物理动能，动能最接近下列哪一项？",
+  "options": [
+   "122.5 J",
+   "245 J",
+   "35 J",
+   "17.5 J"
+  ],
+  "answerIndex": 0,
+  "explanation": "Ek=½mv²=122.5 J，英语、数学、物理综合。",
+  "kpTags": [
+   "动能定理",
+   "阅读推断",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP6",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "math+english",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000358",
+  "subject": "math",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "地图上两点东西向距离7 km、南北向距离4 km。结合数学勾股定理与地理地图比例尺，两点直线距离最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "8.1",
+   "11",
+   "-3",
+   "28"
+  ],
+  "answerIndex": 0,
+  "explanation": "d=√(a²+b²)=8.1 km，数学与地理综合。",
+  "kpTags": [
+   "勾股定理",
+   "地图",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP7",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "math+geography",
+   "geography+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000359",
+  "subject": "math",
+  "chapter": "跨学科综合",
+  "difficulty": 3,
+  "stem": "弟子初速6 m/s、加速度3 m/s²运动4 s。结合数学二次函数与物理运动学、化学实验计时，位移最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "48.0 m",
+   "24 m",
+   "24.0 m",
+   "18 m"
+  ],
+  "answerIndex": 0,
+  "explanation": "s=v₀t+½at²=48.0 m，数学、物理、化学实验综合。",
+  "kpTags": [
+   "匀变速直线运动",
+   "二次函数",
+   "综合应用"
+  ],
+  "relatedMiniGame": "G97",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "math+physics",
+   "physics+chemistry"
+  ]
+ }
+]

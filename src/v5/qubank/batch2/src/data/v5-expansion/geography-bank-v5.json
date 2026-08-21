@@ -1,0 +1,367 @@
+{
+ "subject": "geography",
+ "version": "v5-stub",
+ "count": 8,
+ "items": [
+  {
+   "id": "v5-geography-001",
+   "v": 3,
+   "subject": "geography",
+   "branch": "自然地理",
+   "points": [
+    "地理·自然地理"
+   ],
+   "difficulty": 1,
+   "type": "single",
+   "stem": "（占位题 1）地理 学科 自然地理 分支示例题面",
+   "options": [
+    {
+     "key": "A",
+     "text": "选项一"
+    },
+    {
+     "key": "B",
+     "text": "选项二"
+    },
+    {
+     "key": "C",
+     "text": "选项三"
+    },
+    {
+     "key": "D",
+     "text": "选项四"
+    }
+   ],
+   "answer": {
+    "key": "A",
+    "explanation": "占位解析"
+   },
+   "sourceTags": [
+    "v5-stub"
+   ],
+   "relatedPoints": [],
+   "estimatedSec": 60,
+   "mediaRef": {
+    "img": null,
+    "audio": null,
+    "formula": null
+   },
+   "version": "v5"
+  },
+  {
+   "id": "v5-geography-002",
+   "v": 3,
+   "subject": "geography",
+   "branch": "人文地理",
+   "points": [
+    "地理·人文地理"
+   ],
+   "difficulty": 2,
+   "type": "single",
+   "stem": "（占位题 2）地理 学科 人文地理 分支示例题面",
+   "options": [
+    {
+     "key": "A",
+     "text": "选项一"
+    },
+    {
+     "key": "B",
+     "text": "选项二"
+    },
+    {
+     "key": "C",
+     "text": "选项三"
+    },
+    {
+     "key": "D",
+     "text": "选项四"
+    }
+   ],
+   "answer": {
+    "key": "A",
+    "explanation": "占位解析"
+   },
+   "sourceTags": [
+    "v5-stub"
+   ],
+   "relatedPoints": [],
+   "estimatedSec": 60,
+   "mediaRef": {
+    "img": null,
+    "audio": null,
+    "formula": null
+   },
+   "version": "v5"
+  },
+  {
+   "id": "v5-geography-003",
+   "v": 3,
+   "subject": "geography",
+   "branch": "区域地理",
+   "points": [
+    "地理·区域地理"
+   ],
+   "difficulty": 3,
+   "type": "single",
+   "stem": "（占位题 3）地理 学科 区域地理 分支示例题面",
+   "options": [
+    {
+     "key": "A",
+     "text": "选项一"
+    },
+    {
+     "key": "B",
+     "text": "选项二"
+    },
+    {
+     "key": "C",
+     "text": "选项三"
+    },
+    {
+     "key": "D",
+     "text": "选项四"
+    }
+   ],
+   "answer": {
+    "key": "A",
+    "explanation": "占位解析"
+   },
+   "sourceTags": [
+    "v5-stub"
+   ],
+   "relatedPoints": [],
+   "estimatedSec": 60,
+   "mediaRef": {
+    "img": null,
+    "audio": null,
+    "formula": null
+   },
+   "version": "v5"
+  },
+  {
+   "id": "v5-geography-004",
+   "v": 3,
+   "subject": "geography",
+   "branch": "地图",
+   "points": [
+    "地理·地图"
+   ],
+   "difficulty": 4,
+   "type": "single",
+   "stem": "（占位题 4）地理 学科 地图 分支示例题面",
+   "options": [
+    {
+     "key": "A",
+     "text": "选项一"
+    },
+    {
+     "key": "B",
+     "text": "选项二"
+    },
+    {
+     "key": "C",
+     "text": "选项三"
+    },
+    {
+     "key": "D",
+     "text": "选项四"
+    }
+   ],
+   "answer": {
+    "key": "A",
+    "explanation": "占位解析"
+   },
+   "sourceTags": [
+    "v5-stub"
+   ],
+   "relatedPoints": [],
+   "estimatedSec": 60,
+   "mediaRef": {
+    "img": null,
+    "audio": null,
+    "formula": null
+   },
+   "version": "v5"
+  },
+  {
+   "id": "v5-geography-005",
+   "v": 3,
+   "subject": "geography",
+   "branch": "气候",
+   "points": [
+    "地理·气候"
+   ],
+   "difficulty": 5,
+   "type": "single",
+   "stem": "（占位题 5）地理 学科 气候 分支示例题面",
+   "options": [
+    {
+     "key": "A",
+     "text": "选项一"
+    },
+    {
+     "key": "B",
+     "text": "选项二"
+    },
+    {
+     "key": "C",
+     "text": "选项三"
+    },
+    {
+     "key": "D",
+     "text": "选项四"
+    }
+   ],
+   "answer": {
+    "key": "A",
+    "explanation": "占位解析"
+   },
+   "sourceTags": [
+    "v5-stub"
+   ],
+   "relatedPoints": [],
+   "estimatedSec": 60,
+   "mediaRef": {
+    "img": null,
+    "audio": null,
+    "formula": null
+   },
+   "version": "v5"
+  },
+  {
+   "id": "v5-geography-006",
+   "v": 3,
+   "subject": "geography",
+   "branch": "自然地理",
+   "points": [
+    "地理·自然地理"
+   ],
+   "difficulty": 1,
+   "type": "single",
+   "stem": "（占位题 6）地理 学科 自然地理 分支示例题面",
+   "options": [
+    {
+     "key": "A",
+     "text": "选项一"
+    },
+    {
+     "key": "B",
+     "text": "选项二"
+    },
+    {
+     "key": "C",
+     "text": "选项三"
+    },
+    {
+     "key": "D",
+     "text": "选项四"
+    }
+   ],
+   "answer": {
+    "key": "A",
+    "explanation": "占位解析"
+   },
+   "sourceTags": [
+    "v5-stub"
+   ],
+   "relatedPoints": [],
+   "estimatedSec": 60,
+   "mediaRef": {
+    "img": null,
+    "audio": null,
+    "formula": null
+   },
+   "version": "v5"
+  },
+  {
+   "id": "v5-geography-007",
+   "v": 3,
+   "subject": "geography",
+   "branch": "人文地理",
+   "points": [
+    "地理·人文地理"
+   ],
+   "difficulty": 2,
+   "type": "single",
+   "stem": "（占位题 7）地理 学科 人文地理 分支示例题面",
+   "options": [
+    {
+     "key": "A",
+     "text": "选项一"
+    },
+    {
+     "key": "B",
+     "text": "选项二"
+    },
+    {
+     "key": "C",
+     "text": "选项三"
+    },
+    {
+     "key": "D",
+     "text": "选项四"
+    }
+   ],
+   "answer": {
+    "key": "A",
+    "explanation": "占位解析"
+   },
+   "sourceTags": [
+    "v5-stub"
+   ],
+   "relatedPoints": [],
+   "estimatedSec": 60,
+   "mediaRef": {
+    "img": null,
+    "audio": null,
+    "formula": null
+   },
+   "version": "v5"
+  },
+  {
+   "id": "v5-geography-008",
+   "v": 3,
+   "subject": "geography",
+   "branch": "区域地理",
+   "points": [
+    "地理·区域地理"
+   ],
+   "difficulty": 3,
+   "type": "single",
+   "stem": "（占位题 8）地理 学科 区域地理 分支示例题面",
+   "options": [
+    {
+     "key": "A",
+     "text": "选项一"
+    },
+    {
+     "key": "B",
+     "text": "选项二"
+    },
+    {
+     "key": "C",
+     "text": "选项三"
+    },
+    {
+     "key": "D",
+     "text": "选项四"
+    }
+   ],
+   "answer": {
+    "key": "A",
+    "explanation": "占位解析"
+   },
+   "sourceTags": [
+    "v5-stub"
+   ],
+   "relatedPoints": [],
+   "estimatedSec": 60,
+   "mediaRef": {
+    "img": null,
+    "audio": null,
+    "formula": null
+   },
+   "version": "v5"
+  }
+ ]
+}

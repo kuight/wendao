@@ -1,0 +1,136 @@
+{
+  "version": "5.0-batch16",
+  "created_at": "2026-08-20",
+  "main_sha": "4e86b2d57cb1356e706b8ce20dc9899505314122",
+  "total_items": 600,
+  "items_per_subject": {
+    "physics": 120,
+    "chemistry": 120,
+    "math": 120,
+    "chinese": 80,
+    "english": 80,
+    "geography": 80
+  },
+  "difficulty_histogram": {
+    "3": 90,
+    "4": 330,
+    "5": 180
+  },
+  "cross_subject_ratio": 0.4,
+  "subjects": {
+    "physics": {
+      "count": 120,
+      "chapters": {
+        "力学应用": 12,
+        "电磁应用": 12,
+        "光学&近代应用": 12,
+        "热学应用": 12,
+        "振动&波应用": 12,
+        "实验设计": 12,
+        "跨学科综合": 48
+      },
+      "difficulty_distribution": {
+        "4": 66,
+        "3": 18,
+        "5": 36
+      },
+      "cross_subject_items": 48,
+      "sha256": "7ff6d148895d3437a8e927f956bdf2654dbec04208d612999bd2941e8d5e0d5c"
+    },
+    "chemistry": {
+      "count": 120,
+      "chapters": {
+        "反应原理应用": 12,
+        "物质结构应用": 12,
+        "有机合成路线": 12,
+        "化学实验设计": 12,
+        "化工流程": 12,
+        "化学与社会": 12,
+        "跨学科综合": 48
+      },
+      "difficulty_distribution": {
+        "4": 66,
+        "5": 36,
+        "3": 18
+      },
+      "cross_subject_items": 48,
+      "sha256": "31d7b3f92db990406f80d63e5734d72f428b769f8930dd6a0bcfe91b97fdf15b"
+    },
+    "math": {
+      "count": 120,
+      "chapters": {
+        "函数与导数应用": 12,
+        "三角与向量应用": 12,
+        "数列与不等式应用": 12,
+        "解析几何应用": 12,
+        "立体几何应用": 12,
+        "概率统计应用": 12,
+        "跨学科综合": 48
+      },
+      "difficulty_distribution": {
+        "4": 66,
+        "3": 18,
+        "5": 36
+      },
+      "cross_subject_items": 48,
+      "sha256": "22672985521779d0caad17c48d9cbab3b8bcfca7552db481fff63ff229f51635"
+    },
+    "chinese": {
+      "count": 80,
+      "chapters": {
+        "现代文论述": 8,
+        "文言文精读": 8,
+        "古诗词比较": 8,
+        "语言运用": 8,
+        "作文素材": 8,
+        "基础知识": 8,
+        "跨学科综合": 32
+      },
+      "difficulty_distribution": {
+        "4": 44,
+        "3": 12,
+        "5": 24
+      },
+      "cross_subject_items": 32,
+      "sha256": "60ebc49b65de7a5b5cd07aef00215a4f0e0883978ce57e1ae7f72541af5d0028"
+    },
+    "english": {
+      "count": 80,
+      "chapters": {
+        "听力应用": 8,
+        "阅读推断": 8,
+        "完形填空语境": 8,
+        "语法填空": 8,
+        "应用文进阶": 8,
+        "读后续写": 8,
+        "跨学科综合": 32
+      },
+      "difficulty_distribution": {
+        "4": 44,
+        "5": 24,
+        "3": 12
+      },
+      "cross_subject_items": 32,
+      "sha256": "d933b8fbb57e4d6668c2608c9182bdc540d6948f7c07133b9b8862801b3fc0f8"
+    },
+    "geography": {
+      "count": 80,
+      "chapters": {
+        "自然地理应用": 8,
+        "人文地理应用": 8,
+        "区域可持续发展分析": 8,
+        "选修地理应用": 8,
+        "环境保护与时事": 8,
+        "综合应用": 8,
+        "跨学科综合": 32
+      },
+      "difficulty_distribution": {
+        "3": 12,
+        "4": 44,
+        "5": 24
+      },
+      "cross_subject_items": 32,
+      "sha256": "d7fc435b9f1e0605a1a651be2cf8c38a23ef8b775740ee6372eb35520543f753"
+    }
+  }
+}
