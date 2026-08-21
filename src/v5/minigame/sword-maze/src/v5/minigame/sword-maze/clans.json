@@ -1,0 +1,8 @@
+{"version":1,"clans":[
+{"id":"qingyun","name":"青云剑宗","color":"#7dd9ff","accent":"#2b6cb0","desc":"以水为灵，剑势绵长"},
+{"id":"chiyan","name":"赤焰剑宗","color":"#ff7e6b","accent":"#c0392b","desc":"以火为灵，剑势刚猛"},
+{"id":"xuanbing","name":"玄冰剑宗","color":"#9cefff","accent":"#1d6f8f","desc":"以冰为灵，剑势凝滞"},
+{"id":"zixiao","name":"紫霄剑宗","color":"#c8a9ff","accent":"#6c3fa0","desc":"以雷为灵，剑势迅疾"},
+{"id":"jinwu","name":"金乌剑宗","color":"#ffd481","accent":"#b8860b","desc":"以光为灵，剑势煌煌"},
+{"id":"youming","name":"幽冥剑宗","color":"#b08cff","accent":"#4a2a6b","desc":"以影为灵，剑势诡谲"}
+]}

@@ -1,0 +1,11 @@
+{
+  "created_at": "2026-08-19",
+  "main_sha_verified": "4e86b2d57cb1356e706b8ce20dc9899505314122",
+  "playbook": "docs-v5-push-playbook.md",
+  "script": "push-v5-final.sh",
+  "readme": "README.md",
+  "local_only": true,
+  "remote_actions_executed": false,
+  "missing_sources": ["independent integration-hub directory", "SP4 rhythm/boardgame local AI Drive package"],
+  "limits": {"playbook_bytes_max": 30720, "script_bytes_max": 10240, "readme_bytes_max": 4096}
+}
