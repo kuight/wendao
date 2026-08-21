@@ -1,0 +1,441 @@
+{
+  "schema": "catalog-v3",
+  "version": "v5.0.0-rc.2",
+  "entry_count": 48,
+  "main_sha": "4e86b2d57cb1356e706b8ce20dc9899505314122",
+  "generated_at": "2026-08-21T06:45:00Z",
+  "entries": [
+    {
+      "id": "v5_tile_training_courtyard",
+      "kind": "tile",
+      "portal_role": "gameplay-tile",
+      "subject_tag": "meta",
+      "width": 1024,
+      "height": 1024,
+      "url": "https://www.genspark.ai/api/files/s/pHBwmVqE"
+    },
+    {
+      "id": "v5_sprite_cultivator_sheet",
+      "kind": "sprite",
+      "portal_role": "character-portrait",
+      "subject_tag": "meta",
+      "width": 2048,
+      "height": 1152,
+      "url": "https://www.genspark.ai/api/files/s/8JneNMmI"
+    },
+    {
+      "id": "v5_icon_subject_panel",
+      "kind": "icon-set",
+      "portal_role": "icon-set",
+      "subject_tag": "mixed",
+      "width": 2048,
+      "height": 2048,
+      "url": "https://www.genspark.ai/api/files/s/vKBde28F"
+    },
+    {
+      "id": "v5_card_sect_elder",
+      "kind": "card",
+      "portal_role": "collectible-card",
+      "subject_tag": "meta",
+      "width": 1920,
+      "height": 2560,
+      "url": "https://www.genspark.ai/api/files/s/wFmfmMuF"
+    },
+    {
+      "id": "v5_tile_spirit_pond_dock",
+      "kind": "tile",
+      "portal_role": "gameplay-tile",
+      "subject_tag": "mixed",
+      "width": 1024,
+      "height": 1024,
+      "url": "https://www.genspark.ai/api/files/s/t659NXkU"
+    },
+    {
+      "id": "v5_sprite_male_cultivator_sheet",
+      "kind": "sprite",
+      "portal_role": "character-portrait",
+      "subject_tag": "meta",
+      "width": 2048,
+      "height": 1152,
+      "url": "https://www.genspark.ai/api/files/s/jrU3DFHD"
+    },
+    {
+      "id": "v5_icon_nav_extended",
+      "kind": "icon-set",
+      "portal_role": "icon-set",
+      "subject_tag": "mixed",
+      "width": 2048,
+      "height": 1536,
+      "url": "https://www.genspark.ai/api/files/s/iBJGFs5S"
+    },
+    {
+      "id": "v5_card_lore_lady",
+      "kind": "card",
+      "portal_role": "collectible-card",
+      "subject_tag": "mixed",
+      "width": 1920,
+      "height": 2560,
+      "url": "https://www.genspark.ai/api/files/s/MHw4ywYR"
+    },
+    {
+      "id": "v5_worldmap_isometric",
+      "kind": "tile",
+      "portal_role": "backdrop",
+      "subject_tag": "mixed",
+      "width": 1024,
+      "height": 1024,
+      "url": "https://www.genspark.ai/api/files/s/V6j92DKO"
+    },
+    {
+      "id": "v5_boss_battle_key",
+      "kind": "ui",
+      "portal_role": "backdrop",
+      "subject_tag": "meta",
+      "width": 2048,
+      "height": 1152,
+      "url": "https://www.genspark.ai/api/files/s/FdMgvQ9Y"
+    },
+    {
+      "id": "v5_titlescreen_panorama",
+      "kind": "tile",
+      "portal_role": "backdrop",
+      "subject_tag": "mixed",
+      "width": 2048,
+      "height": 2048,
+      "url": "https://www.genspark.ai/api/files/s/n84qYl8M"
+    },
+    {
+      "id": "v5_card_disciple_warrior",
+      "kind": "card",
+      "portal_role": "collectible-card",
+      "subject_tag": "meta",
+      "width": 1920,
+      "height": 2560,
+      "url": "https://www.genspark.ai/api/files/s/zn84Bt3N"
+    },
+    {
+      "id": "v5_tile_script_library",
+      "kind": "tile",
+      "portal_role": "gameplay-tile",
+      "subject_tag": "mixed",
+      "width": 1024,
+      "height": 1024,
+      "url": "https://www.genspark.ai/api/files/s/CQbRRSiT"
+    },
+    {
+      "id": "v5_sprite_librarian_elder_sheet",
+      "kind": "sprite",
+      "portal_role": "character-portrait",
+      "subject_tag": "meta",
+      "width": 2048,
+      "height": 1152,
+      "url": "https://www.genspark.ai/api/files/s/B2mBMS9n"
+    },
+    {
+      "id": "v5_ui_toast_set",
+      "kind": "ui",
+      "portal_role": "hud",
+      "subject_tag": "mixed",
+      "width": 2048,
+      "height": 1536,
+      "url": "https://www.genspark.ai/api/files/s/kdPJo7To"
+    },
+    {
+      "id": "v5_card_heroine_archer",
+      "kind": "card",
+      "portal_role": "collectible-card",
+      "subject_tag": "meta",
+      "width": 1920,
+      "height": 2560,
+      "url": "https://www.genspark.ai/api/files/s/hOND7S1D"
+    },
+    {
+      "id": "v5_tile_herb_garden",
+      "kind": "tile",
+      "portal_role": "gameplay-tile",
+      "subject_tag": "mixed",
+      "width": 1024,
+      "height": 1024,
+      "url": "https://www.genspark.ai/api/files/s/ElduqfEd"
+    },
+    {
+      "id": "v5_sprite_herbalist_girl_sheet",
+      "kind": "sprite",
+      "portal_role": "character-portrait",
+      "subject_tag": "meta",
+      "width": 2048,
+      "height": 1152,
+      "url": "https://www.genspark.ai/api/files/s/cE6blU6A"
+    },
+    {
+      "id": "v5_ui_world_map_panel",
+      "kind": "ui",
+      "portal_role": "hud",
+      "subject_tag": "mixed",
+      "width": 2048,
+      "height": 1536,
+      "url": "https://www.genspark.ai/api/files/s/JSZcFzJy"
+    },
+    {
+      "id": "v5_card_herbalist_mage",
+      "kind": "card",
+      "portal_role": "collectible-card",
+      "subject_tag": "meta",
+      "width": 1920,
+      "height": 2560,
+      "url": "https://www.genspark.ai/api/files/s/MfolF3R5"
+    },
+    {
+      "id": "v5_tile_sect_hall",
+      "kind": "tile",
+      "portal_role": "gameplay-tile",
+      "subject_tag": "mixed",
+      "width": 1024,
+      "height": 1024,
+      "url": "https://www.genspark.ai/api/files/s/6T1w54Dq"
+    },
+    {
+      "id": "v5_sprite_sect_master_sheet",
+      "kind": "sprite",
+      "portal_role": "character-portrait",
+      "subject_tag": "meta",
+      "width": 2048,
+      "height": 1152,
+      "url": "https://www.genspark.ai/api/files/s/Y2dmFVtr"
+    },
+    {
+      "id": "v5_ui_portal_sidebar",
+      "kind": "ui",
+      "portal_role": "hud",
+      "subject_tag": "mixed",
+      "width": 2048,
+      "height": 1536,
+      "url": "https://www.genspark.ai/api/files/s/6hEcjR1O"
+    },
+    {
+      "id": "v5_card_chief_disciple",
+      "kind": "card",
+      "portal_role": "collectible-card",
+      "subject_tag": "meta",
+      "width": 1920,
+      "height": 2560,
+      "url": "https://www.genspark.ai/api/files/s/8HCb1WjW"
+    },
+    {
+      "id": "v5_tile_cliff_training_arena",
+      "kind": "tile",
+      "portal_role": "gameplay-tile",
+      "subject_tag": "physics",
+      "width": null,
+      "height": null,
+      "url": null
+    },
+    {
+      "id": "v5_sprite_martial_tutor_girl_sheet",
+      "kind": "sprite",
+      "portal_role": "character-portrait",
+      "subject_tag": "meta",
+      "width": null,
+      "height": null,
+      "url": null
+    },
+    {
+      "id": "v5_ui_tutorial_card",
+      "kind": "ui",
+      "portal_role": "hud",
+      "subject_tag": "mixed",
+      "width": null,
+      "height": null,
+      "url": null
+    },
+    {
+      "id": "v5_card_martial_tutor",
+      "kind": "card",
+      "portal_role": "collectible-card",
+      "subject_tag": "meta",
+      "width": null,
+      "height": null,
+      "url": null
+    },
+    {
+      "id": "v5_tile_dining_pavilion",
+      "kind": "tile",
+      "portal_role": "gameplay-tile",
+      "subject_tag": "mixed",
+      "width": null,
+      "height": null,
+      "url": null
+    },
+    {
+      "id": "v5_sprite_curator_sage_sheet",
+      "kind": "sprite",
+      "portal_role": "character-portrait",
+      "subject_tag": "meta",
+      "width": null,
+      "height": null,
+      "url": null
+    },
+    {
+      "id": "v5_ui_checklist_panel",
+      "kind": "ui",
+      "portal_role": "hud",
+      "subject_tag": "mixed",
+      "width": null,
+      "height": null,
+      "url": null
+    },
+    {
+      "id": "v5_card_curator_apprentice",
+      "kind": "card",
+      "portal_role": "collectible-card",
+      "subject_tag": "meta",
+      "width": null,
+      "height": null,
+      "url": null
+    },
+    {
+      "id": "v5_tile_sunset_pier",
+      "kind": "tile",
+      "portal_role": "gameplay-tile",
+      "subject_tag": "geography",
+      "width": null,
+      "height": null,
+      "url": null
+    },
+    {
+      "id": "v5_sprite_fisher_elder_sheet",
+      "kind": "sprite",
+      "portal_role": "character-portrait",
+      "subject_tag": "meta",
+      "width": null,
+      "height": null,
+      "url": null
+    },
+    {
+      "id": "v5_ui_fishing_hud",
+      "kind": "ui",
+      "portal_role": "hud",
+      "subject_tag": "mixed",
+      "width": null,
+      "height": null,
+      "url": null
+    },
+    {
+      "id": "v5_card_koi_legend",
+      "kind": "card",
+      "portal_role": "collectible-card",
+      "subject_tag": "meta",
+      "width": null,
+      "height": null,
+      "url": null
+    },
+    {
+      "id": "v5_tile_dawn_courtyard",
+      "kind": "tile",
+      "portal_role": "gameplay-tile",
+      "subject_tag": "meta",
+      "width": 1024,
+      "height": 1024,
+      "url": "https://www.genspark.ai/api/files/s/AKyjZpLA"
+    },
+    {
+      "id": "v5_sprite_crimson_jade_sheet",
+      "kind": "sprite",
+      "portal_role": "character-portrait",
+      "subject_tag": "meta",
+      "width": 2336,
+      "height": 992,
+      "url": "https://www.genspark.ai/api/files/s/5EuYio0C"
+    },
+    {
+      "id": "v5_ui_download_card",
+      "kind": "ui",
+      "portal_role": "hud",
+      "subject_tag": "meta",
+      "width": 1024,
+      "height": 576,
+      "url": "https://www.genspark.ai/api/files/s/cbWdTvJQ"
+    },
+    {
+      "id": "v5_card_legendary_archmage",
+      "kind": "card",
+      "portal_role": "collectible-card",
+      "subject_tag": "meta",
+      "width": 1920,
+      "height": 2560,
+      "url": "https://www.genspark.ai/api/files/s/k4tVyFER"
+    },
+    {
+      "id": "v5_tile_alchemy_lab",
+      "kind": "tile",
+      "portal_role": "gameplay-tile",
+      "subject_tag": "chemistry",
+      "width": 1024,
+      "height": 1024,
+      "url": "https://www.genspark.ai/api/files/s/doWu9HCy"
+    },
+    {
+      "id": "v5_sprite_alchemy_boy_sheet",
+      "kind": "sprite",
+      "portal_role": "character-portrait",
+      "subject_tag": "meta",
+      "width": 2336,
+      "height": 992,
+      "url": "https://www.genspark.ai/api/files/s/GnnY6X1p"
+    },
+    {
+      "id": "v5_ui_alchemy_hud",
+      "kind": "ui",
+      "portal_role": "hud",
+      "subject_tag": "mixed",
+      "width": 1024,
+      "height": 576,
+      "url": "https://www.genspark.ai/api/files/s/JaXLckdk"
+    },
+    {
+      "id": "v5_card_alchemy_master",
+      "kind": "card",
+      "portal_role": "collectible-card",
+      "subject_tag": "meta",
+      "width": 1920,
+      "height": 2560,
+      "url": "https://www.genspark.ai/api/files/s/MpIRtBv8"
+    },
+    {
+      "id": "v5_tile_training_yard",
+      "kind": "tile",
+      "portal_role": "gameplay-tile",
+      "subject_tag": "physics",
+      "width": null,
+      "height": null,
+      "url": null
+    },
+    {
+      "id": "v5_sprite_yinyang_boy_sheet",
+      "kind": "sprite",
+      "portal_role": "character-portrait",
+      "subject_tag": "meta",
+      "width": null,
+      "height": null,
+      "url": null
+    },
+    {
+      "id": "v5_ui_quest_panel",
+      "kind": "ui",
+      "portal_role": "hud",
+      "subject_tag": "mixed",
+      "width": null,
+      "height": null,
+      "url": null
+    },
+    {
+      "id": "v5_card_courier_mascot",
+      "kind": "card",
+      "portal_role": "collectible-card",
+      "subject_tag": "meta",
+      "width": null,
+      "height": null,
+      "url": null
+    }
+  ]
+}

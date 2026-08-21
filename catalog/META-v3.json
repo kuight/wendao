@@ -1,0 +1,13 @@
+{
+  "schema": "catalog-v3-meta",
+  "version": "v5.0.0-rc.2",
+  "main_sha": "4e86b2d57cb1356e706b8ce20dc9899505314122",
+  "entry_count": 48,
+  "generated_at": "2026-08-21T06:45:00Z",
+  "new_entries_rc2": [
+    "v5_tile_training_yard",
+    "v5_sprite_yinyang_boy_sheet",
+    "v5_ui_quest_panel",
+    "v5_card_courier_mascot"
+  ]
+}
