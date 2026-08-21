@@ -1,0 +1,2795 @@
+[
+ {
+  "id": "q-batch16-000120",
+  "subject": "chemistry",
+  "chapter": "反应原理应用",
+  "difficulty": 4,
+  "stem": "合成氨反应N₂+3H₂⇌2NH₃（放热）。结合勒夏特列原理，下列措施中能提高氨产率的是。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "增大压强并升温，平衡向逆反应方向移动",
+   "减小压强，平衡向正反应方向移动",
+   "温度对平衡无影响",
+   "增大压强并适当降温，可使平衡向正反应方向移动，提高产率"
+  ],
+  "answerIndex": 3,
+  "explanation": "放热反应降温、加压均使平衡正向移动，提高产率。",
+  "kpTags": [
+   "勒夏特列原理",
+   "合成氨",
+   "化学平衡"
+  ],
+  "relatedMiniGame": "G91",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000121",
+  "subject": "chemistry",
+  "chapter": "反应原理应用",
+  "difficulty": 4,
+  "stem": "某反应物起始浓度2.0 mol/L，10 s后浓度变为1.2 mol/L，该段时间的平均反应速率最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "0.8 mol/(L·s)",
+   "0.12 mol/(L·s)",
+   "0.2 mol/(L·s)",
+   "0.08 mol/(L·s)"
+  ],
+  "answerIndex": 3,
+  "explanation": "平均速率v=Δc/Δt=0.080 mol/(L·s)。",
+  "kpTags": [
+   "化学反应速率",
+   "浓度变化"
+  ],
+  "relatedMiniGame": "SP13",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000122",
+  "subject": "chemistry",
+  "chapter": "反应原理应用",
+  "difficulty": 4,
+  "stem": "反应A+B⇌C在某温度下达平衡，c(A)=1 mol/L、c(B)=2 mol/L、c(C)=8 mol/L，则该温度下平衡常数K最接近下列哪一项？",
+  "options": [
+   "2.0",
+   "8.0",
+   "16.0",
+   "4.0"
+  ],
+  "answerIndex": 3,
+  "explanation": "K=c(C)/[c(A)c(B)]=4.0。",
+  "kpTags": [
+   "化学平衡",
+   "平衡常数"
+  ],
+  "relatedMiniGame": "SP14",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000123",
+  "subject": "chemistry",
+  "chapter": "反应原理应用",
+  "difficulty": 4,
+  "stem": "2 mol H₂完全燃烧生成液态水放热572 kJ，则H₂的燃烧热最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "-286 kJ",
+   "286 kJ",
+   "572 kJ",
+   "-572 kJ"
+  ],
+  "answerIndex": 3,
+  "explanation": "燃烧热指1 mol可燃物完全燃烧放出的热量，ΔH=-572/2=-286 kJ/mol，故2 mol放热572 kJ。",
+  "kpTags": [
+   "反应热",
+   "燃烧热"
+  ],
+  "relatedMiniGame": "SP15",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000124",
+  "subject": "chemistry",
+  "chapter": "反应原理应用",
+  "difficulty": 5,
+  "stem": "合成氨反应N₂+3H₂⇌2NH₃（放热）。结合勒夏特列原理，下列措施中能提高氨产率的是。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "减小压强，平衡向正反应方向移动",
+   "温度对平衡无影响",
+   "增大压强并适当降温，可使平衡向正反应方向移动，提高产率",
+   "增大压强并升温，平衡向逆反应方向移动"
+  ],
+  "answerIndex": 2,
+  "explanation": "放热反应降温、加压均使平衡正向移动，提高产率。",
+  "kpTags": [
+   "勒夏特列原理",
+   "合成氨",
+   "化学平衡"
+  ],
+  "relatedMiniGame": "SP4-rhythm",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000125",
+  "subject": "chemistry",
+  "chapter": "反应原理应用",
+  "difficulty": 5,
+  "stem": "某反应物起始浓度2.0 mol/L，10 s后浓度变为1.2 mol/L，该段时间的平均反应速率最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "0.12 mol/(L·s)",
+   "0.2 mol/(L·s)",
+   "0.08 mol/(L·s)",
+   "0.8 mol/(L·s)"
+  ],
+  "answerIndex": 2,
+  "explanation": "平均速率v=Δc/Δt=0.080 mol/(L·s)。",
+  "kpTags": [
+   "化学反应速率",
+   "浓度变化"
+  ],
+  "relatedMiniGame": "SP4-board",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000126",
+  "subject": "chemistry",
+  "chapter": "反应原理应用",
+  "difficulty": 4,
+  "stem": "反应A+B⇌C在某温度下达平衡，c(A)=1 mol/L、c(B)=2 mol/L、c(C)=8 mol/L，则该温度下平衡常数K最接近下列哪一项？",
+  "options": [
+   "8.0",
+   "16.0",
+   "4.0",
+   "2.0"
+  ],
+  "answerIndex": 2,
+  "explanation": "K=c(C)/[c(A)c(B)]=4.0。",
+  "kpTags": [
+   "化学平衡",
+   "平衡常数"
+  ],
+  "relatedMiniGame": "SP6",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000127",
+  "subject": "chemistry",
+  "chapter": "反应原理应用",
+  "difficulty": 4,
+  "stem": "2 mol H₂完全燃烧生成液态水放热572 kJ，则H₂的燃烧热最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "286 kJ",
+   "572 kJ",
+   "-572 kJ",
+   "-286 kJ"
+  ],
+  "answerIndex": 2,
+  "explanation": "燃烧热指1 mol可燃物完全燃烧放出的热量，ΔH=-572/2=-286 kJ/mol，故2 mol放热572 kJ。",
+  "kpTags": [
+   "反应热",
+   "燃烧热"
+  ],
+  "relatedMiniGame": "SP7",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000128",
+  "subject": "chemistry",
+  "chapter": "反应原理应用",
+  "difficulty": 3,
+  "stem": "合成氨反应N₂+3H₂⇌2NH₃（放热）。结合勒夏特列原理，下列措施中能提高氨产率的是。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "温度对平衡无影响",
+   "增大压强并适当降温，可使平衡向正反应方向移动，提高产率",
+   "增大压强并升温，平衡向逆反应方向移动",
+   "减小压强，平衡向正反应方向移动"
+  ],
+  "answerIndex": 1,
+  "explanation": "放热反应降温、加压均使平衡正向移动，提高产率。",
+  "kpTags": [
+   "勒夏特列原理",
+   "合成氨",
+   "化学平衡"
+  ],
+  "relatedMiniGame": "G97",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000129",
+  "subject": "chemistry",
+  "chapter": "反应原理应用",
+  "difficulty": 4,
+  "stem": "某反应物起始浓度2.0 mol/L，10 s后浓度变为1.2 mol/L，该段时间的平均反应速率最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "0.2 mol/(L·s)",
+   "0.08 mol/(L·s)",
+   "0.8 mol/(L·s)",
+   "0.12 mol/(L·s)"
+  ],
+  "answerIndex": 1,
+  "explanation": "平均速率v=Δc/Δt=0.080 mol/(L·s)。",
+  "kpTags": [
+   "化学反应速率",
+   "浓度变化"
+  ],
+  "relatedMiniGame": "G92",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000130",
+  "subject": "chemistry",
+  "chapter": "反应原理应用",
+  "difficulty": 5,
+  "stem": "反应A+B⇌C在某温度下达平衡，c(A)=1 mol/L、c(B)=2 mol/L、c(C)=8 mol/L，则该温度下平衡常数K最接近下列哪一项？",
+  "options": [
+   "16.0",
+   "4.0",
+   "2.0",
+   "8.0"
+  ],
+  "answerIndex": 1,
+  "explanation": "K=c(C)/[c(A)c(B)]=4.0。",
+  "kpTags": [
+   "化学平衡",
+   "平衡常数"
+  ],
+  "relatedMiniGame": "G88",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000131",
+  "subject": "chemistry",
+  "chapter": "反应原理应用",
+  "difficulty": 3,
+  "stem": "2 mol H₂完全燃烧生成液态水放热572 kJ，则H₂的燃烧热最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "572 kJ",
+   "-572 kJ",
+   "-286 kJ",
+   "286 kJ"
+  ],
+  "answerIndex": 1,
+  "explanation": "燃烧热指1 mol可燃物完全燃烧放出的热量，ΔH=-572/2=-286 kJ/mol，故2 mol放热572 kJ。",
+  "kpTags": [
+   "反应热",
+   "燃烧热"
+  ],
+  "relatedMiniGame": "G91",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000132",
+  "subject": "chemistry",
+  "chapter": "物质结构应用",
+  "difficulty": 5,
+  "stem": "结合元素周期律，下列有关第三周期元素原子半径的比较，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "原子半径：Al > Mg > Na",
+   "同周期从左到右原子半径增大",
+   "原子半径与核电荷数无关",
+   "原子半径：Na > Mg > Al"
+  ],
+  "answerIndex": 3,
+  "explanation": "同周期从左到右核电荷数增大，原子半径减小。",
+  "kpTags": [
+   "元素周期律",
+   "原子半径"
+  ],
+  "relatedMiniGame": "SP13",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000133",
+  "subject": "chemistry",
+  "chapter": "物质结构应用",
+  "difficulty": 4,
+  "stem": "结合物质结构与杂化轨道理论，下列判断正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "CH₄中碳原子采取sp²杂化",
+   "CO₂中碳原子采取sp³杂化",
+   "H₂O中氧原子采取sp杂化",
+   "CH₄中碳原子采取sp³杂化，空间构型为正四面体"
+  ],
+  "answerIndex": 3,
+  "explanation": "CH₄为sp³杂化正四面体；CO₂为sp杂化直线形。",
+  "kpTags": [
+   "分子构型",
+   "杂化轨道"
+  ],
+  "relatedMiniGame": "SP14",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000134",
+  "subject": "chemistry",
+  "chapter": "物质结构应用",
+  "difficulty": 4,
+  "stem": "结合化学键知识，下列有关NaCl与HCl中化学键类型的判断，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "NaCl中含有共价键",
+   "HCl中含有离子键",
+   "NaCl和HCl均只含共价键",
+   "NaCl中含有离子键，HCl中含有共价键"
+  ],
+  "answerIndex": 3,
+  "explanation": "活泼金属与活泼非金属形成离子键，非金属间形成共价键。",
+  "kpTags": [
+   "化学键",
+   "离子键",
+   "共价键"
+  ],
+  "relatedMiniGame": "SP15",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000135",
+  "subject": "chemistry",
+  "chapter": "物质结构应用",
+  "difficulty": 3,
+  "stem": "结合原子结构与电子排布知识，氯原子（原子序数17）的价电子数最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "氯原子的价电子数为1",
+   "氯原子的价电子数为5",
+   "氯原子的价电子数为8",
+   "氯原子（Cl）的价电子数为7"
+  ],
+  "answerIndex": 3,
+  "explanation": "氯最外层3s²3p⁵，价电子数为7。",
+  "kpTags": [
+   "电子排布",
+   "元素周期律"
+  ],
+  "relatedMiniGame": "SP4-rhythm",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000136",
+  "subject": "chemistry",
+  "chapter": "物质结构应用",
+  "difficulty": 4,
+  "stem": "结合元素周期律，下列有关第三周期元素原子半径的比较，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "同周期从左到右原子半径增大",
+   "原子半径与核电荷数无关",
+   "原子半径：Na > Mg > Al",
+   "原子半径：Al > Mg > Na"
+  ],
+  "answerIndex": 2,
+  "explanation": "同周期从左到右核电荷数增大，原子半径减小。",
+  "kpTags": [
+   "元素周期律",
+   "原子半径"
+  ],
+  "relatedMiniGame": "SP4-board",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000137",
+  "subject": "chemistry",
+  "chapter": "物质结构应用",
+  "difficulty": 4,
+  "stem": "结合物质结构与杂化轨道理论，下列判断正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "CO₂中碳原子采取sp³杂化",
+   "H₂O中氧原子采取sp杂化",
+   "CH₄中碳原子采取sp³杂化，空间构型为正四面体",
+   "CH₄中碳原子采取sp²杂化"
+  ],
+  "answerIndex": 2,
+  "explanation": "CH₄为sp³杂化正四面体；CO₂为sp杂化直线形。",
+  "kpTags": [
+   "分子构型",
+   "杂化轨道"
+  ],
+  "relatedMiniGame": "SP6",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000138",
+  "subject": "chemistry",
+  "chapter": "物质结构应用",
+  "difficulty": 3,
+  "stem": "结合化学键知识，下列有关NaCl与HCl中化学键类型的判断，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "HCl中含有离子键",
+   "NaCl和HCl均只含共价键",
+   "NaCl中含有离子键，HCl中含有共价键",
+   "NaCl中含有共价键"
+  ],
+  "answerIndex": 2,
+  "explanation": "活泼金属与活泼非金属形成离子键，非金属间形成共价键。",
+  "kpTags": [
+   "化学键",
+   "离子键",
+   "共价键"
+  ],
+  "relatedMiniGame": "SP7",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000139",
+  "subject": "chemistry",
+  "chapter": "物质结构应用",
+  "difficulty": 5,
+  "stem": "结合原子结构与电子排布知识，氯原子（原子序数17）的价电子数最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "氯原子的价电子数为5",
+   "氯原子的价电子数为8",
+   "氯原子（Cl）的价电子数为7",
+   "氯原子的价电子数为1"
+  ],
+  "answerIndex": 2,
+  "explanation": "氯最外层3s²3p⁵，价电子数为7。",
+  "kpTags": [
+   "电子排布",
+   "元素周期律"
+  ],
+  "relatedMiniGame": "G97",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000140",
+  "subject": "chemistry",
+  "chapter": "物质结构应用",
+  "difficulty": 4,
+  "stem": "结合元素周期律，下列有关第三周期元素原子半径的比较，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "原子半径与核电荷数无关",
+   "原子半径：Na > Mg > Al",
+   "原子半径：Al > Mg > Na",
+   "同周期从左到右原子半径增大"
+  ],
+  "answerIndex": 1,
+  "explanation": "同周期从左到右核电荷数增大，原子半径减小。",
+  "kpTags": [
+   "元素周期律",
+   "原子半径"
+  ],
+  "relatedMiniGame": "G92",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000141",
+  "subject": "chemistry",
+  "chapter": "物质结构应用",
+  "difficulty": 5,
+  "stem": "结合物质结构与杂化轨道理论，下列判断正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "H₂O中氧原子采取sp杂化",
+   "CH₄中碳原子采取sp³杂化，空间构型为正四面体",
+   "CH₄中碳原子采取sp²杂化",
+   "CO₂中碳原子采取sp³杂化"
+  ],
+  "answerIndex": 1,
+  "explanation": "CH₄为sp³杂化正四面体；CO₂为sp杂化直线形。",
+  "kpTags": [
+   "分子构型",
+   "杂化轨道"
+  ],
+  "relatedMiniGame": "G88",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000142",
+  "subject": "chemistry",
+  "chapter": "物质结构应用",
+  "difficulty": 4,
+  "stem": "结合化学键知识，下列有关NaCl与HCl中化学键类型的判断，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "NaCl和HCl均只含共价键",
+   "NaCl中含有离子键，HCl中含有共价键",
+   "NaCl中含有共价键",
+   "HCl中含有离子键"
+  ],
+  "answerIndex": 1,
+  "explanation": "活泼金属与活泼非金属形成离子键，非金属间形成共价键。",
+  "kpTags": [
+   "化学键",
+   "离子键",
+   "共价键"
+  ],
+  "relatedMiniGame": "G91",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000143",
+  "subject": "chemistry",
+  "chapter": "物质结构应用",
+  "difficulty": 4,
+  "stem": "结合原子结构与电子排布知识，氯原子（原子序数17）的价电子数最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "氯原子的价电子数为8",
+   "氯原子（Cl）的价电子数为7",
+   "氯原子的价电子数为1",
+   "氯原子的价电子数为5"
+  ],
+  "answerIndex": 1,
+  "explanation": "氯最外层3s²3p⁵，价电子数为7。",
+  "kpTags": [
+   "电子排布",
+   "元素周期律"
+  ],
+  "relatedMiniGame": "SP13",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000144",
+  "subject": "chemistry",
+  "chapter": "有机合成路线",
+  "difficulty": 4,
+  "stem": "结合有机合成路线，下列有关乙醇→乙醛→乙酸转化的描述，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "乙醇经氧化直接生成乙酸乙酯",
+   "乙醛还原可生成乙酸",
+   "乙醇不能发生氧化反应",
+   "乙醇经氧化可生成乙醛，乙醛进一步氧化生成乙酸"
+  ],
+  "answerIndex": 3,
+  "explanation": "醇经催化氧化成醛，醛再氧化成酸，是常见合成路线。",
+  "kpTags": [
+   "官能团",
+   "醇的氧化",
+   "有机氧化"
+  ],
+  "relatedMiniGame": "SP14",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000145",
+  "subject": "chemistry",
+  "chapter": "有机合成路线",
+  "difficulty": 5,
+  "stem": "结合有机反应类型，乙烯与溴水反应所属的反应类型是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "乙烯与溴水反应属于取代反应",
+   "乙烯与溴水反应属于消去反应",
+   "乙烯与溴水不反应",
+   "乙烯与溴水反应属于加成反应"
+  ],
+  "answerIndex": 3,
+  "explanation": "乙烯含碳碳双键，与溴发生加成反应。",
+  "kpTags": [
+   "加成反应",
+   "官能团"
+  ],
+  "relatedMiniGame": "SP15",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000146",
+  "subject": "chemistry",
+  "chapter": "有机合成路线",
+  "difficulty": 5,
+  "stem": "分子式为C₄H₁₀的烷烃，其同分异构体共有。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "2种",
+   "3种",
+   "5种",
+   "4种"
+  ],
+  "answerIndex": 3,
+  "explanation": "C₄H₁₀有正丁烷与异丁烷2种碳骨架，共2种同分异构体。",
+  "kpTags": [
+   "同分异构体",
+   "有机化学"
+  ],
+  "relatedMiniGame": "SP4-rhythm",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000147",
+  "subject": "chemistry",
+  "chapter": "有机合成路线",
+  "difficulty": 3,
+  "stem": "结合有机高分子知识，下列有关乙烯生成聚乙烯的反应，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "乙烯发生缩聚反应生成聚乙烯",
+   "乙烯发生取代反应生成聚乙烯",
+   "聚乙烯是乙烯的单体",
+   "乙烯发生加聚反应生成聚乙烯"
+  ],
+  "answerIndex": 3,
+  "explanation": "乙烯通过加聚反应生成聚乙烯。",
+  "kpTags": [
+   "聚合反应",
+   "加成反应"
+  ],
+  "relatedMiniGame": "SP4-board",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000148",
+  "subject": "chemistry",
+  "chapter": "有机合成路线",
+  "difficulty": 4,
+  "stem": "结合有机合成路线，下列有关乙醇→乙醛→乙酸转化的描述，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "乙醛还原可生成乙酸",
+   "乙醇不能发生氧化反应",
+   "乙醇经氧化可生成乙醛，乙醛进一步氧化生成乙酸",
+   "乙醇经氧化直接生成乙酸乙酯"
+  ],
+  "answerIndex": 2,
+  "explanation": "醇经催化氧化成醛，醛再氧化成酸，是常见合成路线。",
+  "kpTags": [
+   "官能团",
+   "醇的氧化",
+   "有机氧化"
+  ],
+  "relatedMiniGame": "SP6",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000149",
+  "subject": "chemistry",
+  "chapter": "有机合成路线",
+  "difficulty": 4,
+  "stem": "结合有机反应类型，乙烯与溴水反应所属的反应类型是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "乙烯与溴水反应属于消去反应",
+   "乙烯与溴水不反应",
+   "乙烯与溴水反应属于加成反应",
+   "乙烯与溴水反应属于取代反应"
+  ],
+  "answerIndex": 2,
+  "explanation": "乙烯含碳碳双键，与溴发生加成反应。",
+  "kpTags": [
+   "加成反应",
+   "官能团"
+  ],
+  "relatedMiniGame": "SP7",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000150",
+  "subject": "chemistry",
+  "chapter": "有机合成路线",
+  "difficulty": 5,
+  "stem": "分子式为C₄H₁₀的烷烃，其同分异构体共有。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "3种",
+   "5种",
+   "4种",
+   "2种"
+  ],
+  "answerIndex": 2,
+  "explanation": "C₄H₁₀有正丁烷与异丁烷2种碳骨架，共2种同分异构体。",
+  "kpTags": [
+   "同分异构体",
+   "有机化学"
+  ],
+  "relatedMiniGame": "G97",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000151",
+  "subject": "chemistry",
+  "chapter": "有机合成路线",
+  "difficulty": 3,
+  "stem": "结合有机高分子知识，下列有关乙烯生成聚乙烯的反应，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "乙烯发生取代反应生成聚乙烯",
+   "聚乙烯是乙烯的单体",
+   "乙烯发生加聚反应生成聚乙烯",
+   "乙烯发生缩聚反应生成聚乙烯"
+  ],
+  "answerIndex": 2,
+  "explanation": "乙烯通过加聚反应生成聚乙烯。",
+  "kpTags": [
+   "聚合反应",
+   "加成反应"
+  ],
+  "relatedMiniGame": "G92",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000152",
+  "subject": "chemistry",
+  "chapter": "有机合成路线",
+  "difficulty": 4,
+  "stem": "结合有机合成路线，下列有关乙醇→乙醛→乙酸转化的描述，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "乙醇不能发生氧化反应",
+   "乙醇经氧化可生成乙醛，乙醛进一步氧化生成乙酸",
+   "乙醇经氧化直接生成乙酸乙酯",
+   "乙醛还原可生成乙酸"
+  ],
+  "answerIndex": 1,
+  "explanation": "醇经催化氧化成醛，醛再氧化成酸，是常见合成路线。",
+  "kpTags": [
+   "官能团",
+   "醇的氧化",
+   "有机氧化"
+  ],
+  "relatedMiniGame": "G88",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000153",
+  "subject": "chemistry",
+  "chapter": "有机合成路线",
+  "difficulty": 4,
+  "stem": "结合有机反应类型，乙烯与溴水反应所属的反应类型是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "乙烯与溴水不反应",
+   "乙烯与溴水反应属于加成反应",
+   "乙烯与溴水反应属于取代反应",
+   "乙烯与溴水反应属于消去反应"
+  ],
+  "answerIndex": 1,
+  "explanation": "乙烯含碳碳双键，与溴发生加成反应。",
+  "kpTags": [
+   "加成反应",
+   "官能团"
+  ],
+  "relatedMiniGame": "G91",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000154",
+  "subject": "chemistry",
+  "chapter": "有机合成路线",
+  "difficulty": 4,
+  "stem": "分子式为C₄H₁₀的烷烃，其同分异构体共有。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "5种",
+   "4种",
+   "2种",
+   "3种"
+  ],
+  "answerIndex": 1,
+  "explanation": "C₄H₁₀有正丁烷与异丁烷2种碳骨架，共2种同分异构体。",
+  "kpTags": [
+   "同分异构体",
+   "有机化学"
+  ],
+  "relatedMiniGame": "SP13",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000155",
+  "subject": "chemistry",
+  "chapter": "有机合成路线",
+  "difficulty": 4,
+  "stem": "结合有机高分子知识，下列有关乙烯生成聚乙烯的反应，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "聚乙烯是乙烯的单体",
+   "乙烯发生加聚反应生成聚乙烯",
+   "乙烯发生缩聚反应生成聚乙烯",
+   "乙烯发生取代反应生成聚乙烯"
+  ],
+  "answerIndex": 1,
+  "explanation": "乙烯通过加聚反应生成聚乙烯。",
+  "kpTags": [
+   "聚合反应",
+   "加成反应"
+  ],
+  "relatedMiniGame": "SP14",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000156",
+  "subject": "chemistry",
+  "chapter": "化学实验设计",
+  "difficulty": 5,
+  "stem": "配制0.5 L含溶质0.5 mol的溶液，所得溶液的物质的量浓度最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "1.0 mol/L",
+   "0.25 mol/L",
+   "2.0 mol/L",
+   "1.0 mol/L"
+  ],
+  "answerIndex": 3,
+  "explanation": "c=n/V=1.0 mol/L。",
+  "kpTags": [
+   "物质的量浓度",
+   "配制溶液",
+   "物质的量"
+  ],
+  "relatedMiniGame": "SP15",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000157",
+  "subject": "chemistry",
+  "chapter": "化学实验设计",
+  "difficulty": 4,
+  "stem": "结合化学实验分离提纯，下列操作正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "用过滤法分离互溶液体",
+   "用萃取法分离固体与液体",
+   "用蒸发结晶分离沸点相近液体",
+   "用蒸馏法分离沸点不同的液体混合物"
+  ],
+  "answerIndex": 3,
+  "explanation": "蒸馏用于分离沸点不同的互溶液体。",
+  "kpTags": [
+   "化学实验",
+   "分离提纯"
+  ],
+  "relatedMiniGame": "SP4-rhythm",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000158",
+  "subject": "chemistry",
+  "chapter": "化学实验设计",
+  "difficulty": 4,
+  "stem": "用0.1 mol/L的盐酸滴定25 mL未知浓度NaOH溶液，恰好完全反应时消耗盐酸20 mL，NaOH浓度最接近下列哪一项？",
+  "options": [
+   "2.0 mol/L",
+   "0.125 mol/L",
+   "0.1 mol/L",
+   "0.08 mol/L"
+  ],
+  "answerIndex": 3,
+  "explanation": "c₂=c₁V₁/V₂=0.080 mol/L。",
+  "kpTags": [
+   "化学实验",
+   "物质的量浓度",
+   "滴定"
+  ],
+  "relatedMiniGame": "SP4-board",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000159",
+  "subject": "chemistry",
+  "chapter": "化学实验设计",
+  "difficulty": 4,
+  "stem": "结合气体制备与收集，下列有关氯气收集方法的判断，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "用向下排空气法收集Cl₂",
+   "Cl₂可用排水法收集",
+   "Cl₂密度小于空气",
+   "用向上排空气法收集密度大于空气的Cl₂"
+  ],
+  "answerIndex": 3,
+  "explanation": "Cl₂密度大于空气且溶于水，用向上排空气法收集。",
+  "kpTags": [
+   "化学实验",
+   "气体制备"
+  ],
+  "relatedMiniGame": "SP6",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000160",
+  "subject": "chemistry",
+  "chapter": "化学实验设计",
+  "difficulty": 4,
+  "stem": "配制0.5 L含溶质0.5 mol的溶液，所得溶液的物质的量浓度最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "0.25 mol/L",
+   "2.0 mol/L",
+   "1.0 mol/L",
+   "1.0 mol/L"
+  ],
+  "answerIndex": 2,
+  "explanation": "c=n/V=1.0 mol/L。",
+  "kpTags": [
+   "物质的量浓度",
+   "配制溶液",
+   "物质的量"
+  ],
+  "relatedMiniGame": "SP7",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000161",
+  "subject": "chemistry",
+  "chapter": "化学实验设计",
+  "difficulty": 4,
+  "stem": "结合化学实验分离提纯，下列操作正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "用萃取法分离固体与液体",
+   "用蒸发结晶分离沸点相近液体",
+   "用蒸馏法分离沸点不同的液体混合物",
+   "用过滤法分离互溶液体"
+  ],
+  "answerIndex": 2,
+  "explanation": "蒸馏用于分离沸点不同的互溶液体。",
+  "kpTags": [
+   "化学实验",
+   "分离提纯"
+  ],
+  "relatedMiniGame": "G97",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000162",
+  "subject": "chemistry",
+  "chapter": "化学实验设计",
+  "difficulty": 3,
+  "stem": "用0.1 mol/L的盐酸滴定25 mL未知浓度NaOH溶液，恰好完全反应时消耗盐酸20 mL，NaOH浓度最接近下列哪一项？",
+  "options": [
+   "0.125 mol/L",
+   "0.1 mol/L",
+   "0.08 mol/L",
+   "2.0 mol/L"
+  ],
+  "answerIndex": 2,
+  "explanation": "c₂=c₁V₁/V₂=0.080 mol/L。",
+  "kpTags": [
+   "化学实验",
+   "物质的量浓度",
+   "滴定"
+  ],
+  "relatedMiniGame": "G92",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000163",
+  "subject": "chemistry",
+  "chapter": "化学实验设计",
+  "difficulty": 5,
+  "stem": "结合气体制备与收集，下列有关氯气收集方法的判断，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "Cl₂可用排水法收集",
+   "Cl₂密度小于空气",
+   "用向上排空气法收集密度大于空气的Cl₂",
+   "用向下排空气法收集Cl₂"
+  ],
+  "answerIndex": 2,
+  "explanation": "Cl₂密度大于空气且溶于水，用向上排空气法收集。",
+  "kpTags": [
+   "化学实验",
+   "气体制备"
+  ],
+  "relatedMiniGame": "G88",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000164",
+  "subject": "chemistry",
+  "chapter": "化学实验设计",
+  "difficulty": 5,
+  "stem": "配制0.5 L含溶质0.5 mol的溶液，所得溶液的物质的量浓度最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "2.0 mol/L",
+   "1.0 mol/L",
+   "1.0 mol/L",
+   "0.25 mol/L"
+  ],
+  "answerIndex": 1,
+  "explanation": "c=n/V=1.0 mol/L。",
+  "kpTags": [
+   "物质的量浓度",
+   "配制溶液",
+   "物质的量"
+  ],
+  "relatedMiniGame": "G91",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000165",
+  "subject": "chemistry",
+  "chapter": "化学实验设计",
+  "difficulty": 4,
+  "stem": "结合化学实验分离提纯，下列操作正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "用蒸发结晶分离沸点相近液体",
+   "用蒸馏法分离沸点不同的液体混合物",
+   "用过滤法分离互溶液体",
+   "用萃取法分离固体与液体"
+  ],
+  "answerIndex": 1,
+  "explanation": "蒸馏用于分离沸点不同的互溶液体。",
+  "kpTags": [
+   "化学实验",
+   "分离提纯"
+  ],
+  "relatedMiniGame": "SP13",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000166",
+  "subject": "chemistry",
+  "chapter": "化学实验设计",
+  "difficulty": 3,
+  "stem": "用0.1 mol/L的盐酸滴定25 mL未知浓度NaOH溶液，恰好完全反应时消耗盐酸20 mL，NaOH浓度最接近下列哪一项？",
+  "options": [
+   "0.1 mol/L",
+   "0.08 mol/L",
+   "2.0 mol/L",
+   "0.125 mol/L"
+  ],
+  "answerIndex": 1,
+  "explanation": "c₂=c₁V₁/V₂=0.080 mol/L。",
+  "kpTags": [
+   "化学实验",
+   "物质的量浓度",
+   "滴定"
+  ],
+  "relatedMiniGame": "SP14",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000167",
+  "subject": "chemistry",
+  "chapter": "化学实验设计",
+  "difficulty": 4,
+  "stem": "结合气体制备与收集，下列有关氯气收集方法的判断，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "Cl₂密度小于空气",
+   "用向上排空气法收集密度大于空气的Cl₂",
+   "用向下排空气法收集Cl₂",
+   "Cl₂可用排水法收集"
+  ],
+  "answerIndex": 1,
+  "explanation": "Cl₂密度大于空气且溶于水，用向上排空气法收集。",
+  "kpTags": [
+   "化学实验",
+   "气体制备"
+  ],
+  "relatedMiniGame": "SP15",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000168",
+  "subject": "chemistry",
+  "chapter": "化工流程",
+  "difficulty": 4,
+  "stem": "某化工流程理论上应得产物100 g，实际得到80 g，该步骤的产率最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "80.0 %",
+   "100.0 %",
+   "125.0 %",
+   "80.0 %"
+  ],
+  "answerIndex": 3,
+  "explanation": "产率=实际产量/理论产量×100%=80.0%。",
+  "kpTags": [
+   "产率",
+   "化工流程",
+   "多步计算"
+  ],
+  "relatedMiniGame": "SP4-rhythm",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000169",
+  "subject": "chemistry",
+  "chapter": "化工流程",
+  "difficulty": 4,
+  "stem": "结合化工流程优化，下列做法中能提高原料利用率的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "将未反应原料直接排放",
+   "提高温度一定使产率增大",
+   "催化剂能改变平衡常数",
+   "将未反应的原料循环利用，可提高原料利用率"
+  ],
+  "answerIndex": 3,
+  "explanation": "循环利用未反应原料是化工流程常用优化手段。",
+  "kpTags": [
+   "工艺条件",
+   "化工流程",
+   "循环经济"
+  ],
+  "relatedMiniGame": "SP4-board",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000170",
+  "subject": "chemistry",
+  "chapter": "化工流程",
+  "difficulty": 4,
+  "stem": "某多步反应中，原料经转化最终得到目标产物。若投入含160 g某物质（摩尔质量80 g/mol）的原料且全部转化，产物物质的量2 mol对应的质量最接近下列哪一项？",
+  "options": [
+   "160 g",
+   "80 g",
+   "2 g",
+   "160 g"
+  ],
+  "answerIndex": 3,
+  "explanation": "m=nM=160 g，多步计算需跟踪物质的量。",
+  "kpTags": [
+   "多步计算",
+   "物质的量",
+   "化工流程"
+  ],
+  "relatedMiniGame": "SP6",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000171",
+  "subject": "chemistry",
+  "chapter": "化工流程",
+  "difficulty": 4,
+  "stem": "结合化工流程与环境保护，下列尾气处理措施正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "将尾气直接排入大气",
+   "用大量水稀释后排放",
+   "尾气无需处理",
+   "用碱液吸收尾气中的酸性气体，减少污染"
+  ],
+  "answerIndex": 3,
+  "explanation": "酸性尾气用碱液吸收，符合绿色化学理念。",
+  "kpTags": [
+   "环境保护",
+   "化工流程",
+   "绿色化学"
+  ],
+  "relatedMiniGame": "SP7",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000172",
+  "subject": "chemistry",
+  "chapter": "化工流程",
+  "difficulty": 4,
+  "stem": "某化工流程理论上应得产物100 g，实际得到80 g，该步骤的产率最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "100.0 %",
+   "125.0 %",
+   "80.0 %",
+   "80.0 %"
+  ],
+  "answerIndex": 2,
+  "explanation": "产率=实际产量/理论产量×100%=80.0%。",
+  "kpTags": [
+   "产率",
+   "化工流程",
+   "多步计算"
+  ],
+  "relatedMiniGame": "G97",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000173",
+  "subject": "chemistry",
+  "chapter": "化工流程",
+  "difficulty": 4,
+  "stem": "结合化工流程优化，下列做法中能提高原料利用率的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "提高温度一定使产率增大",
+   "催化剂能改变平衡常数",
+   "将未反应的原料循环利用，可提高原料利用率",
+   "将未反应原料直接排放"
+  ],
+  "answerIndex": 2,
+  "explanation": "循环利用未反应原料是化工流程常用优化手段。",
+  "kpTags": [
+   "工艺条件",
+   "化工流程",
+   "循环经济"
+  ],
+  "relatedMiniGame": "G92",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000174",
+  "subject": "chemistry",
+  "chapter": "化工流程",
+  "difficulty": 5,
+  "stem": "某多步反应中，原料经转化最终得到目标产物。若投入含160 g某物质（摩尔质量80 g/mol）的原料且全部转化，产物物质的量2 mol对应的质量最接近下列哪一项？",
+  "options": [
+   "80 g",
+   "2 g",
+   "160 g",
+   "160 g"
+  ],
+  "answerIndex": 2,
+  "explanation": "m=nM=160 g，多步计算需跟踪物质的量。",
+  "kpTags": [
+   "多步计算",
+   "物质的量",
+   "化工流程"
+  ],
+  "relatedMiniGame": "G88",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000175",
+  "subject": "chemistry",
+  "chapter": "化工流程",
+  "difficulty": 4,
+  "stem": "结合化工流程与环境保护，下列尾气处理措施正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "用大量水稀释后排放",
+   "尾气无需处理",
+   "用碱液吸收尾气中的酸性气体，减少污染",
+   "将尾气直接排入大气"
+  ],
+  "answerIndex": 2,
+  "explanation": "酸性尾气用碱液吸收，符合绿色化学理念。",
+  "kpTags": [
+   "环境保护",
+   "化工流程",
+   "绿色化学"
+  ],
+  "relatedMiniGame": "G91",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000176",
+  "subject": "chemistry",
+  "chapter": "化工流程",
+  "difficulty": 3,
+  "stem": "某化工流程理论上应得产物100 g，实际得到80 g，该步骤的产率最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "125.0 %",
+   "80.0 %",
+   "80.0 %",
+   "100.0 %"
+  ],
+  "answerIndex": 1,
+  "explanation": "产率=实际产量/理论产量×100%=80.0%。",
+  "kpTags": [
+   "产率",
+   "化工流程",
+   "多步计算"
+  ],
+  "relatedMiniGame": "SP13",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000177",
+  "subject": "chemistry",
+  "chapter": "化工流程",
+  "difficulty": 5,
+  "stem": "结合化工流程优化，下列做法中能提高原料利用率的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "催化剂能改变平衡常数",
+   "将未反应的原料循环利用，可提高原料利用率",
+   "将未反应原料直接排放",
+   "提高温度一定使产率增大"
+  ],
+  "answerIndex": 1,
+  "explanation": "循环利用未反应原料是化工流程常用优化手段。",
+  "kpTags": [
+   "工艺条件",
+   "化工流程",
+   "循环经济"
+  ],
+  "relatedMiniGame": "SP14",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000178",
+  "subject": "chemistry",
+  "chapter": "化工流程",
+  "difficulty": 5,
+  "stem": "某多步反应中，原料经转化最终得到目标产物。若投入含160 g某物质（摩尔质量80 g/mol）的原料且全部转化，产物物质的量2 mol对应的质量最接近下列哪一项？",
+  "options": [
+   "2 g",
+   "160 g",
+   "160 g",
+   "80 g"
+  ],
+  "answerIndex": 1,
+  "explanation": "m=nM=160 g，多步计算需跟踪物质的量。",
+  "kpTags": [
+   "多步计算",
+   "物质的量",
+   "化工流程"
+  ],
+  "relatedMiniGame": "SP15",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000179",
+  "subject": "chemistry",
+  "chapter": "化工流程",
+  "difficulty": 3,
+  "stem": "结合化工流程与环境保护，下列尾气处理措施正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "尾气无需处理",
+   "用碱液吸收尾气中的酸性气体，减少污染",
+   "将尾气直接排入大气",
+   "用大量水稀释后排放"
+  ],
+  "answerIndex": 1,
+  "explanation": "酸性尾气用碱液吸收，符合绿色化学理念。",
+  "kpTags": [
+   "环境保护",
+   "化工流程",
+   "绿色化学"
+  ],
+  "relatedMiniGame": "SP4-rhythm",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000180",
+  "subject": "chemistry",
+  "chapter": "化学与社会",
+  "difficulty": 4,
+  "stem": "结合化学与社会，下列有关酸雨成因与危害的说法，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "酸雨主要由CO₂排放引起",
+   "酸雨与汽车尾气无关",
+   "酸雨的pH大于7",
+   "酸雨主要是由SO₂和氮氧化物排放引起的"
+  ],
+  "answerIndex": 3,
+  "explanation": "SO₂与氮氧化物溶于水形成酸雨，pH小于5.6。",
+  "kpTags": [
+   "酸雨",
+   "二氧化硫",
+   "环境保护"
+  ],
+  "relatedMiniGame": "SP4-board",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000181",
+  "subject": "chemistry",
+  "chapter": "化学与社会",
+  "difficulty": 3,
+  "stem": "结合化学与社会，下列对绿色化学理念的理解，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "绿色化学即污染后治理",
+   "绿色化学禁止使用任何化学品",
+   "绿色化学与可持续发展无关",
+   "绿色化学的核心是利用化学原理从源头减少污染"
+  ],
+  "answerIndex": 3,
+  "explanation": "绿色化学强调源头减排，符合可持续发展。",
+  "kpTags": [
+   "绿色化学",
+   "环境保护",
+   "可持续发展"
+  ],
+  "relatedMiniGame": "SP6",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000182",
+  "subject": "chemistry",
+  "chapter": "化学与社会",
+  "difficulty": 4,
+  "stem": "结合化学与生活，下列有关漂白粉的说法，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "漂白粉的有效成分是氯化钙",
+   "漂白粉漂白属于物理变化",
+   "漂白粉久置不会失效",
+   "漂白粉的有效成分是次氯酸钙，利用其氧化性漂白"
+  ],
+  "answerIndex": 3,
+  "explanation": "漂白粉有效成分为Ca(ClO)₂，利用氧化性漂白。",
+  "kpTags": [
+   "氧化还原",
+   "化学与社会"
+  ],
+  "relatedMiniGame": "SP7",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000183",
+  "subject": "chemistry",
+  "chapter": "化学与社会",
+  "difficulty": 5,
+  "stem": "结合化学与生活，下列做法正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "干燥剂常用浓硫酸直接接触食品",
+   "食品添加剂一律有害",
+   "聚乙烯塑料可随意加热食用",
+   "食品包装中的干燥剂常用生石灰，利用其吸水性能"
+  ],
+  "answerIndex": 3,
+  "explanation": "生石灰吸水作干燥剂，安全且常见。",
+  "kpTags": [
+   "化学与社会",
+   "环境保护"
+  ],
+  "relatedMiniGame": "G97",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000184",
+  "subject": "chemistry",
+  "chapter": "化学与社会",
+  "difficulty": 4,
+  "stem": "结合化学与社会，下列有关酸雨成因与危害的说法，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "酸雨与汽车尾气无关",
+   "酸雨的pH大于7",
+   "酸雨主要是由SO₂和氮氧化物排放引起的",
+   "酸雨主要由CO₂排放引起"
+  ],
+  "answerIndex": 2,
+  "explanation": "SO₂与氮氧化物溶于水形成酸雨，pH小于5.6。",
+  "kpTags": [
+   "酸雨",
+   "二氧化硫",
+   "环境保护"
+  ],
+  "relatedMiniGame": "G92",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000185",
+  "subject": "chemistry",
+  "chapter": "化学与社会",
+  "difficulty": 4,
+  "stem": "结合化学与社会，下列对绿色化学理念的理解，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "绿色化学禁止使用任何化学品",
+   "绿色化学与可持续发展无关",
+   "绿色化学的核心是利用化学原理从源头减少污染",
+   "绿色化学即污染后治理"
+  ],
+  "answerIndex": 2,
+  "explanation": "绿色化学强调源头减排，符合可持续发展。",
+  "kpTags": [
+   "绿色化学",
+   "环境保护",
+   "可持续发展"
+  ],
+  "relatedMiniGame": "G88",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000186",
+  "subject": "chemistry",
+  "chapter": "化学与社会",
+  "difficulty": 3,
+  "stem": "结合化学与生活，下列有关漂白粉的说法，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "漂白粉漂白属于物理变化",
+   "漂白粉久置不会失效",
+   "漂白粉的有效成分是次氯酸钙，利用其氧化性漂白",
+   "漂白粉的有效成分是氯化钙"
+  ],
+  "answerIndex": 2,
+  "explanation": "漂白粉有效成分为Ca(ClO)₂，利用氧化性漂白。",
+  "kpTags": [
+   "氧化还原",
+   "化学与社会"
+  ],
+  "relatedMiniGame": "G91",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000187",
+  "subject": "chemistry",
+  "chapter": "化学与社会",
+  "difficulty": 4,
+  "stem": "结合化学与生活，下列做法正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "食品添加剂一律有害",
+   "聚乙烯塑料可随意加热食用",
+   "食品包装中的干燥剂常用生石灰，利用其吸水性能",
+   "干燥剂常用浓硫酸直接接触食品"
+  ],
+  "answerIndex": 2,
+  "explanation": "生石灰吸水作干燥剂，安全且常见。",
+  "kpTags": [
+   "化学与社会",
+   "环境保护"
+  ],
+  "relatedMiniGame": "SP13",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000188",
+  "subject": "chemistry",
+  "chapter": "化学与社会",
+  "difficulty": 4,
+  "stem": "结合化学与社会，下列有关酸雨成因与危害的说法，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "酸雨的pH大于7",
+   "酸雨主要是由SO₂和氮氧化物排放引起的",
+   "酸雨主要由CO₂排放引起",
+   "酸雨与汽车尾气无关"
+  ],
+  "answerIndex": 1,
+  "explanation": "SO₂与氮氧化物溶于水形成酸雨，pH小于5.6。",
+  "kpTags": [
+   "酸雨",
+   "二氧化硫",
+   "环境保护"
+  ],
+  "relatedMiniGame": "SP14",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000189",
+  "subject": "chemistry",
+  "chapter": "化学与社会",
+  "difficulty": 4,
+  "stem": "结合化学与社会，下列对绿色化学理念的理解，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "绿色化学与可持续发展无关",
+   "绿色化学的核心是利用化学原理从源头减少污染",
+   "绿色化学即污染后治理",
+   "绿色化学禁止使用任何化学品"
+  ],
+  "answerIndex": 1,
+  "explanation": "绿色化学强调源头减排，符合可持续发展。",
+  "kpTags": [
+   "绿色化学",
+   "环境保护",
+   "可持续发展"
+  ],
+  "relatedMiniGame": "SP15",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000190",
+  "subject": "chemistry",
+  "chapter": "化学与社会",
+  "difficulty": 5,
+  "stem": "结合化学与生活，下列有关漂白粉的说法，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "漂白粉久置不会失效",
+   "漂白粉的有效成分是次氯酸钙，利用其氧化性漂白",
+   "漂白粉的有效成分是氯化钙",
+   "漂白粉漂白属于物理变化"
+  ],
+  "answerIndex": 1,
+  "explanation": "漂白粉有效成分为Ca(ClO)₂，利用氧化性漂白。",
+  "kpTags": [
+   "氧化还原",
+   "化学与社会"
+  ],
+  "relatedMiniGame": "SP4-rhythm",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000191",
+  "subject": "chemistry",
+  "chapter": "化学与社会",
+  "difficulty": 5,
+  "stem": "结合化学与生活，下列做法正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "聚乙烯塑料可随意加热食用",
+   "食品包装中的干燥剂常用生石灰，利用其吸水性能",
+   "干燥剂常用浓硫酸直接接触食品",
+   "食品添加剂一律有害"
+  ],
+  "answerIndex": 1,
+  "explanation": "生石灰吸水作干燥剂，安全且常见。",
+  "kpTags": [
+   "化学与社会",
+   "环境保护"
+  ],
+  "relatedMiniGame": "SP4-board",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000192",
+  "subject": "chemistry",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "某放热反应释放热量120 J并对外做功40 J。结合化学反应热与物理热力学第一定律、数学守恒计算，体系内能变化最接近下列哪一项？",
+  "options": [
+   "160 J",
+   "40 J",
+   "-80 J",
+   "80 J"
+  ],
+  "answerIndex": 3,
+  "explanation": "ΔU=Q-W=80 J，化学能量与物理热学的跨学科综合。",
+  "kpTags": [
+   "反应热",
+   "热力学第一定律",
+   "能量守恒"
+  ],
+  "relatedMiniGame": "SP6",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chemistry+physics",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000193",
+  "subject": "chemistry",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "3 mol水分子所含分子数约为（阿伏加德罗常数6.02×10²³）。结合化学物质的量与数学指数运算，最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "6.02e+23 个",
+   "3 个",
+   "2.0066666666666668e+23 个",
+   "1.806e+24 个"
+  ],
+  "answerIndex": 3,
+  "explanation": "N=n·NA=2e+24 个，化学与数学的综合。",
+  "kpTags": [
+   "物质的量",
+   "阿伏加德罗常数",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP7",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chemistry+math",
+   "math+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000194",
+  "subject": "chemistry",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "结合化学酸雨成因与地理区域环境，下列对酸雨影响的综合判断，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "酸雨只影响大气，与土壤无关",
+   "酸雨有利于农作物生长",
+   "酸雨主要发生在干旱地区",
+   "酸雨会腐蚀建筑物并导致土壤酸化，与地理环境密切相关"
+  ],
+  "answerIndex": 3,
+  "explanation": "酸雨腐蚀建筑、酸化土壤水体，是化学与地理的综合。",
+  "kpTags": [
+   "酸雨",
+   "环境保护",
+   "区域可持续发展"
+  ],
+  "relatedMiniGame": "G97",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chemistry+geography",
+   "geography+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000195",
+  "subject": "chemistry",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "结合英语文献阅读与化学实验设计，下列阅读英文化学实验报告的方法，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "逐词翻译即可忽略实验条件",
+   "英文文献无需关注单位",
+   "数据与结论可随意取舍",
+   "阅读英文化学文献时，应先抓取关键词与实验结论，再核对数据"
+  ],
+  "answerIndex": 3,
+  "explanation": "跨学科阅读应先抓结论与条件，再核对数据。",
+  "kpTags": [
+   "阅读推断",
+   "化学实验",
+   "综合应用"
+  ],
+  "relatedMiniGame": "G92",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "english+chemistry",
+   "chemistry+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000196",
+  "subject": "chemistry",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "某湖泊水体富营养化，测得磷酸盐浓度0.5 mol/L，湖水体积100 L。结合化学浓度计算与地理水体环境，磷酸盐物质的量最接近下列哪一项？",
+  "options": [
+   "50.0 mol",
+   "0.5 mol",
+   "0.1 mol",
+   "0.05 mol"
+  ],
+  "answerIndex": 3,
+  "explanation": "n=cV=0.050 mol，化学与地理的综合。",
+  "kpTags": [
+   "物质的量浓度",
+   "富营养化",
+   "环境保护"
+  ],
+  "relatedMiniGame": "G88",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chemistry+geography",
+   "chemistry+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000197",
+  "subject": "chemistry",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "标准状况下3 mol气体。结合化学气体摩尔体积与物理理想气体状态方程、数学乘法，其体积最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "22.4 L",
+   "3 L",
+   "7.5 L",
+   "67.2 L"
+  ],
+  "answerIndex": 3,
+  "explanation": "V=n·Vm=67.2 L，化学与物理、数学的综合。",
+  "kpTags": [
+   "气体摩尔体积",
+   "理想气体",
+   "物质的量"
+  ],
+  "relatedMiniGame": "G91",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chemistry+physics",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000198",
+  "subject": "chemistry",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "结合文言文古籍记载与化学变化本质，对“丹砂烧之成水银”的综合解读，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "“丹砂烧之成水银”属于物理变化",
+   "水银即金属汞单质，无法由丹砂制得",
+   "炼丹术与现代化学无关",
+   "古书“丹砂烧之成水银”描述的是硫化汞受热分解，属于化学变化"
+  ],
+  "answerIndex": 3,
+  "explanation": "HgS受热分解生成Hg，是化学变化，体现古文与化学的综合。",
+  "kpTags": [
+   "氧化还原",
+   "文言文",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP13",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chinese+chemistry",
+   "chemistry+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000199",
+  "subject": "chemistry",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "某反应物浓度随时间线性下降：c=c₀-kt（c₀=2.0 mol/L，k=0.1，t=5 s）。结合化学反应速率与数学一次函数，t时刻浓度最接近下列哪一项？",
+  "options": [
+   "2.5 mol/L",
+   "0.5 mol/L",
+   "2.0 mol/L",
+   "1.5 mol/L"
+  ],
+  "answerIndex": 3,
+  "explanation": "代入一次函数c=1.50 mol/L，化学与数学建模的综合。",
+  "kpTags": [
+   "化学反应速率",
+   "一次函数",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP14",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chemistry+math",
+   "math+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000200",
+  "subject": "chemistry",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "某农田需施用含氮化肥，每株作物需氮元素0.2 mol（以尿素计，摩尔质量60 g/mol）。结合化学物质的量与地理农业区位，所需尿素质量最接近下列哪一项？",
+  "options": [
+   "60 g",
+   "0.2 g",
+   "300.0 g",
+   "12.0 g"
+  ],
+  "answerIndex": 3,
+  "explanation": "m=nM=12.0 g，化学与地理农业的综合。",
+  "kpTags": [
+   "物质的量",
+   "农业区位",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP15",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chemistry+geography",
+   "chemistry+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000201",
+  "subject": "chemistry",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "英文实验报告：titration uses 0.2 mol/L NaOH, volume 50 mL。结合英语数据阅读与化学物质的量、数学计算，NaOH物质的量最接近下列哪一项？",
+  "options": [
+   "10.0 mol",
+   "0.2 mol",
+   "0.05 mol",
+   "0.01 mol"
+  ],
+  "answerIndex": 3,
+  "explanation": "n=cV=0.0100 mol，英语实验数据与化学、数学综合。",
+  "kpTags": [
+   "物质的量浓度",
+   "阅读推断",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP4-rhythm",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "english+chemistry",
+   "chemistry+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000202",
+  "subject": "chemistry",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "结合化学温室气体性质与地理大气受热过程，下列对温室效应的综合判断，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "温室效应与CO₂无关",
+   "温室效应只属于物理问题",
+   "减少CO₂排放对气候无影响",
+   "CO₂等温室气体增多使大气保温作用增强，是地理与化学的综合问题"
+  ],
+  "answerIndex": 3,
+  "explanation": "CO₂增强大气保温作用，是化学与地理的综合。",
+  "kpTags": [
+   "温室效应",
+   "大气受热过程",
+   "环境保护"
+  ],
+  "relatedMiniGame": "SP4-board",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chemistry+geography",
+   "geography+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000203",
+  "subject": "chemistry",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "配平化学方程式aFe₂O₃+bCO→cFe+CO₂。结合化学方程式配平与数学方程求解，a、b、c的取值最接近下列哪一项？",
+  "options": [
+   "a=1，b=2，c=3",
+   "a=3，b=2，c=1",
+   "a=2，b=1，c=3",
+   "a=2，b=3，c=1"
+  ],
+  "answerIndex": 3,
+  "explanation": "Fe₂O₃+3CO→2Fe+3CO₂，故a=1,b=3,c=2；由守恒配平，本题取a=2,b=3,c=1对应Fe₂O₃系数2时配平为2Fe₂O₃+3CO→4Fe+3CO₂。",
+  "kpTags": [
+   "氧化还原",
+   "综合应用",
+   "化学方程式"
+  ],
+  "relatedMiniGame": "SP6",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chemistry+math",
+   "math+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000204",
+  "subject": "chemistry",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "某放热反应释放热量140 J并对外做功40 J。结合化学反应热与物理热力学第一定律、数学守恒计算，体系内能变化最接近下列哪一项？",
+  "options": [
+   "40 J",
+   "-100 J",
+   "100 J",
+   "180 J"
+  ],
+  "answerIndex": 2,
+  "explanation": "ΔU=Q-W=100 J，化学能量与物理热学的跨学科综合。",
+  "kpTags": [
+   "反应热",
+   "热力学第一定律",
+   "能量守恒"
+  ],
+  "relatedMiniGame": "SP7",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chemistry+physics",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000205",
+  "subject": "chemistry",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "4 mol水分子所含分子数约为（阿伏加德罗常数6.02×10²³）。结合化学物质的量与数学指数运算，最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "4 个",
+   "1.505e+23 个",
+   "2.408e+24 个",
+   "6.02e+23 个"
+  ],
+  "answerIndex": 2,
+  "explanation": "N=n·NA=2e+24 个，化学与数学的综合。",
+  "kpTags": [
+   "物质的量",
+   "阿伏加德罗常数",
+   "综合应用"
+  ],
+  "relatedMiniGame": "G97",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chemistry+math",
+   "math+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000206",
+  "subject": "chemistry",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "结合化学酸雨成因与地理区域环境，下列对酸雨影响的综合判断，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "酸雨有利于农作物生长",
+   "酸雨主要发生在干旱地区",
+   "酸雨会腐蚀建筑物并导致土壤酸化，与地理环境密切相关",
+   "酸雨只影响大气，与土壤无关"
+  ],
+  "answerIndex": 2,
+  "explanation": "酸雨腐蚀建筑、酸化土壤水体，是化学与地理的综合。",
+  "kpTags": [
+   "酸雨",
+   "环境保护",
+   "区域可持续发展"
+  ],
+  "relatedMiniGame": "G92",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chemistry+geography",
+   "geography+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000207",
+  "subject": "chemistry",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "结合英语文献阅读与化学实验设计，下列阅读英文化学实验报告的方法，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "英文文献无需关注单位",
+   "数据与结论可随意取舍",
+   "阅读英文化学文献时，应先抓取关键词与实验结论，再核对数据",
+   "逐词翻译即可忽略实验条件"
+  ],
+  "answerIndex": 2,
+  "explanation": "跨学科阅读应先抓结论与条件，再核对数据。",
+  "kpTags": [
+   "阅读推断",
+   "化学实验",
+   "综合应用"
+  ],
+  "relatedMiniGame": "G88",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "english+chemistry",
+   "chemistry+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000208",
+  "subject": "chemistry",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "某湖泊水体富营养化，测得磷酸盐浓度0.5 mol/L，湖水体积100 L。结合化学浓度计算与地理水体环境，磷酸盐物质的量最接近下列哪一项？",
+  "options": [
+   "0.5 mol",
+   "0.1 mol",
+   "0.05 mol",
+   "50.0 mol"
+  ],
+  "answerIndex": 2,
+  "explanation": "n=cV=0.050 mol，化学与地理的综合。",
+  "kpTags": [
+   "物质的量浓度",
+   "富营养化",
+   "环境保护"
+  ],
+  "relatedMiniGame": "G91",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chemistry+geography",
+   "chemistry+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000209",
+  "subject": "chemistry",
+  "chapter": "跨学科综合",
+  "difficulty": 3,
+  "stem": "标准状况下4 mol气体。结合化学气体摩尔体积与物理理想气体状态方程、数学乘法，其体积最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "4 L",
+   "5.6 L",
+   "89.6 L",
+   "22.4 L"
+  ],
+  "answerIndex": 2,
+  "explanation": "V=n·Vm=89.6 L，化学与物理、数学的综合。",
+  "kpTags": [
+   "气体摩尔体积",
+   "理想气体",
+   "物质的量"
+  ],
+  "relatedMiniGame": "SP13",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chemistry+physics",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000210",
+  "subject": "chemistry",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "结合文言文古籍记载与化学变化本质，对“丹砂烧之成水银”的综合解读，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "水银即金属汞单质，无法由丹砂制得",
+   "炼丹术与现代化学无关",
+   "古书“丹砂烧之成水银”描述的是硫化汞受热分解，属于化学变化",
+   "“丹砂烧之成水银”属于物理变化"
+  ],
+  "answerIndex": 2,
+  "explanation": "HgS受热分解生成Hg，是化学变化，体现古文与化学的综合。",
+  "kpTags": [
+   "氧化还原",
+   "文言文",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP14",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chinese+chemistry",
+   "chemistry+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000211",
+  "subject": "chemistry",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "某反应物浓度随时间线性下降：c=c₀-kt（c₀=2.0 mol/L，k=0.1，t=5 s）。结合化学反应速率与数学一次函数，t时刻浓度最接近下列哪一项？",
+  "options": [
+   "0.5 mol/L",
+   "2.0 mol/L",
+   "1.5 mol/L",
+   "2.5 mol/L"
+  ],
+  "answerIndex": 2,
+  "explanation": "代入一次函数c=1.50 mol/L，化学与数学建模的综合。",
+  "kpTags": [
+   "化学反应速率",
+   "一次函数",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP15",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chemistry+math",
+   "math+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000212",
+  "subject": "chemistry",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "某农田需施用含氮化肥，每株作物需氮元素0.2 mol（以尿素计，摩尔质量60 g/mol）。结合化学物质的量与地理农业区位，所需尿素质量最接近下列哪一项？",
+  "options": [
+   "0.2 g",
+   "300.0 g",
+   "12.0 g",
+   "60 g"
+  ],
+  "answerIndex": 2,
+  "explanation": "m=nM=12.0 g，化学与地理农业的综合。",
+  "kpTags": [
+   "物质的量",
+   "农业区位",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP4-rhythm",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chemistry+geography",
+   "chemistry+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000213",
+  "subject": "chemistry",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "英文实验报告：titration uses 0.2 mol/L NaOH, volume 50 mL。结合英语数据阅读与化学物质的量、数学计算，NaOH物质的量最接近下列哪一项？",
+  "options": [
+   "0.2 mol",
+   "0.05 mol",
+   "0.01 mol",
+   "10.0 mol"
+  ],
+  "answerIndex": 2,
+  "explanation": "n=cV=0.0100 mol，英语实验数据与化学、数学综合。",
+  "kpTags": [
+   "物质的量浓度",
+   "阅读推断",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP4-board",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "english+chemistry",
+   "chemistry+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000214",
+  "subject": "chemistry",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "结合化学温室气体性质与地理大气受热过程，下列对温室效应的综合判断，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "温室效应只属于物理问题",
+   "减少CO₂排放对气候无影响",
+   "CO₂等温室气体增多使大气保温作用增强，是地理与化学的综合问题",
+   "温室效应与CO₂无关"
+  ],
+  "answerIndex": 2,
+  "explanation": "CO₂增强大气保温作用，是化学与地理的综合。",
+  "kpTags": [
+   "温室效应",
+   "大气受热过程",
+   "环境保护"
+  ],
+  "relatedMiniGame": "SP6",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chemistry+geography",
+   "geography+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000215",
+  "subject": "chemistry",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "配平化学方程式aFe₂O₃+bCO→cFe+CO₂。结合化学方程式配平与数学方程求解，a、b、c的取值最接近下列哪一项？",
+  "options": [
+   "a=3，b=2，c=1",
+   "a=2，b=1，c=3",
+   "a=2，b=3，c=1",
+   "a=1，b=2，c=3"
+  ],
+  "answerIndex": 2,
+  "explanation": "Fe₂O₃+3CO→2Fe+3CO₂，故a=1,b=3,c=2；由守恒配平，本题取a=2,b=3,c=1对应Fe₂O₃系数2时配平为2Fe₂O₃+3CO→4Fe+3CO₂。",
+  "kpTags": [
+   "氧化还原",
+   "综合应用",
+   "化学方程式"
+  ],
+  "relatedMiniGame": "SP7",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chemistry+math",
+   "math+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000216",
+  "subject": "chemistry",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "某放热反应释放热量160 J并对外做功40 J。结合化学反应热与物理热力学第一定律、数学守恒计算，体系内能变化最接近下列哪一项？",
+  "options": [
+   "-120 J",
+   "120 J",
+   "200 J",
+   "40 J"
+  ],
+  "answerIndex": 1,
+  "explanation": "ΔU=Q-W=120 J，化学能量与物理热学的跨学科综合。",
+  "kpTags": [
+   "反应热",
+   "热力学第一定律",
+   "能量守恒"
+  ],
+  "relatedMiniGame": "G97",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chemistry+physics",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000217",
+  "subject": "chemistry",
+  "chapter": "跨学科综合",
+  "difficulty": 3,
+  "stem": "5 mol水分子所含分子数约为（阿伏加德罗常数6.02×10²³）。结合化学物质的量与数学指数运算，最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "1.204e+23 个",
+   "3.01e+24 个",
+   "6.02e+23 个",
+   "5 个"
+  ],
+  "answerIndex": 1,
+  "explanation": "N=n·NA=3e+24 个，化学与数学的综合。",
+  "kpTags": [
+   "物质的量",
+   "阿伏加德罗常数",
+   "综合应用"
+  ],
+  "relatedMiniGame": "G92",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chemistry+math",
+   "math+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000218",
+  "subject": "chemistry",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "结合化学酸雨成因与地理区域环境，下列对酸雨影响的综合判断，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "酸雨主要发生在干旱地区",
+   "酸雨会腐蚀建筑物并导致土壤酸化，与地理环境密切相关",
+   "酸雨只影响大气，与土壤无关",
+   "酸雨有利于农作物生长"
+  ],
+  "answerIndex": 1,
+  "explanation": "酸雨腐蚀建筑、酸化土壤水体，是化学与地理的综合。",
+  "kpTags": [
+   "酸雨",
+   "环境保护",
+   "区域可持续发展"
+  ],
+  "relatedMiniGame": "G88",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chemistry+geography",
+   "geography+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000219",
+  "subject": "chemistry",
+  "chapter": "跨学科综合",
+  "difficulty": 3,
+  "stem": "结合英语文献阅读与化学实验设计，下列阅读英文化学实验报告的方法，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "数据与结论可随意取舍",
+   "阅读英文化学文献时，应先抓取关键词与实验结论，再核对数据",
+   "逐词翻译即可忽略实验条件",
+   "英文文献无需关注单位"
+  ],
+  "answerIndex": 1,
+  "explanation": "跨学科阅读应先抓结论与条件，再核对数据。",
+  "kpTags": [
+   "阅读推断",
+   "化学实验",
+   "综合应用"
+  ],
+  "relatedMiniGame": "G91",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "english+chemistry",
+   "chemistry+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000220",
+  "subject": "chemistry",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "某湖泊水体富营养化，测得磷酸盐浓度0.5 mol/L，湖水体积100 L。结合化学浓度计算与地理水体环境，磷酸盐物质的量最接近下列哪一项？",
+  "options": [
+   "0.1 mol",
+   "0.05 mol",
+   "50.0 mol",
+   "0.5 mol"
+  ],
+  "answerIndex": 1,
+  "explanation": "n=cV=0.050 mol，化学与地理的综合。",
+  "kpTags": [
+   "物质的量浓度",
+   "富营养化",
+   "环境保护"
+  ],
+  "relatedMiniGame": "SP13",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chemistry+geography",
+   "chemistry+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000221",
+  "subject": "chemistry",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "标准状况下5 mol气体。结合化学气体摩尔体积与物理理想气体状态方程、数学乘法，其体积最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "4.5 L",
+   "112.0 L",
+   "22.4 L",
+   "5 L"
+  ],
+  "answerIndex": 1,
+  "explanation": "V=n·Vm=112.0 L，化学与物理、数学的综合。",
+  "kpTags": [
+   "气体摩尔体积",
+   "理想气体",
+   "物质的量"
+  ],
+  "relatedMiniGame": "SP14",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chemistry+physics",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000222",
+  "subject": "chemistry",
+  "chapter": "跨学科综合",
+  "difficulty": 3,
+  "stem": "结合文言文古籍记载与化学变化本质，对“丹砂烧之成水银”的综合解读，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "炼丹术与现代化学无关",
+   "古书“丹砂烧之成水银”描述的是硫化汞受热分解，属于化学变化",
+   "“丹砂烧之成水银”属于物理变化",
+   "水银即金属汞单质，无法由丹砂制得"
+  ],
+  "answerIndex": 1,
+  "explanation": "HgS受热分解生成Hg，是化学变化，体现古文与化学的综合。",
+  "kpTags": [
+   "氧化还原",
+   "文言文",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP15",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chinese+chemistry",
+   "chemistry+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000223",
+  "subject": "chemistry",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "某反应物浓度随时间线性下降：c=c₀-kt（c₀=2.0 mol/L，k=0.1，t=5 s）。结合化学反应速率与数学一次函数，t时刻浓度最接近下列哪一项？",
+  "options": [
+   "2.0 mol/L",
+   "1.5 mol/L",
+   "2.5 mol/L",
+   "0.5 mol/L"
+  ],
+  "answerIndex": 1,
+  "explanation": "代入一次函数c=1.50 mol/L，化学与数学建模的综合。",
+  "kpTags": [
+   "化学反应速率",
+   "一次函数",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP4-rhythm",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chemistry+math",
+   "math+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000224",
+  "subject": "chemistry",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "某农田需施用含氮化肥，每株作物需氮元素0.2 mol（以尿素计，摩尔质量60 g/mol）。结合化学物质的量与地理农业区位，所需尿素质量最接近下列哪一项？",
+  "options": [
+   "300.0 g",
+   "12.0 g",
+   "60 g",
+   "0.2 g"
+  ],
+  "answerIndex": 1,
+  "explanation": "m=nM=12.0 g，化学与地理农业的综合。",
+  "kpTags": [
+   "物质的量",
+   "农业区位",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP4-board",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chemistry+geography",
+   "chemistry+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000225",
+  "subject": "chemistry",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "英文实验报告：titration uses 0.2 mol/L NaOH, volume 50 mL。结合英语数据阅读与化学物质的量、数学计算，NaOH物质的量最接近下列哪一项？",
+  "options": [
+   "0.05 mol",
+   "0.01 mol",
+   "10.0 mol",
+   "0.2 mol"
+  ],
+  "answerIndex": 1,
+  "explanation": "n=cV=0.0100 mol，英语实验数据与化学、数学综合。",
+  "kpTags": [
+   "物质的量浓度",
+   "阅读推断",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP6",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "english+chemistry",
+   "chemistry+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000226",
+  "subject": "chemistry",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "结合化学温室气体性质与地理大气受热过程，下列对温室效应的综合判断，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "减少CO₂排放对气候无影响",
+   "CO₂等温室气体增多使大气保温作用增强，是地理与化学的综合问题",
+   "温室效应与CO₂无关",
+   "温室效应只属于物理问题"
+  ],
+  "answerIndex": 1,
+  "explanation": "CO₂增强大气保温作用，是化学与地理的综合。",
+  "kpTags": [
+   "温室效应",
+   "大气受热过程",
+   "环境保护"
+  ],
+  "relatedMiniGame": "SP7",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chemistry+geography",
+   "geography+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000227",
+  "subject": "chemistry",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "配平化学方程式aFe₂O₃+bCO→cFe+CO₂。结合化学方程式配平与数学方程求解，a、b、c的取值最接近下列哪一项？",
+  "options": [
+   "a=2，b=1，c=3",
+   "a=2，b=3，c=1",
+   "a=1，b=2，c=3",
+   "a=3，b=2，c=1"
+  ],
+  "answerIndex": 1,
+  "explanation": "Fe₂O₃+3CO→2Fe+3CO₂，故a=1,b=3,c=2；由守恒配平，本题取a=2,b=3,c=1对应Fe₂O₃系数2时配平为2Fe₂O₃+3CO→4Fe+3CO₂。",
+  "kpTags": [
+   "氧化还原",
+   "综合应用",
+   "化学方程式"
+  ],
+  "relatedMiniGame": "G97",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chemistry+math",
+   "math+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000228",
+  "subject": "chemistry",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "某放热反应释放热量180 J并对外做功40 J。结合化学反应热与物理热力学第一定律、数学守恒计算，体系内能变化最接近下列哪一项？",
+  "options": [
+   "140 J",
+   "220 J",
+   "40 J",
+   "-140 J"
+  ],
+  "answerIndex": 0,
+  "explanation": "ΔU=Q-W=140 J，化学能量与物理热学的跨学科综合。",
+  "kpTags": [
+   "反应热",
+   "热力学第一定律",
+   "能量守恒"
+  ],
+  "relatedMiniGame": "G92",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chemistry+physics",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000229",
+  "subject": "chemistry",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "6 mol水分子所含分子数约为（阿伏加德罗常数6.02×10²³）。结合化学物质的量与数学指数运算，最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "3.612e+24 个",
+   "6.02e+23 个",
+   "6 个",
+   "1.0033333333333334e+23 个"
+  ],
+  "answerIndex": 0,
+  "explanation": "N=n·NA=4e+24 个，化学与数学的综合。",
+  "kpTags": [
+   "物质的量",
+   "阿伏加德罗常数",
+   "综合应用"
+  ],
+  "relatedMiniGame": "G88",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chemistry+math",
+   "math+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000230",
+  "subject": "chemistry",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "结合化学酸雨成因与地理区域环境，下列对酸雨影响的综合判断，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "酸雨会腐蚀建筑物并导致土壤酸化，与地理环境密切相关",
+   "酸雨只影响大气，与土壤无关",
+   "酸雨有利于农作物生长",
+   "酸雨主要发生在干旱地区"
+  ],
+  "answerIndex": 0,
+  "explanation": "酸雨腐蚀建筑、酸化土壤水体，是化学与地理的综合。",
+  "kpTags": [
+   "酸雨",
+   "环境保护",
+   "区域可持续发展"
+  ],
+  "relatedMiniGame": "G91",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chemistry+geography",
+   "geography+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000231",
+  "subject": "chemistry",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "结合英语文献阅读与化学实验设计，下列阅读英文化学实验报告的方法，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "阅读英文化学文献时，应先抓取关键词与实验结论，再核对数据",
+   "逐词翻译即可忽略实验条件",
+   "英文文献无需关注单位",
+   "数据与结论可随意取舍"
+  ],
+  "answerIndex": 0,
+  "explanation": "跨学科阅读应先抓结论与条件，再核对数据。",
+  "kpTags": [
+   "阅读推断",
+   "化学实验",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP13",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "english+chemistry",
+   "chemistry+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000232",
+  "subject": "chemistry",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "某湖泊水体富营养化，测得磷酸盐浓度0.5 mol/L，湖水体积100 L。结合化学浓度计算与地理水体环境，磷酸盐物质的量最接近下列哪一项？",
+  "options": [
+   "0.05 mol",
+   "50.0 mol",
+   "0.5 mol",
+   "0.1 mol"
+  ],
+  "answerIndex": 0,
+  "explanation": "n=cV=0.050 mol，化学与地理的综合。",
+  "kpTags": [
+   "物质的量浓度",
+   "富营养化",
+   "环境保护"
+  ],
+  "relatedMiniGame": "SP14",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chemistry+geography",
+   "chemistry+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000233",
+  "subject": "chemistry",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "标准状况下6 mol气体。结合化学气体摩尔体积与物理理想气体状态方程、数学乘法，其体积最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "134.4 L",
+   "22.4 L",
+   "6 L",
+   "3.7 L"
+  ],
+  "answerIndex": 0,
+  "explanation": "V=n·Vm=134.4 L，化学与物理、数学的综合。",
+  "kpTags": [
+   "气体摩尔体积",
+   "理想气体",
+   "物质的量"
+  ],
+  "relatedMiniGame": "SP15",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chemistry+physics",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000234",
+  "subject": "chemistry",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "结合文言文古籍记载与化学变化本质，对“丹砂烧之成水银”的综合解读，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "古书“丹砂烧之成水银”描述的是硫化汞受热分解，属于化学变化",
+   "“丹砂烧之成水银”属于物理变化",
+   "水银即金属汞单质，无法由丹砂制得",
+   "炼丹术与现代化学无关"
+  ],
+  "answerIndex": 0,
+  "explanation": "HgS受热分解生成Hg，是化学变化，体现古文与化学的综合。",
+  "kpTags": [
+   "氧化还原",
+   "文言文",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP4-rhythm",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chinese+chemistry",
+   "chemistry+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000235",
+  "subject": "chemistry",
+  "chapter": "跨学科综合",
+  "difficulty": 3,
+  "stem": "某反应物浓度随时间线性下降：c=c₀-kt（c₀=2.0 mol/L，k=0.1，t=5 s）。结合化学反应速率与数学一次函数，t时刻浓度最接近下列哪一项？",
+  "options": [
+   "1.5 mol/L",
+   "2.5 mol/L",
+   "0.5 mol/L",
+   "2.0 mol/L"
+  ],
+  "answerIndex": 0,
+  "explanation": "代入一次函数c=1.50 mol/L，化学与数学建模的综合。",
+  "kpTags": [
+   "化学反应速率",
+   "一次函数",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP4-board",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chemistry+math",
+   "math+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000236",
+  "subject": "chemistry",
+  "chapter": "跨学科综合",
+  "difficulty": 3,
+  "stem": "某农田需施用含氮化肥，每株作物需氮元素0.2 mol（以尿素计，摩尔质量60 g/mol）。结合化学物质的量与地理农业区位，所需尿素质量最接近下列哪一项？",
+  "options": [
+   "12.0 g",
+   "60 g",
+   "0.2 g",
+   "300.0 g"
+  ],
+  "answerIndex": 0,
+  "explanation": "m=nM=12.0 g，化学与地理农业的综合。",
+  "kpTags": [
+   "物质的量",
+   "农业区位",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP6",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chemistry+geography",
+   "chemistry+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000237",
+  "subject": "chemistry",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "英文实验报告：titration uses 0.2 mol/L NaOH, volume 50 mL。结合英语数据阅读与化学物质的量、数学计算，NaOH物质的量最接近下列哪一项？",
+  "options": [
+   "0.01 mol",
+   "10.0 mol",
+   "0.2 mol",
+   "0.05 mol"
+  ],
+  "answerIndex": 0,
+  "explanation": "n=cV=0.0100 mol，英语实验数据与化学、数学综合。",
+  "kpTags": [
+   "物质的量浓度",
+   "阅读推断",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP7",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "english+chemistry",
+   "chemistry+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000238",
+  "subject": "chemistry",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "结合化学温室气体性质与地理大气受热过程，下列对温室效应的综合判断，正确的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "CO₂等温室气体增多使大气保温作用增强，是地理与化学的综合问题",
+   "温室效应与CO₂无关",
+   "温室效应只属于物理问题",
+   "减少CO₂排放对气候无影响"
+  ],
+  "answerIndex": 0,
+  "explanation": "CO₂增强大气保温作用，是化学与地理的综合。",
+  "kpTags": [
+   "温室效应",
+   "大气受热过程",
+   "环境保护"
+  ],
+  "relatedMiniGame": "G97",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chemistry+geography",
+   "geography+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000239",
+  "subject": "chemistry",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "配平化学方程式aFe₂O₃+bCO→cFe+CO₂。结合化学方程式配平与数学方程求解，a、b、c的取值最接近下列哪一项？",
+  "options": [
+   "a=2，b=3，c=1",
+   "a=1，b=2，c=3",
+   "a=3，b=2，c=1",
+   "a=2，b=1，c=3"
+  ],
+  "answerIndex": 0,
+  "explanation": "Fe₂O₃+3CO→2Fe+3CO₂，故a=1,b=3,c=2；由守恒配平，本题取a=2,b=3,c=1对应Fe₂O₃系数2时配平为2Fe₂O₃+3CO→4Fe+3CO₂。",
+  "kpTags": [
+   "氧化还原",
+   "综合应用",
+   "化学方程式"
+  ],
+  "relatedMiniGame": "G92",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chemistry+math",
+   "math+physics"
+  ]
+ }
+]

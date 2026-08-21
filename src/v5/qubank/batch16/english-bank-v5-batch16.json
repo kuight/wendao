@@ -1,0 +1,1890 @@
+[
+ {
+  "id": "q-batch16-000440",
+  "subject": "english",
+  "chapter": "听力应用",
+  "difficulty": 4,
+  "stem": "听力对话中，学生询问图书馆开放时间，管理员回答“The library is open from 8 a.m. to 9 p.m. on weekdays, but only until 5 p.m. on weekends.” 下列推断正确的是：",
+  "options": [
+   "图书馆每天21点闭馆",
+   "周末图书馆开放到21点",
+   "工作日图书馆17点闭馆",
+   "周末图书馆17点闭馆"
+  ],
+  "answerIndex": 3,
+  "explanation": "关键词“weekends…until 5 p.m.”，周末17点闭馆。",
+  "kpTags": [
+   "听力场景",
+   "信息推断",
+   "听力应用"
+  ],
+  "relatedMiniGame": "SP13",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000441",
+  "subject": "english",
+  "chapter": "听力应用",
+  "difficulty": 5,
+  "stem": "听力材料中，服务员问“Would you like your steak medium or well-done?” 顾客回答“Medium, please.” 下列推断正确的是：",
+  "options": [
+   "顾客要求牛排全熟",
+   "顾客不喜欢牛排",
+   "顾客要求牛排三分熟",
+   "顾客要求牛排五分熟"
+  ],
+  "answerIndex": 3,
+  "explanation": "“medium”指五分熟，听力细节理解。",
+  "kpTags": [
+   "听力场景",
+   "信息推断",
+   "听力应用"
+  ],
+  "relatedMiniGame": "SP14",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000442",
+  "subject": "english",
+  "chapter": "听力应用",
+  "difficulty": 3,
+  "stem": "听力广播中播报“Flight CA982 will be delayed by two hours due to heavy fog.” 下列推断正确的是：",
+  "options": [
+   "CA982航班提前两小时",
+   "航班延误与天气无关",
+   "CA982航班已取消",
+   "CA982航班因大雾延误两小时"
+  ],
+  "answerIndex": 3,
+  "explanation": "关键词“delayed by two hours due to heavy fog”。",
+  "kpTags": [
+   "听力场景",
+   "信息推断",
+   "听力应用"
+  ],
+  "relatedMiniGame": "SP15",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000443",
+  "subject": "english",
+  "chapter": "听力应用",
+  "difficulty": 5,
+  "stem": "听力对话中，男生说“I can hardly stay awake in the math class.” 女生建议“You should go to bed earlier.” 下列推断正确的是：",
+  "options": [
+   "男生数学很好",
+   "女生建议男生熬夜",
+   "男生不喜欢女生",
+   "男生上课犯困，女生建议早睡"
+  ],
+  "answerIndex": 3,
+  "explanation": "“hardly stay awake”表困倦，建议早睡。",
+  "kpTags": [
+   "听力场景",
+   "信息推断",
+   "听力应用"
+  ],
+  "relatedMiniGame": "SP4-rhythm",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000444",
+  "subject": "english",
+  "chapter": "听力应用",
+  "difficulty": 4,
+  "stem": "听力对话中，学生询问图书馆开放时间，管理员回答“The library is open from 8 a.m. to 9 p.m. on weekdays, but only until 5 p.m. on weekends.” 下列推断正确的是：",
+  "options": [
+   "周末图书馆开放到21点",
+   "工作日图书馆17点闭馆",
+   "周末图书馆17点闭馆",
+   "图书馆每天21点闭馆"
+  ],
+  "answerIndex": 2,
+  "explanation": "关键词“weekends…until 5 p.m.”，周末17点闭馆。",
+  "kpTags": [
+   "听力场景",
+   "信息推断",
+   "听力应用"
+  ],
+  "relatedMiniGame": "SP4-board",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000445",
+  "subject": "english",
+  "chapter": "听力应用",
+  "difficulty": 4,
+  "stem": "听力材料中，服务员问“Would you like your steak medium or well-done?” 顾客回答“Medium, please.” 下列推断正确的是：",
+  "options": [
+   "顾客不喜欢牛排",
+   "顾客要求牛排三分熟",
+   "顾客要求牛排五分熟",
+   "顾客要求牛排全熟"
+  ],
+  "answerIndex": 2,
+  "explanation": "“medium”指五分熟，听力细节理解。",
+  "kpTags": [
+   "听力场景",
+   "信息推断",
+   "听力应用"
+  ],
+  "relatedMiniGame": "SP6",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000446",
+  "subject": "english",
+  "chapter": "听力应用",
+  "difficulty": 3,
+  "stem": "听力广播中播报“Flight CA982 will be delayed by two hours due to heavy fog.” 下列推断正确的是：",
+  "options": [
+   "航班延误与天气无关",
+   "CA982航班已取消",
+   "CA982航班因大雾延误两小时",
+   "CA982航班提前两小时"
+  ],
+  "answerIndex": 2,
+  "explanation": "关键词“delayed by two hours due to heavy fog”。",
+  "kpTags": [
+   "听力场景",
+   "信息推断",
+   "听力应用"
+  ],
+  "relatedMiniGame": "SP7",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000447",
+  "subject": "english",
+  "chapter": "听力应用",
+  "difficulty": 4,
+  "stem": "听力对话中，男生说“I can hardly stay awake in the math class.” 女生建议“You should go to bed earlier.” 下列推断正确的是：",
+  "options": [
+   "女生建议男生熬夜",
+   "男生不喜欢女生",
+   "男生上课犯困，女生建议早睡",
+   "男生数学很好"
+  ],
+  "answerIndex": 2,
+  "explanation": "“hardly stay awake”表困倦，建议早睡。",
+  "kpTags": [
+   "听力场景",
+   "信息推断",
+   "听力应用"
+  ],
+  "relatedMiniGame": "G97",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000448",
+  "subject": "english",
+  "chapter": "阅读推断",
+  "difficulty": 3,
+  "stem": "阅读文章提到“The more you read, the more you will know; the more you learn, the more places you will go.” 下列推断最准确的是：",
+  "options": [
+   "读书越多越封闭",
+   "学习与旅行无关",
+   "知识越多越无用",
+   "阅读与学习能开阔视野、带来更多机会"
+  ],
+  "answerIndex": 3,
+  "explanation": "由“the more places you will go”推断开阔视野。",
+  "kpTags": [
+   "阅读推断",
+   "主旨",
+   "阅读"
+  ],
+  "relatedMiniGame": "G92",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000449",
+  "subject": "english",
+  "chapter": "阅读推断",
+  "difficulty": 5,
+  "stem": "阅读文章说“Failure is not the opposite of success; it is part of success.” 下列推断最准确的是：",
+  "options": [
+   "失败与成功完全对立",
+   "失败毫无价值",
+   "成功不需要经历失败",
+   "失败是成功的一部分，应正确看待失败"
+  ],
+  "answerIndex": 3,
+  "explanation": "“part of success”表明失败是成功组成部分。",
+  "kpTags": [
+   "阅读推断",
+   "主旨",
+   "阅读"
+  ],
+  "relatedMiniGame": "G88",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000450",
+  "subject": "english",
+  "chapter": "阅读推断",
+  "difficulty": 5,
+  "stem": "阅读文章描述“The old man planted a tree every day for ten years, and the hillside turned green.” 下列推断最准确的是：",
+  "options": [
+   "山坡变绿是自然形成的",
+   "老人只种了一棵树",
+   "十年种树毫无成效",
+   "坚持植树使山坡变绿，体现持之以恒的力量"
+  ],
+  "answerIndex": 3,
+  "explanation": "由“every day…turned green”推断坚持带来改变。",
+  "kpTags": [
+   "阅读推断",
+   "主旨",
+   "阅读"
+  ],
+  "relatedMiniGame": "G91",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000451",
+  "subject": "english",
+  "chapter": "阅读推断",
+  "difficulty": 4,
+  "stem": "阅读文章提到“Scientists found that sleep helps consolidate memory.” 下列推断最准确的是：",
+  "options": [
+   "睡眠会破坏记忆",
+   "记忆与睡眠无关",
+   "科学家反对睡眠",
+   "睡眠有助于巩固记忆"
+  ],
+  "answerIndex": 3,
+  "explanation": "“consolidate memory”即巩固记忆。",
+  "kpTags": [
+   "阅读推断",
+   "主旨",
+   "阅读"
+  ],
+  "relatedMiniGame": "SP13",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000452",
+  "subject": "english",
+  "chapter": "阅读推断",
+  "difficulty": 4,
+  "stem": "阅读文章提到“The more you read, the more you will know; the more you learn, the more places you will go.” 下列推断最准确的是：",
+  "options": [
+   "学习与旅行无关",
+   "知识越多越无用",
+   "阅读与学习能开阔视野、带来更多机会",
+   "读书越多越封闭"
+  ],
+  "answerIndex": 2,
+  "explanation": "由“the more places you will go”推断开阔视野。",
+  "kpTags": [
+   "阅读推断",
+   "主旨",
+   "阅读"
+  ],
+  "relatedMiniGame": "SP14",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000453",
+  "subject": "english",
+  "chapter": "阅读推断",
+  "difficulty": 4,
+  "stem": "阅读文章说“Failure is not the opposite of success; it is part of success.” 下列推断最准确的是：",
+  "options": [
+   "失败毫无价值",
+   "成功不需要经历失败",
+   "失败是成功的一部分，应正确看待失败",
+   "失败与成功完全对立"
+  ],
+  "answerIndex": 2,
+  "explanation": "“part of success”表明失败是成功组成部分。",
+  "kpTags": [
+   "阅读推断",
+   "主旨",
+   "阅读"
+  ],
+  "relatedMiniGame": "SP15",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000454",
+  "subject": "english",
+  "chapter": "阅读推断",
+  "difficulty": 4,
+  "stem": "阅读文章描述“The old man planted a tree every day for ten years, and the hillside turned green.” 下列推断最准确的是：",
+  "options": [
+   "老人只种了一棵树",
+   "十年种树毫无成效",
+   "坚持植树使山坡变绿，体现持之以恒的力量",
+   "山坡变绿是自然形成的"
+  ],
+  "answerIndex": 2,
+  "explanation": "由“every day…turned green”推断坚持带来改变。",
+  "kpTags": [
+   "阅读推断",
+   "主旨",
+   "阅读"
+  ],
+  "relatedMiniGame": "SP4-rhythm",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000455",
+  "subject": "english",
+  "chapter": "阅读推断",
+  "difficulty": 3,
+  "stem": "阅读文章提到“Scientists found that sleep helps consolidate memory.” 下列推断最准确的是：",
+  "options": [
+   "记忆与睡眠无关",
+   "科学家反对睡眠",
+   "睡眠有助于巩固记忆",
+   "睡眠会破坏记忆"
+  ],
+  "answerIndex": 2,
+  "explanation": "“consolidate memory”即巩固记忆。",
+  "kpTags": [
+   "阅读推断",
+   "主旨",
+   "阅读"
+  ],
+  "relatedMiniGame": "SP4-board",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000456",
+  "subject": "english",
+  "chapter": "完形填空语境",
+  "difficulty": 4,
+  "stem": "完形填空：He was very tired, but he kept ____ forward. 结合语境，最恰当的选项是：",
+  "options": [
+   "moving to",
+   "move",
+   "moved",
+   "moving"
+  ],
+  "answerIndex": 3,
+  "explanation": "keep doing sth.，固定搭配，故用moving。",
+  "kpTags": [
+   "完形填空",
+   "固定句型",
+   "语境推断"
+  ],
+  "relatedMiniGame": "SP6",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000457",
+  "subject": "english",
+  "chapter": "完形填空语境",
+  "difficulty": 4,
+  "stem": "完形填空：The teacher asked us to ____ our hands before answering. 结合语境，最恰当的选项是：",
+  "options": [
+   "rise",
+   "arise",
+   "lift up to",
+   "raise"
+  ],
+  "answerIndex": 3,
+  "explanation": "raise为及物动词“举起”，后接hands。",
+  "kpTags": [
+   "完形填空",
+   "词汇",
+   "语境推断"
+  ],
+  "relatedMiniGame": "SP7",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000458",
+  "subject": "english",
+  "chapter": "完形填空语境",
+  "difficulty": 4,
+  "stem": "完形填空：She was ____ with joy when she heard the good news. 结合语境，最恰当的选项是：",
+  "options": [
+   "full",
+   "fill",
+   "filling with",
+   "filled"
+  ],
+  "answerIndex": 3,
+  "explanation": "be filled with joy，固定搭配。",
+  "kpTags": [
+   "完形填空",
+   "固定句型",
+   "语境推断"
+  ],
+  "relatedMiniGame": "G97",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000459",
+  "subject": "english",
+  "chapter": "完形填空语境",
+  "difficulty": 3,
+  "stem": "完形填空：The little boy was too ____ to speak in front of the class. 结合语境，最恰当的选项是：",
+  "options": [
+   "proud",
+   "brave",
+   "angry",
+   "shy"
+  ],
+  "answerIndex": 3,
+  "explanation": "“too shy to speak”符合“不敢发言”的语境。",
+  "kpTags": [
+   "完形填空",
+   "词汇",
+   "语境推断"
+  ],
+  "relatedMiniGame": "G92",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000460",
+  "subject": "english",
+  "chapter": "完形填空语境",
+  "difficulty": 5,
+  "stem": "完形填空：He was very tired, but he kept ____ forward. 结合语境，最恰当的选项是：",
+  "options": [
+   "move",
+   "moved",
+   "moving",
+   "moving to"
+  ],
+  "answerIndex": 2,
+  "explanation": "keep doing sth.，固定搭配，故用moving。",
+  "kpTags": [
+   "完形填空",
+   "固定句型",
+   "语境推断"
+  ],
+  "relatedMiniGame": "G88",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000461",
+  "subject": "english",
+  "chapter": "完形填空语境",
+  "difficulty": 4,
+  "stem": "完形填空：The teacher asked us to ____ our hands before answering. 结合语境，最恰当的选项是：",
+  "options": [
+   "arise",
+   "lift up to",
+   "raise",
+   "rise"
+  ],
+  "answerIndex": 2,
+  "explanation": "raise为及物动词“举起”，后接hands。",
+  "kpTags": [
+   "完形填空",
+   "词汇",
+   "语境推断"
+  ],
+  "relatedMiniGame": "G91",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000462",
+  "subject": "english",
+  "chapter": "完形填空语境",
+  "difficulty": 5,
+  "stem": "完形填空：She was ____ with joy when she heard the good news. 结合语境，最恰当的选项是：",
+  "options": [
+   "fill",
+   "filling with",
+   "filled",
+   "full"
+  ],
+  "answerIndex": 2,
+  "explanation": "be filled with joy，固定搭配。",
+  "kpTags": [
+   "完形填空",
+   "固定句型",
+   "语境推断"
+  ],
+  "relatedMiniGame": "SP13",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000463",
+  "subject": "english",
+  "chapter": "完形填空语境",
+  "difficulty": 3,
+  "stem": "完形填空：The little boy was too ____ to speak in front of the class. 结合语境，最恰当的选项是：",
+  "options": [
+   "brave",
+   "angry",
+   "shy",
+   "proud"
+  ],
+  "answerIndex": 2,
+  "explanation": "“too shy to speak”符合“不敢发言”的语境。",
+  "kpTags": [
+   "完形填空",
+   "词汇",
+   "语境推断"
+  ],
+  "relatedMiniGame": "SP14",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000464",
+  "subject": "english",
+  "chapter": "语法填空",
+  "difficulty": 5,
+  "stem": "语法填空：By the time we arrived, the film ____ (start) for ten minutes. 结合时态，最恰当的选项是：",
+  "options": [
+   "has started",
+   "started",
+   "had started",
+   "had been on"
+  ],
+  "answerIndex": 3,
+  "explanation": "“for ten minutes”表持续，用had been on。",
+  "kpTags": [
+   "语法填空",
+   "过去完成时",
+   "时态"
+  ],
+  "relatedMiniGame": "SP15",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000465",
+  "subject": "english",
+  "chapter": "语法填空",
+  "difficulty": 5,
+  "stem": "语法填空：It is important ____ (learn) from mistakes. 结合非谓语动词，最恰当的选项是：",
+  "options": [
+   "learning",
+   "learn",
+   "learned",
+   "to learn"
+  ],
+  "answerIndex": 3,
+  "explanation": "It is important to do sth.，不定式作真正主语。",
+  "kpTags": [
+   "语法填空",
+   "非谓语动词",
+   "固定句型"
+  ],
+  "relatedMiniGame": "SP4-rhythm",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000466",
+  "subject": "english",
+  "chapter": "语法填空",
+  "difficulty": 3,
+  "stem": "语法填空：The book ____ (write) by Lu Xun is very famous. 结合非谓语动词，最恰当的选项是：",
+  "options": [
+   "writing",
+   "writes",
+   "to write",
+   "written"
+  ],
+  "answerIndex": 3,
+  "explanation": "过去分词作后置定语，表被动。",
+  "kpTags": [
+   "语法填空",
+   "非谓语动词",
+   "词性转换"
+  ],
+  "relatedMiniGame": "SP4-board",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000467",
+  "subject": "english",
+  "chapter": "语法填空",
+  "difficulty": 4,
+  "stem": "语法填空：She speaks English ____ (fluent) than before. 结合词性转换，最恰当的选项是：",
+  "options": [
+   "fluenter",
+   "fluently",
+   "most fluent",
+   "more fluently"
+  ],
+  "answerIndex": 3,
+  "explanation": "修饰动词speaks用副词比较级more fluently。",
+  "kpTags": [
+   "语法填空",
+   "词性转换",
+   "副词"
+  ],
+  "relatedMiniGame": "SP6",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000468",
+  "subject": "english",
+  "chapter": "语法填空",
+  "difficulty": 3,
+  "stem": "语法填空：By the time we arrived, the film ____ (start) for ten minutes. 结合时态，最恰当的选项是：",
+  "options": [
+   "started",
+   "had started",
+   "had been on",
+   "has started"
+  ],
+  "answerIndex": 2,
+  "explanation": "“for ten minutes”表持续，用had been on。",
+  "kpTags": [
+   "语法填空",
+   "过去完成时",
+   "时态"
+  ],
+  "relatedMiniGame": "SP7",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000469",
+  "subject": "english",
+  "chapter": "语法填空",
+  "difficulty": 4,
+  "stem": "语法填空：It is important ____ (learn) from mistakes. 结合非谓语动词，最恰当的选项是：",
+  "options": [
+   "learn",
+   "learned",
+   "to learn",
+   "learning"
+  ],
+  "answerIndex": 2,
+  "explanation": "It is important to do sth.，不定式作真正主语。",
+  "kpTags": [
+   "语法填空",
+   "非谓语动词",
+   "固定句型"
+  ],
+  "relatedMiniGame": "G97",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000470",
+  "subject": "english",
+  "chapter": "语法填空",
+  "difficulty": 4,
+  "stem": "语法填空：The book ____ (write) by Lu Xun is very famous. 结合非谓语动词，最恰当的选项是：",
+  "options": [
+   "writes",
+   "to write",
+   "written",
+   "writing"
+  ],
+  "answerIndex": 2,
+  "explanation": "过去分词作后置定语，表被动。",
+  "kpTags": [
+   "语法填空",
+   "非谓语动词",
+   "词性转换"
+  ],
+  "relatedMiniGame": "G92",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000471",
+  "subject": "english",
+  "chapter": "语法填空",
+  "difficulty": 4,
+  "stem": "语法填空：She speaks English ____ (fluent) than before. 结合词性转换，最恰当的选项是：",
+  "options": [
+   "fluently",
+   "most fluent",
+   "more fluently",
+   "fluenter"
+  ],
+  "answerIndex": 2,
+  "explanation": "修饰动词speaks用副词比较级more fluently。",
+  "kpTags": [
+   "语法填空",
+   "词性转换",
+   "副词"
+  ],
+  "relatedMiniGame": "G88",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000472",
+  "subject": "english",
+  "chapter": "应用文进阶",
+  "difficulty": 3,
+  "stem": "应用文写作中，写一封申请加入英语俱乐部的邮件，下列开头最得体的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "Hey, I want to join your club.",
+   "You must let me join the club.",
+   "I am forced to write this letter.",
+   "I am writing to apply for membership in the English Club."
+  ],
+  "answerIndex": 3,
+  "explanation": "正式申请信开头应礼貌说明写信目的。",
+  "kpTags": [
+   "应用文",
+   "礼貌表达",
+   "应用文进阶"
+  ],
+  "relatedMiniGame": "G91",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000473",
+  "subject": "english",
+  "chapter": "应用文进阶",
+  "difficulty": 4,
+  "stem": "应用文写作中，给外教写感谢信，下列结尾最得体的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "Give me a reply quickly.",
+   "I don't care about your reply.",
+   "You should thank me instead.",
+   "Thank you again for your generous help. I look forward to your reply."
+  ],
+  "answerIndex": 3,
+  "explanation": "感谢信结尾应表达谢意并礼貌期待回复。",
+  "kpTags": [
+   "应用文",
+   "礼貌表达",
+   "应用文进阶"
+  ],
+  "relatedMiniGame": "SP13",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000474",
+  "subject": "english",
+  "chapter": "应用文进阶",
+  "difficulty": 5,
+  "stem": "应用文写作中，写建议信建议同学早睡，下列表达最得体的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "You must go to bed now.",
+   "Going to bed early is stupid.",
+   "I order you to sleep early.",
+   "I suggest that you go to bed earlier to stay healthy."
+  ],
+  "answerIndex": 3,
+  "explanation": "建议信应用委婉建议语气。",
+  "kpTags": [
+   "应用文",
+   "礼貌表达",
+   "应用文进阶"
+  ],
+  "relatedMiniGame": "SP14",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000475",
+  "subject": "english",
+  "chapter": "应用文进阶",
+  "difficulty": 4,
+  "stem": "应用文写作中，写通知告知同学下周讲座，下列格式要素最完整的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "仅写时间地点",
+   "仅写讲座内容",
+   "仅写落款",
+   "标题、时间、地点、内容、落款"
+  ],
+  "answerIndex": 3,
+  "explanation": "通知需包含标题、时间、地点、内容与落款。",
+  "kpTags": [
+   "应用文",
+   "应用文进阶",
+   "结构安排"
+  ],
+  "relatedMiniGame": "SP15",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000476",
+  "subject": "english",
+  "chapter": "应用文进阶",
+  "difficulty": 4,
+  "stem": "应用文写作中，写一封申请加入英语俱乐部的邮件，下列开头最得体的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "You must let me join the club.",
+   "I am forced to write this letter.",
+   "I am writing to apply for membership in the English Club.",
+   "Hey, I want to join your club."
+  ],
+  "answerIndex": 2,
+  "explanation": "正式申请信开头应礼貌说明写信目的。",
+  "kpTags": [
+   "应用文",
+   "礼貌表达",
+   "应用文进阶"
+  ],
+  "relatedMiniGame": "SP4-rhythm",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000477",
+  "subject": "english",
+  "chapter": "应用文进阶",
+  "difficulty": 5,
+  "stem": "应用文写作中，给外教写感谢信，下列结尾最得体的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "I don't care about your reply.",
+   "You should thank me instead.",
+   "Thank you again for your generous help. I look forward to your reply.",
+   "Give me a reply quickly."
+  ],
+  "answerIndex": 2,
+  "explanation": "感谢信结尾应表达谢意并礼貌期待回复。",
+  "kpTags": [
+   "应用文",
+   "礼貌表达",
+   "应用文进阶"
+  ],
+  "relatedMiniGame": "SP4-board",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000478",
+  "subject": "english",
+  "chapter": "应用文进阶",
+  "difficulty": 3,
+  "stem": "应用文写作中，写建议信建议同学早睡，下列表达最得体的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "Going to bed early is stupid.",
+   "I order you to sleep early.",
+   "I suggest that you go to bed earlier to stay healthy.",
+   "You must go to bed now."
+  ],
+  "answerIndex": 2,
+  "explanation": "建议信应用委婉建议语气。",
+  "kpTags": [
+   "应用文",
+   "礼貌表达",
+   "应用文进阶"
+  ],
+  "relatedMiniGame": "SP6",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000479",
+  "subject": "english",
+  "chapter": "应用文进阶",
+  "difficulty": 4,
+  "stem": "应用文写作中，写通知告知同学下周讲座，下列格式要素最完整的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "仅写讲座内容",
+   "仅写落款",
+   "标题、时间、地点、内容、落款",
+   "仅写时间地点"
+  ],
+  "answerIndex": 2,
+  "explanation": "通知需包含标题、时间、地点、内容与落款。",
+  "kpTags": [
+   "应用文",
+   "应用文进阶",
+   "结构安排"
+  ],
+  "relatedMiniGame": "SP7",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000480",
+  "subject": "english",
+  "chapter": "读后续写",
+  "difficulty": 4,
+  "stem": "读后续写中，原文结尾“He looked at the empty seat and smiled.” 下列续写开头最自然的是：",
+  "options": [
+   "He bought a new seat.",
+   "The seat was empty forever.",
+   "He forgot everything.",
+   "He remembered the day they first met in this classroom."
+  ],
+  "answerIndex": 3,
+  "explanation": "续写应承接“微笑”展开回忆，保持情节一致。",
+  "kpTags": [
+   "读后续写",
+   "情节一致",
+   "语境"
+  ],
+  "relatedMiniGame": "G97",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000481",
+  "subject": "english",
+  "chapter": "读后续写",
+  "difficulty": 4,
+  "stem": "读后续写要求保持人物性格一致。原文中主角“always helps others”，下列续写行为最符合的是。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "He ignored the crying child.",
+   "He laughed at the lost child.",
+   "He ran away quickly.",
+   "He stopped to help the lost child find his way."
+  ],
+  "answerIndex": 3,
+  "explanation": "续写应延续“乐于助人”的人物性格。",
+  "kpTags": [
+   "读后续写",
+   "人物性格",
+   "情节一致"
+  ],
+  "relatedMiniGame": "G92",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000482",
+  "subject": "english",
+  "chapter": "读后续写",
+  "difficulty": 4,
+  "stem": "读后续写中，原文情节为“暴雨中迷路”，下列续写最符合逻辑的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "He flew to the moon.",
+   "The rain turned into candy.",
+   "He forgot the rain completely.",
+   "He found a shelter and waited for the rain to stop."
+  ],
+  "answerIndex": 3,
+  "explanation": "续写需符合现实逻辑，寻找避雨处最合理。",
+  "kpTags": [
+   "读后续写",
+   "情节一致",
+   "语境"
+  ],
+  "relatedMiniGame": "G88",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000483",
+  "subject": "english",
+  "chapter": "读后续写",
+  "difficulty": 5,
+  "stem": "读后续写结尾要求升华主题。原文讲述主角坚持练习最终成功，下列结尾最恰当的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "He gave up and went home.",
+   "Success came by luck alone.",
+   "He never practiced again.",
+   "He realized that persistence was the key to his success."
+  ],
+  "answerIndex": 3,
+  "explanation": "结尾升华“坚持是成功关键”，呼应主题。",
+  "kpTags": [
+   "读后续写",
+   "主旨",
+   "情节一致"
+  ],
+  "relatedMiniGame": "G91",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000484",
+  "subject": "english",
+  "chapter": "读后续写",
+  "difficulty": 3,
+  "stem": "读后续写中，原文结尾“He looked at the empty seat and smiled.” 下列续写开头最自然的是：",
+  "options": [
+   "The seat was empty forever.",
+   "He forgot everything.",
+   "He remembered the day they first met in this classroom.",
+   "He bought a new seat."
+  ],
+  "answerIndex": 2,
+  "explanation": "续写应承接“微笑”展开回忆，保持情节一致。",
+  "kpTags": [
+   "读后续写",
+   "情节一致",
+   "语境"
+  ],
+  "relatedMiniGame": "SP13",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000485",
+  "subject": "english",
+  "chapter": "读后续写",
+  "difficulty": 5,
+  "stem": "读后续写要求保持人物性格一致。原文中主角“always helps others”，下列续写行为最符合的是。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "He laughed at the lost child.",
+   "He ran away quickly.",
+   "He stopped to help the lost child find his way.",
+   "He ignored the crying child."
+  ],
+  "answerIndex": 2,
+  "explanation": "续写应延续“乐于助人”的人物性格。",
+  "kpTags": [
+   "读后续写",
+   "人物性格",
+   "情节一致"
+  ],
+  "relatedMiniGame": "SP14",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000486",
+  "subject": "english",
+  "chapter": "读后续写",
+  "difficulty": 4,
+  "stem": "读后续写中，原文情节为“暴雨中迷路”，下列续写最符合逻辑的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "The rain turned into candy.",
+   "He forgot the rain completely.",
+   "He found a shelter and waited for the rain to stop.",
+   "He flew to the moon."
+  ],
+  "answerIndex": 2,
+  "explanation": "续写需符合现实逻辑，寻找避雨处最合理。",
+  "kpTags": [
+   "读后续写",
+   "情节一致",
+   "语境"
+  ],
+  "relatedMiniGame": "SP15",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000487",
+  "subject": "english",
+  "chapter": "读后续写",
+  "difficulty": 3,
+  "stem": "读后续写结尾要求升华主题。原文讲述主角坚持练习最终成功，下列结尾最恰当的是。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "Success came by luck alone.",
+   "He never practiced again.",
+   "He realized that persistence was the key to his success.",
+   "He gave up and went home."
+  ],
+  "answerIndex": 2,
+  "explanation": "结尾升华“坚持是成功关键”，呼应主题。",
+  "kpTags": [
+   "读后续写",
+   "主旨",
+   "情节一致"
+  ],
+  "relatedMiniGame": "SP4-rhythm",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000488",
+  "subject": "english",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "英文实验报告：a block of mass 2 kg moves with acceleration 2 m/s². 结合英语数据阅读与物理牛顿第二定律、数学计算（g=10 m/s²，μ=0.2），水平拉力最接近下列哪一项？",
+  "options": [
+   "4 N",
+   "6 N",
+   "2 N",
+   "8 N"
+  ],
+  "answerIndex": 3,
+  "explanation": "F=ma+μmg=8 N，英语、物理、数学综合。",
+  "kpTags": [
+   "阅读推断",
+   "牛顿第二定律",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP4-board",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "english+physics",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000489",
+  "subject": "english",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "英文文章介绍“the Amazon rainforest produces 20% of the world's oxygen”。结合英语阅读与地理热带雨林、化学光合作用，下列综合理解最准确的是：",
+  "options": [
+   "氧气是雨林人工制造的",
+   "雨林产氧与化学无关",
+   "20%是随意编造的数据",
+   "雨林通过光合作用产氧，对全球大气至关重要"
+  ],
+  "answerIndex": 3,
+  "explanation": "光合作用产氧连接英语阅读、地理与化学。",
+  "kpTags": [
+   "阅读推断",
+   "光合作用",
+   "热带雨林"
+  ],
+  "relatedMiniGame": "SP6",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "english+geography",
+   "chemistry+biology"
+  ]
+ },
+ {
+  "id": "q-batch16-000490",
+  "subject": "english",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "英文报告：the river flows at 3 m/s for 5 seconds. 结合英语数据阅读与物理速度公式、数学乘法，水流过的距离最接近下列哪一项？",
+  "options": [
+   "8 m",
+   "3 m",
+   "5 m",
+   "15 m"
+  ],
+  "answerIndex": 3,
+  "explanation": "s=vt=15 m，英语、物理、数学综合。",
+  "kpTags": [
+   "阅读推断",
+   "匀速直线运动",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP7",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "english+physics",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000491",
+  "subject": "english",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "英文文章提到“China's high-speed rail network exceeds 40,000 km”。结合英语阅读与地理交通区位、数学数据比较，下列推断最准确的是：",
+  "options": [
+   "中国高铁里程不足4000 km",
+   "高铁与地理区位无关",
+   "40,000 km是笔误",
+   "中国高铁里程居世界前列，交通区位优势显著"
+  ],
+  "answerIndex": 3,
+  "explanation": "数据阅读结合地理交通与数学比较。",
+  "kpTags": [
+   "阅读推断",
+   "交通区位",
+   "综合应用"
+  ],
+  "relatedMiniGame": "G97",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "english+geography",
+   "geography+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000492",
+  "subject": "english",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "英文化学文献：the reaction releases 286 kJ of heat. 结合英语文献阅读与化学反应热、物理热学，下列理解最准确的是：",
+  "options": [
+   "该反应为吸热反应",
+   "热量与反应无关",
+   "286 kJ指反应时间",
+   "该反应为放热反应，释放286 kJ热量"
+  ],
+  "answerIndex": 3,
+  "explanation": "“releases heat”表放热，英语与化学综合。",
+  "kpTags": [
+   "阅读推断",
+   "反应热",
+   "综合应用"
+  ],
+  "relatedMiniGame": "G92",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "english+chemistry",
+   "chemistry+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000493",
+  "subject": "english",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "英文谚语“Every cloud has a silver lining”与中文“否极泰来”含义相通。结合英语翻译与语文成语理解，下列译文最贴切的是：",
+  "options": [
+   "乌云密布",
+   "银光闪闪",
+   "一蹶不振",
+   "否极泰来"
+  ],
+  "answerIndex": 3,
+  "explanation": "中英谚语互译，寓意困境中蕴含希望。",
+  "kpTags": [
+   "翻译",
+   "成语辨析",
+   "综合应用"
+  ],
+  "relatedMiniGame": "G88",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "english+chinese",
+   "chinese+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000494",
+  "subject": "english",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "英文文章介绍“renewable energy reduces carbon emissions”。结合英语阅读与地理能源、化学碳排放，下列综合判断最准确的是：",
+  "options": [
+   "可再生能源增加碳排放",
+   "碳排放与能源无关",
+   "化石能源更环保",
+   "发展可再生能源可减少碳排放，利于可持续发展"
+  ],
+  "answerIndex": 3,
+  "explanation": "英语阅读与地理能源、化学环保综合。",
+  "kpTags": [
+   "阅读推断",
+   "能源",
+   "环境保护"
+  ],
+  "relatedMiniGame": "G91",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "english+geography",
+   "chemistry+geography"
+  ]
+ },
+ {
+  "id": "q-batch16-000495",
+  "subject": "english",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "英文实验数据表：mass=2 kg, velocity=4 m/s。结合英语表格阅读与物理动能、数学平方运算，动能最接近下列哪一项？",
+  "options": [
+   "8 J",
+   "4 J",
+   "32 J",
+   "16 J"
+  ],
+  "answerIndex": 3,
+  "explanation": "Ek=½mv²=16 J，英语、物理、数学综合。",
+  "kpTags": [
+   "阅读推断",
+   "动能定理",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP13",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "english+physics",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000496",
+  "subject": "english",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "英文文章描述“the monsoon brings heavy rain to Southeast Asia”。结合英语阅读与地理季风气候、物理水循环，下列综合理解最准确的是：",
+  "options": [
+   "季风与降水无关",
+   "季风只影响气温",
+   "水循环与季风无关",
+   "季风带来降水，与地理气候及物理水循环密切相关"
+  ],
+  "answerIndex": 3,
+  "explanation": "英语阅读与地理季风、物理水循环综合。",
+  "kpTags": [
+   "阅读推断",
+   "季风气候",
+   "水循环"
+  ],
+  "relatedMiniGame": "SP14",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "english+geography",
+   "geography+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000497",
+  "subject": "english",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "英文报告：concentration=0.5 mol/L, volume=100 mL。结合英语数据阅读与化学物质的量、数学计算，溶质物质的量最接近下列哪一项？",
+  "options": [
+   "0.5 mol",
+   "5 mol",
+   "0.005 mol",
+   "0.05 mol"
+  ],
+  "answerIndex": 3,
+  "explanation": "n=cV=0.05 mol，英语、化学、数学综合。",
+  "kpTags": [
+   "阅读推断",
+   "物质的量浓度",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP15",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "english+chemistry",
+   "chemistry+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000498",
+  "subject": "english",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "英文文章提到“the Great Wall stretches over 21,000 km”。结合英语阅读与地理区域、数学数据比较，下列推断最准确的是：",
+  "options": [
+   "长城长度不足2100 km",
+   "长城与地理无关",
+   "21,000 km指高度",
+   "长城绵延超2.1万千米，是重要的地理与历史地标"
+  ],
+  "answerIndex": 3,
+  "explanation": "英语阅读与地理、数学数据综合。",
+  "kpTags": [
+   "阅读推断",
+   "区域地理",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP4-rhythm",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "english+geography",
+   "geography+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000499",
+  "subject": "english",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "英文实验报告：temperature rises from 20℃ to 30℃, mass=1 kg, c=4.2×10³ J/(kg·℃)。结合英语数据阅读与物理热学、数学计算，吸收热量最接近下列哪一项？",
+  "options": [
+   "4.2×10³ J",
+   "1×10⁴ J",
+   "8.4×10⁴ J",
+   "4.2×10⁴ J"
+  ],
+  "answerIndex": 3,
+  "explanation": "Q=mcΔT=4.2×10⁴ J，英语、物理、数学综合。",
+  "kpTags": [
+   "阅读推断",
+   "热学",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP4-board",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "english+physics",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000500",
+  "subject": "english",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "英文实验报告：a block of mass 2 kg moves with acceleration 2 m/s². 结合英语数据阅读与物理牛顿第二定律、数学计算（g=10 m/s²，μ=0.2），水平拉力最接近下列哪一项？",
+  "options": [
+   "6 N",
+   "2 N",
+   "8 N",
+   "4 N"
+  ],
+  "answerIndex": 2,
+  "explanation": "F=ma+μmg=8 N，英语、物理、数学综合。",
+  "kpTags": [
+   "阅读推断",
+   "牛顿第二定律",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP6",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "english+physics",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000501",
+  "subject": "english",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "英文文章介绍“the Amazon rainforest produces 20% of the world's oxygen”。结合英语阅读与地理热带雨林、化学光合作用，下列综合理解最准确的是：",
+  "options": [
+   "雨林产氧与化学无关",
+   "20%是随意编造的数据",
+   "雨林通过光合作用产氧，对全球大气至关重要",
+   "氧气是雨林人工制造的"
+  ],
+  "answerIndex": 2,
+  "explanation": "光合作用产氧连接英语阅读、地理与化学。",
+  "kpTags": [
+   "阅读推断",
+   "光合作用",
+   "热带雨林"
+  ],
+  "relatedMiniGame": "SP7",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "english+geography",
+   "chemistry+biology"
+  ]
+ },
+ {
+  "id": "q-batch16-000502",
+  "subject": "english",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "英文报告：the river flows at 3 m/s for 5 seconds. 结合英语数据阅读与物理速度公式、数学乘法，水流过的距离最接近下列哪一项？",
+  "options": [
+   "3 m",
+   "5 m",
+   "15 m",
+   "8 m"
+  ],
+  "answerIndex": 2,
+  "explanation": "s=vt=15 m，英语、物理、数学综合。",
+  "kpTags": [
+   "阅读推断",
+   "匀速直线运动",
+   "综合应用"
+  ],
+  "relatedMiniGame": "G97",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "english+physics",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000503",
+  "subject": "english",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "英文文章提到“China's high-speed rail network exceeds 40,000 km”。结合英语阅读与地理交通区位、数学数据比较，下列推断最准确的是：",
+  "options": [
+   "高铁与地理区位无关",
+   "40,000 km是笔误",
+   "中国高铁里程居世界前列，交通区位优势显著",
+   "中国高铁里程不足4000 km"
+  ],
+  "answerIndex": 2,
+  "explanation": "数据阅读结合地理交通与数学比较。",
+  "kpTags": [
+   "阅读推断",
+   "交通区位",
+   "综合应用"
+  ],
+  "relatedMiniGame": "G92",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "english+geography",
+   "geography+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000504",
+  "subject": "english",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "英文化学文献：the reaction releases 286 kJ of heat. 结合英语文献阅读与化学反应热、物理热学，下列理解最准确的是：",
+  "options": [
+   "热量与反应无关",
+   "286 kJ指反应时间",
+   "该反应为放热反应，释放286 kJ热量",
+   "该反应为吸热反应"
+  ],
+  "answerIndex": 2,
+  "explanation": "“releases heat”表放热，英语与化学综合。",
+  "kpTags": [
+   "阅读推断",
+   "反应热",
+   "综合应用"
+  ],
+  "relatedMiniGame": "G88",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "english+chemistry",
+   "chemistry+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000505",
+  "subject": "english",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "英文谚语“Every cloud has a silver lining”与中文“否极泰来”含义相通。结合英语翻译与语文成语理解，下列译文最贴切的是：",
+  "options": [
+   "银光闪闪",
+   "一蹶不振",
+   "否极泰来",
+   "乌云密布"
+  ],
+  "answerIndex": 2,
+  "explanation": "中英谚语互译，寓意困境中蕴含希望。",
+  "kpTags": [
+   "翻译",
+   "成语辨析",
+   "综合应用"
+  ],
+  "relatedMiniGame": "G91",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "english+chinese",
+   "chinese+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000506",
+  "subject": "english",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "英文文章介绍“renewable energy reduces carbon emissions”。结合英语阅读与地理能源、化学碳排放，下列综合判断最准确的是：",
+  "options": [
+   "碳排放与能源无关",
+   "化石能源更环保",
+   "发展可再生能源可减少碳排放，利于可持续发展",
+   "可再生能源增加碳排放"
+  ],
+  "answerIndex": 2,
+  "explanation": "英语阅读与地理能源、化学环保综合。",
+  "kpTags": [
+   "阅读推断",
+   "能源",
+   "环境保护"
+  ],
+  "relatedMiniGame": "SP13",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "english+geography",
+   "chemistry+geography"
+  ]
+ },
+ {
+  "id": "q-batch16-000507",
+  "subject": "english",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "英文实验数据表：mass=2 kg, velocity=4 m/s。结合英语表格阅读与物理动能、数学平方运算，动能最接近下列哪一项？",
+  "options": [
+   "4 J",
+   "32 J",
+   "16 J",
+   "8 J"
+  ],
+  "answerIndex": 2,
+  "explanation": "Ek=½mv²=16 J，英语、物理、数学综合。",
+  "kpTags": [
+   "阅读推断",
+   "动能定理",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP14",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "english+physics",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000508",
+  "subject": "english",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "英文文章描述“the monsoon brings heavy rain to Southeast Asia”。结合英语阅读与地理季风气候、物理水循环，下列综合理解最准确的是：",
+  "options": [
+   "季风只影响气温",
+   "水循环与季风无关",
+   "季风带来降水，与地理气候及物理水循环密切相关",
+   "季风与降水无关"
+  ],
+  "answerIndex": 2,
+  "explanation": "英语阅读与地理季风、物理水循环综合。",
+  "kpTags": [
+   "阅读推断",
+   "季风气候",
+   "水循环"
+  ],
+  "relatedMiniGame": "SP15",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "english+geography",
+   "geography+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000509",
+  "subject": "english",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "英文报告：concentration=0.5 mol/L, volume=100 mL。结合英语数据阅读与化学物质的量、数学计算，溶质物质的量最接近下列哪一项？",
+  "options": [
+   "5 mol",
+   "0.005 mol",
+   "0.05 mol",
+   "0.5 mol"
+  ],
+  "answerIndex": 2,
+  "explanation": "n=cV=0.05 mol，英语、化学、数学综合。",
+  "kpTags": [
+   "阅读推断",
+   "物质的量浓度",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP4-rhythm",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "english+chemistry",
+   "chemistry+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000510",
+  "subject": "english",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "英文文章提到“the Great Wall stretches over 21,000 km”。结合英语阅读与地理区域、数学数据比较，下列推断最准确的是：",
+  "options": [
+   "长城与地理无关",
+   "21,000 km指高度",
+   "长城绵延超2.1万千米，是重要的地理与历史地标",
+   "长城长度不足2100 km"
+  ],
+  "answerIndex": 2,
+  "explanation": "英语阅读与地理、数学数据综合。",
+  "kpTags": [
+   "阅读推断",
+   "区域地理",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP4-board",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "english+geography",
+   "geography+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000511",
+  "subject": "english",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "英文实验报告：temperature rises from 20℃ to 30℃, mass=1 kg, c=4.2×10³ J/(kg·℃)。结合英语数据阅读与物理热学、数学计算，吸收热量最接近下列哪一项？",
+  "options": [
+   "1×10⁴ J",
+   "8.4×10⁴ J",
+   "4.2×10⁴ J",
+   "4.2×10³ J"
+  ],
+  "answerIndex": 2,
+  "explanation": "Q=mcΔT=4.2×10⁴ J，英语、物理、数学综合。",
+  "kpTags": [
+   "阅读推断",
+   "热学",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP6",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "english+physics",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000512",
+  "subject": "english",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "英文实验报告：a block of mass 2 kg moves with acceleration 2 m/s². 结合英语数据阅读与物理牛顿第二定律、数学计算（g=10 m/s²，μ=0.2），水平拉力最接近下列哪一项？",
+  "options": [
+   "2 N",
+   "8 N",
+   "4 N",
+   "6 N"
+  ],
+  "answerIndex": 1,
+  "explanation": "F=ma+μmg=8 N，英语、物理、数学综合。",
+  "kpTags": [
+   "阅读推断",
+   "牛顿第二定律",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP7",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "english+physics",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000513",
+  "subject": "english",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "英文文章介绍“the Amazon rainforest produces 20% of the world's oxygen”。结合英语阅读与地理热带雨林、化学光合作用，下列综合理解最准确的是：",
+  "options": [
+   "20%是随意编造的数据",
+   "雨林通过光合作用产氧，对全球大气至关重要",
+   "氧气是雨林人工制造的",
+   "雨林产氧与化学无关"
+  ],
+  "answerIndex": 1,
+  "explanation": "光合作用产氧连接英语阅读、地理与化学。",
+  "kpTags": [
+   "阅读推断",
+   "光合作用",
+   "热带雨林"
+  ],
+  "relatedMiniGame": "G97",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "english+geography",
+   "chemistry+biology"
+  ]
+ },
+ {
+  "id": "q-batch16-000514",
+  "subject": "english",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "英文报告：the river flows at 3 m/s for 5 seconds. 结合英语数据阅读与物理速度公式、数学乘法，水流过的距离最接近下列哪一项？",
+  "options": [
+   "5 m",
+   "15 m",
+   "8 m",
+   "3 m"
+  ],
+  "answerIndex": 1,
+  "explanation": "s=vt=15 m，英语、物理、数学综合。",
+  "kpTags": [
+   "阅读推断",
+   "匀速直线运动",
+   "综合应用"
+  ],
+  "relatedMiniGame": "G92",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "english+physics",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000515",
+  "subject": "english",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "英文文章提到“China's high-speed rail network exceeds 40,000 km”。结合英语阅读与地理交通区位、数学数据比较，下列推断最准确的是：",
+  "options": [
+   "40,000 km是笔误",
+   "中国高铁里程居世界前列，交通区位优势显著",
+   "中国高铁里程不足4000 km",
+   "高铁与地理区位无关"
+  ],
+  "answerIndex": 1,
+  "explanation": "数据阅读结合地理交通与数学比较。",
+  "kpTags": [
+   "阅读推断",
+   "交通区位",
+   "综合应用"
+  ],
+  "relatedMiniGame": "G88",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "english+geography",
+   "geography+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000516",
+  "subject": "english",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "英文化学文献：the reaction releases 286 kJ of heat. 结合英语文献阅读与化学反应热、物理热学，下列理解最准确的是：",
+  "options": [
+   "286 kJ指反应时间",
+   "该反应为放热反应，释放286 kJ热量",
+   "该反应为吸热反应",
+   "热量与反应无关"
+  ],
+  "answerIndex": 1,
+  "explanation": "“releases heat”表放热，英语与化学综合。",
+  "kpTags": [
+   "阅读推断",
+   "反应热",
+   "综合应用"
+  ],
+  "relatedMiniGame": "G91",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "english+chemistry",
+   "chemistry+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000517",
+  "subject": "english",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "英文谚语“Every cloud has a silver lining”与中文“否极泰来”含义相通。结合英语翻译与语文成语理解，下列译文最贴切的是：",
+  "options": [
+   "一蹶不振",
+   "否极泰来",
+   "乌云密布",
+   "银光闪闪"
+  ],
+  "answerIndex": 1,
+  "explanation": "中英谚语互译，寓意困境中蕴含希望。",
+  "kpTags": [
+   "翻译",
+   "成语辨析",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP13",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "english+chinese",
+   "chinese+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000518",
+  "subject": "english",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "英文文章介绍“renewable energy reduces carbon emissions”。结合英语阅读与地理能源、化学碳排放，下列综合判断最准确的是：",
+  "options": [
+   "化石能源更环保",
+   "发展可再生能源可减少碳排放，利于可持续发展",
+   "可再生能源增加碳排放",
+   "碳排放与能源无关"
+  ],
+  "answerIndex": 1,
+  "explanation": "英语阅读与地理能源、化学环保综合。",
+  "kpTags": [
+   "阅读推断",
+   "能源",
+   "环境保护"
+  ],
+  "relatedMiniGame": "SP14",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "english+geography",
+   "chemistry+geography"
+  ]
+ },
+ {
+  "id": "q-batch16-000519",
+  "subject": "english",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "英文实验数据表：mass=2 kg, velocity=4 m/s。结合英语表格阅读与物理动能、数学平方运算，动能最接近下列哪一项？",
+  "options": [
+   "32 J",
+   "16 J",
+   "8 J",
+   "4 J"
+  ],
+  "answerIndex": 1,
+  "explanation": "Ek=½mv²=16 J，英语、物理、数学综合。",
+  "kpTags": [
+   "阅读推断",
+   "动能定理",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP15",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "english+physics",
+   "physics+math"
+  ]
+ }
+]

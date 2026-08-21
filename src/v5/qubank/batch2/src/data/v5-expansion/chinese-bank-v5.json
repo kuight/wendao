@@ -1,0 +1,367 @@
+{
+ "subject": "chinese",
+ "version": "v5-stub",
+ "count": 8,
+ "items": [
+  {
+   "id": "v5-chinese-001",
+   "v": 3,
+   "subject": "chinese",
+   "branch": "古诗",
+   "points": [
+    "语文·古诗"
+   ],
+   "difficulty": 1,
+   "type": "single",
+   "stem": "（占位题 1）语文 学科 古诗 分支示例题面",
+   "options": [
+    {
+     "key": "A",
+     "text": "选项一"
+    },
+    {
+     "key": "B",
+     "text": "选项二"
+    },
+    {
+     "key": "C",
+     "text": "选项三"
+    },
+    {
+     "key": "D",
+     "text": "选项四"
+    }
+   ],
+   "answer": {
+    "key": "A",
+    "explanation": "占位解析"
+   },
+   "sourceTags": [
+    "v5-stub"
+   ],
+   "relatedPoints": [],
+   "estimatedSec": 60,
+   "mediaRef": {
+    "img": null,
+    "audio": null,
+    "formula": null
+   },
+   "version": "v5"
+  },
+  {
+   "id": "v5-chinese-002",
+   "v": 3,
+   "subject": "chinese",
+   "branch": "文言",
+   "points": [
+    "语文·文言"
+   ],
+   "difficulty": 2,
+   "type": "single",
+   "stem": "（占位题 2）语文 学科 文言 分支示例题面",
+   "options": [
+    {
+     "key": "A",
+     "text": "选项一"
+    },
+    {
+     "key": "B",
+     "text": "选项二"
+    },
+    {
+     "key": "C",
+     "text": "选项三"
+    },
+    {
+     "key": "D",
+     "text": "选项四"
+    }
+   ],
+   "answer": {
+    "key": "A",
+    "explanation": "占位解析"
+   },
+   "sourceTags": [
+    "v5-stub"
+   ],
+   "relatedPoints": [],
+   "estimatedSec": 60,
+   "mediaRef": {
+    "img": null,
+    "audio": null,
+    "formula": null
+   },
+   "version": "v5"
+  },
+  {
+   "id": "v5-chinese-003",
+   "v": 3,
+   "subject": "chinese",
+   "branch": "现代文",
+   "points": [
+    "语文·现代文"
+   ],
+   "difficulty": 3,
+   "type": "single",
+   "stem": "（占位题 3）语文 学科 现代文 分支示例题面",
+   "options": [
+    {
+     "key": "A",
+     "text": "选项一"
+    },
+    {
+     "key": "B",
+     "text": "选项二"
+    },
+    {
+     "key": "C",
+     "text": "选项三"
+    },
+    {
+     "key": "D",
+     "text": "选项四"
+    }
+   ],
+   "answer": {
+    "key": "A",
+    "explanation": "占位解析"
+   },
+   "sourceTags": [
+    "v5-stub"
+   ],
+   "relatedPoints": [],
+   "estimatedSec": 60,
+   "mediaRef": {
+    "img": null,
+    "audio": null,
+    "formula": null
+   },
+   "version": "v5"
+  },
+  {
+   "id": "v5-chinese-004",
+   "v": 3,
+   "subject": "chinese",
+   "branch": "作文",
+   "points": [
+    "语文·作文"
+   ],
+   "difficulty": 4,
+   "type": "single",
+   "stem": "（占位题 4）语文 学科 作文 分支示例题面",
+   "options": [
+    {
+     "key": "A",
+     "text": "选项一"
+    },
+    {
+     "key": "B",
+     "text": "选项二"
+    },
+    {
+     "key": "C",
+     "text": "选项三"
+    },
+    {
+     "key": "D",
+     "text": "选项四"
+    }
+   ],
+   "answer": {
+    "key": "A",
+    "explanation": "占位解析"
+   },
+   "sourceTags": [
+    "v5-stub"
+   ],
+   "relatedPoints": [],
+   "estimatedSec": 60,
+   "mediaRef": {
+    "img": null,
+    "audio": null,
+    "formula": null
+   },
+   "version": "v5"
+  },
+  {
+   "id": "v5-chinese-005",
+   "v": 3,
+   "subject": "chinese",
+   "branch": "字音字形",
+   "points": [
+    "语文·字音字形"
+   ],
+   "difficulty": 5,
+   "type": "single",
+   "stem": "（占位题 5）语文 学科 字音字形 分支示例题面",
+   "options": [
+    {
+     "key": "A",
+     "text": "选项一"
+    },
+    {
+     "key": "B",
+     "text": "选项二"
+    },
+    {
+     "key": "C",
+     "text": "选项三"
+    },
+    {
+     "key": "D",
+     "text": "选项四"
+    }
+   ],
+   "answer": {
+    "key": "A",
+    "explanation": "占位解析"
+   },
+   "sourceTags": [
+    "v5-stub"
+   ],
+   "relatedPoints": [],
+   "estimatedSec": 60,
+   "mediaRef": {
+    "img": null,
+    "audio": null,
+    "formula": null
+   },
+   "version": "v5"
+  },
+  {
+   "id": "v5-chinese-006",
+   "v": 3,
+   "subject": "chinese",
+   "branch": "古诗",
+   "points": [
+    "语文·古诗"
+   ],
+   "difficulty": 1,
+   "type": "single",
+   "stem": "（占位题 6）语文 学科 古诗 分支示例题面",
+   "options": [
+    {
+     "key": "A",
+     "text": "选项一"
+    },
+    {
+     "key": "B",
+     "text": "选项二"
+    },
+    {
+     "key": "C",
+     "text": "选项三"
+    },
+    {
+     "key": "D",
+     "text": "选项四"
+    }
+   ],
+   "answer": {
+    "key": "A",
+    "explanation": "占位解析"
+   },
+   "sourceTags": [
+    "v5-stub"
+   ],
+   "relatedPoints": [],
+   "estimatedSec": 60,
+   "mediaRef": {
+    "img": null,
+    "audio": null,
+    "formula": null
+   },
+   "version": "v5"
+  },
+  {
+   "id": "v5-chinese-007",
+   "v": 3,
+   "subject": "chinese",
+   "branch": "文言",
+   "points": [
+    "语文·文言"
+   ],
+   "difficulty": 2,
+   "type": "single",
+   "stem": "（占位题 7）语文 学科 文言 分支示例题面",
+   "options": [
+    {
+     "key": "A",
+     "text": "选项一"
+    },
+    {
+     "key": "B",
+     "text": "选项二"
+    },
+    {
+     "key": "C",
+     "text": "选项三"
+    },
+    {
+     "key": "D",
+     "text": "选项四"
+    }
+   ],
+   "answer": {
+    "key": "A",
+    "explanation": "占位解析"
+   },
+   "sourceTags": [
+    "v5-stub"
+   ],
+   "relatedPoints": [],
+   "estimatedSec": 60,
+   "mediaRef": {
+    "img": null,
+    "audio": null,
+    "formula": null
+   },
+   "version": "v5"
+  },
+  {
+   "id": "v5-chinese-008",
+   "v": 3,
+   "subject": "chinese",
+   "branch": "现代文",
+   "points": [
+    "语文·现代文"
+   ],
+   "difficulty": 3,
+   "type": "single",
+   "stem": "（占位题 8）语文 学科 现代文 分支示例题面",
+   "options": [
+    {
+     "key": "A",
+     "text": "选项一"
+    },
+    {
+     "key": "B",
+     "text": "选项二"
+    },
+    {
+     "key": "C",
+     "text": "选项三"
+    },
+    {
+     "key": "D",
+     "text": "选项四"
+    }
+   ],
+   "answer": {
+    "key": "A",
+    "explanation": "占位解析"
+   },
+   "sourceTags": [
+    "v5-stub"
+   ],
+   "relatedPoints": [],
+   "estimatedSec": 60,
+   "mediaRef": {
+    "img": null,
+    "audio": null,
+    "formula": null
+   },
+   "version": "v5"
+  }
+ ]
+}

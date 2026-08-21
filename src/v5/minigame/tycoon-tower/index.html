@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>宗门堂 · 问道修仙学院 v5</title>
+  <style>
+    :root {
+      --bg: #eef2f7; --ink: #22303f; --accent: #2e7d32; --gold: #b8860b;
+      --card: #ffffff; --line: #d7dfe8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; font-family: "PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+      background: linear-gradient(170deg,#eef2f7,#dfe8f2);
+      color: var(--ink); min-height: 100vh;
+    }
+    header { text-align: center; padding: 18px 12px 8px; }
+    header h1 { margin: 0; font-size: 26px; letter-spacing: 2px; }
+    header p { margin: 6px 0 0; font-size: 13px; color: #5b6b7b; }
+    .wrap { max-width: 760px; margin: 0 auto; padding: 0 12px 40px; }
+    .panel {
+      background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+      padding: 16px; margin-top: 14px; box-shadow: 0 6px 18px rgba(0,0,0,.05);
+    }
+    .hud { display: flex; gap: 18px; flex-wrap: wrap; align-items: center; }
+    .hud .big { font-size: 20px; font-weight: 800; color: var(--accent); }
+    .hud .sub { font-size: 12px; color: #5b6b7b; }
+    .tower { display: flex; flex-direction: column-reverse; gap: 6px; margin: 14px 0; }
+    .floor {
+      border: 1px solid var(--line); border-radius: 10px; padding: 8px 12px;
+      display: flex; justify-content: space-between; align-items: center;
+      background: #f7fafc; font-size: 13px;
+    }
+    .floor.locked { opacity: .4; filter: grayscale(.6); }
+    .floor .tag { font-size: 11px; color: #5b6b7b; }
+    .upgrades { display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 10px; }
+    .upgrade {
+      border: 1px solid var(--line); border-radius: 12px; padding: 12px;
+      background: #f7fafc; display: flex; flex-direction: column; gap: 6px;
+    }
+    .upgrade .nm { font-weight: 700; }
+    .upgrade .desc { font-size: 11px; color: #5b6b7b; }
+    button {
+      border: 1px solid var(--line); background: #fff; color: var(--ink);
+      border-radius: 10px; padding: 8px 14px; cursor: pointer; font-size: 14px; min-height: 36px;
+    }
+    button.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+    button.danger { background: #c0392b; color: #fff; border-color: #c0392b; }
+    button:disabled { opacity: .45; cursor: not-allowed; }
+    .toast {
+      position: fixed; left: 50%; top: 18px; transform: translateX(-50%);
+      background: var(--ink); color: #fff; padding: 10px 18px; border-radius: 10px;
+      font-size: 14px; opacity: 0; transition: opacity .25s; pointer-events: none; z-index: 9;
+    }
+    .toast.show { opacity: 1; }
+    .stats { display: flex; gap: 16px; flex-wrap: wrap; font-size: 12px; color: #5b6b7b; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🏯 宗门堂</h1>
+    <p>经营宗门宝塔 · 楼层随境界解锁 · 灵石自动产出</p>
+  </header>
+
+  <div class="wrap">
+    <div class="panel hud">
+      <div>
+        <div class="big" id="lingshi">0</div>
+        <div class="sub">灵石</div>
+      </div>
+      <div>
+        <div class="big" id="income">0/s</div>
+        <div class="sub">产出</div>
+      </div>
+      <div>
+        <div class="big" id="floors">1/12</div>
+        <div class="sub">已解锁楼层</div>
+      </div>
+      <div>
+        <div class="big" id="prestige">0</div>
+        <div class="sub">斩断红尘(永久加成)</div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="stats" id="stats"></div>
+      <div class="tower" id="tower"></div>
+    </div>
+
+    <div class="panel">
+      <h3 style="margin:0 0 10px">升级</h3>
+      <div class="upgrades" id="upgrades"></div>
+    </div>
+
+    <div class="panel" style="text-align:center">
+      <button class="danger" id="prestigeBtn">斩断红尘 · 重置换取永久灵宠加成</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="../../core/state.js"></script>
+  <script src="../../core/save.js"></script>
+  <script src="tycoon-core.js"></script>
+  <script>
+    (function () {
+      var timer = null;
+
+      function toast(msg) {
+        var t = document.getElementById('toast');
+        t.textContent = msg;
+        t.classList.add('show');
+        clearTimeout(t._h);
+        t._h = setTimeout(function () { t.classList.remove('show'); }, 2200);
+      }
+
+      function fmt(n) {
+        if (n >= 1e6) return (n / 1e6).toFixed(2) + 'M';
+        if (n >= 1e4) return (n / 1e3).toFixed(1) + 'k';
+        return Math.floor(n).toString();
+      }
+
+      function renderTower() {
+        var s = V5Tycoon.getState();
+        var unlocked = V5Tycoon.unlockedFloors();
+        var box = document.getElementById('tower');
+        box.innerHTML = '';
+        for (var i = 1; i <= V5Tycoon.FLOOR_COUNT; i++) {
+          var el = document.createElement('div');
+          el.className = 'floor' + (i <= unlocked ? '' : ' locked');
+          var realm = V5Tycoon.FLOOR_REALM[i - 1];
+          el.innerHTML = '<span>第 ' + i + ' 层</span><span class="tag">境界门槛 realmId ' + realm + '</span>';
+          box.appendChild(el);
+        }
+        document.getElementById('floors').textContent = unlocked + '/' + V5Tycoon.FLOOR_COUNT;
+      }
+
+      function renderUpgrades() {
+        var s = V5Tycoon.getState();
+        var box = document.getElementById('upgrades');
+        box.innerHTML = '';
+        V5Tycoon.UPGRADES.forEach(function (u) {
+          var lv = s.levels[u.id] || 0;
+          var cost = V5Tycoon.upgradeCost(u.id, lv);
+          var el = document.createElement('div');
+          el.className = 'upgrade';
+          var val = '';
+          if (u.effect === 'income') val = '产出 ' + V5Tycoon.incomePerSec(s).toFixed(1) + '/s';
+          if (u.effect === 'capture') val = '捕获率 ' + Math.round(V5Tycoon.captureRate(s) * 100) + '%';
+          if (u.effect === 'rare') val = '稀有率 ' + Math.round(V5Tycoon.rareDropRate(s) * 100) + '%';
+          el.innerHTML = '<div class="nm">' + u.icon + ' ' + u.name + ' <span style="color:#5b6b7b">Lv.' + lv + '</span></div>' +
+            '<div class="desc">' + u.desc + '</div><div class="desc">当前 ' + val + '</div>' +
+            '<button data-up="' + u.id + '" ' + (V5Tycoon.canUpgrade(u.id, s) ? '' : 'disabled') + '>升级（' + fmt(cost) + ' 灵石）</button>';
+          box.appendChild(el);
+        });
+        box.querySelectorAll('button[data-up]').forEach(function (b) {
+          b.onclick = function () {
+            var r = V5Tycoon.doUpgrade(b.getAttribute('data-up'));
+            if (r.ok) toast('升级成功 → Lv.' + r.level);
+            else toast('灵石不足');
+            renderAll();
+          };
+        });
+      }
+
+      function renderStats() {
+        var s = V5Tycoon.getState();
+        var bonus = V5Tycoon.petBonus(s);
+        document.getElementById('stats').innerHTML =
+          '<span>累计产出 ' + fmt(s.totalEarned) + '</span>' +
+          '<span>灵宠捕获率 +' + Math.round(bonus.capture * 100) + '%</span>' +
+          '<span>稀有掉落 +' + Math.round(bonus.rare * 100) + '%</span>';
+      }
+
+      function renderHud() {
+        var s = V5Tycoon.getState();
+        document.getElementById('lingshi').textContent = fmt(s.lingshi);
+        document.getElementById('income').textContent = V5Tycoon.incomePerSec(s).toFixed(1) + '/s';
+        document.getElementById('prestige').textContent = s.prestige || 0;
+      }
+
+      function renderAll() {
+        renderHud();
+        renderTower();
+        renderUpgrades();
+        renderStats();
+      }
+
+      document.getElementById('prestigeBtn').onclick = function () {
+        var r = V5Tycoon.prestige();
+        if (r.ok) toast('斩断红尘！获得 ' + r.gained + ' 点永久加成（累计 ' + r.total + '）');
+        else toast('需要累计产出 ≥ 5000 灵石');
+        renderAll();
+      };
+
+      // idle loop
+      setInterval(function () {
+        var s = V5Tycoon.getState();
+        var g = V5Tycoon.tick(s);
+        if (g > 0) renderAll();
+      }, 1000);
+
+      renderAll();
+    })();
+  </script>
+</body>
+</html>

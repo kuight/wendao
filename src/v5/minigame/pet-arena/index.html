@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <title>灵宠对战 · Spirit Pet Arena</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="arena-shell">
+    <header class="topbar">
+      <div>
+        <h1>灵宠对战</h1>
+        <p class="sub">回合制修仙学习战 · 答对题目可蓄能解锁技能</p>
+      </div>
+      <div class="meta">
+        <span id="rankBadge" class="badge">段位：初阶灵使</span>
+        <span id="winsBadge" class="badge">连胜：0</span>
+      </div>
+    </header>
+
+    <main class="battle-layout">
+      <section class="pet-panel enemy-panel">
+        <div class="pet-head">
+          <strong id="enemyName">对手</strong>
+          <span id="enemySubject" class="chip">学科</span>
+        </div>
+        <div id="enemySprite" class="sprite-wrap"></div>
+        <div class="bars">
+          <label>气血 <span id="enemyHpText">0 / 0</span></label>
+          <div class="bar hp"><i id="enemyHpBar"></i></div>
+          <label>灵力 <span id="enemyEnergyText">0 / 0</span></label>
+          <div class="bar energy"><i id="enemyEnergyBar"></i></div>
+        </div>
+        <div id="enemyStatus" class="status-row"></div>
+      </section>
+
+      <section class="center-panel">
+        <div class="arena-banner">
+          <span id="arenaName">青云试炼场</span>
+          <span id="turnText">第 1 回合</span>
+        </div>
+        <div id="battleLog" class="battle-log" aria-live="polite"></div>
+        <div id="quizBox" class="quiz-box hidden">
+          <h2>学习问答</h2>
+          <p id="quizStem">题目载入中...</p>
+          <div id="quizOptions" class="quiz-options"></div>
+          <div class="quiz-actions">
+            <button id="closeQuizBtn" class="ghost">暂不作答</button>
+          </div>
+        </div>
+        <div class="action-grid">
+          <button data-action="attack">攻击</button>
+          <button data-action="defend">防御</button>
+          <button data-action="special">技能</button>
+          <button data-action="learn">学习</button>
+          <button data-action="capture">收服</button>
+        </div>
+      </section>
+
+      <section class="pet-panel player-panel">
+        <div class="pet-head">
+          <strong id="playerName">己方</strong>
+          <span id="playerSubject" class="chip">学科</span>
+        </div>
+        <div id="playerSprite" class="sprite-wrap"></div>
+        <div class="bars">
+          <label>气血 <span id="playerHpText">0 / 0</span></label>
+          <div class="bar hp"><i id="playerHpBar"></i></div>
+          <label>灵力 <span id="playerEnergyText">0 / 0</span></label>
+          <div class="bar energy"><i id="playerEnergyBar"></i></div>
+        </div>
+        <div id="playerStatus" class="status-row"></div>
+      </section>
+    </main>
+
+    <section class="roster-panel">
+      <div class="roster-head">
+        <h2>灵宠图鉴</h2>
+        <p>每只灵宠绑定 1 个知识点；答题正确后，下次行动速度 +10 且灵力 +25。</p>
+      </div>
+      <div id="rosterGrid" class="roster-grid"></div>
+    </section>
+  </div>
+
+  <script src="./arena-core.js" type="module"></script>
+</body>
+</html>

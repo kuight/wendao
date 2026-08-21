@@ -1,0 +1,118 @@
+:root {
+  --bg1: #0b1022;
+  --bg2: #151d36;
+  --panel: rgba(15, 22, 44, 0.88);
+  --line: rgba(255,255,255,0.12);
+  --text: #eef4ff;
+  --muted: #9eb2d8;
+  --gold: #ffd36a;
+  --hp: linear-gradient(90deg,#ff6b6b,#ff9f7f);
+  --energy: linear-gradient(90deg,#65d8ff,#8f7cff);
+  --wood: #69db7c;
+  --fire: #ff8e72;
+  --earth: #c8a26e;
+  --wind: #87e7ff;
+  --water: #7aa7ff;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Segoe UI", "PingFang SC", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 15% 20%, rgba(116,88,255,0.26), transparent 30%),
+    radial-gradient(circle at 85% 15%, rgba(0,202,255,0.18), transparent 25%),
+    linear-gradient(180deg, var(--bg2), var(--bg1));
+}
+button {
+  border: 0;
+  cursor: pointer;
+  color: #fff;
+  border-radius: 14px;
+  padding: 12px 14px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #5865f2, #7b86ff);
+  box-shadow: 0 8px 24px rgba(71, 88, 255, 0.24);
+}
+button:hover { filter: brightness(1.06); }
+button.ghost { background: rgba(255,255,255,0.08); box-shadow: none; }
+.hidden { display: none !important; }
+.arena-shell { width: min(1180px, 96vw); margin: 0 auto; padding: 18px 0 28px; }
+.topbar, .pet-panel, .center-panel, .roster-panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  backdrop-filter: blur(12px);
+  border-radius: 22px;
+}
+.topbar {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 18px 22px; margin-bottom: 16px;
+}
+.topbar h1 { margin: 0 0 6px; font-size: 28px; }
+.sub { margin: 0; color: var(--muted); }
+.meta { display: flex; gap: 10px; flex-wrap: wrap; }
+.badge, .chip {
+  padding: 7px 12px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255,255,255,0.06); color: #fff9d7;
+}
+.battle-layout {
+  display: grid; grid-template-columns: 1fr 1.18fr 1fr; gap: 16px; align-items: stretch;
+}
+.pet-panel, .center-panel, .roster-panel { padding: 16px; }
+.pet-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.sprite-wrap {
+  min-height: 220px; display: grid; place-items: center; border-radius: 18px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.08);
+  overflow: hidden;
+}
+.pet-svg { width: min(260px, 86%); height: auto; filter: drop-shadow(0 14px 28px rgba(0,0,0,0.35)); }
+.pet-svg .floaty { animation: floaty 2.6s ease-in-out infinite; transform-origin: center; }
+.pet-svg .pulse { animation: pulse 1.6s ease-in-out infinite; }
+.enemy-panel .pet-svg { transform: scaleX(-1); }
+@keyframes floaty { 0%,100% { transform: translateY(0px); } 50% { transform: translateY(-8px); } }
+@keyframes pulse { 0%,100% { opacity: .8; } 50% { opacity: 1; } }
+.bars label { display: flex; justify-content: space-between; margin: 12px 0 6px; font-size: 14px; color: var(--muted); }
+.bar { height: 12px; border-radius: 999px; overflow: hidden; background: rgba(255,255,255,0.08); }
+.bar i { display: block; height: 100%; width: 0; border-radius: inherit; transition: width .25s ease; }
+.bar.hp i { background: var(--hp); }
+.bar.energy i { background: var(--energy); }
+.status-row { min-height: 28px; margin-top: 12px; color: var(--gold); font-size: 14px; }
+.center-panel { display: flex; flex-direction: column; gap: 14px; }
+.arena-banner { display: flex; justify-content: space-between; color: var(--gold); font-weight: 800; }
+.battle-log {
+  min-height: 168px; max-height: 280px; overflow: auto; padding: 14px; border-radius: 16px;
+  background: rgba(6, 10, 22, 0.6); border: 1px solid rgba(255,255,255,0.07); line-height: 1.65;
+}
+.battle-log p { margin: 0 0 8px; color: #dfe8ff; }
+.quiz-box {
+  padding: 14px; border-radius: 16px; background: rgba(255,239,181,0.08);
+  border: 1px solid rgba(255,211,106,0.24);
+}
+.quiz-box h2, .roster-head h2 { margin: 0 0 10px; }
+.quiz-options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.quiz-options button { text-align: left; min-height: 52px; }
+.quiz-actions { display: flex; justify-content: flex-end; margin-top: 10px; }
+.action-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+.roster-panel { margin-top: 16px; }
+.roster-head p { margin: 0 0 14px; color: var(--muted); }
+.roster-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.roster-card {
+  border-radius: 16px; padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);
+}
+.roster-card strong { display: block; margin-bottom: 6px; }
+.roster-card small { color: var(--muted); display: block; line-height: 1.5; }
+.type-fire { color: var(--fire); }
+.type-earth { color: var(--earth); }
+.type-wind { color: var(--wind); }
+.type-water { color: var(--water); }
+.type-wood { color: var(--wood); }
+@media (max-width: 980px) {
+  .battle-layout { grid-template-columns: 1fr; }
+  .action-grid, .quiz-options, .roster-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .topbar { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .action-grid, .quiz-options, .roster-grid { grid-template-columns: 1fr; }
+}

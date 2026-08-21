@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>桃花仙 · 问道修仙学院 v5</title>
+  <style>
+    :root {
+      --bg: #fdf0f4; --ink: #4a2c3f; --accent: #e91e63; --card: #ffffff; --line: #f3d9e2;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; font-family: "PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+      background: linear-gradient(160deg,#fdf0f4,#fbe3ec); color: var(--ink); min-height: 100vh;
+    }
+    header { text-align: center; padding: 18px 12px 8px; }
+    header h1 { margin: 0; font-size: 26px; letter-spacing: 2px; }
+    header p { margin: 6px 0 0; font-size: 13px; color: #a06b80; }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 0 12px 40px; }
+    .chat {
+      background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+      min-height: 420px; max-height: 60vh; overflow-y: auto; padding: 16px;
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .msg { max-width: 82%; padding: 10px 14px; border-radius: 14px; font-size: 14px; line-height: 1.6; }
+    .msg.bot { align-self: flex-start; background: #fbeef4; border-bottom-left-radius: 4px; }
+    .msg.user { align-self: flex-end; background: var(--accent); color: #fff; border-bottom-right-radius: 4px; }
+    .msg .steps { margin: 6px 0 0; padding-left: 18px; }
+    .msg .formula {
+      margin-top: 8px; background: #fff; border: 1px dashed var(--line);
+      border-radius: 8px; padding: 8px 10px; font-family: "Cambria Math",serif; font-size: 15px;
+    }
+    .msg .meta { font-size: 11px; color: #a06b80; margin-top: 6px; }
+    .inputbar { display: flex; gap: 8px; margin-top: 12px; }
+    input {
+      flex: 1; border: 1px solid var(--line); border-radius: 12px; padding: 10px 14px;
+      font-size: 14px; min-height: 40px; outline: none;
+    }
+    button {
+      border: 1px solid var(--line); background: var(--accent); color: #fff;
+      border-radius: 12px; padding: 8px 18px; cursor: pointer; font-size: 14px; min-height: 40px;
+    }
+    .chips { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 10px; }
+    .chip {
+      border: 1px solid var(--line); background: #fff; border-radius: 20px;
+      padding: 6px 12px; font-size: 12px; cursor: pointer; color: var(--ink);
+    }
+    .toast {
+      position: fixed; left: 50%; top: 18px; transform: translateX(-50%);
+      background: var(--ink); color: #fff; padding: 10px 18px; border-radius: 10px;
+      font-size: 14px; opacity: 0; transition: opacity .25s; pointer-events: none; z-index: 9;
+    }
+    .toast.show { opacity: 1; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🌸 桃花仙</h1>
+    <p>AI 学习小助手 · 数学 / 物理 / 化学 / 语文 / 英语 / 地理 分步讲解（本地规则引擎，无外部 API）</p>
+  </header>
+
+  <div class="wrap">
+    <div class="chat" id="chat"></div>
+    <div class="chips" id="chips"></div>
+    <div class="inputbar">
+      <input id="input" placeholder="例如：一元二次方程怎么解？" autocomplete="off">
+      <button id="send">发送</button>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="../../core/state.js"></script>
+  <script src="../../core/save.js"></script>
+  <script src="tutor-core.js"></script>
+  <script>
+    (function () {
+      var chat = document.getElementById('chat');
+      var input = document.getElementById('input');
+      var chips = [
+        '一元二次方程怎么解？', '牛顿第二定律是什么？', '怎么配平化学方程式？',
+        '古诗默写高频句有哪些？', '一般现在时怎么用？', '时区怎么计算？'
+      ];
+
+      function addMsg(text, who) {
+        var el = document.createElement('div');
+        el.className = 'msg ' + who;
+        el.innerHTML = text;
+        chat.appendChild(el);
+        chat.scrollTop = chat.scrollHeight;
+        return el;
+      }
+
+      function renderBot(r) {
+        if (r.type === 'fallback') return addMsg(r.text, 'bot');
+        var html = '<div><b>[' + r.subjectName + '] ' + r.title + '</b></div>';
+        html += '<ol class="steps">' + r.steps.map(function (s) { return '<li>' + s + '</li>'; }).join('') + '</ol>';
+        html += '<div class="formula">公式：' + r.formula + '</div>';
+        html += '<div class="meta">示例：' + r.example + ' · 模板 ' + r.subject + '</div>';
+        return addMsg(html, 'bot');
+      }
+
+      function send(text) {
+        if (!text.trim()) return;
+        addMsg(escapeHtml(text), 'user');
+        var r = V5Tutor.respond(text);
+        renderBot(r);
+      }
+
+      function escapeHtml(s) {
+        return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+      }
+
+      document.getElementById('send').onclick = function () { send(input.value); input.value = ''; };
+      input.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') { send(input.value); input.value = ''; }
+      });
+
+      var chipBox = document.getElementById('chips');
+      chips.forEach(function (c) {
+        var b = document.createElement('span');
+        b.className = 'chip';
+        b.textContent = c;
+        b.onclick = function () { send(c); };
+        chipBox.appendChild(b);
+      });
+
+      addMsg('桃花仙在此～我是你的修仙学习小助手。输入一道题或一个知识点，我给你分步讲解。', 'bot');
+      addMsg('已装载 180 条辅导模板（6 学科 × 30），并挂载 v5-expansion 题库。', 'bot');
+    })();
+  </script>
+</body>
+</html>
