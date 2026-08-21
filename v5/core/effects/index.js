@@ -12,6 +12,9 @@
  *
  * 底层图元复用 core/effects/feedback.js（纯 DOM/CSS）。
  * ============================================================ */
+// 先执行 feedback.js 的 IIFE，确保 globalThis.BattleFeedback 已挂载
+import './feedback.js';
+
 export function installEffects(boot) {
   'use strict';
   // 引入音游式反馈图元

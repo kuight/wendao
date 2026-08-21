@@ -75,6 +75,13 @@
 </div>
 
 <!-- 加载 boot 入口（IIFE，同步设置 globalThis.Boot） -->
+<!-- v4 题库：先加载建立全局题库（globalThis.PHYSICS_BANK 等），供 v5 knowledge 出题 -->
+<script src="../src/data/physics-bank.js"></script>
+<script src="../src/data/chemistry-bank.js"></script>
+<script src="../src/data/math-bank.js"></script>
+<script src="../src/data/geography-bank.js"></script>
+<script src="../src/data/chinese-bank.js"></script>
+<script src="../src/data/english-bank.js"></script>
 <script src="bootstrap/entry.js"></script>
 
 <!-- 启动引导 + 演示装配 -->

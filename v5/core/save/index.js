@@ -22,7 +22,7 @@ export function installSave(boot) {
       // 一次性备份旧键（仅在首次迁移时）
       const legacy = localStorage.getItem(LEGACY_PREFIX + '*');
       if (!legacy) {
-        localStorage.setItem(LEGACY_PREFIX + Date.now(), raw || '{}');
+        localStorage.setItem(LEGACY_PREFIX + Date.now(), JSON.stringify(data));
       }
       return true;
     } catch (e) { console.error('[v5/save] 写档失败', e); return false; }

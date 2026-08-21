@@ -13,6 +13,9 @@
  * 融合 V5_BLUEPRINT §3.5 P1/P6/P8 音游反馈与 combo 连击。
  * 数值引擎复用 core/battle/engine.js。
  * ============================================================ */
+// 先执行 engine.js 的 IIFE，确保 globalThis.BattleEngine 已挂载
+import './engine.js';
+
 export function installBattle(boot) {
   'use strict';
   const Eng = (typeof globalThis !== 'undefined' ? globalThis : this).BattleEngine;
@@ -149,7 +152,8 @@ export function installBattle(boot) {
     } else {
       battle.combo = 0;
       boot.bus.emit('battle:answer', { correct: false });
-      // 音游反馈：答错
+      // 音游反馈：答错（combo 归零同步到特效层）
+      eff && eff.combo(0);
       eff && eff.answerFeedback(false, {});
       // 答错 → 玩家受击
       monsterAttacks();

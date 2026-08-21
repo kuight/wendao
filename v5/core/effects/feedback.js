@@ -9,6 +9,19 @@
 (function (global) {
   'use strict';
 
+  // DOM 可用性 guard：无 document 或 Element.animate 时，视觉函数降级为 no-op
+  const NO_DOM = (typeof document === 'undefined' ||
+    !document.body ||
+    typeof (typeof Element !== 'undefined' && Element.prototype && Element.prototype.animate) !== 'function');
+  if (NO_DOM) {
+    const noop = () => null;
+    global.BattleFeedback = {
+      NS: 'v5-fx', hitStop: noop, judgeRing: noop, particles: noop,
+      flash: noop, shake: noop, floatText: noop, fxLayer: noop
+    };
+    return;
+  }
+
   const NS = 'v5-fx';
 
   /* ---------- 工具：建 DOM 节点 ---------- */
