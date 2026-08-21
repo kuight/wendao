@@ -1,0 +1,61 @@
+{
+  "project": "wendao-v5-qubanks-batch16",
+  "main_sha": "4e86b2d57cb1356e706b8ce20dc9899505314122",
+  "blocked_by": "missing_pat_in_sandbox",
+  "created_at": "2026-08-20",
+  "total_items": 600,
+  "target_audience": "综合冲刺跨学科（高考Ⅱ卷风格，衔接 batch15 与 batch14）",
+  "subject_counts": {
+    "physics": 120,
+    "chemistry": 120,
+    "math": 120,
+    "chinese": 80,
+    "english": 80,
+    "geography": 80
+  },
+  "chapter_coverage": {
+    "physics": "7/7",
+    "chemistry": "7/7",
+    "math": "7/7",
+    "chinese": "7/7",
+    "english": "7/7",
+    "geography": "7/7"
+  },
+  "difficulty_distribution": {
+    "3": 90,
+    "4": 330,
+    "5": 180
+  },
+  "cross_subject_ratio": 0.4,
+  "cross_subject_items": 240,
+  "subject_sha256": {
+    "physics": "7ff6d148895d3437a8e927f956bdf2654dbec04208d612999bd2941e8d5e0d5c",
+    "chemistry": "31d7b3f92db990406f80d63e5734d72f428b769f8930dd6a0bcfe91b97fdf15b",
+    "math": "22672985521779d0caad17c48d9cbab3b8bcfca7552db481fff63ff229f51635",
+    "chinese": "60ebc49b65de7a5b5cd07aef00215a4f0e0883978ce57e1ae7f72541af5d0028",
+    "english": "d933b8fbb57e4d6668c2608c9182bdc540d6948f7c07133b9b8862801b3fc0f8",
+    "geography": "d7fc435b9f1e0605a1a651be2cf8c38a23ef8b775740ee6372eb35520543f753"
+  },
+  "validations": {
+    "json_load_all": true,
+    "counts_exact": true,
+    "difficulty_range_ok": true,
+    "d4_ge_50pct": true,
+    "d5_ge_30pct": true,
+    "d3_le_20pct": true,
+    "no_d1_d2": true,
+    "cross_ge_35pct": true,
+    "chapters_exact_7": true,
+    "ids_unique_globally": true,
+    "no_overlap_prior_batches": true,
+    "no_placeholder_tokens": true,
+    "kp_tags_ge_2": true,
+    "cross_kp_ge_3": true,
+    "cross_pairs_ge_2": true,
+    "relatedMiniGame_real": true,
+    "stem_len_60_260": true,
+    "answerIndex_in_range": true,
+    "options_4": true
+  },
+  "archive": {}
+}

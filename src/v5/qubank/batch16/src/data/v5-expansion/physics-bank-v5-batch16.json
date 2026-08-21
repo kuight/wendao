@@ -1,0 +1,2783 @@
+[
+ {
+  "id": "q-batch16-000000",
+  "subject": "physics",
+  "chapter": "力学应用",
+  "difficulty": 4,
+  "stem": "宗门演武场中，质量为3 kg的弟子在粗糙地面上做匀加速直线运动，动摩擦因数0.15，加速度1.5 m/s²，取g=10 m/s²。水平拉力F最接近下列哪一项？",
+  "options": [
+   "4.5 N",
+   "4.5 N",
+   "-0.0 N",
+   "9.0 N"
+  ],
+  "answerIndex": 3,
+  "explanation": "由牛顿第二定律F-μmg=ma，得F=ma+μmg=9.0 N。",
+  "kpTags": [
+   "牛顿第二定律",
+   "滑动摩擦力",
+   "受力分析"
+  ],
+  "relatedMiniGame": "SP13",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000001",
+  "subject": "physics",
+  "chapter": "力学应用",
+  "difficulty": 4,
+  "stem": "质量为2 kg的灵兽从静止开始被牵引，末速度达到3 m/s。不考虑其他力，其动能增量最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "18 J",
+   "6 J",
+   "3.0 J",
+   "9.0 J"
+  ],
+  "answerIndex": 3,
+  "explanation": "由动能定理，动能增量ΔEk=½mv²=9.0 J。",
+  "kpTags": [
+   "动能定理",
+   "能量守恒"
+  ],
+  "relatedMiniGame": "SP14",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000002",
+  "subject": "physics",
+  "chapter": "力学应用",
+  "difficulty": 3,
+  "stem": "质量为2 kg的弟子与质量为2 kg的傀儡发生完全非弹性碰撞，碰撞前弟子速度为4 m/s，傀儡静止。碰后共同速度最接近下列哪一项？",
+  "options": [
+   "4 m/s",
+   "2.0 m/s",
+   "4.0 m/s",
+   "2.0 m/s"
+  ],
+  "answerIndex": 3,
+  "explanation": "由动量守恒m1v1=(m1+m2)v，得v=2.00 m/s。",
+  "kpTags": [
+   "动量守恒",
+   "完全非弹性碰撞"
+  ],
+  "relatedMiniGame": "SP15",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000003",
+  "subject": "physics",
+  "chapter": "力学应用",
+  "difficulty": 3,
+  "stem": "一名弟子在半径为3 m的圆形法阵上以6 m/s的恒定速率绕行，其向心加速度最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "2.0 m/s²",
+   "36 m/s²",
+   "18 m/s²",
+   "12.0 m/s²"
+  ],
+  "answerIndex": 3,
+  "explanation": "向心加速度a=v²/r=12.0 m/s²。",
+  "kpTags": [
+   "向心力",
+   "圆周运动",
+   "周期公式"
+  ],
+  "relatedMiniGame": "SP4-rhythm",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000004",
+  "subject": "physics",
+  "chapter": "力学应用",
+  "difficulty": 5,
+  "stem": "宗门演武场中，质量为4 kg的弟子在粗糙地面上做匀加速直线运动，动摩擦因数0.20，加速度2.0 m/s²，取g=10 m/s²。水平拉力F最接近下列哪一项？",
+  "options": [
+   "8.0 N",
+   "0.0 N",
+   "16.0 N",
+   "8.0 N"
+  ],
+  "answerIndex": 2,
+  "explanation": "由牛顿第二定律F-μmg=ma，得F=ma+μmg=16.0 N。",
+  "kpTags": [
+   "牛顿第二定律",
+   "滑动摩擦力",
+   "受力分析"
+  ],
+  "relatedMiniGame": "SP4-board",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000005",
+  "subject": "physics",
+  "chapter": "力学应用",
+  "difficulty": 4,
+  "stem": "质量为3 kg的灵兽从静止开始被牵引，末速度达到4 m/s。不考虑其他力，其动能增量最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "12 J",
+   "6.0 J",
+   "24.0 J",
+   "48 J"
+  ],
+  "answerIndex": 2,
+  "explanation": "由动能定理，动能增量ΔEk=½mv²=24.0 J。",
+  "kpTags": [
+   "动能定理",
+   "能量守恒"
+  ],
+  "relatedMiniGame": "SP6",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000006",
+  "subject": "physics",
+  "chapter": "力学应用",
+  "difficulty": 5,
+  "stem": "质量为3 kg的弟子与质量为2 kg的傀儡发生完全非弹性碰撞，碰撞前弟子速度为4 m/s，傀儡静止。碰后共同速度最接近下列哪一项？",
+  "options": [
+   "2.0 m/s",
+   "6.0 m/s",
+   "2.4 m/s",
+   "4 m/s"
+  ],
+  "answerIndex": 2,
+  "explanation": "由动量守恒m1v1=(m1+m2)v，得v=2.40 m/s。",
+  "kpTags": [
+   "动量守恒",
+   "完全非弹性碰撞"
+  ],
+  "relatedMiniGame": "SP7",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000007",
+  "subject": "physics",
+  "chapter": "力学应用",
+  "difficulty": 4,
+  "stem": "一名弟子在半径为4 m的圆形法阵上以6 m/s的恒定速率绕行，其向心加速度最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "36 m/s²",
+   "24 m/s²",
+   "9.0 m/s²",
+   "1.5 m/s²"
+  ],
+  "answerIndex": 2,
+  "explanation": "向心加速度a=v²/r=9.0 m/s²。",
+  "kpTags": [
+   "向心力",
+   "圆周运动",
+   "周期公式"
+  ],
+  "relatedMiniGame": "G97",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000008",
+  "subject": "physics",
+  "chapter": "力学应用",
+  "difficulty": 4,
+  "stem": "宗门演武场中，质量为5 kg的弟子在粗糙地面上做匀加速直线运动，动摩擦因数0.25，加速度2.5 m/s²，取g=10 m/s²。水平拉力F最接近下列哪一项？",
+  "options": [
+   "0.0 N",
+   "25.0 N",
+   "12.5 N",
+   "12.5 N"
+  ],
+  "answerIndex": 1,
+  "explanation": "由牛顿第二定律F-μmg=ma，得F=ma+μmg=25.0 N。",
+  "kpTags": [
+   "牛顿第二定律",
+   "滑动摩擦力",
+   "受力分析"
+  ],
+  "relatedMiniGame": "G92",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000009",
+  "subject": "physics",
+  "chapter": "力学应用",
+  "difficulty": 4,
+  "stem": "质量为4 kg的灵兽从静止开始被牵引，末速度达到5 m/s。不考虑其他力，其动能增量最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "10.0 J",
+   "50.0 J",
+   "100 J",
+   "20 J"
+  ],
+  "answerIndex": 1,
+  "explanation": "由动能定理，动能增量ΔEk=½mv²=50.0 J。",
+  "kpTags": [
+   "动能定理",
+   "能量守恒"
+  ],
+  "relatedMiniGame": "G88",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000010",
+  "subject": "physics",
+  "chapter": "力学应用",
+  "difficulty": 5,
+  "stem": "质量为4 kg的弟子与质量为2 kg的傀儡发生完全非弹性碰撞，碰撞前弟子速度为4 m/s，傀儡静止。碰后共同速度最接近下列哪一项？",
+  "options": [
+   "8.0 m/s",
+   "2.67 m/s",
+   "4 m/s",
+   "2.0 m/s"
+  ],
+  "answerIndex": 1,
+  "explanation": "由动量守恒m1v1=(m1+m2)v，得v=2.67 m/s。",
+  "kpTags": [
+   "动量守恒",
+   "完全非弹性碰撞"
+  ],
+  "relatedMiniGame": "G91",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000011",
+  "subject": "physics",
+  "chapter": "力学应用",
+  "difficulty": 4,
+  "stem": "一名弟子在半径为5 m的圆形法阵上以6 m/s的恒定速率绕行，其向心加速度最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "30 m/s²",
+   "7.2 m/s²",
+   "1.2 m/s²",
+   "36 m/s²"
+  ],
+  "answerIndex": 1,
+  "explanation": "向心加速度a=v²/r=7.2 m/s²。",
+  "kpTags": [
+   "向心力",
+   "圆周运动",
+   "周期公式"
+  ],
+  "relatedMiniGame": "SP13",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000012",
+  "subject": "physics",
+  "chapter": "电磁应用",
+  "difficulty": 4,
+  "stem": "电荷量q=2×10⁻³C的带电粒子以3×10³ m/s的速度垂直射入磁感应强度B=0.5 T的匀强磁场，所受洛伦兹力大小最接近下列哪一项？",
+  "options": [
+   "0.0 N",
+   "1500.0 N",
+   "6.0 N",
+   "3.0 N"
+  ],
+  "answerIndex": 3,
+  "explanation": "洛伦兹力F=qvB=3.00 N。",
+  "kpTags": [
+   "洛伦兹力",
+   "磁场"
+  ],
+  "relatedMiniGame": "SP14",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000013",
+  "subject": "physics",
+  "chapter": "电磁应用",
+  "difficulty": 3,
+  "stem": "一段长0.5 m的导线垂直放在磁感应强度0.4 T的磁场中，通以2 A电流，所受安培力大小最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "0.8 N",
+   "1.0 N",
+   "0.2 N",
+   "0.4 N"
+  ],
+  "answerIndex": 3,
+  "explanation": "安培力F=BIL=0.40 N。",
+  "kpTags": [
+   "安培力",
+   "磁场"
+  ],
+  "relatedMiniGame": "SP15",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000014",
+  "subject": "physics",
+  "chapter": "电磁应用",
+  "difficulty": 4,
+  "stem": "长度为0.4 m的导体棒以5 m/s的速度在磁感应强度0.5 T的匀强磁场中垂直切割磁感线，产生的动生电动势最接近下列哪一项？",
+  "options": [
+   "0.2 V",
+   "2.0 V",
+   "2.5 V",
+   "1.0 V"
+  ],
+  "answerIndex": 3,
+  "explanation": "动生电动势E=BLv=1.00 V。",
+  "kpTags": [
+   "动生电动势",
+   "导体切割磁感线",
+   "法拉第电磁感应定律"
+  ],
+  "relatedMiniGame": "SP4-rhythm",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000015",
+  "subject": "physics",
+  "chapter": "电磁应用",
+  "difficulty": 4,
+  "stem": "电动势为6 V、内阻为1 Ω的电源，外接5 Ω的电阻，闭合电路中的电流最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "1.2 A",
+   "6.0 A",
+   "1.5 A",
+   "1.0 A"
+  ],
+  "answerIndex": 3,
+  "explanation": "由闭合电路欧姆定律I=E/(R+r)=1.00 A。",
+  "kpTags": [
+   "闭合电路欧姆定律",
+   "欧姆定律"
+  ],
+  "relatedMiniGame": "SP4-board",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000016",
+  "subject": "physics",
+  "chapter": "电磁应用",
+  "difficulty": 4,
+  "stem": "电荷量q=2×10⁻³C的带电粒子以3×10³ m/s的速度垂直射入磁感应强度B=0.5 T的匀强磁场，所受洛伦兹力大小最接近下列哪一项？",
+  "options": [
+   "1500.0 N",
+   "6.0 N",
+   "3.0 N",
+   "0.0 N"
+  ],
+  "answerIndex": 2,
+  "explanation": "洛伦兹力F=qvB=3.00 N。",
+  "kpTags": [
+   "洛伦兹力",
+   "磁场"
+  ],
+  "relatedMiniGame": "SP6",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000017",
+  "subject": "physics",
+  "chapter": "电磁应用",
+  "difficulty": 3,
+  "stem": "一段长0.5 m的导线垂直放在磁感应强度0.4 T的磁场中，通以2 A电流，所受安培力大小最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "1.0 N",
+   "0.2 N",
+   "0.4 N",
+   "0.8 N"
+  ],
+  "answerIndex": 2,
+  "explanation": "安培力F=BIL=0.40 N。",
+  "kpTags": [
+   "安培力",
+   "磁场"
+  ],
+  "relatedMiniGame": "SP7",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000018",
+  "subject": "physics",
+  "chapter": "电磁应用",
+  "difficulty": 5,
+  "stem": "长度为0.4 m的导体棒以5 m/s的速度在磁感应强度0.5 T的匀强磁场中垂直切割磁感线，产生的动生电动势最接近下列哪一项？",
+  "options": [
+   "2.0 V",
+   "2.5 V",
+   "1.0 V",
+   "0.2 V"
+  ],
+  "answerIndex": 2,
+  "explanation": "动生电动势E=BLv=1.00 V。",
+  "kpTags": [
+   "动生电动势",
+   "导体切割磁感线",
+   "法拉第电磁感应定律"
+  ],
+  "relatedMiniGame": "G97",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000019",
+  "subject": "physics",
+  "chapter": "电磁应用",
+  "difficulty": 5,
+  "stem": "电动势为6 V、内阻为1 Ω的电源，外接5 Ω的电阻，闭合电路中的电流最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "6.0 A",
+   "1.5 A",
+   "1.0 A",
+   "1.2 A"
+  ],
+  "answerIndex": 2,
+  "explanation": "由闭合电路欧姆定律I=E/(R+r)=1.00 A。",
+  "kpTags": [
+   "闭合电路欧姆定律",
+   "欧姆定律"
+  ],
+  "relatedMiniGame": "G92",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000020",
+  "subject": "physics",
+  "chapter": "电磁应用",
+  "difficulty": 4,
+  "stem": "电荷量q=2×10⁻³C的带电粒子以3×10³ m/s的速度垂直射入磁感应强度B=0.5 T的匀强磁场，所受洛伦兹力大小最接近下列哪一项？",
+  "options": [
+   "6.0 N",
+   "3.0 N",
+   "0.0 N",
+   "1500.0 N"
+  ],
+  "answerIndex": 1,
+  "explanation": "洛伦兹力F=qvB=3.00 N。",
+  "kpTags": [
+   "洛伦兹力",
+   "磁场"
+  ],
+  "relatedMiniGame": "G88",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000021",
+  "subject": "physics",
+  "chapter": "电磁应用",
+  "difficulty": 4,
+  "stem": "一段长0.5 m的导线垂直放在磁感应强度0.4 T的磁场中，通以2 A电流，所受安培力大小最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "0.2 N",
+   "0.4 N",
+   "0.8 N",
+   "1.0 N"
+  ],
+  "answerIndex": 1,
+  "explanation": "安培力F=BIL=0.40 N。",
+  "kpTags": [
+   "安培力",
+   "磁场"
+  ],
+  "relatedMiniGame": "G91",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000022",
+  "subject": "physics",
+  "chapter": "电磁应用",
+  "difficulty": 5,
+  "stem": "长度为0.4 m的导体棒以5 m/s的速度在磁感应强度0.5 T的匀强磁场中垂直切割磁感线，产生的动生电动势最接近下列哪一项？",
+  "options": [
+   "2.5 V",
+   "1.0 V",
+   "0.2 V",
+   "2.0 V"
+  ],
+  "answerIndex": 1,
+  "explanation": "动生电动势E=BLv=1.00 V。",
+  "kpTags": [
+   "动生电动势",
+   "导体切割磁感线",
+   "法拉第电磁感应定律"
+  ],
+  "relatedMiniGame": "SP13",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000023",
+  "subject": "physics",
+  "chapter": "电磁应用",
+  "difficulty": 4,
+  "stem": "电动势为6 V、内阻为1 Ω的电源，外接5 Ω的电阻，闭合电路中的电流最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "1.5 A",
+   "1.0 A",
+   "1.2 A",
+   "6.0 A"
+  ],
+  "answerIndex": 1,
+  "explanation": "由闭合电路欧姆定律I=E/(R+r)=1.00 A。",
+  "kpTags": [
+   "闭合电路欧姆定律",
+   "欧姆定律"
+  ],
+  "relatedMiniGame": "SP14",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000024",
+  "subject": "physics",
+  "chapter": "光学&近代应用",
+  "difficulty": 5,
+  "stem": "一束光从真空射入某透明灵玉，入射角为60°，折射角为30°，该灵玉的折射率最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "0.5",
+   "1.0",
+   "2.0",
+   "1.73"
+  ],
+  "answerIndex": 3,
+  "explanation": "由折射定律n=sin60°/sin30°=√3≈1.73。",
+  "kpTags": [
+   "折射率",
+   "光的折射"
+  ],
+  "relatedMiniGame": "SP15",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000025",
+  "subject": "physics",
+  "chapter": "光学&近代应用",
+  "difficulty": 4,
+  "stem": "波长为6.63×10⁻⁷ m的光子，其能量约为（h=6.63×10⁻³⁴ J·s，c=3×10⁸ m/s）下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "0.0 J",
+   "0.0 J",
+   "0.0 J",
+   "0.0 J"
+  ],
+  "answerIndex": 3,
+  "explanation": "光子能量E=hc/λ≈3.0×10⁻¹⁹ J。",
+  "kpTags": [
+   "光子能量",
+   "光电效应"
+  ],
+  "relatedMiniGame": "SP4-rhythm",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000026",
+  "subject": "physics",
+  "chapter": "光学&近代应用",
+  "difficulty": 3,
+  "stem": "某介质对光的折射率为2，光从该介质射向空气发生全反射的临界角最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "15°",
+   "45°",
+   "60°",
+   "30°"
+  ],
+  "answerIndex": 3,
+  "explanation": "由sinC=1/n=0.5，得临界角C=30°。",
+  "kpTags": [
+   "全反射",
+   "折射率"
+  ],
+  "relatedMiniGame": "SP4-board",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000027",
+  "subject": "physics",
+  "chapter": "光学&近代应用",
+  "difficulty": 4,
+  "stem": "某金属的截止频率为5.0×10¹⁴ Hz，现用频率为7.5×10¹⁴ Hz的光照射（h=6.63×10⁻³⁴ J·s），光电子的最大初动能最接近下列哪一项？",
+  "options": [
+   "0.0 J",
+   "0.0 J",
+   "0.0 J",
+   "0.0 J"
+  ],
+  "answerIndex": 3,
+  "explanation": "最大初动能Ek=h(f-f0)≈1.66×10⁻¹⁹ J。",
+  "kpTags": [
+   "光电效应",
+   "光子能量"
+  ],
+  "relatedMiniGame": "SP6",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000028",
+  "subject": "physics",
+  "chapter": "光学&近代应用",
+  "difficulty": 4,
+  "stem": "一束光从真空射入某透明灵玉，入射角为60°，折射角为30°，该灵玉的折射率最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "1.0",
+   "2.0",
+   "1.73",
+   "0.5"
+  ],
+  "answerIndex": 2,
+  "explanation": "由折射定律n=sin60°/sin30°=√3≈1.73。",
+  "kpTags": [
+   "折射率",
+   "光的折射"
+  ],
+  "relatedMiniGame": "SP7",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000029",
+  "subject": "physics",
+  "chapter": "光学&近代应用",
+  "difficulty": 5,
+  "stem": "波长为6.63×10⁻⁷ m的光子，其能量约为（h=6.63×10⁻³⁴ J·s，c=3×10⁸ m/s）下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "0.0 J",
+   "0.0 J",
+   "0.0 J",
+   "0.0 J"
+  ],
+  "answerIndex": 2,
+  "explanation": "光子能量E=hc/λ≈3.0×10⁻¹⁹ J。",
+  "kpTags": [
+   "光子能量",
+   "光电效应"
+  ],
+  "relatedMiniGame": "G97",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000030",
+  "subject": "physics",
+  "chapter": "光学&近代应用",
+  "difficulty": 4,
+  "stem": "某介质对光的折射率为2，光从该介质射向空气发生全反射的临界角最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "45°",
+   "60°",
+   "30°",
+   "15°"
+  ],
+  "answerIndex": 2,
+  "explanation": "由sinC=1/n=0.5，得临界角C=30°。",
+  "kpTags": [
+   "全反射",
+   "折射率"
+  ],
+  "relatedMiniGame": "G92",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000031",
+  "subject": "physics",
+  "chapter": "光学&近代应用",
+  "difficulty": 4,
+  "stem": "某金属的截止频率为5.0×10¹⁴ Hz，现用频率为7.5×10¹⁴ Hz的光照射（h=6.63×10⁻³⁴ J·s），光电子的最大初动能最接近下列哪一项？",
+  "options": [
+   "0.0 J",
+   "0.0 J",
+   "0.0 J",
+   "0.0 J"
+  ],
+  "answerIndex": 2,
+  "explanation": "最大初动能Ek=h(f-f0)≈1.66×10⁻¹⁹ J。",
+  "kpTags": [
+   "光电效应",
+   "光子能量"
+  ],
+  "relatedMiniGame": "G88",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000032",
+  "subject": "physics",
+  "chapter": "光学&近代应用",
+  "difficulty": 3,
+  "stem": "一束光从真空射入某透明灵玉，入射角为60°，折射角为30°，该灵玉的折射率最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "2.0",
+   "1.73",
+   "0.5",
+   "1.0"
+  ],
+  "answerIndex": 1,
+  "explanation": "由折射定律n=sin60°/sin30°=√3≈1.73。",
+  "kpTags": [
+   "折射率",
+   "光的折射"
+  ],
+  "relatedMiniGame": "G91",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000033",
+  "subject": "physics",
+  "chapter": "光学&近代应用",
+  "difficulty": 5,
+  "stem": "波长为6.63×10⁻⁷ m的光子，其能量约为（h=6.63×10⁻³⁴ J·s，c=3×10⁸ m/s）下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "0.0 J",
+   "0.0 J",
+   "0.0 J",
+   "0.0 J"
+  ],
+  "answerIndex": 1,
+  "explanation": "光子能量E=hc/λ≈3.0×10⁻¹⁹ J。",
+  "kpTags": [
+   "光子能量",
+   "光电效应"
+  ],
+  "relatedMiniGame": "SP13",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000034",
+  "subject": "physics",
+  "chapter": "光学&近代应用",
+  "difficulty": 4,
+  "stem": "某介质对光的折射率为2，光从该介质射向空气发生全反射的临界角最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "60°",
+   "30°",
+   "15°",
+   "45°"
+  ],
+  "answerIndex": 1,
+  "explanation": "由sinC=1/n=0.5，得临界角C=30°。",
+  "kpTags": [
+   "全反射",
+   "折射率"
+  ],
+  "relatedMiniGame": "SP14",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000035",
+  "subject": "physics",
+  "chapter": "光学&近代应用",
+  "difficulty": 4,
+  "stem": "某金属的截止频率为5.0×10¹⁴ Hz，现用频率为7.5×10¹⁴ Hz的光照射（h=6.63×10⁻³⁴ J·s），光电子的最大初动能最接近下列哪一项？",
+  "options": [
+   "0.0 J",
+   "0.0 J",
+   "0.0 J",
+   "0.0 J"
+  ],
+  "answerIndex": 1,
+  "explanation": "最大初动能Ek=h(f-f0)≈1.66×10⁻¹⁹ J。",
+  "kpTags": [
+   "光电效应",
+   "光子能量"
+  ],
+  "relatedMiniGame": "SP15",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000036",
+  "subject": "physics",
+  "chapter": "热学应用",
+  "difficulty": 4,
+  "stem": "一定质量的理想气体发生等温变化，初态压强1×10⁵ Pa、体积2 L，末态体积变为1 L，末态压强最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "50000.0 Pa",
+   "100000.0 Pa",
+   "300000.0 Pa",
+   "200000.0 Pa"
+  ],
+  "answerIndex": 3,
+  "explanation": "等温变化p1V1=p2V2，p2=200000 Pa。",
+  "kpTags": [
+   "理想气体",
+   "等温过程",
+   "气体状态方程"
+  ],
+  "relatedMiniGame": "SP4-rhythm",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000037",
+  "subject": "physics",
+  "chapter": "热学应用",
+  "difficulty": 4,
+  "stem": "某灵阵内的气体从外界吸热100 J，同时对外做功40 J，其内能变化最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "140 J",
+   "40 J",
+   "-60 J",
+   "60 J"
+  ],
+  "answerIndex": 3,
+  "explanation": "由热力学第一定律ΔU=Q-W=60 J。",
+  "kpTags": [
+   "热力学第一定律",
+   "内能"
+  ],
+  "relatedMiniGame": "SP4-board",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000038",
+  "subject": "physics",
+  "chapter": "热学应用",
+  "difficulty": 4,
+  "stem": "1 mol单原子理想气体温度升高30 K（R=8.31 J/(mol·K)），其内能增量最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "249.0 J",
+   "623.0 J",
+   "249.0 J",
+   "374.0 J"
+  ],
+  "answerIndex": 3,
+  "explanation": "单原子理想气体ΔU=1.5nRΔT≈374 J。",
+  "kpTags": [
+   "内能",
+   "温度",
+   "热力学第一定律"
+  ],
+  "relatedMiniGame": "SP6",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000039",
+  "subject": "physics",
+  "chapter": "热学应用",
+  "difficulty": 5,
+  "stem": "气体在1×10⁵ Pa压强下等压膨胀，体积增大了0.5×10⁻³ m³，气体对外做功最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "5 J",
+   "500 J",
+   "0.5 J",
+   "50.0 J"
+  ],
+  "answerIndex": 3,
+  "explanation": "等压膨胀做功W=pΔV=50 J。",
+  "kpTags": [
+   "等压过程",
+   "热力学第一定律"
+  ],
+  "relatedMiniGame": "SP7",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000040",
+  "subject": "physics",
+  "chapter": "热学应用",
+  "difficulty": 5,
+  "stem": "一定质量的理想气体发生等温变化，初态压强1×10⁵ Pa、体积2 L，末态体积变为1 L，末态压强最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "100000.0 Pa",
+   "300000.0 Pa",
+   "200000.0 Pa",
+   "50000.0 Pa"
+  ],
+  "answerIndex": 2,
+  "explanation": "等温变化p1V1=p2V2，p2=200000 Pa。",
+  "kpTags": [
+   "理想气体",
+   "等温过程",
+   "气体状态方程"
+  ],
+  "relatedMiniGame": "G97",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000041",
+  "subject": "physics",
+  "chapter": "热学应用",
+  "difficulty": 4,
+  "stem": "某灵阵内的气体从外界吸热100 J，同时对外做功40 J，其内能变化最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "40 J",
+   "-60 J",
+   "60 J",
+   "140 J"
+  ],
+  "answerIndex": 2,
+  "explanation": "由热力学第一定律ΔU=Q-W=60 J。",
+  "kpTags": [
+   "热力学第一定律",
+   "内能"
+  ],
+  "relatedMiniGame": "G92",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000042",
+  "subject": "physics",
+  "chapter": "热学应用",
+  "difficulty": 4,
+  "stem": "1 mol单原子理想气体温度升高30 K（R=8.31 J/(mol·K)），其内能增量最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "623.0 J",
+   "249.0 J",
+   "374.0 J",
+   "249.0 J"
+  ],
+  "answerIndex": 2,
+  "explanation": "单原子理想气体ΔU=1.5nRΔT≈374 J。",
+  "kpTags": [
+   "内能",
+   "温度",
+   "热力学第一定律"
+  ],
+  "relatedMiniGame": "G88",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000043",
+  "subject": "physics",
+  "chapter": "热学应用",
+  "difficulty": 4,
+  "stem": "气体在1×10⁵ Pa压强下等压膨胀，体积增大了0.5×10⁻³ m³，气体对外做功最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "500 J",
+   "0.5 J",
+   "50.0 J",
+   "5 J"
+  ],
+  "answerIndex": 2,
+  "explanation": "等压膨胀做功W=pΔV=50 J。",
+  "kpTags": [
+   "等压过程",
+   "热力学第一定律"
+  ],
+  "relatedMiniGame": "G91",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000044",
+  "subject": "physics",
+  "chapter": "热学应用",
+  "difficulty": 5,
+  "stem": "一定质量的理想气体发生等温变化，初态压强1×10⁵ Pa、体积2 L，末态体积变为1 L，末态压强最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "300000.0 Pa",
+   "200000.0 Pa",
+   "50000.0 Pa",
+   "100000.0 Pa"
+  ],
+  "answerIndex": 1,
+  "explanation": "等温变化p1V1=p2V2，p2=200000 Pa。",
+  "kpTags": [
+   "理想气体",
+   "等温过程",
+   "气体状态方程"
+  ],
+  "relatedMiniGame": "SP13",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000045",
+  "subject": "physics",
+  "chapter": "热学应用",
+  "difficulty": 4,
+  "stem": "某灵阵内的气体从外界吸热100 J，同时对外做功40 J，其内能变化最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "-60 J",
+   "60 J",
+   "140 J",
+   "40 J"
+  ],
+  "answerIndex": 1,
+  "explanation": "由热力学第一定律ΔU=Q-W=60 J。",
+  "kpTags": [
+   "热力学第一定律",
+   "内能"
+  ],
+  "relatedMiniGame": "SP14",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000046",
+  "subject": "physics",
+  "chapter": "热学应用",
+  "difficulty": 3,
+  "stem": "1 mol单原子理想气体温度升高30 K（R=8.31 J/(mol·K)），其内能增量最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "249.0 J",
+   "374.0 J",
+   "249.0 J",
+   "623.0 J"
+  ],
+  "answerIndex": 1,
+  "explanation": "单原子理想气体ΔU=1.5nRΔT≈374 J。",
+  "kpTags": [
+   "内能",
+   "温度",
+   "热力学第一定律"
+  ],
+  "relatedMiniGame": "SP15",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000047",
+  "subject": "physics",
+  "chapter": "热学应用",
+  "difficulty": 3,
+  "stem": "气体在1×10⁵ Pa压强下等压膨胀，体积增大了0.5×10⁻³ m³，气体对外做功最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "0.5 J",
+   "50.0 J",
+   "5 J",
+   "500 J"
+  ],
+  "answerIndex": 1,
+  "explanation": "等压膨胀做功W=pΔV=50 J。",
+  "kpTags": [
+   "等压过程",
+   "热力学第一定律"
+  ],
+  "relatedMiniGame": "SP4-rhythm",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000048",
+  "subject": "physics",
+  "chapter": "振动&波应用",
+  "difficulty": 5,
+  "stem": "摆长为1 m的单摆，取g=10 m/s²，其周期最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "1.0 s",
+   "4.0 s",
+   "0.5 s",
+   "2.0 s"
+  ],
+  "answerIndex": 3,
+  "explanation": "单摆周期T=2π√(L/g)≈2.0 s。",
+  "kpTags": [
+   "周期公式",
+   "简谐运动"
+  ],
+  "relatedMiniGame": "SP4-board",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000049",
+  "subject": "physics",
+  "chapter": "振动&波应用",
+  "difficulty": 4,
+  "stem": "一列机械波的波长为2 m，频率为5 Hz，其波速最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "0.4 m/s",
+   "2.5 m/s",
+   "7 m/s",
+   "10 m/s"
+  ],
+  "answerIndex": 3,
+  "explanation": "波速v=λf=10 m/s。",
+  "kpTags": [
+   "机械波",
+   "波动方程"
+  ],
+  "relatedMiniGame": "SP6",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000050",
+  "subject": "physics",
+  "chapter": "振动&波应用",
+  "difficulty": 3,
+  "stem": "某质点做简谐运动的周期为2 s，其角频率最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "1.0 rad/s",
+   "2.0 rad/s",
+   "4.0 rad/s",
+   "3.14 rad/s"
+  ],
+  "answerIndex": 3,
+  "explanation": "角频率ω=2π/T≈3.14 rad/s。",
+  "kpTags": [
+   "简谐运动",
+   "周期公式"
+  ],
+  "relatedMiniGame": "SP7",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000051",
+  "subject": "physics",
+  "chapter": "振动&波应用",
+  "difficulty": 4,
+  "stem": "声波在空气中的传播速度为340 m/s，频率为170 Hz，其波长最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "0.5 m",
+   "170 m",
+   "340 m",
+   "2.0 m"
+  ],
+  "answerIndex": 3,
+  "explanation": "波长λ=v/f=2.0 m。",
+  "kpTags": [
+   "机械波",
+   "波动方程"
+  ],
+  "relatedMiniGame": "G97",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000052",
+  "subject": "physics",
+  "chapter": "振动&波应用",
+  "difficulty": 5,
+  "stem": "摆长为1 m的单摆，取g=10 m/s²，其周期最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "4.0 s",
+   "0.5 s",
+   "2.0 s",
+   "1.0 s"
+  ],
+  "answerIndex": 2,
+  "explanation": "单摆周期T=2π√(L/g)≈2.0 s。",
+  "kpTags": [
+   "周期公式",
+   "简谐运动"
+  ],
+  "relatedMiniGame": "G92",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000053",
+  "subject": "physics",
+  "chapter": "振动&波应用",
+  "difficulty": 4,
+  "stem": "一列机械波的波长为2 m，频率为5 Hz，其波速最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "2.5 m/s",
+   "7 m/s",
+   "10 m/s",
+   "0.4 m/s"
+  ],
+  "answerIndex": 2,
+  "explanation": "波速v=λf=10 m/s。",
+  "kpTags": [
+   "机械波",
+   "波动方程"
+  ],
+  "relatedMiniGame": "G88",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000054",
+  "subject": "physics",
+  "chapter": "振动&波应用",
+  "difficulty": 4,
+  "stem": "某质点做简谐运动的周期为2 s，其角频率最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "2.0 rad/s",
+   "4.0 rad/s",
+   "3.14 rad/s",
+   "1.0 rad/s"
+  ],
+  "answerIndex": 2,
+  "explanation": "角频率ω=2π/T≈3.14 rad/s。",
+  "kpTags": [
+   "简谐运动",
+   "周期公式"
+  ],
+  "relatedMiniGame": "G91",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000055",
+  "subject": "physics",
+  "chapter": "振动&波应用",
+  "difficulty": 4,
+  "stem": "声波在空气中的传播速度为340 m/s，频率为170 Hz，其波长最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "170 m",
+   "340 m",
+   "2.0 m",
+   "0.5 m"
+  ],
+  "answerIndex": 2,
+  "explanation": "波长λ=v/f=2.0 m。",
+  "kpTags": [
+   "机械波",
+   "波动方程"
+  ],
+  "relatedMiniGame": "SP13",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000056",
+  "subject": "physics",
+  "chapter": "振动&波应用",
+  "difficulty": 5,
+  "stem": "摆长为1 m的单摆，取g=10 m/s²，其周期最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "0.5 s",
+   "2.0 s",
+   "1.0 s",
+   "4.0 s"
+  ],
+  "answerIndex": 1,
+  "explanation": "单摆周期T=2π√(L/g)≈2.0 s。",
+  "kpTags": [
+   "周期公式",
+   "简谐运动"
+  ],
+  "relatedMiniGame": "SP14",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000057",
+  "subject": "physics",
+  "chapter": "振动&波应用",
+  "difficulty": 4,
+  "stem": "一列机械波的波长为2 m，频率为5 Hz，其波速最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "7 m/s",
+   "10 m/s",
+   "0.4 m/s",
+   "2.5 m/s"
+  ],
+  "answerIndex": 1,
+  "explanation": "波速v=λf=10 m/s。",
+  "kpTags": [
+   "机械波",
+   "波动方程"
+  ],
+  "relatedMiniGame": "SP15",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000058",
+  "subject": "physics",
+  "chapter": "振动&波应用",
+  "difficulty": 3,
+  "stem": "某质点做简谐运动的周期为2 s，其角频率最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。作答时注意区分易混概念，并依据题目条件进行判断。",
+  "options": [
+   "4.0 rad/s",
+   "3.14 rad/s",
+   "1.0 rad/s",
+   "2.0 rad/s"
+  ],
+  "answerIndex": 1,
+  "explanation": "角频率ω=2π/T≈3.14 rad/s。",
+  "kpTags": [
+   "简谐运动",
+   "周期公式"
+  ],
+  "relatedMiniGame": "SP4-rhythm",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000059",
+  "subject": "physics",
+  "chapter": "振动&波应用",
+  "difficulty": 4,
+  "stem": "声波在空气中的传播速度为340 m/s，频率为170 Hz，其波长最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "340 m",
+   "2.0 m",
+   "0.5 m",
+   "170 m"
+  ],
+  "answerIndex": 1,
+  "explanation": "波长λ=v/f=2.0 m。",
+  "kpTags": [
+   "机械波",
+   "波动方程"
+  ],
+  "relatedMiniGame": "SP4-board",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000060",
+  "subject": "physics",
+  "chapter": "实验设计",
+  "difficulty": 4,
+  "stem": "用伏安法测电阻，电压表读数为3 V，电流表读数为0.5 A，被测电阻最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "1.5 Ω",
+   "3.0 Ω",
+   "0.17 Ω",
+   "6.0 Ω"
+  ],
+  "answerIndex": 3,
+  "explanation": "由欧姆定律R=U/I=6.0 Ω。",
+  "kpTags": [
+   "电阻测量",
+   "欧姆定律",
+   "伏安法"
+  ],
+  "relatedMiniGame": "SP6",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000061",
+  "subject": "physics",
+  "chapter": "实验设计",
+  "difficulty": 4,
+  "stem": "验证牛顿第二定律实验中，平衡摩擦力后测得加速度0.4 m/s²，小车质量2 kg，则合外力最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "0.4 N",
+   "2 N",
+   "5.0 N",
+   "0.8 N"
+  ],
+  "answerIndex": 3,
+  "explanation": "由F=ma=0.8 N。",
+  "kpTags": [
+   "牛顿第二定律",
+   "实验设计"
+  ],
+  "relatedMiniGame": "SP7",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000062",
+  "subject": "physics",
+  "chapter": "实验设计",
+  "difficulty": 5,
+  "stem": "用自由落体法测重力加速度，小球自由下落1 s落地，取g=10 m/s²，下落高度最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "10 m",
+   "2.5 m",
+   "20 m",
+   "5.0 m"
+  ],
+  "answerIndex": 3,
+  "explanation": "h=½gt²=5 m。",
+  "kpTags": [
+   "匀变速直线运动",
+   "实验设计"
+  ],
+  "relatedMiniGame": "G97",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000063",
+  "subject": "physics",
+  "chapter": "实验设计",
+  "difficulty": 5,
+  "stem": "将量程为1 mA、内阻为100 Ω的电流表改装成量程为3 V的电压表，需串联的电阻最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "100 Ω",
+   "290 Ω",
+   "3000 Ω",
+   "2900.0 Ω"
+  ],
+  "answerIndex": 3,
+  "explanation": "串联电阻R=U/Ig-Rg=2900 Ω。",
+  "kpTags": [
+   "电阻测量",
+   "欧姆定律",
+   "实验设计"
+  ],
+  "relatedMiniGame": "G92",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000064",
+  "subject": "physics",
+  "chapter": "实验设计",
+  "difficulty": 4,
+  "stem": "用伏安法测电阻，电压表读数为3 V，电流表读数为0.5 A，被测电阻最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "3.0 Ω",
+   "0.17 Ω",
+   "6.0 Ω",
+   "1.5 Ω"
+  ],
+  "answerIndex": 2,
+  "explanation": "由欧姆定律R=U/I=6.0 Ω。",
+  "kpTags": [
+   "电阻测量",
+   "欧姆定律",
+   "伏安法"
+  ],
+  "relatedMiniGame": "G88",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000065",
+  "subject": "physics",
+  "chapter": "实验设计",
+  "difficulty": 4,
+  "stem": "验证牛顿第二定律实验中，平衡摩擦力后测得加速度0.4 m/s²，小车质量2 kg，则合外力最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "2 N",
+   "5.0 N",
+   "0.8 N",
+   "0.4 N"
+  ],
+  "answerIndex": 2,
+  "explanation": "由F=ma=0.8 N。",
+  "kpTags": [
+   "牛顿第二定律",
+   "实验设计"
+  ],
+  "relatedMiniGame": "G91",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000066",
+  "subject": "physics",
+  "chapter": "实验设计",
+  "difficulty": 4,
+  "stem": "用自由落体法测重力加速度，小球自由下落1 s落地，取g=10 m/s²，下落高度最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "2.5 m",
+   "20 m",
+   "5.0 m",
+   "10 m"
+  ],
+  "answerIndex": 2,
+  "explanation": "h=½gt²=5 m。",
+  "kpTags": [
+   "匀变速直线运动",
+   "实验设计"
+  ],
+  "relatedMiniGame": "SP13",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000067",
+  "subject": "physics",
+  "chapter": "实验设计",
+  "difficulty": 4,
+  "stem": "将量程为1 mA、内阻为100 Ω的电流表改装成量程为3 V的电压表，需串联的电阻最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "290 Ω",
+   "3000 Ω",
+   "2900.0 Ω",
+   "100 Ω"
+  ],
+  "answerIndex": 2,
+  "explanation": "串联电阻R=U/Ig-Rg=2900 Ω。",
+  "kpTags": [
+   "电阻测量",
+   "欧姆定律",
+   "实验设计"
+  ],
+  "relatedMiniGame": "SP14",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000068",
+  "subject": "physics",
+  "chapter": "实验设计",
+  "difficulty": 5,
+  "stem": "用伏安法测电阻，电压表读数为3 V，电流表读数为0.5 A，被测电阻最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "0.17 Ω",
+   "6.0 Ω",
+   "1.5 Ω",
+   "3.0 Ω"
+  ],
+  "answerIndex": 1,
+  "explanation": "由欧姆定律R=U/I=6.0 Ω。",
+  "kpTags": [
+   "电阻测量",
+   "欧姆定律",
+   "伏安法"
+  ],
+  "relatedMiniGame": "SP15",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000069",
+  "subject": "physics",
+  "chapter": "实验设计",
+  "difficulty": 4,
+  "stem": "验证牛顿第二定律实验中，平衡摩擦力后测得加速度0.4 m/s²，小车质量2 kg，则合外力最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "5.0 N",
+   "0.8 N",
+   "0.4 N",
+   "2 N"
+  ],
+  "answerIndex": 1,
+  "explanation": "由F=ma=0.8 N。",
+  "kpTags": [
+   "牛顿第二定律",
+   "实验设计"
+  ],
+  "relatedMiniGame": "SP4-rhythm",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000070",
+  "subject": "physics",
+  "chapter": "实验设计",
+  "difficulty": 3,
+  "stem": "用自由落体法测重力加速度，小球自由下落1 s落地，取g=10 m/s²，下落高度最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "20 m",
+   "5.0 m",
+   "10 m",
+   "2.5 m"
+  ],
+  "answerIndex": 1,
+  "explanation": "h=½gt²=5 m。",
+  "kpTags": [
+   "匀变速直线运动",
+   "实验设计"
+  ],
+  "relatedMiniGame": "SP4-board",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000071",
+  "subject": "physics",
+  "chapter": "实验设计",
+  "difficulty": 3,
+  "stem": "将量程为1 mA、内阻为100 Ω的电流表改装成量程为3 V的电压表，需串联的电阻最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "3000 Ω",
+   "2900.0 Ω",
+   "100 Ω",
+   "290 Ω"
+  ],
+  "answerIndex": 1,
+  "explanation": "串联电阻R=U/Ig-Rg=2900 Ω。",
+  "kpTags": [
+   "电阻测量",
+   "欧姆定律",
+   "实验设计"
+  ],
+  "relatedMiniGame": "SP6",
+  "createdAt": "2026-08-20"
+ },
+ {
+  "id": "q-batch16-000072",
+  "subject": "physics",
+  "chapter": "跨学科综合",
+  "difficulty": 3,
+  "stem": "测速灵阵记录某弟子的位移-时间关系s=v₀t+½at²（v₀=3 m/s，a=3 m/s²）。结合物理运动学与数学导数知识，t=4 s时其瞬时速度最接近下列哪一项？",
+  "options": [
+   "6 m/s",
+   "12 m/s",
+   "12 m/s",
+   "15 m/s"
+  ],
+  "answerIndex": 3,
+  "explanation": "由数学求导v=ds/dt=v₀+at=15.0 m/s，体现物理与数学的跨学科综合。",
+  "kpTags": [
+   "匀变速直线运动",
+   "导数与单调性",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP7",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "physics+math",
+   "math+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000073",
+  "subject": "physics",
+  "chapter": "跨学科综合",
+  "difficulty": 3,
+  "stem": "炼丹炉中3 kg灵液比热容为4.2×10³ J/(kg·℃)，温度升高6 ℃。结合化学热效应与物理热学知识，吸收的热量最接近下列哪一项？",
+  "options": [
+   "12600.0 J",
+   "25200.0 J",
+   "18 J",
+   "75600.0 J"
+  ],
+  "answerIndex": 3,
+  "explanation": "由热学Q=mcΔT=75600 J，化学放热反应的能量变化同样用此式计量。",
+  "kpTags": [
+   "热学",
+   "反应热",
+   "能量守恒"
+  ],
+  "relatedMiniGame": "G97",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chemistry+physics",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000074",
+  "subject": "physics",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "地球赤道半径约6500 km，自转周期24 h。结合地理地球运动与物理圆周运动及数学计算，赤道表面物体随地球自转的线速度最接近下列哪一项？",
+  "options": [
+   "945.4 m/s",
+   "75.2 m/s",
+   "236.3 m/s",
+   "472.7 m/s"
+  ],
+  "answerIndex": 3,
+  "explanation": "线速度v=2πR/T≈472.7 m/s，是地理自转与物理、数学的综合。",
+  "kpTags": [
+   "圆周运动",
+   "天体运动",
+   "地球自转"
+  ],
+  "relatedMiniGame": "G92",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "physics+geography",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000075",
+  "subject": "physics",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "某金属截止频率5.0×10¹⁴ Hz，用频率7.5×10¹⁴ Hz的光照射。结合物理光电效应与化学原子结构、数学计算（h=6.63×10⁻³⁴ J·s），光电子最大初动能最接近下列哪一项？",
+  "options": [
+   "0.0 J",
+   "0.0 J",
+   "0.0 J",
+   "0.0 J"
+  ],
+  "answerIndex": 3,
+  "explanation": "Ek=h(f-f0)≈0.00e+00 J，光电效应连接物理与化学原子结构。",
+  "kpTags": [
+   "光电效应",
+   "原子结构",
+   "光子能量"
+  ],
+  "relatedMiniGame": "G88",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "physics+chemistry",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000076",
+  "subject": "physics",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "雷劫阵中弟子听到雷声，声速340 m/s，声音传播4 s后到达。结合物理声波与地理天气系统及数学计算，雷击处距其约多少米？",
+  "options": [
+   "340 m",
+   "4 m",
+   "680.0 m",
+   "1360 m"
+  ],
+  "answerIndex": 3,
+  "explanation": "距离d=vt=1360 m，声学与地理气象的综合应用。",
+  "kpTags": [
+   "机械波",
+   "天气系统",
+   "综合应用"
+  ],
+  "relatedMiniGame": "G91",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "physics+geography",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000077",
+  "subject": "physics",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "一段长3 m导线垂直置于磁感应强度0.5 T磁场中通以2 A电流。结合物理安培力与数学单位换算、英语实验数据表阅读，所受安培力最接近下列哪一项？",
+  "options": [
+   "1.0 N",
+   "6 N",
+   "1.5 N",
+   "3.0 N"
+  ],
+  "answerIndex": 3,
+  "explanation": "F=BIL=3.00 N，跨物理、数学与英语实验数据理解。",
+  "kpTags": [
+   "安培力",
+   "磁场",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP13",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "physics+math",
+   "english+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000078",
+  "subject": "physics",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "某丹方反应吸热120 J并对外做功40 J。结合化学反应热与物理热力学第一定律、数学守恒计算，体系内能变化最接近下列哪一项？",
+  "options": [
+   "160 J",
+   "40 J",
+   "-80 J",
+   "80 J"
+  ],
+  "answerIndex": 3,
+  "explanation": "ΔU=Q-W=80 J，化学能量与物理热学的跨学科综合。",
+  "kpTags": [
+   "热力学第一定律",
+   "反应热",
+   "能量守恒"
+  ],
+  "relatedMiniGame": "SP14",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chemistry+physics",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000079",
+  "subject": "physics",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "古书《御风录》载“瞬息14丈，历3息”。结合文言文计量单位理解与物理平均速度、数学除法运算，其平均速度（丈/息）最接近下列哪一项？",
+  "options": [
+   "14 m/s",
+   "3 m/s",
+   "42 m/s",
+   "4.7 m/s"
+  ],
+  "answerIndex": 3,
+  "explanation": "平均速度=s/t=4.7，文言文、物理与数学的综合。",
+  "kpTags": [
+   "平均速度",
+   "文言文",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP15",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chinese+physics",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000080",
+  "subject": "physics",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "海面波浪波长3 m、频率5 Hz。结合地理海洋水文与物理机械波、数学乘积运算，波浪传播速度最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "0.6 m/s",
+   "1.7 m/s",
+   "8 m/s",
+   "15 m/s"
+  ],
+  "answerIndex": 3,
+  "explanation": "v=λf=15 m/s，地理水文与物理波动的综合。",
+  "kpTags": [
+   "机械波",
+   "洋流",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP4-rhythm",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "physics+geography",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000081",
+  "subject": "physics",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "标准状况下3 mol理想气体。结合化学物质的量与物理气体状态方程、数学乘法，其体积最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "22.4 L",
+   "3 L",
+   "7.5 L",
+   "67.2 L"
+  ],
+  "answerIndex": 3,
+  "explanation": "V=n·Vm=67.2 L，化学与物理、数学的综合。",
+  "kpTags": [
+   "物质的量",
+   "理想气体",
+   "气体摩尔体积"
+  ],
+  "relatedMiniGame": "SP4-board",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chemistry+physics",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000082",
+  "subject": "physics",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "英文实验报告记载：a cultivator of mass 2 kg moves at 4 m/s。结合英语数据阅读与物理动能、数学平方运算，其动能最接近下列哪一项？",
+  "options": [
+   "32 J",
+   "8 J",
+   "4.0 J",
+   "16.0 J"
+  ],
+  "answerIndex": 3,
+  "explanation": "Ek=½mv²=16.0 J，英语实验数据与物理、数学综合。",
+  "kpTags": [
+   "动能定理",
+   "综合应用",
+   "阅读推断"
+  ],
+  "relatedMiniGame": "SP6",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "english+physics",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000083",
+  "subject": "physics",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "温室气体使大气层对地面辐射的吸收增强。结合地理大气受热过程与物理热辐射、化学温室气体性质及数学角度估算，若某临界角为35°，其正确值最接近下列哪一项？",
+  "options": [
+   "20°",
+   "50°",
+   "55°",
+   "35°"
+  ],
+  "answerIndex": 3,
+  "explanation": "地理大气受热与物理热辐射、化学气体性质的综合，临界角为35°。",
+  "kpTags": [
+   "热辐射",
+   "温室效应",
+   "大气受热过程"
+  ],
+  "relatedMiniGame": "SP7",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "physics+chemistry",
+   "geography+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000084",
+  "subject": "physics",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "测速灵阵记录某弟子的位移-时间关系s=v₀t+½at²（v₀=4 m/s，a=3 m/s²）。结合物理运动学与数学导数知识，t=4 s时其瞬时速度最接近下列哪一项？",
+  "options": [
+   "12 m/s",
+   "16 m/s",
+   "16 m/s",
+   "7 m/s"
+  ],
+  "answerIndex": 2,
+  "explanation": "由数学求导v=ds/dt=v₀+at=16.0 m/s，体现物理与数学的跨学科综合。",
+  "kpTags": [
+   "匀变速直线运动",
+   "导数与单调性",
+   "综合应用"
+  ],
+  "relatedMiniGame": "G97",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "physics+math",
+   "math+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000085",
+  "subject": "physics",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "炼丹炉中4 kg灵液比热容为4.2×10³ J/(kg·℃)，温度升高7 ℃。结合化学热效应与物理热学知识，吸收的热量最接近下列哪一项？",
+  "options": [
+   "29400.0 J",
+   "28 J",
+   "117600.0 J",
+   "16800.0 J"
+  ],
+  "answerIndex": 2,
+  "explanation": "由热学Q=mcΔT=117600 J，化学放热反应的能量变化同样用此式计量。",
+  "kpTags": [
+   "热学",
+   "反应热",
+   "能量守恒"
+  ],
+  "relatedMiniGame": "G92",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chemistry+physics",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000086",
+  "subject": "physics",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "地球赤道半径约6600 km，自转周期24 h。结合地理地球运动与物理圆周运动及数学计算，赤道表面物体随地球自转的线速度最接近下列哪一项？",
+  "options": [
+   "76.4 m/s",
+   "240.0 m/s",
+   "480.0 m/s",
+   "959.9 m/s"
+  ],
+  "answerIndex": 2,
+  "explanation": "线速度v=2πR/T≈480.0 m/s，是地理自转与物理、数学的综合。",
+  "kpTags": [
+   "圆周运动",
+   "天体运动",
+   "地球自转"
+  ],
+  "relatedMiniGame": "G88",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "physics+geography",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000087",
+  "subject": "physics",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "某金属截止频率5.0×10¹⁴ Hz，用频率7.5×10¹⁴ Hz的光照射。结合物理光电效应与化学原子结构、数学计算（h=6.63×10⁻³⁴ J·s），光电子最大初动能最接近下列哪一项？",
+  "options": [
+   "0.0 J",
+   "0.0 J",
+   "0.0 J",
+   "0.0 J"
+  ],
+  "answerIndex": 2,
+  "explanation": "Ek=h(f-f0)≈0.00e+00 J，光电效应连接物理与化学原子结构。",
+  "kpTags": [
+   "光电效应",
+   "原子结构",
+   "光子能量"
+  ],
+  "relatedMiniGame": "G91",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "physics+chemistry",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000088",
+  "subject": "physics",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "雷劫阵中弟子听到雷声，声速340 m/s，声音传播5 s后到达。结合物理声波与地理天气系统及数学计算，雷击处距其约多少米？",
+  "options": [
+   "5 m",
+   "850.0 m",
+   "1700 m",
+   "340 m"
+  ],
+  "answerIndex": 2,
+  "explanation": "距离d=vt=1700 m，声学与地理气象的综合应用。",
+  "kpTags": [
+   "机械波",
+   "天气系统",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP13",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "physics+geography",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000089",
+  "subject": "physics",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "一段长4 m导线垂直置于磁感应强度0.5 T磁场中通以2 A电流。结合物理安培力与数学单位换算、英语实验数据表阅读，所受安培力最接近下列哪一项？",
+  "options": [
+   "8 N",
+   "2.0 N",
+   "4.0 N",
+   "1.0 N"
+  ],
+  "answerIndex": 2,
+  "explanation": "F=BIL=4.00 N，跨物理、数学与英语实验数据理解。",
+  "kpTags": [
+   "安培力",
+   "磁场",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP14",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "physics+math",
+   "english+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000090",
+  "subject": "physics",
+  "chapter": "跨学科综合",
+  "difficulty": 3,
+  "stem": "某丹方反应吸热140 J并对外做功40 J。结合化学反应热与物理热力学第一定律、数学守恒计算，体系内能变化最接近下列哪一项？",
+  "options": [
+   "40 J",
+   "-100 J",
+   "100 J",
+   "180 J"
+  ],
+  "answerIndex": 2,
+  "explanation": "ΔU=Q-W=100 J，化学能量与物理热学的跨学科综合。",
+  "kpTags": [
+   "热力学第一定律",
+   "反应热",
+   "能量守恒"
+  ],
+  "relatedMiniGame": "SP15",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chemistry+physics",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000091",
+  "subject": "physics",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "古书《御风录》载“瞬息16丈，历3息”。结合文言文计量单位理解与物理平均速度、数学除法运算，其平均速度（丈/息）最接近下列哪一项？",
+  "options": [
+   "3 m/s",
+   "48 m/s",
+   "5.3 m/s",
+   "16 m/s"
+  ],
+  "answerIndex": 2,
+  "explanation": "平均速度=s/t=5.3，文言文、物理与数学的综合。",
+  "kpTags": [
+   "平均速度",
+   "文言文",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP4-rhythm",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chinese+physics",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000092",
+  "subject": "physics",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "海面波浪波长4 m、频率5 Hz。结合地理海洋水文与物理机械波、数学乘积运算，波浪传播速度最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "1.2 m/s",
+   "9 m/s",
+   "20 m/s",
+   "0.8 m/s"
+  ],
+  "answerIndex": 2,
+  "explanation": "v=λf=20 m/s，地理水文与物理波动的综合。",
+  "kpTags": [
+   "机械波",
+   "洋流",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP4-board",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "physics+geography",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000093",
+  "subject": "physics",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "标准状况下4 mol理想气体。结合化学物质的量与物理气体状态方程、数学乘法，其体积最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "4 L",
+   "5.6 L",
+   "89.6 L",
+   "22.4 L"
+  ],
+  "answerIndex": 2,
+  "explanation": "V=n·Vm=89.6 L，化学与物理、数学的综合。",
+  "kpTags": [
+   "物质的量",
+   "理想气体",
+   "气体摩尔体积"
+  ],
+  "relatedMiniGame": "SP6",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chemistry+physics",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000094",
+  "subject": "physics",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "英文实验报告记载：a cultivator of mass 3 kg moves at 5 m/s。结合英语数据阅读与物理动能、数学平方运算，其动能最接近下列哪一项？",
+  "options": [
+   "15 J",
+   "7.5 J",
+   "37.5 J",
+   "75 J"
+  ],
+  "answerIndex": 2,
+  "explanation": "Ek=½mv²=37.5 J，英语实验数据与物理、数学综合。",
+  "kpTags": [
+   "动能定理",
+   "综合应用",
+   "阅读推断"
+  ],
+  "relatedMiniGame": "SP7",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "english+physics",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000095",
+  "subject": "physics",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "温室气体使大气层对地面辐射的吸收增强。结合地理大气受热过程与物理热辐射、化学温室气体性质及数学角度估算，若某临界角为40°，其正确值最接近下列哪一项？",
+  "options": [
+   "55°",
+   "50°",
+   "40°",
+   "25°"
+  ],
+  "answerIndex": 2,
+  "explanation": "地理大气受热与物理热辐射、化学气体性质的综合，临界角为40°。",
+  "kpTags": [
+   "热辐射",
+   "温室效应",
+   "大气受热过程"
+  ],
+  "relatedMiniGame": "G97",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "physics+chemistry",
+   "geography+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000096",
+  "subject": "physics",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "测速灵阵记录某弟子的位移-时间关系s=v₀t+½at²（v₀=5 m/s，a=3 m/s²）。结合物理运动学与数学导数知识，t=4 s时其瞬时速度最接近下列哪一项？",
+  "options": [
+   "20 m/s",
+   "17 m/s",
+   "8 m/s",
+   "12 m/s"
+  ],
+  "answerIndex": 1,
+  "explanation": "由数学求导v=ds/dt=v₀+at=17.0 m/s，体现物理与数学的跨学科综合。",
+  "kpTags": [
+   "匀变速直线运动",
+   "导数与单调性",
+   "综合应用"
+  ],
+  "relatedMiniGame": "G92",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "physics+math",
+   "math+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000097",
+  "subject": "physics",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "炼丹炉中5 kg灵液比热容为4.2×10³ J/(kg·℃)，温度升高8 ℃。结合化学热效应与物理热学知识，吸收的热量最接近下列哪一项？",
+  "options": [
+   "40 J",
+   "168000.0 J",
+   "21000.0 J",
+   "33600.0 J"
+  ],
+  "answerIndex": 1,
+  "explanation": "由热学Q=mcΔT=168000 J，化学放热反应的能量变化同样用此式计量。",
+  "kpTags": [
+   "热学",
+   "反应热",
+   "能量守恒"
+  ],
+  "relatedMiniGame": "G88",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chemistry+physics",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000098",
+  "subject": "physics",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "地球赤道半径约6700 km，自转周期24 h。结合地理地球运动与物理圆周运动及数学计算，赤道表面物体随地球自转的线速度最接近下列哪一项？",
+  "options": [
+   "243.6 m/s",
+   "487.2 m/s",
+   "974.5 m/s",
+   "77.5 m/s"
+  ],
+  "answerIndex": 1,
+  "explanation": "线速度v=2πR/T≈487.2 m/s，是地理自转与物理、数学的综合。",
+  "kpTags": [
+   "圆周运动",
+   "天体运动",
+   "地球自转"
+  ],
+  "relatedMiniGame": "G91",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "physics+geography",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000099",
+  "subject": "physics",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "某金属截止频率5.0×10¹⁴ Hz，用频率7.5×10¹⁴ Hz的光照射。结合物理光电效应与化学原子结构、数学计算（h=6.63×10⁻³⁴ J·s），光电子最大初动能最接近下列哪一项？",
+  "options": [
+   "0.0 J",
+   "0.0 J",
+   "0.0 J",
+   "0.0 J"
+  ],
+  "answerIndex": 1,
+  "explanation": "Ek=h(f-f0)≈0.00e+00 J，光电效应连接物理与化学原子结构。",
+  "kpTags": [
+   "光电效应",
+   "原子结构",
+   "光子能量"
+  ],
+  "relatedMiniGame": "SP13",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "physics+chemistry",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000100",
+  "subject": "physics",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "雷劫阵中弟子听到雷声，声速340 m/s，声音传播6 s后到达。结合物理声波与地理天气系统及数学计算，雷击处距其约多少米？",
+  "options": [
+   "1020.0 m",
+   "2040 m",
+   "340 m",
+   "6 m"
+  ],
+  "answerIndex": 1,
+  "explanation": "距离d=vt=2040 m，声学与地理气象的综合应用。",
+  "kpTags": [
+   "机械波",
+   "天气系统",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP14",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "physics+geography",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000101",
+  "subject": "physics",
+  "chapter": "跨学科综合",
+  "difficulty": 3,
+  "stem": "一段长5 m导线垂直置于磁感应强度0.5 T磁场中通以2 A电流。结合物理安培力与数学单位换算、英语实验数据表阅读，所受安培力最接近下列哪一项？",
+  "options": [
+   "2.5 N",
+   "5.0 N",
+   "1.0 N",
+   "10 N"
+  ],
+  "answerIndex": 1,
+  "explanation": "F=BIL=5.00 N，跨物理、数学与英语实验数据理解。",
+  "kpTags": [
+   "安培力",
+   "磁场",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP15",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "physics+math",
+   "english+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000102",
+  "subject": "physics",
+  "chapter": "跨学科综合",
+  "difficulty": 3,
+  "stem": "某丹方反应吸热160 J并对外做功40 J。结合化学反应热与物理热力学第一定律、数学守恒计算，体系内能变化最接近下列哪一项？",
+  "options": [
+   "-120 J",
+   "120 J",
+   "200 J",
+   "40 J"
+  ],
+  "answerIndex": 1,
+  "explanation": "ΔU=Q-W=120 J，化学能量与物理热学的跨学科综合。",
+  "kpTags": [
+   "热力学第一定律",
+   "反应热",
+   "能量守恒"
+  ],
+  "relatedMiniGame": "SP4-rhythm",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chemistry+physics",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000103",
+  "subject": "physics",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "古书《御风录》载“瞬息18丈，历3息”。结合文言文计量单位理解与物理平均速度、数学除法运算，其平均速度（丈/息）最接近下列哪一项？",
+  "options": [
+   "54 m/s",
+   "6.0 m/s",
+   "18 m/s",
+   "3 m/s"
+  ],
+  "answerIndex": 1,
+  "explanation": "平均速度=s/t=6.0，文言文、物理与数学的综合。",
+  "kpTags": [
+   "平均速度",
+   "文言文",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP4-board",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chinese+physics",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000104",
+  "subject": "physics",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "海面波浪波长5 m、频率5 Hz。结合地理海洋水文与物理机械波、数学乘积运算，波浪传播速度最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "10 m/s",
+   "25 m/s",
+   "1.0 m/s",
+   "1.0 m/s"
+  ],
+  "answerIndex": 1,
+  "explanation": "v=λf=25 m/s，地理水文与物理波动的综合。",
+  "kpTags": [
+   "机械波",
+   "洋流",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP6",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "physics+geography",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000105",
+  "subject": "physics",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "标准状况下5 mol理想气体。结合化学物质的量与物理气体状态方程、数学乘法，其体积最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "4.5 L",
+   "112.0 L",
+   "22.4 L",
+   "5 L"
+  ],
+  "answerIndex": 1,
+  "explanation": "V=n·Vm=112.0 L，化学与物理、数学的综合。",
+  "kpTags": [
+   "物质的量",
+   "理想气体",
+   "气体摩尔体积"
+  ],
+  "relatedMiniGame": "SP7",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chemistry+physics",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000106",
+  "subject": "physics",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "英文实验报告记载：a cultivator of mass 4 kg moves at 6 m/s。结合英语数据阅读与物理动能、数学平方运算，其动能最接近下列哪一项？",
+  "options": [
+   "12.0 J",
+   "72.0 J",
+   "144 J",
+   "24 J"
+  ],
+  "answerIndex": 1,
+  "explanation": "Ek=½mv²=72.0 J，英语实验数据与物理、数学综合。",
+  "kpTags": [
+   "动能定理",
+   "综合应用",
+   "阅读推断"
+  ],
+  "relatedMiniGame": "G97",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "english+physics",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000107",
+  "subject": "physics",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "温室气体使大气层对地面辐射的吸收增强。结合地理大气受热过程与物理热辐射、化学温室气体性质及数学角度估算，若某临界角为45°，其正确值最接近下列哪一项？",
+  "options": [
+   "45°",
+   "45°",
+   "30°",
+   "60°"
+  ],
+  "answerIndex": 1,
+  "explanation": "地理大气受热与物理热辐射、化学气体性质的综合，临界角为45°。",
+  "kpTags": [
+   "热辐射",
+   "温室效应",
+   "大气受热过程"
+  ],
+  "relatedMiniGame": "G92",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "physics+chemistry",
+   "geography+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000108",
+  "subject": "physics",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "测速灵阵记录某弟子的位移-时间关系s=v₀t+½at²（v₀=6 m/s，a=3 m/s²）。结合物理运动学与数学导数知识，t=4 s时其瞬时速度最接近下列哪一项？",
+  "options": [
+   "18 m/s",
+   "9 m/s",
+   "12 m/s",
+   "24 m/s"
+  ],
+  "answerIndex": 0,
+  "explanation": "由数学求导v=ds/dt=v₀+at=18.0 m/s，体现物理与数学的跨学科综合。",
+  "kpTags": [
+   "匀变速直线运动",
+   "导数与单调性",
+   "综合应用"
+  ],
+  "relatedMiniGame": "G88",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "physics+math",
+   "math+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000109",
+  "subject": "physics",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "炼丹炉中6 kg灵液比热容为4.2×10³ J/(kg·℃)，温度升高9 ℃。结合化学热效应与物理热学知识，吸收的热量最接近下列哪一项？",
+  "options": [
+   "226800.0 J",
+   "25200.0 J",
+   "37800.0 J",
+   "54 J"
+  ],
+  "answerIndex": 0,
+  "explanation": "由热学Q=mcΔT=226800 J，化学放热反应的能量变化同样用此式计量。",
+  "kpTags": [
+   "热学",
+   "反应热",
+   "能量守恒"
+  ],
+  "relatedMiniGame": "G91",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chemistry+physics",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000110",
+  "subject": "physics",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "地球赤道半径约6800 km，自转周期24 h。结合地理地球运动与物理圆周运动及数学计算，赤道表面物体随地球自转的线速度最接近下列哪一项？",
+  "options": [
+   "494.5 m/s",
+   "989.0 m/s",
+   "78.7 m/s",
+   "247.3 m/s"
+  ],
+  "answerIndex": 0,
+  "explanation": "线速度v=2πR/T≈494.5 m/s，是地理自转与物理、数学的综合。",
+  "kpTags": [
+   "圆周运动",
+   "天体运动",
+   "地球自转"
+  ],
+  "relatedMiniGame": "SP13",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "physics+geography",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000111",
+  "subject": "physics",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "某金属截止频率5.0×10¹⁴ Hz，用频率7.5×10¹⁴ Hz的光照射。结合物理光电效应与化学原子结构、数学计算（h=6.63×10⁻³⁴ J·s），光电子最大初动能最接近下列哪一项？",
+  "options": [
+   "0.0 J",
+   "0.0 J",
+   "0.0 J",
+   "0.0 J"
+  ],
+  "answerIndex": 0,
+  "explanation": "Ek=h(f-f0)≈0.00e+00 J，光电效应连接物理与化学原子结构。",
+  "kpTags": [
+   "光电效应",
+   "原子结构",
+   "光子能量"
+  ],
+  "relatedMiniGame": "SP14",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "physics+chemistry",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000112",
+  "subject": "physics",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "雷劫阵中弟子听到雷声，声速340 m/s，声音传播7 s后到达。结合物理声波与地理天气系统及数学计算，雷击处距其约多少米？",
+  "options": [
+   "2380 m",
+   "340 m",
+   "7 m",
+   "1190.0 m"
+  ],
+  "answerIndex": 0,
+  "explanation": "距离d=vt=2380 m，声学与地理气象的综合应用。",
+  "kpTags": [
+   "机械波",
+   "天气系统",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP15",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "physics+geography",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000113",
+  "subject": "physics",
+  "chapter": "跨学科综合",
+  "difficulty": 3,
+  "stem": "一段长6 m导线垂直置于磁感应强度0.5 T磁场中通以2 A电流。结合物理安培力与数学单位换算、英语实验数据表阅读，所受安培力最接近下列哪一项？",
+  "options": [
+   "6.0 N",
+   "1.0 N",
+   "12 N",
+   "3.0 N"
+  ],
+  "answerIndex": 0,
+  "explanation": "F=BIL=6.00 N，跨物理、数学与英语实验数据理解。",
+  "kpTags": [
+   "安培力",
+   "磁场",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP4-rhythm",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "physics+math",
+   "english+physics"
+  ]
+ },
+ {
+  "id": "q-batch16-000114",
+  "subject": "physics",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "某丹方反应吸热180 J并对外做功40 J。结合化学反应热与物理热力学第一定律、数学守恒计算，体系内能变化最接近下列哪一项？",
+  "options": [
+   "140 J",
+   "220 J",
+   "40 J",
+   "-140 J"
+  ],
+  "answerIndex": 0,
+  "explanation": "ΔU=Q-W=140 J，化学能量与物理热学的跨学科综合。",
+  "kpTags": [
+   "热力学第一定律",
+   "反应热",
+   "能量守恒"
+  ],
+  "relatedMiniGame": "SP4-board",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chemistry+physics",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000115",
+  "subject": "physics",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "古书《御风录》载“瞬息20丈，历3息”。结合文言文计量单位理解与物理平均速度、数学除法运算，其平均速度（丈/息）最接近下列哪一项？",
+  "options": [
+   "6.7 m/s",
+   "20 m/s",
+   "3 m/s",
+   "60 m/s"
+  ],
+  "answerIndex": 0,
+  "explanation": "平均速度=s/t=6.7，文言文、物理与数学的综合。",
+  "kpTags": [
+   "平均速度",
+   "文言文",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP6",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chinese+physics",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000116",
+  "subject": "physics",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "海面波浪波长6 m、频率5 Hz。结合地理海洋水文与物理机械波、数学乘积运算，波浪传播速度最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "30 m/s",
+   "1.2 m/s",
+   "0.8 m/s",
+   "11 m/s"
+  ],
+  "answerIndex": 0,
+  "explanation": "v=λf=30 m/s，地理水文与物理波动的综合。",
+  "kpTags": [
+   "机械波",
+   "洋流",
+   "综合应用"
+  ],
+  "relatedMiniGame": "SP7",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "physics+geography",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000117",
+  "subject": "physics",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "标准状况下6 mol理想气体。结合化学物质的量与物理气体状态方程、数学乘法，其体积最接近下列哪一项？。请结合题干信息与所学知识综合分析作答。",
+  "options": [
+   "134.4 L",
+   "22.4 L",
+   "6 L",
+   "3.7 L"
+  ],
+  "answerIndex": 0,
+  "explanation": "V=n·Vm=134.4 L，化学与物理、数学的综合。",
+  "kpTags": [
+   "物质的量",
+   "理想气体",
+   "气体摩尔体积"
+  ],
+  "relatedMiniGame": "G97",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "chemistry+physics",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000118",
+  "subject": "physics",
+  "chapter": "跨学科综合",
+  "difficulty": 5,
+  "stem": "英文实验报告记载：a cultivator of mass 5 kg moves at 7 m/s。结合英语数据阅读与物理动能、数学平方运算，其动能最接近下列哪一项？",
+  "options": [
+   "122.5 J",
+   "245 J",
+   "35 J",
+   "17.5 J"
+  ],
+  "answerIndex": 0,
+  "explanation": "Ek=½mv²=122.5 J，英语实验数据与物理、数学综合。",
+  "kpTags": [
+   "动能定理",
+   "综合应用",
+   "阅读推断"
+  ],
+  "relatedMiniGame": "G92",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "english+physics",
+   "physics+math"
+  ]
+ },
+ {
+  "id": "q-batch16-000119",
+  "subject": "physics",
+  "chapter": "跨学科综合",
+  "difficulty": 4,
+  "stem": "温室气体使大气层对地面辐射的吸收增强。结合地理大气受热过程与物理热辐射、化学温室气体性质及数学角度估算，若某临界角为50°，其正确值最接近下列哪一项？",
+  "options": [
+   "50°",
+   "35°",
+   "65°",
+   "40°"
+  ],
+  "answerIndex": 0,
+  "explanation": "地理大气受热与物理热辐射、化学气体性质的综合，临界角为50°。",
+  "kpTags": [
+   "热辐射",
+   "温室效应",
+   "大气受热过程"
+  ],
+  "relatedMiniGame": "G88",
+  "createdAt": "2026-08-20",
+  "crossSubjectPairs": [
+   "physics+chemistry",
+   "geography+physics"
+  ]
+ }
+]

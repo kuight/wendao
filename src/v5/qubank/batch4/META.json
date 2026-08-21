@@ -1,0 +1,16 @@
+{
+  "created_at": "2026-08-19",
+  "main_sha": "4e86b2d57cb1356e706b8ce20dc9899505314122",
+  "batch": "v5-batch4",
+  "total_items": 600,
+  "items_per_subject": {
+    "physics": 120,
+    "chemistry": 120,
+    "math": 120,
+    "chinese": 80,
+    "english": 80,
+    "geography": 80
+  },
+  "blocked_by": "missing_pat_in_sandbox",
+  "source": "原创v5-batch4"
+}

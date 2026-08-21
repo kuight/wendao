@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>灵笔绘卷 · 问道修仙学院 v5</title>
+  <style>
+    :root {
+      --bg: #fdf3e3; --ink: #4a2c17; --accent: #c0392b; --gold: #b8860b;
+      --card: #fffaf0; --line: #e8d5b0;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; font-family: "PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+      background: linear-gradient(160deg,#fdf3e3,#f7e3c3);
+      color: var(--ink); min-height: 100vh;
+    }
+    header {
+      text-align: center; padding: 18px 12px 8px;
+    }
+    header h1 { margin: 0; font-size: 26px; letter-spacing: 2px; }
+    header p { margin: 6px 0 0; font-size: 13px; color: #8a6d4b; }
+    .gates { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin: 14px 0; }
+    .gate {
+      border: 2px solid var(--line); background: var(--card); border-radius: 12px;
+      padding: 10px 18px; cursor: pointer; min-width: 96px; text-align: center;
+      transition: transform .12s, box-shadow .12s;
+    }
+    .gate:hover { transform: translateY(-2px); box-shadow: 0 4px 10px rgba(0,0,0,.08); }
+    .gate.locked { opacity: .45; cursor: not-allowed; }
+    .gate .nm { font-weight: 700; }
+    .gate .meta { font-size: 11px; color: #8a6d4b; }
+    .stage { max-width: 720px; margin: 0 auto; padding: 0 12px 40px; }
+    .panel {
+      background: var(--card); border: 1px solid var(--line); border-radius: 16px;
+      padding: 16px; box-shadow: 0 6px 18px rgba(0,0,0,.05);
+    }
+    .row { display: flex; gap: 12px; flex-wrap: wrap; }
+    .col { flex: 1; min-width: 220px; }
+    canvas {
+      width: 100%; background: #fff; border: 2px dashed var(--line);
+      border-radius: 12px; touch-action: none; cursor: crosshair;
+    }
+    .toolbar { display: flex; gap: 8px; margin: 10px 0; flex-wrap: wrap; align-items: center; }
+    button {
+      border: 1px solid var(--line); background: #fff; color: var(--ink);
+      border-radius: 10px; padding: 8px 14px; cursor: pointer; font-size: 14px;
+      min-height: 36px;
+    }
+    button.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+    button:disabled { opacity: .45; cursor: not-allowed; }
+    .score { font-size: 15px; font-weight: 700; }
+    .hint { font-size: 12px; color: #8a6d4b; margin-top: 6px; }
+    .toast {
+      position: fixed; left: 50%; top: 18px; transform: translateX(-50%);
+      background: var(--ink); color: #fff; padding: 10px 18px; border-radius: 10px;
+      font-size: 14px; opacity: 0; transition: opacity .25s; pointer-events: none; z-index: 9;
+    }
+    .toast.show { opacity: 1; }
+    .stats { display: flex; gap: 18px; flex-wrap: wrap; font-size: 13px; color: #8a6d4b; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🖌 灵笔绘卷</h1>
+    <p>以灵笔临摹灵符 / 灵草 / 法器 · 笔迹越近，评分越高</p>
+  </header>
+
+  <div class="stage">
+    <div class="gates" id="gates"></div>
+
+    <div class="panel">
+      <div class="row">
+        <div class="col">
+          <div class="toolbar">
+            <span class="score" id="score">准确率 —</span>
+            <button id="clearBtn">清空</button>
+            <button id="submitBtn" class="primary">提交评分</button>
+          </div>
+          <canvas id="board" width="560" height="420"></canvas>
+          <div class="hint" id="hint">按住并拖动灵笔临摹右侧图样；画完点「提交评分」。</div>
+        </div>
+        <div class="col">
+          <div class="toolbar"><span>参考图样</span></div>
+          <div id="refBox"></div>
+          <div class="stats" id="stats"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="../../core/state.js"></script>
+  <script src="../../core/save.js"></script>
+  <script src="灵符-ref.js"></script>
+  <script src="灵草-ref.js"></script>
+  <script src="法器-ref.js"></script>
+  <script src="drawing-core.js"></script>
+  <script>
+    (function () {
+      var canvas = document.getElementById('board');
+      var ctx = canvas.getContext('2d');
+      var drawing = false;
+      var strokes = [];
+      var current = [];
+      var subject = 'lingfu';
+      var diff = 'easy';
+
+      function toast(msg) {
+        var t = document.getElementById('toast');
+        t.textContent = msg;
+        t.classList.add('show');
+        clearTimeout(t._h);
+        t._h = setTimeout(function () { t.classList.remove('show'); }, 2200);
+      }
+
+      function renderGates() {
+        var box = document.getElementById('gates');
+        box.innerHTML = '';
+        V5Drawing.GATES.forEach(function (g) {
+          var locked = !V5Drawing.unlockedFor(g.key);
+          var el = document.createElement('div');
+          el.className = 'gate' + (locked ? ' locked' : '');
+          el.innerHTML = '<div class="nm">' + g.name + '</div><div class="meta">' + g.strokes + ' 笔</div>';
+          el.onclick = function () {
+            if (locked) { toast('境界不足：' + g.name + ' 需 realmId ≥ ' + g.minRealm); return; }
+            diff = g.key;
+            renderRef();
+            toast('已切换难度：' + g.name);
+          };
+          box.appendChild(el);
+        });
+      }
+
+      function renderRef() {
+        var ref = V5Drawing.getRef(subject);
+        var box = document.getElementById('refBox');
+        if (!ref) { box.innerHTML = '<p>参考缺失</p>'; return; }
+        var svg = atob(ref.svgB64);
+        box.innerHTML = '<div style="text-align:center">' + svg + '</div>';
+      }
+
+      function renderStats() {
+        var st = V5Drawing.getState();
+        var el = document.getElementById('stats');
+        var best = st.best ? '最佳 ' + st.best.subject + '·' + st.best.diff + ' ' + st.best.accuracy + '%' : '暂无最佳';
+        el.innerHTML = '<span>累计临摹 ' + (st.matches || 0) + ' 次</span><span>' + best + '</span>';
+      }
+
+      function resetBoard() {
+        strokes = [];
+        current = [];
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = '#fff';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+      }
+
+      function drawStroke(pts, color, width) {
+        ctx.strokeStyle = color || '#c0392b';
+        ctx.lineWidth = width || 3;
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+        ctx.beginPath();
+        pts.forEach(function (p, i) { i === 0 ? ctx.moveTo(p[0], p[1]) : ctx.lineTo(p[0], p[1]); });
+        ctx.stroke();
+      }
+
+      canvas.addEventListener('pointerdown', function (e) {
+        drawing = true;
+        current = [];
+        var r = canvas.getBoundingClientRect();
+        current.push([e.clientX - r.left, e.clientY - r.top]);
+      });
+      canvas.addEventListener('pointermove', function (e) {
+        if (!drawing) return;
+        var r = canvas.getBoundingClientRect();
+        current.push([e.clientX - r.left, e.clientY - r.top]);
+        // ink particle trail
+        drawStroke([current[current.length - 2], current[current.length - 1]], '#c0392b', 3);
+      });
+      window.addEventListener('pointerup', function () {
+        if (!drawing) return;
+        drawing = false;
+        if (current.length > 1) strokes.push(current);
+        current = [];
+      });
+
+      document.getElementById('clearBtn').onclick = resetBoard;
+      document.getElementById('submitBtn').onclick = function () {
+        if (strokes.length === 0) { toast('请先临摹几笔'); return; }
+        var refStrokes = V5Drawing.strokesFor(subject, diff);
+        var gate = V5Drawing.GATES.filter(function (g) { return g.key === diff; })[0];
+        var t0 = Date.now();
+        var acc = V5Drawing.scoreRun(strokes, refStrokes, canvas.width, canvas.height, gate.tolerance);
+        var ms = Date.now() - t0;
+        V5Drawing.recordMatch(subject, diff, acc, ms);
+        document.getElementById('score').textContent = '准确率 ' + acc + '%';
+        toast('评分 ' + acc + '% · 用时 ' + ms + 'ms');
+        renderStats();
+        resetBoard();
+      };
+
+      // subject switcher
+      document.querySelectorAll('.gates').length; // no-op
+      var subSel = document.createElement('div');
+      subSel.className = 'toolbar';
+      subSel.innerHTML = '<span>题材</span>';
+      V5Drawing.SUBJECTS.forEach(function (nm, i) {
+        var keys = ['lingfu', 'lingcao', 'faqi'];
+        var b = document.createElement('button');
+        b.textContent = nm;
+        b.onclick = function () {
+          subject = keys[i];
+          renderRef();
+          toast('题材切换：' + nm);
+        };
+        subSel.appendChild(b);
+      });
+      var panel = document.querySelector('.panel .row .col:last-child .toolbar');
+      panel.parentNode.insertBefore(subSel, panel.nextSibling);
+
+      renderGates();
+      renderRef();
+      renderStats();
+      resetBoard();
+    })();
+  </script>
+</body>
+</html>

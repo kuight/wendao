@@ -1,0 +1,367 @@
+{
+ "subject": "english",
+ "version": "v5-stub",
+ "count": 8,
+ "items": [
+  {
+   "id": "v5-english-001",
+   "v": 3,
+   "subject": "english",
+   "branch": "语法",
+   "points": [
+    "英语·语法"
+   ],
+   "difficulty": 1,
+   "type": "single",
+   "stem": "（占位题 1）英语 学科 语法 分支示例题面",
+   "options": [
+    {
+     "key": "A",
+     "text": "选项一"
+    },
+    {
+     "key": "B",
+     "text": "选项二"
+    },
+    {
+     "key": "C",
+     "text": "选项三"
+    },
+    {
+     "key": "D",
+     "text": "选项四"
+    }
+   ],
+   "answer": {
+    "key": "A",
+    "explanation": "占位解析"
+   },
+   "sourceTags": [
+    "v5-stub"
+   ],
+   "relatedPoints": [],
+   "estimatedSec": 60,
+   "mediaRef": {
+    "img": null,
+    "audio": null,
+    "formula": null
+   },
+   "version": "v5"
+  },
+  {
+   "id": "v5-english-002",
+   "v": 3,
+   "subject": "english",
+   "branch": "阅读",
+   "points": [
+    "英语·阅读"
+   ],
+   "difficulty": 2,
+   "type": "single",
+   "stem": "（占位题 2）英语 学科 阅读 分支示例题面",
+   "options": [
+    {
+     "key": "A",
+     "text": "选项一"
+    },
+    {
+     "key": "B",
+     "text": "选项二"
+    },
+    {
+     "key": "C",
+     "text": "选项三"
+    },
+    {
+     "key": "D",
+     "text": "选项四"
+    }
+   ],
+   "answer": {
+    "key": "A",
+    "explanation": "占位解析"
+   },
+   "sourceTags": [
+    "v5-stub"
+   ],
+   "relatedPoints": [],
+   "estimatedSec": 60,
+   "mediaRef": {
+    "img": null,
+    "audio": null,
+    "formula": null
+   },
+   "version": "v5"
+  },
+  {
+   "id": "v5-english-003",
+   "v": 3,
+   "subject": "english",
+   "branch": "写作",
+   "points": [
+    "英语·写作"
+   ],
+   "difficulty": 3,
+   "type": "single",
+   "stem": "（占位题 3）英语 学科 写作 分支示例题面",
+   "options": [
+    {
+     "key": "A",
+     "text": "选项一"
+    },
+    {
+     "key": "B",
+     "text": "选项二"
+    },
+    {
+     "key": "C",
+     "text": "选项三"
+    },
+    {
+     "key": "D",
+     "text": "选项四"
+    }
+   ],
+   "answer": {
+    "key": "A",
+    "explanation": "占位解析"
+   },
+   "sourceTags": [
+    "v5-stub"
+   ],
+   "relatedPoints": [],
+   "estimatedSec": 60,
+   "mediaRef": {
+    "img": null,
+    "audio": null,
+    "formula": null
+   },
+   "version": "v5"
+  },
+  {
+   "id": "v5-english-004",
+   "v": 3,
+   "subject": "english",
+   "branch": "词汇",
+   "points": [
+    "英语·词汇"
+   ],
+   "difficulty": 4,
+   "type": "single",
+   "stem": "（占位题 4）英语 学科 词汇 分支示例题面",
+   "options": [
+    {
+     "key": "A",
+     "text": "选项一"
+    },
+    {
+     "key": "B",
+     "text": "选项二"
+    },
+    {
+     "key": "C",
+     "text": "选项三"
+    },
+    {
+     "key": "D",
+     "text": "选项四"
+    }
+   ],
+   "answer": {
+    "key": "A",
+    "explanation": "占位解析"
+   },
+   "sourceTags": [
+    "v5-stub"
+   ],
+   "relatedPoints": [],
+   "estimatedSec": 60,
+   "mediaRef": {
+    "img": null,
+    "audio": null,
+    "formula": null
+   },
+   "version": "v5"
+  },
+  {
+   "id": "v5-english-005",
+   "v": 3,
+   "subject": "english",
+   "branch": "完形",
+   "points": [
+    "英语·完形"
+   ],
+   "difficulty": 5,
+   "type": "single",
+   "stem": "（占位题 5）英语 学科 完形 分支示例题面",
+   "options": [
+    {
+     "key": "A",
+     "text": "选项一"
+    },
+    {
+     "key": "B",
+     "text": "选项二"
+    },
+    {
+     "key": "C",
+     "text": "选项三"
+    },
+    {
+     "key": "D",
+     "text": "选项四"
+    }
+   ],
+   "answer": {
+    "key": "A",
+    "explanation": "占位解析"
+   },
+   "sourceTags": [
+    "v5-stub"
+   ],
+   "relatedPoints": [],
+   "estimatedSec": 60,
+   "mediaRef": {
+    "img": null,
+    "audio": null,
+    "formula": null
+   },
+   "version": "v5"
+  },
+  {
+   "id": "v5-english-006",
+   "v": 3,
+   "subject": "english",
+   "branch": "语法",
+   "points": [
+    "英语·语法"
+   ],
+   "difficulty": 1,
+   "type": "single",
+   "stem": "（占位题 6）英语 学科 语法 分支示例题面",
+   "options": [
+    {
+     "key": "A",
+     "text": "选项一"
+    },
+    {
+     "key": "B",
+     "text": "选项二"
+    },
+    {
+     "key": "C",
+     "text": "选项三"
+    },
+    {
+     "key": "D",
+     "text": "选项四"
+    }
+   ],
+   "answer": {
+    "key": "A",
+    "explanation": "占位解析"
+   },
+   "sourceTags": [
+    "v5-stub"
+   ],
+   "relatedPoints": [],
+   "estimatedSec": 60,
+   "mediaRef": {
+    "img": null,
+    "audio": null,
+    "formula": null
+   },
+   "version": "v5"
+  },
+  {
+   "id": "v5-english-007",
+   "v": 3,
+   "subject": "english",
+   "branch": "阅读",
+   "points": [
+    "英语·阅读"
+   ],
+   "difficulty": 2,
+   "type": "single",
+   "stem": "（占位题 7）英语 学科 阅读 分支示例题面",
+   "options": [
+    {
+     "key": "A",
+     "text": "选项一"
+    },
+    {
+     "key": "B",
+     "text": "选项二"
+    },
+    {
+     "key": "C",
+     "text": "选项三"
+    },
+    {
+     "key": "D",
+     "text": "选项四"
+    }
+   ],
+   "answer": {
+    "key": "A",
+    "explanation": "占位解析"
+   },
+   "sourceTags": [
+    "v5-stub"
+   ],
+   "relatedPoints": [],
+   "estimatedSec": 60,
+   "mediaRef": {
+    "img": null,
+    "audio": null,
+    "formula": null
+   },
+   "version": "v5"
+  },
+  {
+   "id": "v5-english-008",
+   "v": 3,
+   "subject": "english",
+   "branch": "写作",
+   "points": [
+    "英语·写作"
+   ],
+   "difficulty": 3,
+   "type": "single",
+   "stem": "（占位题 8）英语 学科 写作 分支示例题面",
+   "options": [
+    {
+     "key": "A",
+     "text": "选项一"
+    },
+    {
+     "key": "B",
+     "text": "选项二"
+    },
+    {
+     "key": "C",
+     "text": "选项三"
+    },
+    {
+     "key": "D",
+     "text": "选项四"
+    }
+   ],
+   "answer": {
+    "key": "A",
+    "explanation": "占位解析"
+   },
+   "sourceTags": [
+    "v5-stub"
+   ],
+   "relatedPoints": [],
+   "estimatedSec": 60,
+   "mediaRef": {
+    "img": null,
+    "audio": null,
+    "formula": null
+   },
+   "version": "v5"
+  }
+ ]
+}
