@@ -44,3 +44,7 @@ save-*.json
 
 # 推倒的云端v5+旧归档备份（本地保留，不进git，稳定后清）
 _archived_patches/
+
+# 云端agent遗产（40小游戏+题库+portal，626MB，本地保留参考，不进git）
+_cloud_legacy/
+_cloud_legacy.tar
