@@ -45,14 +45,21 @@ export function installRender(boot) {
   function init(c) {
     if (mounted) return api;
     container = c || document.body;
-    canvas = document.createElement('canvas');
+    // 复用容器内已有的 canvas（避免与 demo 的 #cv 双 canvas 冲突），否则新建
+    canvas = null;
+    if (typeof c === 'string' && document.querySelector) canvas = document.querySelector(c);
+    else if (c && c.querySelector) canvas = c.querySelector('canvas');
+    else if (c && c.tagName && c.tagName.toLowerCase() === 'canvas') canvas = c;
+    if (!canvas) {
+      canvas = document.createElement('canvas');
+      container.appendChild(canvas);
+    }
     canvas.style.position = 'absolute';
     canvas.style.inset = '0';
     canvas.style.width = '100%';
     canvas.style.height = '100%';
     canvas.style.display = 'block';
     canvas.style.background = 'radial-gradient(circle at 50% 30%, #2a3b5c, #10131f)';
-    container.appendChild(canvas);
     engine = createCanvasEngine(canvas);
     mounted = true;
     _resize();
@@ -75,21 +82,30 @@ export function installRender(boot) {
     width = container.clientWidth || window.innerWidth;
     height = container.clientHeight || window.innerHeight;
     engine.resize(width, height, dpr);
-    // 相机初始居中玩家
+    // 相机初始居中玩家（等距坐标系：用 gridToScreen 换算，而非 gx*tileW）
     const st = boot.state.get();
     const p = st.player && st.player.position;
-    if (p) { camera.tx = p.x * engine.tileW; camera.ty = p.y * engine.tileH; }
+    if (p) {
+      const pp = engine.gridToScreen(p.x, p.y);
+      camera.tx = pp.x; camera.ty = pp.y;
+    }
     camera.x = camera.tx; camera.y = camera.ty;
   }
 
   // ---------- 相机 ----------
   function setCamera(x, y, opts) {
     opts = opts || {};
-    const tw = engine ? engine.tileW : 48;
-    const th = engine ? engine.tileH : 24;
-    // 若传入的是网格坐标（opts.absolute 缺省为 true，即按瓦片换算）
-    camera.tx = (opts.absolute === false) ? x : x * tw;
-    camera.ty = (opts.absolute === false) ? y : y * th;
+    if (opts.absolute === true) {
+      // 传入的已是等距像素坐标，直接采用
+      camera.tx = x; camera.ty = y;
+    } else if (engine) {
+      // 传入的是网格坐标 → 用等距 gridToScreen 换算（与 _drawTiles/_drawEntities 同一坐标系）
+      const pp = engine.gridToScreen(x, y);
+      camera.tx = pp.x; camera.ty = pp.y;
+    } else {
+      // 引擎未就绪时回退为矩形像素近似
+      camera.tx = x * 48; camera.ty = y * 24;
+    }
     if (opts.snap) { camera.x = camera.tx; camera.y = camera.ty; }
     return api;
   }
@@ -105,13 +121,20 @@ export function installRender(boot) {
   }
 
   // ---------- 主绘制 ----------
+  // dt 兼容两种调用方：内部 RAF tick 传数字；main-loop 调 boot.render.draw(ctx) 传对象（取 ctx.dt）。
   function drawScene(dt) {
     if (!mounted || !engine) return;
     const st = boot.state.get();
     const world = boot.world || {};
+    if (dt && typeof dt === 'object' && typeof dt.dt === 'number') dt = dt.dt;
+    if (typeof dt !== 'number' || !isFinite(dt) || dt <= 0) dt = 0.016;
 
-    // 相机平滑跟随（帧率无关缓动）
+    // 相机平滑跟随（帧率无关缓动）；camera 因历史坏帧变成 NaN 时自愈
     const k = 1 - Math.pow(0.001, dt);
+    if (!isFinite(camera.tx)) camera.tx = 0;
+    if (!isFinite(camera.ty)) camera.ty = 0;
+    if (!isFinite(camera.x)) camera.x = camera.tx;
+    if (!isFinite(camera.y)) camera.y = camera.ty;
     camera.x += (camera.tx - camera.x) * k;
     camera.y += (camera.ty - camera.y) * k;
 
@@ -259,6 +282,9 @@ export function installRender(boot) {
   const api = {
     init,
     drawScene,
+    // 主循环 main-loop.js 每帧调用 boot.render.draw；demo 装配也以 draw 判断是否 stub。
+    // 此前只暴露 drawScene 导致 boot.render.draw 为 undefined，demo 误判 stub 而接管画布覆盖世界地图。
+    draw: drawScene,
     camera: {
       set: setCamera,
       get: () => ({ x: camera.x, y: camera.y, tx: camera.tx, ty: camera.ty }),

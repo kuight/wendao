@@ -30,6 +30,9 @@ export function createCanvasEngine(canvas, opts) {
 
   const api = {};
 
+  // 暴露底层 context（供 render 管线直接绘制背景/转场等）
+  api.ctx = ctx;
+
   // ---------- 尺寸 ----------
   api.resize = function (w, h, dpr) {
     W = w; H = h;

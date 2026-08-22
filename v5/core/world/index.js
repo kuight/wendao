@@ -245,7 +245,13 @@ export function installWorld(boot) {
     return list;
   }
 
-  boot.world = { genMap, moveTo, getTile, enterScene, unlockZone };
+  // 暴露地图/NPC/事件（render 通过 boot.world.map 等读取；map 是模块闭包私有，故用 getter 暴露）
+  boot.world = {
+    genMap, moveTo, getTile, enterScene, unlockZone,
+    get map() { return map; },
+    get npcs() { return npcs; },
+    get events() { return events; },
+  };
   boot.register('world', boot.world);
   return boot.world;
 }
