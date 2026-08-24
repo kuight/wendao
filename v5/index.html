@@ -125,6 +125,19 @@
     $('loopState').textContent = s;
   }
 
+  // 真实 HUD 刷新：从 boot.state 读玩家位置（demoDraw 不接管时也保持更新）
+  function refreshRealHud() {
+    if (Boot && Boot.state && Boot.state.get) {
+      const st = Boot.state.get();
+      const p = st && st.player && st.player.position;
+      if (p) {
+        $('pos').textContent = Math.round(p.x) + ',' + Math.round(p.y);
+        $('frame').textContent = Boot.loop ? Boot.loop.getStats().frames : 0;
+      }
+    }
+  }
+  setInterval(refreshRealHud, 50);
+
   // 演示渲染：作为 boot.render.draw 的驱动（若真实 render 是 stub 则接管画面）
   function demoDraw(c) {
     const W = cv.width, H = cv.height;

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+<title>问道修仙学院 v5 · M1 演知识战斗实测（反震犀牛·硬抗破绽）</title>
+<style>
+  :root {
+    --bg:#0b0f1a; --panel:rgba(20,28,46,.72); --gold:#f5c97a; --cyan:#5fd3e0; --ink:#dfe7f5;
+    --soft:#9fb0c9; --line:rgba(122,150,200,.25); --green:#3ddc84; --red:#ff6b6b; --amber:#ffd700;
+  }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html,body { height:100%; background:radial-gradient(1200px 700px at 70% -10%, #1a2440 0%, var(--bg) 55%) fixed; color:var(--ink); font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif; }
+  body { padding:16px; overflow:auto; }
+  header { display:flex; align-items:baseline; gap:12px; margin-bottom:12px; flex-wrap:wrap; }
+  h1 { font-size:19px; letter-spacing:2px; color:var(--gold); text-shadow:0 0 14px rgba(245,201,122,.35); }
+  .sub { font-size:12px; color:var(--soft); letter-spacing:1px; }
+  .layout { display:grid; grid-template-columns:1fr 300px; gap:14px; align-items:start; }
+  @media (max-width:860px){ .layout{grid-template-columns:1fr;} }
+  .stage { position:relative; height:520px; border:1px solid var(--line); border-radius:14px; overflow:hidden;
+    background:linear-gradient(180deg,#101a2e 0%,#0c1222 100%); box-shadow:0 18px 40px rgba(0,0,0,.45); }
+  canvas { position:absolute; inset:0; width:100%; height:100%; display:block; }
+  .hud { position:absolute; left:12px; top:12px; display:flex; gap:12px; flex-wrap:wrap; font-size:12px; color:var(--cyan);
+    background:var(--panel); backdrop-filter:blur(6px); border:1px solid var(--line); border-radius:10px; padding:7px 11px; letter-spacing:.4px; }
+  .hud b { color:var(--gold); font-weight:600; }
+  .hint { position:absolute; left:12px; bottom:12px; font-size:11px; color:var(--soft); background:var(--panel);
+    border:1px solid var(--line); border-radius:8px; padding:7px 11px; line-height:1.7; max-width:560px; }
+  .hint kbd { background:rgba(95,211,224,.14); color:var(--cyan); border:1px solid rgba(95,211,224,.4); border-radius:4px; padding:0 5px; font-size:10px; }
+  .panel { border:1px solid var(--line); border-radius:14px; background:var(--panel); backdrop-filter:blur(8px);
+    padding:14px; font-size:13px; box-shadow:0 12px 28px rgba(0,0,0,.3); }
+  .panel h2 { font-size:14px; color:var(--gold); margin-bottom:10px; letter-spacing:1px; }
+  .row { display:flex; justify-content:space-between; padding:5px 0; border-bottom:1px dashed var(--line); font-size:12px; }
+  .row:last-child{ border-bottom:none; }
+  .row .m { color:var(--soft); }
+  .row .v { color:var(--ink); }
+  .bar { height:8px; border-radius:6px; background:rgba(255,255,255,.08); overflow:hidden; margin-top:4px; }
+  .bar > i { display:block; height:100%; background:linear-gradient(90deg,var(--green),#7ce89a); transition:width .15s; }
+  .bar > i.hp { background:linear-gradient(90deg,#ff5f5f,#ff9a9a); }
+  .btn { margin-top:12px; width:100%; padding:9px; border:1px solid var(--cyan); color:var(--cyan); background:rgba(95,211,224,.08);
+    border-radius:9px; cursor:pointer; font-size:13px; letter-spacing:1px; }
+  .btn:hover{ background:rgba(95,211,224,.18); }
+  .msg { margin-top:10px; min-height:20px; font-size:12px; color:var(--green); white-space:pre-wrap; line-height:1.6; }
+  .log { margin-top:8px; font-size:11px; color:var(--soft); white-space:pre-wrap; line-height:1.5; max-height:90px; overflow:auto; }
+  .tag { font-size:11px; padding:1px 7px; border-radius:20px; letter-spacing:.5px; }
+  .tag.ready{ background:rgba(61,220,132,.16); color:var(--green); border:1px solid rgba(61,220,132,.4); }
+  .tag.wait{ background:rgba(245,201,122,.14); color:var(--gold); border:1px solid rgba(245,201,122,.4); }
+  .tag.done{ background:rgba(95,211,224,.14); color:var(--cyan); border:1px solid rgba(95,211,224,.4); }
+</style>
+</head>
+<body>
+<header>
+  <h1>🦏 问道修仙学院 · M1 演知识战斗实测</h1>
+  <span class="sub">反震犀牛 · 牛顿第三定律 · 硬抗破绽</span>
+</header>
+
+<div class="layout">
+  <div class="stage" id="stage">
+    <canvas id="cv"></canvas>
+    <div class="hud">
+      <span>阶段 <b id="phase">-</b></span>
+      <span>玩家HP <b id="php">-</b></span>
+      <span>怪HP <b id="mhp">-</b></span>
+      <span>破绽 <b id="stance">未</b></span>
+    </div>
+    <div class="hint">
+      <kbd>←↑↓→ / WASD</kbd> 走位 · <kbd>Shift / Z</kbd> 格挡(guard) ·
+      <kbd>K / Enter</kbd> 出手(strike) · <kbd>X</kbd> 硬抗(brace，破反作用力)<br>
+      流程：先让犀牛撞你(被弹回·演力相互) → 撞击瞬间按 <kbd>X</kbd> 硬抗破解 → 露破绽 → 按 <kbd>K</kbd> 出手
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>🛠 战斗控制台</h2>
+    <button class="btn" id="startBtn">开始实战（反震犀牛）</button>
+    <div class="msg" id="msg">等待开始…</div>
+    <div class="row"><span class="m">怪物</span><span class="v" id="monsterName">-</span></div>
+    <div class="row"><span class="m">破绽条件</span><span class="v">硬抗破解 ×1</span></div>
+    <div class="row"><span class="m">牛顿第三定律</span><span class="v" id="kpi">-</span></div>
+    <div style="margin-top:10px">
+      <div class="row"><span class="m">玩家 HP</span><span class="v" id="phpBar">-</span></div>
+      <div class="bar"><i class="hp" id="phpFill" style="width:100%"></i></div>
+    </div>
+    <div style="margin-top:6px">
+      <div class="row"><span class="m">怪物 HP</span><span class="v" id="mhpBar">-</span></div>
+      <div class="bar"><i id="mhpFill" style="width:100%"></i></div>
+    </div>
+    <div class="log" id="log"></div>
+  </div>
+</div>
+
+<!-- v4 题库：供 knowledge 出题（结算题） -->
+<script src="/src/data/physics-bank.js"></script>
+<script src="/src/data/chemistry-bank.js"></script>
+<script src="/src/data/math-bank.js"></script>
+<script src="/src/data/geography-bank.js"></script>
+<script src="/src/data/chinese-bank.js"></script>
+<script src="/src/data/english-bank.js"></script>
+
+<script type="module">
+  // ===== 手动装配：不调用 Boot.start，避免 render 模块的独立 RAF 劫持 #cv 画布 =====
+  const cv = document.getElementById('cv');
+  const ctx = cv.getContext('2d');
+  const $ = id => document.getElementById(id);
+  const log = msg => { const el = $('log'); el.textContent += msg + '\n'; el.scrollTop = el.scrollHeight; };
+
+  function fitCanvas() {
+    const stage = document.getElementById('stage');
+    const dpr = window.devicePixelRatio || 1;
+    cv.width = stage.clientWidth * dpr; cv.height = stage.clientHeight * dpr;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    ctx.cw = stage.clientWidth; ctx.ch = stage.clientHeight;
+  }
+  fitCanvas(); window.addEventListener('resize', fitCanvas);
+
+  // 组装 boot（与无头测试同构），render 只提供 camera 桩，不启动任何 RAF
+  const boot = {
+    log() {}, register() {},
+    on() {}, emit() {},
+    bus: { on() {}, emit() {} },
+    state: {
+      _st: { version:'v5', player:{ level:1, stats:{ atk:20, def:8, maxHp:100, maxMp:30, speed:10 }, position:{x:0,y:0} }, knowledge:{}, world:{} },
+      get() { return this._st; }, set(p) { Object.assign(this._st, p); }
+    },
+    render: { camera: { set(){} } }
+  };
+
+  const combat = { active:false, waiting:false, waitT:0, r:null, m:null, fm:null, fp:null, msg:'等待开始…', cam:{x:8,y:5} };
+
+  // ===== 画布渲染：画 M1 战斗房间，相机平滑跟随玩家（放大 + 平移）=====
+  // 相机 target = 玩家网格坐标，combat.cam 平滑趋近。放大后只有部分房间可见，
+  // 玩家走位时镜头跟随移动，体现"跟随玩家"。
+  function drawRoom(room, fp, fm) {
+    const W = ctx.cw, H = ctx.ch;
+    const cols = room.width, rows = room.height;
+    const ZOOM = 1.7;                       // 放大倍数：>1 时房间大于视口，镜头有可跟随的范围
+    const cellW = (W / cols) * ZOOM, cellH = (H / rows) * ZOOM;
+    // 平滑相机（每帧趋向玩家，k 越接近 1 越快）
+    const targetX = fp.pos.x + 0.5, targetY = fp.pos.y + 0.5;   // 玩家所在格中心
+    const k = 0.12;
+    combat.cam.x += (targetX - combat.cam.x) * k;
+    combat.cam.y += (targetY - combat.cam.y) * k;
+    // 房间绘制原点：让相机中心对准画布中心，并夹紧不露出房外空白
+    let ox = W/2 - combat.cam.x * cellW;
+    let oy = H/2 - combat.cam.y * cellH;
+    ox = Math.min(8, Math.max(ox, W - cols*cellW - 8));   // 夹紧：不露出右/下边缘
+    oy = Math.min(8, Math.max(oy, H - rows*cellH - 8));
+    ctx.clearRect(0,0,W,H);
+    ctx.fillStyle = '#0c1222'; ctx.fillRect(0,0,W,H);
+    for (let x=0; x<cols; x++) for (let y=0; y<rows; y++) {
+      ctx.fillStyle = (x+y)%2 ? '#12203a' : '#0e1a30';
+      ctx.fillRect(ox + x*cellW, oy + y*cellH, cellW, cellH);
+    }
+    ctx.strokeStyle = 'rgba(122,150,200,.35)'; ctx.lineWidth = 3;
+    ctx.strokeRect(ox, oy, cols*cellW, rows*cellH);
+    // 玩家
+    const px = ox + fp.pos.x*cellW + cellW/2, py = oy + fp.pos.y*cellH + cellH/2;
+    ctx.beginPath(); ctx.arc(px, py, Math.min(cellW,cellH)*0.38, 0, Math.PI*2);
+    ctx.fillStyle = fp.bracing ? '#7cfc00' : (fp.guarding ? '#5fd3e0' : '#f5c97a');
+    ctx.fill();
+    ctx.fillStyle = '#fff'; ctx.beginPath(); ctx.arc(px, py, 4, 0, Math.PI*2); ctx.fill();
+    ctx.fillStyle = '#0b0f1a'; ctx.font = 'bold ' + Math.max(10, Math.round(cellW*0.5)) + 'px sans-serif';
+    ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.fillText('道', px, py+1);
+    // 怪
+    const mx = ox + fm.pos.x*cellW + cellW/2, my = oy + fm.pos.y*cellH + cellH/2;
+    ctx.beginPath(); ctx.arc(mx, my, Math.min(cellW,cellH)*0.5, 0, Math.PI*2);
+    ctx.fillStyle = fm.stance>=1 ? '#ffd700' : '#b5651d';
+    ctx.fill();
+    ctx.strokeStyle = fm.stance>=1 ? '#fff' : 'rgba(0,0,0,.3)'; ctx.lineWidth = 3; ctx.stroke();
+    ctx.fillStyle = '#fff'; ctx.font = 'bold ' + Math.max(12, Math.round(cellW*0.6)) + 'px sans-serif';
+    ctx.fillText('🦏', mx, my);
+    if (fm.stance>=1) {
+      ctx.fillStyle = '#ffd700'; ctx.font = 'bold 16px sans-serif';
+      ctx.fillText('⚠ 破绽！', mx, my - Math.min(cellW,cellH)*0.7);
+    }
+    // 底部提示（固定，不随镜头）
+    ctx.fillStyle = 'rgba(223,231,245,.85)'; ctx.font = '13px sans-serif'; ctx.textAlign='left';
+    ctx.fillText(combat.msg, 12, H - 10);
+  }
+
+  function refreshHud() {
+    const st = boot.battle.getState();
+    $('phase').textContent = st.phase;
+    const fp = combat.fp, m = combat.m;
+    if (fp) {
+      $('php').textContent = fp.hp ?? '-';
+      const pct = Math.max(0, Math.min(100, ((fp.hp??100)/100)*100));
+      $('phpFill').style.width = pct + '%';
+      $('phpBar').textContent = (fp.hp??'-') + '/100';
+    }
+    if (m) {
+      $('mhp').textContent = m.hp;
+      const pct = Math.max(0, Math.min(100, (m.hp/m.maxHp)*100));
+      $('mhpFill').style.width = pct + '%';
+      $('mhpBar').textContent = m.hp + '/' + m.maxHp;
+      $('stance').textContent = m.stance>=1 ? '开启' : '未';
+    }
+  }
+
+  function setMsg(s) { combat.msg = s; $('msg').textContent = s; }
+
+  // 每帧渲染回调：读输入→画房间→刷 HUD（battle.update 由 tickDriver 驱动）
+  function tick(fctx) {
+    if (combat.waiting) {
+      const dt = (fctx && fctx.dt) || 0.016;
+      combat.waitT -= dt;
+      drawRoom({width:16,height:10}, {pos:{x:8,y:6},guarding:false,bracing:false}, {pos:{x:8,y:2}});
+      const c = ctx;
+      c.fillStyle = '#f5c97a'; c.font = 'bold 26px sans-serif'; c.textAlign='center'; c.textBaseline='middle';
+      c.fillText('准备战斗…' + Math.max(0, Math.ceil(combat.waitT)), c.cw/2, c.ch*0.38);
+      c.fillStyle = '#9fb0c9'; c.font = '15px sans-serif';
+      c.fillText('第一轮先别动！看它撞你，感受「力相互」', c.cw/2, c.ch*0.46);
+      c.fillText('撞击窗口内按住 X（硬抗）才能破解', c.cw/2, c.ch*0.53);
+      if (combat.waitT <= 0) { combat.waiting = false; doStart(); }
+      return;
+    }
+    if (combat.active) {
+      const st = boot.battle.getState();
+      if (st.phase==='stance') setMsg('露破绽！按 K/Enter 出手(破绽致命一击)');
+      else if (st.phase==='question') setMsg('已斩杀/破绽 → 结算检验（答题）');
+      else if (st.phase==='victory') setMsg('🎉 胜利！');
+      else if (st.phase==='defeat') setMsg('💀 战败');
+      refreshHud();
+      drawRoom(st.fight.room || {width:16,height:10}, combat.fp, st.fight.monster);
+    } else {
+      drawRoom({width:16,height:10}, {pos:{x:8,y:6},guarding:false,bracing:false}, {pos:{x:8,y:2}});
+    }
+  }
+
+  // 单一 RAF 驱动：每帧 battle.update（读 boot.input 的走位/brace/guard/strike）→ tick 画
+  let _raf = null, _last = 0;
+  function tickDriver(now) {
+    _raf = requestAnimationFrame(tickDriver);
+    const dt = _last ? (now - _last) / 1000 : 0.016;
+    _last = now;
+    // 战斗键（brace/guard/strike/走位）统一由 battle.update 读 boot.input 处理（与 WASD 同一通道）
+    if (boot.battle && (combat.active || combat.waiting)) {
+      try { boot.battle.update({ dt: dt }); } catch (e) {}
+    }
+    tick({ dt: dt });
+  }
+  function startTickDriver() { if (!_raf) _raf = requestAnimationFrame(tickDriver); }
+
+  function doStart() {
+    const room = boot.world.spawnBattleRoom({});
+    const r = boot.battle.startEncounter({ kind:'ram', difficulty:'easy' }, room);
+    if (!r.ok) { setMsg(r.msg||'无法进入战斗'); return; }
+    combat.active = true; combat.r = r; combat.m = r.monster; combat.fm = r.fight.monster; combat.fp = r.fight.player;
+    $('monsterName').textContent = r.monster.name;
+    $('kpi').textContent = '力是相互的（牛顿第三定律）';
+    setMsg('战斗开始！让它撞你感受"力相互"，撞击窗口内按住 X 硬抗破解。');
+    log('战斗开始：' + r.monster.name);
+    boot.bus.on('battle:answer', d => log((d.correct?'✅':'❌') + ' 答题' + (d.correct?'正确':'错误')));
+  }
+
+  $('startBtn').addEventListener('click', () => {
+    if (!boot.battle) { log('boot 未就绪'); return; }
+    if (combat.active || combat.waiting) { log('已在战斗/观察中'); return; }
+    combat.waiting = true; combat.waitT = 4;
+    setMsg('观察期：先看它怎么撞你，感受「力相互」');
+    log('进入观察期（4 秒后放怪进场）。');
+  });
+
+  // ===== 手动安装模块（依赖顺序）→ 装配输入 → 启动 RAF =====
+  const modules = await Promise.all([
+    import('/v5/core/state/index.js'),
+    import('/v5/core/world/index.js'),
+    import('/v5/core/input/index.js'),
+    import('/v5/core/effects/index.js'),
+    import('/v5/core/knowledge/index.js'),
+    import('/v5/core/battle/index.js'),
+    import('/v5/core/save/index.js'),
+    import('/v5/core/economy/index.js')
+  ]);
+  const [state, world, input, effects, knowledge, battle, save, economy] = modules;
+  state.installState(boot);
+  save.installSave(boot);
+  world.installWorld(boot);
+  input.installInput(boot);
+  effects.installEffects(boot);
+  knowledge.installKnowledge(boot);
+  economy.installEconomy(boot);
+  battle.installBattle(boot);
+  if (boot.input && boot.input.attach) { try { boot.input.attach(); } catch (e) {} }
+  startTickDriver();
+  $('startBtn').textContent = '开始实战（反震犀牛）';
+  $('startBtn').classList.add('ready');
+  setMsg('就绪。点「开始实战」进入战斗。');
+  log('已装配 ' + Object.keys(boot).join(', ') + '，RAF 已启动。');
+</script>
+</body>
+</html>

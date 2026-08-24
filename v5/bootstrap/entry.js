@@ -60,7 +60,13 @@
         if (r.status === 'stubbed') report.errors.push(name + ': ' + r.error);
       });
 
-      // 3. 装配渲染容器（若提供）
+      // 3. 挂载输入监听（浏览器环境挂 keydown/keyup；Node 测试环境无 window 自动跳过）
+      if (boot.input && typeof boot.input.attach === 'function') {
+        try { boot.input.attach(); }
+        catch (e) { boot.log('input.attach 失败', e); }
+      }
+
+      // 4. 装配渲染容器（若提供）
       if (boot.render && typeof boot.render.init === 'function') {
         const container = resolveContainer(options.container);
         if (container) {
@@ -69,7 +75,7 @@
         }
       }
 
-      // 4. 装配主循环（始终注册，是否自动启动由 autoLoop 决定）
+      // 5. 装配主循环（始终注册，是否自动启动由 autoLoop 决定）
       const loopMod = await import('./main-loop.js');
       loopMod.startMainLoop(boot);
       if (options.autoLoop !== false && boot.loop) boot.loop.start();

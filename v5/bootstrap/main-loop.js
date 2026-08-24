@@ -19,6 +19,7 @@ export function startMainLoop(boot) {
   function step(ctx) {
     const systems = [
       ['input', 'poll'],
+      ['world', 'update'],
       ['battle', 'update'],
       ['effects', 'update'],
       ['render', 'draw']

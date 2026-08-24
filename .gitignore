@@ -48,3 +48,8 @@ _archived_patches/
 # 云端agent遗产（40小游戏+题库+portal，626MB，本地保留参考，不进git）
 _cloud_legacy/
 _cloud_legacy.tar
+
+# 节奏战斗调研草稿（解剖 A Slower Speed of Light/Phys1 等参考游戏的解压与笔记，本地保留，不进git）
+_learn_toy/
+toy_game.html
+v5_shot.png

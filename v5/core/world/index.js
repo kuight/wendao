@@ -21,6 +21,9 @@ export function installWorld(boot) {
   let npcs = [];           // 当前地图 NPC 列表
   let events = [];         // 当前地图事件列表
 
+  // 连续移动节流计时器（秒）：在文件底部 update 旁声明，避免与下方重复 let 声明
+  let moveTimer = 0;
+
   // ---------- 初始化世界（首次进入时由 genMap 触发） ----------
   function _ensureWorldState() {
     const st = boot.state.get();
@@ -245,9 +248,59 @@ export function installWorld(boot) {
     return list;
   }
 
+  // ---------- 战斗房间（M1 实时演武用）：纯 grass 矩形 + 四周 mountain 墙 ----------
+  // 不复用分形 genMap（避免水/山等不可走瓦片干扰战斗判定），独立小房间。
+  function spawnBattleRoom(encounter) {
+    const w = 16, h = 10;
+    const tiles = [];
+    for (let y = 0; y < h; y++) {
+      const row = [];
+      for (let x = 0; x < w; x++) {
+        // 四周一圈墙，内部全草
+        const isWall = x === 0 || y === 0 || x === w - 1 || y === h - 1;
+        row.push(isWall ? TILE.MOUNTAIN : TILE.GRASS);
+      }
+      tiles.push(row);
+    }
+    return {
+      room: true,
+      width: w, height: h,
+      tiles,
+      playerSpawn: { x: Math.floor(w / 2), y: h - 2 },  // 玩家靠下
+      monsterSpawn: { x: Math.floor(w / 2), y: 2 },     // 怪靠上
+      TILE_META
+    };
+  }
+
+  // ---------- 主循环每帧：消费 input 方向，驱动玩家移动 ----------
+  function update(ctx) {
+    // 战斗激活时世界不驱动漫游移动（移动权交给 battle.update）
+    if (boot.battle && boot.battle.inFight && boot.battle.inFight()) return;
+    const inp = boot.input;
+    if (!inp) return;
+    const dt = (ctx && typeof ctx.dt === 'number') ? ctx.dt : 0.016;
+    moveTimer -= dt;
+    if (moveTimer > 0) return;   // 节流：按住持续移动
+    let dx = 0, dy = 0;
+    if (inp.isDown('up')) dy = -1;
+    else if (inp.isDown('down')) dy = 1;
+    else if (inp.isDown('left')) dx = -1;
+    else if (inp.isDown('right')) dx = 1;
+    if (dx === 0 && dy === 0) return;
+    const st = boot.state.get();
+    const p = st.player && st.player.position;
+    if (!p) return;
+    const r = moveTo(p.x + dx, p.y + dy);
+    // 移动成功后平滑跟随相机（camera.set 接受网格坐标，内部 gridToScreen）
+    if (r && r.ok && boot.render && boot.render.camera) {
+      boot.render.camera.set(p.x, p.y);
+    }
+    moveTimer = 0.13;
+  }
+
   // 暴露地图/NPC/事件（render 通过 boot.world.map 等读取；map 是模块闭包私有，故用 getter 暴露）
   boot.world = {
-    genMap, moveTo, getTile, enterScene, unlockZone,
+    genMap, moveTo, getTile, enterScene, unlockZone, update, spawnBattleRoom,
     get map() { return map; },
     get npcs() { return npcs; },
     get events() { return events; },

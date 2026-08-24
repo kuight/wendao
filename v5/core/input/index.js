@@ -15,7 +15,12 @@ export function installInput(boot) {
     ArrowRight: 'right', 'd': 'right', 'D': 'right',
     'e': 'interact', 'E': 'interact', ' ': 'interact',
     'p': 'pause', 'P': 'pause',
-    'Escape': 'back', 'Esc': 'back'
+    'Escape': 'back', 'Esc': 'back',
+    // M1 实时战斗操作键：guard=格挡 / strike=出手 / brace=硬抗(借力顶住)
+    'ShiftLeft': 'guard', 'ShiftRight': 'guard', 'z': 'guard', 'Z': 'guard',
+    'Enter': 'strike', 'k': 'strike', 'K': 'strike', 'j': 'strike', 'J': 'strike',
+    'ControlLeft': 'strike',
+    'x': 'brace', 'X': 'brace'
   };
 
   // 按下/抬起状态
