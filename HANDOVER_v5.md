@@ -14,6 +14,8 @@
 - **M1 实时演武战斗系统**已实现（V5_BLUEPRINT v0.5「知识驱动战斗」范式）：battle 重做为实时演武（反震犀牛/破绽/硬抗格挡/出手），新增 `v5/core/battle/monsters.js`、`v5/m1-demo.html`、`v5/tests/battle-m1.test.js`；input 增补 guard/strike/brace 操作键。
 - `_learn_toy/`、`toy_game.html`、`v5_shot.png` 为本次调研节奏术/知识驱动战斗时的草稿，已进 `.gitignore` 忽略（不进 git，本地保留）。
 
+**M1 实测 bug 修复（commit 0d173af，已推 master，2026-08-23）**：用户在 `v5/m1-demo.html` 实测报 4 个 bug（牛撞人消失 / 持续扣血按X无效 / X-K-Z 无反应 / 隔空撞人）。根因不在页面装配层，而在战斗引擎判定逻辑：**撞击结算的 clamp 误用 `room.width-2` 同时限制 x/y**，导致玩家 y 被推出可走带（8）到 14 底墙而出屏；且 strike 按键在 stance 被 `playerAct('strike')` 消费一次后 `resolveAttack` 读不到（双消费）。修复：①`battle/index.js` clamp 拆成 `clampX(mx)/clampY(my)` 分轴，玩家被撞后夹紧在可走带内（永不出屏）；②strike 在 stance 直接走 `resolveAttack` 不再双消费；③`world/index.js` spawnBattleRoom 玩家出生改居中（给被撞下弹留空间）；④`m1-demo.html` drawRoom 相机自适应铺满视口 + RAF 异常改 console.error 输出（不再静默吞掉）。验证：battle-m1 12/12、smoke 79、integration 全绿，端到端模拟（含相机数学）玩家永不出屏、可硬抗露破绽、K 出手有效。
+
 **当前测试全部通过**：
 - `node v5/tests/smoke.js` → 79 项
 - `node v5/tests/integration.cjs` → 闭环全绿（含移动）
