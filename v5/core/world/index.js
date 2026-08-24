@@ -266,7 +266,7 @@ export function installWorld(boot) {
       room: true,
       width: w, height: h,
       tiles,
-      playerSpawn: { x: Math.floor(w / 2), y: h - 2 },  // 玩家靠下
+      playerSpawn: { x: Math.floor(w / 2), y: Math.floor(h / 2) },  // 玩家居中，给"被撞下弹"留出下方空间
       monsterSpawn: { x: Math.floor(w / 2), y: 2 },     // 怪靠上
       TILE_META
     };

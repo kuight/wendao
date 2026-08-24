@@ -215,8 +215,10 @@ export function installBattle(boot) {
     // 窗口全程（t in [0.8,1.3)）给玩家从容反应，避免瞬杀；窗口结束才判定结果。
     if (def.kind === 'collide' && def.onImpact) {
       const room = battle.fight.room;
-      const mx = room.width - 2, my = room.height - 2;   // 可走范围上界
-      const clamp = v => Math.max(1, Math.min(mx, Math.max(1, v)));   // 夹紧到房间内(墙内)
+      const mx = room.width - 2, my = room.height - 2;   // 可走范围上界(x,y 分轴)
+      // 夹紧到房间可走带内：x 用 mx、y 用 my 分轴，避免把玩家撞出纵向可走带而跑出视口
+      const clampX = v => Math.max(1, Math.min(mx, v));
+      const clampY = v => Math.max(1, Math.min(my, v));
       if (stage.label === '撞击') {
         // 进入窗口首帧：开窗并重置"是否按过硬抗"标记
         if (!m.move.inWindow) { m.move.inWindow = true; m.move.bracedWindow = false; }
@@ -233,8 +235,8 @@ export function installBattle(boot) {
         const r = m.move.bracedWindow ? { braced: true } : def.onImpact(fp);
         // 应用冲撞反推力（向量）并夹紧到房间边界，避免被撞出房间
         if (r && r.recoilVec) {
-          fp.pos.x = clamp(fp.pos.x + r.recoilVec.dx);
-          fp.pos.y = clamp(fp.pos.y + r.recoilVec.dy);
+          fp.pos.x = clampX(fp.pos.x + r.recoilVec.dx);
+          fp.pos.y = clampY(fp.pos.y + r.recoilVec.dy);
         }
         if (r && r.braced) {
           // 硬抗破解：玩家借力顶住，卸掉反作用力 → 直接露破绽（看懂"力相互"的标志）
@@ -398,11 +400,12 @@ export function installBattle(boot) {
         }
         if (boot.input.isDown('guard')) playerAct('guard');
         if (boot.input.isDown('brace')) playerAct('brace');
-        if (boot.input.isJustPressed('strike')) playerAct('strike');
-      }
-      // 破绽态：玩家按出手则结算（复用答题检验）
-      if (battle.phase === 'stance' && boot.input && boot.input.isJustPressed('strike')) {
-        resolveAttack('strike');
+        // 破绽态：K/Enter 直接结算（复用答题检验）；战斗态：置 strikeAt 供撞窗口/摆动判定。
+        // 注意 isJustPressed 是边沿一次性，同一帧只应被消费一次，故在此分流，勿再写第二处 isJustPressed('strike')。
+        if (boot.input.isJustPressed('strike')) {
+          if (battle.phase === 'stance') resolveAttack('strike');
+          else playerAct('strike');
+        }
       }
       return;
     }

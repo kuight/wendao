@@ -132,18 +132,19 @@
   function drawRoom(room, fp, fm) {
     const W = ctx.cw, H = ctx.ch;
     const cols = room.width, rows = room.height;
-    const ZOOM = 1.7;                       // 放大倍数：>1 时房间大于视口，镜头有可跟随的范围
-    const cellW = (W / cols) * ZOOM, cellH = (H / rows) * ZOOM;
-    // 平滑相机（每帧趋向玩家，k 越接近 1 越快）
-    const targetX = fp.pos.x + 0.5, targetY = fp.pos.y + 0.5;   // 玩家所在格中心
+    // 相机：自适应缩放让整房铺满视口（玩家被撞到边缘也永不出屏，杜绝"牛撞一下就消失"）
+    const pad = 12;                              // 四周留白
+    const cellW = (W - pad*2) / cols, cellH = (H - pad*2) / rows;
+    // 平滑相机：趋向玩家，微调整房在视口内的偏移（保留跟随观感；整房恒可见）
+    const targetX = fp.pos.x + 0.5, targetY = fp.pos.y + 0.5;
     const k = 0.12;
     combat.cam.x += (targetX - combat.cam.x) * k;
     combat.cam.y += (targetY - combat.cam.y) * k;
-    // 房间绘制原点：让相机中心对准画布中心，并夹紧不露出房外空白
-    let ox = W/2 - combat.cam.x * cellW;
-    let oy = H/2 - combat.cam.y * cellH;
-    ox = Math.min(8, Math.max(ox, W - cols*cellW - 8));   // 夹紧：不露出右/下边缘
-    oy = Math.min(8, Math.max(oy, H - rows*cellH - 8));
+    // 房间原点：整房居中铺满视口；若纵横比不匹配才小幅平移，夹紧不露房外空白
+    let ox = pad + (cols/2 - combat.cam.x) * cellW;
+    let oy = pad + (rows/2 - combat.cam.y) * cellH;
+    ox = Math.min(Math.max(ox, pad), W - cols*cellW - pad);   // 夹紧：不露出右/下空白
+    oy = Math.min(Math.max(oy, pad), H - rows*cellH - pad);
     ctx.clearRect(0,0,W,H);
     ctx.fillStyle = '#0c1222'; ctx.fillRect(0,0,W,H);
     for (let x=0; x<cols; x++) for (let y=0; y<rows; y++) {
@@ -234,7 +235,8 @@
     _last = now;
     // 战斗键（brace/guard/strike/走位）统一由 battle.update 读 boot.input 处理（与 WASD 同一通道）
     if (boot.battle && (combat.active || combat.waiting)) {
-      try { boot.battle.update({ dt: dt }); } catch (e) {}
+      try { boot.battle.update({ dt: dt }); }
+      catch (e) { console.error('[tickDriver] battle.update 异常:', e); log('❌ battle.update: ' + (e && e.message)); }
     }
     tick({ dt: dt });
   }
