@@ -1,8 +1,28 @@
 # 《问道修仙学院》v5 项目交接文档
 
-> 生成时间：2026-08-21
+> 生成时间：2026-08-21（本次更新 2026-08-23）
 > 交接对象：一个完全没有本会话记忆的 AI 助手
 > 目标：让新助手拿到本文档后，能直接从当前断点继续推进 v5 项目，不重复走弯路。
+
+---
+
+## ⚡ 本次会话更新（2026-08-23，commit e20f148，已推 master）
+
+**上文第 1 节的"双 canvas 断点"已全部解决**，现状态（本次新 agent 实测通过）：
+- 渲染修复已在 c4f15b2 → 4d0d317 完成：canvas-engine 暴露 ctx、world 用 getter 暴露 map/npcs/events、render.draw=drawScene 别名、drawScene 参数归一化 + 相机 NaN 自愈、相机用 gridToScreen 等距坐标。地图从空白 → 正常。
+- **玩家移动已打通（本次核心）**：`v5/core/world/index.js` 新增 `update(ctx)`，消费 input 方向键（WASD/方向键），0.13s 节流调 `moveTo(p.x+dx,p.y+dy)`，成功后 `boot.render.camera.set(p.x,p.y)` 跟随（camera.set 默认按网格坐标 gridToScreen 换算）；`main-loop step()` systems 数组加 `['world','update']`；`entry.js` 挂载 `input.attach()` 浏览器键盘监听。移动真机可用。
+- **M1 实时演武战斗系统**已实现（V5_BLUEPRINT v0.5「知识驱动战斗」范式）：battle 重做为实时演武（反震犀牛/破绽/硬抗格挡/出手），新增 `v5/core/battle/monsters.js`、`v5/m1-demo.html`、`v5/tests/battle-m1.test.js`；input 增补 guard/strike/brace 操作键。
+- `_learn_toy/`、`toy_game.html`、`v5_shot.png` 为本次调研节奏术/知识驱动战斗时的草稿，已进 `.gitignore` 忽略（不进 git，本地保留）。
+
+**当前测试全部通过**：
+- `node v5/tests/smoke.js` → 79 项
+- `node v5/tests/integration.cjs` → 闭环全绿（含移动）
+- `node v5/tests/render-canvas-check.mjs` → isStubDraw=false、玩家在位、drawTile>0
+- `node v5/tests/battle-m1.test.js` → 12 项
+
+**下一步建议**：按原第 8 节 ③ 继续——把 `_cloud_legacy/`（40 小游戏 + 16 批题库 + portal）合并进 v5 开放世界；六科题库按高一到高三分层；UI 美术升级。
+
+**注意（重要教训，务必遵守）**：写代码别混中文碎词（会语法错）；edit 前先 read；写完立即跑测试；git push 需 `-c http.sslBackend=openssl`（本机已持久化到 .git/config，直接 push 即可）。
 
 ---
 
@@ -14,7 +34,9 @@
 
 ## 1. 交接人当前在做什么 / 卡在哪里
 
-**当前状态**：v5 新框架（`v5/` 目录，11 个模块）**逻辑全部跑通**，但**浏览器里世界地图画出来了却被另一个空白 canvas 挡住，用户看到空荡荡**。
+> **已解决**（2026-08-23）：下文"双 canvas 挡住地图"的断点已由 c4f15b2→4d0d317（渲染修复）解决，且玩家移动已打通（e20f148）。当前状态见文首"⚡ 本次会话更新"一节。下文为历史断点记录，仅供参考。
+
+**历史断点（已修复）**：v5 新框架（`v5/` 目录，11 个模块）逻辑全部跑通，但浏览器里世界地图画出来了却被另一个空白 canvas 挡住。
 
 **具体断点（新助手从这里接着修）**：
 - `v5/index.html` 里同时有**两个 canvas 绘制逻辑**：
@@ -120,9 +142,9 @@ Token：凭据由用户主动粘贴，不落盘。子 agent 拿 token 的位置 
 
 ## 8. 下一步建议（按优先级）
 
-- **① 修双 canvas 冲突**（当前断点）：让 v5/index.html 或 render 只用一个 canvas，世界地图可见。
-- **② 实机验证**：修好后面向用户实测，确认世界能移动、战斗能答题。
-- **③ 合并云端遗产**：把 40 个小游戏 + 题库并进 v5 开放世界。
+> ①双canvas、②实机验证移动 均已在 e20f148 完成，降级为历史。当前建议从 ③ 继续：
+
+- **③ 合并云端遗产**：把 `_cloud_legacy/` 里 40 个小游戏 + 题库并进 v5 开放世界（本次核心方向）。
 - **④ 题库扩充**：六科按高一到高三分层。
 - **⑤ 视觉美术升级**：角色立绘/场景重画或程序化生成。
 
