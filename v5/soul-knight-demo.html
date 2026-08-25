@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>问道修仙 v5 · 雷霆殿秘境（元气骑士式）</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body { width:100%; height:100%; overflow:hidden; background:#0b0f1a; }
+canvas { display:block; width:100%; height:100%; }
+#hud {
+  position:fixed; top:12px; left:12px; z-index:10;
+  background:rgba(10,16,30,0.85); border:1px solid rgba(122,150,200,0.3);
+  border-radius:10px; padding:8px 14px; color:#dfe7f5; font:12px 'Microsoft YaHei',sans-serif;
+  pointer-events:none;
+}
+#hud b { color:#f5c97a; }
+</style>
+</head>
+<body>
+<canvas id="cv"></canvas>
+<div id="hud">
+  <span>Floor <b id="fDepth">1</b></span> &middot;
+  <span>Room <b id="fRoom">1/6</b></span> &middot;
+  <span>HP <b id="fHp" style="color:#3ddc84">100</b></span> &middot;
+  <span>Gold <b id="fGold" style="color:#f5c97a">0</b></span> &middot;
+  <span style="font-size:10px;color:#9fb0c9">WASD走 K砍 J射</span>
+</div>
+<script>
+// === Soul Knight-Style Dungeon Engine ===
+const cv = document.getElementById('cv');
+const ctx = cv.getContext('2d');
+const CELL = 40;  // px per grid cell
+let TILE_W, TILE_H;
+
+// --- Resize ---
+function resize() {
+  cv.width = window.innerWidth;
+  cv.height = window.innerHeight;
+  TILE_W = Math.floor(cv.width / CELL);
+  TILE_H = Math.floor(cv.height / CELL);
+}
+resize(); window.addEventListener('resize', resize);
+
+// --- Dungeon state ---
+let dungeon = {
+  depth: 1,
+  rooms: [],
+  currentRoomIdx: 0,
+  map: [], mapW: 0, mapH: 0,
+  player: { x:2, y:2, hp:100, maxHp:100, atk:10, gold:0, weapon:'sword', dir:{x:0,y:1} },
+  enemies: [],
+  projectiles: [],  // { x, y, vx, vy, life, dmg, isEnemy }
+  pickups: [],      // { x, y, type:'hp'|'gold', value }
+  particles: [],
+  floats: [],
+  msg: '', msgTimer: 0,
+  combatCooldown: 0, playerHitCd: 0, shootCd: 0,
+  bossDefeated: false,
+};
+
+// --- Procedural room map ---
+function generateDungeon(depth) {
+  const W = 25 + depth * 2, H = 20;
+  // init all walls
+  const map = Array.from({length:H}, () => Array(W).fill(0));
+  const rooms = [];
+  const roomCount = 5 + depth;
+  // place rooms along a winding path
+  let cx = 2, cy = 2;
+  for (let i = 0; i < roomCount; i++) {
+    const rw = 5 + Math.floor(Math.random() * 3);
+    const rh = 4 + Math.floor(Math.random() * 2);
+    // carve room
+    for (let y = cy; y < Math.min(cy + rh, H-2); y++)
+      for (let x = cx; x < Math.min(cx + rw, W-2); x++)
+        map[y][x] = 1;
+    rooms.push({
+      x: cx, y: cy, w: rw, h: rh,
+      cleared: false,
+      isBoss: (i === roomCount - 1),
+      enemies: [],
+    });
+    // corridor to next
+    const nx = cx + rw + 1, ny = cy + (Math.random() > 0.5 ? 1 : -1) * 2;
+    for (let x = cx + rw; x <= Math.min(nx, W-2); x++) map[Math.min(cy + 1, H-2)][x] = 1;
+    cx = nx; cy = Math.max(2, Math.min(ny, H - rh - 2));
+  }
+  // place enemies in rooms
+  for (const r of rooms) {
+    if (r.isBoss) {
+      r.enemies.push({ x:r.x+r.w/2, y:r.y+1, hp:350, maxHp:350, atk:22, type:'boss', name:'反震犀牛·王', icon:'🦏', alive:true, patrol:0 });
+    } else {
+      const n = 1 + Math.floor(Math.random() * 2);
+      const types = ['basic','basic','charger','shooter'];  // weighted
+      for (let j = 0; j < n; j++) {
+        const t = types[Math.floor(Math.random()*types.length)];
+        const e = { x:r.x+2+Math.random()*2, y:r.y+1+Math.random()*2, type:t, alive:true, patrol:Math.random()*Math.PI*2 };
+        if (t === 'charger') { e.hp=50+depth*15; e.maxHp=e.hp; e.atk=10+depth*2; e.name='冲刺妖兽'; e.icon='🐗'; e.speed=2.5; }
+        else if (t === 'shooter') { e.hp=35+depth*10; e.maxHp=e.hp; e.atk=6+depth; e.name='灵弹妖蝠'; e.icon='🦇'; e.speed=0.6; e.shootCd=0; e.shootInterval=2.5; }
+        else { e.hp=70+depth*20; e.maxHp=e.hp; e.atk=8+depth*2; e.name='游荡妖兽'; e.icon='👹'; e.speed=1.2; }
+        r.enemies.push(e);
+      }
+      // health pickup chance (30% per room)
+      if (Math.random() < 0.3) {
+        r.pickups = [{ x:r.x+r.w/2, y:r.y+r.h-1, type:'hp', value:25 }];
+      }
+    }
+  }
+  return { map, rooms, mapW: W, mapH: H };
+}
+
+function initDungeon(depth) {
+  const g = generateDungeon(depth);
+  dungeon.depth = depth;
+  dungeon.rooms = g.rooms;
+  dungeon.map = g.map;
+  dungeon.mapW = g.mapW;
+  dungeon.mapH = g.mapH;
+  dungeon.currentRoomIdx = 0;
+  dungeon.enemies = g.rooms.flatMap(r => r.enemies);
+  dungeon.pickups = g.rooms.flatMap(r => r.pickups || []);
+  dungeon.projectiles = [];
+  dungeon.bossDefeated = false;
+  dungeon.combatCooldown = 0; dungeon.playerHitCd = 0; dungeon.shootCd = 0;
+  // place player in first room
+  const r0 = g.rooms[0];
+  dungeon.player.x = r0.x + 2;
+  dungeon.player.y = r0.y + 2;
+  dungeon.player.hp = dungeon.player.maxHp;
+  dungeon.msg = 'Floor ' + depth + ' - WASD move, K attack, X block';
+}
+
+// --- Input ---
+const keys = {};
+window.addEventListener('keydown', e => { keys[e.key.toLowerCase()] = true; e.preventDefault(); });
+window.addEventListener('keyup', e => { keys[e.key.toLowerCase()] = false; e.preventDefault(); });
+
+// --- Spawn effects ---
+function spawnParticles(x, y, color, n) {
+  for (let i = 0; i < n; i++)
+    dungeon.particles.push({ x, y, vx:(Math.random()-0.5)*4, vy:(Math.random()-0.5)*4, life:1, color });
+}
+function spawnFloat(x, y, text, color) {
+  dungeon.floats.push({ x, y, text, color, life:1 });
+}
+
+// --- Update ---
+function damageEnemy(e, dmg) {
+  e.hp -= dmg;
+  spawnParticles(e.x*CELL, e.y*CELL, '#ff6b6b', 5);
+  spawnFloat(e.x*CELL, e.y*CELL, '-'+Math.floor(dmg), '#ff6b6b');
+  if (e.hp <= 0) {
+    e.alive = false;
+    const g = 10 + dungeon.depth * 5;
+    dungeon.player.gold += g;
+    spawnParticles(e.x*CELL, e.y*CELL, '#ffd700', 15);
+    spawnFloat(e.x*CELL, e.y*CELL, '+'+g+'G', '#ffd700');
+    dungeon.msg = e.name + ' defeated!'; dungeon.msgTimer = 1.2;
+  }
+}
+function update(dt) {
+  const p = dungeon.player;
+  // --- movement ---
+  let dx = 0, dy = 0;
+  if (keys['w']||keys['arrowup']) dy = -1;
+  if (keys['s']||keys['arrowdown']) dy = 1;
+  if (keys['a']||keys['arrowleft']) dx = -1;
+  if (keys['d']||keys['arrowright']) dx = 1;
+  if (dx||dy) { p.dir = {x:dx, y:dy}; const spd=8*dt; const nx=p.x+dx*spd, ny=p.y+dy*spd; const gx=Math.floor(nx), gy=Math.floor(ny); if(gx>=0&&gx<dungeon.mapW&&gy>=0&&gy<dungeon.mapH&&dungeon.map[gy][gx]===1){p.x=nx;p.y=ny;} }
+  // --- melee attack (K) ---
+  dungeon.combatCooldown=Math.max(0,dungeon.combatCooldown-dt);
+  dungeon.playerHitCd=Math.max(0,dungeon.playerHitCd-dt);
+  dungeon.shootCd=Math.max(0,dungeon.shootCd-dt);
+  if (keys['k'] && dungeon.combatCooldown<=0) {
+    dungeon.combatCooldown=0.4; spawnParticles(p.x*CELL,p.y*CELL,'#f5c97a',8);
+    for(const e of dungeon.enemies){if(!e.alive)continue;if(Math.hypot(e.x-p.x,e.y-p.y)<2.5)damageEnemy(e,p.atk+Math.floor(Math.random()*5));}
+  }
+  // --- ranged attack (J) ---
+  if (keys['j'] && dungeon.shootCd<=0) {
+    dungeon.shootCd=0.6;
+    const spd=10, d=p.dir||{x:0,y:1};
+    dungeon.projectiles.push({x:p.x,y:p.y,vx:d.x*spd,vy:d.y*spd,life:1.2,dmg:p.atk*0.7,isEnemy:false});
+    spawnParticles(p.x*CELL,p.y*CELL,'#5fd3e0',4);
+  }
+  // --- projectiles ---
+  for(let i=dungeon.projectiles.length-1;i>=0;i--){
+    const pr=dungeon.projectiles[i]; pr.x+=pr.vx*dt; pr.y+=pr.vy*dt; pr.life-=dt;
+    const gx=Math.floor(pr.x),gy=Math.floor(pr.y);
+    if(gx<0||gx>=dungeon.mapW||gy<0||gy>=dungeon.mapH||dungeon.map[gy][gx]===0){dungeon.projectiles.splice(i,1);continue;}
+    if(pr.isEnemy){if(Math.hypot(pr.x-p.x,pr.y-p.y)<1){p.hp-=pr.dmg;dungeon.playerHitCd=0.3;spawnParticles(p.x*CELL,p.y*CELL,'#ff0000',4);spawnFloat(p.x*CELL,p.y*CELL,'-'+Math.floor(pr.dmg),'#ff0000');dungeon.projectiles.splice(i,1);}}
+    else{for(const e of dungeon.enemies){if(!e.alive)continue;if(Math.hypot(pr.x-e.x,pr.y-e.y)<1.2){damageEnemy(e,pr.dmg);dungeon.projectiles.splice(i,1);break;}}}
+    if(pr.life<=0)dungeon.projectiles.splice(i,1);
+  }
+  // --- enemy contact damage ---
+  if(dungeon.playerHitCd<=0){for(const e of dungeon.enemies){if(!e.alive)continue;if(Math.hypot(e.x-p.x,e.y-p.y)<1.2){p.hp-=e.atk;dungeon.playerHitCd=0.5;spawnParticles(p.x*CELL,p.y*CELL,'#ff0000',4);spawnFloat(p.x*CELL,p.y*CELL,'-'+e.atk,'#ff0000');if(p.hp<=0){p.hp=0;dungeon.msg='You died! Press R to restart.';}break;}}}
+  // --- enemy AI ---
+  for(const e of dungeon.enemies){if(!e.alive)continue;const d=Math.hypot(e.x-p.x,e.y-p.y);
+    if(e.type==='charger'){
+      if(d<6){const spd=e.speed*3*dt;const ax=(p.x-e.x)/d*spd,ay=(p.y-e.y)/d*spd;const nx=e.x+ax,ny=e.y+ay;const gx=Math.floor(nx),gy=Math.floor(ny);if(gx>=0&&gx<dungeon.mapW&&gy>=0&&gy<dungeon.mapH&&dungeon.map[gy][gx]===1){e.x=nx;e.y=ny;}}
+    }else if(e.type==='shooter'){
+      if(d>3&&d<9){const spd=e.speed*dt;const ax=(p.x-e.x)/d*spd,ay=(p.y-e.y)/d*spd;const nx=e.x+ax,ny=e.y+ay;const gx=Math.floor(nx),gy=Math.floor(ny);if(gx>=0&&gx<dungeon.mapW&&gy>=0&&gy<dungeon.mapH&&dungeon.map[gy][gx]===1){e.x=nx;e.y=ny;}}
+      e.shootCd=(e.shootCd||0)-dt;if(e.shootCd<=0&&d<8){e.shootCd=e.shootInterval;const sd=3;dungeon.projectiles.push({x:e.x,y:e.y,vx:(p.x-e.x)/d*sd,vy:(p.y-e.y)/d*sd,life:2,dmg:e.atk,isEnemy:true});}
+    }else{if(d>1&&d<8){const spd=e.speed*dt;const ax=(p.x-e.x)/d*spd,ay=(p.y-e.y)/d*spd;const nx=e.x+ax,ny=e.y+ay;const gx=Math.floor(nx),gy=Math.floor(ny);if(gx>=0&&gx<dungeon.mapW&&gy>=0&&gy<dungeon.mapH&&dungeon.map[gy][gx]===1){e.x=nx;e.y=ny;}}}
+  }
+  // --- pickups ---
+  for(let i=dungeon.pickups.length-1;i>=0;i--){const pk=dungeon.pickups[i];if(Math.hypot(pk.x-p.x,pk.y-p.y)<1.2){if(pk.type==='hp'){p.hp=Math.min(p.maxHp,p.hp+pk.value);spawnFloat(pk.x*CELL,pk.y*CELL,'+'+pk.value+'HP','#3ddc84');}dungeon.pickups.splice(i,1);}}
+  // check room clear
+  for (const r of dungeon.rooms) {
+    if (r.cleared) continue;
+    if (r.enemies.every(e => !e.alive)) {
+      r.cleared = true;
+      if (r.isBoss) {
+        dungeon.bossDefeated = true;
+        dungeon.msg = 'BOSS DEFEATED! Floor ' + dungeon.depth + ' cleared! Press N for next floor.';
+      } else {
+        dungeon.msg = 'Room cleared! Proceed to next room.';
+        dungeon.msgTimer = 1.5;
+      }
+    }
+  }
+  // next floor
+  if (dungeon.bossDefeated && keys['n']) {
+    keys['n'] = false;
+    initDungeon(dungeon.depth + 1);
+  }
+  // restart
+  if (p.hp <= 0 && keys['r']) {
+    keys['r'] = false;
+    initDungeon(1);
+  }
+  // msg timer
+  dungeon.msgTimer = Math.max(0, dungeon.msgTimer - dt);
+  // particles
+  for (let i = dungeon.particles.length-1; i >= 0; i--) {
+    const pt = dungeon.particles[i];
+    pt.x += pt.vx; pt.y += pt.vy; pt.life -= dt * 1.5;
+    if (pt.life <= 0) dungeon.particles.splice(i, 1);
+  }
+  for (let i = dungeon.floats.length-1; i >= 0; i--) {
+    const ft = dungeon.floats[i];
+    ft.y -= 30 * dt; ft.life -= dt;
+    if (ft.life <= 0) dungeon.floats.splice(i, 1);
+  }
+}
+
+// --- Draw ---
+function draw() {
+  const W = cv.width, H = cv.height;
+  ctx.clearRect(0, 0, W, H);
+  ctx.fillStyle = '#0b0f1a'; ctx.fillRect(0, 0, W, H);
+  // camera follow player
+  const cx = dungeon.player.x * CELL - W/2, cy = dungeon.player.y * CELL - H/2;
+  const ox = -cx, oy = -cy;
+  // draw map
+  for (let y = 0; y < dungeon.mapH; y++) {
+    for (let x = 0; x < dungeon.mapW; x++) {
+      const t = dungeon.map[y][x];
+      if (t === 0) continue; // wall = background
+      const sx = ox + x * CELL, sy = oy + y * CELL;
+      if (sx < -CELL || sx > W + CELL || sy < -CELL || sy > H + CELL) continue;
+      ctx.fillStyle = (x + y) % 2 ? '#12203a' : '#0e1a30';
+      ctx.fillRect(sx, sy, CELL, CELL);
+      ctx.strokeStyle = 'rgba(122,150,200,0.15)'; ctx.lineWidth = 0.5;
+      ctx.strokeRect(sx, sy, CELL, CELL);
+    }
+  }
+  // boss room highlight
+  for (const r of dungeon.rooms) {
+    if (!r.isBoss || r.cleared) continue;
+    const sx = ox + r.x * CELL, sy = oy + r.y * CELL;
+    ctx.strokeStyle = 'rgba(255,100,100,0.6)'; ctx.lineWidth = 2;
+    ctx.strokeRect(sx, sy, r.w * CELL, r.h * CELL);
+    // label
+    ctx.fillStyle = '#ff6b6b'; ctx.font = 'bold 14px sans-serif'; ctx.textAlign = 'center';
+    ctx.fillText('BOSS', sx + r.w * CELL / 2, sy - 8);
+  }
+  // draw enemies
+  for (const e of dungeon.enemies) {
+    if (!e.alive) continue;
+    const sx = ox + e.x * CELL, sy = oy + e.y * CELL;
+    ctx.fillStyle = e.name.includes('王') ? '#ff4444' : '#cc6633';
+    ctx.beginPath(); ctx.arc(sx, sy, CELL * 0.35, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = '#fff'; ctx.font = `${Math.floor(CELL*0.5)}px sans-serif`; ctx.textAlign = 'center';
+    ctx.fillText(e.icon, sx, sy + 4);
+    // HP bar
+    if (e.hp < e.maxHp) {
+      const bw = CELL * 0.6;
+      ctx.fillStyle = 'rgba(0,0,0,0.5)'; ctx.fillRect(sx - bw/2, sy - CELL*0.5, bw, 4);
+      ctx.fillStyle = '#ff4444'; ctx.fillRect(sx - bw/2, sy - CELL*0.5, bw * (e.hp / e.maxHp), 4);
+    }
+  }
+// draw projectiles
+  for (const pr of dungeon.projectiles) {
+    const sx = ox + pr.x * CELL, sy = oy + pr.y * CELL;
+    ctx.fillStyle = pr.isEnemy ? '#ff4444' : '#5fd3e0';
+    ctx.beginPath(); ctx.arc(sx, sy, CELL * 0.1, 0, Math.PI * 2); ctx.fill();
+    ctx.fillStyle = 'rgba(255,255,255,0.6)'; ctx.beginPath(); ctx.arc(sx, sy, CELL * 0.2, 0, Math.PI * 2); ctx.fill();
+  }
+  // draw pickups
+  for (const pk of dungeon.pickups) {
+    const sx = ox + pk.x * CELL, sy = oy + pk.y * CELL;
+    ctx.fillStyle = pk.type === 'hp' ? '#3ddc84' : '#f5c97a';
+    ctx.fillRect(sx - CELL * 0.2, sy - CELL * 0.2, CELL * 0.4, CELL * 0.4);
+    ctx.fillStyle = '#fff'; ctx.font = `${Math.floor(CELL*0.35)}px sans-serif`; ctx.textAlign = 'center';
+    ctx.fillText(pk.type === 'hp' ? '+' : 'G', sx, sy + 4);
+  }
+  // draw player
+  const px = ox + dungeon.player.x * CELL, py = oy + dungeon.player.y * CELL;
+  ctx.fillStyle = '#f5c97a'; ctx.beginPath(); ctx.arc(px, py, CELL * 0.35, 0, Math.PI * 2); ctx.fill();
+  ctx.fillStyle = '#fff'; ctx.beginPath(); ctx.arc(px, py, 3, 0, Math.PI * 2); ctx.fill();
+  // player glow
+  ctx.fillStyle = 'rgba(245,201,122,0.15)'; ctx.beginPath(); ctx.arc(px, py, CELL * 0.6, 0, Math.PI * 2); ctx.fill();
+  // particles
+  for (const pt of dungeon.particles) {
+    ctx.fillStyle = pt.color; ctx.globalAlpha = pt.life;
+    ctx.beginPath(); ctx.arc(ox + pt.x, oy + pt.y, 3 * pt.life, 0, Math.PI*2); ctx.fill();
+  }
+  ctx.globalAlpha = 1;
+  // floats
+  for (const ft of dungeon.floats) {
+    ctx.fillStyle = ft.color; ctx.globalAlpha = ft.life;
+    ctx.font = 'bold 14px sans-serif'; ctx.textAlign = 'center';
+    ctx.fillText(ft.text, ox + ft.x, oy + ft.y);
+  }
+  ctx.globalAlpha = 1;
+  // msg
+  if (dungeon.msgTimer > 0 || dungeon.msg.includes('died') || dungeon.msg.includes('BOSS')) {
+    ctx.fillStyle = dungeon.bossDefeated ? '#ffd700' : '#dfe7f5';
+    ctx.font = 'bold 20px sans-serif'; ctx.textAlign = 'center';
+    ctx.fillText(dungeon.msg, W/2, H - 40);
+  }
+}
+
+// --- HUD ---
+function refreshHud() {
+  const p = dungeon.player;
+  document.getElementById('fDepth').textContent = dungeon.depth;
+  const cleared = dungeon.rooms.filter(r => r.cleared).length;
+  document.getElementById('fRoom').textContent = (cleared + 1) + '/' + dungeon.rooms.length;
+  document.getElementById('fHp').textContent = Math.floor(p.hp);
+  document.getElementById('fGold').textContent = p.gold;
+}
+
+// --- Game loop ---
+initDungeon(1);
+let lastTime = 0;
+function loop(now) {
+  const dt = Math.min(0.05, lastTime ? (now - lastTime) / 1000 : 0.016);
+  lastTime = now;
+  update(dt);
+  draw();
+  refreshHud();
+  requestAnimationFrame(loop);
+}
+requestAnimationFrame(loop);
+</script>
+</body>
+</html>
