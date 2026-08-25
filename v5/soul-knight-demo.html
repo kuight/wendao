@@ -1,359 +1,235 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<title>问道修仙 v5 · 雷霆殿秘境（元气骑士式）</title>
-<style>
-* { margin:0; padding:0; box-sizing:border-box; }
-html,body { width:100%; height:100%; overflow:hidden; background:#0b0f1a; }
-canvas { display:block; width:100%; height:100%; }
-#hud {
-  position:fixed; top:12px; left:12px; z-index:10;
-  background:rgba(10,16,30,0.85); border:1px solid rgba(122,150,200,0.3);
-  border-radius:10px; padding:8px 14px; color:#dfe7f5; font:12px 'Microsoft YaHei',sans-serif;
-  pointer-events:none;
-}
-#hud b { color:#f5c97a; }
-</style>
-</head>
-<body>
-<canvas id="cv"></canvas>
-<div id="hud">
-  <span>Floor <b id="fDepth">1</b></span> &middot;
-  <span>Room <b id="fRoom">1/6</b></span> &middot;
-  <span>HP <b id="fHp" style="color:#3ddc84">100</b></span> &middot;
-  <span>Gold <b id="fGold" style="color:#f5c97a">0</b></span> &middot;
-  <span style="font-size:10px;color:#9fb0c9">WASD走 K砍 J射</span>
+﻿<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"><title>问道修仙 v5 · 雷霆殿</title><style>
+*{margin:0;padding:0;box-sizing:border-box}html,body{width:100%;height:100%;overflow:hidden;background:#0b0f1a}
+canvas{display:block;width:100%;height:100%}
+#hud{position:fixed;top:12px;left:12px;z-index:10;background:rgba(10,16,30,.88);border:1px solid rgba(122,150,200,.3);border-radius:10px;padding:8px 14px;color:#dfe7f5;font:12px Microsoft YaHei,sans-serif;pointer-events:none}
+#hud b{color:#f5c97a}#hud .hp{color:#3ddc84}#hud .warn{color:#ff6b6b}
+</style></head><body><canvas id="cv"></canvas><div id="hud">
+  Fl<b id="fDepth">1</b> · <b id="fRoom">1/6</b> · HP<b id="fHp" class="hp">100</b> · G<b id="fGold">0</b>
+  <span style="font-size:10px;color:#9fb0c9"> WASD走 K砍 J射 Shift闪</span>
 </div>
 <script>
-// === Soul Knight-Style Dungeon Engine ===
-const cv = document.getElementById('cv');
-const ctx = cv.getContext('2d');
-const CELL = 40;  // px per grid cell
-let TILE_W, TILE_H;
+const cv=document.getElementById('cv'),ctx=cv.getContext('2d');
+const CELL=36; let W,H;
 
-// --- Resize ---
-function resize() {
-  cv.width = window.innerWidth;
-  cv.height = window.innerHeight;
-  TILE_W = Math.floor(cv.width / CELL);
-  TILE_H = Math.floor(cv.height / CELL);
-}
-resize(); window.addEventListener('resize', resize);
+function resize(){cv.width=innerWidth;cv.height=innerHeight;W=cv.width;H=cv.height}
+resize();addEventListener('resize',resize);
 
-// --- Dungeon state ---
-let dungeon = {
-  depth: 1,
-  rooms: [],
-  currentRoomIdx: 0,
-  map: [], mapW: 0, mapH: 0,
-  player: { x:2, y:2, hp:100, maxHp:100, atk:10, gold:0, weapon:'sword', dir:{x:0,y:1} },
-  enemies: [],
-  projectiles: [],  // { x, y, vx, vy, life, dmg, isEnemy }
-  pickups: [],      // { x, y, type:'hp'|'gold', value }
-  particles: [],
-  floats: [],
-  msg: '', msgTimer: 0,
-  combatCooldown: 0, playerHitCd: 0, shootCd: 0,
-  bossDefeated: false,
+// === dungeon state ===
+const D={
+ depth:1,state:'title', // title|play|victory|defeat
+ rooms:[],map:[],mw:0,mh:0,
+ player:{x:0,y:0,hp:100,mhp:100,atk:10,gold:0,dir:{x:0,y:1},dodgeCd:0,hitCd:0,atkCd:0,shootCd:0},
+ enemies:[],projectiles:[],pickups:[],particles:[],floats:[],
+ cam:{x:0,y:0,tx:0,ty:0,roomId:null},
+ msg:'',msgT:0, kills:0,goldGot:0,roomsDone:0
 };
 
-// --- Procedural room map ---
-function generateDungeon(depth) {
-  const W = 25 + depth * 2, H = 20;
-  // init all walls
-  const map = Array.from({length:H}, () => Array(W).fill(0));
-  const rooms = [];
-  const roomCount = 5 + depth;
-  // place rooms along a winding path
-  let cx = 2, cy = 2;
-  for (let i = 0; i < roomCount; i++) {
-    const rw = 5 + Math.floor(Math.random() * 3);
-    const rh = 4 + Math.floor(Math.random() * 2);
-    // carve room
-    for (let y = cy; y < Math.min(cy + rh, H-2); y++)
-      for (let x = cx; x < Math.min(cx + rw, W-2); x++)
-        map[y][x] = 1;
-    rooms.push({
-      x: cx, y: cy, w: rw, h: rh,
-      cleared: false,
-      isBoss: (i === roomCount - 1),
-      enemies: [],
-    });
-    // corridor to next
-    const nx = cx + rw + 1, ny = cy + (Math.random() > 0.5 ? 1 : -1) * 2;
-    for (let x = cx + rw; x <= Math.min(nx, W-2); x++) map[Math.min(cy + 1, H-2)][x] = 1;
-    cx = nx; cy = Math.max(2, Math.min(ny, H - rh - 2));
+// === room generation ===
+function genFloor(depth){
+ const GRID=4, GAP=3, RW=8,RH=6, BOXRW=11,BOXH=8;
+ // pick a path through the grid (branching)
+ const path=[];
+ let cx=0,cy=1;path.push([cx,cy]);
+ // main path going right
+ for(let i=0;i<GRID-1;i++){cx++;cy+=Math.random()>.5?(Math.random()>.5?1:-1)*((Math.random()>.5)?1:0):0;cy=Math.max(0,Math.min(2,cy));path.push([cx,cy])}
+ // branch
+ if(Math.random()>.4){let bx=1+Math.floor(Math.random()*2);path.push([bx,0]);path.push([bx+1,0])}
+ // place rooms
+ const rooms=[],layout={};
+ for(const[gx,gy]of path){if(layout[gx+','+gy])continue;layout[gx+','+gy]=true}
+ const roomList=Object.keys(layout).map(k=>k.split(',').map(Number));
+ // sort by x then y
+ roomList.sort((a,b)=>a[0]-b[0]||a[1]-b[1]);
+ const lastIdx=roomList.length-1;
+ for(let i=0;i<roomList.length;i++){
+  const[gx,gy]=roomList[i];
+  const isBoss=(i===lastIdx),isStart=(i===0);
+  const w=isBoss?BOXRW:RW,h=isBoss?BOXH:RH;
+  const px=gx*(RW+GAP),py=gy*(RH+GAP);
+  let type=isStart?'start':isBoss?'boss':(Math.random()<.25?'treasure':'combat');
+  const r={x:px,y:py,w,h,type,cleared:false,enemies:[],doors:[],pickups:[]};
+  // enemies
+  if(type==='boss'){r.enemies.push({rx:px+w/2,ry:py+2,hp:350,mhp:350,atk:22,type:'boss',name:'犀牛·王',icon:'🦏',alive:true,speed:0.8,shootCd:0,shootInt:3})}
+  else if(type==='combat'){
+   const n=1+Math.floor(Math.random()*2);
+   const ts=['basic','basic','charger'];
+   for(let j=0;j<n;j++){const t=ts[Math.floor(Math.random()*ts.length)];const e={rx:px+2+Math.random()*(w-4),ry:py+2+Math.random()*(h-4),type:t,alive:true,speed:t==='charger'?2.2:1,shootCd:0,shootInt:3};if(t==='charger'){e.hp=55+depth*15;e.mhp=e.hp;e.atk=10+depth*2;e.name='冲刺兽';e.icon='🐗'}else{e.hp=70+depth*20;e.mhp=e.hp;e.atk=8+depth*2;e.name='妖兽';e.icon='👹'}r.enemies.push(e)}
   }
-  // place enemies in rooms
-  for (const r of rooms) {
-    if (r.isBoss) {
-      r.enemies.push({ x:r.x+r.w/2, y:r.y+1, hp:350, maxHp:350, atk:22, type:'boss', name:'反震犀牛·王', icon:'🦏', alive:true, patrol:0 });
-    } else {
-      const n = 1 + Math.floor(Math.random() * 2);
-      const types = ['basic','basic','charger','shooter'];  // weighted
-      for (let j = 0; j < n; j++) {
-        const t = types[Math.floor(Math.random()*types.length)];
-        const e = { x:r.x+2+Math.random()*2, y:r.y+1+Math.random()*2, type:t, alive:true, patrol:Math.random()*Math.PI*2 };
-        if (t === 'charger') { e.hp=50+depth*15; e.maxHp=e.hp; e.atk=10+depth*2; e.name='冲刺妖兽'; e.icon='🐗'; e.speed=2.5; }
-        else if (t === 'shooter') { e.hp=35+depth*10; e.maxHp=e.hp; e.atk=6+depth; e.name='灵弹妖蝠'; e.icon='🦇'; e.speed=0.6; e.shootCd=0; e.shootInterval=2.5; }
-        else { e.hp=70+depth*20; e.maxHp=e.hp; e.atk=8+depth*2; e.name='游荡妖兽'; e.icon='👹'; e.speed=1.2; }
-        r.enemies.push(e);
-      }
-      // health pickup chance (30% per room)
-      if (Math.random() < 0.3) {
-        r.pickups = [{ x:r.x+r.w/2, y:r.y+r.h-1, type:'hp', value:25 }];
-      }
-    }
+  if(type!=='start'&&type!=='boss'&&Math.random()<.3)r.pickups.push({rx:px+w/2,ry:py+h-1,type:'hp',val:20});
+  rooms.push(r);
+ }
+ // build tile map (with walls, corridors, doors)
+ const mw=GRID*(RW+GAP)+GAP,mh=3*(RH+GAP)+GAP;
+ const map=Array.from({length:mh},()=>Array(mw).fill(0));
+ // carve rooms
+ for(const r of rooms){
+  for(let y=r.y;y<r.y+r.h;y++)for(let x=r.x;x<r.x+r.w;x++){if(map[y])map[y][x]=2}
+ }
+ // corridors between adjacent rooms
+ for(let i=0;i<rooms.length;i++)for(let j=i+1;j<rooms.length;j++){
+  const a=rooms[i],b=rooms[j];
+  const ax=a.x+a.w/2,ay=a.y+a.h/2,bx=b.x+b.w/2,by=b.y+b.h/2;
+  const dx=bx-ax,dy=by-ay;
+  if(Math.abs(dx)<(RW+GAP)*1.5&&Math.abs(dy)<(RH+GAP)*1.5){
+   // horizontal or vertical corridor
+   if(Math.abs(dx)>Math.abs(dy)){
+    const sx=Math.min(a.x+a.w,b.x),ex=Math.max(a.x,b.x+b.w);
+    const my=Math.floor((ay+by)/2);for(let x=sx;x<ex;x++)if(map[my])map[my][x]=3;
+   }else{
+    const sy=Math.min(a.y+a.h,b.y),ey=Math.max(a.y,b.y+b.h);
+    const mx=Math.floor((ax+bx)/2);for(let y=sy;y<ey;y++)if(map[y])map[y][mx]=3;
+   }
   }
-  return { map, rooms, mapW: W, mapH: H };
+ }
+ // place doors (at room edges where corridors connect)
+ for(const r of rooms){
+  for(let x=r.x;x<r.x+r.w;x++){if(r.y>0&&map[r.y-1]&&map[r.y-1][x]===3){r.doors.push({x,y:r.y-1,open:true});map[r.y-1][x]=4}if(r.y+r.h<mh&&map[r.y+r.h]&&map[r.y+r.h][x]===3){r.doors.push({x,y:r.y+r.h,open:true});map[r.y+r.h][x]=4}}
+  for(let y=r.y;y<r.y+r.h;y++){if(r.x>0&&map[y]&&map[y][r.x-1]===3){r.doors.push({x:r.x-1,y,open:true});map[y][r.x-1]=4}if(r.x+r.w<mw&&map[y]&&map[y][r.x+r.w]===3){r.doors.push({x:r.x+r.w,y,open:true});map[y][r.x+r.w]=4}}
+ }
+ // walls around rooms (where not door or corridor or floor)
+ for(const r of rooms){
+  for(let y=r.y-1;y<=r.y+r.h;y++)for(let x=r.x-1;x<=r.x+r.w;x++){if(y>=0&&y<mh&&x>=0&&x<mw&&map[y][x]===0)map[y][x]=1}
+ }
+ return{rooms,map,mw,mh};
 }
 
-function initDungeon(depth) {
-  const g = generateDungeon(depth);
-  dungeon.depth = depth;
-  dungeon.rooms = g.rooms;
-  dungeon.map = g.map;
-  dungeon.mapW = g.mapW;
-  dungeon.mapH = g.mapH;
-  dungeon.currentRoomIdx = 0;
-  dungeon.enemies = g.rooms.flatMap(r => r.enemies);
-  dungeon.pickups = g.rooms.flatMap(r => r.pickups || []);
-  dungeon.projectiles = [];
-  dungeon.bossDefeated = false;
-  dungeon.combatCooldown = 0; dungeon.playerHitCd = 0; dungeon.shootCd = 0;
-  // place player in first room
-  const r0 = g.rooms[0];
-  dungeon.player.x = r0.x + 2;
-  dungeon.player.y = r0.y + 2;
-  dungeon.player.hp = dungeon.player.maxHp;
-  dungeon.msg = 'Floor ' + depth + ' - WASD move, K attack, X block';
+function initFloor(depth){
+ const g=genFloor(depth);D.depth=depth;D.rooms=g.rooms;D.map=g.map;D.mw=g.mw;D.mh=g.mh;
+ D.enemies=g.rooms.flatMap(r=>r.enemies);D.pickups=g.rooms.flatMap(r=>r.pickups||[]);
+ D.projectiles=[];D.particles=[];D.floats=[];D.bossDefeated=false;
+ D.atkCd=0;D.shootCd=0;D.msg='';D.msgT=0;
+ // place player in start room
+ const r0=g.rooms[0];D.player.x=r0.x+r0.w/2;D.player.y=r0.y+r0.h/2;D.player.hp=D.player.mhp;
+ // camera to start room center
+ D.cam.x=r0.x+r0.w/2;D.cam.y=r0.y+r0.h/2;D.cam.tx=D.cam.x;D.cam.ty=D.cam.y;D.cam.roomId=0;
+ D.state='play';
 }
+// === input ===
+const keys={};
+addEventListener('keydown',e=>{keys[e.key.toLowerCase()]=true;e.preventDefault()});
+addEventListener('keyup',e=>{keys[e.key.toLowerCase()]=false});
 
-// --- Input ---
-const keys = {};
-window.addEventListener('keydown', e => { keys[e.key.toLowerCase()] = true; e.preventDefault(); });
-window.addEventListener('keyup', e => { keys[e.key.toLowerCase()] = false; e.preventDefault(); });
+// === helpers ===
+function sp(x,y,c,n){for(let i=0;i<n;i++)D.particles.push({x,y,vx:(Math.random()-.5)*4,vy:(Math.random()-.5)*4-1,life:1,color:c})}
+function sf(x,y,t,c){D.floats.push({x,y,text:t,color:c,life:1})}
+function dmgEnemy(e,dmg){e.hp-=dmg;sp(e.rx*CELL,e.ry*CELL,'#ff6b6b',5);sf(e.rx*CELL,e.ry*CELL,'-'+Math.floor(dmg),'#ff6b6b');if(e.hp<=0){e.alive=false;const g=10+D.depth*5;D.player.gold+=g;D.kills++;D.goldGot+=g;sp(e.rx*CELL,e.ry*CELL,'#ffd700',12);sf(e.rx*CELL,e.ry*CELL,'+'+g+'G','#ffd700')}}
+function roomAt(x,y){return D.rooms.find(r=>x>=r.x&&x<r.x+r.w&&y>=r.y&&y<r.y+r.h)||null}
+function curRoom(){return D.cam.roomId!=null?D.rooms[D.cam.roomId]:roomAt(D.player.x,D.player.y)}
+function walkable(x,y){if(x<0||y<0||x>=D.mw||y>=D.mh)return false;const t=D.map[y][x];return t===2||t===3||t===4}
 
-// --- Spawn effects ---
-function spawnParticles(x, y, color, n) {
-  for (let i = 0; i < n; i++)
-    dungeon.particles.push({ x, y, vx:(Math.random()-0.5)*4, vy:(Math.random()-0.5)*4, life:1, color });
+// === update ===
+function update(dt){
+ if(D.state!=='play')return;
+ const p=D.player;
+ // cooldowns
+ p.atkCd=Math.max(0,p.atkCd-dt);p.shootCd=Math.max(0,p.shootCd-dt);p.hitCd=Math.max(0,p.hitCd-dt);p.dodgeCd=Math.max(0,p.dodgeCd-dt);
+ D.msgT=Math.max(0,D.msgT-dt);
+ // movement
+ let dx=0,dy=0;
+ if(keys['w']||keys['arrowup'])dy=-1;if(keys['s']||keys['arrowdown'])dy=1;
+ if(keys['a']||keys['arrowleft'])dx=-1;if(keys['d']||keys['arrowright'])dx=1;
+ if(dx||dy){p.dir={x:dx,y:dy};const spd=7*dt;const nx=p.x+dx*spd,ny=p.y+dy*spd;if(walkable(Math.floor(nx),Math.floor(ny))){p.x=nx;p.y=ny}}
+ // dodge (shift)
+ if(keys['shift']&&p.dodgeCd<=0&&(dx||dy)){p.dodgeCd=1.5;p.hitCd=0.4;sp(p.x*CELL,p.y*CELL,'#5fd3e0',6)}
+ // melee (K)
+ if(keys['k']&&p.atkCd<=0){p.atkCd=0.35;sp(p.x*CELL,p.y*CELL,'#f5c97a',8);const r=curRoom();if(r&&!r.cleared)for(const e of r.enemies){if(!e.alive)continue;if(Math.hypot(e.rx-p.x,e.ry-p.y)<2.2)dmgEnemy(e,p.atk+Math.floor(Math.random()*5))}}
+ // ranged (J)
+ if(keys['j']&&p.shootCd<=0){p.shootCd=0.55;const spd=9,d=p.dir||{x:0,y:1};D.projectiles.push({x:p.x,y:p.y,vx:d.x*spd,vy:d.y*spd,life:1.5,dmg:p.atk*0.6,isEnemy:false})}
+ // projectiles
+ for(let i=D.projectiles.length-1;i>=0;i--){const pr=D.projectiles[i];pr.x+=pr.vx*dt;pr.y+=pr.vy*dt;pr.life-=dt;const gx=Math.floor(pr.x),gy=Math.floor(pr.y);if(gx<0||gx>=D.mw||gy<0||gy>=D.mh||D.map[gy][gx]===1){D.projectiles.splice(i,1);continue}
+  if(pr.isEnemy){if(Math.hypot(pr.x-p.x,pr.y-p.y)<0.8){p.hp-=pr.dmg;if(p.hitCd<=0){p.hitCd=0.3;sp(p.x*CELL,p.y*CELL,'#ff0000',3);sf(p.x*CELL,p.y*CELL,'-'+Math.floor(pr.dmg),'#ff0000')}D.projectiles.splice(i,1);if(p.hp<=0){p.hp=0;D.state='defeat';D.msg='阵亡！R重来'}}}
+  else{const r=curRoom();if(r&&!r.cleared)for(const e of r.enemies){if(!e.alive)continue;if(Math.hypot(pr.x-e.rx,pr.y-e.ry)<1.2){dmgEnemy(e,pr.dmg);D.projectiles.splice(i,1);break}}}
+  if(pr.life<=0)D.projectiles.splice(i,1)}
+ // enemy contact + AI (only in current room)
+ const r=curRoom();if(r&&!r.cleared){
+  if(p.hitCd<=0)for(const e of r.enemies){if(!e.alive)continue;if(Math.hypot(e.rx-p.x,e.ry-p.y)<1){p.hp-=e.atk;p.hitCd=0.45;sp(p.x*CELL,p.y*CELL,'#ff0000',3);sf(p.x*CELL,p.y*CELL,'-'+e.atk,'#ff0000');if(p.hp<=0){p.hp=0;D.state='defeat';D.msg='阵亡！R重来'}break}}
+  for(const e of r.enemies){if(!e.alive)continue;const d=Math.hypot(e.rx-p.x,e.ry-p.y);
+   if(e.type==='boss'){
+    if(d<7){const spd=e.speed*dt;const ax=(p.x-e.rx)/d*spd,ay=(p.y-e.ry)/d*spd;const nx=e.rx+ax,ny=e.ry+ay;if(walkable(Math.floor(nx),Math.floor(ny))){e.rx=nx;e.ry=ny}}
+    e.shootCd-=dt;if(e.shootCd<=0&&d<8){e.shootCd=e.shootInt;D.projectiles.push({x:e.rx,y:e.ry,vx:(p.x-e.rx)/d*4,vy:(p.y-e.ry)/d*4,life:2,dmg:e.atk,isEnemy:true})}
+   }else if(e.type==='charger'){
+    if(d<8){const spd=e.speed*3*dt;const ax=(p.x-e.rx)/d*spd,ay=(p.y-e.ry)/d*spd;const nx=e.rx+ax,ny=e.ry+ay;if(walkable(Math.floor(nx),Math.floor(ny))){e.rx=nx;e.ry=ny}}
+   }else{if(d>0.8&&d<7){const spd=e.speed*dt;const ax=(p.x-e.rx)/d*spd,ay=(p.y-e.ry)/d*spd;const nx=e.rx+ax,ny=e.ry+ay;if(walkable(Math.floor(nx),Math.floor(ny))){e.rx=nx;e.ry=ny}}}
+  }
+  // check room cleared
+  if(r.enemies.every(e=>!e.alive)){r.cleared=true;D.roomsDone++;for(const d of r.doors)d.open=true;
+   if(r.type==='boss'){D.bossDefeated=true;D.msg='BOSS击败！N下一层';D.msgT=3}
+   else{D.msg='房间清空！';D.msgT=1.2}}
+ }
+ // door enter: when player enters a new combat room, close its doors
+ const nr=roomAt(D.player.x,D.player.y);
+ if(nr&&nr!==r){
+  const idx=D.rooms.indexOf(nr);
+  if(idx>=0)D.cam.roomId=idx;
+  if(nr.type==='combat'&&!nr.cleared){for(const d of nr.doors)d.open=false;D.msg='进战！';D.msgT=1}
+  if(nr.type==='boss'&&!nr.cleared){for(const d of nr.doors)d.open=false;D.msg='BOSS战！';D.msgT=2}
+  // activate enemies
+  for(const e of nr.enemies)e.alive=true;
+ }
+ // pickups
+ for(let i=D.pickups.length-1;i>=0;i--){const pk=D.pickups[i];if(Math.hypot(pk.rx-p.x,pk.ry-p.y)<1.2){if(pk.type==='hp'){p.hp=Math.min(p.mhp,p.hp+pk.val);sf(pk.rx*CELL,pk.ry*CELL,'+'+pk.val+'HP','#3ddc84')}D.pickups.splice(i,1)}}
+ // next floor
+ if(D.bossDefeated&&keys['n']){keys['n']=false;initFloor(D.depth+1)}
+ // restart
+ if(D.state==='defeat'&&keys['r']){keys['r']=false;initFloor(1)}
+ // camera
+ const cr=curRoom();if(cr){D.cam.tx=cr.x+cr.w/2;D.cam.ty=cr.y+cr.h/2}else{D.cam.tx=D.player.x;D.cam.ty=D.player.y}
+ const k=1-Math.pow(0.001,dt||0.016);D.cam.x+=(D.cam.tx-D.cam.x)*k;D.cam.y+=(D.cam.ty-D.cam.y)*k;
+ // particles + floats
+ for(let i=D.particles.length-1;i>=0;i--){const pt=D.particles[i];pt.x+=pt.vx;pt.y+=pt.vy;pt.life-=dt*2;if(pt.life<=0)D.particles.splice(i,1)}
+ for(let i=D.floats.length-1;i>=0;i--){const ft=D.floats[i];ft.y-=40*dt;ft.life-=dt*1.2;if(ft.life<=0)D.floats.splice(i,1)}
 }
-function spawnFloat(x, y, text, color) {
-  dungeon.floats.push({ x, y, text, color, life:1 });
+// === draw ===
+function draw(){
+ ctx.clearRect(0,0,W,H);ctx.fillStyle='#0b0f1a';ctx.fillRect(0,0,W,H);
+ if(D.state==='title'){ctx.fillStyle='#f5c97a';ctx.font='bold 36px Microsoft YaHei,sans-serif';ctx.textAlign='center';ctx.fillText('问道修仙学院',W/2,H/2-50);ctx.fillStyle='#dfe7f5';ctx.font='20px Microsoft YaHei,sans-serif';ctx.fillText('雷霆殿秘境',W/2,H/2-10);ctx.fillStyle='#9fb0c9';ctx.font='16px Microsoft YaHei,sans-serif';ctx.fillText('按 ENTER 进入地牢',W/2,H/2+40);ctx.fillText('WASD走 K砍 J射 Shift闪',W/2,H/2+65);return}
+ // camera offset
+ const ox=W/2-D.cam.x*CELL,oy=H/2-D.cam.y*CELL;
+ // draw tiles
+ for(let y=0;y<D.mh;y++)for(let x=0;x<D.mw;x++){
+  const t=D.map[y][x];if(t===0)continue;
+  const sx=ox+x*CELL,sy=oy+y*CELL;
+  if(sx<-CELL||sx>W+CELL||sy<-CELL||sy>H+CELL)continue;
+  if(t===1){ctx.fillStyle='#1a1a2e';ctx.fillRect(sx,sy,CELL,CELL)} // wall
+  else if(t===2||t===3){ctx.fillStyle=(x+y)%2?'#12203a':'#0e1a30';ctx.fillRect(sx,sy,CELL,CELL);ctx.strokeStyle='rgba(122,150,200,.12)';ctx.lineWidth=.5;ctx.strokeRect(sx,sy,CELL,CELL)} // floor
+  else if(t===4){ctx.fillStyle=D.rooms.some(r=>r.doors.some(d=>d.x===x&&d.y===y&&!d.open))?'#442222':'#2a4a2a';ctx.fillRect(sx,sy,CELL,CELL)} // door
+ }
+ // room type labels
+ for(const r of D.rooms){
+  if(r.type==='boss'&&!r.cleared){const sx=ox+r.x*CELL,sy=oy+(r.y-1)*CELL;ctx.fillStyle='rgba(255,100,100,.7)';ctx.font='bold 13px sans-serif';ctx.textAlign='center';ctx.fillText('BOSS',sx+r.w*CELL/2,sy)}
+  if(r.type==='treasure'&&!r.cleared){const sx=ox+r.x*CELL,sy=oy+(r.y-1)*CELL;ctx.fillStyle='rgba(255,215,0,.7)';ctx.font='11px sans-serif';ctx.textAlign='center';ctx.fillText('宝箱',sx+r.w*CELL/2,sy)}
+ }
+ // enemies
+ for(const e of D.enemies){if(!e.alive)continue;const sx=ox+e.rx*CELL,sy=oy+e.ry*CELL;ctx.fillStyle=e.type==='boss'?'#ff4444':e.type==='charger'?'#ff8844':'#cc6633';ctx.beginPath();ctx.arc(sx,sy,CELL*.32,0,Math.PI*2);ctx.fill();ctx.fillStyle='#fff';ctx.font=Math.floor(CELL*.45)+'px sans-serif';ctx.textAlign='center';ctx.fillText(e.icon,sx,sy+3);if(e.hp<e.mhp){const bw=CELL*.5;ctx.fillStyle='rgba(0,0,0,.5)';ctx.fillRect(sx-bw/2,sy-CELL*.45,bw,3);ctx.fillStyle='#ff4444';ctx.fillRect(sx-bw/2,sy-CELL*.45,bw*(e.hp/e.mhp),3)}}
+ // projectiles
+ for(const pr of D.projectiles){const sx=ox+pr.x*CELL,sy=oy+pr.y*CELL;ctx.fillStyle=pr.isEnemy?'#ff4444':'#5fd3e0';ctx.beginPath();ctx.arc(sx,sy,CELL*.08,0,Math.PI*2);ctx.fill();ctx.fillStyle='rgba(255,255,255,.5)';ctx.beginPath();ctx.arc(sx,sy,CELL*.15,0,Math.PI*2);ctx.fill()}
+ // pickups
+ for(const pk of D.pickups){const sx=ox+pk.rx*CELL,sy=oy+pk.ry*CELL;ctx.fillStyle=pk.type==='hp'?'#3ddc84':'#f5c97a';ctx.fillRect(sx-CELL*.18,sy-CELL*.18,CELL*.36,CELL*.36);ctx.fillStyle='#fff';ctx.font=Math.floor(CELL*.3)+'px sans-serif';ctx.textAlign='center';ctx.fillText('+',sx,sy+3)}
+ // player (dodge glow)
+ const px=ox+D.player.x*CELL,py=oy+D.player.y*CELL;
+ if(D.player.dodgeCd>1.2){ctx.fillStyle='rgba(95,211,224,.25)';ctx.beginPath();ctx.arc(px,py,CELL*.55,0,Math.PI*2);ctx.fill()}
+ ctx.fillStyle='#f5c97a';ctx.beginPath();ctx.arc(px,py,CELL*.32,0,Math.PI*2);ctx.fill();ctx.fillStyle='#fff';ctx.beginPath();ctx.arc(px,py,3,0,Math.PI*2);ctx.fill();
+ ctx.fillStyle='rgba(245,201,122,.12)';ctx.beginPath();ctx.arc(px,py,CELL*.5,0,Math.PI*2);ctx.fill();
+ // particles
+ for(const pt of D.particles){ctx.globalAlpha=pt.life;ctx.fillStyle=pt.color;ctx.beginPath();ctx.arc(ox+pt.x,oy+pt.y,3*pt.life,0,Math.PI*2);ctx.fill()}ctx.globalAlpha=1;
+ // floats
+ for(const ft of D.floats){ctx.globalAlpha=ft.life;ctx.fillStyle=ft.color;ctx.font='bold 13px sans-serif';ctx.textAlign='center';ctx.fillText(ft.text,ox+ft.x,oy+ft.y)}ctx.globalAlpha=1;
+ // msg
+ if(D.msgT>0||D.state==='defeat'){ctx.fillStyle=D.state==='defeat'?'#ff6b6b':'#dfe7f5';ctx.font='bold 22px sans-serif';ctx.textAlign='center';ctx.fillText(D.msg,W/2,H-30)}
+ // victory overlay
+ if(D.state==='victory'){ctx.fillStyle='rgba(0,0,0,.6)';ctx.fillRect(0,0,W,H);ctx.fillStyle='#ffd700';ctx.font='bold 40px sans-serif';ctx.textAlign='center';ctx.fillText('通关！',W/2,H/2-20);ctx.fillStyle='#dfe7f5';ctx.font='18px sans-serif';ctx.fillText('击杀:'+D.kills+' 金币:'+D.goldGot+' 房间:'+D.roomsDone,W/2,H/2+30);ctx.fillText('按N进入下一层',W/2,H/2+60)}
+ // defeat overlay
+ if(D.state==='defeat'){ctx.fillStyle='rgba(0,0,0,.5)';ctx.fillRect(0,0,W,H);ctx.fillStyle='#ff6b6b';ctx.font='bold 32px sans-serif';ctx.textAlign='center';ctx.fillText('阵亡',W/2,H/2-10);ctx.fillStyle='#dfe7f5';ctx.font='16px sans-serif';ctx.fillText('击杀:'+D.kills+' 金币:'+D.goldGot,W/2,H/2+25);ctx.fillText('按R重新开始',W/2,H/2+50)}
 }
-
-// --- Update ---
-function damageEnemy(e, dmg) {
-  e.hp -= dmg;
-  spawnParticles(e.x*CELL, e.y*CELL, '#ff6b6b', 5);
-  spawnFloat(e.x*CELL, e.y*CELL, '-'+Math.floor(dmg), '#ff6b6b');
-  if (e.hp <= 0) {
-    e.alive = false;
-    const g = 10 + dungeon.depth * 5;
-    dungeon.player.gold += g;
-    spawnParticles(e.x*CELL, e.y*CELL, '#ffd700', 15);
-    spawnFloat(e.x*CELL, e.y*CELL, '+'+g+'G', '#ffd700');
-    dungeon.msg = e.name + ' defeated!'; dungeon.msgTimer = 1.2;
-  }
-}
-function update(dt) {
-  const p = dungeon.player;
-  // --- movement ---
-  let dx = 0, dy = 0;
-  if (keys['w']||keys['arrowup']) dy = -1;
-  if (keys['s']||keys['arrowdown']) dy = 1;
-  if (keys['a']||keys['arrowleft']) dx = -1;
-  if (keys['d']||keys['arrowright']) dx = 1;
-  if (dx||dy) { p.dir = {x:dx, y:dy}; const spd=8*dt; const nx=p.x+dx*spd, ny=p.y+dy*spd; const gx=Math.floor(nx), gy=Math.floor(ny); if(gx>=0&&gx<dungeon.mapW&&gy>=0&&gy<dungeon.mapH&&dungeon.map[gy][gx]===1){p.x=nx;p.y=ny;} }
-  // --- melee attack (K) ---
-  dungeon.combatCooldown=Math.max(0,dungeon.combatCooldown-dt);
-  dungeon.playerHitCd=Math.max(0,dungeon.playerHitCd-dt);
-  dungeon.shootCd=Math.max(0,dungeon.shootCd-dt);
-  if (keys['k'] && dungeon.combatCooldown<=0) {
-    dungeon.combatCooldown=0.4; spawnParticles(p.x*CELL,p.y*CELL,'#f5c97a',8);
-    for(const e of dungeon.enemies){if(!e.alive)continue;if(Math.hypot(e.x-p.x,e.y-p.y)<2.5)damageEnemy(e,p.atk+Math.floor(Math.random()*5));}
-  }
-  // --- ranged attack (J) ---
-  if (keys['j'] && dungeon.shootCd<=0) {
-    dungeon.shootCd=0.6;
-    const spd=10, d=p.dir||{x:0,y:1};
-    dungeon.projectiles.push({x:p.x,y:p.y,vx:d.x*spd,vy:d.y*spd,life:1.2,dmg:p.atk*0.7,isEnemy:false});
-    spawnParticles(p.x*CELL,p.y*CELL,'#5fd3e0',4);
-  }
-  // --- projectiles ---
-  for(let i=dungeon.projectiles.length-1;i>=0;i--){
-    const pr=dungeon.projectiles[i]; pr.x+=pr.vx*dt; pr.y+=pr.vy*dt; pr.life-=dt;
-    const gx=Math.floor(pr.x),gy=Math.floor(pr.y);
-    if(gx<0||gx>=dungeon.mapW||gy<0||gy>=dungeon.mapH||dungeon.map[gy][gx]===0){dungeon.projectiles.splice(i,1);continue;}
-    if(pr.isEnemy){if(Math.hypot(pr.x-p.x,pr.y-p.y)<1){p.hp-=pr.dmg;dungeon.playerHitCd=0.3;spawnParticles(p.x*CELL,p.y*CELL,'#ff0000',4);spawnFloat(p.x*CELL,p.y*CELL,'-'+Math.floor(pr.dmg),'#ff0000');dungeon.projectiles.splice(i,1);}}
-    else{for(const e of dungeon.enemies){if(!e.alive)continue;if(Math.hypot(pr.x-e.x,pr.y-e.y)<1.2){damageEnemy(e,pr.dmg);dungeon.projectiles.splice(i,1);break;}}}
-    if(pr.life<=0)dungeon.projectiles.splice(i,1);
-  }
-  // --- enemy contact damage ---
-  if(dungeon.playerHitCd<=0){for(const e of dungeon.enemies){if(!e.alive)continue;if(Math.hypot(e.x-p.x,e.y-p.y)<1.2){p.hp-=e.atk;dungeon.playerHitCd=0.5;spawnParticles(p.x*CELL,p.y*CELL,'#ff0000',4);spawnFloat(p.x*CELL,p.y*CELL,'-'+e.atk,'#ff0000');if(p.hp<=0){p.hp=0;dungeon.msg='You died! Press R to restart.';}break;}}}
-  // --- enemy AI ---
-  for(const e of dungeon.enemies){if(!e.alive)continue;const d=Math.hypot(e.x-p.x,e.y-p.y);
-    if(e.type==='charger'){
-      if(d<6){const spd=e.speed*3*dt;const ax=(p.x-e.x)/d*spd,ay=(p.y-e.y)/d*spd;const nx=e.x+ax,ny=e.y+ay;const gx=Math.floor(nx),gy=Math.floor(ny);if(gx>=0&&gx<dungeon.mapW&&gy>=0&&gy<dungeon.mapH&&dungeon.map[gy][gx]===1){e.x=nx;e.y=ny;}}
-    }else if(e.type==='shooter'){
-      if(d>3&&d<9){const spd=e.speed*dt;const ax=(p.x-e.x)/d*spd,ay=(p.y-e.y)/d*spd;const nx=e.x+ax,ny=e.y+ay;const gx=Math.floor(nx),gy=Math.floor(ny);if(gx>=0&&gx<dungeon.mapW&&gy>=0&&gy<dungeon.mapH&&dungeon.map[gy][gx]===1){e.x=nx;e.y=ny;}}
-      e.shootCd=(e.shootCd||0)-dt;if(e.shootCd<=0&&d<8){e.shootCd=e.shootInterval;const sd=3;dungeon.projectiles.push({x:e.x,y:e.y,vx:(p.x-e.x)/d*sd,vy:(p.y-e.y)/d*sd,life:2,dmg:e.atk,isEnemy:true});}
-    }else{if(d>1&&d<8){const spd=e.speed*dt;const ax=(p.x-e.x)/d*spd,ay=(p.y-e.y)/d*spd;const nx=e.x+ax,ny=e.y+ay;const gx=Math.floor(nx),gy=Math.floor(ny);if(gx>=0&&gx<dungeon.mapW&&gy>=0&&gy<dungeon.mapH&&dungeon.map[gy][gx]===1){e.x=nx;e.y=ny;}}}
-  }
-  // --- pickups ---
-  for(let i=dungeon.pickups.length-1;i>=0;i--){const pk=dungeon.pickups[i];if(Math.hypot(pk.x-p.x,pk.y-p.y)<1.2){if(pk.type==='hp'){p.hp=Math.min(p.maxHp,p.hp+pk.value);spawnFloat(pk.x*CELL,pk.y*CELL,'+'+pk.value+'HP','#3ddc84');}dungeon.pickups.splice(i,1);}}
-  // check room clear
-  for (const r of dungeon.rooms) {
-    if (r.cleared) continue;
-    if (r.enemies.every(e => !e.alive)) {
-      r.cleared = true;
-      if (r.isBoss) {
-        dungeon.bossDefeated = true;
-        dungeon.msg = 'BOSS DEFEATED! Floor ' + dungeon.depth + ' cleared! Press N for next floor.';
-      } else {
-        dungeon.msg = 'Room cleared! Proceed to next room.';
-        dungeon.msgTimer = 1.5;
-      }
-    }
-  }
-  // next floor
-  if (dungeon.bossDefeated && keys['n']) {
-    keys['n'] = false;
-    initDungeon(dungeon.depth + 1);
-  }
-  // restart
-  if (p.hp <= 0 && keys['r']) {
-    keys['r'] = false;
-    initDungeon(1);
-  }
-  // msg timer
-  dungeon.msgTimer = Math.max(0, dungeon.msgTimer - dt);
-  // particles
-  for (let i = dungeon.particles.length-1; i >= 0; i--) {
-    const pt = dungeon.particles[i];
-    pt.x += pt.vx; pt.y += pt.vy; pt.life -= dt * 1.5;
-    if (pt.life <= 0) dungeon.particles.splice(i, 1);
-  }
-  for (let i = dungeon.floats.length-1; i >= 0; i--) {
-    const ft = dungeon.floats[i];
-    ft.y -= 30 * dt; ft.life -= dt;
-    if (ft.life <= 0) dungeon.floats.splice(i, 1);
-  }
-}
-
-// --- Draw ---
-function draw() {
-  const W = cv.width, H = cv.height;
-  ctx.clearRect(0, 0, W, H);
-  ctx.fillStyle = '#0b0f1a'; ctx.fillRect(0, 0, W, H);
-  // camera follow player
-  const cx = dungeon.player.x * CELL - W/2, cy = dungeon.player.y * CELL - H/2;
-  const ox = -cx, oy = -cy;
-  // draw map
-  for (let y = 0; y < dungeon.mapH; y++) {
-    for (let x = 0; x < dungeon.mapW; x++) {
-      const t = dungeon.map[y][x];
-      if (t === 0) continue; // wall = background
-      const sx = ox + x * CELL, sy = oy + y * CELL;
-      if (sx < -CELL || sx > W + CELL || sy < -CELL || sy > H + CELL) continue;
-      ctx.fillStyle = (x + y) % 2 ? '#12203a' : '#0e1a30';
-      ctx.fillRect(sx, sy, CELL, CELL);
-      ctx.strokeStyle = 'rgba(122,150,200,0.15)'; ctx.lineWidth = 0.5;
-      ctx.strokeRect(sx, sy, CELL, CELL);
-    }
-  }
-  // boss room highlight
-  for (const r of dungeon.rooms) {
-    if (!r.isBoss || r.cleared) continue;
-    const sx = ox + r.x * CELL, sy = oy + r.y * CELL;
-    ctx.strokeStyle = 'rgba(255,100,100,0.6)'; ctx.lineWidth = 2;
-    ctx.strokeRect(sx, sy, r.w * CELL, r.h * CELL);
-    // label
-    ctx.fillStyle = '#ff6b6b'; ctx.font = 'bold 14px sans-serif'; ctx.textAlign = 'center';
-    ctx.fillText('BOSS', sx + r.w * CELL / 2, sy - 8);
-  }
-  // draw enemies
-  for (const e of dungeon.enemies) {
-    if (!e.alive) continue;
-    const sx = ox + e.x * CELL, sy = oy + e.y * CELL;
-    ctx.fillStyle = e.name.includes('王') ? '#ff4444' : '#cc6633';
-    ctx.beginPath(); ctx.arc(sx, sy, CELL * 0.35, 0, Math.PI * 2); ctx.fill();
-    ctx.fillStyle = '#fff'; ctx.font = `${Math.floor(CELL*0.5)}px sans-serif`; ctx.textAlign = 'center';
-    ctx.fillText(e.icon, sx, sy + 4);
-    // HP bar
-    if (e.hp < e.maxHp) {
-      const bw = CELL * 0.6;
-      ctx.fillStyle = 'rgba(0,0,0,0.5)'; ctx.fillRect(sx - bw/2, sy - CELL*0.5, bw, 4);
-      ctx.fillStyle = '#ff4444'; ctx.fillRect(sx - bw/2, sy - CELL*0.5, bw * (e.hp / e.maxHp), 4);
-    }
-  }
-// draw projectiles
-  for (const pr of dungeon.projectiles) {
-    const sx = ox + pr.x * CELL, sy = oy + pr.y * CELL;
-    ctx.fillStyle = pr.isEnemy ? '#ff4444' : '#5fd3e0';
-    ctx.beginPath(); ctx.arc(sx, sy, CELL * 0.1, 0, Math.PI * 2); ctx.fill();
-    ctx.fillStyle = 'rgba(255,255,255,0.6)'; ctx.beginPath(); ctx.arc(sx, sy, CELL * 0.2, 0, Math.PI * 2); ctx.fill();
-  }
-  // draw pickups
-  for (const pk of dungeon.pickups) {
-    const sx = ox + pk.x * CELL, sy = oy + pk.y * CELL;
-    ctx.fillStyle = pk.type === 'hp' ? '#3ddc84' : '#f5c97a';
-    ctx.fillRect(sx - CELL * 0.2, sy - CELL * 0.2, CELL * 0.4, CELL * 0.4);
-    ctx.fillStyle = '#fff'; ctx.font = `${Math.floor(CELL*0.35)}px sans-serif`; ctx.textAlign = 'center';
-    ctx.fillText(pk.type === 'hp' ? '+' : 'G', sx, sy + 4);
-  }
-  // draw player
-  const px = ox + dungeon.player.x * CELL, py = oy + dungeon.player.y * CELL;
-  ctx.fillStyle = '#f5c97a'; ctx.beginPath(); ctx.arc(px, py, CELL * 0.35, 0, Math.PI * 2); ctx.fill();
-  ctx.fillStyle = '#fff'; ctx.beginPath(); ctx.arc(px, py, 3, 0, Math.PI * 2); ctx.fill();
-  // player glow
-  ctx.fillStyle = 'rgba(245,201,122,0.15)'; ctx.beginPath(); ctx.arc(px, py, CELL * 0.6, 0, Math.PI * 2); ctx.fill();
-  // particles
-  for (const pt of dungeon.particles) {
-    ctx.fillStyle = pt.color; ctx.globalAlpha = pt.life;
-    ctx.beginPath(); ctx.arc(ox + pt.x, oy + pt.y, 3 * pt.life, 0, Math.PI*2); ctx.fill();
-  }
-  ctx.globalAlpha = 1;
-  // floats
-  for (const ft of dungeon.floats) {
-    ctx.fillStyle = ft.color; ctx.globalAlpha = ft.life;
-    ctx.font = 'bold 14px sans-serif'; ctx.textAlign = 'center';
-    ctx.fillText(ft.text, ox + ft.x, oy + ft.y);
-  }
-  ctx.globalAlpha = 1;
-  // msg
-  if (dungeon.msgTimer > 0 || dungeon.msg.includes('died') || dungeon.msg.includes('BOSS')) {
-    ctx.fillStyle = dungeon.bossDefeated ? '#ffd700' : '#dfe7f5';
-    ctx.font = 'bold 20px sans-serif'; ctx.textAlign = 'center';
-    ctx.fillText(dungeon.msg, W/2, H - 40);
-  }
-}
-
-// --- HUD ---
-function refreshHud() {
-  const p = dungeon.player;
-  document.getElementById('fDepth').textContent = dungeon.depth;
-  const cleared = dungeon.rooms.filter(r => r.cleared).length;
-  document.getElementById('fRoom').textContent = (cleared + 1) + '/' + dungeon.rooms.length;
-  document.getElementById('fHp').textContent = Math.floor(p.hp);
-  document.getElementById('fGold').textContent = p.gold;
-}
-
-// --- Game loop ---
-initDungeon(1);
-let lastTime = 0;
-function loop(now) {
-  const dt = Math.min(0.05, lastTime ? (now - lastTime) / 1000 : 0.016);
-  lastTime = now;
-  update(dt);
-  draw();
-  refreshHud();
-  requestAnimationFrame(loop);
-}
+// HUD
+function hud(){const p=D.player;document.getElementById('fDepth').textContent=D.depth;const cl=D.rooms.filter(r=>r.cleared).length;document.getElementById('fRoom').textContent=(cl+1)+'/'+D.rooms.length;document.getElementById('fHp').textContent=Math.floor(p.hp);document.getElementById('fGold').textContent=p.gold}
+// loop
+let lt=0;
+function loop(t){const dt=Math.min(.05,lt?(t-lt)/1000:.016);lt=t;
+ if(D.state==='title'){if(keys['enter']){keys['enter']=false;initFloor(1)}draw();hud()}
+ else if(D.state==='play'){update(dt);draw();hud();if(D.bossDefeated&&keys['n']){keys['n']=false;D.state='victory'}}
+ else if(D.state==='victory'){draw();hud();if(keys['n']){keys['n']=false;initFloor(D.depth+1)}}
+ else if(D.state==='defeat'){draw();hud();if(keys['r']){keys['r']=false;initFloor(1)}}
+ requestAnimationFrame(loop)}
 requestAnimationFrame(loop);
-</script>
-</body>
-</html>
+</script></body></html>
