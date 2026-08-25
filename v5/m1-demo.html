@@ -88,6 +88,22 @@
   </div>
 </div>
 
+<!-- 结算检验面板（phase=question 时弹出答题） -->
+<div id="quizOverlay" style="display:none; position:fixed; inset:0; z-index:999; background:rgba(6,10,20,.82); backdrop-filter:blur(6px); align-items:center; justify-content:center; flex-direction:column; padding:20px;">
+  <div style="background:rgba(20,28,46,.92); border:1px solid var(--line); border-radius:16px; padding:22px 26px; max-width:620px; width:100%; box-shadow:0 24px 60px rgba(0,0,0,.6);">
+    <div style="display:flex; align-items:baseline; justify-content:space-between; margin-bottom:10px;">
+      <div style="color:var(--gold); font-size:16px; letter-spacing:2px; font-weight:700;">⚖ 结算检验 · 验心</div>
+      <div id="quizSub" style="color:var(--soft); font-size:12px;">已露破绽 → 答对此题即通关</div>
+    </div>
+    <div id="quizQ" style="color:var(--ink); font-size:16px; line-height:1.7; margin-bottom:16px; min-height:48px;"></div>
+    <div id="quizOpts" style="display:flex; flex-direction:column; gap:10px;"></div>
+    <div id="quizFeed" style="margin-top:16px; min-height:40px; font-size:14px; line-height:1.6; white-space:pre-wrap;"></div>
+    <div style="display:flex; gap:10px; justify-content:flex-end; margin-top:8px;">
+      <button class="btn" id="quizAgain" style="width:auto; display:none;">再战一局</button>
+    </div>
+  </div>
+</div>
+
 <!-- v4 题库：供 knowledge 出题（结算题） -->
 <script src="/src/data/physics-bank.js"></script>
 <script src="/src/data/chemistry-bank.js"></script>
@@ -199,6 +215,57 @@
 
   function setMsg(s) { combat.msg = s; $('msg').textContent = s; }
 
+  // ---- 结算检验面板：phase=question 时弹出答题 ----
+  let _quizAnswered = false;   // 本局是否已答过结算题
+  function showQuiz(st) {
+    const q = st.question || (st.current) || (boot.battle && boot.battle.getState().current);
+    if (!q) { setMsg('结算：无题可验，直接通关'); combat.quizDone = true; return; }
+    const ov = $('quizOverlay');
+    ov.style.display = 'flex';
+    $('quizQ').textContent = q.q || q.stem || '（题干）';
+    const sub = '已破绽 → 答对此题即通关';
+    $('quizSub').textContent = sub;
+    const box = $('quizOpts');
+    box.innerHTML = '';
+    const opts = q.options || [];
+    if (!opts.length) { $('quizFeed').textContent = '（无选项题，按 Enter 作答）'; $('quizAgain').style.display='none'; return; }
+    opts.forEach(opt => {
+      const b = document.createElement('button');
+      b.className = 'btn'; b.style.textAlign = 'left'; b.style.width = '100%'; b.style.marginTop = '0';
+      b.textContent = opt;
+      b.addEventListener('click', () => answerQuiz(q, opt));
+      box.appendChild(b);
+    });
+    $('quizFeed').textContent = '';
+    $('quizAgain').style.display = 'none';
+  }
+  function answerQuiz(q, opt) {
+    if (_quizAnswered) return;         // 本局只答一次
+    _quizAnswered = true;
+    const res = boot.battle.doAnswer(opt);
+    if (!res) { setMsg('答题接口异常'); return; }
+    const feed = $('quizFeed');
+    const ok = res.correct;
+    feed.innerHTML = (ok ? '✅ <b style="color:#3ddc84">大吉 · 圆融</b> 答对了！本知识点通关。' : '❌ <b style="color:#ff6b6b">凶 · 顿悟</b> 答错了，标记回炉再悟。') +
+      '\n<i style="color:#9fb0c9">' + (q.explain || '') + '</i>';
+    // 成长已由 doAnswer -> knowledge.recordAnswer 落库
+    if (ok) { setMsg('🎉 通关！熟练度+。点击「再战一局」可继续。'); combat.quizDone = true; }
+    else { setMsg('答错，回炉再练这只怪重悟。'); combat.quizDone = false; }
+    $('quizAgain').style.display = 'inline-block';
+    log((ok ? '✅' : '❌') + ' 结算答题：' + (ok ? '正确·通关' : '错误·回炉') + ' → 熟练度' + (ok ? '+' : '-'));
+  }
+  // 关闭答题面板（胜利/战败或再战）
+  function hideQuiz() { $('quizOverlay').style.display = 'none'; }
+  function doRestart() {
+    hideQuiz();
+    combat.active = false; combat.waiting = false; combat.quizDone = false; _quizAnswered = false;
+    combat.waitT = 2; combat.waiting = true;
+    setMsg('再战一局：2 秒后放怪进场。');
+    log('再战一局。');
+  }
+  // 挂"再战一局"
+  document.getElementById('quizAgain').addEventListener('click', doRestart);
+
   // 每帧渲染回调：读输入→画房间→刷 HUD（battle.update 由 tickDriver 驱动）
   function tick(fctx) {
     if (combat.waiting) {
@@ -217,9 +284,11 @@
     if (combat.active) {
       const st = boot.battle.getState();
       if (st.phase==='stance') setMsg('露破绽！按 K/Enter 出手(破绽致命一击)');
-      else if (st.phase==='question') setMsg('已斩杀/破绽 → 结算检验（答题）');
-      else if (st.phase==='victory') setMsg('🎉 胜利！');
-      else if (st.phase==='defeat') setMsg('💀 战败');
+      else if (st.phase==='question') {
+        if (!combat.quizShown) { combat.quizShown = true; showQuiz(st); }
+      }
+      else if (st.phase==='victory') { setMsg('🎉 胜利！'); hideQuiz(); }
+      else if (st.phase==='defeat') { setMsg('💀 战败'); hideQuiz(); }
       refreshHud();
       drawRoom(st.fight.room || {width:16,height:10}, combat.fp, st.fight.monster);
     } else {

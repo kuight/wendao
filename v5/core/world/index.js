@@ -12,6 +12,8 @@
  * 与总线：发出 'player:move' / 'scene:enter' 事件
  * ============================================================ */
 import { genMap as genIsoMap, TILE, TILE_META, mulberry32 } from './iso-map.js';
+import { generateFloor, roomEncounter, ROOM_TYPES } from './dungeon.js';
+import { rollLoot, applyLoot } from './loot.js';
 
 export function installWorld(boot) {
   'use strict';
@@ -23,6 +25,8 @@ export function installWorld(boot) {
 
   // 连续移动节流计时器（秒）：在文件底部 update 旁声明，避免与下方重复 let 声明
   let moveTimer = 0;
+  let _currentFloor = null;   // S1b: 地牢楼层 { depth, rooms, currentIdx }
+  let _floorRoomIdx = 0;
 
   // ---------- 初始化世界（首次进入时由 genMap 触发） ----------
   function _ensureWorldState() {
@@ -298,12 +302,46 @@ export function installWorld(boot) {
     moveTimer = 0.13;
   }
 
-  // 暴露地图/NPC/事件（render 通过 boot.world.map 等读取；map 是模块闭包私有，故用 getter 暴露）
+  // S1b: enter a dungeon floor (generates rooms, sets start room as active)
+  function enterFloor(opts) {
+    _currentFloor = generateFloor(opts);   // imported from dungeon.js
+    _floorRoomIdx = 0;
+    const st = boot.state.get();
+    if (st && st.player && st.player.position) {
+      st.player.position.zone = 'dungeon_' + (_currentFloor.depth || 1);
+    }
+    return _currentFloor;
+  }
+  function getCurrentRoom() {
+    if (!_currentFloor) return null;
+    return _currentFloor.rooms[_floorRoomIdx] || null;
+  }
+  function advanceRoom() {
+    if (!_currentFloor) return null;
+    const cur = getCurrentRoom();
+    if (cur) cur.cleared = true;
+    _floorRoomIdx++;
+    return getCurrentRoom();
+  }
+  function applyRoomLoot(roomId, combo) {
+    const room = roomId
+      ? _currentFloor && _currentFloor.rooms.find(r => r.id === roomId)
+      : (_currentFloor && _currentFloor.rooms[_floorRoomIdx - 1]) || null;
+    if (!room) return null;
+    const loot = rollLoot(room.type, _currentFloor.depth, combo || 0);
+    applyLoot(boot, loot);
+    room.loot = { collected: true, ...loot };
+    return loot;
+  }
+
   boot.world = {
     genMap, moveTo, getTile, enterScene, unlockZone, update, spawnBattleRoom,
+    // S1b dungeon
+    enterFloor, getCurrentRoom, advanceRoom, applyRoomLoot, ROOM_TYPES,
     get map() { return map; },
     get npcs() { return npcs; },
     get events() { return events; },
+    get currentFloor() { return _currentFloor; },
   };
   boot.register('world', boot.world);
   return boot.world;

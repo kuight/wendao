@@ -96,7 +96,7 @@ export function installKnowledge(boot) {
       // 放宽年级 -> 章节 -> 学科 -> 难度
       candidate = pool.filter(q => (!opts.subject || q.subjectCode === opts.subject) && (!opts.chapter || q.chapter === opts.chapter || q.chapterId === opts.chapter));
       if (!candidate.length && opts.chapter) candidate = pool.filter(q => !opts.subject || q.subjectCode === opts.subject);
-      if (!candidate.length && opts.subject) candidate = pool;
+      if (!candidate.length && opts.subject) candidate = pool.filter(q => q.subjectCode === opts.subject); // keep subject
       if (!candidate.length) candidate = poolByDifficulty[diff] || poolByDifficulty.easy;
     }
     pool = candidate;
@@ -155,7 +155,7 @@ export function installKnowledge(boot) {
     if (!chapter) return null;
 
     const key = chapter.subjectCode + '.' + chId;
-    if (state.mastered[key]) return null; // 已通关
+    if (state.mastered[key]) return chId; // already cleared, idempotent
 
     // 通关条件：章节内所有知识点熟练度达到 mastery
     const all = chapter.knowledge.every(k => (state.proficiency[k.id] || 0) >= THRESHOLDS.mastery);
@@ -285,8 +285,10 @@ export function installKnowledge(boot) {
           streak: state.streak,
           weak: state.weak
         };
+        // growth persistence: sync proficiency to localStorage via save module
+        if (boot.save && typeof boot.save.save === 'function') boot.save.save(s);
       }
-    } catch (e) { /* 存档失败不影响游戏 */ }
+    } catch (e) { /* archive failure does not stop the game */ }
   }
 
   function restoreFromState() {
