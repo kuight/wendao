@@ -1,0 +1,1078 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>推衍宫 · 数理天衍阵 | 问道修仙学院 v5</title>
+<style>
+  :root {
+    --bg-deep: #0b0a1b;
+    --bg-1: #14122a;
+    --bg-2: #1c1740;
+    --gold: #f5c97a;
+    --gold2: #ffe6a3;
+    --cyan: #6ed5e0;
+    --purple: #b288ff;
+    --pink: #ff9ec6;
+    --red: #e25b5b;
+    --green: #8ce28c;
+    --blue: #7fb3ff;
+    --text: #f2eddf;
+    --text-soft: #c6bfd8;
+    --text-dim: #877ea0;
+    --glass-bg: rgba(255,255,255,0.045);
+    --glass-border: rgba(255,255,255,0.14);
+    --card-bg: linear-gradient(160deg, #2b2354 0%, #1c1740 55%, #171233 100%);
+    --card-shadow: 0 1px 0 rgba(255,255,255,0.10) inset, 0 8px 22px rgba(0,0,0,0.42), 0 24px 48px rgba(0,0,0,0.34);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    height: 100%;
+    background: radial-gradient(1200px 800px at 50% -5%, #1a2040 0%, var(--bg-deep) 60%);
+    color: var(--text);
+    font-family: "PingFang SC","Microsoft YaHei","STKaiti","KaiTi",serif;
+    overflow: hidden;
+    user-select: none;
+  }
+  body {
+    display: flex; flex-direction: column; align-items: center;
+    padding: 10px 16px;
+  }
+
+  /* ===== 顶部标题栏 ===== */
+  .venue-header {
+    display: flex; align-items: center; gap: 12px;
+    width: 100%; max-width: 1100px;
+    padding: 10px 18px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    margin-bottom: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .venue-header .icon { font-size: 28px; filter: drop-shadow(0 0 8px rgba(245,201,122,0.5)); }
+  .venue-header h1 {
+    font-size: 22px; letter-spacing: 3px;
+    background: linear-gradient(135deg, var(--gold), var(--gold2), var(--cyan));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: none;
+    font-weight: 700;
+  }
+  .venue-header .subtitle {
+    font-size: 13px; color: var(--text-soft); margin-left: auto;
+    letter-spacing: 1px;
+  }
+
+  /* ===== 主布局 ===== */
+  .main-layout {
+    display: flex; gap: 12px;
+    width: 100%; max-width: 1100px; flex: 1;
+    min-height: 0;
+  }
+
+  /* ===== Canvas 区 ===== */
+  .canvas-wrapper {
+    flex: 1;
+    position: relative;
+    background: var(--card-bg);
+    border: 1px solid rgba(245,201,122,0.25);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    min-width: 0;
+  }
+  canvas {
+    display: block; width: 100%; height: 100%;
+    cursor: crosshair;
+  }
+
+  /* ===== 右侧面板 ===== */
+  .side-panel {
+    width: 260px; flex-shrink: 0;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .panel-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(14px);
+    border: 1px solid var(--glass-border);
+    border-radius: 14px;
+    padding: 12px 14px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  }
+  .panel-card h3 {
+    font-size: 14px; color: var(--gold); letter-spacing: 2px;
+    margin-bottom: 8px; display: flex; align-items: center; gap: 6px;
+  }
+  .stat-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 4px 0; font-size: 13px;
+    border-bottom: 1px dashed rgba(255,255,255,0.08);
+  }
+  .stat-row .label { color: var(--text-soft); }
+  .stat-row .value { color: var(--gold); font-weight: 600; font-variant-numeric: tabular-nums; }
+  .stat-row .value.warn { color: var(--red); }
+
+  .btn {
+    display: block; width: 100%; padding: 10px; margin-top: 8px;
+    border: 1px solid rgba(245,201,122,0.35);
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgba(245,201,122,0.12), rgba(245,201,122,0.04));
+    color: var(--gold);
+    font-size: 14px; font-family: inherit; letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.25s var(--v5-ease-out, cubic-bezier(0.2, 0.9, 0.3, 1.1));
+    text-align: center;
+  }
+  .btn:hover {
+    background: linear-gradient(135deg, rgba(245,201,122,0.22), rgba(245,201,122,0.10));
+    border-color: rgba(245,201,122,0.6);
+    box-shadow: 0 0 20px rgba(245,201,122,0.2);
+    transform: translateY(-1px);
+  }
+  .btn:active { transform: scale(0.97); }
+  .btn.primary {
+    background: linear-gradient(135deg, rgba(178,136,255,0.25), rgba(110,213,224,0.15));
+    border-color: rgba(178,136,255,0.5);
+    color: var(--purple);
+  }
+  .btn.primary:hover {
+    background: linear-gradient(135deg, rgba(178,136,255,0.40), rgba(110,213,224,0.25));
+    border-color: rgba(178,136,255,0.7);
+    box-shadow: 0 0 24px rgba(178,136,255,0.3);
+  }
+  .btn.back {
+    margin-top: auto;
+    border-color: rgba(255,255,255,0.2);
+    color: var(--text-soft);
+    background: rgba(255,255,255,0.05);
+  }
+  .btn.back:hover { border-color: rgba(255,255,255,0.4); color: var(--text); }
+
+  .msg-log {
+    flex: 1; min-height: 0; overflow-y: auto;
+    font-size: 12px; color: var(--text-soft); line-height: 1.7;
+    max-height: 140px;
+  }
+  .msg-log .msg { padding: 2px 0; border-bottom: 1px dotted rgba(255,255,255,0.05); animation: fadeIn 0.3s ease; }
+  .msg-log .msg.break { color: var(--green); }
+  .msg-log .msg.fail { color: var(--red); }
+  .msg-log .msg.info { color: var(--cyan); }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
+
+  .tower-select {
+    display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px;
+  }
+  .tower-btn {
+    flex: 1; min-width: 60px; padding: 8px 6px; text-align: center;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 10px;
+    background: rgba(255,255,255,0.04);
+    color: var(--text-soft);
+    font-size: 12px; font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex; flex-direction: column; align-items: center; gap: 2px;
+  }
+  .tower-btn:hover { border-color: var(--gold); background: rgba(245,201,122,0.08); }
+  .tower-btn.active { border-color: var(--gold); background: rgba(245,201,122,0.15); color: var(--gold); box-shadow: 0 0 12px rgba(245,201,122,0.2); }
+  .tower-btn .icon { font-size: 18px; }
+  .tower-btn .cost { font-size: 10px; color: var(--text-dim); }
+
+  /* 手机适配 */
+  @media (max-width: 780px) {
+    .main-layout { flex-direction: column; }
+    .side-panel { width: 100%; flex-direction: row; flex-wrap: wrap; }
+    .side-panel .panel-card { flex: 1; min-width: 140px; }
+    .canvas-wrapper { height: 380px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- 标题栏 -->
+<div class="venue-header">
+  <span class="icon">🔮</span>
+  <h1>推 衍 宫</h1>
+  <span class="subtitle">数理天衍阵 · 以算为刃</span>
+</div>
+
+<!-- 主布局 -->
+<div class="main-layout">
+  <!-- Canvas -->
+  <div class="canvas-wrapper" id="canvasWrapper">
+    <canvas id="cv"></canvas>
+  </div>
+
+  <!-- 侧面板 -->
+  <div class="side-panel">
+    <!-- 状态卡片 -->
+    <div class="panel-card">
+      <h3>📊 阵盘状态</h3>
+      <div class="stat-row"><span class="label">波次</span><span class="value" id="waveInfo">1 / 3</span></div>
+      <div class="stat-row"><span class="label">灵玉</span><span class="value" id="jadeInfo">200</span></div>
+      <div class="stat-row"><span class="label">护阵结界</span><span class="value" id="livesInfo">10</span></div>
+      <div class="stat-row"><span class="label">破解数</span><span class="value" id="scoreInfo">0</span></div>
+    </div>
+
+    <!-- 炮塔选择 -->
+    <div class="panel-card">
+      <h3>🏯 术法炮塔</h3>
+      <div class="tower-select" id="towerSelect">
+        <button class="tower-btn active" data-type="linear">
+          <span class="icon">📏</span>直线术法<span class="cost">50 灵玉</span>
+        </button>
+        <button class="tower-btn" data-type="parabola">
+          <span class="icon">🌙</span>抛物线术<span class="cost">80 灵玉</span>
+        </button>
+      </div>
+      <p style="font-size:11px;color:var(--text-dim);margin-top:6px;">点击阵盘空地布阵，术法轨迹与妖物路径相交方可命中</p>
+    </div>
+
+    <!-- 消息日志 -->
+    <div class="panel-card">
+      <h3>📜 阵中日志</h3>
+      <div class="msg-log" id="msgLog">
+        <div class="msg info">阵盘已启，等待布阵…</div>
+      </div>
+    </div>
+
+    <!-- 按钮区 -->
+    <button class="btn primary" id="btnStart">▶ 启动下一波</button>
+    <button class="btn" id="btnReset">🔄 重开阵盘</button>
+    <button class="btn back" onclick="location.href='../index.html'">🏛 返回学院</button>
+  </div>
+</div>
+
+<script>
+// ============================================================================
+// 推衍宫 · 数理天衍阵 — 数学塔防 MVP
+// 核心玩法：妖物沿直线 y=kx+b 行走，玩家放置炮塔（直线/抛物线），
+//           炮塔轨迹与妖物路径相交则命中，否则炮塔失效。
+// ============================================================================
+
+const canvas = document.getElementById('cv');
+const ctx = canvas.getContext('2d');
+const wrapper = document.getElementById('canvasWrapper');
+
+// ------ 网格参数 ------
+const COLS = 12;
+const ROWS = 8;
+const DEPLOY_ZONE_COLS = 4;      // 左4列为布阵区
+const PATH_ZONE_COLS = COLS - DEPLOY_ZONE_COLS; // 右8列为妖物路径区
+
+let cellW, cellH, gridOx, gridOy; // 根据canvas尺寸动态计算
+
+// ------ 游戏状态 ------
+const STATE = {
+  wave: 0,           // 当前波次 1-3
+  maxWave: 3,
+  jade: 200,         // 灵玉
+  lives: 10,         // 结界生命
+  score: 0,          // 破解数
+  active: false,     // 当前波是否在进行
+  selectedTower: 'linear', // 'linear' | 'parabola'
+  towers: [],        // [{col, row, type}]
+  monsters: [],      // [{k, b, x, y, speed, alive, label, color}]
+  particles: [],     // 特效粒子 [{x, y, vx, vy, life, color}]
+  cameraShake: 0,    // 震动帧数
+};
+
+// ------ 辅助函数 ------
+function lerp(a, b, t) { return a + (b - a) * t; }
+function dist(ax, ay, bx, by) { return Math.hypot(bx - ax, by - ay); }
+
+/** 两条线段 (p1-p2) 与 (p3-p4) 是否相交 */
+function segmentsIntersect(x1, y1, x2, y2, x3, y3, x4, y4) {
+  const d = (x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4);
+  if (Math.abs(d) < 1e-10) return false;
+  const t = ((x1 - x3) * (y3 - y4) - (y1 - y3) * (x3 - x4)) / d;
+  const u = -((x1 - x2) * (y1 - y3) - (y1 - y2) * (x1 - x3)) / d;
+  return t >= 0 && t <= 1 && u >= 0 && u <= 1;
+}
+
+/** 直线 y=kx+b 与线段 (x1,y1)-(x2,y2) 是否相交 */
+function lineSegmentIntersect(k, b, x1, y1, x2, y2) {
+  const yA = k * x1 + b;
+  const yB = k * x2 + b;
+  return (yA - y1) * (yB - y2) <= 0;
+}
+
+// ------ 坐标转换 ------
+function gridToPixel(col, row) {
+  return {
+    x: gridOx + col * cellW + cellW / 2,
+    y: gridOy + row * cellH + cellH / 2
+  };
+}
+
+function pixelToGrid(px, py) {
+  const col = Math.floor((px - gridOx) / cellW);
+  const row = Math.floor((py - gridOy) / cellH);
+  return { col, row };
+}
+
+// ------ 调整 Canvas 尺寸 ------
+function resize() {
+  const rect = wrapper.getBoundingClientRect();
+  const dpr = window.devicePixelRatio || 1;
+  canvas.width = rect.width * dpr;
+  canvas.height = rect.height * dpr;
+  canvas.style.width = rect.width + 'px';
+  canvas.style.height = rect.height + 'px';
+  ctx.setTransform(1, 0, 0, 1, 0, 0);
+  ctx.scale(dpr, dpr);
+
+  const w = rect.width;
+  const h = rect.height;
+  // 在可用空间内最大化网格，保持边距
+  const marginX = 20;
+  const marginY = 20;
+  const availW = w - marginX * 2;
+  const availH = h - marginY * 2;
+  cellW = Math.floor(availW / COLS);
+  cellH = Math.floor(availH / ROWS);
+  const gridW = cellW * COLS;
+  const gridH = cellH * ROWS;
+  gridOx = marginX + (availW - gridW) / 2;
+  gridOy = marginY + (availH - gridH) / 2;
+}
+window.addEventListener('resize', resize);
+
+// ------ 生成妖物 ------
+function spawnMonsters() {
+  STATE.monsters = [];
+  const count = 2 + STATE.wave; // 波1:3只, 波2:4只, 波3:5只
+
+  // 难度随波次递增: k范围更大, 速度更快
+  const kRange = 1.0 + STATE.wave * 0.6;  // 1.6, 2.2, 2.8
+  const baseSpeed = 28 + STATE.wave * 12;   // 40, 52, 64 px/s
+
+  const colors = ['#ff6b6b', '#ff9ec6', '#f5c97a', '#ffa500', '#ff6b9d', '#ff4757'];
+  const names = ['赤焰蟒', '玄冰蝎', '追风隼', '裂地熊', '噬灵蝶', '影牙狼', '毒涎蟾', '金翅雕'];
+
+  for (let i = 0; i < count; i++) {
+    // 随机 k, b 让直线经过路径区
+    const k = (Math.random() - 0.5) * 2 * kRange;
+    const b = (Math.random() - 0.5) * 4;  // b 在 -2 ~ 2 之间（Grid空间）
+
+    // 妖物从右侧路径区右边界出生，向左移动
+    // 路径区列范围: DEPLOY_ZONE_COLS ~ COLS-1
+    const startCol = COLS - 0.3;
+    const startRow = Math.random() * (ROWS - 1);
+    const startX = startCol;
+    const startY = k * startX + b;
+
+    // 确保初始y在网格内
+    const clampedStartY = Math.max(-0.5, Math.min(ROWS - 0.5, startY));
+    // 重新算b使y对齐
+    const adjustedB = clampedStartY - k * startCol;
+
+    const speed = baseSpeed * (0.8 + Math.random() * 0.5); // 速度有随机波动
+
+    STATE.monsters.push({
+      k: k,
+      b: adjustedB,
+      x: startCol,
+      y: clampedStartY,
+      speed: speed,
+      alive: true,
+      label: names[i % names.length],
+      color: colors[i % colors.length],
+      spawnDelay: i * 1.2, // 错开出怪
+      elapsed: 0,
+    });
+  }
+}
+
+// ------ 放置炮塔 ------
+function placeTower(col, row) {
+  // 检查是否在布阵区
+  if (col >= DEPLOY_ZONE_COLS) {
+    addMessage('只能在左侧布阵区放置炮塔', 'fail');
+    return false;
+  }
+  // 检查是否已有炮塔
+  if (STATE.towers.some(t => t.col === col && t.row === row)) {
+    addMessage('此处已布有术法', 'fail');
+    return false;
+  }
+  // 检查灵玉
+  const cost = STATE.selectedTower === 'linear' ? 50 : 80;
+  if (STATE.jade < cost) {
+    addMessage('灵玉不足，无法布阵', 'fail');
+    return false;
+  }
+
+  STATE.jade -= cost;
+  STATE.towers.push({ col, row, type: STATE.selectedTower });
+  updateUI();
+  addMessage(`在 [${col+1},${row+1}] 布下${STATE.selectedTower === 'linear' ? '直线术法' : '抛物线术'} (-${cost}💎)`, 'info');
+  return true;
+}
+
+// ------ 检查炮塔命中 ------
+function checkTowerHit(monster, tower) {
+  const tp = gridToPixel(tower.col, tower.row);
+  const tx = tp.x;
+  const ty = tp.y;
+
+  // 炮塔发射的"术法轨迹"：从炮塔位置指向妖物
+  // 直线术法：从炮塔出发的射线 y = towerK * x + towerB
+  // 抛物线术法：从炮塔出发的抛物线 y = a(x-h)² + k
+
+  if (tower.type === 'linear') {
+    // 直线术法: 经过炮塔和妖物当前位置的直线
+    const mp = gridToPixel(monster.x, monster.y);
+    const dx = mp.x - tx;
+    const dy = mp.y - ty;
+    if (Math.abs(dx) < 0.01) return { hit: false }; // 垂直线，简化处理
+
+    const towerK = dy / dx;
+    const towerB = ty - towerK * tx;
+
+    // 检查两条直线是否相交（在网格范围内）
+    // 怪物路径: y = monster.k * x + monster.b
+    // 术法轨迹: y = towerK * x + towerB
+    // 两直线交点:
+    const det = monster.k - towerK;
+    if (Math.abs(det) < 0.01) return { hit: false }; // 平行
+    const ix = (towerB - monster.b) / det;
+    const iy = monster.k * ix + monster.b;
+
+    // 交点必须在路径区范围内（炮塔可以攻击到）
+    if (ix < DEPLOY_ZONE_COLS || ix > COLS) return { hit: false };
+    if (iy < 0 || iy > ROWS) return { hit: false };
+
+    // 交点要同时在妖物前方（妖物还没经过）
+    if (ix > monster.x + 0.5) return { hit: false };
+
+    return { hit: true, x: ix, y: iy };
+  }
+
+  if (tower.type === 'parabola') {
+    // 抛物线术法: 顶点在炮塔位置，开口向右（朝路径区）
+    // y = a*(x - tower.col)² + tower.row
+    // 其中 a 自动调整使得抛物线经过妖物附近
+    const mp = gridToPixel(monster.x, monster.y);
+    const mgx = monster.x;
+    const mgy = monster.y;
+    const vx = tower.col;
+    const vy = tower.row;
+
+    // a = (mgy - vy) / (mgx - vx)²
+    const dx2 = (mgx - vx) * (mgx - vx);
+    if (dx2 < 0.01) return { hit: false };
+    const a = (mgy - vy) / dx2;
+
+    // 解方程组: 怪物直线 y = kx + b  vs  抛物线 y = a*(x-vx)² + vy
+    // a*(x-vx)² + vy = kx + b
+    // a*x² - 2a*vx*x + a*vx² + vy - kx - b = 0
+    // a*x² + (-2a*vx - k)*x + (a*vx² + vy - b) = 0
+    const A = a;
+    const B = -2 * a * vx - monster.k;
+    const C = a * vx * vx + vy - monster.b;
+    const disc = B * B - 4 * A * C;
+
+    if (disc < 0) return { hit: false };
+
+    const sqrtD = Math.sqrt(disc);
+    const x1 = (-B + sqrtD) / (2 * A);
+    const x2 = (-B - sqrtD) / (2 * A);
+
+    // 取在路径区内且距离怪物最近的交点
+    let bestX = null;
+    for (const x of [x1, x2]) {
+      if (x >= DEPLOY_ZONE_COLS && x <= COLS) {
+        const y = monster.k * x + monster.b;
+        if (y >= -0.5 && y <= ROWS + 0.5) {
+          if (x <= monster.x + 0.8) { // 妖物前方或当前位置
+            if (bestX === null || x > bestX) bestX = x;
+          }
+        }
+      }
+    }
+
+    if (bestX === null) return { hit: false };
+    return { hit: true, x: bestX, y: monster.k * bestX + monster.b };
+  }
+
+  return { hit: false };
+}
+
+// ------ 粒子特效 ------
+function spawnParticles(gx, gy, color, count = 20) {
+  const p = gridToPixel(gx, gy);
+  for (let i = 0; i < count; i++) {
+    const angle = Math.random() * Math.PI * 2;
+    const speed = 60 + Math.random() * 180;
+    STATE.particles.push({
+      x: p.x,
+      y: p.y,
+      vx: Math.cos(angle) * speed,
+      vy: Math.sin(angle) * speed,
+      life: 0.4 + Math.random() * 0.6,
+      color: color,
+    });
+  }
+}
+
+// ------ 消息日志 ------
+function addMessage(text, type = 'info') {
+  const log = document.getElementById('msgLog');
+  const div = document.createElement('div');
+  div.className = 'msg ' + type;
+  div.textContent = text;
+  log.prepend(div);
+  // 限制条数
+  while (log.children.length > 30) log.lastChild.remove();
+}
+
+// ------ 更新UI ------
+function updateUI() {
+  document.getElementById('waveInfo').textContent = STATE.wave + ' / ' + STATE.maxWave;
+  document.getElementById('jadeInfo').textContent = STATE.jade;
+  const livesEl = document.getElementById('livesInfo');
+  livesEl.textContent = STATE.lives;
+  livesEl.className = 'value' + (STATE.lives <= 3 ? ' warn' : '');
+  document.getElementById('scoreInfo').textContent = STATE.score;
+}
+
+// ------ 波次控制 ------
+function startWave() {
+  if (STATE.wave >= STATE.maxWave && STATE.monsters.length === 0) {
+    addMessage('所有妖物已伏诛！阵盘圆满！', 'break');
+    document.getElementById('btnStart').textContent = '🎉 全部通关';
+    return;
+  }
+  if (STATE.active) return;
+
+  STATE.wave++;
+  STATE.active = true;
+  spawnMonsters();
+  document.getElementById('btnStart').textContent = '⏳ 波次进行中...';
+  document.getElementById('btnStart').disabled = true;
+  updateUI();
+  addMessage(`第 ${STATE.wave} 波妖物来袭！共 ${STATE.monsters.length} 只`, 'info');
+}
+
+function resetGame() {
+  STATE.wave = 0;
+  STATE.jade = 200;
+  STATE.lives = 10;
+  STATE.score = 0;
+  STATE.active = false;
+  STATE.towers = [];
+  STATE.monsters = [];
+  STATE.particles = [];
+  STATE.cameraShake = 0;
+  document.getElementById('btnStart').textContent = '▶ 启动下一波';
+  document.getElementById('btnStart').disabled = false;
+  document.getElementById('msgLog').innerHTML = '<div class="msg info">阵盘重置，请重新布阵…</div>';
+  updateUI();
+}
+
+// ------ 主循环 ------
+let lastTime = 0;
+function gameLoop(timestamp) {
+  requestAnimationFrame(gameLoop);
+
+  if (!lastTime) lastTime = timestamp;
+  let dt = (timestamp - lastTime) / 1000;
+  if (dt > 0.1) dt = 0.1; // 防止大帧跳跃
+  lastTime = timestamp;
+
+  update(dt);
+  render();
+}
+
+function update(dt) {
+  // 更新粒子
+  for (let i = STATE.particles.length - 1; i >= 0; i--) {
+    const p = STATE.particles[i];
+    p.x += p.vx * dt;
+    p.y += p.vy * dt;
+    p.life -= dt;
+    if (p.life <= 0) STATE.particles.splice(i, 1);
+  }
+
+  // 震动衰减
+  if (STATE.cameraShake > 0) STATE.cameraShake = Math.max(0, STATE.cameraShake - dt * 8);
+
+  // 更新妖物
+  let allGone = true;
+  for (const m of STATE.monsters) {
+    if (!m.alive) continue;
+    allGone = false;
+
+    m.elapsed += dt;
+    if (m.elapsed < m.spawnDelay) continue;
+
+    // 沿直线向左移动
+    m.x -= m.speed * dt / (cellW * 3); // 速度归一化
+    m.y = m.k * m.x + m.b;
+
+    // 检测是否到达左边界（结界被突破）
+    if (m.x <= DEPLOY_ZONE_COLS - 0.3) {
+      m.alive = false;
+      STATE.lives--;
+      STATE.cameraShake = 0.3;
+      addMessage(`「${m.label}」突破结界！护阵-1 (剩余${STATE.lives})`, 'fail');
+      updateUI();
+      if (STATE.lives <= 0) {
+        addMessage('结界破碎！阵盘失守…请重开阵盘', 'fail');
+        STATE.active = false;
+        document.getElementById('btnStart').textContent = '▶ 启动下一波';
+        document.getElementById('btnStart').disabled = false;
+      }
+      continue;
+    }
+
+    // 检测炮塔命中
+    for (const tower of STATE.towers) {
+      const result = checkTowerHit(m, tower);
+      if (result.hit) {
+        m.alive = false;
+        STATE.score++;
+        STATE.jade += 25 + STATE.wave * 10;
+        spawnParticles(result.x, result.y, m.color, 35);
+        STATE.cameraShake = 0.15;
+        const eq = `y = ${m.k.toFixed(1)}x ${m.b >= 0 ? '+' : ''}${m.b.toFixed(1)}`;
+        addMessage(`「${m.label}」函数 ${eq} 已破解！+${25 + STATE.wave * 10}💎`, 'break');
+        updateUI();
+        break; // 一个妖物只能被一个炮塔击杀
+      }
+    }
+  }
+
+  // 波次结束检测
+  if (STATE.active && allGone && STATE.monsters.length > 0 &&
+      STATE.monsters.every(m => m.elapsed >= m.spawnDelay || !m.alive)) {
+    // 所有妖物已处理完
+    const allDead = STATE.monsters.every(m => !m.alive);
+    if (allDead) {
+      STATE.active = false;
+      document.getElementById('btnStart').textContent = STATE.wave >= STATE.maxWave ? '🎉 通关！' : '▶ 启动下一波';
+      document.getElementById('btnStart').disabled = STATE.wave >= STATE.maxWave;
+      if (STATE.wave >= STATE.maxWave) {
+        addMessage('三波妖物尽数伏诛！推衍宫试炼圆满！', 'break');
+      } else {
+        addMessage(`第 ${STATE.wave} 波已平息，请布阵准备下一波`, 'info');
+      }
+    }
+  }
+}
+
+// ------ 渲染 ------
+function render() {
+  const W = canvas.width / (window.devicePixelRatio || 1);
+  const H = canvas.height / (window.devicePixelRatio || 1);
+
+  // 震动偏移
+  let shakeX = 0, shakeY = 0;
+  if (STATE.cameraShake > 0) {
+    shakeX = (Math.random() - 0.5) * STATE.cameraShake * 16;
+    shakeY = (Math.random() - 0.5) * STATE.cameraShake * 16;
+  }
+
+  ctx.save();
+  ctx.translate(shakeX, shakeY);
+
+  // 背景
+  ctx.fillStyle = '#0d0b1e';
+  ctx.fillRect(0, 0, W, H);
+
+  // 星空粒子背景
+  drawStarryBg(W, H);
+
+  // 绘制网格
+  drawGrid();
+
+  // 绘制炮塔
+  drawTowers();
+
+  // 绘制妖物
+  drawMonsters();
+
+  // 绘制粒子
+  drawParticles();
+
+  ctx.restore();
+
+  // 绘制HUD覆盖层(不受震动影响)
+  drawHUD();
+}
+
+function drawStarryBg(W, H) {
+  // 静态星空点
+  if (!drawStarryBg._stars) {
+    drawStarryBg._stars = [];
+    for (let i = 0; i < 60; i++) {
+      drawStarryBg._stars.push({
+        x: Math.random() * W,
+        y: Math.random() * H,
+        r: 0.3 + Math.random() * 1.2,
+        twinkle: Math.random() * Math.PI * 2,
+      });
+    }
+  }
+  for (const s of drawStarryBg._stars) {
+    const alpha = 0.25 + 0.25 * Math.sin(s.twinkle + performance.now() * 0.001);
+    ctx.fillStyle = `rgba(178,136,255,${alpha})`;
+    ctx.beginPath();
+    ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+    ctx.fill();
+  }
+}
+
+function drawGrid() {
+  const gw = cellW * COLS;
+  const gh = cellH * ROWS;
+
+  // 布阵区背景
+  ctx.fillStyle = 'rgba(30,60,120,0.15)';
+  ctx.fillRect(gridOx, gridOy, cellW * DEPLOY_ZONE_COLS, gh);
+  ctx.strokeStyle = 'rgba(110,213,224,0.15)';
+  ctx.lineWidth = 1;
+  ctx.strokeRect(gridOx, gridOy, cellW * DEPLOY_ZONE_COLS, gh);
+
+  // 路径区背景
+  ctx.fillStyle = 'rgba(60,20,20,0.12)';
+  ctx.fillRect(gridOx + cellW * DEPLOY_ZONE_COLS, gridOy, cellW * PATH_ZONE_COLS, gh);
+  ctx.strokeStyle = 'rgba(226,91,91,0.12)';
+  ctx.strokeRect(gridOx + cellW * DEPLOY_ZONE_COLS, gridOy, cellW * PATH_ZONE_COLS, gh);
+
+  // 分隔线
+  ctx.strokeStyle = 'rgba(245,201,122,0.35)';
+  ctx.lineWidth = 2;
+  ctx.setLineDash([6, 4]);
+  ctx.beginPath();
+  ctx.moveTo(gridOx + cellW * DEPLOY_ZONE_COLS, gridOy);
+  ctx.lineTo(gridOx + cellW * DEPLOY_ZONE_COLS, gridOy + gh);
+  ctx.stroke();
+  ctx.setLineDash([]);
+
+  // 网格线
+  ctx.strokeStyle = 'rgba(255,255,255,0.05)';
+  ctx.lineWidth = 0.5;
+  for (let c = 0; c <= COLS; c++) {
+    const x = gridOx + c * cellW;
+    ctx.beginPath();
+    ctx.moveTo(x, gridOy);
+    ctx.lineTo(x, gridOy + gh);
+    ctx.stroke();
+  }
+  for (let r = 0; r <= ROWS; r++) {
+    const y = gridOy + r * cellH;
+    ctx.beginPath();
+    ctx.moveTo(gridOx, y);
+    ctx.lineTo(gridOx + gw, y);
+    ctx.stroke();
+  }
+
+  // 标签
+  ctx.fillStyle = 'rgba(255,255,255,0.25)';
+  ctx.font = '11px "PingFang SC","Microsoft YaHei",sans-serif';
+  ctx.textAlign = 'center';
+  ctx.fillText('布 阵 区', gridOx + cellW * DEPLOY_ZONE_COLS / 2, gridOy - 8);
+  ctx.fillText('妖 物 路 径', gridOx + cellW * (DEPLOY_ZONE_COLS + PATH_ZONE_COLS / 2), gridOy - 8);
+  ctx.textAlign = 'start';
+}
+
+function drawTowers() {
+  for (const t of STATE.towers) {
+    const p = gridToPixel(t.col, t.row);
+    const cx = p.x;
+    const cy = p.y;
+
+    // 基座光环
+    const pulse = 1 + 0.08 * Math.sin(performance.now() * 0.003 + t.col + t.row);
+    const glowGrad = ctx.createRadialGradient(cx, cy, cellW * 0.15, cx, cy, cellW * 0.55 * pulse);
+    if (t.type === 'linear') {
+      glowGrad.addColorStop(0, 'rgba(110,213,224,0.3)');
+      glowGrad.addColorStop(0.5, 'rgba(110,213,224,0.08)');
+      glowGrad.addColorStop(1, 'rgba(110,213,224,0)');
+    } else {
+      glowGrad.addColorStop(0, 'rgba(178,136,255,0.3)');
+      glowGrad.addColorStop(0.5, 'rgba(178,136,255,0.08)');
+      glowGrad.addColorStop(1, 'rgba(178,136,255,0)');
+    }
+    ctx.fillStyle = glowGrad;
+    ctx.beginPath();
+    ctx.arc(cx, cy, cellW * 0.55 * pulse, 0, Math.PI * 2);
+    ctx.fill();
+
+    // 炮塔主体
+    const size = Math.min(cellW, cellH) * 0.4;
+    ctx.fillStyle = t.type === 'linear' ? '#3a8f99' : '#6b4db8';
+    ctx.strokeStyle = t.type === 'linear' ? '#6ed5e0' : '#b288ff';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    if (t.type === 'linear') {
+      // 菱形
+      ctx.moveTo(cx, cy - size);
+      ctx.lineTo(cx + size, cy);
+      ctx.lineTo(cx, cy + size);
+      ctx.lineTo(cx - size, cy);
+      ctx.closePath();
+    } else {
+      // 圆形
+      ctx.arc(cx, cy, size, 0, Math.PI * 2);
+    }
+    ctx.fill();
+    ctx.stroke();
+
+    // 图标
+    ctx.fillStyle = '#fff';
+    ctx.font = `${size * 1.2}px serif`;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(t.type === 'linear' ? '📏' : '🌙', cx, cy);
+    ctx.textAlign = 'start';
+    ctx.textBaseline = 'alphabetic';
+
+    // 绘制术法轨迹预览（攻击范围线）
+    ctx.strokeStyle = t.type === 'linear'
+      ? 'rgba(110,213,224,0.25)'
+      : 'rgba(178,136,255,0.25)';
+    ctx.lineWidth = 1;
+    ctx.setLineDash([4, 6]);
+
+    if (t.type === 'linear') {
+      // 画一条向右的射线示意
+      ctx.beginPath();
+      ctx.moveTo(cx, cy);
+      ctx.lineTo(gridOx + COLS * cellW, cy - (cy - gridOy - ROWS * cellH / 2) * 0.5);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(cx, cy);
+      ctx.lineTo(gridOx + COLS * cellW, cy + (gridOy + ROWS * cellH / 2 - cy) * 0.5);
+      ctx.stroke();
+    } else {
+      // 画抛物线预览
+      ctx.beginPath();
+      const vx = t.col;
+      const vy = t.row;
+      const a = 0.3;
+      for (let gc = DEPLOY_ZONE_COLS; gc <= COLS; gc += 0.2) {
+        const gy = a * (gc - vx) * (gc - vx) + vy;
+        const pt = gridToPixel(gc, gy);
+        if (gc === DEPLOY_ZONE_COLS) ctx.moveTo(pt.x, pt.y);
+        else ctx.lineTo(pt.x, pt.y);
+      }
+      ctx.stroke();
+    }
+    ctx.setLineDash([]);
+  }
+}
+
+function drawMonsters() {
+  for (const m of STATE.monsters) {
+    if (!m.alive) continue;
+    if (m.elapsed < m.spawnDelay) continue;
+
+    const p = gridToPixel(m.x, m.y);
+
+    // 妖物行走路径预测线（虚线显示 y=kx+b）
+    ctx.strokeStyle = m.color.replace(')', ',0.2)').replace('rgb', 'rgba');
+    if (m.color.startsWith('#')) {
+      ctx.strokeStyle = m.color + '33';
+    }
+    ctx.lineWidth = 1;
+    ctx.setLineDash([3, 5]);
+    ctx.beginPath();
+    // 画一段路径
+    for (let gx = m.x; gx >= DEPLOY_ZONE_COLS; gx -= 0.3) {
+      const gy = m.k * gx + m.b;
+      const pt = gridToPixel(gx, gy);
+      if (gx === m.x) ctx.moveTo(pt.x, pt.y);
+      else ctx.lineTo(pt.x, pt.y);
+    }
+    ctx.stroke();
+    ctx.setLineDash([]);
+
+    // 函数标签
+    const kStr = m.k.toFixed(1);
+    const bStr = m.b >= 0 ? '+' + m.b.toFixed(1) : m.b.toFixed(1);
+    ctx.fillStyle = m.color;
+    ctx.font = 'bold 11px "STKaiti","KaiTi",serif';
+    ctx.textAlign = 'center';
+    ctx.fillText(`y=${kStr}x${bStr}`, p.x, p.y - cellH * 0.7);
+    ctx.textAlign = 'start';
+
+    // 妖物名称
+    ctx.fillStyle = '#fff';
+    ctx.font = '10px "PingFang SC","Microsoft YaHei",sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText(m.label, p.x, p.y - cellH * 0.35);
+    ctx.textAlign = 'start';
+
+    // 妖物本体 - 暗红光团
+    const bob = Math.sin(m.elapsed * 6 + m.x) * 2;
+    const bodyGrad = ctx.createRadialGradient(p.x, p.y + bob, cellW * 0.05, p.x, p.y + bob, cellW * 0.35);
+    bodyGrad.addColorStop(0, 'rgba(255,255,255,0.9)');
+    bodyGrad.addColorStop(0.3, m.color);
+    bodyGrad.addColorStop(0.7, m.color.replace(')', ',0.3)').replace('rgb', 'rgba'));
+    if (m.color.startsWith('#')) {
+      bodyGrad.addColorStop(0.7, m.color + '4D');
+    }
+    bodyGrad.addColorStop(1, 'rgba(0,0,0,0)');
+    ctx.fillStyle = bodyGrad;
+    ctx.beginPath();
+    ctx.arc(p.x, p.y + bob, cellW * 0.35, 0, Math.PI * 2);
+    ctx.fill();
+
+    // 内核
+    ctx.fillStyle = '#fff';
+    ctx.beginPath();
+    ctx.arc(p.x, p.y + bob, cellW * 0.08, 0, Math.PI * 2);
+    ctx.fill();
+  }
+}
+
+function drawParticles() {
+  for (const p of STATE.particles) {
+    const alpha = Math.max(0, p.life / 0.8);
+    ctx.fillStyle = p.color.replace(')', `,${alpha})`).replace('rgb', 'rgba');
+    if (p.color.startsWith('#')) {
+      ctx.fillStyle = p.color + Math.floor(alpha * 255).toString(16).padStart(2, '0');
+    }
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, 1.5 + p.life * 3, 0, Math.PI * 2);
+    ctx.fill();
+  }
+}
+
+function drawHUD() {
+  // 鼠标悬停时的高亮单元格
+  if (STATE._hoverCell && !STATE.active) {
+    const { col, row } = STATE._hoverCell;
+    if (col >= 0 && col < COLS && row >= 0 && row < ROWS) {
+      const p = gridToPixel(col, row);
+      ctx.fillStyle = col < DEPLOY_ZONE_COLS
+        ? 'rgba(110,213,224,0.15)'
+        : 'rgba(226,91,91,0.1)';
+      ctx.fillRect(
+        gridOx + col * cellW,
+        gridOy + row * cellH,
+        cellW, cellH
+      );
+      ctx.strokeStyle = col < DEPLOY_ZONE_COLS
+        ? 'rgba(110,213,224,0.5)'
+        : 'rgba(226,91,91,0.3)';
+      ctx.lineWidth = 1.5;
+      ctx.strokeRect(
+        gridOx + col * cellW,
+        gridOy + row * cellH,
+        cellW, cellH
+      );
+    }
+  }
+}
+
+// ------ 交互 ------
+canvas.addEventListener('click', (e) => {
+  if (STATE.active) {
+    addMessage('妖物行进中，无法布阵', 'fail');
+    return;
+  }
+
+  const rect = canvas.getBoundingClientRect();
+  const mx = e.clientX - rect.left;
+  const my = e.clientY - rect.top;
+  const { col, row } = pixelToGrid(mx, my);
+
+  if (col >= 0 && col < COLS && row >= 0 && row < ROWS) {
+    placeTower(col, row);
+  }
+});
+
+canvas.addEventListener('mousemove', (e) => {
+  const rect = canvas.getBoundingClientRect();
+  const mx = e.clientX - rect.left;
+  const my = e.clientY - rect.top;
+  const { col, row } = pixelToGrid(mx, my);
+  STATE._hoverCell = { col, row };
+});
+
+canvas.addEventListener('mouseleave', () => {
+  STATE._hoverCell = null;
+});
+
+// 右键取消选择/拆除炮塔
+canvas.addEventListener('contextmenu', (e) => {
+  e.preventDefault();
+  if (STATE.active) return;
+
+  const rect = canvas.getBoundingClientRect();
+  const mx = e.clientX - rect.left;
+  const my = e.clientY - rect.top;
+  const { col, row } = pixelToGrid(mx, my);
+
+  if (col >= 0 && col < COLS && row >= 0 && row < ROWS) {
+    const idx = STATE.towers.findIndex(t => t.col === col && t.row === row);
+    if (idx !== -1) {
+      const t = STATE.towers[idx];
+      const refund = Math.floor((t.type === 'linear' ? 50 : 80) * 0.5);
+      STATE.jade += refund;
+      STATE.towers.splice(idx, 1);
+      updateUI();
+      addMessage(`拆除 [${col+1},${row+1}] 炮塔，返还 ${refund}💎`, 'info');
+    }
+  }
+});
+
+// 炮塔类型选择
+document.getElementById('towerSelect').addEventListener('click', (e) => {
+  const btn = e.target.closest('.tower-btn');
+  if (!btn) return;
+  document.querySelectorAll('.tower-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  STATE.selectedTower = btn.dataset.type;
+});
+
+// 按钮
+document.getElementById('btnStart').addEventListener('click', startWave);
+document.getElementById('btnReset').addEventListener('click', resetGame);
+
+// 键盘快捷键
+document.addEventListener('keydown', (e) => {
+  switch (e.key.toLowerCase()) {
+    case '1':
+      STATE.selectedTower = 'linear';
+      document.querySelectorAll('.tower-btn').forEach(b => b.classList.remove('active'));
+      document.querySelector('[data-type="linear"]').classList.add('active');
+      addMessage('切换为直线术法', 'info');
+      break;
+    case '2':
+      STATE.selectedTower = 'parabola';
+      document.querySelectorAll('.tower-btn').forEach(b => b.classList.remove('active'));
+      document.querySelector('[data-type="parabola"]').classList.add('active');
+      addMessage('切换为抛物线术', 'info');
+      break;
+    case ' ':
+      e.preventDefault();
+      startWave();
+      break;
+    case 'r':
+      if (e.ctrlKey) { e.preventDefault(); resetGame(); }
+      break;
+  }
+});
+
+// ------ 启动 ------
+function init() {
+  resize();
+  // 初始化星空种子固定
+  drawStarryBg._stars = null;
+  updateUI();
+  addMessage('推衍宫数理天衍阵已就绪。布下术法炮塔，拦截妖物！', 'info');
+  addMessage('提示：点击左侧布阵区放置炮塔 | 右键拆除 | 空格键启动波次', 'info');
+  requestAnimationFrame(gameLoop);
+}
+
+init();
+</script>
+</body>
+</html>

@@ -1,0 +1,656 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+<title>问道修仙学院 · 山河阁（地理·探索建造）</title>
+<meta name="description" content="《问道修仙学院》v5 山河阁——踏遍神州，以地理解开迷雾，探天地之灵气。">
+<style>
+:root {
+  --bg-deep:    #0b0a1b;
+  --bg-1:       #14122a;
+  --bg-2:       #1c1740;
+  --bg-3:       #2b1f5a;
+  --gold:       #f5c97a;
+  --gold2:      #ffe6a3;
+  --cyan:       #6ed5e0;
+  --purple:     #b288ff;
+  --pink:       #ff9ec6;
+  --red:        #e25b5b;
+  --green:      #8ce28c;
+  --blue:       #7fb3ff;
+  --text:       #f2eddf;
+  --text-soft:  #c6bfd8;
+  --text-dim:   #877ea0;
+  --border:     rgba(245,201,122,0.28);
+  --border-soft:rgba(178,136,255,0.24);
+  --glass-bg:   rgba(255,255,255,0.045);
+  --glass-bg-s: rgba(255,255,255,0.085);
+  --glass-border:rgba(255,255,255,0.14);
+  --glass-blur: blur(16px) saturate(1.4);
+  --card-bg:    linear-gradient(160deg, #2b2354 0%, #1c1740 55%, #171233 100%);
+  --card-shadow:0 1px 0 rgba(255,255,255,0.10) inset, 0 8px 22px rgba(0,0,0,0.42), 0 24px 48px rgba(0,0,0,0.34);
+  --ease-out:   cubic-bezier(0.2, 0.9, 0.3, 1.1);
+  --ease-snap:  cubic-bezier(0.2, 0.9, 0.3, 1.05);
+  --radius-md:  16px;
+  --radius-lg:  22px;
+}
+* { box-sizing:border-box; margin:0; padding:0; }
+html, body { height:100%; background: radial-gradient(1200px 800px at 50% 20%, #1a2440 0%, var(--bg-deep) 60%) fixed; color:var(--text); font-family:"PingFang SC","Microsoft YaHei",system-ui,sans-serif; overflow:hidden; }
+body { display:flex; flex-direction:column; }
+
+/* ===== 顶部栏 ===== */
+.topbar {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:12px 20px; background:var(--glass-bg); backdrop-filter:var(--glass-blur);
+  border-bottom:1px solid var(--border); flex-shrink:0; z-index:10;
+}
+.topbar h1 { font-size:20px; letter-spacing:3px; color:var(--gold); text-shadow:0 0 18px rgba(245,201,122,.4); }
+.top-stats { display:flex; gap:20px; font-size:13px; color:var(--text-soft); align-items:center; }
+.top-stats b { color:var(--cyan); font-weight:600; }
+.top-stats .score { color:var(--gold); font-size:16px; font-weight:700; }
+
+/* ===== 主体 ===== */
+.main-wrap {
+  flex:1; display:grid; grid-template-columns:1fr 320px;
+  gap:14px; padding:14px; min-height:0; overflow:hidden;
+}
+@media (max-width:860px) { .main-wrap { grid-template-columns:1fr; } }
+
+/* ===== Canvas 区 ===== */
+.canvas-zone {
+  position:relative; border:1px solid var(--border); border-radius:var(--radius-lg);
+  overflow:hidden; background:linear-gradient(180deg, #101a2e 0%, #0c1222 100%);
+  box-shadow:0 18px 40px rgba(0,0,0,.45); cursor:crosshair;
+}
+canvas { position:absolute; inset:0; width:100%; height:100%; display:block; }
+
+/* HUD 叠层 */
+.fog-hint {
+  position:absolute; left:16px; top:16px; font-size:12px; color:var(--text-dim);
+  background:var(--glass-bg); backdrop-filter:blur(6px); border:1px solid var(--border-soft);
+  border-radius:10px; padding:8px 14px; pointer-events:none; letter-spacing:1px;
+}
+.legend {
+  position:absolute; right:16px; bottom:16px; display:flex; gap:10px; flex-wrap:wrap;
+  font-size:11px; color:var(--text-dim); pointer-events:none;
+}
+.legend span { display:flex; align-items:center; gap:6px; }
+.legend .dot { display:inline-block; width:10px; height:10px; border-radius:50%; }
+.legend .dot.locked { background:rgba(245,201,122,.25); border:1px solid rgba(245,201,122,.4); }
+.legend .dot.unlocked { background:var(--green); box-shadow:0 0 8px var(--green); }
+.legend .dot.vein { width:14px; height:2px; border-radius:1px; background:linear-gradient(90deg, var(--cyan), var(--purple)); }
+
+/* ===== 侧面板 ===== */
+.side-panel {
+  display:flex; flex-direction:column; gap:12px; min-height:0; overflow:auto;
+}
+.panel-card {
+  background:var(--glass-bg); backdrop-filter:var(--glass-blur);
+  border:1px solid var(--border); border-radius:var(--radius-md);
+  padding:16px; box-shadow:0 12px 28px rgba(0,0,0,.3);
+  transition: all .35s var(--ease-out);
+}
+.panel-card h2 { font-size:15px; color:var(--gold); margin-bottom:10px; letter-spacing:1px; }
+.panel-card h2 .dot { display:inline-block; width:8px; height:8px; border-radius:50%; background:var(--green);
+  box-shadow:0 0 8px var(--green); margin-right:8px; vertical-align:1px; }
+
+/* 进度条 */
+.progress-bar {
+  width:100%; height:10px; border-radius:5px; background:rgba(255,255,255,.08);
+  overflow:hidden; margin:6px 0 10px;
+}
+.progress-fill {
+  height:100%; border-radius:5px; background:linear-gradient(90deg, var(--cyan), var(--purple));
+  transition:width .5s var(--ease-out); width:0%;
+}
+
+/* 区域信息 */
+.region-info { min-height:80px; }
+.region-name { font-size:18px; font-weight:700; color:var(--cyan); margin-bottom:4px; }
+.region-desc { font-size:12px; color:var(--text-soft); margin-bottom:6px; }
+.region-landmark { font-size:11px; color:var(--purple); }
+
+/* ===== 题目区 ===== */
+.quiz-section { margin-top:10px; }
+.quiz-section h3 { font-size:13px; color:var(--pink); margin-bottom:8px; letter-spacing:1px; }
+.quiz-q { font-size:13px; color:var(--text); margin-bottom:12px; line-height:1.6; }
+.quiz-opts { display:flex; flex-direction:column; gap:7px; }
+.quiz-opt {
+  padding:10px 14px; border:1px solid var(--border-soft); border-radius:12px;
+  background:var(--glass-bg); color:var(--text-soft); cursor:pointer; font-size:13px;
+  transition: all .2s var(--ease-out); text-align:left;
+}
+.quiz-opt:hover { border-color:var(--gold); color:var(--gold); background:rgba(245,201,122,.06); }
+.quiz-opt.correct { border-color:var(--green); color:var(--green); background:rgba(140,226,140,.1); animation:pulse .5s var(--ease-out) 3; }
+.quiz-opt.wrong { border-color:var(--red); color:var(--red); background:rgba(226,91,91,.1); }
+.quiz-opt:disabled { pointer-events:none; opacity:.6; }
+.quiz-feedback { margin-top:10px; font-size:12px; min-height:20px; }
+.quiz-feedback.pass { color:var(--green); }
+.quiz-feedback.fail { color:var(--red); }
+
+/* ===== 区域列表 ===== */
+.region-list { display:flex; flex-direction:column; gap:6px; max-height:200px; overflow-y:auto; }
+.region-item {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:8px 12px; border-radius:10px; font-size:12px;
+  background:rgba(255,255,255,.03); border:1px solid var(--border-soft);
+  transition:all .3s var(--ease-out);
+}
+.region-item.unlocked { border-color:var(--green); background:rgba(140,226,140,.06); }
+.region-item .ri-name { color:var(--text); font-weight:500; }
+.region-item .ri-status { font-size:11px; }
+.region-item .ri-status.locked { color:var(--text-dim); }
+.region-item .ri-status.unlocked { color:var(--green); }
+
+/* ===== 底部按钮 ===== */
+.bottom-bar {
+  display:flex; gap:12px; padding:10px 20px; flex-shrink:0;
+  border-top:1px solid var(--border); background:var(--glass-bg); backdrop-filter:var(--glass-blur);
+  justify-content:center;
+}
+.btn {
+  padding:10px 28px; border-radius:var(--radius-md); font-size:14px; font-weight:600;
+  cursor:pointer; letter-spacing:2px; border:none; transition:all .25s var(--ease-out);
+}
+.btn-primary {
+  background:linear-gradient(135deg, var(--gold), #e5b04a); color:#1a1520;
+  box-shadow:0 4px 16px rgba(245,201,122,.3);
+}
+.btn-primary:hover { transform:translateY(-1px); box-shadow:0 6px 22px rgba(245,201,122,.45); }
+.btn-secondary {
+  background:var(--glass-bg-s); color:var(--text-soft);
+  border:1px solid var(--border); backdrop-filter:blur(8px);
+}
+.btn-secondary:hover { border-color:var(--gold); color:var(--gold); }
+
+@keyframes pulse {
+  0%,100% { transform:scale(1); }
+  50% { transform:scale(1.03); }
+}
+
+/* Toast */
+.toast {
+  position:fixed; top:20px; left:50%; transform:translateX(-50%); z-index:999;
+  padding:12px 28px; border-radius:var(--radius-md); font-size:14px; font-weight:600;
+  letter-spacing:1px; pointer-events:none;
+  background:var(--card-bg); border:1px solid var(--border);
+  box-shadow:var(--card-shadow); color:var(--gold);
+  animation:toastIn .4s var(--ease-snap), toastOut .4s 2s var(--ease-out) forwards;
+}
+@keyframes toastIn { from { opacity:0; transform:translateX(-50%) translateY(-20px); } to { opacity:1; transform:translateX(-50%) translateY(0); } }
+@keyframes toastOut { to { opacity:0; transform:translateX(-50%) translateY(-20px); } }
+
+/* Victory shine */
+.victory-overlay {
+  position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+  pointer-events:none; z-index:5; opacity:0; transition:opacity .8s var(--ease-out);
+}
+.victory-overlay.show { opacity:1; }
+.victory-text {
+  font-size:28px; font-weight:700; letter-spacing:4px; color:var(--gold);
+  text-shadow:0 0 30px rgba(245,201,122,.7), 0 0 60px rgba(245,201,122,.3);
+  animation:glowPulse 2s var(--ease-out) infinite;
+}
+@keyframes glowPulse {
+  0%,100% { text-shadow:0 0 30px rgba(245,201,122,.7), 0 0 60px rgba(245,201,122,.3); }
+  50% { text-shadow:0 0 50px rgba(245,201,122,.9), 0 0 90px rgba(178,136,255,.5); }
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <h1>⛰ 山河阁 · 天地探索</h1>
+  <div class="top-stats">
+    <span>已探 <b id="explored">0</b>/10</span>
+    <span class="score">道果 <b id="score">0</b></span>
+  </div>
+</div>
+
+<div class="main-wrap">
+  <!-- Canvas 区 -->
+  <div class="canvas-zone" id="canvasZone">
+    <canvas id="cv"></canvas>
+    <div class="fog-hint">🖱 点击迷雾区域揭示山河 · 右键重置当前区域</div>
+    <div class="legend">
+      <span><span class="dot locked"></span> 未探</span>
+      <span><span class="dot unlocked"></span> 已解锁</span>
+      <span><span class="dot vein"></span> 灵气脉络</span>
+    </div>
+    <div class="victory-overlay" id="victoryOverlay">
+      <div class="victory-text">山河图已开 · 天地通明</div>
+    </div>
+  </div>
+
+  <!-- 侧面板 -->
+  <div class="side-panel">
+    <!-- 进度卡 -->
+    <div class="panel-card">
+      <h2><span class="dot"></span>探索进度</h2>
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+      <div style="font-size:11px;color:var(--text-dim);" id="progressLabel">尚未开始探索</div>
+    </div>
+
+    <!-- 区域详情卡 -->
+    <div class="panel-card" id="regionCard">
+      <h2>📍 当前区域</h2>
+      <div class="region-info">
+        <div class="region-name" id="regionName">-</div>
+        <div class="region-desc" id="regionDesc">点击地图上的迷雾区域开始探索</div>
+        <div class="region-landmark" id="regionLandmark"></div>
+      </div>
+      <!-- 题库 -->
+      <div class="quiz-section" id="quizSection" style="display:none;">
+        <h3>📜 地理试炼</h3>
+        <div class="quiz-q" id="quizQ"></div>
+        <div class="quiz-opts" id="quizOpts"></div>
+        <div class="quiz-feedback" id="quizFeedback"></div>
+      </div>
+    </div>
+
+    <!-- 区域列表卡 -->
+    <div class="panel-card">
+      <h2>🗺 山河图鉴</h2>
+      <div class="region-list" id="regionList"></div>
+    </div>
+  </div>
+</div>
+
+<div class="bottom-bar">
+  <button class="btn btn-primary" id="btnReset">⟳ 重置山河图</button>
+  <button class="btn btn-secondary" id="btnBack">↩ 返回学院</button>
+</div>
+
+<script>
+// ======================================================================
+// 山河阁 · 探索建造 MVP — 地点与题库
+// ======================================================================
+const REGIONS = [
+  { id:"tibet",   name:"青藏高原", x:240, y:250, r:38,
+    desc:"世界屋脊，昆仑祖脉所在，灵气最为充沛。", landmark:"🏔 珠穆朗玛峰",
+    q:"青藏高原被誉为\"世界屋脊\"，其平均海拔约为多少？",
+    opts:["约3000米","约4000米","约4500米","约6000米"],
+    ans:2, explain:"青藏高原平均海拔约4500米，是世界最高的高原。" },
+  { id:"xinjiang", name:"塔里木盆地", x:180, y:180, r:36,
+    desc:"西域瀚海，大漠孤烟，暗藏火焰山与天山雪莲。", landmark:"🏜 塔克拉玛干沙漠",
+    q:"塔里木盆地属于什么气候类型？",
+    opts:["温带季风气候","温带大陆性气候","高原山地气候","亚热带季风气候"],
+    ans:1, explain:"塔里木盆地深居内陆，属温带大陆性气候，干旱少雨，昼夜温差大。" },
+  { id:"sichuan",  name:"四川盆地", x:210, y:310, r:32,
+    desc:"天府之国，雾气氤氲，相传神农尝百草之地。", landmark:"🐼 成都平原",
+    q:"四川盆地\"蜀犬吠日\"的成因主要是什么？",
+    opts:["地壳沉降","盆地地形导致多雾","靠近赤道","植被茂密"],
+    ans:1, explain:"四川盆地地势低洼、水汽不易扩散，多阴雨雾天，故有\"蜀犬吠日\"的典故。" },
+  { id:"dongbei",  name:"东北平原", x:320, y:140, r:34,
+    desc:"北冥雪原，黑土沃野千里，传为上古神龟所驮。", landmark:"🌾 北大仓",
+    q:"东北平原被称为\"北大仓\"，其土壤类型以什么为主？",
+    opts:["红壤","黄土","黑土","紫色土"],
+    ans:2, explain:"东北平原以肥沃的黑土闻名，是中国重要的商品粮基地。" },
+  { id:"huabei",   name:"华北平原", x:310, y:230, r:36,
+    desc:"中原腹地，帝气龙脉汇聚，千年农耕文明的根。", landmark:"🏛 黄河入海口",
+    q:"华北平原主要由哪条河流冲积而成？",
+    opts:["长江","黄河","珠江","淮河"],
+    ans:1, explain:"华北平原主要由黄河、海河等冲积而成，黄河泥沙是塑造平原的主力。" },
+  { id:"huanan",   name:"华南丘陵", x:320, y:370, r:30,
+    desc:"南疆湿热，万山翠叠，丹霞地貌仙气缭绕。", landmark:"🎋 丹霞山",
+    q:"丹霞地貌的典型特征是什么？",
+    opts:["冰川侵蚀","红色砂砾岩层","火山熔岩","珊瑚礁"],
+    ans:1, explain:"丹霞地貌以红色砂砾岩层的陡崖、方山为典型特征，由流水侵蚀和风化形成。" },
+  { id:"yungui",   name:"云贵高原", x:240, y:370, r:32,
+    desc:"彩云之南，溶洞暗河纵横，下有地底仙府。", landmark:"🕳 黄果树瀑布",
+    q:"云贵高原广泛分布的喀斯特地貌主要由什么作用形成？",
+    opts:["冰川作用","风蚀作用","流水溶蚀","海浪侵蚀"],
+    ans:2, explain:"喀斯特地貌是石灰岩被流水溶蚀形成的，包括溶洞、天坑、石林等。" },
+  { id:"jiangnan", name:"长江三角洲", x:340, y:300, r:28,
+    desc:"鱼米之乡，水网如织，文人墨客灵气长存。", landmark:"🏙 上海",
+    q:"长江三角洲属于什么气候类型？",
+    opts:["温带大陆性气候","亚热带季风气候","热带雨林气候","地中海气候"],
+    ans:1, explain:"长江三角洲属亚热带季风气候，夏季高温多雨、冬季温和少雨，四季分明。" },
+  { id:"neimeng",  name:"内蒙古高原", x:260, y:110, r:36,
+    desc:"大漠孤烟直，长河落日圆。风吹草低见灵兽。", landmark:"🐎 呼伦贝尔草原",
+    q:"内蒙古高原大部分地区属于什么自然带？",
+    opts:["热带雨林带","温带草原带","亚寒带针叶林带","冰原带"],
+    ans:1, explain:"内蒙古高原以温带草原为主，自东向西由草甸草原过渡到荒漠草原。" },
+  { id:"hainan",   name:"海南岛", x:310, y:440, r:28,
+    desc:"南海明珠，天涯海角，仙女散落的碧玉翡翠。", landmark:"🌴 天涯海角",
+    q:"海南岛的气候类型是什么？",
+    opts:["亚热带季风","热带季风","温带海洋性","热带沙漠"],
+    ans:1, explain:"海南岛属热带季风气候，全年高温，分旱季和雨季。" },
+];
+
+// ======================================================================
+// 游戏状态
+// ======================================================================
+const state = {
+  regions: REGIONS.map(r => ({
+    ...r,
+    unlocked: false,   // 已永久解锁
+    score: 0,          // 该区域得分（+1/-1）
+  })),
+  totalScore: 0,
+  selectedIdx: -1,     // 当前选中的区域索引
+  quizAnswered: false,
+};
+
+// Canvas 画布与尺寸
+const canvas = document.getElementById("cv");
+const ctx = canvas.getContext("2d");
+let W, H;
+
+function resize() {
+  const zone = document.getElementById("canvasZone");
+  W = zone.clientWidth; H = zone.clientHeight;
+  canvas.width = W * (window.devicePixelRatio || 1);
+  canvas.height = H * (window.devicePixelRatio || 1);
+  canvas.style.width = W + "px";
+  canvas.style.height = H + "px";
+  ctx.setTransform(1,0,0,1,0,0);
+  ctx.scale(window.devicePixelRatio||1, window.devicePixelRatio||1);
+}
+window.addEventListener("resize", () => { resize(); drawAll(); });
+resize();
+
+// ======================================================================
+// 绘画系统
+// ======================================================================
+const EX = 20; // 边距
+function toX(r) { return EX + r.x * (W - 2*EX) / 420; }
+function toY(r) { return EX + r.y * (H - 2*EX) / 500; }
+function toR(r) { return r.r * Math.min(W,H) / 500; }
+
+function drawAll() {
+  ctx.clearRect(0,0,W,H);
+
+  // 背景纹理：浅色网格线（灵气经纬）
+  ctx.strokeStyle = "rgba(135,126,160,.06)";
+  ctx.lineWidth = 0.5;
+  for (let x = 0; x < W; x += 40) { ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,H); ctx.stroke(); }
+  for (let y = 0; y < H; y += 40) { ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(W,y); ctx.stroke(); }
+
+  // 绘制所有区域
+  state.regions.forEach((r, i) => {
+    const cx = toX(r), cy = toY(r), cr = toR(r);
+    if (r.unlocked) {
+      // 已解锁：明亮色彩 + 地标图标
+      const grad = ctx.createRadialGradient(cx,cy,cr*0.2, cx,cy,cr);
+      grad.addColorStop(0, "rgba(140,226,140,.25)");
+      grad.addColorStop(0.6, "rgba(111,213,224,.10)");
+      grad.addColorStop(1, "rgba(11,10,27,0)");
+      ctx.fillStyle = grad;
+      ctx.beginPath(); ctx.arc(cx,cy,cr,0,Math.PI*2); ctx.fill();
+
+      // 边界光环
+      ctx.strokeStyle = "rgba(140,226,140,.6)";
+      ctx.lineWidth = 1.5;
+      ctx.shadowColor = "rgba(140,226,140,.5)";
+      ctx.shadowBlur = 12;
+      ctx.beginPath(); ctx.arc(cx,cy,cr,0,Math.PI*2); ctx.stroke();
+      ctx.shadowBlur = 0;
+
+      // 区域名
+      ctx.fillStyle = "rgba(140,226,140,.9)";
+      ctx.font = `bold ${Math.max(12,cr*0.28)}px "PingFang SC","Microsoft YaHei",sans-serif`;
+      ctx.textAlign = "center";
+      ctx.fillText(r.landmark.slice(0,2), cx, cy - cr*0.35);
+      ctx.fillStyle = "#f2eddf";
+      ctx.font = `${Math.max(11,cr*0.22)}px "PingFang SC","Microsoft YaHei",sans-serif`;
+      ctx.fillText(r.name, cx, cy + cr*0.15);
+    } else {
+      // 未解锁：迷雾覆盖
+      const grad = ctx.createRadialGradient(cx,cy,cr*0.4, cx,cy,cr*1.2);
+      grad.addColorStop(0, "rgba(20,18,42,.92)");
+      grad.addColorStop(0.6, "rgba(28,23,64,.88)");
+      grad.addColorStop(1, "rgba(10,10,25,.6)");
+      ctx.fillStyle = grad;
+      ctx.beginPath(); ctx.arc(cx,cy,cr,0,Math.PI*2); ctx.fill();
+
+      // 迷雾纹理：噪点
+      ctx.strokeStyle = "rgba(178,136,255,.12)";
+      ctx.lineWidth = 0.5;
+      ctx.beginPath(); ctx.arc(cx,cy,cr,0,Math.PI*2); ctx.stroke();
+      for (let k = 0; k < 6; k++) {
+        const angle = (k/6) * Math.PI*2 + i*0.7;
+        const rr = cr * (0.45 + (k%3)*0.18);
+        ctx.strokeStyle = "rgba(178,136,255,.06)";
+        ctx.beginPath(); ctx.arc(cx+Math.cos(angle)*rr*0.3, cy+Math.sin(angle)*rr*0.3, rr*0.15, 0, Math.PI*2); ctx.stroke();
+      }
+
+      // 问号标记
+      const glow = 0.4 + 0.15 * Math.sin(Date.now()/1200 + i);
+      ctx.fillStyle = `rgba(245,201,122,${glow})`;
+      ctx.font = `${Math.max(14,cr*0.3)}px "PingFang SC","Microsoft YaHei",sans-serif`;
+      ctx.textAlign = "center";
+      ctx.fillText("?", cx, cy + 4);
+    }
+
+    // 选中高亮环
+    if (i === state.selectedIdx) {
+      ctx.strokeStyle = "rgba(245,201,122,.8)";
+      ctx.lineWidth = 2.5;
+      ctx.shadowColor = "rgba(245,201,122,.6)";
+      ctx.shadowBlur = 16;
+      ctx.beginPath(); ctx.arc(cx,cy,cr+4,0,Math.PI*2); ctx.stroke();
+      ctx.shadowBlur = 0;
+    }
+  });
+
+  // 绘制"灵气脉络"连线（连接已解锁区域 + 相邻未解锁）
+  const veinPairs = [
+    [0,8],[0,1],[0,2],[8,5],[8,4],[1,7],[1,6],[2,4],[2,7],[5,3],[4,9],[6,9],
+  ];
+  veinPairs.forEach(([a,b]) => {
+    const ra = state.regions[a], rb = state.regions[b];
+    const x1 = toX(ra), y1 = toY(ra), x2 = toX(rb), y2 = toY(rb);
+    const bothUnlocked = ra.unlocked && rb.unlocked;
+    ctx.strokeStyle = bothUnlocked
+      ? "rgba(111,213,224,.45)"
+      : "rgba(178,136,255,.15)";
+    ctx.lineWidth = bothUnlocked ? 1.5 : 0.8;
+    if (bothUnlocked) {
+      ctx.shadowColor = "rgba(111,213,224,.25)";
+      ctx.shadowBlur = 6;
+    }
+    ctx.beginPath(); ctx.moveTo(x1,y1); ctx.lineTo(x2,y2); ctx.stroke();
+    ctx.shadowBlur = 0;
+  });
+
+  ctx.textAlign = "start";
+}
+
+// 动画循环：迷雾区域脉冲闪烁
+let animId;
+function animate() {
+  drawAll();
+  animId = requestAnimationFrame(animate);
+}
+animate();
+
+// ======================================================================
+// 交互：点击区域
+// ======================================================================
+canvas.addEventListener("click", (e) => {
+  const rect = canvas.getBoundingClientRect();
+  const mx = e.clientX - rect.left, my = e.clientY - rect.top;
+
+  for (let i = state.regions.length - 1; i >= 0; i--) {
+    const r = state.regions[i];
+    const cx = toX(r), cy = toY(r), cr = toR(r);
+    const dist = Math.hypot(mx - cx, my - cy);
+    if (dist <= cr) {
+      selectRegion(i);
+      return;
+    }
+  }
+  // 点击空白取消选择
+  selectRegion(-1);
+});
+
+canvas.addEventListener("contextmenu", (e) => {
+  e.preventDefault();
+  if (state.selectedIdx >= 0) {
+    const r = state.regions[state.selectedIdx];
+    if (!r.unlocked) {
+      selectRegion(-1);
+      toast("已取消探索 · " + r.name);
+    }
+  }
+});
+
+function selectRegion(idx) {
+  state.selectedIdx = idx;
+  state.quizAnswered = false;
+  updatePanel();
+}
+
+// ======================================================================
+// 面板更新
+// ======================================================================
+function updatePanel() {
+  const explored = state.regions.filter(r => r.unlocked).length;
+  const total = state.regions.length;
+  document.getElementById("explored").textContent = explored;
+  document.getElementById("score").textContent = state.totalScore;
+  document.getElementById("progressFill").style.width = (explored/total*100) + "%";
+  document.getElementById("progressLabel").textContent =
+    explored === total ? "✦ 山河图已开！天地通明 ✦" : `已探 ${explored} 区，余 ${total-explored} 区`;
+
+  // 区域详情
+  const card = document.getElementById("regionCard");
+  const quizSec = document.getElementById("quizSection");
+  if (state.selectedIdx < 0) {
+    document.getElementById("regionName").textContent = "-";
+    document.getElementById("regionDesc").textContent = "点击地图上的迷雾区域开始探索";
+    document.getElementById("regionLandmark").textContent = "";
+    quizSec.style.display = "none";
+  } else {
+    const r = state.regions[state.selectedIdx];
+    document.getElementById("regionName").textContent = r.name + (r.unlocked ? " ✦" : " 🌫");
+    document.getElementById("regionDesc").textContent = r.desc;
+    document.getElementById("regionLandmark").textContent = r.landmark;
+    if (!r.unlocked) {
+      quizSec.style.display = "block";
+      document.getElementById("quizQ").textContent = r.q;
+      renderQuizOptions(r);
+      document.getElementById("quizFeedback").textContent = "";
+      document.getElementById("quizFeedback").className = "quiz-feedback";
+    } else {
+      quizSec.style.display = "none";
+    }
+  }
+
+  // 区域列表
+  const list = document.getElementById("regionList");
+  list.innerHTML = state.regions.map((r,i) =>
+    `<div class="region-item ${r.unlocked?'unlocked':''}" onclick="selectRegion(${i})" style="cursor:pointer;">
+      <span class="ri-name">${r.landmark.slice(0,2)} ${r.name}</span>
+      <span class="ri-status ${r.unlocked?'unlocked':'locked'}">${r.unlocked?'✦ 已解锁':'🌫 未探'}</span>
+    </div>`
+  ).join("");
+
+  // Victory
+  if (explored === total) {
+    document.getElementById("victoryOverlay").classList.add("show");
+  }
+
+  drawAll();
+}
+
+function renderQuizOptions(r) {
+  const optsDiv = document.getElementById("quizOpts");
+  const labels = ["甲","乙","丙","丁"];
+  optsDiv.innerHTML = r.opts.map((o,i) =>
+    `<button class="quiz-opt" id="opt${i}" onclick="answerQuiz(${i})">${labels[i]}. ${o}</button>`
+  ).join("");
+}
+
+// ======================================================================
+// 答题逻辑
+// ======================================================================
+function answerQuiz(choiceIdx) {
+  if (state.selectedIdx < 0 || state.quizAnswered) return;
+  const r = state.regions[state.selectedIdx];
+  state.quizAnswered = true;
+  const correct = choiceIdx === r.ans;
+
+  // 高亮选项
+  const optEls = document.querySelectorAll(".quiz-opt");
+  optEls.forEach((el,i) => {
+    el.disabled = true;
+    if (i === r.ans) el.classList.add("correct");
+    if (i === choiceIdx && !correct) el.classList.add("wrong");
+  });
+
+  const fb = document.getElementById("quizFeedback");
+  if (correct) {
+    r.unlocked = true;
+    r.score++;
+    state.totalScore++;
+    fb.textContent = "✅ 破阵成功！" + r.explain + "（+" + r.score + " 道果）";
+    fb.className = "quiz-feedback pass";
+    toast("✦ " + r.name + " 迷雾已散 · 道果 +1");
+  } else {
+    r.score--;
+    state.totalScore--;
+    fb.textContent = "❌ 失误了。" + r.explain + "（-" + 1 + " 道果，迷雾复原）";
+    fb.className = "quiz-feedback fail";
+    toast("🌫 " + r.name + " 迷雾复原 · 道果 -1");
+    // 延迟恢复迷雾（保持选中）
+    setTimeout(() => {
+      state.quizAnswered = false;
+      updatePanel();
+    }, 1800);
+  }
+
+  updatePanel();
+
+  // 检查全解锁
+  if (state.regions.every(r => r.unlocked)) {
+    setTimeout(() => {
+      document.getElementById("victoryOverlay").classList.add("show");
+      toast("⛰ 山河图已开！天地通明！");
+    }, 800);
+  }
+}
+
+// ======================================================================
+// Toast 提示
+// ======================================================================
+function toast(msg) {
+  const el = document.createElement("div");
+  el.className = "toast";
+  el.textContent = msg;
+  document.body.appendChild(el);
+  setTimeout(() => el.remove(), 2500);
+}
+
+// ======================================================================
+// 按钮事件
+// ======================================================================
+document.getElementById("btnReset").addEventListener("click", () => {
+  state.regions.forEach(r => { r.unlocked = false; r.score = 0; });
+  state.totalScore = 0;
+  state.selectedIdx = -1;
+  state.quizAnswered = false;
+  document.getElementById("victoryOverlay").classList.remove("show");
+  updatePanel();
+  toast("山河图已重置 · 迷雾重归");
+});
+
+document.getElementById("btnBack").addEventListener("click", () => {
+  // 跳转到 v5 主页
+  window.location.href = "../index.html";
+});
+
+// ======================================================================
+// 页面关闭时清理动画帧
+// ======================================================================
+window.addEventListener("beforeunload", () => {
+  cancelAnimationFrame(animId);
+});
+
+// 初始渲染
+updatePanel();
+</script>
+</body>
+</html>

@@ -1,0 +1,675 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+<title>文渊阁 · 符文拼写 | 问道修仙学院 v5</title>
+<meta name="description" content="问道修仙学院 v5 · 文渊阁（语文·文言实词符文拼写）MVP 原型">
+<style>
+  :root {
+    --bg: #0b0f1a; --panel: rgba(20, 28, 46, .78); --gold: #f5c97a;
+    --cyan: #5fd3e0; --jade: #3ddc84; --ink: #dfe7f5; --soft: #9fb0c9;
+    --line: rgba(122,150,200,.25); --danger: #ff6b6b; --purple: #b39fdd;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    height: 100%;
+    background: radial-gradient(1000px 600px at 50% -10%, #1c2540 0%, #0b0f1a 55%) fixed;
+    color: var(--ink);
+    font-family: "PingFang SC","Microsoft YaHei","STKaiti","KaiTi",system-ui,serif;
+    overflow-x: hidden;
+  }
+  body {
+    display: flex; flex-direction: column; align-items: center; min-height: 100vh;
+    background-image:
+      radial-gradient(circle at 15% 30%, rgba(179,159,221,.06) 0%, transparent 50%),
+      radial-gradient(circle at 85% 70%, rgba(95,211,224,.04) 0%, transparent 50%);
+  }
+
+  /* ── 顶部铭牌 ── */
+  .venue-header {
+    width: 100%; max-width: 720px; margin-top: 24px; text-align: center;
+  }
+  .venue-header .eyebrow {
+    font-size: 11px; letter-spacing: 3px; color: var(--soft); text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .venue-header h1 {
+    font-size: 28px; letter-spacing: 4px; color: var(--gold);
+    text-shadow: 0 0 20px rgba(245,201,122,.4), 0 2px 6px rgba(0,0,0,.5);
+    font-family: "STKaiti","KaiTi","PingFang SC",serif;
+  }
+  .venue-header .sub {
+    font-size: 12px; color: var(--soft); margin-top: 6px; letter-spacing: 2px;
+  }
+
+  /* ── HUD ── */
+  .hud-bar {
+    width: 100%; max-width: 680px; display: flex; justify-content: center; gap: 28px;
+    margin: 16px 0 8px; font-size: 13px;
+  }
+  .hud-bar .hud-item {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+    padding: 6px 16px; backdrop-filter: blur(6px); letter-spacing: .5px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .hud-item .label { color: var(--soft); }
+  .hud-item .value { color: var(--gold); font-weight: 700; font-size: 15px; font-variant-numeric: tabular-nums; }
+  .hud-item .value.combo { color: var(--purple); }
+
+  /* ── 古文句子区 ── */
+  .sentence-card {
+    width: 100%; max-width: 680px; background: var(--panel); border: 1px solid var(--line);
+    border-radius: 16px; padding: 20px 28px; margin: 8px 0; backdrop-filter: blur(8px);
+    text-align: center; position: relative; overflow: hidden;
+    box-shadow: 0 12px 32px rgba(0,0,0,.35);
+  }
+  .sentence-card::before {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(245,201,122,.04) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  .sentence-card .prompt {
+    font-size: 12px; color: var(--soft); letter-spacing: 2px; margin-bottom: 8px;
+  }
+  .sentence-card .classical {
+    font-size: 22px; color: var(--ink); letter-spacing: 3px; line-height: 1.8;
+    font-family: "STKaiti","KaiTi","PingFang SC",serif;
+  }
+  .sentence-card .classical .target {
+    color: var(--gold); font-weight: bold;
+    text-shadow: 0 0 12px rgba(245,201,122,.6);
+    border-bottom: 2px dashed var(--gold); padding-bottom: 2px;
+    animation: pulse-target 1.8s ease-in-out infinite;
+  }
+  @keyframes pulse-target {
+    0%, 100% { text-shadow: 0 0 12px rgba(245,201,122,.6); }
+    50% { text-shadow: 0 0 24px rgba(245,201,122,.9), 0 0 40px rgba(245,201,122,.4); }
+  }
+
+  /* ── 倒计时环 ── */
+  .timer-ring {
+    position: relative; width: 56px; height: 56px; margin: 12px auto;
+  }
+  .timer-ring svg { transform: rotate(-90deg); }
+  .timer-ring .timer-text {
+    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    font-size: 18px; font-weight: 700; font-variant-numeric: tabular-nums; color: var(--cyan);
+  }
+  .timer-ring .timer-text.urgent { color: var(--danger); animation: blink-urgent .4s ease-in-out infinite; }
+  @keyframes blink-urgent {
+    0%, 100% { opacity: 1; } 50% { opacity: .35; }
+  }
+
+  /* ── 符文阵列 3×3 ── */
+  .rune-grid-wrapper {
+    width: 100%; max-width: 500px; margin: 12px 0;
+  }
+  .rune-grid-label {
+    text-align: center; font-size: 11px; letter-spacing: 3px; color: var(--soft);
+    margin-bottom: 8px;
+  }
+  .rune-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+  }
+  .rune-cell {
+    aspect-ratio: 1; background: var(--panel); border: 2px solid var(--line);
+    border-radius: 14px; display: flex; flex-direction: column; align-items: center;
+    justify-content: center; cursor: pointer; transition: all .2s ease;
+    position: relative; overflow: hidden; user-select: none;
+    box-shadow: 0 6px 18px rgba(0,0,0,.25);
+  }
+  .rune-cell:hover {
+    border-color: var(--cyan); transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(95,211,224,.18);
+  }
+  .rune-cell:active { transform: scale(.96); }
+  .rune-cell .rune-char {
+    font-size: 28px; color: var(--gold); font-weight: 700;
+    font-family: "STKaiti","KaiTi","PingFang SC",serif;
+    letter-spacing: 2px;
+  }
+  .rune-cell .rune-meaning {
+    font-size: 13px; color: var(--ink); margin-top: 4px; letter-spacing: 1px;
+  }
+  /* 正确/错误闪光 */
+  .rune-cell.correct {
+    border-color: var(--jade) !important;
+    background: rgba(61,220,132,.15) !important;
+    animation: rune-glow .6s ease-out;
+    pointer-events: none;
+  }
+  .rune-cell.wrong {
+    border-color: var(--danger) !important;
+    background: rgba(255,107,107,.15) !important;
+    animation: rune-shatter .5s ease-out;
+    pointer-events: none;
+  }
+  @keyframes rune-glow {
+    0% { box-shadow: 0 0 8px var(--jade), 0 0 24px var(--jade); }
+    100% { box-shadow: 0 0 2px var(--jade), 0 0 6px var(--jade); }
+  }
+  @keyframes rune-shatter {
+    0% { transform: scale(1); opacity: 1; }
+    30% { transform: scale(1.08); opacity: .7; }
+    100% { transform: scale(.85); opacity: .4; }
+  }
+
+  /* ── 法术特效覆盖层 ── */
+  .spell-overlay {
+    position: fixed; inset: 0; pointer-events: none; z-index: 100;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .spell-text {
+    font-size: 28px; letter-spacing: 4px; font-family: "STKaiti","KaiTi","PingFang SC",serif;
+    animation: spell-rise .9s ease-out forwards;
+  }
+  .spell-text.success { color: var(--jade); text-shadow: 0 0 24px var(--jade); }
+  .spell-text.fail { color: var(--danger); text-shadow: 0 0 24px var(--danger); }
+  @keyframes spell-rise {
+    0% { opacity: 0; transform: translateY(20px) scale(.7); }
+    40% { opacity: 1; transform: translateY(-10px) scale(1.15); }
+    100% { opacity: 0; transform: translateY(-60px) scale(1); }
+  }
+
+  /* ── 消息区 ── */
+  .msg-area {
+    width: 100%; max-width: 680px; min-height: 28px; text-align: center;
+    font-size: 13px; letter-spacing: 1px; margin: 4px 0;
+  }
+  .msg-area .msg-success { color: var(--jade); }
+  .msg-area .msg-fail { color: var(--danger); }
+
+  /* ── 底部按钮 ── */
+  .footer-actions {
+    margin: 20px 0 36px; display: flex; gap: 14px; flex-wrap: wrap; justify-content: center;
+  }
+  .btn-secondary, .btn-primary {
+    padding: 10px 24px; border-radius: 12px; font-size: 13px; letter-spacing: 1px;
+    cursor: pointer; border: 1px solid var(--line); transition: all .2s ease;
+    font-family: inherit;
+  }
+  .btn-secondary {
+    background: var(--panel); color: var(--soft); backdrop-filter: blur(6px);
+  }
+  .btn-secondary:hover { border-color: var(--cyan); color: var(--cyan); }
+  .btn-primary {
+    background: linear-gradient(135deg, rgba(245,201,122,.18), rgba(245,201,122,.08));
+    color: var(--gold); border-color: rgba(245,201,122,.4);
+  }
+  .btn-primary:hover {
+    background: linear-gradient(135deg, rgba(245,201,122,.28), rgba(245,201,122,.14));
+    box-shadow: 0 0 18px rgba(245,201,122,.2);
+  }
+
+  /* ── 结算面板 ── */
+  .result-panel {
+    display: none; position: fixed; inset: 0; z-index: 200;
+    background: rgba(11,15,26,.85); backdrop-filter: blur(8px);
+    justify-content: center; align-items: center;
+  }
+  .result-panel.show { display: flex; }
+  .result-card {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 20px;
+    padding: 32px 36px; text-align: center; max-width: 380px;
+    box-shadow: 0 20px 50px rgba(0,0,0,.5);
+  }
+  .result-card h2 {
+    font-size: 22px; letter-spacing: 3px; color: var(--gold);
+    font-family: "STKaiti","KaiTi","PingFang SC",serif;
+    margin-bottom: 14px;
+  }
+  .result-card .stat-row {
+    display: flex; justify-content: space-between; padding: 8px 0;
+    border-bottom: 1px dashed var(--line); font-size: 14px;
+  }
+  .result-card .stat-label { color: var(--soft); }
+  .result-card .stat-value { color: var(--gold); font-weight: 700; }
+  .result-card button { margin-top: 18px; }
+
+  /* ── 粒子 ── */
+  .particles-container {
+    position: fixed; inset: 0; pointer-events: none; z-index: 150;
+  }
+  .particle {
+    position: absolute; border-radius: 50%; pointer-events: none;
+    animation: particle-fade .8s ease-out forwards;
+  }
+  @keyframes particle-fade {
+    0% { opacity: 1; transform: translate(0,0) scale(1); }
+    100% { opacity: 0; transform: translate(var(--dx),var(--dy)) scale(0); }
+  }
+
+  /* ── 响应式 ── */
+  @media (max-width: 520px) {
+    .rune-grid { gap: 8px; }
+    .rune-cell .rune-char { font-size: 22px; }
+    .rune-cell .rune-meaning { font-size: 11px; }
+    .sentence-card .classical { font-size: 18px; }
+    .hud-bar { gap: 12px; flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+
+<!-- 顶部铭牌 -->
+<div class="venue-header">
+  <p class="eyebrow">问道修仙学院 · 六大学馆</p>
+  <h1>📜 文 渊 阁</h1>
+  <p class="sub">符文拼写 · 文言实词试炼</p>
+</div>
+
+<!-- HUD 状态栏 -->
+<div class="hud-bar">
+  <div class="hud-item">
+    <span class="label">🏆 灵玉</span>
+    <span class="value" id="hudScore">0</span>
+  </div>
+  <div class="hud-item">
+    <span class="label">📝 题号</span>
+    <span class="value" id="hudRound">1/10</span>
+  </div>
+  <div class="hud-item">
+    <span class="label">⚡ 连击</span>
+    <span class="value combo" id="hudCombo">×0</span>
+  </div>
+</div>
+
+<!-- 古文句子 -->
+<div class="sentence-card" id="sentenceCard">
+  <p class="prompt">🔮 古文符咒</p>
+  <p class="classical" id="classicalText"></p>
+</div>
+
+<!-- 倒计时环 -->
+<div class="timer-ring">
+  <svg width="56" height="56" viewBox="0 0 56 56">
+    <circle cx="28" cy="28" r="24" fill="none" stroke="rgba(122,150,200,.15)" stroke-width="4"/>
+    <circle id="timerCircle" cx="28" cy="28" r="24" fill="none" stroke="var(--cyan)" stroke-width="4"
+            stroke-linecap="round" stroke-dasharray="150.8" stroke-dashoffset="0"/>
+  </svg>
+  <div class="timer-text" id="timerText">3.0</div>
+</div>
+
+<!-- 符文阵列 -->
+<div class="rune-grid-wrapper">
+  <p class="rune-grid-label">✦ 符文阵列 · 择其真义 ✦</p>
+  <div class="rune-grid" id="runeGrid"></div>
+</div>
+
+<!-- 消息 -->
+<div class="msg-area" id="msgArea"></div>
+
+<!-- 底部按钮 -->
+<div class="footer-actions">
+  <button class="btn-secondary" onclick="location.href='../index.html'">← 返回学院</button>
+  <button class="btn-primary" id="restartBtn">🔄 重开试炼</button>
+</div>
+
+<!-- 法术特效覆盖层 -->
+<div class="spell-overlay" id="spellOverlay"></div>
+
+<!-- 粒子容器 -->
+<div class="particles-container" id="particlesContainer"></div>
+
+<!-- 结算面板 -->
+<div class="result-panel" id="resultPanel">
+  <div class="result-card">
+    <h2 id="resultTitle">✨ 试炼终了</h2>
+    <div id="resultStats"></div>
+    <button class="btn-primary" id="resultRestartBtn">🔄 重新入阁</button>
+  </div>
+</div>
+
+<script>
+// ──────────────── 文渊阁 · 符文拼写引擎 ────────────────
+(function() {
+  "use strict";
+
+  // ── 文言实词题库 ──
+  const WORD_BANK = [
+    { word: "走", meaning: "跑", distractors: ["行走","逃跑","散步"],
+      sentence: "弃甲曳兵而<span class='target'>走</span>", source: "《孟子·梁惠王上》" },
+    { word: "去", meaning: "离开", distractors: ["前往","消除","过去"],
+      sentence: "逝将<span class='target'>去</span>女，适彼乐土", source: "《诗经·硕鼠》" },
+    { word: "汤", meaning: "热水", distractors: ["菜汤","温泉","汤药"],
+      sentence: "媵人持<span class='target'>汤</span>沃灌", source: "《送东阳马生序》" },
+    { word: "涕", meaning: "眼泪", distractors: ["鼻涕","哭泣","唾液"],
+      sentence: "今当远离，临表<span class='target'>涕</span>零", source: "《出师表》" },
+    { word: "或", meaning: "有的人", distractors: ["或者","或许","有时"],
+      sentence: "<span class='target'>或</span>曰：以子之矛攻子之盾，何如", source: "《韩非子》" },
+    { word: "再", meaning: "两次", distractors: ["再次","再三","重复"],
+      sentence: "一鼓作气，<span class='target'>再</span>而衰，三而竭", source: "《曹刿论战》" },
+    { word: "假", meaning: "借", distractors: ["假装","虚假","休假"],
+      sentence: "以是人多以书<span class='target'>假</span>余", source: "《送东阳马生序》" },
+    { word: "劝", meaning: "鼓励", distractors: ["劝说","劝告","劝阻"],
+      sentence: "劝课农桑，令<span class='target'>劝</span>其业", source: "《汉书》" },
+    { word: "绝", meaning: "横渡", distractors: ["断绝","绝对","极好"],
+      sentence: "假舟楫者，非能水也，而<span class='target'>绝</span>江河", source: "《荀子·劝学》" },
+    { word: "微", meaning: "如果没有", distractors: ["微小","微妙","卑微"],
+      sentence: "<span class='target'>微</span>斯人，吾谁与归", source: "《岳阳楼记》" },
+    { word: "鄙", meaning: "边界", distractors: ["鄙视","卑鄙","粗鄙"],
+      sentence: "蜀之<span class='target'>鄙</span>有二僧", source: "《为学》" },
+    { word: "池", meaning: "护城河", distractors: ["池塘","水池","池沼"],
+      sentence: "城非不高也，<span class='target'>池</span>非不深也", source: "《孟子·公孙丑下》" },
+    { word: "坐", meaning: "因为", distractors: ["坐下","座位","乘坐"],
+      sentence: "停车<span class='target'>坐</span>爱枫林晚", source: "《山行》杜牧" },
+    { word: "速", meaning: "招致", distractors: ["快速","速度","加速"],
+      sentence: "不<span class='target'>速</span>之客", source: "《周易·需卦》" },
+    { word: "谢", meaning: "道歉", distractors: ["感谢","谢绝","凋谢"],
+      sentence: "秦王色挠，长跪而<span class='target'>谢</span>之", source: "《唐雎不辱使命》" },
+  ];
+
+  // ── 状态 ──
+  const TOTAL_ROUNDS = 10;
+  let score = 0;
+  let combo = 0;
+  let maxCombo = 0;
+  let round = 0;
+  let currentQ = null;
+  let timeLeft = 0;
+  let timeLimit = 3.0;
+  let timerHandle = null;
+  let timerStart = 0;
+  let answered = false;
+
+  // ── DOM 缓存 ──
+  const $ = id => document.getElementById(id);
+  const classicalText = $("classicalText");
+  const runeGrid = $("runeGrid");
+  const timerCircle = $("timerCircle");
+  const timerText = $("timerText");
+  const msgArea = $("msgArea");
+  const spellOverlay = $("spellOverlay");
+  const particlesContainer = $("particlesContainer");
+  const resultPanel = $("resultPanel");
+  const resultTitle = $("resultTitle");
+  const resultStats = $("resultStats");
+  const CIRCUMFERENCE = 2 * Math.PI * 24; // ~150.8
+
+  // ── 洗牌 ──
+  function shuffle(arr) {
+    const a = [...arr];
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  // ── 更新 HUD ──
+  function updateHud() {
+    $("hudScore").textContent = score;
+    $("hudRound").textContent = round + "/" + TOTAL_ROUNDS;
+    $("hudCombo").textContent = "×" + combo;
+  }
+
+  // ── 计时器 ──
+  function startTimer() {
+    answered = false;
+    timeLeft = timeLimit;
+    timerStart = performance.now();
+    tickTimer();
+    timerHandle = setInterval(tickTimer, 50);
+  }
+
+  function tickTimer() {
+    const elapsed = (performance.now() - timerStart) / 1000;
+    timeLeft = Math.max(0, timeLimit - elapsed);
+    // 环
+    const offset = CIRCUMFERENCE * (timeLeft / timeLimit);
+    timerCircle.setAttribute("stroke-dashoffset", CIRCUMFERENCE - offset);
+    // 颜色切换
+    if (timeLeft < 1) {
+      timerCircle.setAttribute("stroke", "var(--danger)");
+      timerText.classList.add("urgent");
+    } else {
+      timerCircle.setAttribute("stroke", "var(--cyan)");
+      timerText.classList.remove("urgent");
+    }
+    timerText.textContent = timeLeft.toFixed(1);
+
+    if (timeLeft <= 0) {
+      clearInterval(timerHandle);
+      timerHandle = null;
+      onTimeout();
+    }
+  }
+
+  function stopTimer() {
+    if (timerHandle) { clearInterval(timerHandle); timerHandle = null; }
+  }
+
+  function onTimeout() {
+    if (answered) return;
+    answered = true;
+    combo = 0;
+    updateHud();
+    highlightCorrectAnswer();
+    spawnSpell("⌛ 时限已至", "fail");
+    showMsg("⏳ 时间到！符文消散… 正确答案是「" + currentQ.meaning + "」", "fail");
+    spawnParticles(".sentence-card", "danger", 20);
+    scheduleNext();
+  }
+
+  // ── 生成题目 ──
+  function generateQuestion(qData) {
+    const options = shuffle([qData.meaning, ...shuffle(qData.distractors).slice(0, 2)]);
+    // 确保正好 9 个选项（填满 3×3）；不够就加通用干扰项
+    const fillerPool = ["奔跑","走路","移动","逃离","前进","后退","停止","站立","远去"];
+    while (options.length < 9) {
+      const f = fillerPool.find(w => !options.includes(w) && w !== qData.meaning);
+      if (f) { options.push(f); } else { break; }
+    }
+    return {
+      word: qData.word,
+      correct: qData.meaning,
+      sentenceHTML: qData.sentence,
+      source: qData.source,
+      options: shuffle(options).slice(0, 9) // 再洗一次取9个
+    };
+  }
+
+  // ── 渲染题目 ──
+  function renderQuestion(q) {
+    classicalText.innerHTML = q.sentenceHTML;
+    runeGrid.innerHTML = "";
+    q.options.forEach(opt => {
+      const cell = document.createElement("div");
+      cell.className = "rune-cell";
+      cell.innerHTML = `<span class="rune-char">${q.word}</span><span class="rune-meaning">${opt}</span>`;
+      cell.addEventListener("click", () => onAnswer(opt, cell));
+      runeGrid.appendChild(cell);
+    });
+  }
+
+  // ── 答题处理 ──
+  function onAnswer(meaning, cellEl) {
+    if (answered) return;
+    answered = true;
+    stopTimer();
+
+    if (meaning === currentQ.correct) {
+      // 正确
+      cellEl.classList.add("correct");
+      combo++;
+      if (combo > maxCombo) maxCombo = combo;
+      const bonus = combo >= 5 ? 3 : (combo >= 3 ? 2 : 1);
+      const speedBonus = timeLeft > timeLimit * 0.6 ? 1 : 0;
+      const earned = 10 * bonus + speedBonus * 5;
+      score += earned;
+      updateHud();
+      spawnSpell("✦ 符文已解 · 灵韵+" + earned, "success");
+      showMsg("✅ 妙哉！「" + currentQ.word + "」即「" + currentQ.correct + "」也。出自" + currentQ.source, "success");
+      spawnParticles(cellEl, "success", 30);
+      highlightCorrectAnswer(cellEl);
+    } else {
+      // 错误
+      cellEl.classList.add("wrong");
+      combo = 0;
+      const penalty = 5;
+      score = Math.max(0, score - penalty);
+      updateHud();
+      spawnSpell("✧ 符文破碎 · 灵韵-" + penalty, "fail");
+      showMsg("❌ 可惜，「" + currentQ.word + "」此处意为「" + currentQ.correct + "」（出自" + currentQ.source + "）", "fail");
+      spawnParticles(cellEl, "danger", 20);
+      highlightCorrectAnswer();
+    }
+
+    scheduleNext();
+  }
+
+  function highlightCorrectAnswer(skipCell) {
+    // 高亮所有正确选项的格子
+    const cells = runeGrid.querySelectorAll(".rune-cell");
+    cells.forEach(c => {
+      const meaningSpan = c.querySelector(".rune-meaning");
+      if (meaningSpan && meaningSpan.textContent === currentQ.correct && c !== skipCell) {
+        c.classList.add("correct");
+      }
+    });
+  }
+
+  // ── 特效 ──
+  function spawnSpell(text, type) {
+    const el = document.createElement("div");
+    el.className = "spell-text " + (type === "success" ? "success" : "fail");
+    el.textContent = text;
+    spellOverlay.appendChild(el);
+    el.addEventListener("animationend", () => el.remove());
+  }
+
+  function spawnParticles(origin, type, count) {
+    const rect = typeof origin === "string"
+      ? document.querySelector(origin).getBoundingClientRect()
+      : origin.getBoundingClientRect();
+    const cx = rect.left + rect.width / 2;
+    const cy = rect.top + rect.height / 2;
+    const hues = { success: [100, 160], danger: [0, 20] };
+    const [hMin, hMax] = hues[type] || [180, 220];
+
+    for (let i = 0; i < count; i++) {
+      const p = document.createElement("div");
+      p.className = "particle";
+      const size = Math.random() * 6 + 2;
+      const angle = Math.random() * Math.PI * 2;
+      const dist = Math.random() * 60 + 20;
+      p.style.cssText = `
+        left: ${cx}px; top: ${cy}px;
+        width: ${size}px; height: ${size}px;
+        background: hsl(${hMin + Math.random() * (hMax - hMin)}, 80%, ${55 + Math.random() * 20}%);
+        --dx: ${Math.cos(angle) * dist}px;
+        --dy: ${Math.sin(angle) * dist}px;
+      `;
+      particlesContainer.appendChild(p);
+      p.addEventListener("animationend", () => p.remove());
+    }
+  }
+
+  function showMsg(msg, type) {
+    const cls = type === "success" ? "msg-success" : "msg-fail";
+    msgArea.innerHTML = `<span class="${cls}">${msg}</span>`;
+  }
+
+  // ── 调度下一题 ──
+  function scheduleNext() {
+    setTimeout(() => {
+      round++;
+      if (round > TOTAL_ROUNDS) {
+        endGame();
+        return;
+      }
+      // 第 6 题起时间缩短
+      timeLimit = round >= 6 ? 2.0 : 3.0;
+      nextRound();
+    }, 1200);
+  }
+
+  // ── 下一题 ──
+  function nextRound() {
+    const pool = shuffle(WORD_BANK);
+    const qData = pool[0];
+    currentQ = generateQuestion(qData);
+    updateHud();
+    msgArea.innerHTML = "";
+    renderQuestion(currentQ);
+    // 重置计时环
+    timerCircle.setAttribute("stroke-dashoffset", "0");
+    timerCircle.setAttribute("stroke", "var(--cyan)");
+    timerText.classList.remove("urgent");
+    timerText.textContent = timeLimit.toFixed(1);
+    startTimer();
+  }
+
+  // ── 结束 ──
+  function endGame() {
+    stopTimer();
+    runeGrid.innerHTML = "";
+    classicalText.innerHTML = '<span style="color:var(--soft)">试炼已毕，请观结算。</span>';
+    msgArea.innerHTML = "";
+    timerText.textContent = "—";
+    timerCircle.setAttribute("stroke-dashoffset", CIRCUMFERENCE);
+    timerCircle.setAttribute("stroke", "var(--soft)");
+    timerText.classList.remove("urgent");
+
+    // 境界评定
+    let title = "✨ 试炼终了";
+    if (score >= 150) title = "🌟 文渊魁首";
+    else if (score >= 100) title = "📖 翰林学士";
+    else if (score >= 60) title = "📜 秀才郎";
+    else if (score >= 30) title = "🔰 蒙学初成";
+    else title = "🌱 初窥门径";
+
+    resultTitle.textContent = title;
+    resultStats.innerHTML = `
+      <div class="stat-row"><span class="stat-label">灵玉</span><span class="stat-value">${score}</span></div>
+      <div class="stat-row"><span class="stat-label">答题数</span><span class="stat-value">${TOTAL_ROUNDS}</span></div>
+      <div class="stat-row"><span class="stat-label">最高连击</span><span class="stat-value">×${maxCombo}</span></div>
+      <div class="stat-row"><span class="stat-label">速度阶段</span><span class="stat-value">${round > 5 ? "极速(2s)" : "常态(3s)"}</span></div>
+    `;
+    resultPanel.classList.add("show");
+  }
+
+  // ── 启动 / 重开 ──
+  function startGame() {
+    score = 0;
+    combo = 0;
+    maxCombo = 0;
+    round = 1;
+    timeLimit = 3.0;
+    answered = false;
+    stopTimer();
+    timerCircle.setAttribute("stroke-dashoffset", "0");
+    timerCircle.setAttribute("stroke", "var(--cyan)");
+    timerText.classList.remove("urgent");
+    resultPanel.classList.remove("show");
+    msgArea.innerHTML = "";
+    updateHud();
+
+    const pool = shuffle(WORD_BANK);
+    currentQ = generateQuestion(pool[0]);
+    renderQuestion(currentQ);
+    timerText.textContent = timeLimit.toFixed(1);
+    startTimer();
+  }
+
+  // ── 事件绑定 ──
+  $("restartBtn").addEventListener("click", () => { stopTimer(); startGame(); });
+  $("resultRestartBtn").addEventListener("click", () => startGame());
+
+  // ── 键盘快捷键（1-9 对应格子） ──
+  window.addEventListener("keydown", e => {
+    const num = parseInt(e.key);
+    if (num >= 1 && num <= 9 && !answered) {
+      const cells = runeGrid.querySelectorAll(".rune-cell");
+      if (cells[num - 1]) cells[num - 1].click();
+    }
+  });
+
+  // ── 入场 ──
+  startGame();
+})();
+</script>
+
+</body>
+</html>

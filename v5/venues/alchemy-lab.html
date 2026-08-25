@@ -1,0 +1,801 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>问道修仙学院 · 丹鼎峰</title>
+<style>
+  :root {
+    --bg-deep: #1a1a2e;
+    --bg-panel: #16213e;
+    --gold: #d4a574;
+    --gold-light: #f0d6a4;
+    --text: #e0d7c6;
+    --text-dim: #8a8a8a;
+    --fire: #e85d3a;
+    --fire-light: #ff9a56;
+    --jade: #5dbea3;
+    --jade-light: #8ee4c8;
+    --danger: #c0392b;
+    --success: #2ecc71;
+    --card-border: #3a3a5c;
+    --card-bg: rgba(22, 33, 62, 0.85);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--bg-deep);
+    background-image:
+      radial-gradient(ellipse at 50% 30%, rgba(180, 130, 80, 0.08) 0%, transparent 70%),
+      radial-gradient(ellipse at 80% 80%, rgba(120, 60, 180, 0.05) 0%, transparent 60%),
+      radial-gradient(ellipse at 20% 70%, rgba(60, 120, 200, 0.05) 0%, transparent 60%);
+    color: var(--text);
+    font-family: "Microsoft YaHei", "苹方", "PingFang SC", sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+  }
+
+  /* ── 标题区 ── */
+  .header {
+    text-align: center;
+    padding: 28px 20px 10px;
+  }
+  .header h1 {
+    font-size: 2.4em;
+    background: linear-gradient(180deg, var(--gold-light) 0%, var(--gold) 60%, #8b6914 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 0.08em;
+    text-shadow: none;
+    margin-bottom: 4px;
+  }
+  .header .subtitle {
+    color: var(--text-dim);
+    font-size: 0.95em;
+    letter-spacing: 0.12em;
+  }
+
+  /* ── 主面板 ── */
+  .main-panel {
+    width: 720px;
+    max-width: 95vw;
+    margin: 8px auto 24px;
+  }
+
+  /* ── 状态栏 ── */
+  .status-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 18px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    margin-bottom: 14px;
+    font-size: 0.9em;
+  }
+  .status-bar .score { color: var(--gold-light); font-weight: bold; font-size: 1.1em; }
+  .status-bar .attempts { color: var(--fire-light); }
+  .status-bar .pill-name { color: var(--jade-light); font-style: italic; }
+
+  /* ── 炼丹炉 ── */
+  .furnace {
+    position: relative;
+    background: var(--card-bg);
+    border: 2px solid var(--card-border);
+    border-radius: 16px;
+    padding: 24px 20px 20px;
+    min-height: 200px;
+    text-align: center;
+    overflow: hidden;
+    transition: border-color 0.6s, box-shadow 0.6s;
+  }
+  .furnace.glowing {
+    border-color: var(--fire);
+    box-shadow: 0 0 40px rgba(232, 93, 58, 0.35), 0 0 80px rgba(232, 93, 58, 0.15);
+  }
+  .furnace.extinguished {
+    border-color: #333;
+    box-shadow: none;
+    filter: grayscale(0.4);
+  }
+
+  /* 炉内粒子 Canvas */
+  #particleCanvas {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none; z-index: 0;
+  }
+
+  .furnace-content {
+    position: relative; z-index: 1;
+  }
+
+  /* 方程式显示 */
+  .equation-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    font-size: 1.5em;
+    margin: 10px 0 22px;
+    flex-wrap: wrap;
+    letter-spacing: 0.04em;
+  }
+  .coeff-slot {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; height: 40px;
+    border: 2px dashed var(--gold);
+    border-radius: 8px;
+    color: var(--gold-light);
+    font-size: 1em;
+    font-weight: bold;
+    transition: background 0.2s, border-color 0.2s;
+    user-select: none;
+    position: relative;
+  }
+  .coeff-slot.drag-over {
+    background: rgba(212, 165, 116, 0.2);
+    border-color: var(--fire);
+  }
+  .coeff-slot.filled {
+    border-style: solid;
+    background: rgba(212, 165, 116, 0.12);
+  }
+  .formula-text {
+    color: var(--text);
+    white-space: nowrap;
+  }
+  .arrow { color: var(--fire-light); font-size: 1.3em; }
+
+  /* 提示文字 */
+  .hint-text {
+    color: var(--text-dim);
+    font-size: 0.78em;
+    margin-top: 6px;
+    min-height: 1.2em;
+  }
+
+  /* ── 元素卡片区 ── */
+  .cards-section {
+    margin-top: 16px;
+  }
+  .cards-section h3 {
+    text-align: center;
+    color: var(--text-dim);
+    font-size: 0.9em;
+    margin-bottom: 10px;
+    letter-spacing: 0.08em;
+  }
+  .cards-tray {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    min-height: 60px;
+    padding: 10px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+  }
+
+  .element-card {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px; height: 54px;
+    background: linear-gradient(145deg, #2a1f3a, #1e1a2e);
+    border: 2px solid #5a4a7a;
+    border-radius: 10px;
+    color: var(--text);
+    font-weight: bold;
+    font-size: 1.05em;
+    cursor: grab;
+    user-select: none;
+    transition: transform 0.12s, box-shadow 0.12s, border-color 0.2s;
+    position: relative;
+  }
+  .element-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(160, 120, 220, 0.25);
+    border-color: #8a7ab0;
+  }
+  .element-card:active { cursor: grabbing; }
+  .element-card.dragging { opacity: 0.4; transform: scale(0.9); }
+
+  /* ── 操作按钮 ── */
+  .btn-row {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 16px;
+  }
+  .btn {
+    padding: 10px 28px;
+    border-radius: 8px;
+    border: 1px solid;
+    font-size: 0.95em;
+    font-family: inherit;
+    cursor: pointer;
+    letter-spacing: 0.06em;
+    transition: all 0.2s;
+  }
+  .btn-brew {
+    background: linear-gradient(145deg, #e85d3a, #c0392b);
+    border-color: var(--fire-light);
+    color: #fff;
+  }
+  .btn-brew:hover { box-shadow: 0 0 18px rgba(232,93,58,0.4); transform: translateY(-1px); }
+  .btn-clear {
+    background: transparent;
+    border-color: var(--text-dim);
+    color: var(--text-dim);
+  }
+  .btn-clear:hover { border-color: var(--text); color: var(--text); }
+  .btn-next {
+    background: linear-gradient(145deg, #2e7d5a, #1a5c3a);
+    border-color: var(--jade);
+    color: #fff;
+  }
+  .btn-next:hover { box-shadow: 0 0 18px rgba(93,190,163,0.4); transform: translateY(-1px); }
+  .btn-home {
+    background: transparent;
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+  .btn-home:hover { background: rgba(212,165,116,0.1); }
+
+  /* ── 消息弹窗 ── */
+  .toast {
+    position: fixed; top: 24px; left: 50%; transform: translateX(-50%);
+    padding: 14px 32px;
+    border-radius: 10px;
+    font-size: 1.1em; font-weight: bold; letter-spacing: 0.06em;
+    z-index: 100;
+    animation: toastIn 0.4s ease-out;
+    pointer-events: none;
+  }
+  .toast.success { background: rgba(46,204,113,0.22); border:1px solid var(--success); color: var(--success); }
+  .toast.fail    { background: rgba(192,57,43,0.22); border:1px solid var(--danger); color: var(--fire-light); }
+  @keyframes toastIn { from { opacity:0; transform:translateX(-50%) translateY(-12px); } to { opacity:1; transform:translateX(-50%) translateY(0); } }
+  @keyframes toastOut { from { opacity:1; } to { opacity:0; } }
+
+  /* ── 页脚 ── */
+  .footer { margin: auto 0 24px; text-align: center; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🏺 丹 鼎 峰</h1>
+  <p class="subtitle">—— 问道修仙学院 · 炼金实验室 ——</p>
+</div>
+
+<div class="main-panel">
+  <div class="status-bar">
+    <span>🏅 修为：<span class="score" id="score">0</span></span>
+    <span class="pill-name" id="pillName">——</span>
+    <span>🔥 尝试：<span class="attempts" id="attempts">0</span></span>
+  </div>
+
+  <div class="furnace" id="furnace">
+    <canvas id="particleCanvas"></canvas>
+    <div class="furnace-content">
+      <div class="equation-display" id="equationDisplay"></div>
+      <div class="hint-text" id="hintText">拖拽元素卡片到系数槽位，配平丹方</div>
+    </div>
+  </div>
+
+  <div class="cards-section">
+    <h3>🧪 药 材</h3>
+    <div class="cards-tray" id="cardsTray"></div>
+  </div>
+
+  <div class="btn-row">
+    <button class="btn btn-clear" id="btnClear">🧹 清空丹炉</button>
+    <button class="btn btn-brew" id="btnBrew">🔥 开炉炼丹</button>
+    <button class="btn btn-next" id="btnNext">⏭ 下一丹方</button>
+  </div>
+</div>
+
+<div class="footer">
+  <button class="btn btn-home" onclick="location.href='../index.html'">
+    🏯 返回学院
+  </button>
+</div>
+
+<script>
+// ========== 丹鼎峰·炼金实验室 MVP ==========
+
+// ── 丹方数据（化学方程式）──
+// 每个丹方：equations = [{formula, side:'reactant'|'product', coeffAnswer}]
+const PILL_RECIPES = [
+  {
+    name: "赤铁丹",
+    description: "铁之精华，赤焰煅烧，化作赤色结晶",
+    equations: [
+      { formula: "Fe",    side: "reactant", coeffAnswer: 4 },
+      { formula: "O₂",    side: "reactant", coeffAnswer: 3 },
+      { formula: "Fe₂O₃", side: "product",  coeffAnswer: 2 }
+    ],
+    hint: "铁在氧气中燃烧 —— 4Fe + 3O₂ → 2Fe₂O₃"
+  },
+  {
+    name: "清灵水",
+    description: "氢火交融，化生水灵精华",
+    equations: [
+      { formula: "H₂", side: "reactant", coeffAnswer: 2 },
+      { formula: "O₂", side: "reactant", coeffAnswer: 1 },
+      { formula: "H₂O",side: "product",  coeffAnswer: 2 }
+    ],
+    hint: "氢气燃烧生成水 —— 2H₂ + O₂ → 2H₂O"
+  },
+  {
+    name: "晶岩散",
+    description: "碳酸钙经烈焰煅烧，化为生石灰",
+    equations: [
+      { formula: "CaCO₃", side: "reactant", coeffAnswer: 1 },
+      { formula: "CaO",   side: "product",  coeffAnswer: 1 },
+      { formula: "CO₂",   side: "product",  coeffAnswer: 1 }
+    ],
+    hint: "石灰石高温分解 —— CaCO₃ → CaO + CO₂"
+  },
+  {
+    name: "紫烟露",
+    description: "钾遇水即化紫烟，非大勇者不敢近",
+    equations: [
+      { formula: "K",   side: "reactant", coeffAnswer: 2 },
+      { formula: "H₂O", side: "reactant", coeffAnswer: 2 },
+      { formula: "KOH", side: "product",  coeffAnswer: 2 },
+      { formula: "H₂",  side: "product",  coeffAnswer: 1 }
+    ],
+    hint: "钾与水反应 —— 2K + 2H₂O → 2KOH + H₂"
+  },
+  {
+    name: "玄黄丹",
+    description: "镁条燃于空中，白光耀目，化生白灰",
+    equations: [
+      { formula: "Mg",  side: "reactant", coeffAnswer: 2 },
+      { formula: "O₂",  side: "reactant", coeffAnswer: 1 },
+      { formula: "MgO", side: "product",  coeffAnswer: 2 }
+    ],
+    hint: "镁在空气中燃烧 —— 2Mg + O₂ → 2MgO"
+  }
+];
+
+// ── 游戏状态 ──
+let currentIndex = 0;
+let score = 0;
+let attempts = 0;
+let equationState = {};   // {eqIndex: placedCoeff}
+let draggedEqIndex = null;
+
+// ── DOM 引用 ──
+const elEquation = document.getElementById("equationDisplay");
+const elCardsTray = document.getElementById("cardsTray");
+const elHint = document.getElementById("hintText");
+const elFurnace = document.getElementById("furnace");
+const elScore = document.getElementById("score");
+const elAttempts = document.getElementById("attempts");
+const elPillName = document.getElementById("pillName");
+const particleCanvas = document.getElementById("particleCanvas");
+let ptx, pW, pH;
+
+// ── 粒子特效引擎 ──
+let particles = [];
+let particlesRunning = false;
+let particleRAF = null;
+let particleTimer = null;
+
+function initParticleCanvas() {
+  const rect = elFurnace.getBoundingClientRect();
+  pW = rect.width; pH = rect.height;
+  particleCanvas.width = pW;
+  particleCanvas.height = pH;
+  ptx = particleCanvas.getContext("2d");
+}
+
+function spawnFireParticles(count) {
+  initParticleCanvas();
+  for (let i = 0; i < count; i++) {
+    particles.push({
+      x: pW/2 + (Math.random() - 0.5)*100,
+      y: pH*0.55 + (Math.random() - 0.5)*60,
+      vx: (Math.random() - 0.5)*2.5,
+      vy: -(Math.random()*3 + 1.5),
+      life: 1,
+      decay: 0.008 + Math.random()*0.02,
+      size: 2 + Math.random()*4,
+      hue: Math.random() < 0.5 ? 20 : 35  // orange or gold
+    });
+  }
+  if (!particlesRunning) startParticleLoop();
+}
+
+function spawnSuccessParticles(count) {
+  initParticleCanvas();
+  for (let i = 0; i < count; i++) {
+    const angle = Math.random()*Math.PI*2;
+    const speed = 1 + Math.random()*3;
+    particles.push({
+      x: pW/2 + (Math.random()-0.5)*120,
+      y: pH/2 + (Math.random()-0.5)*80,
+      vx: Math.cos(angle)*speed,
+      vy: Math.sin(angle)*speed - 1,
+      life: 1,
+      decay: 0.005 + Math.random()*0.015,
+      size: 2 + Math.random()*5,
+      hue: Math.random() < 0.5 ? 160 : 45   // jade or gold
+    });
+  }
+  if (!particlesRunning) startParticleLoop();
+}
+
+function startParticleLoop() {
+  particlesRunning = true;
+  function loop() {
+    ptx.clearRect(0, 0, pW, pH);
+    particles = particles.filter(p => p.life > 0);
+    for (const p of particles) {
+      p.x += p.vx; p.y += p.vy; p.life -= p.decay;
+      ptx.globalAlpha = p.life;
+      ptx.fillStyle = `hsl(${p.hue}, 80%, ${50 + p.life*30}%)`;
+      ptx.beginPath();
+      ptx.arc(p.x, p.y, p.size, 0, Math.PI*2);
+      ptx.fill();
+    }
+    ptx.globalAlpha = 1;
+    if (particles.length > 0) {
+      particleRAF = requestAnimationFrame(loop);
+    } else {
+      particlesRunning = false;
+      particleRAF = null;
+    }
+  }
+  particleRAF = requestAnimationFrame(loop);
+}
+
+// ── Toast ──
+function showToast(msg, type) {
+  const old = document.querySelector(".toast");
+  if (old) old.remove();
+  const t = document.createElement("div");
+  t.className = "toast " + type;
+  t.textContent = msg;
+  document.body.appendChild(t);
+  setTimeout(() => { t.style.animation = "toastOut 0.4s ease-in forwards"; }, 2000);
+  setTimeout(() => { if (t.parentNode) t.remove(); }, 2500);
+}
+
+// ── 构建界面 ──
+function loadRecipe(index) {
+  const recipe = PILL_RECIPES[index];
+  equationState = {};
+  attempts = 0;
+  elAttempts.textContent = "0";
+  elPillName.textContent = recipe.name + " · " + recipe.description;
+
+  // 构建方程式显示
+  elEquation.innerHTML = "";
+  const eqs = recipe.equations;
+  const reactantEqs = eqs.filter(e => e.side === "reactant");
+  const productEqs = eqs.filter(e => e.side === "product");
+
+  function renderSide(sideEqs) {
+    const frag = document.createDocumentFragment();
+    for (let i = 0; i < sideEqs.length; i++) {
+      if (i > 0) {
+        const plus = document.createElement("span");
+        plus.className = "formula-text"; plus.textContent = " + ";
+        frag.appendChild(plus);
+      }
+      const slot = document.createElement("span");
+      slot.className = "coeff-slot";
+      slot.dataset.eqIndex = eqs.indexOf(sideEqs[i]);
+      slot.textContent = "?";
+      slot.draggable = false;
+      slot.addEventListener("dragover", onDragOverSlot);
+      slot.addEventListener("dragleave", onDragLeaveSlot);
+      slot.addEventListener("drop", onDropSlot);
+      // touch support
+      slot.addEventListener("click", () => onSlotClick(slot));
+      frag.appendChild(slot);
+
+      const formula = document.createElement("span");
+      formula.className = "formula-text"; formula.textContent = sideEqs[i].formula;
+      frag.appendChild(formula);
+    }
+    return frag;
+  }
+
+  elEquation.appendChild(renderSide(reactantEqs));
+  const arrow = document.createElement("span");
+  arrow.className = "arrow"; arrow.textContent = " → ";
+  elEquation.appendChild(arrow);
+  elEquation.appendChild(renderSide(productEqs));
+
+  // 元素卡片
+  renderCards(recipe);
+
+  elHint.textContent = "拖拽元素卡片到系数槽位，配平丹方";
+  elFurnace.classList.remove("glowing", "extinguished");
+  updateScore();
+  initParticleCanvas();
+}
+
+function renderCards(recipe) {
+  elCardsTray.innerHTML = "";
+  const cardsNeeded = [];
+
+  for (let i = 0; i < recipe.equations.length; i++) {
+    const eq = recipe.equations[i];
+    for (let c = 0; c < eq.coeffAnswer; c++) {
+      cardsNeeded.push({ eqIndex: i, formula: eq.formula });
+    }
+  }
+
+  // 加入一些干扰卡片
+  const distractors = [];
+  for (const eq of recipe.equations) {
+    for (let c = 0; c < eq.coeffAnswer; c++) {
+      distractors.push({ eqIndex: eq.side === "reactant" ? recipe.equations.length - 1 : 0,
+                          formula: eq.formula });
+    }
+  }
+  // 只保留一半干扰
+  const dCount = Math.floor(distractors.length * 0.5);
+  for (let i = 0; i < dCount; i++) {
+    cardsNeeded.push(distractors[i]);
+  }
+
+  // 打乱
+  shuffle(cardsNeeded);
+
+  for (let i = 0; i < cardsNeeded.length; i++) {
+    const card = document.createElement("div");
+    card.className = "element-card";
+    card.textContent = cardsNeeded[i].formula;
+    card.dataset.eqIndex = cardsNeeded[i].eqIndex;
+    card.draggable = true;
+    card.addEventListener("dragstart", onDragStart);
+    card.addEventListener("dragend", onDragEnd);
+    // touch
+    card.addEventListener("touchstart", onTouchStart, {passive: false});
+    card.addEventListener("touchmove", onTouchMove, {passive: false});
+    card.addEventListener("touchend", onTouchEnd);
+    elCardsTray.appendChild(card);
+  }
+}
+
+function shuffle(arr) {
+  for (let i = arr.length-1; i>0; i--) {
+    const j = Math.floor(Math.random()*(i+1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+}
+
+// ── 拖拽逻辑（桌面）──
+function onDragStart(e) {
+  const idx = e.target.dataset.eqIndex;
+  if (idx === undefined) return;
+  draggedEqIndex = parseInt(idx);
+  e.target.classList.add("dragging");
+  e.dataTransfer.effectAllowed = "move";
+  e.dataTransfer.setData("text/plain", idx);
+}
+
+function onDragEnd(e) {
+  e.target.classList.remove("dragging");
+  draggedEqIndex = null;
+}
+
+function onDragOverSlot(e) {
+  e.preventDefault();
+  e.dataTransfer.dropEffect = "move";
+  e.currentTarget.classList.add("drag-over");
+}
+
+function onDragLeaveSlot(e) {
+  e.currentTarget.classList.remove("drag-over");
+}
+
+function onDropSlot(e) {
+  e.preventDefault();
+  e.currentTarget.classList.remove("drag-over");
+  const slot = e.currentTarget;
+  const slotEqIndex = parseInt(slot.dataset.eqIndex);
+  const cardEqIndex = parseInt(e.dataTransfer.getData("text/plain"));
+  if (isNaN(cardEqIndex)) return;
+  placeCoeff(slot, slotEqIndex, cardEqIndex);
+  draggedEqIndex = null;
+}
+
+// ── 点击式交互（传统+触屏）──
+let selectedCardEqIndex = null;
+
+function onSlotClick(slot) {
+  if (selectedCardEqIndex !== null) {
+    const slotEqIndex = parseInt(slot.dataset.eqIndex);
+    placeCoeff(slot, slotEqIndex, selectedCardEqIndex);
+    deselectAllCards();
+    selectedCardEqIndex = null;
+  }
+}
+
+function deselectAllCards() {
+  document.querySelectorAll(".element-card.selected").forEach(c => c.classList.remove("selected"));
+}
+
+// 点击卡片选中
+elCardsTray.addEventListener("click", (e) => {
+  const card = e.target.closest(".element-card");
+  if (!card) return;
+  const eqIndex = card.dataset.eqIndex;
+  if (eqIndex === undefined) return;
+  deselectAllCards();
+  card.classList.add("selected");
+  selectedCardEqIndex = parseInt(eqIndex);
+});
+
+// ── Touch 拖拽 ──
+let touchCard = null;
+let touchClone = null;
+let touchOffsetX = 0, touchOffsetY = 0;
+
+function onTouchStart(e) {
+  e.preventDefault();
+  touchCard = e.target.closest(".element-card");
+  if (!touchCard) return;
+  const touch = e.touches[0];
+  touchOffsetX = touch.clientX - touchCard.getBoundingClientRect().left;
+  touchOffsetY = touch.clientY - touchCard.getBoundingClientRect().top;
+  touchCard.classList.add("dragging");
+  selectedCardEqIndex = parseInt(touchCard.dataset.eqIndex);
+}
+
+function onTouchMove(e) {
+  e.preventDefault();
+  if (!touchCard) return;
+  const touch = e.touches[0];
+  if (!touchClone) {
+    touchClone = touchCard.cloneNode(true);
+    touchClone.style.position = "fixed";
+    touchClone.style.zIndex = "200";
+    touchClone.style.pointerEvents = "none";
+    touchClone.style.width = "54px";
+    touchClone.style.height = "54px";
+    touchClone.classList.remove("dragging");
+    touchClone.classList.add("touch-ghost");
+    document.body.appendChild(touchClone);
+  }
+  touchClone.style.left = (touch.clientX - touchOffsetX) + "px";
+  touchClone.style.top = (touch.clientY - touchOffsetY) + "px";
+
+  // highlight slot under touch
+  document.querySelectorAll(".coeff-slot").forEach(s => s.classList.remove("drag-over"));
+  const slotEl = document.elementFromPoint(touch.clientX, touch.clientY);
+  if (slotEl) {
+    const closestSlot = slotEl.closest(".coeff-slot");
+    if (closestSlot) closestSlot.classList.add("drag-over");
+  }
+}
+
+function onTouchEnd(e) {
+  e.preventDefault();
+  if (!touchCard) return;
+  touchCard.classList.remove("dragging");
+
+  if (touchClone) {
+    touchClone.remove();
+    const touch = e.changedTouches[0];
+    const slotEl = document.elementFromPoint(touch.clientX, touch.clientY);
+    const closestSlot = slotEl ? slotEl.closest(".coeff-slot") : null;
+    if (closestSlot && selectedCardEqIndex !== null) {
+      const slotEqIndex = parseInt(closestSlot.dataset.eqIndex);
+      placeCoeff(closestSlot, slotEqIndex, selectedCardEqIndex);
+    }
+    touchClone = null;
+  }
+  document.querySelectorAll(".coeff-slot").forEach(s => s.classList.remove("drag-over"));
+  touchCard = null;
+}
+
+// ── 放置系数 ──
+function placeCoeff(slot, slotEqIndex, cardEqIndex) {
+  if (!slot || isNaN(slotEqIndex) || isNaN(cardEqIndex)) return;
+
+  const recipe = PILL_RECIPES[currentIndex];
+  const slotEq = recipe.equations[slotEqIndex];
+  const cardEq = recipe.equations[cardEqIndex];
+
+  // 只能放入对应公式的槽
+  if (slotEq.formula !== cardEq.formula) {
+    showToast("药材不匹配此槽位！", "fail");
+    return;
+  }
+
+  // 检查是否已填
+  const current = equationState[slotEqIndex] || 0;
+  equationState[slotEqIndex] = current + 1;
+  slot.textContent = equationState[slotEqIndex];
+  slot.classList.add("filled");
+  elHint.textContent = "已填入系数 " + equationState[slotEqIndex];
+}
+
+// ── 清空 ──
+document.getElementById("btnClear").addEventListener("click", () => {
+  equationState = {};
+  document.querySelectorAll(".coeff-slot").forEach(s => {
+    s.textContent = "?";
+    s.classList.remove("filled");
+  });
+  elHint.textContent = "丹炉已清空，重新配平吧";
+  elFurnace.classList.remove("glowing", "extinguished");
+  deselectAllCards();
+  selectedCardEqIndex = null;
+});
+
+// ── 开炉炼丹（验证）──
+document.getElementById("btnBrew").addEventListener("click", () => {
+  const recipe = PILL_RECIPES[currentIndex];
+  attempts++;
+  elAttempts.textContent = attempts;
+
+  let correct = true;
+  for (let i = 0; i < recipe.equations.length; i++) {
+    const expected = recipe.equations[i].coeffAnswer;
+    const actual = equationState[i] || 0;
+    if (actual !== expected) { correct = false; break; }
+  }
+  // 也要检查没有多余填入
+  for (const key of Object.keys(equationState)) {
+    if (!recipe.equations[key]) { correct = false; break; }
+  }
+
+  document.querySelectorAll(".coeff-slot").forEach(s => s.classList.remove("drag-over"));
+
+  if (correct) {
+    // 成功！
+    const points = Math.max(10, 30 - attempts*3);
+    score += points;
+    updateScore();
+    elFurnace.classList.add("glowing");
+    elFurnace.classList.remove("extinguished");
+    spawnSuccessParticles(80);
+    spawnFireParticles(60);
+    showToast("✨ 灵丹炼成！+" + points + " 修为", "success");
+    elHint.textContent = "丹成！" + recipe.hint;
+    document.getElementById("btnNext").focus();
+  } else {
+    elFurnace.classList.add("extinguished");
+    elFurnace.classList.remove("glowing");
+    showToast("💢 配方有误，炉火将熄...", "fail");
+    elHint.textContent = "配方不对，仔细检查每个系数";
+  }
+});
+
+// ── 下一丹方 ──
+document.getElementById("btnNext").addEventListener("click", () => {
+  currentIndex = (currentIndex + 1) % PILL_RECIPES.length;
+  loadRecipe(currentIndex);
+});
+
+function updateScore() {
+  elScore.textContent = score;
+}
+
+// ── resize 时更新粒子画布 ──
+window.addEventListener("resize", () => { if (particlesRunning) initParticleCanvas(); });
+
+// ── 启动 ──
+loadRecipe(0);
+</script>
+</body>
+</html>
