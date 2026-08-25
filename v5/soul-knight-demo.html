@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"><title>问道修仙 v5 · 雷霆殿</title><style>
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"><title>问道修仙 v5 · 雷霆殿</title><style>
 *{margin:0;padding:0;box-sizing:border-box}html,body{width:100%;height:100%;overflow:hidden;background:#0b0f1a}
 canvas{display:block;width:100%;height:100%}
 #hud{position:fixed;top:12px;left:12px;z-index:10;background:rgba(10,16,30,.88);border:1px solid rgba(122,150,200,.3);border-radius:10px;padding:8px 14px;color:#dfe7f5;font:12px Microsoft YaHei,sans-serif;pointer-events:none}
@@ -115,7 +115,7 @@ function sf(x,y,t,c){D.floats.push({x,y,text:t,color:c,life:1})}
 function dmgEnemy(e,dmg){e.hp-=dmg;sp(e.rx*CELL,e.ry*CELL,'#ff6b6b',5);sf(e.rx*CELL,e.ry*CELL,'-'+Math.floor(dmg),'#ff6b6b');if(e.hp<=0){e.alive=false;const g=10+D.depth*5;D.player.gold+=g;D.kills++;D.goldGot+=g;sp(e.rx*CELL,e.ry*CELL,'#ffd700',12);sf(e.rx*CELL,e.ry*CELL,'+'+g+'G','#ffd700')}}
 function roomAt(x,y){return D.rooms.find(r=>x>=r.x&&x<r.x+r.w&&y>=r.y&&y<r.y+r.h)||null}
 function curRoom(){return D.cam.roomId!=null?D.rooms[D.cam.roomId]:roomAt(D.player.x,D.player.y)}
-function walkable(x,y){if(x<0||y<0||x>=D.mw||y>=D.mh)return false;const t=D.map[y][x];return t===2||t===3||t===4}
+function walkable(x,y){if(x<0||y<0||x>=D.mw||y>=D.mh)return false;const t=D.map[y][x];if(t===2||t===3)return true;if(t===4){for(const r of D.rooms)for(const d of r.doors)if(d.x===x&&d.y===y)return d.open;return false}return false}
 
 // === update ===
 function update(dt){
