@@ -17,6 +17,7 @@ export function installEconomy(boot) {
 
   function ensureInv() {
     const st = state();
+    if (!st.player) st.player = { inventory: {}, gold: 0, level: 1, stats: {} };
     if (!st.player.inventory) st.player.inventory = {};
     if (st.player.gold === undefined) st.player.gold = 0;
     return st.player;
