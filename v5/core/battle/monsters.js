@@ -59,6 +59,34 @@ export const M1_MONSTERS = {
     }],
   },
 
+  // Boss · 反震犀牛·王（第一章首领，HP/ATK 增强版，冲撞窗口更宽）
+  boss_ram: {
+    id: 'boss_ram',
+    name: '反震犀牛·王',
+    icon: '🦏',
+    subject: 'phy',
+    knowledgeId: 'phy_k3',
+    hp: 400, atk: 24, def: 12, speed: 8,
+    stanceReq: { type: 'brace', n: 1 },
+    firstHitTip: '力可破万物……在撞击中领悟反作用力的真谛',
+    moves: [{
+      id: 'ram', kind: 'collide', anim: 'dash',
+      dur: 1.9,
+      params: { speed: 9, recoil: 4, dashSpeed: 8 },
+      phases: [
+        { label: '蓄力', t: 0,   to: 0.6 },
+        { label: '撞击', t: 0.6, to: 1.4 },
+        { label: '眩晕', t: 1.4, to: 1.9 },
+      ],
+      onImpact(player) {
+        const R = this.params.recoil;
+        if (player.bracing) return { blocked: true, braced: true, selfDmg: 0, recoilVec: { dx: 0, dy: 0.5 } };
+        if (player.guarding) return { blocked: true, recoil: true, selfDmg: 12, recoilVec: { dx: 0, dy: R } };
+        return { blocked: false, dmg: 28, recoil: true, recoilVec: { dx: 0, dy: R } };
+      }
+    }],
+  },
+
   // 怪 B · 幻影隼（匀变速直线运动：x = v0·t + ½a·t²）
   // 玩家算预判在冲刺落点之前躲开 -> 闪避露破绽
   falcon: {
