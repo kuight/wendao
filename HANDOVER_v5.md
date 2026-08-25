@@ -1,241 +1,241 @@
-# 《问道修仙学院》v5 项目交接文档
+# 问道修仙学院 v5 项目交接文档（完整版）
 
-> 生成时间：2026-08-21（本次更新 2026-08-23）
-> 交接对象：一个完全没有本会话记忆的 AI 助手
-> 目标：让新助手拿到本文档后，能直接从当前断点继续推进 v5 项目，不重复走弯路。
-
----
-
-# v5 完整开发蓝图（2026-08-23 定稿）
-
-> 由对全仓库勘察（11 模块源码 + 测试 + 云端遗产）后的综合规划。当前基线健康：smoke 79、integration 闭环、battle-m1 12、render-canvas 全绿。移动与 M1 战斗实测 bug 已修复（见下）。
-
-## 1. 项目一句话
-
-纯前端修仙学习游戏：等距开放世界漫游 + 知识驱动战斗（战斗=体验知识点）+ 结算答题检验 + 成长熟练度，六科（物/化/地/数/文/英）高中考纲。
-
-## 2. 技术架构（现状已建）
-
-| 层 | 模块 | 职责 | 状态 |
-|---|---|---|---|
-| 引导 | `bootstrap/entry.js` | boot 对象、事件总线、启动序列 | 完成 |
-| 引导 | `bootstrap/loader.js` | 11 模块动态 import + 缺失 stub 降级 | 完成 |
-| 引导 | `bootstrap/main-loop.js` | RAF 主循环（节流/暂停/错误隔离） | 完成 |
-| 核心 | `core/state` | 全局状态单一数据源 get/set | 完成 |
-| 核心 | `core/save` | localStorage 存档 + v4 迁移 + 导出 | 完成 |
-| 核心 | `core/world` | 等距地图生成 + 漫游 + 区域/NPC/事件 | 完成（移动已通） |
-| 核心 | `core/render` | 视差背景 + 等距瓦片 + 相机 + 转场 + 粒子/飘字 | 完成（渲染已修） |
-| 核心 | `core/input` | 键盘/触摸映射为语义动作 | 完成（含战斗键） |
-| 核心 | `core/battle` | 答题驱动 + M1 演知识实时战斗 | 完成（实测 bug 已修） |
-| 核心 | `core/economy` | 灵石/道具/炼丹 | 完成 |
-| 核心 | `core/knowledge` | 六科课程图谱 + 题库路由 + 熟练度 | 完成 |
-| 核心 | `core/audio` | Web Audio 合成器（零素材） | 完成 |
-| 核心 | `core/effects` | 粒子/震动/闪白/combo/飘字（音游式） | 完成 |
-| UI | `ui/` | 玻璃拟态面板 + 桌游卡片 + HUD + toast/屏幕 | 完成 |
-| 数据 | `content/subjects/*.json` | 六科章节/知识点元数据 | 完成 |
-| 测试 | `tests/*` | 冒烟/集成/渲染/M1 战斗/知识图谱 | 全部通过 |
-
-## 3. 功能地图（核心范式：三层分离）
-
-**战斗层（学）**：怪物招式=知识点的物理/逻辑定律，玩家应对=运用知识点（对抗即理解）。
-- 反震犀牛=牛顿第三定律（撞击→被弹回→硬抗破解→露破绽→出手）
-- 幻影隼=匀变速直线运动（走位预判落点躲闪）
-- 玄龟·钟摆=简谐振动（抓平衡点出手）
-
-**检验层（考）**：破绽后结算，用题验证（答对=通关+熟练度，答错=标记回炉重打）。
-
-**成长层（得）**：熟练度/六科修为/功法解锁/章节秘境推进。
-
-## 4. 里程碑（蓝图推进顺序）
-
-- ✅ **M0（本次）**：框架 + 11 模块 + 移动打通 + 渲染修复 + M1 三怪演知识战斗（实测 bug 已修）
-- ⏭ **M1**：结算检验层铺开 + 熟练度/修为成长闭环（recordAnswer 已接，待UI化）
-- ⏭ **M2**：八种演法战斗形式铺开 + 房间/关卡编排（含题目主题房间、传送门房、首领房）
-- ⏭ **M3**：多阶段 BOSS + 六秘境世界观（凌云峰/青木林/镜心湖/仙坊镇/秘境洞府…）
-- ⏭ **M4**：数据工程（合并 _cloud_legacy 题库 ~10,890 题 + 高一至高三补全）
-
-## 5. 云端遗产合并要点（勘察结论）
-
-- **题库**：`_cloud_legacy/qubanks-600`、`batch4-18`、`bank-v51`、`sp8` 共 **17 批约 10,890 题**，schema 统一 `{id,subject,chapter,difficulty,stem,options,answer,explain}`，可直接喂入 knowledge 路由。
-- **portal**：`portal-v4` 是最新 JS 驱动的枢纽（44 条目/36 游戏），`portal-v3` 内嵌 5 个小游戏（rhythm-fantasy 等）。
-- **小游戏**：约 38 个纯前端小游戏可作玩法/素材参考，无图片/音频素材（全 CSS/canvas 绘制）。
-- **M1 节奏玩法参考**：`wendao-v5-rhythm-fantasy`（84KB 单文件 canvas 音游）可作"节奏抓时机"演法原型。
-
-## 6. 下一步建议（按优先级）
-
-1. **合并题库**：把 17 批云端题库转成 v5 knowledge 可消费的 JSON（复用/扩展 `content/subjects/*.json` + 题库路由），核题量、接答题闭环。
-2. **结算检验 UI 化**：战斗胜利后弹"顿悟/验心"答题面板（ui.show + card 组件 + knowledge.getQuestion），接 recordAnswer 成长。
-3. **八演法铺开**：把三怪原型扩展为八种演法（走位/节奏/格挡/道具/影响/选择/多段BOSS），铺房间与关卡。
-4. **美术升级**：用云端 3D JSON 模型（pet-fox/sword/pill-bottle）作道具/怪图标，补角色立绘与场景。
-5. **教程/世界观**：接云端 tutorials 的 .md 讲义与 .subs.json 对话，做任务剧情线。
-
-## 7. 关键坑点（务必遵守）
-
-- 写代码别混中文碎词（会语法错）；edit 前先 read；写完立即跑测试。
-- git push 需 `-c http.sslBackend=openssl`（本机已持久化）。
-- 双 canvas 冲突已修（render 复用 #cv）；battle/effects 依赖全局对象需先 import 底层文件。
-- 服务器需跑仓库根（题库用绝对 /src/data/... 路径）。
-- 改战斗平衡数值 / 存档 schema / 删主体内容前必须停下问用户。
+> 生成时间：2026-08-25
+> 交接对象：云端全新 AI agent（零记忆、零上下文）
+> 重要：请先完整阅读本文档再动手，避免重走本地agent踩过的所有坑。
 
 ---
 
-## ⚡ 本次会话更新（2026-08-23，commit e20f148，已推 master）
+## 0. 项目一句话定位
 
-**上文第 1 节的"双 canvas 断点"已全部解决**，现状态（本次新 agent 实测通过）：
-- 渲染修复已在 c4f15b2 → 4d0d317 完成：canvas-engine 暴露 ctx、world 用 getter 暴露 map/npcs/events、render.draw=drawScene 别名、drawScene 参数归一化 + 相机 NaN 自愈、相机用 gridToScreen 等距坐标。地图从空白 → 正常。
-- **玩家移动已打通（本次核心）**：`v5/core/world/index.js` 新增 `update(ctx)`，消费 input 方向键（WASD/方向键），0.13s 节流调 `moveTo(p.x+dx,p.y+dy)`，成功后 `boot.render.camera.set(p.x,p.y)` 跟随（camera.set 默认按网格坐标 gridToScreen 换算）；`main-loop step()` systems 数组加 `['world','update']`；`entry.js` 挂载 `input.attach()` 浏览器键盘监听。移动真机可用。
-- **M1 实时演武战斗系统**已实现（V5_BLUEPRINT v0.5「知识驱动战斗」范式）：battle 重做为实时演武（反震犀牛/破绽/硬抗格挡/出手），新增 `v5/core/battle/monsters.js`、`v5/m1-demo.html`、`v5/tests/battle-m1.test.js`；input 增补 guard/strike/brace 操作键。
-- `_learn_toy/`、`toy_game.html`、`v5_shot.png` 为本次调研节奏术/知识驱动战斗时的草稿，已进 `.gitignore` 忽略（不进 git，本地保留）。
-
-**M1 实测 bug 修复（commit 0d173af，已推 master，2026-08-23）**：用户在 `v5/m1-demo.html` 实测报 4 个 bug（牛撞人消失 / 持续扣血按X无效 / X-K-Z 无反应 / 隔空撞人）。根因不在页面装配层，而在战斗引擎判定逻辑：**撞击结算的 clamp 误用 `room.width-2` 同时限制 x/y**，导致玩家 y 被推出可走带（8）到 14 底墙而出屏；且 strike 按键在 stance 被 `playerAct('strike')` 消费一次后 `resolveAttack` 读不到（双消费）。修复：①`battle/index.js` clamp 拆成 `clampX(mx)/clampY(my)` 分轴，玩家被撞后夹紧在可走带内（永不出屏）；②strike 在 stance 直接走 `resolveAttack` 不再双消费；③`world/index.js` spawnBattleRoom 玩家出生改居中（给被撞下弹留空间）；④`m1-demo.html` drawRoom 相机自适应铺满视口 + RAF 异常改 console.error 输出（不再静默吞掉）。验证：battle-m1 12/12、smoke 79、integration 全绿，端到端模拟（含相机数学）玩家永不出屏、可硬抗露破绽、K 出手有效。
-
-**当前测试全部通过**：
-- `node v5/tests/smoke.js` → 79 项
-- `node v5/tests/integration.cjs` → 闭环全绿（含移动）
-- `node v5/tests/render-canvas-check.mjs` → isStubDraw=false、玩家在位、drawTile>0
-- `node v5/tests/battle-m1.test.js` → 12 项
-
-**下一步建议**：按原第 8 节 ③ 继续——把 `_cloud_legacy/`（40 小游戏 + 16 批题库 + portal）合并进 v5 开放世界；六科题库按高一到高三分层；UI 美术升级。
-
-**注意（重要教训，务必遵守）**：写代码别混中文碎词（会语法错）；edit 前先 read；写完立即跑测试；git push 需 `-c http.sslBackend=openssl`（本机已持久化到 .git/config，直接 push 即可）。
+纯前端修仙学习游戏。v5 目标：元气骑士（Soul Knight）式的爽快 Roguelike 地牢 x 六科知识点（物/化/地/数/文/英）深度融合。
+不是"刷题套修仙壳"——每只怪的攻击机制 = 某个知识点的物理/逻辑定律，玩家用对知识点的理解来应对 = 打怪的过程就是"用知识点打题"。
 
 ---
 
-## 0. 一句话项目定位
+## 1. 项目物理位置
 
-把纯前端刷题网页《问道修仙学院》（v4.4.0，HTML+CSS+Vanilla JS）重做成**大型开放世界感的二次元修仙学习游戏**：世界漫游 + 战斗答题 + 小游戏融合 + 海量题库，下至高一上至高考都能用。
-
----
-
-## 1. 交接人当前在做什么 / 卡在哪里
-
-> **已解决**（2026-08-23）：下文"双 canvas 挡住地图"的断点已由 c4f15b2→4d0d317（渲染修复）解决，且玩家移动已打通（e20f148）。当前状态见文首"⚡ 本次会话更新"一节。下文为历史断点记录，仅供参考。
-
-**历史断点（已修复）**：v5 新框架（`v5/` 目录，11 个模块）逻辑全部跑通，但浏览器里世界地图画出来了却被另一个空白 canvas 挡住。
-
-**具体断点（新助手从这里接着修）**：
-- `v5/index.html` 里同时有**两个 canvas 绘制逻辑**：
-  1. `<canvas id="cv">` + `cv.getContext('2d')`（demo 脚本画粒子/网格）
-  2. `Boot.start({ container: stage })` → `render.init()` 会**新建一个 canvas 追加到 stage**（`v5/core/render/index.js` 第 48 行）
-- 结果：stage 里两个 canvas 重叠，**真实世界地图画在新创建的那个 canvas 上，被 #cv 或布局挡住，用户看不到**。
-- 修复方向：让渲染只用一个 canvas——**要么删掉 index.html 里的 #cv 让 render 用自己的 canvas，要么让 render 复用 #cv**（改 `v5/core/render/index.js` 的 init 检测已有 canvas 复用，或改 `v5/index.html` 传 #cv 进去）。
-
-**注意**：交接前我尝试改 render 的 init 复用 #cv，但改错了（canvas 0、loaded 0，页面崩了），已 git 回退到能渲染的原始版本。**不要再乱改 render，先想清楚双 canvas 的干净解法。**
+- 仓库本地根：E:\work\wendao\wendao-main
+- 仓库远端：https://github.com/kuight/wendao（master 分支）
+- v5 新框架：E:\work\wendao\wendao-main\v5\
+- 工作规划目录：E:\work\问道-蓝图规划[待办]\
+  - README.md — 工作规范
+  - CHANGELOG.md — 改动记录
+  - _backup/ — 破坏性改动前备份
+  - v5-蓝图规划.md — v5 完整蓝图（Hub-and-Spoke 多场馆体系）
+  - 元气骑士引擎设计.md — Soul Knight 式地牢引擎设计文档
+- 云端遗产：E:\work\wendao\wendao-main\_cloud_legacy\（626MB，不入 git）
+  - 17 批题库约 10,890 题
+  - 38 个纯前端小游戏
+  - portal-v4 枢纽
+  - 教程卷 1-9
 
 ---
 
-## 2. 项目物理位置
+## 2. 技术栈
 
-- 仓库根目录：`E:\work\wendao\wendao-main`（本地 git 仓库，已配好 origin 远端）
-- 我的 v5 新框架：`E:\work\wendao\wendao-main\v5\`（11 个模块 + 蓝图 + 接口契约 + 测试）
-- 云端 agent 的遗产（已解压）：`E:\work\wendao\wendao-main\_cloud_legacy\`（90+ 目录，含 40 个小游戏 + 16 批题库 + portal 枢纽）
-
----
-
-## 3. 关键指纹
-
-- 本地 git HEAD：`9ba0149`（v5 集成修复已提交推送）
-- 云端 main 分支 HEAD：`4e86b2d`（云端那套 v5 scaffold，被用户要求推倒，我起的是本地全新 v5）
-- v5 框架冒烟测试：`node v5/tests/smoke.js` → 79 项通过
-- v5 集成测试：`node v5/tests/integration.cjs` → 启动→世界→移动→战斗→答题→结算→经济 闭环全绿
+- 纯前端：HTML + CSS + Vanilla JS
+- 无后端、无框架、无构建工具
+- 离线可用（localStorage 存档 + JSON 导出）
+- Canvas 2D 渲染（等距 + 顶视图）
+- 模块化架构：boot 对象 + 11 个 core 模块 + UI 模块
 
 ---
 
-## 4. 项目结构（v5/ 新框架）
+## 3. 当前代码基线（git master HEAD = cd75d63）
 
-```
-v5/
-├── bootstrap/       入口引导、loader、主循环
-│   ├── entry.js      boot 对象、模块注册表、事件总线、启动序列
-│   ├── loader.js     动态加载 11 个模块（缺失自动 stub 降级）
-│   └── main-loop.js  requestAnimationFrame 主循环（节流、暂停/恢复）
-├── core/            核心系统
-│   ├── state/       全局状态机（get/set 单一数据源）
-│   ├── save/        存档（v4 wendao_save_v2 迁移）
-│   ├── world/       等距地图生成（确定性伪随机、漫游、碰撞）
-│   ├── render/      Canvas 渲染管线（视差背景、相机、瓦片、转场）
-│   ├── input/       统一输入（键盘/触摸/鼠标）
-│   ├── battle/      战斗（答题驱动：答对出招、答错受击、combo）
-│   ├── economy/     资源/道具/炼丹
-│   ├── knowledge/   知识图谱（6科/44章/126知识点）
-│   ├── audio/       Web Audio 合成器（零素材发声）
-│   └── effects/     音游式反馈（hit stop/判定环/粒子/震动/飘字）
-├── ui/              UI 组件（玻璃拟态面板、桌游卡片、HUD、主题 CSS）
-├── content/         内容数据（六科学科 json、章节/知识点）
-├── assets/          素材目录
-└── tests/           冒烟测试 + 集成测试
-```
+### 3.1 v5 框架（v5/ 目录）—— 11 模块完整
 
-**模块接口契约**：见 `v5/INTERFACES.md`（新助手写代码前必读，所有模块通过 boot 命名空间通信）。
+| 模块 | 文件 | 状态 |
+|------|------|------|
+| bootstrap/entry | v5/bootstrap/entry.js | 完成：Boot 启动、模块注册、事件总线 |
+| bootstrap/loader | v5/bootstrap/loader.js | 完成：动态 import、缺失 stub 降级 |
+| bootstrap/main-loop | v5/bootstrap/main-loop.js | 完成：RAF 主循环、帧率节流、暂停/恢复 |
+| core/state | v5/core/state/index.js | 完成：全局状态 get/set 单一数据源 |
+| core/save | v5/core/save/index.js | 完成：localStorage 存档 + v4 迁移 |
+| core/world | v5/core/world/index.js | 完成：等距地图生成 + 漫游 + 地牢楼层 + 掉宝 |
+| core/world/dungeon.js | v5/core/world/dungeon.js | 完成：地牢房间生成器 |
+| core/world/loot.js | v5/core/world/loot.js | 完成：掉宝系统 |
+| core/world/iso-map.js | v5/core/world/iso-map.js | 完成：等距地图算法 |
+| core/render | v5/core/render/index.js | 完成：等距渲染管线、视差背景、相机、转场 |
+| core/render/canvas-engine.js | v5/core/render/canvas-engine.js | 完成：Canvas 绘制助手 |
+| core/input | v5/core/input/index.js | 完成：键盘/触摸映射为语义动作 |
+| core/battle | v5/core/battle/index.js | 完成：答题驱动战斗 + M1 演知识实时战斗 |
+| core/battle/engine.js | v5/core/battle/engine.js | 完成：战斗数值计算引擎 |
+| core/battle/monsters.js | v5/core/battle/monsters.js | 完成：M1 三怪定义 + boss_ram |
+| core/economy | v5/core/economy/index.js | 完成：灵石/道具/炼丹 |
+| core/knowledge | v5/core/knowledge/index.js | 完成：六科课程图谱 + 题库路由 + 熟练度 |
+| core/knowledge/curriculum.js | v5/core/knowledge/curriculum.js | 完成：学科课程结构 |
+| core/knowledge/graph.js | v5/core/knowledge/graph.js | 完成：知识点图谱 |
+| core/audio | v5/core/audio/index.js | 完成：Web Audio 合成器 |
+| core/audio/synth.js | v5/core/audio/synth.js | 完成：音频合成底层 |
+| core/effects | v5/core/effects/index.js | 完成：粒子/震动/闪白/combo/飘字 |
+| core/effects/feedback.js | v5/core/effects/feedback.js | 完成：音游式反馈图元 |
+| ui | v5/ui/index.js | 完成：玻璃拟态面板/卡片/HUD/Toast |
+| ui/components/ | glass-panel.js, card.js, hud.js | 完成 |
 
-**设计蓝图**：见 `v5/V5_BLUEPRINT.md`（视觉方向：等距+视差+玻璃拟态+音游反馈）。
+### 3.2 场馆 MVP 原型（v5/venues/）
+
+| 文件 | 场馆 | 玩法 |
+|------|------|------|
+| v5/venues/alchemy-lab.html | 丹鼎峰(化学) | 炼丹方程式配平（拖拽元素卡片） |
+| v5/venues/math-tower.html | 推衍宫(数学) | 塔防 + 直线函数轨迹拦截 |
+| v5/venues/geo-explore.html | 山河阁(地理) | 世界迷雾探索 + 地理选择题 |
+| v5/venues/literary-hall.html | 文渊阁(语文) | 文言实词符文拼写 |
+| v5/venues/word-arena.html | 译灵堂(英语) | 英语词汇对战 |
+
+### 3.3 地牢 Demo（v5/soul-knight-demo.html）—— 核心可玩 Demo
+
+Soul Knight 式实时地牢引擎。功能清单：
+- 房间栅格布局（GAP=1，水平主干道 [0,1]->[1,1]->[2,1]->[3,1]）
+- Cardinal 邻接房间门系统（Manhattan 距离=1，单扇门穿透 1 格墙）
+- 门禁机制：进战斗房自动关门、清完怪自动开门
+- 摄像机：死区（18% 屏宽）+ 平滑追赶 + 房间边界 clamp + 切房 0.35s 缓动
+- 动态 CELL 尺寸（房间填满屏幕 75-85%）
+- 自动索敌：K 近战 180弧 auto-target / J 远程 60锥追踪弹道 / 锁定高亮圈
+- 冲刺/闪避（Shift 键，3 格冲刺 + 0.35s 无敌帧）
+- 4 种敌人：basic（巡逻）、charger（冲刺）、shooter（保持距离+弹道）、boss（HP500+弹幕）
+- 粒子特效 + 飘字伤害 + HP 条
+- 血瓶拾取
+- 多楼层推进（N 键下一层）
+- 开始/死亡/通关画面
+
+### 3.4 已有 HTML 页面
+
+| 文件 | 用途 |
+|------|------|
+| v5/index.html | v5 框架主页面（等距世界 + 11 模块装配） |
+| v5/m1-demo.html | M1 反震犀牛实测页（含结算答题面板） |
+| v5/soul-knight-demo.html | 核心地牢 Demo（Soul Knight 式） |
+
+### 3.5 测试套件
+
+| 文件 | 说明 | 状态 |
+|------|------|------|
+| v5/tests/smoke.js | 冒烟：79 项 | 全绿 |
+| v5/tests/integration.cjs | 集成闭环 | 全绿 |
+| v5/tests/battle-m1.test.js | M1 战斗 12 项 | 全绿 |
+| v5/tests/render-canvas-check.mjs | 渲染验证 | 全绿 |
+| v5/tests/knowledge.test.mjs | 知识图谱 15 项 | 1 个已知夹具失败（physics-bank 在 vm 环境不加载，浏览器正常） |
 
 ---
 
-## 5. 云端 agent 的遗产（很值钱，别丢）
+## 4. 如何运行
 
-已解压到 `_cloud_legacy/`，包含：
+服务器必须跑在仓库根：
+  cd E:\work\wendao\wendao-main
+  python -m http.server 8091
 
-| 类型 | 内容 | 目录 |
+浏览器打开：
+  主框架：http://localhost:8091/v5/index.html
+  M1 战斗实测：http://localhost:8091/v5/m1-demo.html
+  Soul Knight 地牢：http://localhost:8091/v5/soul-knight-demo.html
+  丹鼎峰：http://localhost:8091/v5/venues/alchemy-lab.html
+  推衍宫：http://localhost:8091/v5/venues/math-tower.html
+  山河阁：http://localhost:8091/v5/venues/geo-explore.html
+  文渊阁：http://localhost:8091/v5/venues/literary-hall.html
+  译灵堂：http://localhost:8091/v5/venues/word-arena.html
+
+注意：服务器必须跑在仓库根（不是 v5/ 里），题库路径用绝对 /src/data/... 才能访问。
+
+---
+
+## 5. 蓝图（完整版在 v5/V5_BLUEPRINT.md）
+
+### 5.1 核心范式：三层分离
+
+| 层 | 时机 | 内容 |
 |---|---|---|
-| 小游戏 | 2048、炼药、围棋、五子棋、阵棋、宠物竞技场、塔防、狼人杀、音游、恋爱VN、RPG、模拟考试2027、推箱子、迷宫 等 40+ 个 | `wendao-v5-*.tgz`/目录 |
-| 题库 | 16 批题库批次（batch4~18）+ 600 题集 + bank-v51 | `wendao-v5-qubanks-*` |
-| 开放世界 | 传送门枢纽 v2/v3/v4 | `wendao-v5-portal-*` |
-| 教程/模板 | 教程卷 1-9 + 教学模板 | `wendao-v5-tutorials-*` |
-| 蓝图/自检 | v5 蓝图 + 自检报告 | `_root_extras/wendao-v5-blueprint*`、`selfcheck.md` |
+| 战斗层（学） | 进行中 | 怪招式=知识点的物理/逻辑定律，玩家实时应对 |
+| 检验层（考） | 战后/破绽后 | 结算弹题，验证是否真懂（答题） |
+| 成长层（得） | 结算后 | 熟练度/修为/功法/秘境推进 |
 
-**用法**：小游戏目录里都有 index.html，**双击就能玩**（普通 script，不用服务器）。
+### 5.2 架构：Hub-and-Spoke 多场馆融合
 
----
+修仙学院（等距开放世界）<- 统一修为/熟练度/存档
+  |- 雷霆殿(物理) -> 肉鸽地牢战斗（即时操作）
+  |- 丹鼎峰(化学) -> 炼金实验室（合成/配方/卡牌）
+  |- 推衍宫(数学) -> 塔防谜题塔（轨迹/数列/概率）
+  |- 山河阁(地理) -> 探索建造沙盒（地图/气候/资源）
+  |- 文渊阁(语文) -> 文字冒险馆（文言翻译/阅读理解）
+  |- 译灵堂(英语) -> 词汇竞技场（单词对战/语法拼图）
 
-## 6. 如何实测（给用户的操作指引）
+### 5.3 分步实施（当前进度）
 
-**测我的 v5 框架（世界漫游+战斗，需起服务器）：**
-```
-cd /d E:\work\wendao\wendao-main
-python -m http.server 8091
-```
-浏览器开：`http://localhost:8091/v5/index.html`
-> 注意：服务器必须跑在仓库根（不是 v5/ 里），题库路径才能用绝对 `/src/data/...` 访问到。
-
-**测云端小游戏（零配置，双击即玩）：**
-```
-E:\work\wendao\wendao-main\_cloud_legacy\wendao-v5-2048\index.html
-E:\work\wendao\wendao-main\_cloud_legacy\wendao-v5-rhythm-fantasy\index.html
-```
-
----
-
-## 7. 授权边界（用户 kuight 的明确指示）
-
-用户可以自主做（不用问）：UI/UX 微调、顶部菜单/设置面板、删外部 beacon/telemetry、文件名清理、打 tag、重新打包 zip、写架构文档。
-必须停下问用户（重大决策）：改存档 schema、删主体游戏内容、战斗平衡数值、删 src 下非 .md 文件、PR diff>200 行涉及题目/存档。
-备份铁律：每次推进 main 或覆盖 release 前，必须先打 annotated tag（命名 vX.Y-fixed-pre-phaseN），push 失败则停。
-Token：凭据由用户主动粘贴，不落盘。子 agent 拿 token 的位置 `/tmp/$SEED/tok`，用完 shred -u 清除。
+| 阶段 | 内容 | 状态 |
+|------|------|------|
+| S0 | 11 模块框架 + 等距世界 + 移动 + 渲染 | 完成 |
+| S1a | 雷霆殿(物理) M1 三怪演知识战斗 | 完成 |
+| S1b | 地牢房间生成器 + 掉宝系统 + Boss + Soul Knight Demo | 完成 |
+| S2 | 五场馆 MVP 原型（5 个独立 HTML） | 完成 |
+| S3 | 126 知识点->bestiary + 题库合并 + 熟练度 | 下一步 |
+| S4 | 美术/打磨 + 数值平衡 | 未来 |
 
 ---
 
-## 8. 下一步建议（按优先级）
+## 6. 严重教训（务必遵守）
 
-> ①双canvas、②实机验证移动 均已在 e20f148 完成，降级为历史。当前建议从 ③ 继续：
+### 6.1 代码生成
+- 绝对不要用 write 工具写代码文件：会注入随机垃圾 token（bootiliacari、soprattutto 等已验证多次）
+- 绝对不要用 PowerShell Add-Content 追加代码：会静默失败（已验证 2 次，Part 3 丢失导致空白页）
+- 正确做法：用 node.js fs.writeFileSync 一次性原子写入完整文件
+- 写完立即验证：node --check（JS 文件）或 CDP 浏览器检查（HTML 文件）
 
-- **③ 合并云端遗产**：把 `_cloud_legacy/` 里 40 个小游戏 + 题库并进 v5 开放世界（本次核心方向）。
-- **④ 题库扩充**：六科按高一到高三分层。
-- **⑤ 视觉美术升级**：角色立绘/场景重画或程序化生成。
+### 6.2 编辑文件
+- edit 前先 read 当前文件
+- edit 后立即验证（node --check 或跑测试）
+- edit 工具偶尔也会污染文件（行尾垃圾 token），不可盲目信任
+
+### 6.3 算法验证
+- 算法级改动：先跑 node 隔离测试（30 次随机生成验证全连通），测试绿了再写入 HTML
+- 不要"改了就提交、浏览器验证跟不上"
+
+### 6.4 参照游戏
+- 元气骑士（Soul Knight）是 v5 地牢引擎的权威参照
+- 必须先吃透机制再动手写代码，不能凭印象"猜"
+- 已确认的核心机制：房间锁定摄像机、门禁系统、独立竞技场、进房触战
+
+### 6.5 工具调用
+- 同样命令重试超 3 次必须换策略（避免刷屏卡死）
+- web_search 工具不可用时用 PowerShell Invoke-WebRequest 替代
+
+### 6.6 git 操作
+- git push 需要 -c http.sslBackend=openssl
+- 本机 .git/config 已持久化此设置
+- GitHub Token：<GitHub Token - ask user kuight>
 
 ---
 
-## 9. 重要坑点（新助手先读避免踩坑）
+## 7. 关键文件指纹（新 agent 优先读这些）
 
-1. **双 canvas 冲突**是当前最大问题（见第 1 节）。
-2. **题库 404**：服务器要跑仓库根，`/src/data/...` 绝对路径才有效（已修）。
-3. **battle/effects 依赖全局对象**：battle 用 `globalThis.BattleEngine`、effects 用 `globalThis.BattleFeedback`，**必须在 import 时先加载对应底层文件**（engine.js/feedback.js），否则报 undefined（已修）。
-4. **node 测试 mock 环境**：集成测试要 mock `document/window/localStorage/getComputedStyle` 等浏览器 API，否则视觉函数（feedback.js）会抛错降级为 stub（已补 mock）。
-5. **写代码时别急着塞中文**：我多次在代码里混入中文碎词导致语法错误，写纯代码。
-6. **环境提醒噪音**：每次工具调用后环境会自动追加一段 TaskUpdate 提醒，不要反复去回应它，直接继续干活。
+| 优先级 | 文件 | 说明 |
+|--------|------|------|
+| P0 | v5/soul-knight-demo.html | 核心地牢 Demo（Soul Knight 式，16033 字节） |
+| P0 | v5/V5_BLUEPRINT.md | v5 完整蓝图 |
+| P0 | v5/INTERFACES.md | 模块接口契约 |
+| P1 | v5/core/world/dungeon.js | 房间生成器（node 测试 30/30 全连通） |
+| P1 | v5/core/world/loot.js | 掉宝系统 |
+| P1 | v5/core/battle/index.js | 战斗引擎 |
+| P1 | v5/core/battle/monsters.js | 怪物定义 |
+| P2 | v5/venues/*.html | 五场馆 MVP 原型 |
+| P2 | v5/tests/*.js | 测试套件 |
 
 ---
 
-## 10. 一句话总结
+## 8. 云端 agent 接入须知
 
-**v5 框架逻辑全通（11 模块 loaded、题库 6511 题、战斗闭环跑通），但浏览器里世界地图被双 canvas 挡住看不到。修好双 canvas 冲突，然后实测、合并云端 40 个小游戏和题库，就成大成 v5。** 交接人已把断点、位置、授权边界、坑点全部写清，新助手可从"修双 canvas"这个精确点直接接上。
+1. 先读本文档全文，再动手。
+2. 整个仓库在 GitHub 上，git clone 即可开始。
+3. 服务器必须跑在仓库根（python -m http.server 8091），题库路径用绝对 /src/data/...。
+4. v5/index.html 是主框架入口；soul-knight-demo.html 是最可玩的地牢 Demo。
+5. 涉及战斗数值平衡 / 删主体内容 / 改存档 schema 前，必须停下问用户。
+6. 本文档第 6 节"严重教训"部分请逐条遵守，否则会反复踩坑。
+
+---
+
+## 9. 一句话总结给新 agent
+
+v5 已有完整的 11 模块框架 + 等距世界 + M1 知识战斗 + Soul Knight 式地牢 Demo + 5 个场馆原型。
+核心地牢 Demo（soul-knight-demo.html）可独立运行：WASD 走位、K 近战、J 远程追踪弹道、Shift 闪避、
+4 种敌人 + Boss、门禁系统、自动索敌、血瓶掉落、多楼层。下一步：S3 合并云端 17 批约 10,890 题进
+knowledge 路由 + 126 知识点 bestiary 设计。引擎框架已搭好，内容层待填充。
