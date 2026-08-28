@@ -1,78 +1,1261 @@
 {
   "physics": {
     "chapters": [
-      {"name": "运动学", "topics": [
-        {"id": "kin-motion-displacement", "label": "位移与路程", "prereq": []},
-        {"id": "kin-velocity", "label": "平均速度与瞬时速度", "prereq": ["kin-motion-displacement"]},
-        {"id": "kin-uniform-accel", "label": "匀变速直线运动公式", "prereq": ["kin-velocity"]},
-        {"id": "kin-free-fall", "label": "自由落体与竖直上抛", "prereq": ["kin-uniform-accel"]},
-        {"id": "kin-vt-graph", "label": "v-t图像与x-t图像", "prereq": ["kin-uniform-accel"]}
-      ]},
-      {"name": "牛顿定律", "topics": [
-        {"id": "new-first-law", "label": "牛顿第一定律与惯性", "prereq": ["kin-velocity"]},
-        {"id": "new-second-law", "label": "牛顿第二定律", "prereq": ["new-first-law"]},
-        {"id": "new-third-law", "label": "牛顿第三定律", "prereq": []},
-        {"id": "new-force-analysis", "label": "受力分析与隔离法", "prereq": ["new-second-law"]},
-        {"id": "new-weightless", "label": "超重与失重", "prereq": ["new-second-law"]}
-      ]},
-      {"name": "曲线运动", "topics": [
-        {"id": "cur-projectile", "label": "平抛运动", "prereq": ["kin-uniform-accel"]},
-        {"id": "cur-circular", "label": "线速度与角速度", "prereq": ["new-second-law"]},
-        {"id": "cur-centripetal", "label": "向心加速度与向心力", "prereq": ["cur-circular"]},
-        {"id": "cur-vertical-circular", "label": "竖直面圆周运动", "prereq": ["cur-centripetal"]},
-        {"id": "cur-centrifuge", "label": "离心现象", "prereq": ["cur-centripetal"]}
-      ]},
-      {"name": "万有引力", "topics": [
-        {"id": "grav-law", "label": "万有引力定律", "prereq": []},
-        {"id": "grav-cosmic-v1", "label": "第一宇宙速度", "prereq": ["grav-law", "cur-centripetal"]},
-        {"id": "grav-satellite", "label": "人造卫星与同步卫星", "prereq": ["grav-law"]},
-        {"id": "grav-golden", "label": "黄金代换GM=gR^2", "prereq": ["grav-law"]},
-        {"id": "grav-binary", "label": "双星与多星问题", "prereq": ["grav-law"]}
-      ]},
-      {"name": "功和能", "topics": [
-        {"id": "work-power", "label": "功的计算与功率", "prereq": ["new-second-law"]},
-        {"id": "work-ke-theorem", "label": "动能定理", "prereq": ["work-power", "kin-uniform-accel"]},
-        {"id": "work-potential", "label": "重力势能与弹性势能", "prereq": ["work-power"]},
-        {"id": "work-mech-conserv", "label": "机械能守恒定律", "prereq": ["work-ke-theorem"]},
-        {"id": "work-friction", "label": "摩擦生热与能量守恒", "prereq": ["work-mech-conserv"]}
-      ]},
-      {"name": "动量", "topics": [
-        {"id": "mom-impulse", "label": "动量与动量定理", "prereq": ["new-second-law"]},
-        {"id": "mom-conserv", "label": "动量守恒定律", "prereq": ["mom-impulse"]},
-        {"id": "mom-collision", "label": "碰撞类型与弹性碰撞", "prereq": ["mom-conserv"]},
-        {"id": "mom-recoil", "label": "反冲与火箭", "prereq": ["mom-conserv"]},
-        {"id": "mom-block", "label": "子弹打木块与板块模型", "prereq": ["mom-conserv", "work-friction"]}
-      ]},
-      {"name": "静电场", "topics": [
-        {"id": "field-intensity", "label": "电场强度与电场线", "prereq": []},
-        {"id": "field-potential", "label": "电势与电势能", "prereq": ["field-intensity"]},
-        {"id": "field-voltage", "label": "电势差与电场力做功", "prereq": ["field-potential"]},
-        {"id": "field-capacitor", "label": "电容与电容器", "prereq": ["field-voltage"]},
-        {"id": "field-charge-motion", "label": "带电粒子在电场中运动", "prereq": ["field-intensity", "cur-projectile"]}
-      ]},
-      {"name": "恒定电流", "topics": [
-        {"id": "cur-ohm", "label": "欧姆定律", "prereq": []},
-        {"id": "cur-series-parallel", "label": "串并联电路", "prereq": ["cur-ohm"]},
-        {"id": "cur-power", "label": "电功与电功率", "prereq": ["cur-ohm"]},
-        {"id": "cur-closed-ohm", "label": "闭合电路欧姆定律", "prereq": ["cur-series-parallel"]},
-        {"id": "cur-volt-amp", "label": "伏安特性曲线", "prereq": ["cur-ohm"]}
-      ]},
-      {"name": "磁场", "topics": [
-        {"id": "mag-field", "label": "磁感应强度与安培力", "prereq": []},
-        {"id": "mag-lorentz", "label": "洛伦兹力", "prereq": ["mag-field"]},
-        {"id": "mag-charge-motion", "label": "带电粒子在磁场中运动", "prereq": ["mag-lorentz", "cur-circular"]},
-        {"id": "mag-spectrometer", "label": "质谱仪与回旋加速器", "prereq": ["mag-charge-motion"]},
-        {"id": "mag-induction-basic", "label": "电磁感应现象", "prereq": ["mag-field"]}
-      ]},
-      {"name": "电磁感应", "topics": [
-        {"id": "ind-faraday", "label": "法拉第电磁感应定律", "prereq": ["mag-induction-basic"]},
-        {"id": "ind-lenz", "label": "楞次定律", "prereq": ["ind-faraday"]},
-        {"id": "ind-self-mutual", "label": "自感与互感", "prereq": ["ind-lenz"]},
-        {"id": "ind-rod-cutting", "label": "导体棒切割磁感线", "prereq": ["ind-faraday", "work-friction"]},
-        {"id": "ind-ac", "label": "交流电与变压器", "prereq": ["ind-faraday"]}
-      ]}
+      {
+        "name": "运动学",
+        "topics": [
+          {
+            "id": "kin-motion-displacement",
+            "label": "位移与路程",
+            "prereq": []
+          },
+          {
+            "id": "kin-velocity",
+            "label": "平均速度与瞬时速度",
+            "prereq": [
+              "kin-motion-displacement"
+            ]
+          },
+          {
+            "id": "kin-uniform-accel",
+            "label": "匀变速直线运动公式",
+            "prereq": [
+              "kin-velocity"
+            ]
+          },
+          {
+            "id": "kin-free-fall",
+            "label": "自由落体与竖直上抛",
+            "prereq": [
+              "kin-uniform-accel"
+            ]
+          },
+          {
+            "id": "kin-vt-graph",
+            "label": "v-t图像与x-t图像",
+            "prereq": [
+              "kin-uniform-accel"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "牛顿定律",
+        "topics": [
+          {
+            "id": "new-first-law",
+            "label": "牛顿第一定律与惯性",
+            "prereq": [
+              "kin-velocity"
+            ]
+          },
+          {
+            "id": "new-second-law",
+            "label": "牛顿第二定律",
+            "prereq": [
+              "new-first-law"
+            ]
+          },
+          {
+            "id": "new-third-law",
+            "label": "牛顿第三定律",
+            "prereq": []
+          },
+          {
+            "id": "new-force-analysis",
+            "label": "受力分析与隔离法",
+            "prereq": [
+              "new-second-law"
+            ]
+          },
+          {
+            "id": "new-weightless",
+            "label": "超重与失重",
+            "prereq": [
+              "new-second-law"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "曲线运动",
+        "topics": [
+          {
+            "id": "cur-projectile",
+            "label": "平抛运动",
+            "prereq": [
+              "kin-uniform-accel"
+            ]
+          },
+          {
+            "id": "cur-circular",
+            "label": "线速度与角速度",
+            "prereq": [
+              "new-second-law"
+            ]
+          },
+          {
+            "id": "cur-centripetal",
+            "label": "向心加速度与向心力",
+            "prereq": [
+              "cur-circular"
+            ]
+          },
+          {
+            "id": "cur-vertical-circular",
+            "label": "竖直面圆周运动",
+            "prereq": [
+              "cur-centripetal"
+            ]
+          },
+          {
+            "id": "cur-centrifuge",
+            "label": "离心现象",
+            "prereq": [
+              "cur-centripetal"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "万有引力",
+        "topics": [
+          {
+            "id": "grav-law",
+            "label": "万有引力定律",
+            "prereq": []
+          },
+          {
+            "id": "grav-cosmic-v1",
+            "label": "第一宇宙速度",
+            "prereq": [
+              "grav-law",
+              "cur-centripetal"
+            ]
+          },
+          {
+            "id": "grav-satellite",
+            "label": "人造卫星与同步卫星",
+            "prereq": [
+              "grav-law"
+            ]
+          },
+          {
+            "id": "grav-golden",
+            "label": "黄金代换GM=gR^2",
+            "prereq": [
+              "grav-law"
+            ]
+          },
+          {
+            "id": "grav-binary",
+            "label": "双星与多星问题",
+            "prereq": [
+              "grav-law"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "功和能",
+        "topics": [
+          {
+            "id": "work-power",
+            "label": "功的计算与功率",
+            "prereq": [
+              "new-second-law"
+            ]
+          },
+          {
+            "id": "work-ke-theorem",
+            "label": "动能定理",
+            "prereq": [
+              "work-power",
+              "kin-uniform-accel"
+            ]
+          },
+          {
+            "id": "work-potential",
+            "label": "重力势能与弹性势能",
+            "prereq": [
+              "work-power"
+            ]
+          },
+          {
+            "id": "work-mech-conserv",
+            "label": "机械能守恒定律",
+            "prereq": [
+              "work-ke-theorem"
+            ]
+          },
+          {
+            "id": "work-friction",
+            "label": "摩擦生热与能量守恒",
+            "prereq": [
+              "work-mech-conserv"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "动量",
+        "topics": [
+          {
+            "id": "mom-impulse",
+            "label": "动量与动量定理",
+            "prereq": [
+              "new-second-law"
+            ]
+          },
+          {
+            "id": "mom-conserv",
+            "label": "动量守恒定律",
+            "prereq": [
+              "mom-impulse"
+            ]
+          },
+          {
+            "id": "mom-collision",
+            "label": "碰撞类型与弹性碰撞",
+            "prereq": [
+              "mom-conserv"
+            ]
+          },
+          {
+            "id": "mom-recoil",
+            "label": "反冲与火箭",
+            "prereq": [
+              "mom-conserv"
+            ]
+          },
+          {
+            "id": "mom-block",
+            "label": "子弹打木块与板块模型",
+            "prereq": [
+              "mom-conserv",
+              "work-friction"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "静电场",
+        "topics": [
+          {
+            "id": "field-intensity",
+            "label": "电场强度与电场线",
+            "prereq": []
+          },
+          {
+            "id": "field-potential",
+            "label": "电势与电势能",
+            "prereq": [
+              "field-intensity"
+            ]
+          },
+          {
+            "id": "field-voltage",
+            "label": "电势差与电场力做功",
+            "prereq": [
+              "field-potential"
+            ]
+          },
+          {
+            "id": "field-capacitor",
+            "label": "电容与电容器",
+            "prereq": [
+              "field-voltage"
+            ]
+          },
+          {
+            "id": "field-charge-motion",
+            "label": "带电粒子在电场中运动",
+            "prereq": [
+              "field-intensity",
+              "cur-projectile"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "恒定电流",
+        "topics": [
+          {
+            "id": "cur-ohm",
+            "label": "欧姆定律",
+            "prereq": []
+          },
+          {
+            "id": "cur-series-parallel",
+            "label": "串并联电路",
+            "prereq": [
+              "cur-ohm"
+            ]
+          },
+          {
+            "id": "cur-power",
+            "label": "电功与电功率",
+            "prereq": [
+              "cur-ohm"
+            ]
+          },
+          {
+            "id": "cur-closed-ohm",
+            "label": "闭合电路欧姆定律",
+            "prereq": [
+              "cur-series-parallel"
+            ]
+          },
+          {
+            "id": "cur-volt-amp",
+            "label": "伏安特性曲线",
+            "prereq": [
+              "cur-ohm"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "磁场",
+        "topics": [
+          {
+            "id": "mag-field",
+            "label": "磁感应强度与安培力",
+            "prereq": []
+          },
+          {
+            "id": "mag-lorentz",
+            "label": "洛伦兹力",
+            "prereq": [
+              "mag-field"
+            ]
+          },
+          {
+            "id": "mag-charge-motion",
+            "label": "带电粒子在磁场中运动",
+            "prereq": [
+              "mag-lorentz",
+              "cur-circular"
+            ]
+          },
+          {
+            "id": "mag-spectrometer",
+            "label": "质谱仪与回旋加速器",
+            "prereq": [
+              "mag-charge-motion"
+            ]
+          },
+          {
+            "id": "mag-induction-basic",
+            "label": "电磁感应现象",
+            "prereq": [
+              "mag-field"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "电磁感应",
+        "topics": [
+          {
+            "id": "ind-faraday",
+            "label": "法拉第电磁感应定律",
+            "prereq": [
+              "mag-induction-basic"
+            ]
+          },
+          {
+            "id": "ind-lenz",
+            "label": "楞次定律",
+            "prereq": [
+              "ind-faraday"
+            ]
+          },
+          {
+            "id": "ind-self-mutual",
+            "label": "自感与互感",
+            "prereq": [
+              "ind-lenz"
+            ]
+          },
+          {
+            "id": "ind-rod-cutting",
+            "label": "导体棒切割磁感线",
+            "prereq": [
+              "ind-faraday",
+              "work-friction"
+            ]
+          },
+          {
+            "id": "ind-ac",
+            "label": "交流电与变压器",
+            "prereq": [
+              "ind-faraday"
+            ]
+          }
+        ]
+      }
     ]
   },
-  "chemistry": {"chapters": []},
-  "geography": {"chapters": []}
+  "chemistry": {
+    "chapters": [
+      {
+        "name": "物质分类与转化",
+        "topics": [
+          {
+            "id": "che-mix-pure",
+            "label": "混合物与纯净物",
+            "prereq": []
+          },
+          {
+            "id": "che-elm-cmp",
+            "label": "单质与化合物",
+            "prereq": [
+              "che-mix-pure"
+            ]
+          },
+          {
+            "id": "che-ox-acid",
+            "label": "氧化物与酸碱盐",
+            "prereq": [
+              "che-elm-cmp"
+            ]
+          },
+          {
+            "id": "che-chg-phy",
+            "label": "物理变化与化学变化",
+            "prereq": [
+              "che-mix-pure"
+            ]
+          },
+          {
+            "id": "che-tra-cat",
+            "label": "物质转化关系",
+            "prereq": [
+              "che-ox-acid"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "氧化还原",
+        "topics": [
+          {
+            "id": "che-red-oxi",
+            "label": "氧化还原反应与化合价",
+            "prereq": [
+              "che-chg-phy"
+            ]
+          },
+          {
+            "id": "che-red-agent",
+            "label": "氧化剂与还原剂",
+            "prereq": [
+              "che-red-oxi"
+            ]
+          },
+          {
+            "id": "che-red-ele",
+            "label": "电子转移与守恒",
+            "prereq": [
+              "che-red-agent"
+            ]
+          },
+          {
+            "id": "che-red-equil",
+            "label": "氧化还原配平",
+            "prereq": [
+              "che-red-ele"
+            ]
+          },
+          {
+            "id": "che-red-appl",
+            "label": "常见氧化还原应用",
+            "prereq": [
+              "che-red-equil"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "离子反应",
+        "topics": [
+          {
+            "id": "che-ion-base",
+            "label": "电解质与非电解质",
+            "prereq": [
+              "che-elm-cmp"
+            ]
+          },
+          {
+            "id": "che-ion-write",
+            "label": "离子方程式书写",
+            "prereq": [
+              "che-ion-base"
+            ]
+          },
+          {
+            "id": "che-ion-coexist",
+            "label": "离子共存判断",
+            "prereq": [
+              "che-ion-write"
+            ]
+          },
+          {
+            "id": "che-ion-order",
+            "label": "离子反应顺序",
+            "prereq": [
+              "che-ion-coexist"
+            ]
+          },
+          {
+            "id": "che-ion-cons",
+            "label": "电荷守恒与物料守恒",
+            "prereq": [
+              "che-ion-write"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "金属及其化合物",
+        "topics": [
+          {
+            "id": "che-m-na",
+            "label": "钠及其化合物",
+            "prereq": [
+              "che-ox-acid"
+            ]
+          },
+          {
+            "id": "che-m-al",
+            "label": "铝及其化合物(两性)",
+            "prereq": [
+              "che-m-na"
+            ]
+          },
+          {
+            "id": "che-m-fe",
+            "label": "铁及其化合物(价态)",
+            "prereq": [
+              "che-m-na"
+            ]
+          },
+          {
+            "id": "che-m-cu",
+            "label": "铜及其化合物",
+            "prereq": [
+              "che-m-fe"
+            ]
+          },
+          {
+            "id": "che-m-metallic",
+            "label": "金属冶炼与活泼性",
+            "prereq": [
+              "che-red-oxi"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "非金属及其化合物",
+        "topics": [
+          {
+            "id": "che-n-s",
+            "label": "硫及其化合物",
+            "prereq": [
+              "che-ox-acid"
+            ]
+          },
+          {
+            "id": "che-n-n",
+            "label": "氮及其化合物",
+            "prereq": [
+              "che-n-s"
+            ]
+          },
+          {
+            "id": "che-n-cl",
+            "label": "氯及其化合物",
+            "prereq": [
+              "che-n-s"
+            ]
+          },
+          {
+            "id": "che-n-si",
+            "label": "硅及其化合物",
+            "prereq": [
+              "che-n-s"
+            ]
+          },
+          {
+            "id": "che-n-sol",
+            "label": "非金属三角转化",
+            "prereq": [
+              "che-n-n",
+              "che-n-cl"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "物质结构与元素周期律",
+        "topics": [
+          {
+            "id": "che-st-atom",
+            "label": "原子结构(质子中子电子)",
+            "prereq": []
+          },
+          {
+            "id": "che-st-orbital",
+            "label": "电子排布与能层",
+            "prereq": [
+              "che-st-atom"
+            ]
+          },
+          {
+            "id": "che-st-table",
+            "label": "元素周期表结构与周期律",
+            "prereq": [
+              "che-st-orbital"
+            ]
+          },
+          {
+            "id": "che-st-bond",
+            "label": "化学键(离子键共价键)",
+            "prereq": [
+              "che-st-orbital"
+            ]
+          },
+          {
+            "id": "che-st-comp",
+            "label": "元素金属性与非金属性比较",
+            "prereq": [
+              "che-st-table"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "化学反应速率与平衡",
+        "topics": [
+          {
+            "id": "che-rt-rate",
+            "label": "化学反应速率",
+            "prereq": [
+              "che-chg-phy"
+            ]
+          },
+          {
+            "id": "che-rt-factors",
+            "label": "影响速率因素",
+            "prereq": [
+              "che-rt-rate"
+            ]
+          },
+          {
+            "id": "che-rt-equil",
+            "label": "化学平衡状态",
+            "prereq": [
+              "che-rt-rate"
+            ]
+          },
+          {
+            "id": "che-rt-le",
+            "label": "勒夏特列原理",
+            "prereq": [
+              "che-rt-equil"
+            ]
+          },
+          {
+            "id": "che-rt-k",
+            "label": "平衡常数K与转化率",
+            "prereq": [
+              "che-rt-equil"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "水溶液中的离子平衡",
+        "topics": [
+          {
+            "id": "che-w-ion",
+            "label": "水的电离与Kw",
+            "prereq": [
+              "che-ion-base"
+            ]
+          },
+          {
+            "id": "che-w-ph",
+            "label": "pH与溶液酸碱性",
+            "prereq": [
+              "che-w-ion"
+            ]
+          },
+          {
+            "id": "che-w-hydro",
+            "label": "盐类水解",
+            "prereq": [
+              "che-w-ph"
+            ]
+          },
+          {
+            "id": "che-w-precip",
+            "label": "沉淀溶解平衡(Ksp)",
+            "prereq": [
+              "che-w-ion"
+            ]
+          },
+          {
+            "id": "che-w-titr",
+            "label": "酸碱中和滴定",
+            "prereq": [
+              "che-w-ph"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "电化学",
+        "topics": [
+          {
+            "id": "che-e-orig",
+            "label": "原电池原理",
+            "prereq": [
+              "che-red-oxi"
+            ]
+          },
+          {
+            "id": "che-e-cell",
+            "label": "电解池原理",
+            "prereq": [
+              "che-e-orig"
+            ]
+          },
+          {
+            "id": "che-e-fuel",
+            "label": "燃料电池",
+            "prereq": [
+              "che-e-orig"
+            ]
+          },
+          {
+            "id": "che-e-corrosion",
+            "label": "金属腐蚀与防护",
+            "prereq": [
+              "che-e-cell"
+            ]
+          },
+          {
+            "id": "che-e-melts",
+            "label": "电解熔融物与精炼",
+            "prereq": [
+              "che-e-cell"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "有机化学基础",
+        "topics": [
+          {
+            "id": "che-o-hydrocarbon",
+            "label": "烷烃与烯烃",
+            "prereq": [
+              "che-st-bond"
+            ]
+          },
+          {
+            "id": "che-o-benzene",
+            "label": "苯及其同系物",
+            "prereq": [
+              "che-o-hydrocarbon"
+            ]
+          },
+          {
+            "id": "che-o-alcohol",
+            "label": "醇酚醚",
+            "prereq": [
+              "che-o-hydrocarbon"
+            ]
+          },
+          {
+            "id": "che-o-carbonyl",
+            "label": "醛酮羧酸酯",
+            "prereq": [
+              "che-o-alcohol"
+            ]
+          },
+          {
+            "id": "che-o-isomer",
+            "label": "同分异构与命名",
+            "prereq": [
+              "che-o-carbonyl"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "化学实验",
+        "topics": [
+          {
+            "id": "che-x-basic",
+            "label": "基本实验操作",
+            "prereq": []
+          },
+          {
+            "id": "che-x-gather",
+            "label": "气体收集与制备",
+            "prereq": [
+              "che-x-basic"
+            ]
+          },
+          {
+            "id": "che-x-sep",
+            "label": "分离提纯(过滤蒸馏萃取)",
+            "prereq": [
+              "che-x-basic"
+            ]
+          },
+          {
+            "id": "che-x-quant",
+            "label": "定量实验与误差分析",
+            "prereq": [
+              "che-w-titr"
+            ]
+          },
+          {
+            "id": "che-x-expl",
+            "label": "实验方案设计与评价",
+            "prereq": [
+              "che-x-quant"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "geography": {
+    "chapters": [
+      {
+        "name": "地球运动",
+        "topics": [
+          {
+            "id": "geo-er-rot",
+            "label": "地球自转与公转",
+            "prereq": []
+          },
+          {
+            "id": "geo-er-diff",
+            "label": "昼夜更替与时区",
+            "prereq": [
+              "geo-er-rot"
+            ]
+          },
+          {
+            "id": "geo-er-solar",
+            "label": "正午太阳高度变化",
+            "prereq": [
+              "geo-er-rot"
+            ]
+          },
+          {
+            "id": "geo-er-season",
+            "label": "四季与五带",
+            "prereq": [
+              "geo-er-solar"
+            ]
+          },
+          {
+            "id": "geo-er-coord",
+            "label": "经纬网与地理坐标",
+            "prereq": [
+              "geo-er-rot"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "大气",
+        "topics": [
+          {
+            "id": "geo-at-struct",
+            "label": "大气分层与成分",
+            "prereq": []
+          },
+          {
+            "id": "geo-at-heat",
+            "label": "大气受热过程",
+            "prereq": [
+              "geo-at-struct"
+            ]
+          },
+          {
+            "id": "geo-at-circul",
+            "label": "大气环流与气压带风带",
+            "prereq": [
+              "geo-at-heat"
+            ]
+          },
+          {
+            "id": "geo-at-front",
+            "label": "气团与锋面系统",
+            "prereq": [
+              "geo-at-circul"
+            ]
+          },
+          {
+            "id": "geo-at-climate",
+            "label": "气候类型与分布",
+            "prereq": [
+              "geo-at-front"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "水",
+        "topics": [
+          {
+            "id": "geo-w-cycle",
+            "label": "水循环",
+            "prereq": []
+          },
+          {
+            "id": "geo-w-sea",
+            "label": "海水的运动与性质",
+            "prereq": [
+              "geo-w-cycle"
+            ]
+          },
+          {
+            "id": "geo-w-river",
+            "label": "河流与湖泊",
+            "prereq": [
+              "geo-w-cycle"
+            ]
+          },
+          {
+            "id": "geo-w-waterres",
+            "label": "水资源利用",
+            "prereq": [
+              "geo-w-river"
+            ]
+          },
+          {
+            "id": "geo-w-oceanc",
+            "label": "洋流与渔场",
+            "prereq": [
+              "geo-w-sea"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "地貌",
+        "topics": [
+          {
+            "id": "geo-l-endog",
+            "label": "内力作用与地壳运动",
+            "prereq": []
+          },
+          {
+            "id": "geo-l-exog",
+            "label": "外力作用与地貌",
+            "prereq": [
+              "geo-l-endog"
+            ]
+          },
+          {
+            "id": "geo-l-mountain",
+            "label": "山岳地貌与褶皱断层",
+            "prereq": [
+              "geo-l-endog"
+            ]
+          },
+          {
+            "id": "geo-l-fluvial",
+            "label": "流水与风成地貌",
+            "prereq": [
+              "geo-l-exog"
+            ]
+          },
+          {
+            "id": "geo-l-plate",
+            "label": "板块构造学说",
+            "prereq": [
+              "geo-l-endog"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "土壤与植被",
+        "topics": [
+          {
+            "id": "geo-s-soil",
+            "label": "土壤的形成",
+            "prereq": []
+          },
+          {
+            "id": "geo-s-veg",
+            "label": "植被类型与分布",
+            "prereq": [
+              "geo-at-climate"
+            ]
+          },
+          {
+            "id": "geo-s-zonation",
+            "label": "垂直地带性",
+            "prereq": [
+              "geo-s-veg"
+            ]
+          },
+          {
+            "id": "geo-s-horizon",
+            "label": "水平地带性",
+            "prereq": [
+              "geo-s-veg"
+            ]
+          },
+          {
+            "id": "geo-s-degrade",
+            "label": "土地退化与荒漠化",
+            "prereq": [
+              "geo-s-soil"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "人口",
+        "topics": [
+          {
+            "id": "geo-p-growth",
+            "label": "人口增长模式",
+            "prereq": []
+          },
+          {
+            "id": "geo-p-migra",
+            "label": "人口迁移",
+            "prereq": [
+              "geo-p-growth"
+            ]
+          },
+          {
+            "id": "geo-p-age",
+            "label": "年龄结构与人口红利",
+            "prereq": [
+              "geo-p-growth"
+            ]
+          },
+          {
+            "id": "geo-p-capacity",
+            "label": "环境人口容量",
+            "prereq": [
+              "geo-p-growth"
+            ]
+          },
+          {
+            "id": "geo-p-urbanpop",
+            "label": "城市化与人口",
+            "prereq": [
+              "geo-p-migra"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "城市",
+        "topics": [
+          {
+            "id": "geo-c-urban",
+            "label": "城市空间结构",
+            "prereq": []
+          },
+          {
+            "id": "geo-c-func",
+            "label": "城市功能分区",
+            "prereq": [
+              "geo-c-urban"
+            ]
+          },
+          {
+            "id": "geo-c-proc",
+            "label": "城市化进程",
+            "prereq": [
+              "geo-c-urban"
+            ]
+          },
+          {
+            "id": "geo-c-transp",
+            "label": "城市交通布局",
+            "prereq": [
+              "geo-c-func"
+            ]
+          },
+          {
+            "id": "geo-c-env",
+            "label": "城市环境问题",
+            "prereq": [
+              "geo-c-proc"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "农业",
+        "topics": [
+          {
+            "id": "geo-a-factors",
+            "label": "农业区位因素",
+            "prereq": []
+          },
+          {
+            "id": "geo-a-types",
+            "label": "主要农业地域类型",
+            "prereq": [
+              "geo-a-factors"
+            ]
+          },
+          {
+            "id": "geo-a-sustain",
+            "label": "农业可持续发展",
+            "prereq": [
+              "geo-a-types"
+            ]
+          },
+          {
+            "id": "geo-a-food",
+            "label": "粮食安全",
+            "prereq": [
+              "geo-a-sustain"
+            ]
+          },
+          {
+            "id": "geo-a-market",
+            "label": "市场与商品农业",
+            "prereq": [
+              "geo-a-factors"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "工业",
+        "topics": [
+          {
+            "id": "geo-i-factors",
+            "label": "工业区位因素",
+            "prereq": []
+          },
+          {
+            "id": "geo-i-types",
+            "label": "工业地域类型",
+            "prereq": [
+              "geo-i-factors"
+            ]
+          },
+          {
+            "id": "geo-i-hi",
+            "label": "高新技术产业",
+            "prereq": [
+              "geo-i-factors"
+            ]
+          },
+          {
+            "id": "geo-i-pollut",
+            "label": "工业污染与治理",
+            "prereq": [
+              "geo-i-factors"
+            ]
+          },
+          {
+            "id": "geo-i-transfer",
+            "label": "产业转移",
+            "prereq": [
+              "geo-i-types"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "交通",
+        "topics": [
+          {
+            "id": "geo-t-way",
+            "label": "交通运输方式",
+            "prereq": []
+          },
+          {
+            "id": "geo-t-layout",
+            "label": "交通线路布局",
+            "prereq": [
+              "geo-t-way"
+            ]
+          },
+          {
+            "id": "geo-t-point",
+            "label": "交通站点与枢纽",
+            "prereq": [
+              "geo-t-layout"
+            ]
+          },
+          {
+            "id": "geo-t-economy",
+            "label": "交通对区域影响",
+            "prereq": [
+              "geo-t-layout"
+            ]
+          },
+          {
+            "id": "geo-t-logistics",
+            "label": "现代物流与交通",
+            "prereq": [
+              "geo-t-economy"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "区域发展与环境",
+        "topics": [
+          {
+            "id": "geo-r-zone",
+            "label": "区域地理环境",
+            "prereq": []
+          },
+          {
+            "id": "geo-r-integ",
+            "label": "区域综合开发",
+            "prereq": [
+              "geo-r-zone"
+            ]
+          },
+          {
+            "id": "geo-r-desert",
+            "label": "荒漠化治理",
+            "prereq": [
+              "geo-r-zone"
+            ]
+          },
+          {
+            "id": "geo-r-environ",
+            "label": "环境问题与可持续发展",
+            "prereq": [
+              "geo-r-zone"
+            ]
+          },
+          {
+            "id": "geo-r-gis",
+            "label": "地理信息技术(GIS/RS)",
+            "prereq": [
+              "geo-r-zone"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }
