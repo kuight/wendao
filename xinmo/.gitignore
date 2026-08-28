@@ -1,0 +1,5 @@
+config.local.json
+data/xinmo.db
+data/images/
+__pycache__/
+*.pyc

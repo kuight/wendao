@@ -1,0 +1,48 @@
+{
+  "appTitle": "错题心魔",
+  "tabs": {"entry": "录入", "today": "今日", "stats": "统计", "trace": "足迹"},
+  "subjects": {"physics": "物理", "chemistry": "化学", "geography": "地理", "chinese": "语文", "math": "数学", "english": "英语"},
+  "errorTypes": {"concept": "概念不会", "formula": "公式记错", "calc": "计算失误", "reading": "审题错"},
+  "questionTypes": {"choice": "选择题", "numeric": "计算题", "expression": "表达式/公式", "openended": "问答题"},
+  "entry": {
+    "pickSubject": "1 选学科",
+    "pickTopic": "2 选知识点（先点章节再点知识点）",
+    "topicPlaceholder": "点选知识点…",
+    "noteLabel": "这题考什么，你为什么错（一句话）",
+    "notePlaceholder": "例：电势与场强关系混淆",
+    "sourceLabel": "来源（可选）",
+    "sourcePlaceholder": "例：0828物理月考T14",
+    "answerLabel": "标准答案（可选，重做时判定用）",
+    "answerPlaceholder": "选择题填选项，如 B；计算题填最终结果含单位",
+    "qtypeLabel": "题型",
+    "errorLabel": "错因",
+    "submit": "入库",
+    "emptyNote": "请先输入错误说明",
+    "noSubject": "请先选学科",
+    "noTopic": "请选知识点",
+    "added": "已入库"
+  },
+  "today": {
+    "title": "今日心魔",
+    "unit": "只",
+    "onTheWay": "另有 %d 只心魔在途",
+    "empty": "今日已清心",
+    "btnGood": "顺畅做对",
+    "btnHard": "卡了一下",
+    "btnAgain": "又错了",
+    "source": "来源",
+    "topic": "考点",
+    "lastResult": "上次结果",
+    "resultAgain": "又错了",
+    "resultHard": "卡了一下",
+    "resultGood": "顺畅做对"
+  },
+  "stats": {
+    "title": "统计",
+    "total": "总题数",
+    "refined": "已炼化",
+    "active": "活跃",
+    "realm": "境界",
+    "realmLabels": {"0": "练气", "1": "筑基", "2": "金丹", "3": "元婴"}
+  }
+}

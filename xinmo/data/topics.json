@@ -1,0 +1,78 @@
+{
+  "physics": {
+    "chapters": [
+      {"name": "运动学", "topics": [
+        {"id": "kin-motion-displacement", "label": "位移与路程", "prereq": []},
+        {"id": "kin-velocity", "label": "平均速度与瞬时速度", "prereq": ["kin-motion-displacement"]},
+        {"id": "kin-uniform-accel", "label": "匀变速直线运动公式", "prereq": ["kin-velocity"]},
+        {"id": "kin-free-fall", "label": "自由落体与竖直上抛", "prereq": ["kin-uniform-accel"]},
+        {"id": "kin-vt-graph", "label": "v-t图像与x-t图像", "prereq": ["kin-uniform-accel"]}
+      ]},
+      {"name": "牛顿定律", "topics": [
+        {"id": "new-first-law", "label": "牛顿第一定律与惯性", "prereq": ["kin-velocity"]},
+        {"id": "new-second-law", "label": "牛顿第二定律", "prereq": ["new-first-law"]},
+        {"id": "new-third-law", "label": "牛顿第三定律", "prereq": []},
+        {"id": "new-force-analysis", "label": "受力分析与隔离法", "prereq": ["new-second-law"]},
+        {"id": "new-weightless", "label": "超重与失重", "prereq": ["new-second-law"]}
+      ]},
+      {"name": "曲线运动", "topics": [
+        {"id": "cur-projectile", "label": "平抛运动", "prereq": ["kin-uniform-accel"]},
+        {"id": "cur-circular", "label": "线速度与角速度", "prereq": ["new-second-law"]},
+        {"id": "cur-centripetal", "label": "向心加速度与向心力", "prereq": ["cur-circular"]},
+        {"id": "cur-vertical-circular", "label": "竖直面圆周运动", "prereq": ["cur-centripetal"]},
+        {"id": "cur-centrifuge", "label": "离心现象", "prereq": ["cur-centripetal"]}
+      ]},
+      {"name": "万有引力", "topics": [
+        {"id": "grav-law", "label": "万有引力定律", "prereq": []},
+        {"id": "grav-cosmic-v1", "label": "第一宇宙速度", "prereq": ["grav-law", "cur-centripetal"]},
+        {"id": "grav-satellite", "label": "人造卫星与同步卫星", "prereq": ["grav-law"]},
+        {"id": "grav-golden", "label": "黄金代换GM=gR^2", "prereq": ["grav-law"]},
+        {"id": "grav-binary", "label": "双星与多星问题", "prereq": ["grav-law"]}
+      ]},
+      {"name": "功和能", "topics": [
+        {"id": "work-power", "label": "功的计算与功率", "prereq": ["new-second-law"]},
+        {"id": "work-ke-theorem", "label": "动能定理", "prereq": ["work-power", "kin-uniform-accel"]},
+        {"id": "work-potential", "label": "重力势能与弹性势能", "prereq": ["work-power"]},
+        {"id": "work-mech-conserv", "label": "机械能守恒定律", "prereq": ["work-ke-theorem"]},
+        {"id": "work-friction", "label": "摩擦生热与能量守恒", "prereq": ["work-mech-conserv"]}
+      ]},
+      {"name": "动量", "topics": [
+        {"id": "mom-impulse", "label": "动量与动量定理", "prereq": ["new-second-law"]},
+        {"id": "mom-conserv", "label": "动量守恒定律", "prereq": ["mom-impulse"]},
+        {"id": "mom-collision", "label": "碰撞类型与弹性碰撞", "prereq": ["mom-conserv"]},
+        {"id": "mom-recoil", "label": "反冲与火箭", "prereq": ["mom-conserv"]},
+        {"id": "mom-block", "label": "子弹打木块与板块模型", "prereq": ["mom-conserv", "work-friction"]}
+      ]},
+      {"name": "静电场", "topics": [
+        {"id": "field-intensity", "label": "电场强度与电场线", "prereq": []},
+        {"id": "field-potential", "label": "电势与电势能", "prereq": ["field-intensity"]},
+        {"id": "field-voltage", "label": "电势差与电场力做功", "prereq": ["field-potential"]},
+        {"id": "field-capacitor", "label": "电容与电容器", "prereq": ["field-voltage"]},
+        {"id": "field-charge-motion", "label": "带电粒子在电场中运动", "prereq": ["field-intensity", "cur-projectile"]}
+      ]},
+      {"name": "恒定电流", "topics": [
+        {"id": "cur-ohm", "label": "欧姆定律", "prereq": []},
+        {"id": "cur-series-parallel", "label": "串并联电路", "prereq": ["cur-ohm"]},
+        {"id": "cur-power", "label": "电功与电功率", "prereq": ["cur-ohm"]},
+        {"id": "cur-closed-ohm", "label": "闭合电路欧姆定律", "prereq": ["cur-series-parallel"]},
+        {"id": "cur-volt-amp", "label": "伏安特性曲线", "prereq": ["cur-ohm"]}
+      ]},
+      {"name": "磁场", "topics": [
+        {"id": "mag-field", "label": "磁感应强度与安培力", "prereq": []},
+        {"id": "mag-lorentz", "label": "洛伦兹力", "prereq": ["mag-field"]},
+        {"id": "mag-charge-motion", "label": "带电粒子在磁场中运动", "prereq": ["mag-lorentz", "cur-circular"]},
+        {"id": "mag-spectrometer", "label": "质谱仪与回旋加速器", "prereq": ["mag-charge-motion"]},
+        {"id": "mag-induction-basic", "label": "电磁感应现象", "prereq": ["mag-field"]}
+      ]},
+      {"name": "电磁感应", "topics": [
+        {"id": "ind-faraday", "label": "法拉第电磁感应定律", "prereq": ["mag-induction-basic"]},
+        {"id": "ind-lenz", "label": "楞次定律", "prereq": ["ind-faraday"]},
+        {"id": "ind-self-mutual", "label": "自感与互感", "prereq": ["ind-lenz"]},
+        {"id": "ind-rod-cutting", "label": "导体棒切割磁感线", "prereq": ["ind-faraday", "work-friction"]},
+        {"id": "ind-ac", "label": "交流电与变压器", "prereq": ["ind-faraday"]}
+      ]}
+    ]
+  },
+  "chemistry": {"chapters": []},
+  "geography": {"chapters": []}
+}
