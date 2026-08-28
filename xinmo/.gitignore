@@ -1,6 +1,7 @@
 config.local.json
 data/*.db
 data/images/
+data/problems.jsonl
 __pycache__/
 *.pyc
 *.log

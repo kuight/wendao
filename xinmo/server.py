@@ -28,6 +28,7 @@ DATA = BASE / 'data'
 DB_PATH = DATA / 'xinmo.db'
 IMAGES = DATA / 'images'
 TOPICS_PATH = DATA / 'topics.json'
+JSONL_PATH = DATA / 'problems.jsonl'
 CONFIG_LOCAL = BASE / 'config.local.json'
 
 
@@ -235,6 +236,20 @@ async def classify(payload: dict):
     return JSONResponse({'topic': 'other', 'topic_label': '未分类', 'error_type': 'concept', 'hint': ''})
 
 
+def _append_problem_jsonl(row):
+    """Append one line to data/problems.jsonl (audit trail). Never blocks main flow."""
+    try:
+        rec = {
+            'id': row['id'], 'created_at': row['created_at'], 'subject': row['subject'],
+            'topic': row['topic'], 'topic_label': row['topic_label'], 'source': row['source'],
+            'image_path': row['image_path'], 'answer_text': row['answer_text'],
+        }
+        with open(JSONL_PATH, 'a', encoding='utf-8') as f:
+            f.write(json.dumps(rec, ensure_ascii=False) + '\n')
+    except Exception:
+        pass  # audit failure must not block recording
+
+
 # ---------- problem ----------
 @app.post('/api/problem')
 async def create_problem(payload: dict):
@@ -266,6 +281,7 @@ async def create_problem(payload: dict):
     pid = cur.lastrowid
     conn.commit()
     row = conn.execute('SELECT * FROM problem WHERE id=?', (pid,)).fetchone()
+    _append_problem_jsonl(row)
     conn.close()
     return JSONResponse({'ok': True, 'problem': problem_row_to_dict(row)})
 
