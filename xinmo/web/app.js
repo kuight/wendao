@@ -138,7 +138,7 @@ function buildEntryForm(p){
   sub.onclick=function(){
     if(!selSubj){toast(t('entry.noSubject'));return;}
     if(!selTopic){toast(t('entry.noTopic'));return;}
-    if(!entryImg.q && !src.value.trim()){toast(t('entry.needImageOrSource'));return;}
+    if(!entryImg.q){toast(t('entry.needImage'));return;}
     var body={subject:selSubj,topic:selTopic,topic_label:(topicLabel(selSubj,selTopic)||''),question_type:qt.value,error_type:et.value,note:note.value,source:src.value,answer_text:ans.value,image_path:entryImg.q,answer_image_path:entryImg.a};
     fetch('/api/problem',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)})
       .then(function(r){return r.json();}).then(function(d){

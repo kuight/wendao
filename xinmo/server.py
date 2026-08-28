@@ -252,6 +252,8 @@ async def create_problem(payload: dict):
     image_path = payload.get('image_path') or ''
     answer_image_path = payload.get('answer_image_path') or ''
     source = payload.get('source') or ''
+    if not image_path:
+        return JSONResponse({'ok': False, 'error': 'image required'}, status_code=400)
     today = sch.i2d(sch.days_today())
 
     conn = get_db()

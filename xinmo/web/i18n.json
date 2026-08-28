@@ -43,13 +43,13 @@
     "noSubject": "请先选学科",
     "noTopic": "请选知识点",
     "added": "已入库",
-    "qImageLabel": "题目图片（无来源时必填）",
+    "qImageLabel": "题目图片（必填）",
     "aImageLabel": "答案/解析图（强烈建议贴上）",
     "pasteHint": "Ctrl+V 粘贴截图，或拖拽 / 点击选择图片",
     "uploading": "上传中…",
     "uploadFailed": "图片上传失败",
-    "needImageOrSource": "无来源时必须贴题目图片（或填来源）",
-    "removeImage": "移除"
+    "removeImage": "移除",
+    "needImage": "请先贴题目图片"
   },
   "today": {
     "title": "今日心魔",
