@@ -1,5 +1,38 @@
 # CHANGELOG - 错题心魔 xinmo v1
 
+## D5 - 足迹页 + 全量时间戳 (2026-08-28)
+
+### 新增
+- 足迹页：后端 `GET /api/trace`（today_list / 知识树 / subject_summary / 90 天热力图 / streak
+  五块聚合），前端 renderTrace 渲染知识树色块(灰=未遇/白=遇过/黄=复习中/亮=已炼化)+热力图+今日清单。
+- 时间戳改造：server.py 加 `now_iso()`，problem.created_at 与 attempt.ts 存完整 ISO-8601 到秒
+  (2026-08-28T14:32:07)；按天聚合全部改 `substr(ts,1,10)=?`；due_date 保持纯日期；today_list
+  按完整时间戳倒序(redo 排最前)。
+
+### 验收（全部通过）
+- 干净库下：today_list 顺序 redo,redo,add,add,add；知识树色块 reviewing/active/unseen 对；
+  热力图 today count=5 streak=1。D3 未受影响全绿。
+
+## D6 - 收尾：干净目录跑通 / 备份核对 / README / IDEAS (2026-08-28)
+
+### 修复
+- server.py 干净目录首次启动崩溃：`app.mount('/images', StaticFiles(...))` 在模块加载期执行，
+  而干净目录尚无 data/images（init_db 的 mkdir 在 startup 才跑）-> 抛
+  `RuntimeError: Directory ...\data\images does not exist`。已在 static 区 mount 前加
+  `IMAGES.mkdir(parents=True, exist_ok=True)`。干净目录从零起服务+录题+入队列验证通过，
+  中文入库无乱码、created_at 完整时间戳正确、data/images 自动创建。
+
+### 确认（无需改代码）
+- 备份 zip 天然排除 config.local.json：zip 只打 data/xinmo.db + data/images/，
+  config.local.json 在 xinmo/ 根目录不在 data/ 下，不会被打包。
+
+### 新增
+- README.md：一键启动 / 怎么录一道题 / 每周备份防丢说明。
+- IDEAS.md：功能冻结后的想法收集箱，首条「LLM 自动分类(v2)」。
+
+### 约定
+- 功能冻结：此后不再加功能，新想法一律写进 IDEAS.md。
+
 ## D4 - 调度全规则 + 30天模拟测试 (2026-08-28)
 
 ### 新增

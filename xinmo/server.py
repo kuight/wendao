@@ -147,6 +147,8 @@ def sched_to_json(p):
 
 
 # ---------- static ----------
+# Ensure data/images exists before mounting (clean first-run has no data dir yet).
+IMAGES.mkdir(parents=True, exist_ok=True)
 app.mount('/web', StaticFiles(directory=str(BASE / 'web')), name='web')
 app.mount('/images', StaticFiles(directory=str(IMAGES)), name='images')
 
