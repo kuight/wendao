@@ -1,0 +1,17 @@
+{
+  "subject": {
+    "physics": "物理",
+    "chemistry": "化学",
+    "geography": "地理",
+    "chinese": "语文",
+    "math": "数学",
+    "english": "英语"
+  },
+  "error": {
+    "concept": "概念不会",
+    "formula": "公式记错",
+    "calc": "计算失误",
+    "reading": "审题错"
+  },
+  "classify_topic_label": "未分类"
+}

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""xinmo (错题心魔) v1 local server.
+"""xinmo (error-book) v1 local server.
 
 FastAPI + uvicorn on port 8092. Single-page front-end in web/index.html.
 Runs with:  cd xinmo && python -m uvicorn server:app --port 8092
@@ -28,6 +28,7 @@ DATA = BASE / 'data'
 DB_PATH = DATA / 'xinmo.db'
 IMAGES = DATA / 'images'
 TOPICS_PATH = DATA / 'topics.json'
+LABELS_PATH = DATA / 'labels.json'
 JSONL_PATH = DATA / 'problems.jsonl'
 CONFIG_LOCAL = BASE / 'config.local.json'
 
@@ -51,13 +52,17 @@ app = FastAPI(title='xinmo')
 
 SUBJECTS = ['physics', 'chemistry', 'geography', 'chinese', 'math', 'english']
 # Subject code -> chinese display name
-SUBJECT_LABEL = {
-    'physics': '物理', 'chemistry': '化学', 'geography': '地理',
-    'chinese': '语文', 'math': '数学', 'english': '英语',
-}
+def _load_labels():
+    try:
+        with open(LABELS_PATH, encoding='utf-8') as f:
+            return json.load(f)
+    except Exception:
+        return {}
+LABELS = _load_labels()
+SUBJECT_LABEL = LABELS.get('subject', {})
 QUESTION_TYPES = ['choice', 'numeric', 'expression', 'openended']
 ERROR_TYPES = ['concept', 'formula', 'calc', 'reading']
-ERROR_LABEL = {'concept': '概念不会', 'formula': '公式记错', 'calc': '计算失误', 'reading': '审题错'}
+ERROR_LABEL = LABELS.get('error', {})
 
 
 def get_db():
@@ -233,7 +238,7 @@ async def upload(file: UploadFile = File(...), pid: str = Form('tmp'), kind: str
 async def classify(payload: dict):
     # v1.1: knowledge point classification is manual (two-level pick from topics.json).
     # LLM classify is deferred to v2. Return a fixed fallback; the UI does the picking.
-    return JSONResponse({'topic': 'other', 'topic_label': '未分类', 'error_type': 'concept', 'hint': ''})
+    return JSONResponse({'topic': 'other', 'topic_label': LABELS.get('classify_topic_label', 'other'), 'error_type': 'concept', 'hint': ''})
 
 
 def _append_problem_jsonl(row):
@@ -351,7 +356,7 @@ async def attempt(payload: dict):
     seconds = int(payload.get('seconds') or 0)
     my_answer = payload.get('my_answer') or ''
     judged = payload.get('judged') or 'unknown'
-    note_add = payload.get('note') or ''  # optional "这次错在哪" text
+    note_add = payload.get('note') or ''  # optional "where-wrong" text
     if result not in ('again', 'hard', 'good'):
         return JSONResponse({'ok': False, 'error': 'bad result'}, status_code=400)
 

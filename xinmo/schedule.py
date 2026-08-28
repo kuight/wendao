@@ -1,4 +1,4 @@
-# Pure scheduling logic for xinmo (错题心魔) v1.
+# Pure scheduling logic for xinmo (error-book) v1.
 # No I/O here. Dates are passed as integer day numbers (days since epoch).
 # Imported by server.py and the simulation test script.
 
