@@ -31,7 +31,7 @@ function makeDropzone(kind,labelKey){
   var wrap=el('div');
   wrap.appendChild(el('label',null,t(labelKey)));
   var dz=el('div','dropzone',t('entry.pasteHint'));
-  var file=el('input');file.type='file';file.accept='image/*';file.style.display='none';
+  var file=el('input');file.type='file';file.accept='image/*';file.setAttribute('capture','environment');file.style.display='none';
   function render(){
     if(entryImg[kind]){
       dz.className='dropzone filled';dz.innerHTML='';

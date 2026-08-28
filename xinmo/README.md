@@ -26,10 +26,10 @@ pip install fastapi uvicorn pillow
 
 ```
 cd D:\xinmo
-python -m uvicorn server:app --port 8092
+python -m uvicorn server:app --host 0.0.0.0 --port 8092
 ```
 
-看到 `Uvicorn running on http://127.0.0.1:8092` 就成功了。
+看到 `Uvicorn running on http://127.0.0.1:8092` 就成功了。注意启动命令里的 `--host 0.0.0.0` 必须保留，手机端才能访问。
 
 ### 3. 打开
 
@@ -57,9 +57,23 @@ python -m uvicorn server:app --port 8092
 
 每周点一次：浏览器打开 `http://127.0.0.1:8092/api/backup`，会下载一个 zip。把它存到网盘或 U 盘。这是唯一的防丢手段，请养成习惯。
 
+## 手机访问（同一 Wi-Fi 内）
+
+电脑和手机连同一个 Wi-Fi，手机浏览器直接访问电脑的局域网 IP 加 8092 端口即可。
+
+1. **查电脑局域网 IP**：电脑上打开命令行（Win+R 输入 `cmd`）输入 `ipconfig`，找"无线局域网适配器"（Wi-Fi）或"以太网适配器"里的 **IPv4 地址**，形如 `192.168.1.101`。
+2. **放行端口**（Windows 防火墙，需管理员权限的 PowerShell，一次性）：
+   ```
+   New-NetFirewallRule -DisplayName "xinmo 8092" -Direction Inbound -Protocol TCP -LocalPort 8092 -Action Allow
+   ```
+   旧版系统也可用：`netsh advfirewall firewall add rule name="xinmo 8092" dir=in action=allow protocol=TCP localport=8092`
+3. **手机访问**：手机浏览器打开 `http://<电脑的IPv4地址>:8092`，例如 `http://192.168.1.101:8092`。
+
+> 服务端必须用 `--host 0.0.0.0` 启动（本 README 启动命令已带），否则只能本机 127.0.0.1 访问、手机连不上。防火墙放行命令只在第一次配时执行一次即可。
+
 ## 常见问题
 
-- **端口被占用**：换一个端口，如 `python -m uvicorn server:app --port 8093`，浏览器打开对应端口。
+- **端口被占用**：换一个端口，如 `python -m uvicorn server:app --host 0.0.0.0 --port 8093`，浏览器打开对应端口。
 - **图片没显示**：确认提交时图片粘贴/上传成功，图片存在 `data/images/` 下。
 - **LLM 判表达式**：目前表达式/公式题判定已降级为手动自评（未配置 LLM）。等你真正需要了，在 `config.local.json` 里填上 `text` 通道的 `base_url`/`api_key`/`model` 即可开启自动判等价。
 
