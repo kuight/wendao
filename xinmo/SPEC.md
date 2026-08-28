@@ -1,7 +1,11 @@
-## D1 开工前六点确认（2026-08，覆盖 v1.1）
-1. 判 wrong 直接 again，不给自评按钮。判 wrong 后显示标准答案+解析图，并给可选单行输入「这次错在哪」，内容追加进 problem.note，不强制填——这是全系统最有价值的一条数据。
-2. 同天重排是第二次独立重做流程（重新答、重新判、重新记一条 attempt）。"是否已重排过"= 查当天该题 attempt 条数，达 2 条就不再排入当天。
-3. 知识树状态色优先级采纳：亮(已炼化)>黄(复习中,有active且streak>0)>白(有active,streak=0)>灰(无题)。节点旁小字标活跃题数，如「电势与场强 3」。
-4. topics.json 加 chapter 字段（标准高中物理顺序：运动学/牛顿定律/曲线运动/万有引力/功和能/动量/静电场/恒定电流/磁场/电磁感应），再加 prereq 字段=依赖的其他 topic id 数组（可空）。v1 只存不用，知识树不展示，但建 topics.json 时就填好，v2 用做薄弱链路诊断。
-5. D1 录入页字段：学科、知识点点选、note、source、answer_text、question_type（后两者纯输入框+下拉，低成本顺手做，D3 才用）。图片 D2 做。
-6. config.local.json 双通道结构：{"text":{"base_url":"","api_key":"","model":""},"vision":{"base_url":"","api_key":"","model":""}}。两段可指向不同厂商，任一段空则对应功能降级。D1 附带 tools/probe_llm.py 逐段发最小请求并打印结果。
+
+## D6 收尾前用户拍板修订（2026-08，覆盖此前冲突项）
+1. D4 验收口径（作废"第1/3/8/12天出现"）：interval 序列为 1 / 3 / 8.4 / 24.36，复习发生在第 0 / 1 / 4 / 12 天，第四次 good 后进入 refined。公式不动。
+2. interval 浮点落日历规则（补 SPEC 洞）：due_date = today + floor(interval) 天；interval 本身以浮点数存库参与后续计算，不许在存库时取整（否则误差累积）。写死进 SPEC。
+3. 时间戳（不加新列）：attempt.ts 与 problem.created_at 直接存完整 ISO 8601 到秒（如 2026-08-28T14:32:07）；按天聚合一律 substr(ts,1,10)；due_date 保持纯日期。老数据缺时刻按兜底省略显示。
+4. git 提交：由我(master)接手，按 D2、D3、D5 分三个独立 commit 提交（不压成一个），提交前先确认 .gitignore 含 config.local.json、data/*.db、data/images/，且无图片/数据库被误加索引。
+5. 非 ASCII 遗留（server.py 中文字典 + app.js 的 · 分隔符）：挪进 i18n.json，放在 D6 一起做，不单独开一轮。
+6. LLM 配置：先不填，text/vision 两段留空。expression 判等价降级 unknown 够用；等库里有了真实数据撞上判不了的题再填 vision。
+7. GET /api/backup 打出的 zip 必须排除 config.local.json（含 API key，备份传网盘=泄露）。
+8. README 启动步骤必须在干净目录从零跑通一次验证，而非在已有 db/依赖环境里"看起来能跑"。
+9. D6 收完即功能冻结，新建 IDEAS.md。真正验收标准：第二十天库里有没有一百道题。

@@ -1,5 +1,8 @@
 config.local.json
-data/xinmo.db
+data/*.db
 data/images/
 __pycache__/
 *.pyc
+*.log
+scripts/_*.py
+scripts/_*.js
