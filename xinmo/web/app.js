@@ -284,8 +284,74 @@ function buildReviewCard(item){
 }
 function escapeHtml(s){return (''+s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 
-// ---- stats (placeholder; not in D1-D6 scope beyond existing /api/stats) ----
-function renderStats(){var p=document.getElementById('page-stats');p.innerHTML=el('div','muted','stats').outerHTML;}
+// ---- stats (D6: realm number + error distribution + 14-day bar chart) ----
+function renderStats(){
+  var p=document.getElementById('page-stats');p.innerHTML='';
+  fetch('/api/stats').then(function(r){return r.json();}).then(function(d){renderStatsData(p,d);}).catch(function(){p.innerHTML=el('div','muted',t('stats.loadFailed')).outerHTML;});
+}
+function realmOf(refined){
+  if(refined>=151)return 3;if(refined>=61)return 2;if(refined>=21)return 1;return 0;
+}
+function renderStatsData(p,d){
+  var realm=realmOf(d.refined||0);
+  var top=el('div','stat-realm');
+  top.appendChild(el('div','stat-realm-name',t('stats.realm')+' : '+t('stats.realmLabels.'+realm)));
+  var nums=el('div','stat-grid');
+  [['total',d.total],['refined',d.refined],['active',d.active]].forEach(function(kv){
+    var c=el('div','stat-card');c.appendChild(el('div','lbl',t('stats.'+kv[0])));c.appendChild(el('div','val',String(kv[1])));nums.appendChild(c);
+  });
+  top.appendChild(nums);
+  p.appendChild(top);
+
+  var s1=el('div','stats-section');
+  s1.appendChild(el('h2',null,t('stats.errorTitle')));
+  var eg=el('div','err-grid');
+  ETYPE.forEach(function(e){
+    var n=(d.by_error&&d.by_error[e])||0;
+    var row=el('div','err-row');
+    row.appendChild(el('span','err-name',t('errorTypes.'+e)));
+    row.appendChild(el('span','err-val',String(n)));
+    eg.appendChild(row);
+  });
+  s1.appendChild(eg);
+  p.appendChild(s1);
+
+  var s2=el('div','stats-section');
+  s2.appendChild(el('h2',null,t('stats.dailyTitle')));
+  var cv=el('canvas');cv.width=700;cv.height=230;cv.className='daily-chart';
+  s2.appendChild(cv);
+  p.appendChild(s2);
+  drawDailyChart(cv,d.daily||[]);
+}
+function drawDailyChart(cv,daily){
+  var ctx=cv.getContext('2d');
+  var W=cv.width,H=cv.height;
+  ctx.clearRect(0,0,W,H);
+  var padL=30,padR=10,padT=14,padB=40;
+  var cw=W-padL-padR,chh=H-padT-padB;
+  var maxv=1;
+  daily.forEach(function(x){if(x.added>maxv)maxv=x.added;if(x.redone>maxv)maxv=x.redone;});
+  var n=daily.length;
+  if(!n)return;
+  var gap=2,bw=(cw/n-gap)/2;
+  for(var i=0;i<n;i++){
+    var x0=padL+i*(cw/n)+gap/2;
+    var a=daily[i];
+    var ah=(a.added/maxv)*chh;
+    ctx.fillStyle='#1d5fd6';
+    ctx.fillRect(x0,padT+chh-ah,bw,ah);
+    var rh=(a.redone/maxv)*chh;
+    ctx.fillStyle='#d99a2b';
+    ctx.fillRect(x0+bw,padT+chh-rh,bw,rh);
+  }
+  ctx.fillStyle='#667';ctx.font='10px sans-serif';ctx.textAlign='center';
+  for(var i=0;i<n;i++){
+    ctx.fillText((daily[i].date||'').slice(5),padL+i*(cw/n)+cw/n/2,H-padB+10);
+  }
+  ctx.textAlign='left';
+  ctx.fillStyle='#1d5fd6';ctx.fillText(t('stats.legendAdded'),padL,H-18);
+  ctx.fillStyle='#d99a2b';ctx.fillText(t('stats.legendRedone'),padL+46,H-18);
+}
 
 // ---- trace (D5): today list + knowledge tree + heatmap ----
 function renderTrace(){

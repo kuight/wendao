@@ -88,3 +88,13 @@ img.thumb{max-width:120px;max-height:90px;border-radius:6px;border:1px solid #dd
 .stat-card{background:#f7f9fc;border-radius:10px;padding:14px;text-align:center}
 .stat-card .lbl{font-size:12px;color:#667}
 .stat-card .val{font-size:22px;font-weight:bold;color:#1c2430;margin-top:4px}
+
+/* stats (D6) */
+.stats-section{margin-bottom:20px}
+.stats-section h2{font-size:16px;margin-bottom:8px;color:#1c2430}
+.stat-realm-name{font-size:22px;font-weight:bold;color:#7a5cd0;margin-bottom:10px}
+.err-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;max-width:420px}
+.err-row{display:flex;justify-content:space-between;align-items:center;background:#f7f9fc;border:1px solid #e3e8f0;border-radius:8px;padding:9px 12px}
+.err-name{font-size:14px;color:#334}
+.err-val{font-size:18px;font-weight:bold;color:#1d5fd6}
+.daily-chart{width:100%;max-width:700px;height:auto;background:#fafcff;border:1px solid #e3e8f0;border-radius:8px}
