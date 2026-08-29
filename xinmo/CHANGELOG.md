@@ -1,5 +1,18 @@
 # CHANGELOG - 错题心魔 xinmo v1
 
+## D6.5 - 迁出为独立仓库并推送 GitHub (2026-08-29)
+
+### 完成
+- GitHub 新建仓库 [kuight/xinmo](https://github.com/kuight/xinmo)（default branch main）。
+- 本地 xinmo 仓库 git remote add origin + push master 完成迁移，HEAD=8c1e993，
+  main 与 master 均指向 8c1e993（用 git ls-remote 对比 rev-parse HEAD 验证通过）。
+- wendao master 同步推送，远端与本地 HEAD 一致（08a2c6f）。
+- 自检#3 完成：全新 clone 按 README 起服务->上传图片->录带图题->重启->
+  统计(active=1/physics=1)与图片(HTTP 200)均持久，cleanup 后工作区干净。
+
+### 待办（清理项，已随交接说明记录）
+- 交接文档更新为新仓库地址与最终 commit hash（本次 CHANGELOG 即记录）。
+
 ## D5 - 足迹页 + 全量时间戳 (2026-08-28)
 
 ### 新增
